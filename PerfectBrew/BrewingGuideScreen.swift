@@ -106,8 +106,40 @@ struct BrewingGuideScreen: View {
                                 }
                             }
                             
+                            // Step Timer (for current brewing step)
+                            if !viewModel.isInBloomPhase && viewModel.currentStepDuration > 0 {
+                                VStack(spacing: 6) {
+                                    Text("Step Remaining")
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.primary)
+                                    
+                                    ZStack {
+                                        Circle()
+                                            .stroke(Color.gray.opacity(0.3), lineWidth: 6)
+                                            .frame(width: 60, height: 60)
+                                        
+                                        Circle()
+                                            .trim(from: 0, to: viewModel.currentStepProgress)
+                                            .stroke(Color.purple, style: StrokeStyle(lineWidth: 6, lineCap: .round))
+                                            .frame(width: 60, height: 60)
+                                            .rotationEffect(.degrees(-90))
+                                            .animation(.easeInOut(duration: 0.3), value: viewModel.currentStepProgress)
+                                        
+                                        VStack(spacing: 0) {
+                                            Text("\(Int(viewModel.currentStepRemainingTime))")
+                                                .font(.headline)
+                                                .fontWeight(.bold)
+                                            Text("s")
+                                                .font(.caption2)
+                                                .foregroundColor(.secondary)
+                                        }
+                                    }
+                                }
+                            }
+                            
                             // Bloom Timer (if applicable)
-                            if viewModel.elapsedTime < viewModel.bloomTime {
+                            if viewModel.isInBloomPhase {
                                 VStack(spacing: 6) {
                                     Text("Bloom Remaining")
                                         .font(.headline)

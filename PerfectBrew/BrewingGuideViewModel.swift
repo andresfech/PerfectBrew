@@ -8,6 +8,8 @@ class BrewingGuideViewModel: ObservableObject {
     @Published var isTimerRunning = false
     @Published var currentStep = "Prepare"
     @Published var isPreparationPhase = true
+    @Published var currentStepStartTime: TimeInterval = 0
+    @Published var currentStepDuration: TimeInterval = 0
     
     private var timer: AnyCancellable?
     var preparationSteps: [String] = []
@@ -56,6 +58,8 @@ class BrewingGuideViewModel: ObservableObject {
         // Start with first brewing step
         if !brewingSteps.isEmpty {
             currentStep = brewingSteps[0].instruction
+            currentStepStartTime = 0
+            currentStepDuration = brewingSteps[0].time
         }
         
         timer = Timer.publish(every: 1, on: .main, in: .common)
@@ -126,6 +130,24 @@ class BrewingGuideViewModel: ObservableObject {
         return elapsedTime / bloomTime
     }
     
+    // Step timer properties
+    var currentStepElapsedTime: TimeInterval {
+        return elapsedTime - currentStepStartTime
+    }
+    
+    var currentStepRemainingTime: TimeInterval {
+        return max(0, currentStepDuration - currentStepElapsedTime)
+    }
+    
+    var currentStepProgress: Double {
+        guard currentStepDuration > 0 else { return 0 }
+        return currentStepElapsedTime / currentStepDuration
+    }
+    
+    var isInBloomPhase: Bool {
+        return elapsedTime < bloomTime
+    }
+    
     func nextPreparationStep() {
         guard isPreparationPhase else { return }
         
@@ -143,15 +165,27 @@ class BrewingGuideViewModel: ObservableObject {
     private func updateStep() {
         // Find the current brewing step based on elapsed time
         var currentBrewingStep = brewingSteps.first?.instruction ?? "Brewing..."
+        var stepStartTime: TimeInterval = 0
+        var stepDuration: TimeInterval = 0
         
-        for (time, instruction) in brewingSteps {
+        for (index, (time, instruction)) in brewingSteps.enumerated() {
             if elapsedTime >= time {
                 currentBrewingStep = instruction
+                stepStartTime = time
+                
+                // Calculate step duration (time until next step or total time)
+                if index + 1 < brewingSteps.count {
+                    stepDuration = brewingSteps[index + 1].time - time
+                } else {
+                    stepDuration = totalTime - time
+                }
             } else {
                 break
             }
         }
         
         currentStep = currentBrewingStep
+        currentStepStartTime = stepStartTime
+        currentStepDuration = stepDuration
     }
 }
