@@ -74,7 +74,7 @@ struct HomeScreen: View {
                 
                 VStack(spacing: 16) {
                     if selectedMethod.isAvailable {
-                        NavigationLink(destination: BrewSetupScreen()) {
+                        NavigationLink(destination: RecipeSelectionScreen(selectedMethod: selectedMethod)) {
                             Text("Start New Brew")
                                 .font(.title2)
                                 .fontWeight(.semibold)
