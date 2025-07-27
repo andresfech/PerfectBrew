@@ -52,13 +52,40 @@ struct BrewDetailScreen: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(12)
                 
-                // Steps
+                // Preparation Steps
+                if !recipe.preparationSteps.isEmpty {
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Preparation Steps")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        
+                        ForEach(Array(recipe.preparationSteps.enumerated()), id: \.offset) { index, step in
+                            HStack(alignment: .top, spacing: 12) {
+                                Text("\(index + 1)")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .frame(width: 24, height: 24)
+                                    .background(Color.blue)
+                                    .clipShape(Circle())
+                                
+                                Text(step)
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                
+                                Spacer()
+                            }
+                        }
+                    }
+                }
+                
+                // Brewing Steps
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Brewing Steps")
                         .font(.title2)
                         .fontWeight(.bold)
                     
-                    ForEach(Array(recipe.steps.enumerated()), id: \.offset) { index, step in
+                    ForEach(Array(recipe.brewingSteps.enumerated()), id: \.offset) { index, step in
                         HStack(alignment: .top, spacing: 12) {
                             Text("\(index + 1)")
                                 .font(.headline)
@@ -68,9 +95,15 @@ struct BrewDetailScreen: View {
                                 .background(Color.orange)
                                 .clipShape(Circle())
                             
-                            Text(step)
-                                .font(.body)
-                                .multilineTextAlignment(.leading)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(step.instruction)
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                
+                                Text("\(step.timeSeconds)s")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
                             
                             Spacer()
                         }
@@ -174,7 +207,12 @@ struct BrewDetailScreen_Previews: PreviewProvider {
                     bloomTimeSeconds: 45,
                     totalBrewTimeSeconds: 180
                 ),
-                steps: ["Step 1", "Step 2", "Step 3"],
+                preparationSteps: ["Heat water to 95°C", "Place filter and rinse", "Add 15g coffee"],
+                brewingSteps: [
+                    BrewingStep(timeSeconds: 0, instruction: "Pour 30g water for bloom"),
+                    BrewingStep(timeSeconds: 45, instruction: "Pour to 120g total"),
+                    BrewingStep(timeSeconds: 90, instruction: "Pour to 200g total")
+                ],
                 equipment: ["V60", "Scale", "Kettle"],
                 notes: "Sample notes"
             ))

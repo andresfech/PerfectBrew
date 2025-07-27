@@ -64,7 +64,8 @@ struct BrewSetupScreen: View {
                     waterAmount: viewModel.waterAmount,
                     waterTemperature: viewModel.waterTemperature,
                     grindSize: viewModel.grindSize,
-                    brewTime: viewModel.brewTime
+                    brewTime: viewModel.brewTime,
+                    recipe: recipe
                 )) {
                     Text("Start Brewing")
                         .font(.title)

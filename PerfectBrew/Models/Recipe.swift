@@ -7,7 +7,8 @@ struct Recipe: Codable, Identifiable {
     let skillLevel: String
     let rating: Double
     let parameters: BrewParameters
-    let steps: [String]
+    let preparationSteps: [String]
+    let brewingSteps: [BrewingStep]
     let equipment: [String]
     let notes: String
     
@@ -17,9 +18,68 @@ struct Recipe: Codable, Identifiable {
         case skillLevel = "skill_level"
         case rating
         case parameters
-        case steps
+        case preparationSteps = "preparation_steps"
+        case brewingSteps = "brewing_steps"
+        case steps // For backward compatibility in decoding only
         case equipment
         case notes
+    }
+    
+    // Backward compatibility - if only 'steps' is provided, treat them as brewing steps
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        title = try container.decode(String.self, forKey: .title)
+        brewingMethod = try container.decode(String.self, forKey: .brewingMethod)
+        skillLevel = try container.decode(String.self, forKey: .skillLevel)
+        rating = try container.decode(Double.self, forKey: .rating)
+        parameters = try container.decode(BrewParameters.self, forKey: .parameters)
+        equipment = try container.decode([String].self, forKey: .equipment)
+        notes = try container.decode(String.self, forKey: .notes)
+        
+        // Try to decode new structure first
+        if let prepSteps = try? container.decode([String].self, forKey: .preparationSteps),
+           let brewSteps = try? container.decode([BrewingStep].self, forKey: .brewingSteps) {
+            preparationSteps = prepSteps
+            brewingSteps = brewSteps
+        } else {
+            // Fallback to old structure - treat all steps as brewing steps
+            let oldSteps = try container.decode([String].self, forKey: .steps)
+            preparationSteps = []
+            brewingSteps = oldSteps.enumerated().map { index, step in
+                BrewingStep(
+                    timeSeconds: index * 30, // Estimate timing
+                    instruction: step
+                )
+            }
+        }
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(title, forKey: .title)
+        try container.encode(brewingMethod, forKey: .brewingMethod)
+        try container.encode(skillLevel, forKey: .skillLevel)
+        try container.encode(rating, forKey: .rating)
+        try container.encode(parameters, forKey: .parameters)
+        try container.encode(preparationSteps, forKey: .preparationSteps)
+        try container.encode(brewingSteps, forKey: .brewingSteps)
+        try container.encode(equipment, forKey: .equipment)
+        try container.encode(notes, forKey: .notes)
+    }
+    
+    // Regular initializer for creating instances in previews and tests
+    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: BrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String) {
+        self.title = title
+        self.brewingMethod = brewingMethod
+        self.skillLevel = skillLevel
+        self.rating = rating
+        self.parameters = parameters
+        self.preparationSteps = preparationSteps
+        self.brewingSteps = brewingSteps
+        self.equipment = equipment
+        self.notes = notes
     }
     
     var difficulty: Difficulty {
@@ -41,6 +101,16 @@ struct Recipe: Codable, Identifiable {
         case .intermediate: return "orange"
         case .advanced: return "red"
         }
+    }
+}
+
+struct BrewingStep: Codable {
+    let timeSeconds: Int
+    let instruction: String
+    
+    enum CodingKeys: String, CodingKey {
+        case timeSeconds = "time_seconds"
+        case instruction
     }
 }
 
