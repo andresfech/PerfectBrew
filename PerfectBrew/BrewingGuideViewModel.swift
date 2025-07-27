@@ -87,6 +87,45 @@ class BrewingGuideViewModel: ObservableObject {
         }
     }
     
+    func resetPreparation() {
+        isPreparationPhase = true
+        if !preparationSteps.isEmpty {
+            currentStep = preparationSteps[0]
+        }
+    }
+    
+    func toggleTimer() {
+        if isTimerRunning {
+            stopTimer()
+        } else {
+            startTimer()
+        }
+    }
+    
+    func finishBrewing() {
+        stopTimer()
+        // Navigate to feedback screen or completion
+    }
+    
+    // Computed properties for progress calculations
+    var preparationProgress: Double {
+        guard !preparationSteps.isEmpty else { return 0 }
+        let currentIndex = preparationSteps.firstIndex(of: currentStep) ?? 0
+        return Double(currentIndex) / Double(preparationSteps.count)
+    }
+    
+    var currentPreparationStepIndex: Int {
+        return preparationSteps.firstIndex(of: currentStep) ?? 0
+    }
+    
+    var totalProgress: Double {
+        return elapsedTime / totalTime
+    }
+    
+    var bloomProgress: Double {
+        return elapsedTime / bloomTime
+    }
+    
     func nextPreparationStep() {
         guard isPreparationPhase else { return }
         

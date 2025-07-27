@@ -25,56 +25,48 @@ struct BrewingGuideScreen: View {
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 30) {
-                // Header
-                VStack(spacing: 8) {
+            VStack(spacing: 0) {
+                // Header - Fixed at top
+                VStack(spacing: 4) {
                     Text("Perfect Brew")
-                        .font(.largeTitle)
+                        .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     
                     Text("Brewing Guide")
-                        .font(.title3)
+                        .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
-                .padding(.top, 20)
+                .padding(.top, 10)
+                .padding(.bottom, 8)
                 
-                // Main Timer Section
-                VStack(spacing: 24) {
+                // Main Content - Compact layout
+                VStack(spacing: 12) {
+                    // Timer Section
                     if viewModel.isPreparationPhase {
                         // Preparation Progress
-                        VStack(spacing: 16) {
+                        VStack(spacing: 8) {
                             Text("Preparation Progress")
-                                .font(.title2)
+                                .font(.headline)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.primary)
                             
                             ZStack {
-                                // Background circle
                                 Circle()
-                                    .stroke(Color.gray.opacity(0.2), lineWidth: 12)
-                                    .frame(width: 200, height: 200)
+                                    .stroke(Color.gray.opacity(0.3), lineWidth: 8)
+                                    .frame(width: 80, height: 80)
                                 
-                                // Progress circle
                                 Circle()
-                                    .trim(from: 0, to: preparationProgress)
-                                    .stroke(
-                                        LinearGradient(
-                                            gradient: Gradient(colors: [.blue, .cyan]),
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
-                                        ),
-                                        style: StrokeStyle(lineWidth: 12, lineCap: .round)
-                                    )
-                                    .frame(width: 200, height: 200)
+                                    .trim(from: 0, to: viewModel.preparationProgress)
+                                    .stroke(Color.blue, style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                                    .frame(width: 80, height: 80)
                                     .rotationEffect(.degrees(-90))
-                                    .animation(.easeInOut(duration: 1), value: preparationProgress)
+                                    .animation(.easeInOut(duration: 0.3), value: viewModel.preparationProgress)
                                 
-                                // Progress display
-                                VStack(spacing: 4) {
-                                    Text("\(viewModel.preparationSteps.firstIndex(of: viewModel.currentStep) ?? 0 + 1)/\(viewModel.preparationSteps.count)")
-                                        .font(.system(size: 36, weight: .bold, design: .rounded))
-                                        .foregroundColor(.primary)
+                                VStack(spacing: 0) {
+                                    Text("\(viewModel.currentPreparationStepIndex + 1)/\(viewModel.preparationSteps.count)")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
                                     Text("steps")
                                         .font(.caption)
                                         .foregroundColor(.secondary)
@@ -82,270 +74,200 @@ struct BrewingGuideScreen: View {
                             }
                         }
                     } else {
-                        // Total Time Progress
-                        VStack(spacing: 16) {
-                            Text("Time Remaining")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.primary)
-                            
-                            ZStack {
-                                // Background circle
-                                Circle()
-                                    .stroke(Color.gray.opacity(0.2), lineWidth: 12)
-                                    .frame(width: 200, height: 200)
-                                
-                                // Progress circle
-                                Circle()
-                                    .trim(from: 0, to: progress)
-                                    .stroke(
-                                        LinearGradient(
-                                            gradient: Gradient(colors: [.orange, .red]),
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
-                                        ),
-                                        style: StrokeStyle(lineWidth: 12, lineCap: .round)
-                                    )
-                                    .frame(width: 200, height: 200)
-                                    .rotationEffect(.degrees(-90))
-                                    .animation(.easeInOut(duration: 1), value: progress)
-                                
-                                // Time display
-                                VStack(spacing: 4) {
-                                    Text(timeString)
-                                        .font(.system(size: 36, weight: .bold, design: .rounded))
-                                        .foregroundColor(.primary)
-                                    Text("seconds")
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                }
-                            }
-                        }
-                        
-                        // Bloom Timer (if applicable)
-                        if viewModel.elapsedTime < viewModel.bloomTime {
-                            VStack(spacing: 16) {
-                                Text("Bloom Remaining")
-                                    .font(.title2)
+                        // Brewing Timers
+                        VStack(spacing: 8) {
+                            // Total Time Progress
+                            VStack(spacing: 6) {
+                                Text("Time Remaining")
+                                    .font(.headline)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.primary)
                                 
                                 ZStack {
-                                    // Background circle
                                     Circle()
-                                        .stroke(Color.gray.opacity(0.2), lineWidth: 8)
-                                        .frame(width: 120, height: 120)
+                                        .stroke(Color.gray.opacity(0.3), lineWidth: 8)
+                                        .frame(width: 80, height: 80)
                                     
-                                    // Progress circle
                                     Circle()
-                                        .trim(from: 0, to: bloomProgress)
-                                        .stroke(
-                                            LinearGradient(
-                                                gradient: Gradient(colors: [.green, .blue]),
-                                                startPoint: .topLeading,
-                                                endPoint: .bottomTrailing
-                                            ),
-                                            style: StrokeStyle(lineWidth: 8, lineCap: .round)
-                                        )
-                                        .frame(width: 120, height: 120)
+                                        .trim(from: 0, to: viewModel.totalProgress)
+                                        .stroke(Color.orange, style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                                        .frame(width: 80, height: 80)
                                         .rotationEffect(.degrees(-90))
-                                        .animation(.easeInOut(duration: 1), value: bloomProgress)
+                                        .animation(.easeInOut(duration: 0.3), value: viewModel.totalProgress)
                                     
-                                    // Time display
-                                    VStack(spacing: 2) {
-                                        Text(bloomTimeString)
-                                            .font(.system(size: 24, weight: .bold, design: .rounded))
-                                            .foregroundColor(.primary)
+                                    VStack(spacing: 0) {
+                                        Text("\(Int(viewModel.totalTime - viewModel.elapsedTime))")
+                                            .font(.title2)
+                                            .fontWeight(.bold)
                                         Text("seconds")
-                                            .font(.caption2)
+                                            .font(.caption)
                                             .foregroundColor(.secondary)
+                                    }
+                                }
+                            }
+                            
+                            // Bloom Timer (if applicable)
+                            if viewModel.elapsedTime < viewModel.bloomTime {
+                                VStack(spacing: 6) {
+                                    Text("Bloom Remaining")
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.primary)
+                                    
+                                    ZStack {
+                                        Circle()
+                                            .stroke(Color.gray.opacity(0.3), lineWidth: 6)
+                                            .frame(width: 60, height: 60)
+                                        
+                                        Circle()
+                                            .trim(from: 0, to: viewModel.bloomProgress)
+                                            .stroke(Color.green, style: StrokeStyle(lineWidth: 6, lineCap: .round))
+                                            .frame(width: 60, height: 60)
+                                            .rotationEffect(.degrees(-90))
+                                            .animation(.easeInOut(duration: 0.3), value: viewModel.bloomProgress)
+                                        
+                                        VStack(spacing: 0) {
+                                            Text("\(Int(viewModel.bloomTime - viewModel.elapsedTime))")
+                                                .font(.headline)
+                                                .fontWeight(.bold)
+                                            Text("s")
+                                                .font(.caption2)
+                                                .foregroundColor(.secondary)
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                
-                // Current Step Section
-                VStack(alignment: .leading, spacing: 16) {
-                    Text(viewModel.isPreparationPhase ? "Preparation Step" : "Current Step")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
                     
-                    VStack(alignment: .leading, spacing: 12) {
-                        HStack(alignment: .top) {
+                    // Current Step Section - Compact
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(viewModel.isPreparationPhase ? "Preparation Step" : "Current Step")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                        
+                        HStack(alignment: .top, spacing: 8) {
                             Image(systemName: viewModel.isPreparationPhase ? "checklist" : "cup.and.saucer.fill")
-                                .font(.title2)
+                                .font(.title3)
                                 .foregroundColor(viewModel.isPreparationPhase ? .blue : .orange)
-                                .frame(width: 30)
+                                .frame(width: 20)
                             
                             Text(viewModel.currentStep)
-                                .font(.title3)
-                                .fontWeight(.semibold)
+                                .font(.body)
                                 .foregroundColor(.primary)
-                                .multilineTextAlignment(.leading)
                                 .fixedSize(horizontal: false, vertical: true)
-                            
-                            Spacer()
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(3)
                         }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color(.systemGray6))
-                        )
+                        .padding(12)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
                     }
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
                 
                 Spacer()
                 
-                // Control Buttons
-                VStack(spacing: 16) {
+                // Control Buttons - Fixed at bottom
+                VStack(spacing: 12) {
                     if viewModel.isPreparationPhase {
                         // Preparation phase buttons
-                        HStack(spacing: 16) {
+                        HStack(spacing: 12) {
                             Button(action: {
                                 viewModel.nextPreparationStep()
                             }) {
                                 HStack {
                                     Image(systemName: "arrow.right")
-                                        .font(.title3)
+                                        .font(.headline)
                                     Text("Next Step")
-                                        .font(.title3)
+                                        .font(.headline)
                                         .fontWeight(.semibold)
                                 }
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
-                                .padding()
+                                .frame(height: 44)
                                 .background(Color.blue)
-                                .cornerRadius(12)
+                                .cornerRadius(10)
                             }
                             
                             Button(action: {
-                                viewModel.resetTimer()
+                                viewModel.resetPreparation()
                             }) {
                                 HStack {
                                     Image(systemName: "arrow.clockwise")
-                                        .font(.title3)
+                                        .font(.headline)
                                     Text("Reset")
-                                        .font(.title3)
+                                        .font(.headline)
                                         .fontWeight(.semibold)
                                 }
                                 .foregroundColor(.primary)
                                 .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(12)
+                                .frame(height: 44)
+                                .background(Color(.systemGray5))
+                                .cornerRadius(10)
                             }
                         }
                         
-                        // Start Brewing button (only when ready)
-                        if viewModel.currentStep == "Ready to start brewing!" {
+                        Button(action: {
+                            viewModel.startTimer()
+                        }) {
+                            HStack {
+                                Image(systemName: "play.fill")
+                                    .font(.headline)
+                                Text("Start Brewing")
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
+                            }
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 44)
+                            .background(Color.orange)
+                            .cornerRadius(10)
+                        }
+                    } else {
+                        // Brewing phase buttons
+                        HStack(spacing: 12) {
                             Button(action: {
-                                viewModel.startTimer()
+                                viewModel.toggleTimer()
                             }) {
                                 HStack {
-                                    Image(systemName: "play.fill")
-                                        .font(.title3)
-                                    Text("Start Brewing")
-                                        .font(.title3)
+                                    Image(systemName: viewModel.isTimerRunning ? "pause.fill" : "play.fill")
+                                        .font(.headline)
+                                    Text(viewModel.isTimerRunning ? "Pause" : "Resume")
+                                        .font(.headline)
                                         .fontWeight(.semibold)
                                 }
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.orange)
-                                .cornerRadius(12)
+                                .frame(height: 44)
+                                .background(viewModel.isTimerRunning ? Color.red : Color.green)
+                                .cornerRadius(10)
                             }
-                        }
-                    } else {
-                        // Brewing phase buttons
-                        if !viewModel.isTimerRunning {
-                            HStack(spacing: 16) {
-                                Button(action: {
-                                    viewModel.startTimer()
-                                }) {
-                                    HStack {
-                                        Image(systemName: "play.fill")
-                                            .font(.title3)
-                                        Text("Start Brewing")
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                    }
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.orange)
-                                    .cornerRadius(12)
-                                }
-                                
-                                Button(action: {
-                                    viewModel.resetTimer()
-                                }) {
-                                    HStack {
-                                        Image(systemName: "arrow.clockwise")
-                                            .font(.title3)
-                                        Text("Reset")
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                    }
-                                    .foregroundColor(.primary)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.gray.opacity(0.2))
-                                    .cornerRadius(12)
-                                }
-                            }
-                        } else {
+                            
                             Button(action: {
-                                viewModel.stopTimer()
+                                viewModel.finishBrewing()
                             }) {
                                 HStack {
-                                    Image(systemName: "pause.fill")
-                                        .font(.title3)
-                                    Text("Pause")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
+                                    Image(systemName: "checkmark")
+                                        .font(.headline)
+                                    Text("Finish Brewing")
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
                                 }
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.red)
-                                .cornerRadius(12)
+                                .frame(height: 44)
+                                .background(Color.blue)
+                                .cornerRadius(10)
                             }
                         }
                     }
-                    
-                    // Finish Brewing Button
-                    NavigationLink(destination: FeedbackScreen(
-                        coffeeDose: coffeeDose,
-                        waterAmount: waterAmount,
-                        waterTemperature: waterTemperature,
-                        grindSize: grindSize,
-                        brewTime: brewTime
-                    )) {
-                        HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                                .font(.title3)
-                            Text("Finish Brewing")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                        }
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(12)
-                    }
                 }
-                .padding(.horizontal)
-                .padding(.bottom, 30)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
             }
             .navigationBarHidden(true)
-        }
-        .onDisappear {
-            viewModel.stopTimer()
         }
     }
     
