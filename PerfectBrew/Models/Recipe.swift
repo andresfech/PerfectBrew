@@ -6,7 +6,7 @@ struct Recipe: Codable, Identifiable {
     let brewingMethod: String
     let skillLevel: String
     let rating: Double
-    let parameters: BrewParameters
+    let parameters: RecipeBrewParameters
     let preparationSteps: [String]
     let brewingSteps: [BrewingStep]
     let equipment: [String]
@@ -33,7 +33,7 @@ struct Recipe: Codable, Identifiable {
         brewingMethod = try container.decode(String.self, forKey: .brewingMethod)
         skillLevel = try container.decode(String.self, forKey: .skillLevel)
         rating = try container.decode(Double.self, forKey: .rating)
-        parameters = try container.decode(BrewParameters.self, forKey: .parameters)
+        parameters = try container.decode(RecipeBrewParameters.self, forKey: .parameters)
         equipment = try container.decode([String].self, forKey: .equipment)
         notes = try container.decode(String.self, forKey: .notes)
         
@@ -70,7 +70,7 @@ struct Recipe: Codable, Identifiable {
     }
     
     // Regular initializer for creating instances in previews and tests
-    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: BrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String) {
+    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String) {
         self.title = title
         self.brewingMethod = brewingMethod
         self.skillLevel = skillLevel
@@ -115,6 +115,22 @@ struct BrewingStep: Codable {
 }
 
 struct BrewParameters: Codable {
+    let coffeeDose: Double
+    let waterAmount: Double
+    let waterTemperature: Double
+    let grindSize: Int
+    let brewTime: TimeInterval
+    
+    static let sampleBrewParameters = BrewParameters(
+        coffeeDose: 18.0,
+        waterAmount: 190.0,
+        waterTemperature: 95.0,
+        grindSize: 7,
+        brewTime: 180.0
+    )
+}
+
+struct RecipeBrewParameters: Codable {
     let coffeeGrams: Double
     let waterGrams: Double
     let ratio: String
@@ -222,4 +238,37 @@ class RecipeDatabase: ObservableObject {
             recipe.skillLevel.localizedCaseInsensitiveContains(query)
         }
     }
+}
+
+// Sample recipe for previews and fallback
+extension Recipe {
+    static let sampleRecipe = Recipe(
+        title: "Sample V60",
+        brewingMethod: "V60",
+        skillLevel: "Beginner",
+        rating: 4.5,
+        parameters: RecipeBrewParameters(
+            coffeeGrams: 16.0,
+            waterGrams: 256.0,
+            ratio: "1:16",
+            grindSize: "Medium-fine (like table salt)",
+            temperatureCelsius: 96.0,
+            bloomWaterGrams: 40.0,
+            bloomTimeSeconds: 45,
+            totalBrewTimeSeconds: 210
+        ),
+        preparationSteps: [
+            "Heat water to 96°C",
+            "Place filter in V60 and rinse with hot water",
+            "Add 16g of ground coffee"
+        ],
+        brewingSteps: [
+            BrewingStep(timeSeconds: 0, instruction: "Bloom: Pour 40mL of water and swirl gently"),
+            BrewingStep(timeSeconds: 45, instruction: "Main pour: Add remaining water in circular motion"),
+            BrewingStep(timeSeconds: 120, instruction: "Final swirl to flatten the bed"),
+            BrewingStep(timeSeconds: 210, instruction: "Enjoy your coffee!")
+        ],
+        equipment: ["V60", "Paper filter", "Kettle", "Scale", "Grinder"],
+        notes: "A simple and delicious V60 recipe for beginners."
+    )
 }

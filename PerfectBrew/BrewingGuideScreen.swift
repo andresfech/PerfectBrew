@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct BrewingGuideScreen: View {
-    @StateObject private var viewModel: BrewingGuideViewModel
+    @ObservedObject var viewModel: BrewingGuideViewModel
+    @StateObject private var localizationManager = LocalizationManager.shared
+    @State private var showingFeedback = false
     
     let coffeeDose: Double
     let waterAmount: Double
@@ -20,33 +22,33 @@ struct BrewingGuideScreen: View {
         
         // Initialize view model with recipe
         let viewModel = BrewingGuideViewModel(recipe: recipe)
-        self._viewModel = StateObject(wrappedValue: viewModel)
+        self._viewModel = ObservedObject(wrappedValue: viewModel)
     }
 
     var body: some View {
-        NavigationView {
-            VStack(spacing: 0) {
-                // Header - Fixed at top
-                VStack(spacing: 4) {
-                    Text("Perfect Brew")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    Text("Brewing Guide")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                .padding(.top, 10)
-                .padding(.bottom, 8)
+        VStack(spacing: 0) {
+            // Header - Fixed at top
+            VStack(spacing: 4) {
+                Text("perfect_brew".localized)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
                 
-                // Main Content - Compact layout
+                Text("brewing_guide".localized)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.top, 10)
+            .padding(.bottom, 8)
+            
+            // Main Content - Scrollable if needed
+            ScrollView {
                 VStack(spacing: 12) {
                     // Timer Section
                     if viewModel.isPreparationPhase {
                         // Preparation Progress
                         VStack(spacing: 8) {
-                            Text("Preparation Progress")
+                            Text("preparation_progress".localized)
                                 .font(.headline)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.primary)
@@ -67,7 +69,7 @@ struct BrewingGuideScreen: View {
                                     Text("\(viewModel.currentPreparationStepIndex + 1)/\(viewModel.preparationSteps.count)")
                                         .font(.title2)
                                         .fontWeight(.bold)
-                                    Text("steps")
+                                    Text("steps".localized)
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                 }
@@ -78,7 +80,7 @@ struct BrewingGuideScreen: View {
                         VStack(spacing: 8) {
                             // Total Time Progress
                             VStack(spacing: 6) {
-                                Text("Time Remaining")
+                                Text("time_remaining".localized)
                                     .font(.headline)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.primary)
@@ -99,7 +101,7 @@ struct BrewingGuideScreen: View {
                                         Text("\(Int(viewModel.totalTime - viewModel.elapsedTime))")
                                             .font(.title2)
                                             .fontWeight(.bold)
-                                        Text("seconds")
+                                        Text("seconds".localized)
                                             .font(.caption)
                                             .foregroundColor(.secondary)
                                     }
@@ -109,7 +111,7 @@ struct BrewingGuideScreen: View {
                             // Step Timer (for current brewing step)
                             if !viewModel.isInBloomPhase && viewModel.currentStepDuration > 0 {
                                 VStack(spacing: 6) {
-                                    Text("Step Remaining")
+                                    Text("step_remaining".localized)
                                         .font(.headline)
                                         .fontWeight(.semibold)
                                         .foregroundColor(.primary)
@@ -141,7 +143,7 @@ struct BrewingGuideScreen: View {
                             // Bloom Timer (if applicable)
                             if viewModel.isInBloomPhase {
                                 VStack(spacing: 6) {
-                                    Text("Bloom Remaining")
+                                    Text("bloom_remaining".localized)
                                         .font(.headline)
                                         .fontWeight(.semibold)
                                         .foregroundColor(.primary)
@@ -172,9 +174,9 @@ struct BrewingGuideScreen: View {
                         }
                     }
                     
-                    // Current Step Section - Compact
+                    // Current Step Section
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(viewModel.isPreparationPhase ? "Preparation Step" : "Current Step")
+                        Text(viewModel.isPreparationPhase ? "preparation_step".localized : "current_step".localized)
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
@@ -190,7 +192,6 @@ struct BrewingGuideScreen: View {
                                 .foregroundColor(.primary)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .multilineTextAlignment(.leading)
-                                .lineLimit(3)
                         }
                         .padding(12)
                         .background(Color(.systemGray6))
@@ -198,108 +199,122 @@ struct BrewingGuideScreen: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                
-                Spacer()
-                
-                // Control Buttons - Fixed at bottom
-                VStack(spacing: 12) {
-                    if viewModel.isPreparationPhase {
-                        // Preparation phase buttons
-                        HStack(spacing: 12) {
-                            Button(action: {
-                                viewModel.nextPreparationStep()
-                            }) {
-                                HStack {
-                                    Image(systemName: "arrow.right")
-                                        .font(.headline)
-                                    Text("Next Step")
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                }
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 44)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                            }
-                            
-                            Button(action: {
-                                viewModel.resetPreparation()
-                            }) {
-                                HStack {
-                                    Image(systemName: "arrow.clockwise")
-                                        .font(.headline)
-                                    Text("Reset")
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                }
-                                .foregroundColor(.primary)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 44)
-                                .background(Color(.systemGray5))
-                                .cornerRadius(10)
-                            }
-                        }
-                        
+                .padding(.bottom, 20)
+            }
+            
+            // Control Buttons - Fixed at bottom
+            VStack(spacing: 12) {
+                if viewModel.isPreparationPhase {
+                    // Preparation phase buttons
+                    HStack(spacing: 12) {
                         Button(action: {
-                            viewModel.startTimer()
+                            viewModel.nextPreparationStep()
                         }) {
                             HStack {
-                                Image(systemName: "play.fill")
+                                Image(systemName: "arrow.right")
                                     .font(.headline)
-                                Text("Start Brewing")
+                                Text("next_step".localized)
                                     .font(.headline)
                                     .fontWeight(.semibold)
                             }
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .frame(height: 44)
-                            .background(Color.orange)
+                            .background(Color.blue)
                             .cornerRadius(10)
                         }
-                    } else {
-                        // Brewing phase buttons
-                        HStack(spacing: 12) {
-                            Button(action: {
-                                viewModel.toggleTimer()
-                            }) {
-                                HStack {
-                                    Image(systemName: viewModel.isTimerRunning ? "pause.fill" : "play.fill")
-                                        .font(.headline)
-                                    Text(viewModel.isTimerRunning ? "Pause" : "Resume")
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                }
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 44)
-                                .background(viewModel.isTimerRunning ? Color.red : Color.green)
-                                .cornerRadius(10)
+                        
+                        Button(action: {
+                            viewModel.resetPreparation()
+                        }) {
+                            HStack {
+                                Image(systemName: "arrow.clockwise")
+                                    .font(.headline)
+                                Text("reset".localized)
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
                             }
-                            
-                            Button(action: {
-                                viewModel.finishBrewing()
-                            }) {
-                                HStack {
-                                    Image(systemName: "checkmark")
-                                        .font(.headline)
-                                    Text("Finish Brewing")
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                }
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 44)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                            }
+                            .foregroundColor(.primary)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 44)
+                            .background(Color(.systemGray5))
+                            .cornerRadius(10)
                         }
                     }
+                    
+                    Button(action: {
+                        viewModel.startTimer()
+                    }) {
+                        HStack {
+                            Image(systemName: "play.fill")
+                                .font(.headline)
+                            Text("start_brewing".localized)
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                        }
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                    }
+                } else {
+                    // Brewing phase buttons
+                    HStack(spacing: 12) {
+                        Button(action: {
+                            viewModel.toggleTimer()
+                        }) {
+                            HStack {
+                                Image(systemName: viewModel.isTimerRunning ? "pause.fill" : "play.fill")
+                                    .font(.headline)
+                                Text(viewModel.isTimerRunning ? "pause".localized : "resume".localized)
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
+                            }
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 44)
+                            .background(viewModel.isTimerRunning ? Color.red : Color.green)
+                            .cornerRadius(10)
+                        }
+                        
+                        Button(action: {
+                            viewModel.finishBrewing()
+                            showingFeedback = true
+                        }) {
+                            HStack {
+                                Image(systemName: "checkmark")
+                                    .font(.headline)
+                                Text("finish_brewing".localized)
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
+                            }
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 44)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                        }
+                        .background(
+                            NavigationLink(destination: FeedbackScreen(
+                                recipe: recipe,
+                                brewParameters: BrewParameters(
+                                    coffeeDose: coffeeDose,
+                                    waterAmount: waterAmount,
+                                    waterTemperature: waterTemperature,
+                                    grindSize: grindSize,
+                                    brewTime: brewTime
+                                )
+                            ), isActive: $showingFeedback) {
+                                EmptyView()
+                            }
+                        )
+                    }
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
             }
-            .navigationBarHidden(true)
+            .padding(.horizontal, 20)
+            .padding(.bottom, 20)
+            .background(Color(.systemBackground))
         }
     }
     
@@ -344,7 +359,7 @@ struct BrewingGuideScreen_Previews: PreviewProvider {
                 brewingMethod: "V60",
                 skillLevel: "Beginner",
                 rating: 4.5,
-                parameters: BrewParameters(
+                parameters: RecipeBrewParameters(
                     coffeeGrams: 15,
                     waterGrams: 250,
                     ratio: "1:16.7",

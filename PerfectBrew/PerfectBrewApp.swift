@@ -4,7 +4,7 @@ import SwiftUI
 struct PerfectBrewApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            MainTabView()
         }
     }
 }

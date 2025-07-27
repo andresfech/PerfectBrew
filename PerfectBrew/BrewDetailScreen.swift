@@ -285,7 +285,7 @@ struct BrewDetailScreen_Previews: PreviewProvider {
                 brewingMethod: "V60",
                 skillLevel: "Beginner",
                 rating: 4.5,
-                parameters: BrewParameters(
+                parameters: RecipeBrewParameters(
                     coffeeGrams: 15,
                     waterGrams: 250,
                     ratio: "1:16.7",
