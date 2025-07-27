@@ -1,0 +1,419 @@
+[
+  {
+    "title": "Kaldi's Coffee",
+    "brewing_method": "V60",
+    "skill_level": "Beginner",
+    "rating": 4.3,
+    "parameters": {
+      "coffee_grams": 16,
+      "water_grams": 256,
+      "ratio": "1:16",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 40,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 210
+    },
+    "steps": [
+      "Heat water to 96–100°C.",
+      "Place filter and rinse with hot water. Discard rinse.",
+      "Add 16g ground coffee. Create center divot.",
+      "Pour 40g water for bloom. Swirl and stir to saturate.",
+      "At 0:45, pour aggressively to 115g, swirl to flatten.",
+      "Finish pouring slowly to 256g.",
+      "Swirl again to level bed. Let drain."
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "scale",
+      "gooseneck kettle",
+      "stirring stick"
+    ],
+    "notes": "Total brew time between 2:45 and 3:30."
+  },
+  {
+    "title": "James Hoffmann V60",
+    "brewing_method": "V60",
+    "skill_level": "Intermediate",
+    "rating": 4.8,
+    "parameters": {
+      "coffee_grams": 15,
+      "water_grams": 250,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 30,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 180
+    },
+    "steps": [
+      "Heat water to 95°C.",
+      "Rinse filter and preheat V60.",
+      "Add 15g coffee, create flat bed.",
+      "Pour 30g water, stir gently to saturate.",
+      "Wait 45 seconds for bloom.",
+      "Pour to 100g in 10 seconds, gentle swirl.",
+      "Pour to 150g, wait 30 seconds.",
+      "Pour to 200g, wait 30 seconds.",
+      "Final pour to 250g, gentle swirl.",
+      "Let drain completely."
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer"
+    ],
+    "notes": "Focus on consistent pour rate and gentle agitation."
+  },
+  {
+    "title": "Tetsu Kasuya 4:6 Method",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.6,
+    "parameters": {
+      "coffee_grams": 20,
+      "water_grams": 300,
+      "ratio": "1:15",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 92,
+      "bloom_water_grams": 50,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 240
+    },
+    "steps": [
+      "Heat water to 92°C.",
+      "Rinse filter and preheat V60.",
+      "Add 20g coffee, level the bed.",
+      "Pour 50g water (40% of total), stir gently.",
+      "Wait 45 seconds for bloom.",
+      "Pour 70g water (60% of remaining), gentle swirl.",
+      "Wait 45 seconds.",
+      "Pour 60g water, gentle swirl.",
+      "Wait 45 seconds.",
+      "Pour 60g water, gentle swirl.",
+      "Wait 45 seconds.",
+      "Final pour of 60g water, gentle swirl.",
+      "Let drain completely."
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "The 4:6 method focuses on controlling sweetness and acidity through pour timing."
+  },
+  {
+    "title": "Scott Rao V60",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 300,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 54,
+      "bloom_time_seconds": 30,
+      "total_brew_time_seconds": 195
+    },
+    "steps": [
+      "Heat water to 94°C.",
+      "Rinse filter thoroughly.",
+      "Add 18g coffee, level bed.",
+      "Pour 54g water (3x coffee weight), stir gently.",
+      "Wait 30 seconds for bloom.",
+      "Pour to 150g in 15 seconds, gentle swirl.",
+      "Pour to 225g in 15 seconds, gentle swirl.",
+      "Pour to 300g in 15 seconds, gentle swirl.",
+      "Let drain completely."
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Focus on maintaining consistent pour rate and minimal agitation."
+  },
+  {
+    "title": "Quick Morning V60",
+    "brewing_method": "V60",
+    "skill_level": "Beginner",
+    "rating": 4.2,
+    "parameters": {
+      "coffee_grams": 12,
+      "water_grams": 200,
+      "ratio": "1:16.7",
+      "grind_size": "Medium",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 36,
+      "bloom_time_seconds": 30,
+      "total_brew_time_seconds": 150
+    },
+    "steps": [
+      "Heat water to 95°C.",
+      "Rinse filter quickly.",
+      "Add 12g coffee.",
+      "Pour 36g water, stir gently.",
+      "Wait 30 seconds.",
+      "Pour remaining water in 2-3 pours.",
+      "Let drain."
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for busy mornings when you need coffee quickly."
+  },
+  {
+    "title": "Competition Style V60",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.9,
+    "parameters": {
+      "coffee_grams": 15,
+      "water_grams": 250,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 93,
+      "bloom_water_grams": 45,
+      "bloom_time_seconds": 40,
+      "total_brew_time_seconds": 180
+    },
+    "steps": [
+      "Heat water to 93°C.",
+      "Rinse filter thoroughly and preheat.",
+      "Add 15g coffee, create flat bed.",
+      "Pour 45g water, stir in figure-8 pattern.",
+      "Wait 40 seconds for bloom.",
+      "Pour to 100g in 10 seconds, gentle swirl.",
+      "Pour to 150g in 10 seconds, gentle swirl.",
+      "Pour to 200g in 10 seconds, gentle swirl.",
+      "Final pour to 250g, gentle swirl.",
+      "Let drain completely."
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Competition-style brewing focuses on precision and consistency."
+  },
+  {
+    "title": "Classic Chemex",
+    "brewing_method": "Chemex",
+    "skill_level": "Beginner",
+    "rating": 4.4,
+    "parameters": {
+      "coffee_grams": 30,
+      "water_grams": 500,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 60,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 300
+    },
+    "steps": [
+      "Heat water to 95°C",
+      "Rinse Chemex filter thoroughly",
+      "Add 30g coffee, level the bed",
+      "Pour 60g water for bloom, stir gently",
+      "Wait 45 seconds",
+      "Pour to 200g in slow, steady stream",
+      "Wait 30 seconds",
+      "Pour to 350g",
+      "Wait 30 seconds",
+      "Final pour to 500g",
+      "Let drain completely"
+    ],
+    "equipment": [
+      "Chemex 6-cup",
+      "Chemex filters",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer"
+    ],
+    "notes": "Chemex produces a clean, bright cup with low body."
+  },
+  {
+    "title": "Chemex Single Cup",
+    "brewing_method": "Chemex",
+    "skill_level": "Intermediate",
+    "rating": 4.3,
+    "parameters": {
+      "coffee_grams": 15,
+      "water_grams": 250,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 30,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 240
+    },
+    "steps": [
+      "Heat water to 94°C",
+      "Rinse filter and preheat Chemex",
+      "Add 15g coffee, level the bed",
+      "Pour 30g water for bloom, stir gently",
+      "Wait 45 seconds",
+      "Pour to 100g in slow, steady stream",
+      "Wait 30 seconds",
+      "Pour to 175g",
+      "Wait 30 seconds",
+      "Final pour to 250g",
+      "Let drain completely"
+    ],
+    "equipment": [
+      "Chemex 3-cup",
+      "Chemex filters",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer"
+    ],
+    "notes": "Perfect single-serve Chemex brewing method."
+  },
+  {
+    "title": "French Press Classic",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.2,
+    "parameters": {
+      "coffee_grams": 30,
+      "water_grams": 500,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 240
+    },
+    "steps": [
+      "Heat water to 95°C",
+      "Add 30g coarse ground coffee",
+      "Pour 500g hot water",
+      "Stir gently to saturate grounds",
+      "Place lid on top (don't press yet)",
+      "Wait 4 minutes",
+      "Press plunger down slowly",
+      "Pour immediately"
+    ],
+    "equipment": [
+      "French Press",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Simple and forgiving method, produces full-bodied coffee."
+  },
+  {
+    "title": "French Press Single Cup",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.1,
+    "parameters": {
+      "coffee_grams": 15,
+      "water_grams": 250,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 240
+    },
+    "steps": [
+      "Heat water to 95°C",
+      "Add 15g coarse ground coffee",
+      "Pour 250g hot water",
+      "Stir gently to saturate grounds",
+      "Place lid on top (don't press yet)",
+      "Wait 4 minutes",
+      "Press plunger down slowly",
+      "Pour immediately"
+    ],
+    "equipment": [
+      "French Press",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for single-serve French Press brewing."
+  },
+  {
+    "title": "AeroPress Standard",
+    "brewing_method": "AeroPress",
+    "skill_level": "Beginner",
+    "rating": 4.5,
+    "parameters": {
+      "coffee_grams": 17,
+      "water_grams": 250,
+      "ratio": "1:14.7",
+      "grind_size": "Fine",
+      "temperature_celsius": 85,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 120
+    },
+    "steps": [
+      "Heat water to 85°C",
+      "Insert filter into cap",
+      "Add 17g fine ground coffee",
+      "Pour 250g hot water",
+      "Stir for 10 seconds",
+      "Insert plunger and pull up slightly",
+      "Wait 1 minute",
+      "Press down slowly over 30 seconds"
+    ],
+    "equipment": [
+      "AeroPress",
+      "AeroPress filters",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Versatile method that can produce both espresso-like and filter coffee."
+  },
+  {
+    "title": "AeroPress Inverted",
+    "brewing_method": "AeroPress",
+    "skill_level": "Intermediate",
+    "rating": 4.6,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 250,
+      "ratio": "1:13.9",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 88,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 150
+    },
+    "steps": [
+      "Heat water to 88°C",
+      "Invert AeroPress (plunger at bottom)",
+      "Add 18g medium-fine ground coffee",
+      "Pour 250g hot water",
+      "Stir for 10 seconds",
+      "Wait 1 minute",
+      "Screw on cap with filter",
+      "Flip and press down slowly over 30 seconds"
+    ],
+    "equipment": [
+      "AeroPress",
+      "AeroPress filters",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Inverted method prevents premature dripping and allows longer steeping."
+  }
+]

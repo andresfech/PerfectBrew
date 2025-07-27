@@ -10,7 +10,8 @@ struct HomeScreen: View {
         case aeroPress = "AeroPress"
         
         var isAvailable: Bool {
-            return self == .v60
+            // Enable all methods now that we have recipes
+            return true
         }
         
         var icon: String {

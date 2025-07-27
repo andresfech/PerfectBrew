@@ -2,7 +2,26 @@ import SwiftUI
 
 struct RecipeSelectionScreen: View {
     let selectedMethod: HomeScreen.BrewMethod
-    @State private var recipes: [Recipe] = []
+    @StateObject private var recipeDatabase = RecipeDatabase()
+    @State private var selectedDifficulty: Difficulty? = nil
+    @State private var searchText = ""
+    
+    var filteredRecipes: [Recipe] {
+        var recipes = recipeDatabase.getRecipes(for: selectedMethod)
+        
+        if let difficulty = selectedDifficulty {
+            recipes = recipes.filter { $0.difficulty == difficulty }
+        }
+        
+        if !searchText.isEmpty {
+            recipes = recipes.filter { recipe in
+                recipe.title.localizedCaseInsensitiveContains(searchText) ||
+                recipe.skillLevel.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+        
+        return recipes
+    }
     
     var body: some View {
         NavigationView {
@@ -14,88 +33,91 @@ struct RecipeSelectionScreen: View {
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     
-                    Text("Craft the perfect cup")
+                    Text("\(selectedMethod.rawValue) Recipes")
                         .font(.title3)
                         .foregroundColor(.secondary)
                 }
                 .padding(.top, 20)
                 
-                // Recipes Section
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("\(selectedMethod.rawValue) Recipes")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                        .padding(.horizontal)
-                    
-                    // Recipe Grid
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
-                        ForEach(recipes) { recipe in
-                            RecipeCard(recipe: recipe)
+                // Search Bar
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                    TextField("Search recipes...", text: $searchText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                .padding(.horizontal)
+                
+                // Difficulty Filter
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        FilterChip(
+                            title: "All",
+                            isSelected: selectedDifficulty == nil,
+                            action: { selectedDifficulty = nil }
+                        )
+                        
+                        ForEach(Difficulty.allCases, id: \.self) { difficulty in
+                            FilterChip(
+                                title: difficulty.rawValue,
+                                isSelected: selectedDifficulty == difficulty,
+                                action: { selectedDifficulty = difficulty }
+                            )
                         }
                     }
                     .padding(.horizontal)
                 }
                 
+                // Recipes Section
+                if filteredRecipes.isEmpty {
+                    VStack(spacing: 16) {
+                        Image(systemName: "cup.and.saucer")
+                            .font(.system(size: 48))
+                            .foregroundColor(.gray)
+                        Text("No recipes found")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                        Text("Try adjusting your search or filters")
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
+                            ForEach(filteredRecipes) { recipe in
+                                NavigationLink(destination: BrewDetailScreen(recipe: recipe)) {
+                                    RecipeCard(recipe: recipe)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+                
                 Spacer()
-                
-                // Select Recipe Button
-                Button(action: {
-                    // TODO: Navigate to recipe detail or brew setup
-                }) {
-                    HStack {
-                        Image(systemName: "play.fill")
-                            .font(.title3)
-                        Text("Select a Recipe")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                    }
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.orange)
-                    .cornerRadius(12)
-                }
-                .padding(.horizontal)
-                
-                // Brew History Section
-                VStack(spacing: 16) {
-                    Text("Brew History")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.orange)
-                    
-                    NavigationLink(destination: BrewHistoryScreen()) {
-                        Text("View History")
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .foregroundColor(.orange)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.orange.opacity(0.1))
-                            .cornerRadius(12)
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.bottom, 30)
             }
             .navigationBarHidden(true)
-            .onAppear {
-                loadRecipes()
-            }
         }
     }
+}
+
+struct FilterChip: View {
+    let title: String
+    let isSelected: Bool
+    let action: () -> Void
     
-    private func loadRecipes() {
-        switch selectedMethod {
-        case .v60:
-            recipes = Recipe.v60Recipes
-        case .chemex:
-            recipes = [] // TODO: Add Chemex recipes
-        case .frenchPress:
-            recipes = [] // TODO: Add French Press recipes
-        case .aeroPress:
-            recipes = [] // TODO: Add AeroPress recipes
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .font(.caption)
+                .fontWeight(.medium)
+                .foregroundColor(isSelected ? .white : .primary)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(isSelected ? Color.orange : Color.gray.opacity(0.2))
+                .cornerRadius(16)
         }
     }
 }
@@ -105,19 +127,19 @@ struct RecipeCard: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            // V60 Icon
+            // Brewing Method Icon
             VStack(spacing: 4) {
-                Image(systemName: "drop.fill")
+                Image(systemName: brewingMethodIcon)
                     .font(.system(size: 24))
-                    .foregroundColor(.gray)
-                Text("V60")
+                    .foregroundColor(brewingMethodColor)
+                Text(recipe.brewingMethod)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
             .frame(height: 40)
             
             // Recipe Name
-            Text(recipe.name)
+            Text(recipe.title)
                 .font(.headline)
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
@@ -135,7 +157,7 @@ struct RecipeCard: View {
             }
             
             // Difficulty Tag
-            Text(recipe.difficulty.rawValue)
+            Text(recipe.skillLevel)
                 .font(.caption)
                 .fontWeight(.medium)
                 .foregroundColor(difficultyColor)
@@ -158,13 +180,45 @@ struct RecipeCard: View {
     }
     
     private var difficultyColor: Color {
-        switch recipe.difficulty {
-        case .beginner:
+        switch recipe.skillLevel.lowercased() {
+        case "beginner":
             return .green
-        case .intermediate:
+        case "intermediate":
             return .orange
-        case .advanced:
+        case "advanced":
             return .red
+        default:
+            return .gray
+        }
+    }
+    
+    private var brewingMethodIcon: String {
+        switch recipe.brewingMethod.lowercased() {
+        case "v60":
+            return "drop.fill"
+        case "chemex":
+            return "hourglass"
+        case "french press":
+            return "cylinder.fill"
+        case "aeropress":
+            return "bolt.fill"
+        default:
+            return "cup.and.saucer"
+        }
+    }
+    
+    private var brewingMethodColor: Color {
+        switch recipe.brewingMethod.lowercased() {
+        case "v60":
+            return .orange
+        case "chemex":
+            return .gray
+        case "french press":
+            return .red
+        case "aeropress":
+            return .yellow
+        default:
+            return .blue
         }
     }
 }
