@@ -34,23 +34,94 @@ struct BrewDetailScreen: View {
                 }
                 
                 // Parameters Card
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("Brew Parameters")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 12) {
-                        ParameterRow(title: "Coffee", value: "\(recipe.parameters.coffeeGrams)g")
-                        ParameterRow(title: "Water", value: "\(recipe.parameters.waterGrams)g")
-                        ParameterRow(title: "Ratio", value: recipe.parameters.ratio)
-                        ParameterRow(title: "Grind Size", value: recipe.parameters.grindSize)
-                        ParameterRow(title: "Temperature", value: "\(Int(recipe.parameters.temperatureCelsius))°C")
-                        ParameterRow(title: "Brew Time", value: "\(recipe.parameters.totalBrewTimeSeconds)s")
+                VStack(alignment: .leading, spacing: 20) {
+                    HStack {
+                        Image(systemName: "slider.horizontal.3")
+                            .font(.title2)
+                            .foregroundColor(.orange)
+                        Text("Brew Parameters")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Spacer()
                     }
+                    
+                    // First row - Coffee and Water
+                    HStack(spacing: 16) {
+                        ParameterRow(
+                            icon: "drop.fill",
+                            title: "Coffee",
+                            value: "\(recipe.parameters.coffeeGrams)g",
+                            color: .brown
+                        )
+                        ParameterRow(
+                            icon: "drop.fill",
+                            title: "Water",
+                            value: "\(recipe.parameters.waterGrams)g",
+                            color: .blue
+                        )
+                    }
+                    
+                    // Second row - Ratio and Temperature
+                    HStack(spacing: 16) {
+                        ParameterRow(
+                            icon: "arrow.left.arrow.right",
+                            title: "Ratio",
+                            value: recipe.parameters.ratio,
+                            color: .green
+                        )
+                        ParameterRow(
+                            icon: "thermometer",
+                            title: "Temperature",
+                            value: "\(Int(recipe.parameters.temperatureCelsius))°C",
+                            color: .red
+                        )
+                    }
+                    
+                    // Third row - Brew Time
+                    HStack(spacing: 16) {
+                        ParameterRow(
+                            icon: "clock.fill",
+                            title: "Brew Time",
+                            value: "\(recipe.parameters.totalBrewTimeSeconds)s",
+                            color: .orange
+                        )
+                        Spacer()
+                    }
+                    
+                    // Fourth row - Grind Size (full width)
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Image(systemName: "circle.grid.2x2.fill")
+                                .font(.title2)
+                                .foregroundColor(.purple)
+                                .frame(width: 24, height: 24)
+                            Text("GRIND SIZE")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .textCase(.uppercase)
+                        }
+                        Text(recipe.parameters.grindSize)
+                            .font(.body)
+                            .foregroundColor(.primary)
+                            .multilineTextAlignment(.leading)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.systemGray6))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.purple.opacity(0.2), lineWidth: 1)
+                            )
+                    )
                 }
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(12)
+                .padding(20)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color(.systemBackground))
+                        .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 2)
+                )
                 
                 // Preparation Steps
                 if !recipe.preparationSteps.isEmpty {
@@ -170,22 +241,39 @@ struct BrewDetailScreen: View {
 }
 
 struct ParameterRow: View {
+    let icon: String
     let title: String
     let value: String
+    let color: Color
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.caption)
-                .foregroundColor(.secondary)
-            Text(value)
-                .font(.headline)
-                .fontWeight(.semibold)
+        HStack(alignment: .center, spacing: 12) {
+            Image(systemName: icon)
+                .font(.title2)
+                .foregroundColor(color)
+                .frame(width: 24, height: 24)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .textCase(.uppercase)
+                Text(value)
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.primary)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding()
-        .background(Color(.systemBackground))
-        .cornerRadius(8)
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color(.systemGray6))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(color.opacity(0.2), lineWidth: 1)
+                )
+        )
     }
 }
 
