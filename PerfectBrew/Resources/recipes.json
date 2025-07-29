@@ -15,6 +15,7 @@
   },
   "preparation_steps": [
     "Heat water to desired temperature (205-212°F / 96-100°C).",
+    "Grind 16 grams of coffee to medium-fine consistency.",
     "Place filter in V60 and rinse with 50-100mL of hot water to pre-heat and remove paper taste. Discard rinse water.",
     "Add 16 grams of ground coffee, gently shake to level, and create a deep divot in the center."
   ],
@@ -51,56 +52,63 @@
   {
     "title": "James Hoffmann V60",
     "brewing_method": "V60",
-    "skill_level": "Intermediate",
+    "skill_level": "Expert",
     "rating": 4.8,
     "parameters": {
-      "coffee_grams": 15,
-      "water_grams": 250,
-      "ratio": "1:16.7",
-      "grind_size": "Medium-fine",
+      "coffee_grams": 30,
+      "water_grams": 500,
+      "ratio": "1:16.67",
+      "grind_size": "Medium-fine for lighter roasted coffees; coarser for darker roasts. Ultimately, grind size is dialed in by taste, aiming for the finest possible grind before bitterness emerges.",
       "temperature_celsius": 95,
-      "bloom_water_grams": 30,
+      "bloom_water_grams": 60,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 180
+      "total_brew_time_seconds": 210
     },
     "preparation_steps": [
       "Heat water to 95°C.",
-      "Rinse filter and preheat V60.",
-      "Add 15g coffee, create flat bed."
+      "Grind 30 grams of coffee to medium-fine consistency.",
+      "Fold filter paper along seam and fit to V60.",
+      "Pre-heat with hot water and discard.",
+      "Add coffee to V60 and make a small well/divot in the center of the bed."
     ],
     "brewing_steps": [
       {
         "time_seconds": 0,
-        "instruction": "Pour 30g water, stir gently to saturate."
+        "instruction": "Bloom (0:00): Start timer. Pour 60 grams of water (2x coffee dose) to saturate the grounds."
+      },
+      {
+        "time_seconds": 10,
+        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:45. This bloom period allows for de-gassing, which is crucial for fresh coffee."
       },
       {
         "time_seconds": 45,
-        "instruction": "Pour to 100g in 10 seconds, gentle swirl."
+        "instruction": "First Main Pour (0:45 - 1:15): Pour up to 300 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
       },
       {
         "time_seconds": 75,
-        "instruction": "Pour to 150g, wait 30 seconds."
+        "instruction": "Second Main Pour (1:15 - 1:45): Gently pour up to 500 grams of water (100% of total brew water) within 30 seconds."
       },
       {
         "time_seconds": 105,
-        "instruction": "Pour to 200g, wait 30 seconds."
+        "instruction": "Stir (1:45): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
       },
       {
-        "time_seconds": 135,
-        "instruction": "Final pour to 250g, gentle swirl."
-      },
-      {
-        "time_seconds": 165,
-        "instruction": "Let drain completely."
+        "time_seconds": 115,
+        "instruction": "Swirl (1:55): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
       }
     ],
     "equipment": [
-      "Hario V60 02 Brewer",
-      "Digital scale",
-      "Gooseneck kettle",
-      "Timer"
+      "Hario V60 Brewer",
+      "paper filter",
+      "scale",
+      "kettle (gooseneck preferred)",
+      "stirring stick or spoon"
     ],
-    "notes": "Focus on consistent pour rate and gentle agitation."
+    "notes": "Water Temperature: 95°C general, 100°C for high-quality light roasts, 90–95°C or 80–90°C for darker roasts. Aim to finish drawdown by 3 minutes 30 seconds. Total brew time can vary, but focus on a complete, even drain."
   },
   {
     "title": "Tetsu Kasuya 4:6 Method",
@@ -119,6 +127,7 @@
     },
     "preparation_steps": [
       "Heat water to 92°C.",
+      "Grind 20 grams of coffee to medium-coarse consistency.",
       "Rinse filter and preheat V60.",
       "Add 20g coffee, level the bed."
     ],
@@ -174,6 +183,7 @@
     },
     "preparation_steps": [
       "Heat water to 94°C.",
+      "Grind 18 grams of coffee to medium-fine consistency.",
       "Rinse filter thoroughly.",
       "Add 18g coffee, level bed."
     ],
@@ -225,6 +235,7 @@
     },
     "preparation_steps": [
       "Heat water to 95°C.",
+      "Grind 12 grams of coffee to medium consistency.",
       "Rinse filter quickly.",
       "Add 12g coffee."
     ],
@@ -267,6 +278,7 @@
     },
     "preparation_steps": [
       "Heat water to 93°C.",
+      "Grind 15 grams of coffee to medium-fine consistency.",
       "Rinse filter thoroughly and preheat.",
       "Add 15g coffee, create flat bed."
     ],
@@ -322,6 +334,7 @@
     },
     "preparation_steps": [
       "Heat water to 95°C",
+      "Grind 30 grams of coffee to medium-coarse consistency.",
       "Rinse Chemex filter thoroughly",
       "Add 30g coffee, level the bed"
     ],
@@ -381,6 +394,7 @@
     },
     "preparation_steps": [
       "Heat water to 94°C",
+      "Grind 15 grams of coffee to medium-coarse consistency.",
       "Rinse filter and preheat Chemex",
       "Add 15g coffee, level the bed"
     ],
@@ -440,6 +454,7 @@
     },
     "preparation_steps": [
       "Heat water to 95°C",
+      "Grind 30 grams of coffee to coarse consistency.",
       "Add 30g coarse ground coffee"
     ],
     "brewing_steps": [
@@ -489,6 +504,7 @@
     },
     "preparation_steps": [
       "Heat water to 95°C",
+      "Grind 15 grams of coffee to coarse consistency.",
       "Add 15g coarse ground coffee"
     ],
     "brewing_steps": [
@@ -538,6 +554,7 @@
     },
     "preparation_steps": [
       "Heat water to 85°C",
+      "Grind 17 grams of coffee to fine consistency.",
       "Insert filter into cap",
       "Add 17g fine ground coffee"
     ],
@@ -589,6 +606,7 @@
     },
     "preparation_steps": [
       "Heat water to 88°C",
+      "Grind 18 grams of coffee to medium-fine consistency.",
       "Invert AeroPress (plunger at bottom)",
       "Add 18g medium-fine ground coffee"
     ],

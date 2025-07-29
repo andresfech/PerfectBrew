@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F4EA586B2E39444F00903EAD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F4EA586A2E39444F00903EAD /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F49730A82E35356F001D8E6D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -22,6 +26,19 @@
 			remoteInfo = PerfectBrew;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F4EA58682E393D3700903EAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F497309A2E35356D001D8E6D /* PerfectBrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectBrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EA586B2E39444F00903EAD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +96,7 @@
 				F497309C2E35356D001D8E6D /* PerfectBrew */,
 				F49730AA2E35356F001D8E6D /* PerfectBrewTests */,
 				F49730B42E35356F001D8E6D /* PerfectBrewUITests */,
+				F4EA58622E393D1F00903EAD /* Frameworks */,
 				F497309B2E35356D001D8E6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +111,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F4EA58622E393D1F00903EAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +128,7 @@
 				F49730962E35356D001D8E6D /* Sources */,
 				F49730972E35356D001D8E6D /* Frameworks */,
 				F49730982E35356D001D8E6D /* Resources */,
+				F4EA58682E393D3700903EAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -112,6 +139,7 @@
 			);
 			name = PerfectBrew;
 			packageProductDependencies = (
+				F4EA586A2E39444F00903EAD /* Lottie */,
 			);
 			productName = PerfectBrew;
 			productReference = F497309A2E35356D001D8E6D /* PerfectBrew.app */;
@@ -195,6 +223,9 @@
 			);
 			mainGroup = F49730912E35356D001D8E6D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F4EA58692E39444F00903EAD /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F497309B2E35356D001D8E6D /* Products */;
 			projectDirPath = "";
@@ -550,6 +581,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4EA58692E39444F00903EAD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4EA586A2E39444F00903EAD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4EA58692E39444F00903EAD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F49730922E35356D001D8E6D /* Project object */;
 }

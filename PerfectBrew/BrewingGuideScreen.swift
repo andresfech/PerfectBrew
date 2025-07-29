@@ -174,6 +174,20 @@ struct BrewingGuideScreen: View {
                         }
                     }
                     
+                    // Water Pouring Animation
+                    if !viewModel.isPreparationPhase {
+                        ZStack {
+                            WaterPouringLottie(
+                                isActive: viewModel.isTimerRunning,
+                                progress: viewModel.totalProgress
+                            )
+                            
+                            SteamLottie(isActive: viewModel.totalProgress > 0.1)
+                            RippleLottie(isActive: viewModel.totalProgress > 0.05)
+                        }
+                        .frame(height: 120)
+                    }
+                    
                     // Current Step Section
                     VStack(alignment: .leading, spacing: 6) {
                         Text(viewModel.isPreparationPhase ? "preparation_step".localized : "current_step".localized)
@@ -318,6 +332,8 @@ struct BrewingGuideScreen: View {
         }
     }
     
+
+    
     // Computed properties for animations
     private var progress: Double {
         let remaining = max(0, viewModel.totalTime - viewModel.elapsedTime)
@@ -345,6 +361,8 @@ struct BrewingGuideScreen: View {
         return String(format: "%.0f", remaining)
     }
 }
+
+
 
 struct BrewingGuideScreen_Previews: PreviewProvider {
     static var previews: some View {
