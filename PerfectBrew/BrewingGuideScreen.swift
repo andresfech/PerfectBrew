@@ -1,4 +1,5 @@
 import SwiftUI
+import Lottie
 
 struct BrewingGuideScreen: View {
     @ObservedObject var viewModel: BrewingGuideViewModel
@@ -11,6 +12,18 @@ struct BrewingGuideScreen: View {
     let grindSize: Int
     let brewTime: TimeInterval
     let recipe: Recipe
+    
+    // Check if current step is about heating water
+    private var isHeatingWaterStep: Bool {
+        let step = viewModel.currentStep.lowercased()
+        return step.contains("heat") && step.contains("water")
+    }
+    
+    // Check if current step is about grinding coffee
+    private var isGrindingCoffeeStep: Bool {
+        let step = viewModel.currentStep.lowercased()
+        return step.contains("grind") && step.contains("coffee")
+    }
 
     init(coffeeDose: Double, waterAmount: Double, waterTemperature: Double, grindSize: Int, brewTime: TimeInterval, recipe: Recipe) {
         self.coffeeDose = coffeeDose
@@ -174,7 +187,7 @@ struct BrewingGuideScreen: View {
                         }
                     }
                     
-                    // Water Pouring Animation
+                    // Water Pouring Animation (for brewing phase)
                     if !viewModel.isPreparationPhase {
                         ZStack {
                             WaterPouringLottie(
@@ -210,6 +223,38 @@ struct BrewingGuideScreen: View {
                         .padding(12)
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
+                    }
+                    
+                    // Thermometer Animation (for heating water step in preparation phase)
+                    if viewModel.isPreparationPhase && isHeatingWaterStep {
+                        Spacer()
+                        
+                        VStack(spacing: 8) {
+                            LottieView(name: "Thermometer Hot", loopMode: .loop, speed: 1.0, isPlaying: true)
+                                .frame(width: 120, height: 120)
+                            
+                            Text("Heating water...")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                    // Coffee Beans Animation (for grinding coffee step in preparation phase)
+                    if viewModel.isPreparationPhase && isGrindingCoffeeStep {
+                        Spacer()
+                        
+                        VStack(spacing: 8) {
+                            LottieView(name: "Coffee Beans Loader", loopMode: .loop, speed: 1.0, isPlaying: true)
+                                .frame(width: 120, height: 120)
+                            
+                            Text("Grinding coffee...")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Spacer()
                     }
                 }
                 .padding(.horizontal, 20)

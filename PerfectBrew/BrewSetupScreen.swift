@@ -1,4 +1,5 @@
 import SwiftUI
+import Lottie
 
 struct BrewSetupScreen: View {
     let recipe: Recipe
@@ -45,9 +46,16 @@ struct BrewSetupScreen: View {
                         Text("Amount: \(viewModel.waterAmount, specifier: "%.0f")ml")
                         Slider(value: $viewModel.waterAmount, in: 100...600, step: 10)
                     }
-                    VStack(alignment: .leading) {
-                        Text("Temperature: \(viewModel.waterTemperature, specifier: "%.0f")°C")
-                        Slider(value: $viewModel.waterTemperature, in: 80...100, step: 1)
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Temperature: \(viewModel.waterTemperature, specifier: "%.0f")°C")
+                            Slider(value: $viewModel.waterTemperature, in: 80...100, step: 1)
+                        }
+                        
+                        // Thermometer animation
+                        LottieView(name: "Thermometer Hot", loopMode: .loop, speed: 1.0, isPlaying: true)
+                            .frame(width: 60, height: 60)
                     }
                 }
 
