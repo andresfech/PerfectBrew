@@ -11,6 +11,7 @@ struct Recipe: Codable, Identifiable {
     let brewingSteps: [BrewingStep]
     let equipment: [String]
     let notes: String
+    let servings: Int // Nueva propiedad para cantidad de personas
     
     enum CodingKeys: String, CodingKey {
         case title
@@ -23,6 +24,7 @@ struct Recipe: Codable, Identifiable {
         case steps // For backward compatibility in decoding only
         case equipment
         case notes
+        case servings
     }
     
     // Backward compatibility - if only 'steps' is provided, treat them as brewing steps
@@ -36,6 +38,7 @@ struct Recipe: Codable, Identifiable {
         parameters = try container.decode(RecipeBrewParameters.self, forKey: .parameters)
         equipment = try container.decode([String].self, forKey: .equipment)
         notes = try container.decode(String.self, forKey: .notes)
+        servings = try container.decodeIfPresent(Int.self, forKey: .servings) ?? 1 // Default a 1 persona
         
         // Try to decode new structure first
         if let prepSteps = try? container.decode([String].self, forKey: .preparationSteps),
@@ -67,10 +70,11 @@ struct Recipe: Codable, Identifiable {
         try container.encode(brewingSteps, forKey: .brewingSteps)
         try container.encode(equipment, forKey: .equipment)
         try container.encode(notes, forKey: .notes)
+        try container.encode(servings, forKey: .servings)
     }
     
     // Regular initializer for creating instances in previews and tests
-    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String) {
+    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String, servings: Int = 1) {
         self.title = title
         self.brewingMethod = brewingMethod
         self.skillLevel = skillLevel
@@ -80,6 +84,254 @@ struct Recipe: Codable, Identifiable {
         self.brewingSteps = brewingSteps
         self.equipment = equipment
         self.notes = notes
+        self.servings = servings
+    }
+    
+    // Función para escalar la receta según la cantidad de personas
+    func scaledForServings(_ newServings: Int) -> Recipe {
+        guard newServings > 0 && newServings <= 4 else { return self }
+        
+        print("DEBUG: Scaling recipe '\(title)' from \(servings) to \(newServings) servings")
+        print("DEBUG: Original coffee: \(parameters.coffeeGrams)g, water: \(parameters.waterGrams)g")
+        
+        // Si la receta ya está diseñada para la cantidad de personas solicitada, no escalar
+        if servings == newServings {
+            print("DEBUG: Recipe already designed for \(newServings) servings, returning as-is")
+            return self
+        }
+        
+        // Si la receta está diseñada para más personas de las solicitadas, escalar hacia abajo
+        let scaleFactor = Double(newServings) / Double(servings)
+        print("DEBUG: Scale factor: \(scaleFactor)")
+        
+        // Escalar parámetros de la receta
+        let scaledParameters = RecipeBrewParameters(
+            coffeeGrams: parameters.coffeeGrams * scaleFactor,
+            waterGrams: parameters.waterGrams * scaleFactor,
+            ratio: parameters.ratio,
+            grindSize: adjustGrindSizeForServings(parameters.grindSize, servings: newServings),
+            temperatureCelsius: parameters.temperatureCelsius,
+            bloomWaterGrams: parameters.bloomWaterGrams * scaleFactor,
+            bloomTimeSeconds: adjustStepTime(parameters.bloomTimeSeconds, servings: newServings),
+            totalBrewTimeSeconds: adjustStepTime(parameters.totalBrewTimeSeconds, servings: newServings)
+        )
+        
+        // Escalar pasos de preparación de manera inteligente
+        let scaledPreparationSteps = preparationSteps.map { step in
+            scalePreparationStepIntelligently(step, scaleFactor: scaleFactor, originalCoffee: parameters.coffeeGrams, originalWater: parameters.waterGrams)
+        }
+        
+        // Escalar pasos de preparación de manera inteligente
+        let scaledBrewingSteps = brewingSteps.map { step in
+            BrewingStep(
+                timeSeconds: adjustStepTime(step.timeSeconds, servings: newServings),
+                instruction: scaleBrewingStepIntelligently(step.instruction, scaleFactor: scaleFactor, originalCoffee: parameters.coffeeGrams, originalWater: parameters.waterGrams)
+            )
+        }
+        
+        print("DEBUG: Scaled coffee: \(scaledParameters.coffeeGrams)g, water: \(scaledParameters.waterGrams)g")
+        
+        return Recipe(
+            title: title,
+            brewingMethod: brewingMethod,
+            skillLevel: skillLevel,
+            rating: rating,
+            parameters: scaledParameters,
+            preparationSteps: scaledPreparationSteps,
+            brewingSteps: scaledBrewingSteps,
+            equipment: equipment,
+            notes: notes,
+            servings: newServings
+        )
+    }
+    
+    // Función auxiliar para ajustar el tamaño del molido según la cantidad de personas
+    private func adjustGrindSizeForServings(_ originalGrindSize: String, servings: Int) -> String {
+        if servings <= 2 {
+            return originalGrindSize
+        } else if servings == 3 {
+            // Para 3 personas, hacer el molido ligeramente más grueso
+            return originalGrindSize.replacingOccurrences(of: "fine", with: "medium-fine", options: .caseInsensitive)
+                .replacingOccurrences(of: "medium-fine", with: "medium", options: .caseInsensitive)
+        } else {
+            // Para 4 personas, hacer el molido más grueso
+            return originalGrindSize.replacingOccurrences(of: "fine", with: "medium", options: .caseInsensitive)
+                .replacingOccurrences(of: "medium-fine", with: "medium-coarse", options: .caseInsensitive)
+                .replacingOccurrences(of: "medium", with: "medium-coarse", options: .caseInsensitive)
+        }
+    }
+    
+    // Función auxiliar para ajustar el tiempo de bloom
+    private func adjustBloomTimeForServings(_ originalTime: Int, servings: Int) -> Int {
+        if servings <= 2 {
+            return originalTime
+        } else if servings == 3 {
+            return originalTime + 15 // 15 segundos más
+        } else {
+            return originalTime + 30 // 30 segundos más
+        }
+    }
+    
+    // Función auxiliar para ajustar el tiempo total de preparación
+    private func adjustBrewTimeForServings(_ originalTime: Int, servings: Int) -> Int {
+        if servings <= 2 {
+            return originalTime
+        } else if servings == 3 {
+            return originalTime + 30 // 30 segundos más
+        } else {
+            return originalTime + 60 // 1 minuto más
+        }
+    }
+    
+    // Función auxiliar para ajustar el tiempo de cada paso
+    private func adjustStepTime(_ originalTime: Int, servings: Int) -> Int {
+        if servings <= 2 {
+            return originalTime
+        } else if servings == 3 {
+            return Int(Double(originalTime) * 1.2) // 20% más de tiempo
+        } else {
+            return Int(Double(originalTime) * 1.4) // 40% más de tiempo
+        }
+    }
+    
+    // Función auxiliar para escalar pasos de preparación
+    private func scalePreparationStep(_ step: String, scaleFactor: Double) -> String {
+        // Buscar números en el texto y escalarlos
+        var scaledStep = step
+        
+        print("DEBUG: Scaling step: '\(step)' with factor: \(scaleFactor)")
+        
+        // Patrones específicos para cantidades de café y agua
+        let coffeePatterns = [
+            (regex: "Grind\\s+(\\d+)\\s+grams?\\s+of\\s+coffee", unit: "grams of coffee"),
+            (regex: "Moler\\s+(\\d+)\\s+gramos?\\s+de\\s+café", unit: "gramos de café"),
+            (regex: "Add\\s+(\\d+)\\s+grams?\\s+of\\s+ground\\s+coffee", unit: "grams of ground coffee"),
+            (regex: "Agregar\\s+(\\d+)\\s+gramos?\\s+de\\s+café\\s+molido", unit: "gramos de café molido"),
+            (regex: "\\b(\\d+)\\s*g\\s+of\\s+coffee\\b", unit: "g of coffee"),
+            (regex: "\\b(\\d+)\\s*gramos\\s+de\\s+café\\b", unit: "gramos de café"),
+            (regex: "\\b(\\d+)\\s*grams\\s+of\\s+coffee\\b", unit: "grams of coffee"),
+            (regex: "\\b(\\d+)\\s*g\\s+café\\b", unit: "g café"),
+            (regex: "\\b(\\d+)\\s*g\\s+coffee\\b", unit: "g coffee")
+        ]
+        
+        let waterPatterns = [
+            (regex: "Pour\\s+(\\d+)\\s*mL\\s+of\\s+water", unit: "mL of water"),
+            (regex: "Verter\\s+(\\d+)\\s*mL\\s+de\\s+agua", unit: "mL de agua"),
+            (regex: "Bloom:\\s+Pour\\s+(\\d+)\\s*mL\\s+of\\s+water", unit: "mL of water"),
+            (regex: "Bloom:\\s+Verter\\s+(\\d+)\\s*mL\\s+de\\s+agua", unit: "mL de agua"),
+            (regex: "\\b(\\d+)\\s*ml\\s+of\\s+water\\b", unit: "ml of water"),
+            (regex: "\\b(\\d+)\\s*mL\\s+of\\s+water\\b", unit: "mL of water"),
+            (regex: "\\b(\\d+)\\s*ml\\s+de\\s+agua\\b", unit: "ml de agua"),
+            (regex: "\\b(\\d+)\\s*mL\\s+de\\s+agua\\b", unit: "mL de agua")
+        ]
+        
+        // Escalar cantidades de café
+        for pattern in coffeePatterns {
+            if let regex = try? NSRegularExpression(pattern: pattern.regex, options: .caseInsensitive) {
+                let range = NSRange(location: 0, length: scaledStep.utf16.count)
+                let matches = regex.matches(in: scaledStep, options: [], range: range)
+                
+                for match in matches.reversed() {
+                    if let range = Range(match.range(at: 1), in: scaledStep) {
+                        let number = Double(scaledStep[range]) ?? 0
+                        let scaledNumber = number * scaleFactor
+                        let roundedNumber = Int(round(scaledNumber))
+                        
+                        print("DEBUG: Found coffee amount \(number), scaling to \(roundedNumber)")
+                        scaledStep.replaceSubrange(range, with: "\(roundedNumber)")
+                    }
+                }
+            }
+        }
+        
+        // Escalar cantidades de agua
+        for pattern in waterPatterns {
+            if let regex = try? NSRegularExpression(pattern: pattern.regex, options: .caseInsensitive) {
+                let range = NSRange(location: 0, length: scaledStep.utf16.count)
+                let matches = regex.matches(in: scaledStep, options: [], range: range)
+                
+                for match in matches.reversed() {
+                    if let range = Range(match.range(at: 1), in: scaledStep) {
+                        let number = Double(scaledStep[range]) ?? 0
+                        let scaledNumber = number * scaleFactor
+                        let roundedNumber = Int(round(scaledNumber))
+                        
+                        print("DEBUG: Found water amount \(number), scaling to \(roundedNumber)")
+                        scaledStep.replaceSubrange(range, with: "\(roundedNumber)")
+                    }
+                }
+            }
+        }
+        
+        print("DEBUG: Scaled step result: '\(scaledStep)'")
+        return scaledStep
+    }
+    
+    // Función auxiliar para escalar pasos de preparación
+    private func scaleBrewingStep(_ step: String, scaleFactor: Double) -> String {
+        // Similar a scalePreparationStep pero para pasos de preparación
+        return scalePreparationStep(step, scaleFactor: scaleFactor)
+    }
+    
+    // Función auxiliar para escalar pasos de preparación de manera inteligente
+    private func scalePreparationStepIntelligently(_ step: String, scaleFactor: Double, originalCoffee: Double, originalWater: Double) -> String {
+        var scaledStep = step
+        
+        print("DEBUG: Intelligently scaling step: '\(step)' with factor: \(scaleFactor)")
+        
+        // Solo escalar números que coincidan exactamente con las cantidades originales de café o agua
+        let coffeeAmount = Int(originalCoffee)
+        let waterAmount = Int(originalWater)
+        
+        // Escalar cantidad de café si aparece exactamente
+        let coffeePatterns = [
+            "Grind \(coffeeAmount) grams of coffee",
+            "Grind \(coffeeAmount) gram of coffee",
+            "Moler \(coffeeAmount) gramos de café",
+            "Moler \(coffeeAmount) gramo de café",
+            "Add \(coffeeAmount) grams of ground coffee",
+            "Add \(coffeeAmount) gram of ground coffee",
+            "Agregar \(coffeeAmount) gramos de café molido",
+            "Agregar \(coffeeAmount) gramo de café molido"
+        ]
+        
+        for pattern in coffeePatterns {
+            if scaledStep.contains(pattern) {
+                let scaledAmount = Int(Double(coffeeAmount) * scaleFactor)
+                let scaledPattern = pattern.replacingOccurrences(of: "\(coffeeAmount)", with: "\(scaledAmount)")
+                scaledStep = scaledStep.replacingOccurrences(of: pattern, with: scaledPattern)
+                print("DEBUG: Scaled coffee amount from \(coffeeAmount) to \(scaledAmount)")
+                break
+            }
+        }
+        
+        // Escalar cantidad de agua si aparece exactamente
+        let waterPatterns = [
+            "Pour \(waterAmount)mL of water",
+            "Pour \(waterAmount) mL of water",
+            "Verter \(waterAmount)mL de agua",
+            "Verter \(waterAmount) mL de agua",
+            "Bloom: Pour \(waterAmount)mL of water",
+            "Bloom: Verter \(waterAmount)mL de agua"
+        ]
+        
+        for pattern in waterPatterns {
+            if scaledStep.contains(pattern) {
+                let scaledAmount = Int(Double(waterAmount) * scaleFactor)
+                let scaledPattern = pattern.replacingOccurrences(of: "\(waterAmount)", with: "\(scaledAmount)")
+                scaledStep = scaledStep.replacingOccurrences(of: pattern, with: scaledPattern)
+                print("DEBUG: Scaled water amount from \(waterAmount) to \(scaledAmount)")
+                break
+            }
+        }
+        
+        print("DEBUG: Intelligently scaled step result: '\(scaledStep)'")
+        return scaledStep
+    }
+    
+    // Función auxiliar para escalar pasos de preparación de manera inteligente
+    private func scaleBrewingStepIntelligently(_ step: String, scaleFactor: Double, originalCoffee: Double, originalWater: Double) -> String {
+        return scalePreparationStepIntelligently(step, scaleFactor: scaleFactor, originalCoffee: originalCoffee, originalWater: originalWater)
     }
     
     var difficulty: Difficulty {
@@ -205,26 +457,71 @@ class RecipeDatabase: ObservableObject {
         return getRecipes(for: method.rawValue)
     }
     
+    func getRecipes(for method: String, servings: Int) -> [Recipe] {
+        let baseRecipes = getRecipes(for: method)
+        print("DEBUG: getRecipes for \(method), servings: \(servings)")
+        print("DEBUG: Found \(baseRecipes.count) base recipes")
+        
+        if servings == 1 {
+            print("DEBUG: Returning base recipes (servings == 1)")
+            return baseRecipes
+        } else {
+            print("DEBUG: Scaling recipes for \(servings) servings")
+            let scaledRecipes = baseRecipes.map { $0.scaledForServings(servings) }
+            print("DEBUG: Returned \(scaledRecipes.count) scaled recipes")
+            return scaledRecipes
+        }
+    }
+    
+    func getRecipes(for method: HomeScreen.BrewMethod, servings: Int) -> [Recipe] {
+        return getRecipes(for: method.rawValue, servings: servings)
+    }
+    
     func getV60Recipes() -> [Recipe] {
         return getRecipes(for: "V60")
+    }
+    
+    func getV60Recipes(servings: Int) -> [Recipe] {
+        return getRecipes(for: "V60", servings: servings)
     }
     
     func getChemexRecipes() -> [Recipe] {
         return getRecipes(for: "Chemex")
     }
     
+    func getChemexRecipes(servings: Int) -> [Recipe] {
+        return getRecipes(for: "Chemex", servings: servings)
+    }
+    
     func getFrenchPressRecipes() -> [Recipe] {
         return getRecipes(for: "French Press")
+    }
+    
+    func getFrenchPressRecipes(servings: Int) -> [Recipe] {
+        return getRecipes(for: "French Press", servings: servings)
     }
     
     func getAeroPressRecipes() -> [Recipe] {
         return getRecipes(for: "AeroPress")
     }
     
+    func getAeroPressRecipes(servings: Int) -> [Recipe] {
+        return getRecipes(for: "AeroPress", servings: servings)
+    }
+    
     func getRecipesByDifficulty(for method: String, difficulty: Difficulty) -> [Recipe] {
         return recipes.filter { 
             $0.brewingMethod.lowercased() == method.lowercased() && 
             $0.difficulty == difficulty 
+        }
+    }
+    
+    func getRecipesByDifficulty(for method: String, difficulty: Difficulty, servings: Int) -> [Recipe] {
+        let baseRecipes = getRecipesByDifficulty(for: method, difficulty: difficulty)
+        if servings == 1 {
+            return baseRecipes
+        } else {
+            return baseRecipes.map { $0.scaledForServings(servings) }
         }
     }
     
@@ -236,6 +533,15 @@ class RecipeDatabase: ObservableObject {
             recipe.title.localizedCaseInsensitiveContains(query) ||
             recipe.brewingMethod.localizedCaseInsensitiveContains(query) ||
             recipe.skillLevel.localizedCaseInsensitiveContains(query)
+        }
+    }
+    
+    func searchRecipes(query: String, servings: Int) -> [Recipe] {
+        let baseRecipes = searchRecipes(query: query)
+        if servings == 1 {
+            return baseRecipes
+        } else {
+            return baseRecipes.map { $0.scaledForServings(servings) }
         }
     }
 }
@@ -269,6 +575,7 @@ extension Recipe {
             BrewingStep(timeSeconds: 210, instruction: "Enjoy your coffee!")
         ],
         equipment: ["V60", "Paper filter", "Kettle", "Scale", "Grinder"],
-        notes: "A simple and delicious V60 recipe for beginners."
+        notes: "A simple and delicious V60 recipe for beginners.",
+        servings: 1
     )
 }

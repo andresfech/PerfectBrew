@@ -33,6 +33,9 @@ struct BrewingGuideScreen: View {
         self.brewTime = brewTime
         self.recipe = recipe
         
+        print("DEBUG: BrewingGuideScreen init with recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
+        print("DEBUG: BrewingGuideScreen coffeeDose: \(coffeeDose)g, waterAmount: \(waterAmount)g")
+        
         // Initialize view model with recipe
         let viewModel = BrewingGuideViewModel(recipe: recipe)
         self._viewModel = ObservedObject(wrappedValue: viewModel)
@@ -143,8 +146,8 @@ struct BrewingGuideScreen: View {
                                         
                                         VStack(spacing: 0) {
                                             Text("\(Int(viewModel.currentStepRemainingTime))")
-                                                .font(.headline)
-                                                .fontWeight(.bold)
+                .font(.headline)
+                .fontWeight(.bold)
                                             Text("s")
                                                 .font(.caption2)
                                                 .foregroundColor(.secondary)
@@ -175,7 +178,7 @@ struct BrewingGuideScreen: View {
                                         
                                         VStack(spacing: 0) {
                                             Text("\(Int(viewModel.bloomTime - viewModel.elapsedTime))")
-                                                .font(.headline)
+                .font(.headline)
                                                 .fontWeight(.bold)
                                             Text("s")
                                                 .font(.caption2)
@@ -204,7 +207,7 @@ struct BrewingGuideScreen: View {
                     // Current Step Section
                     VStack(alignment: .leading, spacing: 6) {
                         Text(viewModel.isPreparationPhase ? "preparation_step".localized : "current_step".localized)
-                            .font(.headline)
+                .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
                         
@@ -214,7 +217,7 @@ struct BrewingGuideScreen: View {
                                 .foregroundColor(viewModel.isPreparationPhase ? .blue : .orange)
                                 .frame(width: 20)
                             
-                            Text(viewModel.currentStep)
+            Text(viewModel.currentStep)
                                 .font(.body)
                                 .foregroundColor(.primary)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -253,8 +256,8 @@ struct BrewingGuideScreen: View {
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                         }
-                        
-                        Spacer()
+            
+            Spacer()
                     }
                 }
                 .padding(.horizontal, 20)
@@ -266,7 +269,7 @@ struct BrewingGuideScreen: View {
                 if viewModel.isPreparationPhase {
                     // Preparation phase buttons
                     HStack(spacing: 12) {
-                        Button(action: {
+                    Button(action: {
                             viewModel.nextPreparationStep()
                         }) {
                             HStack {
@@ -314,13 +317,13 @@ struct BrewingGuideScreen: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .frame(height: 44)
-                        .background(Color.orange)
-                        .cornerRadius(10)
+                            .background(Color.orange)
+                            .cornerRadius(10)
                     }
                 } else {
                     // Brewing phase buttons
                     HStack(spacing: 12) {
-                        Button(action: {
+                    Button(action: {
                             viewModel.toggleTimer()
                         }) {
                             HStack {
@@ -335,7 +338,7 @@ struct BrewingGuideScreen: View {
                             .frame(height: 44)
                             .background(viewModel.isTimerRunning ? Color.red : Color.green)
                             .cornerRadius(10)
-                        }
+                    }
                         
                         Button(action: {
                             viewModel.finishBrewing()
@@ -355,14 +358,14 @@ struct BrewingGuideScreen: View {
                             .cornerRadius(10)
                         }
                         .background(
-                            NavigationLink(destination: FeedbackScreen(
+            NavigationLink(destination: FeedbackScreen(
                                 recipe: recipe,
                                 brewParameters: BrewParameters(
-                                    coffeeDose: coffeeDose,
-                                    waterAmount: waterAmount,
-                                    waterTemperature: waterTemperature,
-                                    grindSize: grindSize,
-                                    brewTime: brewTime
+                coffeeDose: coffeeDose,
+                waterAmount: waterAmount,
+                waterTemperature: waterTemperature,
+                grindSize: grindSize,
+                brewTime: brewTime
                                 )
                             ), isActive: $showingFeedback) {
                                 EmptyView()

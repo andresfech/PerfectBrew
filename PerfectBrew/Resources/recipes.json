@@ -47,7 +47,8 @@
     "kettle (gooseneck preferred)",
     "stirring device (chopstick/long stick)"
   ],
-  "notes": "Total Brew Time: 2:45 to 3:30."
+  "notes": "Total Brew Time: 2:45 to 3:30.",
+  "servings": 1
   },
   {
     "title": "James Hoffmann V60",
@@ -108,7 +109,8 @@
       "kettle (gooseneck preferred)",
       "stirring stick or spoon"
     ],
-    "notes": "Water Temperature: 95°C general, 100°C for high-quality light roasts, 90–95°C or 80–90°C for darker roasts. Aim to finish drawdown by 3 minutes 30 seconds. Total brew time can vary, but focus on a complete, even drain."
+    "notes": "Water Temperature: 95°C general, 100°C for high-quality light roasts, 90–95°C or 80–90°C for darker roasts. Aim to finish drawdown by 3 minutes 30 seconds. Total brew time can vary, but focus on a complete, even drain.",
+    "servings": 1
   },
   {
     "title": "Tetsu Kasuya 4:6 Method",
@@ -164,7 +166,8 @@
       "Timer",
       "Stirring stick"
     ],
-    "notes": "The 4:6 method focuses on controlling sweetness and acidity through pour timing."
+    "notes": "The 4:6 method focuses on controlling sweetness and acidity through pour timing.",
+    "servings": 1
   },
   {
     "title": "Scott Rao V60",
@@ -216,7 +219,8 @@
       "Timer",
       "Stirring stick"
     ],
-    "notes": "Focus on maintaining consistent pour rate and minimal agitation."
+    "notes": "Focus on maintaining consistent pour rate and minimal agitation.",
+    "servings": 1
   },
   {
     "title": "Quick Morning V60",
@@ -259,7 +263,8 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "Perfect for busy mornings when you need coffee quickly."
+    "notes": "Perfect for busy mornings when you need coffee quickly.",
+    "servings": 1
   },
   {
     "title": "Competition Style V60",
@@ -315,7 +320,8 @@
       "Timer",
       "Stirring stick"
     ],
-    "notes": "Competition-style brewing focuses on precision and consistency."
+    "notes": "Competition-style brewing focuses on precision and consistency.",
+    "servings": 1
   },
   {
     "title": "Classic Chemex",
@@ -375,7 +381,8 @@
       "Gooseneck kettle",
       "Timer"
     ],
-    "notes": "Chemex produces a clean, bright cup with low body."
+    "notes": "Chemex produces a clean, bright cup with low body.",
+    "servings": 1
   },
   {
     "title": "Chemex Single Cup",
@@ -435,7 +442,8 @@
       "Gooseneck kettle",
       "Timer"
     ],
-    "notes": "Perfect single-serve Chemex brewing method."
+    "notes": "Perfect single-serve Chemex brewing method.",
+    "servings": 1
   },
   {
     "title": "French Press Classic",
@@ -485,7 +493,8 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "Simple and forgiving method, produces full-bodied coffee."
+    "notes": "Simple and forgiving method, produces full-bodied coffee.",
+    "servings": 1
   },
   {
     "title": "French Press Single Cup",
@@ -535,7 +544,8 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "Perfect for single-serve French Press brewing."
+    "notes": "Perfect for single-serve French Press brewing.",
+    "servings": 1
   },
   {
     "title": "AeroPress Standard",
@@ -587,7 +597,8 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "Versatile method that can produce both espresso-like and filter coffee."
+    "notes": "Versatile method that can produce both espresso-like and filter coffee.",
+    "servings": 1
   },
   {
     "title": "AeroPress Inverted",
@@ -639,6 +650,189 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "Inverted method prevents premature dripping and allows longer steeping."
+    "notes": "Inverted method prevents premature dripping and allows longer steeping.",
+    "servings": 1
+  },
+  {
+    "title": "V60 Family Brew",
+    "brewing_method": "V60",
+    "skill_level": "Intermediate",
+    "rating": 4.4,
+    "parameters": {
+      "coffee_grams": 45,
+      "water_grams": 720,
+      "ratio": "1:16",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 90,
+      "bloom_time_seconds": 60,
+      "total_brew_time_seconds": 300
+    },
+    "preparation_steps": [
+      "Heat water to 94°C",
+      "Grind 45 grams of coffee to medium-coarse consistency",
+      "Use V60 03 size for larger capacity",
+      "Rinse filter thoroughly and preheat",
+      "Add 45g coffee, level the bed"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 0,
+        "instruction": "Bloom: Pour 90g water (2x coffee weight), stir gently in circular motion"
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "First pour: Add 180g water in slow, steady spiral, reaching 270g total"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Wait 30 seconds for extraction"
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Second pour: Add 225g water, reaching 495g total"
+      },
+      {
+        "time_seconds": 210,
+        "instruction": "Wait 30 seconds"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "Final pour: Add remaining 225g water to reach 720g total"
+      },
+      {
+        "time_seconds": 300,
+        "instruction": "Let drain completely, should finish around 4:30-5:00"
+      }
+    ],
+    "equipment": [
+      "Hario V60 03 Brewer",
+      "V60 03 filters",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Perfect for serving 3-4 people. Use coarser grind to prevent over-extraction with larger dose.",
+    "servings": 3
+  },
+  {
+    "title": "Chemex Party Brew",
+    "brewing_method": "Chemex",
+    "skill_level": "Intermediate",
+    "rating": 4.5,
+    "parameters": {
+      "coffee_grams": 60,
+      "water_grams": 1000,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 120,
+      "bloom_time_seconds": 60,
+      "total_brew_time_seconds": 360
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 60 grams of coffee to medium-coarse consistency",
+      "Use Chemex 8-cup for larger capacity",
+      "Rinse filter thoroughly and preheat",
+      "Add 60g coffee, level the bed"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 0,
+        "instruction": "Bloom: Pour 120g water (2x coffee weight), stir gently"
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "First pour: Add 300g water in slow, steady stream, reaching 420g total"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Wait 45 seconds for extraction"
+      },
+      {
+        "time_seconds": 165,
+        "instruction": "Second pour: Add 300g water, reaching 720g total"
+      },
+      {
+        "time_seconds": 225,
+        "instruction": "Wait 45 seconds"
+      },
+      {
+        "time_seconds": 270,
+        "instruction": "Final pour: Add remaining 280g water to reach 1000g total"
+      },
+      {
+        "time_seconds": 330,
+        "instruction": "Let drain completely, should finish around 6:00-6:30"
+      }
+    ],
+    "equipment": [
+      "Chemex 8-cup",
+      "Chemex filters",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Perfect for serving 4 people. Chemex produces clean, bright coffee that's great for sharing.",
+    "servings": 4
+  },
+  {
+    "title": "French Press Gathering",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.3,
+    "parameters": {
+      "coffee_grams": 60,
+      "water_grams": 1000,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 300
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 60 grams of coffee to coarse consistency",
+      "Use large French Press (1L capacity)",
+      "Add 60g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 0,
+        "instruction": "Pour 1000g hot water over grounds"
+      },
+      {
+        "time_seconds": 0,
+        "instruction": "Stir gently to saturate all grounds"
+      },
+      {
+        "time_seconds": 0,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "Wait 4 minutes for extraction"
+      },
+      {
+        "time_seconds": 300,
+        "instruction": "Press plunger down slowly and steadily"
+      },
+      {
+        "time_seconds": 300,
+        "instruction": "Pour immediately to prevent over-extraction"
+      }
+    ],
+    "equipment": [
+      "Large French Press (1L)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for serving 4 people. Simple and forgiving method that produces full-bodied coffee.",
+    "servings": 4
   }
 ]

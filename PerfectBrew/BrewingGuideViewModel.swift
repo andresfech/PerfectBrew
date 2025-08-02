@@ -16,6 +16,8 @@ class BrewingGuideViewModel: ObservableObject {
     private var brewingSteps: [(time: TimeInterval, instruction: String)] = []
 
     init(recipe: Recipe) {
+        print("DEBUG: BrewingGuideViewModel init with recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
+        
         // Use recipe parameters
         self.totalTime = TimeInterval(recipe.parameters.totalBrewTimeSeconds)
         self.bloomTime = TimeInterval(recipe.parameters.bloomTimeSeconds)
@@ -25,6 +27,10 @@ class BrewingGuideViewModel: ObservableObject {
     }
     
     private func generateSteps(from recipe: Recipe) {
+        print("DEBUG: generateSteps for recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee")
+        print("DEBUG: Preparation steps count: \(recipe.preparationSteps.count)")
+        print("DEBUG: First preparation step: \(recipe.preparationSteps.first ?? "none")")
+        
         // Use the new structure with separate preparation and brewing steps
         self.preparationSteps = recipe.preparationSteps
         
@@ -48,6 +54,7 @@ class BrewingGuideViewModel: ObservableObject {
         // Set initial step
         if !preparationSteps.isEmpty {
             currentStep = preparationSteps[0]
+            print("DEBUG: Set initial step: \(currentStep)")
         }
     }
 

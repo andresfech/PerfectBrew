@@ -32,6 +32,9 @@ struct BrewDetailScreen: View {
                         }
                     }
                 }
+                .onAppear {
+                    print("DEBUG: BrewDetailScreen received recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
+                }
                 
                 // Parameters Card
                 VStack(alignment: .leading, spacing: 20) {

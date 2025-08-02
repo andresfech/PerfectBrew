@@ -33,6 +33,9 @@ struct BrewSetupScreen: View {
                         }
                     }
                 }
+                .onAppear {
+                    print("DEBUG: BrewSetupScreen received recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
+                }
                 
                 Section(header: Text("Coffee")) {
                     VStack(alignment: .leading) {
