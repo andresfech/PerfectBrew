@@ -283,45 +283,35 @@ struct Recipe: Codable, Identifiable {
         let coffeeAmount = Int(originalCoffee)
         let waterAmount = Int(originalWater)
         
-        // Escalar cantidad de café si aparece exactamente
-        let coffeePatterns = [
-            "Grind \(coffeeAmount) grams of coffee",
-            "Grind \(coffeeAmount) gram of coffee",
-            "Moler \(coffeeAmount) gramos de café",
-            "Moler \(coffeeAmount) gramo de café",
-            "Add \(coffeeAmount) grams of ground coffee",
-            "Add \(coffeeAmount) gram of ground coffee",
-            "Agregar \(coffeeAmount) gramos de café molido",
-            "Agregar \(coffeeAmount) gramo de café molido"
-        ]
-        
-        for pattern in coffeePatterns {
-            if scaledStep.contains(pattern) {
-                let scaledAmount = Int(Double(coffeeAmount) * scaleFactor)
-                let scaledPattern = pattern.replacingOccurrences(of: "\(coffeeAmount)", with: "\(scaledAmount)")
-                scaledStep = scaledStep.replacingOccurrences(of: pattern, with: scaledPattern)
-                print("DEBUG: Scaled coffee amount from \(coffeeAmount) to \(scaledAmount)")
-                break
+        // Escalar cantidad de café usando regex más robusto
+        let coffeeRegex = "\\b\(coffeeAmount)\\s*(?:grams?|g)\\s+of\\s+coffee\\b"
+        if let regex = try? NSRegularExpression(pattern: coffeeRegex, options: .caseInsensitive) {
+            let range = NSRange(location: 0, length: scaledStep.utf16.count)
+            let matches = regex.matches(in: scaledStep, options: [], range: range)
+            
+            for match in matches.reversed() {
+                if let range = Range(match.range, in: scaledStep) {
+                    let scaledAmount = Int(Double(coffeeAmount) * scaleFactor)
+                    let replacement = scaledStep[range].replacingOccurrences(of: "\(coffeeAmount)", with: "\(scaledAmount)")
+                    scaledStep.replaceSubrange(range, with: replacement)
+                    print("DEBUG: Scaled coffee amount from \(coffeeAmount) to \(scaledAmount)")
+                }
             }
         }
         
-        // Escalar cantidad de agua si aparece exactamente
-        let waterPatterns = [
-            "Pour \(waterAmount)mL of water",
-            "Pour \(waterAmount) mL of water",
-            "Verter \(waterAmount)mL de agua",
-            "Verter \(waterAmount) mL de agua",
-            "Bloom: Pour \(waterAmount)mL of water",
-            "Bloom: Verter \(waterAmount)mL de agua"
-        ]
-        
-        for pattern in waterPatterns {
-            if scaledStep.contains(pattern) {
-                let scaledAmount = Int(Double(waterAmount) * scaleFactor)
-                let scaledPattern = pattern.replacingOccurrences(of: "\(waterAmount)", with: "\(scaledAmount)")
-                scaledStep = scaledStep.replacingOccurrences(of: pattern, with: scaledPattern)
-                print("DEBUG: Scaled water amount from \(waterAmount) to \(scaledAmount)")
-                break
+        // Escalar cantidad de agua usando regex más robusto
+        let waterRegex = "\\b\(waterAmount)\\s*(?:grams?|g|ml|mL)\\s+of\\s+water\\b"
+        if let regex = try? NSRegularExpression(pattern: waterRegex, options: .caseInsensitive) {
+            let range = NSRange(location: 0, length: scaledStep.utf16.count)
+            let matches = regex.matches(in: scaledStep, options: [], range: range)
+            
+            for match in matches.reversed() {
+                if let range = Range(match.range, in: scaledStep) {
+                    let scaledAmount = Int(Double(waterAmount) * scaleFactor)
+                    let replacement = scaledStep[range].replacingOccurrences(of: "\(waterAmount)", with: "\(scaledAmount)")
+                    scaledStep.replaceSubrange(range, with: replacement)
+                    print("DEBUG: Scaled water amount from \(waterAmount) to \(scaledAmount)")
+                }
             }
         }
         
@@ -462,15 +452,20 @@ class RecipeDatabase: ObservableObject {
         print("DEBUG: getRecipes for \(method), servings: \(servings)")
         print("DEBUG: Found \(baseRecipes.count) base recipes")
         
-        if servings == 1 {
-            print("DEBUG: Returning base recipes (servings == 1)")
-            return baseRecipes
-        } else {
-            print("DEBUG: Scaling recipes for \(servings) servings")
-            let scaledRecipes = baseRecipes.map { $0.scaledForServings(servings) }
-            print("DEBUG: Returned \(scaledRecipes.count) scaled recipes")
-            return scaledRecipes
+        // Filtrar recetas que ya están diseñadas para la cantidad de personas solicitada
+        let filteredRecipes = baseRecipes.filter { recipe in
+            recipe.servings == servings
         }
+        
+        print("DEBUG: Found \(filteredRecipes.count) recipes for \(servings) servings")
+        
+        // Si no hay recetas específicas para la cantidad de personas, usar recetas de 1 persona
+        if filteredRecipes.isEmpty && servings > 1 {
+            print("DEBUG: No specific recipes for \(servings) servings, using 1-person recipes")
+            return baseRecipes.filter { $0.servings == 1 }
+        }
+        
+        return filteredRecipes
     }
     
     func getRecipes(for method: HomeScreen.BrewMethod, servings: Int) -> [Recipe] {

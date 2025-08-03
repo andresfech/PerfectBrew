@@ -3,7 +3,12 @@ import Lottie
 
 struct BrewSetupScreen: View {
     let recipe: Recipe
-    @StateObject private var viewModel = BrewSetupViewModel()
+    @StateObject private var viewModel: BrewSetupViewModel
+
+    init(recipe: Recipe) {
+        self.recipe = recipe
+        self._viewModel = StateObject(wrappedValue: BrewSetupViewModel(recipe: recipe))
+    }
 
     var body: some View {
         NavigationView {
@@ -29,6 +34,20 @@ struct BrewSetupScreen: View {
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 2)
                                 .background(difficultyColor.opacity(0.2))
+                                .cornerRadius(4)
+                        }
+                        
+                        HStack {
+                            Text("Servings:")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Text("\(recipe.servings) person\(recipe.servings > 1 ? "s" : "")")
+                                .font(.caption)
+                                .fontWeight(.medium)
+                                .foregroundColor(.blue)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 2)
+                                .background(Color.blue.opacity(0.2))
                                 .cornerRadius(4)
                         }
                     }
@@ -84,16 +103,6 @@ struct BrewSetupScreen: View {
                 }
             }
             .navigationTitle("Brew Setup")
-            .onAppear {
-                // Pre-populate with recipe values
-                viewModel.coffeeDose = recipe.parameters.coffeeGrams
-                viewModel.waterAmount = recipe.parameters.waterGrams
-                viewModel.waterTemperature = recipe.parameters.temperatureCelsius
-                viewModel.brewTime = Double(recipe.parameters.totalBrewTimeSeconds)
-                
-                // Convert grind size string to number (approximate)
-                viewModel.grindSize = grindSizeToNumber(recipe.parameters.grindSize)
-            }
         }
     }
     
@@ -107,27 +116,6 @@ struct BrewSetupScreen: View {
             return .red
         default:
             return .gray
-        }
-    }
-    
-    private func grindSizeToNumber(_ grindSize: String) -> Int {
-        switch grindSize.lowercased() {
-        case "extra fine", "espresso":
-            return 1
-        case "fine":
-            return 2
-        case "medium-fine":
-            return 3
-        case "medium":
-            return 5
-        case "medium-coarse":
-            return 7
-        case "coarse":
-            return 9
-        case "extra coarse":
-            return 10
-        default:
-            return 5
         }
     }
 }
