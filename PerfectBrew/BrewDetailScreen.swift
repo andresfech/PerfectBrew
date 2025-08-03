@@ -2,7 +2,6 @@ import SwiftUI
 
 struct BrewDetailScreen: View {
     let recipe: Recipe
-    @State private var showingBrewSetup = false
     
     var body: some View {
         ScrollView {
@@ -215,9 +214,7 @@ struct BrewDetailScreen: View {
                 }
                 
                 // Start Brewing Button
-                Button(action: {
-                    showingBrewSetup = true
-                }) {
+                NavigationLink(destination: BrewSetupScreen(recipe: recipe)) {
                     HStack {
                         Image(systemName: "play.fill")
                             .font(.title3)
@@ -237,9 +234,6 @@ struct BrewDetailScreen: View {
         }
         .navigationTitle("Recipe Details")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $showingBrewSetup) {
-            BrewSetupScreen(recipe: recipe)
-        }
     }
 }
 

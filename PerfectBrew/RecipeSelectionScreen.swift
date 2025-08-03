@@ -25,106 +25,104 @@ struct RecipeSelectionScreen: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                // Header
-                VStack(spacing: 8) {
-                    Text("Perfect Brew")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    Text("\(selectedMethod.rawValue) Recipes")
-                        .font(.title3)
-                        .foregroundColor(.secondary)
-                }
-                .padding(.top, 20)
+        VStack(spacing: 20) {
+            // Header
+            VStack(spacing: 8) {
+                Text("Perfect Brew")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
                 
-                // Search Bar
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                    TextField("Search recipes...", text: $searchText)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("\(selectedMethod.rawValue) Recipes")
+                    .font(.title3)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.top, 20)
+            
+            // Search Bar
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                TextField("Search recipes...", text: $searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            .padding(.horizontal)
+            
+            // Difficulty Filter
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    FilterChip(
+                        title: "All",
+                        isSelected: selectedDifficulty == nil,
+                        action: { selectedDifficulty = nil }
+                    )
+                    
+                    ForEach(Difficulty.allCases, id: \.self) { difficulty in
+                        FilterChip(
+                            title: difficulty.rawValue,
+                            isSelected: selectedDifficulty == difficulty,
+                            action: { selectedDifficulty = difficulty }
+                        )
+                    }
                 }
                 .padding(.horizontal)
+            }
+            
+            // Servings Filter
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Cantidad de personas")
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                    .padding(.horizontal)
                 
-                // Difficulty Filter
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        FilterChip(
-                            title: "All",
-                            isSelected: selectedDifficulty == nil,
-                            action: { selectedDifficulty = nil }
-                        )
-                        
-                        ForEach(Difficulty.allCases, id: \.self) { difficulty in
-                            FilterChip(
-                                title: difficulty.rawValue,
-                                isSelected: selectedDifficulty == difficulty,
-                                action: { selectedDifficulty = difficulty }
+                        ForEach(1...4, id: \.self) { servings in
+                            ServingsChip(
+                                servings: servings,
+                                isSelected: selectedServings == servings,
+                                action: { selectedServings = servings }
                             )
                         }
                     }
                     .padding(.horizontal)
                 }
-                
-                // Servings Filter
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Cantidad de personas")
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                        .padding(.horizontal)
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 12) {
-                            ForEach(1...4, id: \.self) { servings in
-                                ServingsChip(
-                                    servings: servings,
-                                    isSelected: selectedServings == servings,
-                                    action: { selectedServings = servings }
-                                )
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                }
-                
-                // Recipes Section
-                if filteredRecipes.isEmpty {
-                    VStack(spacing: 16) {
-                        Image(systemName: "cup.and.saucer")
-                            .font(.system(size: 48))
-                            .foregroundColor(.gray)
-                        Text("No recipes found")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                        Text("Try adjusting your search or filters")
-                            .font(.body)
-                            .foregroundColor(.secondary)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
-                            ForEach(filteredRecipes) { recipe in
-                                NavigationLink(destination: BrewDetailScreen(recipe: recipe)) {
-                                    RecipeCard(recipe: recipe)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .onAppear {
-                                    print("DEBUG: Recipe card for '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
-                                }
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                }
-                
-                Spacer()
             }
-            .navigationBarHidden(true)
+            
+            // Recipes Section
+            if filteredRecipes.isEmpty {
+                VStack(spacing: 16) {
+                    Image(systemName: "cup.and.saucer")
+                        .font(.system(size: 48))
+                        .foregroundColor(.gray)
+                    Text("No recipes found")
+                        .font(.title2)
+                        .foregroundColor(.gray)
+                    Text("Try adjusting your search or filters")
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
+                        ForEach(filteredRecipes) { recipe in
+                            NavigationLink(destination: BrewDetailScreen(recipe: recipe)) {
+                                RecipeCard(recipe: recipe)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .onAppear {
+                                print("DEBUG: Recipe card for '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            }
+            
+            Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 
