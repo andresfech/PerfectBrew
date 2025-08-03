@@ -192,15 +192,10 @@ struct BrewingGuideScreen: View {
                     
                     // Water Pouring Animation (for brewing phase)
                     if !viewModel.isPreparationPhase {
-                        ZStack {
-                            WaterPouringLottie(
-                                isActive: viewModel.isTimerRunning,
-                                progress: viewModel.totalProgress
-                            )
-                            
-                            SteamLottie(isActive: viewModel.totalProgress > 0.1)
-                            RippleLottie(isActive: viewModel.totalProgress > 0.05)
-                        }
+                        WaterPouringLottie(
+                            isActive: viewModel.isTimerRunning,
+                            progress: viewModel.totalProgress
+                        )
                         .frame(height: 120)
                     }
                     

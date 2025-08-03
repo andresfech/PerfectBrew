@@ -6,6 +6,7 @@ struct LottieWaterAnimation: View {
     let isPlaying: Bool
     let loopMode: LottieLoopMode
     let speed: CGFloat
+    @State private var isLoaded = false
     
     init(animationName: String, isPlaying: Bool = true, loopMode: LottieLoopMode = .loop, speed: CGFloat = 1.0) {
         self.animationName = animationName
@@ -15,8 +16,29 @@ struct LottieWaterAnimation: View {
     }
     
     var body: some View {
-        LottieView(name: animationName, loopMode: loopMode, speed: speed, isPlaying: isPlaying)
-            .frame(width: 120, height: 120)
+        ZStack {
+            if isLoaded {
+                LottieView(name: animationName, loopMode: loopMode, speed: speed, isPlaying: isPlaying)
+                    .frame(width: 120, height: 120)
+                    .onAppear {
+                        // Small delay to ensure smooth transition
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            isLoaded = true
+                        }
+                    }
+            } else {
+                // Placeholder while loading
+                Circle()
+                    .fill(Color.blue.opacity(0.3))
+                    .frame(width: 120, height: 120)
+                    .onAppear {
+                        // Load animation after a brief delay
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                            isLoaded = true
+                        }
+                    }
+            }
+        }
     }
 }
 
@@ -31,9 +53,9 @@ struct LottieView: UIViewRepresentable {
         
         let animationView = LottieAnimationView()
         
-        // Load animation asynchronously to prevent glitches
-        DispatchQueue.main.async {
-            animationView.animation = LottieAnimation.named(name)
+        // Load animation synchronously to prevent initial glitches
+        if let animation = LottieAnimation.named(name) {
+            animationView.animation = animation
             animationView.contentMode = .scaleAspectFit
             animationView.loopMode = loopMode
             animationView.animationSpeed = speed
@@ -44,6 +66,9 @@ struct LottieView: UIViewRepresentable {
             if isPlaying {
                 animationView.play()
             }
+        } else {
+            // Fallback if animation fails to load
+            print("Warning: Failed to load animation '\(name)'")
         }
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,27 +103,15 @@ struct WaterPouringLottie: View {
     let progress: Double
     
     var body: some View {
-        ZStack {
-            // Water bubble animation (using your existing file)
-            LottieWaterAnimation(
-                animationName: "Water Bubble",
-                isPlaying: isActive,
-                loopMode: .loop,
-                speed: 1.0
-            )
-            
-            // Additional water effects when active
-            if isActive {
-                LottieWaterAnimation(
-                    animationName: "Water Bubble",
-                    isPlaying: true,
-                    loopMode: .loop,
-                    speed: 1.5
-                )
-                .offset(y: -20)
-                .scaleEffect(0.6)
-            }
-        }
+        LottieWaterAnimation(
+            animationName: "Water Bubble",
+            isPlaying: isActive,
+            loopMode: .loop,
+            speed: 1.0
+        )
+        .scaleEffect(isActive ? 1.0 : 0.8)
+        .opacity(isActive ? 1.0 : 0.6)
+        .animation(.easeInOut(duration: 0.3), value: isActive)
     }
 }
 
@@ -113,8 +126,9 @@ struct SteamLottie: View {
                 loopMode: .loop,
                 speed: 0.8
             )
-            .offset(y: -50)
             .scaleEffect(0.4)
+            .opacity(0.7)
+            .offset(y: -30)
         }
     }
 }
@@ -130,7 +144,8 @@ struct RippleLottie: View {
                 loopMode: .loop,
                 speed: 1.2
             )
-            .scaleEffect(1.2)
+            .scaleEffect(1.1)
+            .opacity(0.5)
         }
     }
 }
