@@ -214,7 +214,14 @@ struct BrewDetailScreen: View {
                 }
                 
                 // Start Brewing Button
-                NavigationLink(destination: BrewSetupScreen(recipe: recipe)) {
+                NavigationLink(destination: BrewingGuideScreen(
+                    coffeeDose: recipe.parameters.coffeeGrams,
+                    waterAmount: recipe.parameters.waterGrams,
+                    waterTemperature: recipe.parameters.temperatureCelsius,
+                    grindSize: 5, // Default grind size
+                    brewTime: TimeInterval(recipe.parameters.totalBrewTimeSeconds),
+                    recipe: recipe
+                )) {
                     HStack {
                         Image(systemName: "play.fill")
                             .font(.title3)
