@@ -34,74 +34,71 @@ struct HomeScreen: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 30) {
-                VStack(spacing: 8) {
-                    Text("Perfect Brew")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    Text("Craft the perfect cup")
-                        .font(.title3)
-                        .foregroundColor(.secondary)
-                }
-                .padding(.top, 20)
+        VStack(spacing: 30) {
+            VStack(spacing: 8) {
+                Text("Perfect Brew")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
                 
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Brew Method")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                        .padding(.horizontal)
-                    
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
-                        ForEach(BrewMethod.allCases, id: \.self) { method in
-                            BrewMethodCard(
-                                method: method,
-                                isSelected: selectedMethod == method,
-                                onTap: {
-                                    if method.isAvailable {
-                                        selectedMethod = method
-                                    }
-                                }
-                            )
-                        }
-                    }
+                Text("Craft the perfect cup")
+                    .font(.title3)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.top, 20)
+            
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Brew Method")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
                     .padding(.horizontal)
-                }
                 
-                Spacer()
-                
-                VStack(spacing: 16) {
-                    if selectedMethod.isAvailable {
-                        NavigationLink(destination: RecipeSelectionScreen(selectedMethod: selectedMethod)) {
-                            Text("Start New Brew")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.orange)
-                                .cornerRadius(12)
-                        }
-                        
-                        NavigationLink(destination: BrewHistoryScreen()) {
-                            Text("Brew History")
-                                .font(.title3)
-                                .fontWeight(.medium)
-                                .foregroundColor(.orange)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.orange.opacity(0.1))
-                                .cornerRadius(12)
-                        }
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
+                    ForEach(BrewMethod.allCases, id: \.self) { method in
+                        BrewMethodCard(
+                            method: method,
+                            isSelected: selectedMethod == method,
+                            onTap: {
+                                if method.isAvailable {
+                                    selectedMethod = method
+                                }
+                            }
+                        )
                     }
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 30)
             }
-            .navigationBarHidden(true)
+            
+            Spacer()
+            
+            VStack(spacing: 16) {
+                if selectedMethod.isAvailable {
+                    NavigationLink(destination: RecipeSelectionScreen(selectedMethod: selectedMethod)) {
+                        Text("Start New Brew")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.orange)
+                            .cornerRadius(12)
+                    }
+                    
+                    NavigationLink(destination: BrewHistoryScreen()) {
+                        Text("Brew History")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                            .foregroundColor(.orange)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.orange.opacity(0.1))
+                            .cornerRadius(12)
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 30)
         }
     }
 }
@@ -111,17 +108,65 @@ struct BrewMethodCard: View {
     let isSelected: Bool
     let onTap: () -> Void
     
+    @ViewBuilder
+    private func methodIcon() -> some View {
+        switch method {
+        case .v60:
+            Image("v60_icon")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+                .frame(width: 60, height: 60)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(isSelected ? method.iconColor.opacity(0.1) : Color.gray.opacity(0.1))
+                )
+        case .chemex:
+            Image("chemex")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+                .frame(width: 60, height: 60)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(isSelected ? method.iconColor.opacity(0.1) : Color.gray.opacity(0.1))
+                )
+        case .aeroPress:
+            Image("aeropress")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+                .frame(width: 60, height: 60)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(isSelected ? method.iconColor.opacity(0.1) : Color.gray.opacity(0.1))
+                )
+        case .frenchPress:
+            Image("french-press")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+                .frame(width: 60, height: 60)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(isSelected ? method.iconColor.opacity(0.1) : Color.gray.opacity(0.1))
+                )
+        default:
+            Image(systemName: method.icon)
+                .font(.system(size: 40))
+                .foregroundColor(isSelected ? method.iconColor : .gray)
+                .frame(width: 60, height: 60)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(isSelected ? method.iconColor.opacity(0.1) : Color.gray.opacity(0.1))
+                )
+        }
+    }
+    
     var body: some View {
         Button(action: onTap) {
             VStack(spacing: 12) {
-                Image(systemName: method.icon)
-                    .font(.system(size: 40))
-                    .foregroundColor(isSelected ? method.iconColor : .gray)
-                    .frame(width: 60, height: 60)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(isSelected ? method.iconColor.opacity(0.1) : Color.gray.opacity(0.1))
-                    )
+                methodIcon()
                 
                 Text(method.rawValue)
                     .font(.headline)
