@@ -121,11 +121,21 @@ class BrewingGuideViewModel: ObservableObject {
     // Computed properties for progress calculations
     var preparationProgress: Double {
         guard !preparationSteps.isEmpty else { return 0 }
+        
+        // If we're at "Ready to start brewing!" step, show 100% completion
+        if currentStep == "Ready to start brewing!" {
+            return 1.0
+        }
+        
         let currentIndex = preparationSteps.firstIndex(of: currentStep) ?? 0
-        return Double(currentIndex) / Double(preparationSteps.count)
+        return Double(currentIndex + 1) / Double(preparationSteps.count)
     }
     
     var currentPreparationStepIndex: Int {
+        // If we're at "Ready to start brewing!" step, return the last index
+        if currentStep == "Ready to start brewing!" {
+            return preparationSteps.count - 1
+        }
         return preparationSteps.firstIndex(of: currentStep) ?? 0
     }
     

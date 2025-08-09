@@ -24,6 +24,14 @@ struct BrewingGuideScreen: View {
         let step = viewModel.currentStep.lowercased()
         return step.contains("grind") && step.contains("coffee")
     }
+    
+    // Check if current step is about AeroPress plunger setup
+    private var isAeroPressPlungerStep: Bool {
+        let step = viewModel.currentStep.lowercased()
+        return (step.contains("aeropress") && (step.contains("plunger") || step.contains("inverted") || step.contains("insert") || step.contains("seal"))) ||
+               (step.contains("set up") && step.contains("aeropress")) ||
+               (step.contains("invert") && step.contains("aeropress"))
+    }
 
     init(coffeeDose: Double, waterAmount: Double, waterTemperature: Double, grindSize: Int, brewTime: TimeInterval, recipe: Recipe) {
         self.coffeeDose = coffeeDose
@@ -254,6 +262,25 @@ struct BrewingGuideScreen: View {
             
             Spacer()
                     }
+                    
+                    // Plunger Image (for AeroPress plunger setup step in preparation phase)
+                    if viewModel.isPreparationPhase && isAeroPressPlungerStep {
+                        Spacer()
+                        
+                        VStack(spacing: 8) {
+                            Image("plunger")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 120, height: 120)
+                                .foregroundColor(.orange)
+                            
+                            Text("Setting up AeroPress...")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Spacer()
+                    }
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
@@ -263,24 +290,45 @@ struct BrewingGuideScreen: View {
             VStack(spacing: 12) {
                 if viewModel.isPreparationPhase {
                     // Preparation phase buttons
-                    HStack(spacing: 12) {
-                    Button(action: {
-                            viewModel.nextPreparationStep()
-                        }) {
-                            HStack {
-                                Image(systemName: "arrow.right")
-                                    .font(.headline)
-                                Text("next_step".localized)
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
+                    // Only show Next Step and Reset buttons if not on the final step
+                    if viewModel.currentStep != "Ready to start brewing!" {
+                        HStack(spacing: 12) {
+                            Button(action: {
+                                viewModel.nextPreparationStep()
+                            }) {
+                                HStack {
+                                    Image(systemName: "arrow.right")
+                                        .font(.headline)
+                                    Text("next_step".localized)
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                }
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 44)
+                                .background(Color.blue)
+                                .cornerRadius(10)
                             }
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 44)
-                            .background(Color.blue)
-                            .cornerRadius(10)
+                            
+                            Button(action: {
+                                viewModel.resetPreparation()
+                            }) {
+                                HStack {
+                                    Image(systemName: "arrow.clockwise")
+                                        .font(.headline)
+                                    Text("reset".localized)
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                }
+                                .foregroundColor(.primary)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 44)
+                                .background(Color(.systemGray5))
+                                .cornerRadius(10)
+                            }
                         }
-                        
+                    } else {
+                        // When on final preparation step, only show Reset button centered
                         Button(action: {
                             viewModel.resetPreparation()
                         }) {
