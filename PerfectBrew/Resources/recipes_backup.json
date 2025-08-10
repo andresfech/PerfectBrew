@@ -1,54 +1,55 @@
-[{
-  "title": "Kaldi's Coffee",
-  "brewing_method": "V60",
-  "skill_level": "Beginner",
-  "rating": 4.3,
-  "parameters": {
-    "coffee_grams": 16,
-    "water_grams": 256,
-    "ratio": "1:16",
-    "grind_size": "Medium-fine, aiming for a grind that allows for a long, steady pour with a slight pool of water on top.",
-    "temperature_celsius": 96,
-    "bloom_water_grams": 40,
-    "bloom_time_seconds": 45,
-    "total_brew_time_seconds": 210
-  },
-  "preparation_steps": [
-    "Heat water to desired temperature (205-212°F / 96-100°C).",
-    "Grind 16 grams of coffee to medium-fine consistency.",
-    "Place filter in V60 and rinse with 50-100mL of hot water to pre-heat and remove paper taste. Discard rinse water.",
-    "Add 16 grams of ground coffee, gently shake to level, and create a deep divot in the center."
-  ],
-  "brewing_steps": [
-    {
-      "time_seconds": 0,
-      "instruction": "Bloom: Pour 40mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
+[
+  {
+    "title": "Kaldi's Coffee",
+    "brewing_method": "V60",
+    "skill_level": "Beginner",
+    "rating": 4.3,
+    "parameters": {
+      "coffee_grams": 16,
+      "water_grams": 256,
+      "ratio": "1:16",
+      "grind_size": "Medium-fine, aiming for a grind that allows for a long, steady pour with a slight pool of water on top.",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 40,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 250
     },
-    {
-      "time_seconds": 45,
-      "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 75mL in this stage, reaching 115mL total. This breaks channels and raises slurry temperature."
-    },
-    {
-      "time_seconds": 60,
-      "instruction": "Stop pouring and give a gentle swirl to flatten the bed."
-    },
-    {
-      "time_seconds": 90,
-      "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 256mL is reached. The water above the coffee may become clear."
-    },
-    {
-      "time_seconds": 180,
-      "instruction": "Give one more slight swirl to flatten the bed for drain down."
-    }
-  ],
-  "equipment": [
-    "Hario V60 02 Brewer",
-    "scale",
-    "kettle (gooseneck preferred)",
-    "stirring device (chopstick/long stick)"
-  ],
-  "notes": "Total Brew Time: 2:45 to 3:30.",
-  "servings": 1
+    "preparation_steps": [
+      "Heat water to desired temperature (205-212°F / 96-100°C).",
+      "Grind 16 grams of coffee to medium-fine consistency.",
+      "Place filter in V60 and rinse with 50-100mL of hot water to pre-heat and remove paper taste. Discard rinse water.",
+      "Add 16 grams of ground coffee, gently shake to level, and create a deep divot in the center."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Bloom: Pour 40mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 75mL in this stage, reaching 115mL total. This breaks channels and raises slurry temperature."
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "Stop pouring and give a gentle swirl to flatten the bed."
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 256mL is reached. The water above the coffee may become clear."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Give one more slight swirl to flatten the bed for drain down."
+      }
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "scale",
+      "kettle (gooseneck preferred)",
+      "stirring device (chopstick/long stick)"
+    ],
+    "notes": "Total Brew Time: 2:45 to 3:30.",
+    "servings": 1
   },
   {
     "title": "Kaldi's Coffee",
@@ -63,7 +64,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 80,
       "bloom_time_seconds": 50,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 285
     },
     "preparation_steps": [
       "Heat water to desired temperature (205-212°F / 96-100°C).",
@@ -73,7 +74,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom: Pour 80mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
       },
       {
@@ -89,7 +90,7 @@
         "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 512mL is reached. The water above the coffee may become clear."
       },
       {
-        "time_seconds": 200,
+        "time_seconds": 30,
         "instruction": "Give one more slight swirl to flatten the bed for drain down."
       }
     ],
@@ -115,7 +116,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 120,
       "bloom_time_seconds": 55,
-      "total_brew_time_seconds": 270
+      "total_brew_time_seconds": 320
     },
     "preparation_steps": [
       "Heat water to desired temperature (205-212°F / 96-100°C).",
@@ -125,7 +126,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom: Pour 120mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
       },
       {
@@ -141,7 +142,7 @@
         "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 768mL is reached. The water above the coffee may become clear."
       },
       {
-        "time_seconds": 220,
+        "time_seconds": 30,
         "instruction": "Give one more slight swirl to flatten the bed for drain down."
       }
     ],
@@ -167,7 +168,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 160,
       "bloom_time_seconds": 60,
-      "total_brew_time_seconds": 300
+      "total_brew_time_seconds": 355
     },
     "preparation_steps": [
       "Heat water to desired temperature (205-212°F / 96-100°C).",
@@ -177,7 +178,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom: Pour 160mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
       },
       {
@@ -193,7 +194,7 @@
         "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 1024mL is reached. The water above the coffee may become clear."
       },
       {
-        "time_seconds": 260,
+        "time_seconds": 30,
         "instruction": "Give one more slight swirl to flatten the bed for drain down."
       }
     ],
@@ -219,7 +220,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 60,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 210
+      "total_brew_time_seconds": 215
     },
     "preparation_steps": [
       "Heat water to 95°C.",
@@ -230,15 +231,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom (0:00): Start timer. Pour 60 grams of water (2x coffee dose) to saturate the grounds."
       },
       {
-        "time_seconds": 10,
+        "time_seconds": 25,
         "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
       },
       {
-        "time_seconds": 20,
+        "time_seconds": 30,
         "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:45. This bloom period allows for de-gassing, which is crucial for fresh coffee."
       },
       {
@@ -246,15 +247,15 @@
         "instruction": "First Main Pour (0:45 - 1:15): Pour up to 300 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
       },
       {
-        "time_seconds": 75,
+        "time_seconds": 30,
         "instruction": "Second Main Pour (1:15 - 1:45): Gently pour up to 500 grams of water (100% of total brew water) within 30 seconds."
       },
       {
-        "time_seconds": 105,
+        "time_seconds": 30,
         "instruction": "Stir (1:45): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
       },
       {
-        "time_seconds": 115,
+        "time_seconds": 30,
         "instruction": "Swirl (1:55): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
       }
     ],
@@ -281,7 +282,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 120,
       "bloom_time_seconds": 50,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 220
     },
     "preparation_steps": [
       "Heat water to 95°C.",
@@ -292,15 +293,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom (0:00): Start timer. Pour 120 grams of water (2x coffee dose) to saturate the grounds."
       },
       {
-        "time_seconds": 10,
+        "time_seconds": 25,
         "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
       },
       {
-        "time_seconds": 20,
+        "time_seconds": 30,
         "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:50. This bloom period allows for de-gassing, which is crucial for fresh coffee."
       },
       {
@@ -308,15 +309,15 @@
         "instruction": "First Main Pour (0:50 - 1:20): Pour up to 600 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
       },
       {
-        "time_seconds": 80,
+        "time_seconds": 30,
         "instruction": "Second Main Pour (1:20 - 1:50): Gently pour up to 1000 grams of water (100% of total brew water) within 30 seconds."
       },
       {
-        "time_seconds": 110,
+        "time_seconds": 30,
         "instruction": "Stir (1:50): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
       },
       {
-        "time_seconds": 120,
+        "time_seconds": 30,
         "instruction": "Swirl (2:00): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
       }
     ],
@@ -343,7 +344,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 180,
       "bloom_time_seconds": 55,
-      "total_brew_time_seconds": 270
+      "total_brew_time_seconds": 225
     },
     "preparation_steps": [
       "Heat water to 95°C.",
@@ -354,15 +355,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom (0:00): Start timer. Pour 180 grams of water (2x coffee dose) to saturate the grounds."
       },
       {
-        "time_seconds": 10,
+        "time_seconds": 25,
         "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
       },
       {
-        "time_seconds": 20,
+        "time_seconds": 30,
         "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:55. This bloom period allows for de-gassing, which is crucial for fresh coffee."
       },
       {
@@ -370,15 +371,15 @@
         "instruction": "First Main Pour (0:55 - 1:25): Pour up to 900 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
       },
       {
-        "time_seconds": 85,
+        "time_seconds": 30,
         "instruction": "Second Main Pour (1:25 - 1:55): Gently pour up to 1500 grams of water (100% of total brew water) within 30 seconds."
       },
       {
-        "time_seconds": 115,
+        "time_seconds": 30,
         "instruction": "Stir (1:55): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
       },
       {
-        "time_seconds": 125,
+        "time_seconds": 30,
         "instruction": "Swirl (2:05): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
       }
     ],
@@ -405,7 +406,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 240,
       "bloom_time_seconds": 60,
-      "total_brew_time_seconds": 300
+      "total_brew_time_seconds": 230
     },
     "preparation_steps": [
       "Heat water to 95°C.",
@@ -416,15 +417,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom (0:00): Start timer. Pour 240 grams of water (2x coffee dose) to saturate the grounds."
       },
       {
-        "time_seconds": 10,
+        "time_seconds": 25,
         "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
       },
       {
-        "time_seconds": 20,
+        "time_seconds": 30,
         "instruction": "Bloom continues (0:20): Let the coffee bloom until 1:00. This bloom period allows for de-gassing, which is crucial for fresh coffee."
       },
       {
@@ -432,15 +433,15 @@
         "instruction": "First Main Pour (1:00 - 1:30): Pour up to 1200 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
       },
       {
-        "time_seconds": 90,
+        "time_seconds": 30,
         "instruction": "Second Main Pour (1:30 - 2:00): Gently pour up to 2000 grams of water (100% of total brew water) within 30 seconds."
       },
       {
-        "time_seconds": 120,
+        "time_seconds": 30,
         "instruction": "Stir (2:00): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
       },
       {
-        "time_seconds": 130,
+        "time_seconds": 30,
         "instruction": "Swirl (2:10): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
       }
     ],
@@ -467,7 +468,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 50,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 505
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -477,7 +478,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 50g water (40% of total), stir gently."
       },
       {
@@ -497,7 +498,7 @@
         "instruction": "Final pour of 60g water, gentle swirl."
       },
       {
-        "time_seconds": 225,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -524,7 +525,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 100,
       "bloom_time_seconds": 50,
-      "total_brew_time_seconds": 270
+      "total_brew_time_seconds": 555
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -534,7 +535,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 100g water (40% of total), stir gently."
       },
       {
@@ -554,7 +555,7 @@
         "instruction": "Final pour of 120g water, gentle swirl."
       },
       {
-        "time_seconds": 250,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -581,7 +582,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 150,
       "bloom_time_seconds": 55,
-      "total_brew_time_seconds": 300
+      "total_brew_time_seconds": 605
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -591,7 +592,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 150g water (40% of total), stir gently."
       },
       {
@@ -611,7 +612,7 @@
         "instruction": "Final pour of 180g water, gentle swirl."
       },
       {
-        "time_seconds": 275,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -638,7 +639,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 200,
       "bloom_time_seconds": 60,
-      "total_brew_time_seconds": 330
+      "total_brew_time_seconds": 655
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -648,7 +649,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 200g water (40% of total), stir gently."
       },
       {
@@ -668,7 +669,7 @@
         "instruction": "Final pour of 240g water, gentle swirl."
       },
       {
-        "time_seconds": 300,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -695,7 +696,7 @@
       "temperature_celsius": 94,
       "bloom_water_grams": 54,
       "bloom_time_seconds": 30,
-      "total_brew_time_seconds": 195
+      "total_brew_time_seconds": 190
     },
     "preparation_steps": [
       "Heat water to 94°C.",
@@ -705,7 +706,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 54g water (3x coffee weight), stir gently."
       },
       {
@@ -721,7 +722,7 @@
         "instruction": "Pour to 300g in 15 seconds, gentle swirl."
       },
       {
-        "time_seconds": 75,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -748,7 +749,7 @@
       "temperature_celsius": 94,
       "bloom_water_grams": 108,
       "bloom_time_seconds": 35,
-      "total_brew_time_seconds": 210
+      "total_brew_time_seconds": 205
     },
     "preparation_steps": [
       "Heat water to 94°C.",
@@ -758,7 +759,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 108g water (3x coffee weight), stir gently."
       },
       {
@@ -774,7 +775,7 @@
         "instruction": "Pour to 600g in 15 seconds, gentle swirl."
       },
       {
-        "time_seconds": 80,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -801,7 +802,7 @@
       "temperature_celsius": 94,
       "bloom_water_grams": 162,
       "bloom_time_seconds": 40,
-      "total_brew_time_seconds": 225
+      "total_brew_time_seconds": 220
     },
     "preparation_steps": [
       "Heat water to 94°C.",
@@ -811,7 +812,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 162g water (3x coffee weight), stir gently."
       },
       {
@@ -827,7 +828,7 @@
         "instruction": "Pour to 900g in 15 seconds, gentle swirl."
       },
       {
-        "time_seconds": 85,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -854,7 +855,7 @@
       "temperature_celsius": 94,
       "bloom_water_grams": 216,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 235
     },
     "preparation_steps": [
       "Heat water to 94°C.",
@@ -864,7 +865,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 216g water (3x coffee weight), stir gently."
       },
       {
@@ -880,7 +881,7 @@
         "instruction": "Pour to 1200g in 15 seconds, gentle swirl."
       },
       {
-        "time_seconds": 90,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -907,7 +908,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 36,
       "bloom_time_seconds": 30,
-      "total_brew_time_seconds": 150
+      "total_brew_time_seconds": 115
     },
     "preparation_steps": [
       "Heat water to 95°C.",
@@ -917,7 +918,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 36g water, stir gently."
       },
       {
@@ -951,7 +952,7 @@
       "temperature_celsius": 93,
       "bloom_water_grams": 45,
       "bloom_time_seconds": 40,
-      "total_brew_time_seconds": 180
+      "total_brew_time_seconds": 275
     },
     "preparation_steps": [
       "Heat water to 93°C.",
@@ -961,7 +962,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 45g water, stir in figure-8 pattern."
       },
       {
@@ -981,7 +982,7 @@
         "instruction": "Final pour to 250g, gentle swirl."
       },
       {
-        "time_seconds": 120,
+        "time_seconds": 30,
         "instruction": "Let drain completely."
       }
     ],
@@ -1008,7 +1009,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 60,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 300
+      "total_brew_time_seconds": 430
     },
     "preparation_steps": [
       "Heat water to 95°C",
@@ -1018,7 +1019,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 60g water for bloom, stir gently"
       },
       {
@@ -1026,7 +1027,7 @@
         "instruction": "Pour to 200g in slow, steady stream"
       },
       {
-        "time_seconds": 75,
+        "time_seconds": 30,
         "instruction": "Wait 30 seconds"
       },
       {
@@ -1034,7 +1035,7 @@
         "instruction": "Pour to 350g"
       },
       {
-        "time_seconds": 135,
+        "time_seconds": 30,
         "instruction": "Wait 30 seconds"
       },
       {
@@ -1042,7 +1043,7 @@
         "instruction": "Final pour to 500g"
       },
       {
-        "time_seconds": 195,
+        "time_seconds": 30,
         "instruction": "Let drain completely"
       }
     ],
@@ -1069,7 +1070,7 @@
       "temperature_celsius": 94,
       "bloom_water_grams": 30,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 430
     },
     "preparation_steps": [
       "Heat water to 94°C",
@@ -1079,7 +1080,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 30g water for bloom, stir gently"
       },
       {
@@ -1087,7 +1088,7 @@
         "instruction": "Pour to 100g in slow, steady stream"
       },
       {
-        "time_seconds": 75,
+        "time_seconds": 30,
         "instruction": "Wait 30 seconds"
       },
       {
@@ -1095,7 +1096,7 @@
         "instruction": "Pour to 175g"
       },
       {
-        "time_seconds": 135,
+        "time_seconds": 30,
         "instruction": "Wait 30 seconds"
       },
       {
@@ -1103,7 +1104,7 @@
         "instruction": "Final pour to 250g"
       },
       {
-        "time_seconds": 195,
+        "time_seconds": 30,
         "instruction": "Let drain completely"
       }
     ],
@@ -1130,7 +1131,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 550
     },
     "preparation_steps": [
       "Heat water to 95°C",
@@ -1139,15 +1140,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 500g hot water"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently to saturate grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Place lid on top (don't press yet)"
       },
       {
@@ -1181,7 +1182,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 550
     },
     "preparation_steps": [
       "Heat water to 95°C",
@@ -1190,15 +1191,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 250g hot water"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently to saturate grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Place lid on top (don't press yet)"
       },
       {
@@ -1232,7 +1233,7 @@
       "temperature_celsius": 85,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 120
+      "total_brew_time_seconds": 250
     },
     "preparation_steps": [
       "Heat water to 85°C",
@@ -1242,15 +1243,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 250g hot water"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir for 10 seconds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Insert plunger and pull up slightly"
       },
       {
@@ -1285,7 +1286,7 @@
       "temperature_celsius": 88,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 150
+      "total_brew_time_seconds": 260
     },
     "preparation_steps": [
       "Heat water to 88°C",
@@ -1295,15 +1296,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 250g hot water"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir for 10 seconds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 30,
         "instruction": "Wait 1 minute"
       },
       {
@@ -1338,7 +1339,7 @@
       "temperature_celsius": 94,
       "bloom_water_grams": 90,
       "bloom_time_seconds": 60,
-      "total_brew_time_seconds": 300
+      "total_brew_time_seconds": 570
     },
     "preparation_steps": [
       "Heat water to 94°C",
@@ -1349,7 +1350,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom: Pour 90g water (2x coffee weight), stir gently in circular motion"
       },
       {
@@ -1357,7 +1358,7 @@
         "instruction": "First pour: Add 180g water in slow, steady spiral, reaching 270g total"
       },
       {
-        "time_seconds": 120,
+        "time_seconds": 35,
         "instruction": "Wait 30 seconds for extraction"
       },
       {
@@ -1365,7 +1366,7 @@
         "instruction": "Second pour: Add 225g water, reaching 495g total"
       },
       {
-        "time_seconds": 210,
+        "time_seconds": 30,
         "instruction": "Wait 30 seconds"
       },
       {
@@ -1373,7 +1374,7 @@
         "instruction": "Final pour: Add remaining 225g water to reach 720g total"
       },
       {
-        "time_seconds": 300,
+        "time_seconds": 30,
         "instruction": "Let drain completely, should finish around 4:30-5:00"
       }
     ],
@@ -1401,7 +1402,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 120,
       "bloom_time_seconds": 60,
-      "total_brew_time_seconds": 360
+      "total_brew_time_seconds": 615
     },
     "preparation_steps": [
       "Heat water to 95°C",
@@ -1412,7 +1413,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom: Pour 120g water (2x coffee weight), stir gently"
       },
       {
@@ -1420,7 +1421,7 @@
         "instruction": "First pour: Add 300g water in slow, steady stream, reaching 420g total"
       },
       {
-        "time_seconds": 120,
+        "time_seconds": 35,
         "instruction": "Wait 45 seconds for extraction"
       },
       {
@@ -1428,7 +1429,7 @@
         "instruction": "Second pour: Add 300g water, reaching 720g total"
       },
       {
-        "time_seconds": 225,
+        "time_seconds": 30,
         "instruction": "Wait 45 seconds"
       },
       {
@@ -1436,7 +1437,7 @@
         "instruction": "Final pour: Add remaining 280g water to reach 1000g total"
       },
       {
-        "time_seconds": 330,
+        "time_seconds": 30,
         "instruction": "Let drain completely, should finish around 6:00-6:30"
       }
     ],
@@ -1464,7 +1465,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 300
+      "total_brew_time_seconds": 570
     },
     "preparation_steps": [
       "Heat water to 95°C",
@@ -1474,19 +1475,19 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 1000g hot water over grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently to saturate all grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Place lid on top (don't press yet)"
       },
       {
-        "time_seconds": 240,
+        "time_seconds": 170,
         "instruction": "Wait 4 minutes for extraction"
       },
       {
@@ -1494,7 +1495,7 @@
         "instruction": "Press plunger down slowly and steadily"
       },
       {
-        "time_seconds": 300,
+        "time_seconds": 30,
         "instruction": "Pour immediately to prevent over-extraction"
       }
     ],
@@ -1520,7 +1521,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 64,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 460
     },
     "preparation_steps": [
       "Heat water to desired temperature (205-212°F / 96-100°C).",
@@ -1530,7 +1531,7 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Bloom: Pour 64 grams of water (2x coffee dose), stir gently"
       },
       {
@@ -1538,7 +1539,7 @@
         "instruction": "First pour: Add 128g water in slow, steady stream"
       },
       {
-        "time_seconds": 90,
+        "time_seconds": 30,
         "instruction": "Wait 30 seconds for extraction"
       },
       {
@@ -1546,7 +1547,7 @@
         "instruction": "Second pour: Add 128g water"
       },
       {
-        "time_seconds": 150,
+        "time_seconds": 30,
         "instruction": "Wait 30 seconds"
       },
       {
@@ -1554,7 +1555,7 @@
         "instruction": "Final pour: Add remaining 192g water to reach 512g total"
       },
       {
-        "time_seconds": 210,
+        "time_seconds": 30,
         "instruction": "Let drain completely, should finish around 4:00"
       }
     ],
@@ -1582,7 +1583,7 @@
       "temperature_celsius": 88,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 180
+      "total_brew_time_seconds": 230
     },
     "preparation_steps": [
       "Heat water to 88°C",
@@ -1592,15 +1593,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 500g hot water"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently for 10 seconds"
       },
       {
-        "time_seconds": 10,
+        "time_seconds": 30,
         "instruction": "Wait 60 seconds"
       },
       {
@@ -1635,7 +1636,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 50,
       "bloom_time_seconds": 30,
-      "total_brew_time_seconds": 145
+      "total_brew_time_seconds": 496
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -1644,15 +1645,42 @@
       "Prepare and rinse a single Aesir paper filter in the cap using hot water."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the inverted AeroPress." },
-      { "time_seconds": 0, "instruction": "Bloom: Pour 50g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated." },
-      { "time_seconds": 30, "instruction": "Second Pour: Add 50g more water over 5–6 seconds, pouring evenly to maintain saturation." },
-      { "time_seconds": 36, "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction." },
-      { "time_seconds": 80, "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds." },
-      { "time_seconds": 95, "instruction": "Carefully flip the AeroPress onto a sturdy vessel." },
-      { "time_seconds": 95, "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 76–79g of concentrate." },
-      { "time_seconds": 135, "instruction": "Add enough hot water to the extracted concentrate to reach 130–135g." },
-      { "time_seconds": 145, "instruction": "Balance flavor by adding 20–30g of room temperature water and stir." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the inverted AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Bloom: Pour 50g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Second Pour: Add 50g more water over 5–6 seconds, pouring evenly to maintain saturation."
+      },
+      {
+        "time_seconds": 36,
+        "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction."
+      },
+      {
+        "time_seconds": 80,
+        "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds."
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "Carefully flip the AeroPress onto a sturdy vessel."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 76–79g of concentrate."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Add enough hot water to the extracted concentrate to reach 130–135g."
+      },
+      {
+        "time_seconds": 145,
+        "instruction": "Balance flavor by adding 20–30g of room temperature water and stir."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1678,7 +1706,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 100,
       "bloom_time_seconds": 35,
-      "total_brew_time_seconds": 160
+      "total_brew_time_seconds": 521
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -1687,15 +1715,42 @@
       "Prepare and rinse a single Aesir paper filter in the cap using hot water."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the inverted AeroPress." },
-      { "time_seconds": 0, "instruction": "Bloom: Pour 100g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated." },
-      { "time_seconds": 35, "instruction": "Second Pour: Add 100g more water over 5–6 seconds, pouring evenly to maintain saturation." },
-      { "time_seconds": 41, "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction." },
-      { "time_seconds": 85, "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds." },
-      { "time_seconds": 100, "instruction": "Carefully flip the AeroPress onto a sturdy vessel." },
-      { "time_seconds": 100, "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 152–158g of concentrate." },
-      { "time_seconds": 140, "instruction": "Add enough hot water to the extracted concentrate to reach 260–270g." },
-      { "time_seconds": 150, "instruction": "Balance flavor by adding 40–60g of room temperature water and stir." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the inverted AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Bloom: Pour 100g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated."
+      },
+      {
+        "time_seconds": 35,
+        "instruction": "Second Pour: Add 100g more water over 5–6 seconds, pouring evenly to maintain saturation."
+      },
+      {
+        "time_seconds": 41,
+        "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction."
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds."
+      },
+      {
+        "time_seconds": 100,
+        "instruction": "Carefully flip the AeroPress onto a sturdy vessel."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 152–158g of concentrate."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Add enough hot water to the extracted concentrate to reach 260–270g."
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Balance flavor by adding 40–60g of room temperature water and stir."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1721,7 +1776,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 150,
       "bloom_time_seconds": 40,
-      "total_brew_time_seconds": 175
+      "total_brew_time_seconds": 546
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -1730,15 +1785,42 @@
       "Prepare and rinse a single Aesir paper filter in the cap using hot water."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the inverted AeroPress." },
-      { "time_seconds": 0, "instruction": "Bloom: Pour 150g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated." },
-      { "time_seconds": 40, "instruction": "Second Pour: Add 150g more water over 5–6 seconds, pouring evenly to maintain saturation." },
-      { "time_seconds": 46, "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction." },
-      { "time_seconds": 90, "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds." },
-      { "time_seconds": 105, "instruction": "Carefully flip the AeroPress onto a sturdy vessel." },
-      { "time_seconds": 105, "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 228–237g of concentrate." },
-      { "time_seconds": 145, "instruction": "Add enough hot water to the extracted concentrate to reach 390–405g." },
-      { "time_seconds": 155, "instruction": "Balance flavor by adding 60–90g of room temperature water and stir." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the inverted AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Bloom: Pour 150g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated."
+      },
+      {
+        "time_seconds": 40,
+        "instruction": "Second Pour: Add 150g more water over 5–6 seconds, pouring evenly to maintain saturation."
+      },
+      {
+        "time_seconds": 46,
+        "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction."
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds."
+      },
+      {
+        "time_seconds": 105,
+        "instruction": "Carefully flip the AeroPress onto a sturdy vessel."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 228–237g of concentrate."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Add enough hot water to the extracted concentrate to reach 390–405g."
+      },
+      {
+        "time_seconds": 155,
+        "instruction": "Balance flavor by adding 60–90g of room temperature water and stir."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1764,7 +1846,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 200,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 190
+      "total_brew_time_seconds": 571
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -1773,15 +1855,42 @@
       "Prepare and rinse a single Aesir paper filter in the cap using hot water."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the inverted AeroPress." },
-      { "time_seconds": 0, "instruction": "Bloom: Pour 200g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated." },
-      { "time_seconds": 45, "instruction": "Second Pour: Add 200g more water over 5–6 seconds, pouring evenly to maintain saturation." },
-      { "time_seconds": 51, "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction." },
-      { "time_seconds": 95, "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds." },
-      { "time_seconds": 110, "instruction": "Carefully flip the AeroPress onto a sturdy vessel." },
-      { "time_seconds": 110, "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 304–316g of concentrate." },
-      { "time_seconds": 150, "instruction": "Add enough hot water to the extracted concentrate to reach 520–540g." },
-      { "time_seconds": 160, "instruction": "Balance flavor by adding 80–120g of room temperature water and stir." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the inverted AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Bloom: Pour 200g of water over grounds using a gentle, controlled pour. Ensure all grounds are saturated."
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "Second Pour: Add 200g more water over 5–6 seconds, pouring evenly to maintain saturation."
+      },
+      {
+        "time_seconds": 51,
+        "instruction": "Stir in a North-South-East-West pattern for 10 seconds to ensure uniform extraction."
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "Attach filter cap. Gently remove any excess air by pulling slightly on the plunger for 10 seconds."
+      },
+      {
+        "time_seconds": 110,
+        "instruction": "Carefully flip the AeroPress onto a sturdy vessel."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Press gently and steadily for 30–40 seconds, aiming to extract 304–316g of concentrate."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Add enough hot water to the extracted concentrate to reach 520–540g."
+      },
+      {
+        "time_seconds": 160,
+        "instruction": "Balance flavor by adding 80–120g of room temperature water and stir."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1807,7 +1916,7 @@
       "temperature_celsius": 100,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 150
+      "total_brew_time_seconds": 340
     },
     "preparation_steps": [
       "Boil water to 100°C.",
@@ -1815,11 +1924,26 @@
       "Prepare AeroPress in standard orientation with paper filter (no need to preheat)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the AeroPress." },
-      { "time_seconds": 0, "instruction": "Add 200g boiling water quickly to fully saturate grounds." },
-      { "time_seconds": 5, "instruction": "Insert plunger 1cm to create vacuum seal." },
-      { "time_seconds": 120, "instruction": "Swirl gently to break crust on surface." },
-      { "time_seconds": 150, "instruction": "Press slowly until finished." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Add 200g boiling water quickly to fully saturate grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger 1cm to create vacuum seal."
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Swirl gently to break crust on surface."
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Press slowly until finished."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1844,7 +1968,7 @@
       "temperature_celsius": 100,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 165
+      "total_brew_time_seconds": 370
     },
     "preparation_steps": [
       "Boil water to 100°C.",
@@ -1852,11 +1976,26 @@
       "Prepare AeroPress in standard orientation with paper filter (no need to preheat)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the AeroPress." },
-      { "time_seconds": 0, "instruction": "Add 400g boiling water quickly to fully saturate grounds." },
-      { "time_seconds": 5, "instruction": "Insert plunger 1cm to create vacuum seal." },
-      { "time_seconds": 135, "instruction": "Swirl gently to break crust on surface." },
-      { "time_seconds": 165, "instruction": "Press slowly until finished." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Add 400g boiling water quickly to fully saturate grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger 1cm to create vacuum seal."
+      },
+      {
+        "time_seconds": 135,
+        "instruction": "Swirl gently to break crust on surface."
+      },
+      {
+        "time_seconds": 165,
+        "instruction": "Press slowly until finished."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1881,7 +2020,7 @@
       "temperature_celsius": 100,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 180
+      "total_brew_time_seconds": 400
     },
     "preparation_steps": [
       "Boil water to 100°C.",
@@ -1889,11 +2028,26 @@
       "Prepare AeroPress in standard orientation with paper filter (no need to preheat)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the AeroPress." },
-      { "time_seconds": 0, "instruction": "Add 600g boiling water quickly to fully saturate grounds." },
-      { "time_seconds": 5, "instruction": "Insert plunger 1cm to create vacuum seal." },
-      { "time_seconds": 150, "instruction": "Swirl gently to break crust on surface." },
-      { "time_seconds": 180, "instruction": "Press slowly until finished." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Add 600g boiling water quickly to fully saturate grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger 1cm to create vacuum seal."
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Swirl gently to break crust on surface."
+      },
+      {
+        "time_seconds": 180,
+        "instruction": "Press slowly until finished."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1918,7 +2072,7 @@
       "temperature_celsius": 100,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 195
+      "total_brew_time_seconds": 430
     },
     "preparation_steps": [
       "Boil water to 100°C.",
@@ -1926,11 +2080,26 @@
       "Prepare AeroPress in standard orientation with paper filter (no need to preheat)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add ground coffee to the AeroPress." },
-      { "time_seconds": 0, "instruction": "Add 800g boiling water quickly to fully saturate grounds." },
-      { "time_seconds": 5, "instruction": "Insert plunger 1cm to create vacuum seal." },
-      { "time_seconds": 165, "instruction": "Swirl gently to break crust on surface." },
-      { "time_seconds": 195, "instruction": "Press slowly until finished." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add ground coffee to the AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Add 800g boiling water quickly to fully saturate grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger 1cm to create vacuum seal."
+      },
+      {
+        "time_seconds": 165,
+        "instruction": "Swirl gently to break crust on surface."
+      },
+      {
+        "time_seconds": 195,
+        "instruction": "Press slowly until finished."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1955,7 +2124,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 90
+      "total_brew_time_seconds": 215
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -1963,12 +2132,30 @@
       "Prepare AeroPress in standard position with rinsed paper filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to AeroPress." },
-      { "time_seconds": 0, "instruction": "Pour 200g hot water over coffee, ensuring full saturation." },
-      { "time_seconds": 5, "instruction": "Stir 3 times gently." },
-      { "time_seconds": 10, "instruction": "Insert plunger and pull slightly up to create vacuum." },
-      { "time_seconds": 60, "instruction": "Stir 3 times again." },
-      { "time_seconds": 65, "instruction": "Press slowly all the way through." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 200g hot water over coffee, ensuring full saturation."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Stir 3 times gently."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger and pull slightly up to create vacuum."
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "Stir 3 times again."
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "Press slowly all the way through."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -1993,7 +2180,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 105
+      "total_brew_time_seconds": 245
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -2001,12 +2188,30 @@
       "Prepare AeroPress in standard position with rinsed paper filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to AeroPress." },
-      { "time_seconds": 0, "instruction": "Pour 400g hot water over coffee, ensuring full saturation." },
-      { "time_seconds": 5, "instruction": "Stir 3 times gently." },
-      { "time_seconds": 10, "instruction": "Insert plunger and pull slightly up to create vacuum." },
-      { "time_seconds": 75, "instruction": "Stir 3 times again." },
-      { "time_seconds": 80, "instruction": "Press slowly all the way through." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 400g hot water over coffee, ensuring full saturation."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Stir 3 times gently."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger and pull slightly up to create vacuum."
+      },
+      {
+        "time_seconds": 75,
+        "instruction": "Stir 3 times again."
+      },
+      {
+        "time_seconds": 80,
+        "instruction": "Press slowly all the way through."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2031,7 +2236,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 120
+      "total_brew_time_seconds": 275
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -2039,12 +2244,30 @@
       "Prepare AeroPress in standard position with rinsed paper filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to AeroPress." },
-      { "time_seconds": 0, "instruction": "Pour 600g hot water over coffee, ensuring full saturation." },
-      { "time_seconds": 5, "instruction": "Stir 3 times gently." },
-      { "time_seconds": 10, "instruction": "Insert plunger and pull slightly up to create vacuum." },
-      { "time_seconds": 90, "instruction": "Stir 3 times again." },
-      { "time_seconds": 95, "instruction": "Press slowly all the way through." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 600g hot water over coffee, ensuring full saturation."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Stir 3 times gently."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger and pull slightly up to create vacuum."
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Stir 3 times again."
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "Press slowly all the way through."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2069,7 +2292,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 135
+      "total_brew_time_seconds": 305
     },
     "preparation_steps": [
       "Heat water to 96°C.",
@@ -2077,12 +2300,30 @@
       "Prepare AeroPress in standard position with rinsed paper filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to AeroPress." },
-      { "time_seconds": 0, "instruction": "Pour 800g hot water over coffee, ensuring full saturation." },
-      { "time_seconds": 5, "instruction": "Stir 3 times gently." },
-      { "time_seconds": 10, "instruction": "Insert plunger and pull slightly up to create vacuum." },
-      { "time_seconds": 105, "instruction": "Stir 3 times again." },
-      { "time_seconds": 110, "instruction": "Press slowly all the way through." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to AeroPress."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 800g hot water over coffee, ensuring full saturation."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Stir 3 times gently."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Insert plunger and pull slightly up to create vacuum."
+      },
+      {
+        "time_seconds": 105,
+        "instruction": "Stir 3 times again."
+      },
+      {
+        "time_seconds": 110,
+        "instruction": "Press slowly all the way through."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2107,7 +2348,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 50
+      "total_brew_time_seconds": 140
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -2115,10 +2356,22 @@
       "Set AeroPress in inverted position with rinsed paper filter ready."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add 100g water rapidly over coffee grounds." },
-      { "time_seconds": 5, "instruction": "Stir 20 times in 10 seconds." },
-      { "time_seconds": 40, "instruction": "Flip AeroPress, press through completely." },
-      { "time_seconds": 50, "instruction": "Dilute concentrate with 120ml additional hot water." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add 100g water rapidly over coffee grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir 20 times in 10 seconds."
+      },
+      {
+        "time_seconds": 40,
+        "instruction": "Flip AeroPress, press through completely."
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "Dilute concentrate with 120ml additional hot water."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2143,7 +2396,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 55
+      "total_brew_time_seconds": 150
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -2151,10 +2404,22 @@
       "Set AeroPress in inverted position with rinsed paper filter ready."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add 200g water rapidly over coffee grounds." },
-      { "time_seconds": 5, "instruction": "Stir 20 times in 10 seconds." },
-      { "time_seconds": 45, "instruction": "Flip AeroPress, press through completely." },
-      { "time_seconds": 55, "instruction": "Dilute concentrate with 240ml additional hot water." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add 200g water rapidly over coffee grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir 20 times in 10 seconds."
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "Flip AeroPress, press through completely."
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "Dilute concentrate with 240ml additional hot water."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2179,7 +2444,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 60
+      "total_brew_time_seconds": 160
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -2187,10 +2452,22 @@
       "Set AeroPress in inverted position with rinsed paper filter ready."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add 300g water rapidly over coffee grounds." },
-      { "time_seconds": 5, "instruction": "Stir 20 times in 10 seconds." },
-      { "time_seconds": 50, "instruction": "Flip AeroPress, press through completely." },
-      { "time_seconds": 60, "instruction": "Dilute concentrate with 360ml additional hot water." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add 300g water rapidly over coffee grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir 20 times in 10 seconds."
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "Flip AeroPress, press through completely."
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "Dilute concentrate with 360ml additional hot water."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2215,7 +2492,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 65
+      "total_brew_time_seconds": 170
     },
     "preparation_steps": [
       "Heat water to 92°C.",
@@ -2223,10 +2500,22 @@
       "Set AeroPress in inverted position with rinsed paper filter ready."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add 400g water rapidly over coffee grounds." },
-      { "time_seconds": 5, "instruction": "Stir 20 times in 10 seconds." },
-      { "time_seconds": 55, "instruction": "Flip AeroPress, press through completely." },
-      { "time_seconds": 65, "instruction": "Dilute concentrate with 480ml additional hot water." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add 400g water rapidly over coffee grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir 20 times in 10 seconds."
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "Flip AeroPress, press through completely."
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "Dilute concentrate with 480ml additional hot water."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2251,17 +2540,29 @@
       "temperature_celsius": 23,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 18000
+      "total_brew_time_seconds": 104400
     },
     "preparation_steps": [
       "Grind 35 grams of coffee coarse.",
       "Add to AeroPress chamber (inverted or upright)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Pour 500g room temperature water over grounds." },
-      { "time_seconds": 0, "instruction": "Stir to ensure even saturation." },
-      { "time_seconds": 18000, "instruction": "After 5–10 hours of steeping at room temperature, press through filter." },
-      { "time_seconds": 86400, "instruction": "Refrigerate overnight before serving." }
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 500g room temperature water over grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir to ensure even saturation."
+      },
+      {
+        "time_seconds": 17950,
+        "instruction": "After 5–10 hours of steeping at room temperature, press through filter."
+      },
+      {
+        "time_seconds": 86400,
+        "instruction": "Refrigerate overnight before serving."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2285,17 +2586,29 @@
       "temperature_celsius": 23,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 18000
+      "total_brew_time_seconds": 104400
     },
     "preparation_steps": [
       "Grind 70 grams of coffee coarse.",
       "Add to AeroPress chamber (inverted or upright)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Pour 1000g room temperature water over grounds." },
-      { "time_seconds": 0, "instruction": "Stir to ensure even saturation." },
-      { "time_seconds": 18000, "instruction": "After 5–10 hours of steeping at room temperature, press through filter." },
-      { "time_seconds": 86400, "instruction": "Refrigerate overnight before serving." }
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 1000g room temperature water over grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir to ensure even saturation."
+      },
+      {
+        "time_seconds": 17950,
+        "instruction": "After 5–10 hours of steeping at room temperature, press through filter."
+      },
+      {
+        "time_seconds": 86400,
+        "instruction": "Refrigerate overnight before serving."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2319,17 +2632,29 @@
       "temperature_celsius": 23,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 18000
+      "total_brew_time_seconds": 104400
     },
     "preparation_steps": [
       "Grind 105 grams of coffee coarse.",
       "Add to AeroPress chamber (inverted or upright)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Pour 1500g room temperature water over grounds." },
-      { "time_seconds": 0, "instruction": "Stir to ensure even saturation." },
-      { "time_seconds": 18000, "instruction": "After 5–10 hours of steeping at room temperature, press through filter." },
-      { "time_seconds": 86400, "instruction": "Refrigerate overnight before serving." }
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 1500g room temperature water over grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir to ensure even saturation."
+      },
+      {
+        "time_seconds": 17950,
+        "instruction": "After 5–10 hours of steeping at room temperature, press through filter."
+      },
+      {
+        "time_seconds": 86400,
+        "instruction": "Refrigerate overnight before serving."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2353,17 +2678,29 @@
       "temperature_celsius": 23,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 18000
+      "total_brew_time_seconds": 104400
     },
     "preparation_steps": [
       "Grind 140 grams of coffee coarse.",
       "Add to AeroPress chamber (inverted or upright)."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Pour 2000g room temperature water over grounds." },
-      { "time_seconds": 0, "instruction": "Stir to ensure even saturation." },
-      { "time_seconds": 18000, "instruction": "After 5–10 hours of steeping at room temperature, press through filter." },
-      { "time_seconds": 86400, "instruction": "Refrigerate overnight before serving." }
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 2000g room temperature water over grounds."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir to ensure even saturation."
+      },
+      {
+        "time_seconds": 17950,
+        "instruction": "After 5–10 hours of steeping at room temperature, press through filter."
+      },
+      {
+        "time_seconds": 86400,
+        "instruction": "Refrigerate overnight before serving."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2387,7 +2724,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 35
+      "total_brew_time_seconds": 70
     },
     "preparation_steps": [
       "Heat water to 92–95°C.",
@@ -2395,9 +2732,18 @@
       "Set up AeroPress in standard position with rinsed filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to chamber." },
-      { "time_seconds": 0, "instruction": "Pour 100g hot water over grounds." },
-      { "time_seconds": 5, "instruction": "Press firmly and consistently for about 30 seconds." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to chamber."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 100g hot water over grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Press firmly and consistently for about 30 seconds."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2422,7 +2768,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 40
+      "total_brew_time_seconds": 70
     },
     "preparation_steps": [
       "Heat water to 92–95°C.",
@@ -2430,9 +2776,18 @@
       "Set up AeroPress in standard position with rinsed filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to chamber." },
-      { "time_seconds": 0, "instruction": "Pour 200g hot water over grounds." },
-      { "time_seconds": 5, "instruction": "Press firmly and consistently for about 35 seconds." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to chamber."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 200g hot water over grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Press firmly and consistently for about 35 seconds."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2457,7 +2812,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 45
+      "total_brew_time_seconds": 70
     },
     "preparation_steps": [
       "Heat water to 92–95°C.",
@@ -2465,9 +2820,18 @@
       "Set up AeroPress in standard position with rinsed filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to chamber." },
-      { "time_seconds": 0, "instruction": "Pour 300g hot water over grounds." },
-      { "time_seconds": 5, "instruction": "Press firmly and consistently for about 40 seconds." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to chamber."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 300g hot water over grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Press firmly and consistently for about 40 seconds."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2492,7 +2856,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 50
+      "total_brew_time_seconds": 70
     },
     "preparation_steps": [
       "Heat water to 92–95°C.",
@@ -2500,9 +2864,18 @@
       "Set up AeroPress in standard position with rinsed filter."
     ],
     "brewing_steps": [
-      { "time_seconds": 0, "instruction": "Add coffee grounds to chamber." },
-      { "time_seconds": 0, "instruction": "Pour 400g hot water over grounds." },
-      { "time_seconds": 5, "instruction": "Press firmly and consistently for about 45 seconds." }
+      {
+        "time_seconds": 25,
+        "instruction": "Add coffee grounds to chamber."
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 400g hot water over grounds."
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Press firmly and consistently for about 45 seconds."
+      }
     ],
     "equipment": [
       "AeroPress",
@@ -2527,7 +2900,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 240
+      "total_brew_time_seconds": 550
     },
     "preparation_steps": [
       "Heat water to 95°C",
@@ -2536,15 +2909,15 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Pour 500g hot water"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently to saturate grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Place lid on top (don't press yet)"
       },
       {
@@ -2571,36 +2944,36 @@
     "skill_level": "Beginner",
     "rating": 4.2,
     "parameters": {
-      "coffee_grams": 45,
-      "water_grams": 750,
+      "coffee_grams": 60,
+      "water_grams": 1000,
       "ratio": "1:16.7",
       "grind_size": "Coarse",
       "temperature_celsius": 95,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 270
+      "total_brew_time_seconds": 510
     },
     "preparation_steps": [
       "Heat water to 95°C",
-      "Grind 45 grams of coffee to coarse consistency.",
-      "Use medium French Press (0.75L capacity)",
-      "Add 45g coarse ground coffee"
+      "Grind 60 grams of coffee to coarse consistency.",
+      "Use medium French Press (1L capacity)",
+      "Add 60g coarse ground coffee"
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
-        "instruction": "Pour 750g hot water over grounds"
+        "time_seconds": 25,
+        "instruction": "Pour 1000g hot water over grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently to saturate all grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Place lid on top (don't press yet)"
       },
       {
-        "time_seconds": 210,
+        "time_seconds": 140,
         "instruction": "Wait 3.5 minutes for extraction"
       },
       {
@@ -2608,12 +2981,12 @@
         "instruction": "Press plunger down slowly and steadily"
       },
       {
-        "time_seconds": 270,
+        "time_seconds": 30,
         "instruction": "Pour immediately to prevent over-extraction"
       }
     ],
     "equipment": [
-      "Medium French Press (0.75L)",
+      "Medium French Press (1L)",
       "Digital scale",
       "Kettle",
       "Timer"
@@ -2627,36 +3000,36 @@
     "skill_level": "Beginner",
     "rating": 4.2,
     "parameters": {
-      "coffee_grams": 52,
-      "water_grams": 870,
+      "coffee_grams": 90,
+      "water_grams": 1500,
       "ratio": "1:16.7",
       "grind_size": "Coarse",
       "temperature_celsius": 95,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 285
+      "total_brew_time_seconds": 540
     },
     "preparation_steps": [
       "Heat water to 95°C",
-      "Grind 52 grams of coffee to coarse consistency.",
-      "Use large French Press (1L capacity)",
-      "Add 52g coarse ground coffee"
+      "Grind 90 grams of coffee to coarse consistency.",
+      "Use large French Press (1.5L capacity)",
+      "Add 90g coarse ground coffee"
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
-        "instruction": "Pour 870g hot water over grounds"
+        "time_seconds": 25,
+        "instruction": "Pour 1500g hot water over grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently to saturate all grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Place lid on top (don't press yet)"
       },
       {
-        "time_seconds": 225,
+        "time_seconds": 155,
         "instruction": "Wait 3.75 minutes for extraction"
       },
       {
@@ -2664,12 +3037,12 @@
         "instruction": "Press plunger down slowly and steadily"
       },
       {
-        "time_seconds": 285,
+        "time_seconds": 30,
         "instruction": "Pour immediately to prevent over-extraction"
       }
     ],
     "equipment": [
-      "Large French Press (1L)",
+      "Large French Press (1.5L)",
       "Digital scale",
       "Kettle",
       "Timer"
@@ -2683,36 +3056,36 @@
     "skill_level": "Beginner",
     "rating": 4.2,
     "parameters": {
-      "coffee_grams": 60,
-      "water_grams": 1000,
+      "coffee_grams": 120,
+      "water_grams": 2000,
       "ratio": "1:16.7",
       "grind_size": "Coarse",
       "temperature_celsius": 95,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 300
+      "total_brew_time_seconds": 570
     },
     "preparation_steps": [
       "Heat water to 95°C",
-      "Grind 60 grams of coffee to coarse consistency.",
-      "Use large French Press (1L capacity)",
-      "Add 60g coarse ground coffee"
+      "Grind 120 grams of coffee to coarse consistency.",
+      "Use extra large French Press (2L capacity)",
+      "Add 120g coarse ground coffee"
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
-        "instruction": "Pour 1000g hot water over grounds"
+        "time_seconds": 25,
+        "instruction": "Pour 2000g hot water over grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 25,
         "instruction": "Stir gently to saturate all grounds"
       },
       {
-        "time_seconds": 0,
+        "time_seconds": 20,
         "instruction": "Place lid on top (don't press yet)"
       },
       {
-        "time_seconds": 240,
+        "time_seconds": 170,
         "instruction": "Wait 4 minutes for extraction"
       },
       {
@@ -2720,12 +3093,12 @@
         "instruction": "Press plunger down slowly and steadily"
       },
       {
-        "time_seconds": 300,
+        "time_seconds": 30,
         "instruction": "Pour immediately to prevent over-extraction"
       }
     ],
     "equipment": [
-      "Large French Press (1L)",
+      "Extra Large French Press (2L)",
       "Digital scale",
       "Kettle",
       "Timer"

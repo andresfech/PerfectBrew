@@ -24,6 +24,12 @@ class BrewingGuideViewModel: ObservableObject {
         
         // Generate steps from recipe
         self.generateSteps(from: recipe)
+        
+        // Debug: Print initial brewing steps
+        print("DEBUG: Initial brewing steps:")
+        for (i, step) in brewingSteps.enumerated() {
+            print("  Step \(i+1): \(step.time)s - \(step.instruction)")
+        }
     }
     
     private func generateSteps(from recipe: Recipe) {
@@ -46,10 +52,11 @@ class BrewingGuideViewModel: ObservableObject {
         
         // Add final step if not present
         if !brewSteps.contains(where: { $0.instruction.contains("Enjoy") || $0.instruction.contains("Finish") }) {
-            brewSteps.append((time: totalTime, instruction: "Enjoy your coffee!"))
+            brewSteps.append((time: 10, instruction: "Enjoy your coffee!"))
         }
         
-        self.brewingSteps = brewSteps.sorted { $0.time < $1.time }
+        // Keep original order - don't sort by time
+        self.brewingSteps = brewSteps
         
         // Set initial step
         if !preparationSteps.isEmpty {
@@ -67,13 +74,18 @@ class BrewingGuideViewModel: ObservableObject {
             currentStep = brewingSteps[0].instruction
             currentStepStartTime = 0
             currentStepDuration = brewingSteps[0].time
+            print("DEBUG: Started timer - First step: \(currentStep), Duration: \(currentStepDuration)s")
         }
+        
+        // Calculate actual total time from brewing steps
+        let actualTotalTime = brewingSteps.reduce(0) { $0 + $1.time }
+        print("DEBUG: Actual total time from steps: \(actualTotalTime)s, Recipe total: \(totalTime)s")
         
         timer = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                if self.elapsedTime < self.totalTime {
+                if self.elapsedTime < actualTotalTime {
                     self.elapsedTime += 1
                     self.updateStep()
                 } else {
@@ -162,7 +174,12 @@ class BrewingGuideViewModel: ObservableObject {
     }
     
     var isInBloomPhase: Bool {
-        return elapsedTime < bloomTime
+        // Only show bloom phase if we're in the first brewing step and it's actually a bloom step
+        guard !brewingSteps.isEmpty else { return false }
+        let firstStep = brewingSteps[0]
+        return elapsedTime < firstStep.time && 
+               firstStep.instruction.lowercased().contains("bloom") &&
+               bloomTime > 0
     }
     
     func nextPreparationStep() {
@@ -184,25 +201,48 @@ class BrewingGuideViewModel: ObservableObject {
         var currentBrewingStep = brewingSteps.first?.instruction ?? "Brewing..."
         var stepStartTime: TimeInterval = 0
         var stepDuration: TimeInterval = 0
+        var currentStepIndex = 0
+        
+        // Calculate cumulative time for each step
+        var cumulativeTime: TimeInterval = 0
         
         for (index, (time, instruction)) in brewingSteps.enumerated() {
-            if elapsedTime >= time {
+            let stepEndTime = cumulativeTime + time
+            
+            if elapsedTime >= cumulativeTime && elapsedTime < stepEndTime {
+                // We're in this step
                 currentBrewingStep = instruction
-                stepStartTime = time
-                
-                // Calculate step duration (time until next step or total time)
-                if index + 1 < brewingSteps.count {
-                    stepDuration = brewingSteps[index + 1].time - time
-                } else {
-                    stepDuration = totalTime - time
-                }
-            } else {
+                stepStartTime = cumulativeTime
+                stepDuration = time
+                currentStepIndex = index
+                print("DEBUG: Found step \(index + 1) at time \(elapsedTime)s (range: \(cumulativeTime)s to \(stepEndTime)s)")
                 break
+            }
+            
+            cumulativeTime = stepEndTime
+        }
+        
+        // If we've passed all steps, show the last step
+        if elapsedTime >= cumulativeTime && !brewingSteps.isEmpty && currentStepIndex == 0 {
+            // Only show last step if we've actually completed all steps
+            let totalStepsTime = brewingSteps.reduce(0) { $0 + $1.time }
+            if elapsedTime >= totalStepsTime {
+                let lastStep = brewingSteps.last!
+                currentBrewingStep = lastStep.instruction
+                stepStartTime = cumulativeTime - lastStep.time
+                stepDuration = lastStep.time
+                currentStepIndex = brewingSteps.count - 1
+                print("DEBUG: Reached end, showing last step: \(currentStepIndex + 1)")
             }
         }
         
         currentStep = currentBrewingStep
         currentStepStartTime = stepStartTime
         currentStepDuration = stepDuration
+        
+        print("DEBUG: Step update - Elapsed: \(elapsedTime)s, Current step: \(currentStepIndex + 1), Duration: \(stepDuration)s, Remaining: \(currentStepRemainingTime)s")
+        print("DEBUG: Current step instruction: \(currentBrewingStep)")
+        print("DEBUG: isPreparationPhase: \(isPreparationPhase), currentStepDuration: \(currentStepDuration)")
     }
 }
+

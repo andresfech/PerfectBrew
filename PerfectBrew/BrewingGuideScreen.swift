@@ -133,7 +133,7 @@ struct BrewingGuideScreen: View {
                             }
                             
                             // Step Timer (for current brewing step)
-                            if !viewModel.isInBloomPhase && viewModel.currentStepDuration > 0 {
+                            if !viewModel.isPreparationPhase && viewModel.currentStepDuration > 0 {
                                 VStack(spacing: 6) {
                                     Text("step_remaining".localized)
                                         .font(.headline)
@@ -154,8 +154,8 @@ struct BrewingGuideScreen: View {
                                         
                                         VStack(spacing: 0) {
                                             Text("\(Int(viewModel.currentStepRemainingTime))")
-                .font(.headline)
-                .fontWeight(.bold)
+                                                .font(.headline)
+                                                .fontWeight(.bold)
                                             Text("s")
                                                 .font(.caption2)
                                                 .foregroundColor(.secondary)

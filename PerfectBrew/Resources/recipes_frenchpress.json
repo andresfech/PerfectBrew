@@ -1,0 +1,384 @@
+[
+  {
+    "title": "French Press Classic",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.2,
+    "parameters": {
+      "coffee_grams": 30,
+      "water_grams": 500,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 550
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 30 grams of coffee to coarse consistency.",
+      "Add 30g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 500g hot water"
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir gently to saturate grounds"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "Press plunger down slowly"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "Pour immediately"
+      }
+    ],
+    "equipment": [
+      "French Press",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Simple and forgiving method, produces full-bodied coffee.",
+    "servings": 1
+  },
+  {
+    "title": "French Press Single Cup",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.1,
+    "parameters": {
+      "coffee_grams": 15,
+      "water_grams": 250,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 550
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 15 grams of coffee to coarse consistency.",
+      "Add 15g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 250g hot water"
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir gently to saturate grounds"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "Press plunger down slowly"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "Pour immediately"
+      }
+    ],
+    "equipment": [
+      "French Press",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for single cup brewing. Simple and forgiving method that produces full-bodied coffee.",
+    "servings": 1
+  },
+  {
+    "title": "French Press Gathering",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.0,
+    "parameters": {
+      "coffee_grams": 75,
+      "water_grams": 1250,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 570
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 75 grams of coffee to coarse consistency.",
+      "Use large French Press (1.5L capacity)",
+      "Add 75g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 1250g hot water over grounds"
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir gently to saturate all grounds"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 170,
+        "instruction": "Wait 4 minutes for extraction"
+      },
+      {
+        "time_seconds": 300,
+        "instruction": "Press plunger down slowly and steadily"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Pour immediately to prevent over-extraction"
+      }
+    ],
+    "equipment": [
+      "Large French Press (1.5L)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for gatherings and serving multiple people. Simple and forgiving method that produces full-bodied coffee.",
+    "servings": 3
+  },
+  {
+    "title": "French Press Traditional",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.2,
+    "parameters": {
+      "coffee_grams": 30,
+      "water_grams": 500,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 450
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 30 grams of coffee to coarse consistency.",
+      "Use standard French Press (0.5L capacity)",
+      "Add 30g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 500g hot water over grounds"
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir gently to saturate all grounds"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 110,
+        "instruction": "Wait 3 minutes for extraction"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "Press plunger down slowly and steadily"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Pour immediately to prevent over-extraction"
+      }
+    ],
+    "equipment": [
+      "Standard French Press (0.5L)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for serving 1 person. Traditional French Press method that produces full-bodied coffee.",
+    "servings": 1
+  },
+  {
+    "title": "French Press Traditional",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.2,
+    "parameters": {
+      "coffee_grams": 60,
+      "water_grams": 1000,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 510
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 60 grams of coffee to coarse consistency.",
+      "Use medium French Press (1L capacity)",
+      "Add 60g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 1000g hot water over grounds"
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir gently to saturate all grounds"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 140,
+        "instruction": "Wait 3.5 minutes for extraction"
+      },
+      {
+        "time_seconds": 270,
+        "instruction": "Press plunger down slowly and steadily"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Pour immediately to prevent over-extraction"
+      }
+    ],
+    "equipment": [
+      "Medium French Press (1L)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for serving 2 people. Traditional French Press method that produces full-bodied coffee.",
+    "servings": 2
+  },
+  {
+    "title": "French Press Traditional",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.2,
+    "parameters": {
+      "coffee_grams": 90,
+      "water_grams": 1500,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 540
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 90 grams of coffee to coarse consistency.",
+      "Use large French Press (1.5L capacity)",
+      "Add 90g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 1500g hot water over grounds"
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir gently to saturate all grounds"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 155,
+        "instruction": "Wait 3.75 minutes for extraction"
+      },
+      {
+        "time_seconds": 285,
+        "instruction": "Press plunger down slowly and steadily"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Pour immediately to prevent over-extraction"
+      }
+    ],
+    "equipment": [
+      "Large French Press (1.5L)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for serving 3 people. Traditional French Press method that produces full-bodied coffee.",
+    "servings": 3
+  },
+  {
+    "title": "French Press Traditional",
+    "brewing_method": "French Press",
+    "skill_level": "Beginner",
+    "rating": 4.2,
+    "parameters": {
+      "coffee_grams": 120,
+      "water_grams": 2000,
+      "ratio": "1:16.7",
+      "grind_size": "Coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 570
+    },
+    "preparation_steps": [
+      "Heat water to 95°C",
+      "Grind 120 grams of coffee to coarse consistency.",
+      "Use extra large French Press (2L capacity)",
+      "Add 120g coarse ground coffee"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 2000g hot water over grounds"
+      },
+      {
+        "time_seconds": 25,
+        "instruction": "Stir gently to saturate all grounds"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Place lid on top (don't press yet)"
+      },
+      {
+        "time_seconds": 170,
+        "instruction": "Wait 4 minutes for extraction"
+      },
+      {
+        "time_seconds": 300,
+        "instruction": "Press plunger down slowly and steadily"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Pour immediately to prevent over-extraction"
+      }
+    ],
+    "equipment": [
+      "Extra Large French Press (2L)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Perfect for serving 4 people. Traditional French Press method that produces full-bodied coffee.",
+    "servings": 4
+  }
+]
