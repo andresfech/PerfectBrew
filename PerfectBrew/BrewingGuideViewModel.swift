@@ -77,15 +77,14 @@ class BrewingGuideViewModel: ObservableObject {
             print("DEBUG: Started timer - First step: \(currentStep), Duration: \(currentStepDuration)s")
         }
         
-        // Calculate actual total time from brewing steps
-        let actualTotalTime = brewingSteps.reduce(0) { $0 + $1.time }
-        print("DEBUG: Actual total time from steps: \(actualTotalTime)s, Recipe total: \(totalTime)s")
+        // Use recipe total time
+        print("DEBUG: Using recipe total time: \(totalTime)s")
         
         timer = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                if self.elapsedTime < actualTotalTime {
+                if self.elapsedTime < self.totalTime {
                     self.elapsedTime += 1
                     self.updateStep()
                 } else {
