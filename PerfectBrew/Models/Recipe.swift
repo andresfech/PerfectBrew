@@ -349,10 +349,27 @@ struct Recipe: Codable, Identifiable {
 struct BrewingStep: Codable {
     let timeSeconds: Int
     let instruction: String
+    let audioFileName: String? // Optional audio file name for this step
     
     enum CodingKeys: String, CodingKey {
         case timeSeconds = "time_seconds"
         case instruction
+        case audioFileName = "audio_file_name"
+    }
+    
+    // Backward compatibility - if no audio file is specified, audioFileName will be nil
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        timeSeconds = try container.decode(Int.self, forKey: .timeSeconds)
+        instruction = try container.decode(String.self, forKey: .instruction)
+        audioFileName = try container.decodeIfPresent(String.self, forKey: .audioFileName)
+    }
+    
+    // Convenience initializer for creating steps without audio
+    init(timeSeconds: Int, instruction: String, audioFileName: String? = nil) {
+        self.timeSeconds = timeSeconds
+        self.instruction = instruction
+        self.audioFileName = audioFileName
     }
 }
 
@@ -404,139 +421,6 @@ enum Difficulty: String, CaseIterable, Codable {
         case .beginner: return "green"
         case .intermediate: return "orange"
         case .advanced: return "red"
-        }
-    }
-}
-
-// Recipe Database Service
-class RecipeDatabase: ObservableObject {
-    @Published var recipes: [Recipe] = []
-    
-    init() {
-        loadRecipes()
-    }
-    
-    func loadRecipes() {
-        print("RecipeDatabase: Loading recipes...")
-        if let url = Bundle.main.url(forResource: "recipes", withExtension: "json") {
-            print("RecipeDatabase: Found JSON file at \(url)")
-            do {
-                let data = try Data(contentsOf: url)
-                print("RecipeDatabase: Loaded \(data.count) bytes")
-                let decoder = JSONDecoder()
-                recipes = try decoder.decode([Recipe].self, from: data)
-                print("RecipeDatabase: Successfully loaded \(recipes.count) recipes")
-                for recipe in recipes {
-                    print("RecipeDatabase: - \(recipe.title) (\(recipe.brewingMethod))")
-                }
-            } catch {
-                print("RecipeDatabase: Error loading recipes: \(error)")
-                recipes = []
-            }
-        } else {
-            print("RecipeDatabase: Could not find recipes.json in bundle")
-            recipes = []
-        }
-    }
-    
-    func getRecipes(for method: String) -> [Recipe] {
-        return recipes.filter { $0.brewingMethod.lowercased() == method.lowercased() }
-    }
-    
-    func getRecipes(for method: HomeScreen.BrewMethod) -> [Recipe] {
-        return getRecipes(for: method.rawValue)
-    }
-    
-    func getRecipes(for method: String, servings: Int) -> [Recipe] {
-        let baseRecipes = getRecipes(for: method)
-        print("DEBUG: getRecipes for \(method), servings: \(servings)")
-        print("DEBUG: Found \(baseRecipes.count) base recipes")
-        
-        // Filtrar recetas que ya están diseñadas para la cantidad de personas solicitada
-        let filteredRecipes = baseRecipes.filter { recipe in
-            recipe.servings == servings
-        }
-        
-        print("DEBUG: Found \(filteredRecipes.count) recipes for \(servings) servings")
-        
-        // Si no hay recetas específicas para la cantidad de personas, usar recetas de 1 persona
-        if filteredRecipes.isEmpty && servings > 1 {
-            print("DEBUG: No specific recipes for \(servings) servings, using 1-person recipes")
-            return baseRecipes.filter { $0.servings == 1 }
-        }
-        
-        return filteredRecipes
-    }
-    
-    func getRecipes(for method: HomeScreen.BrewMethod, servings: Int) -> [Recipe] {
-        return getRecipes(for: method.rawValue, servings: servings)
-    }
-    
-    func getV60Recipes() -> [Recipe] {
-        return getRecipes(for: "V60")
-    }
-    
-    func getV60Recipes(servings: Int) -> [Recipe] {
-        return getRecipes(for: "V60", servings: servings)
-    }
-    
-    func getChemexRecipes() -> [Recipe] {
-        return getRecipes(for: "Chemex")
-    }
-    
-    func getChemexRecipes(servings: Int) -> [Recipe] {
-        return getRecipes(for: "Chemex", servings: servings)
-    }
-    
-    func getFrenchPressRecipes() -> [Recipe] {
-        return getRecipes(for: "French Press")
-    }
-    
-    func getFrenchPressRecipes(servings: Int) -> [Recipe] {
-        return getRecipes(for: "French Press", servings: servings)
-    }
-    
-    func getAeroPressRecipes() -> [Recipe] {
-        return getRecipes(for: "AeroPress")
-    }
-    
-    func getAeroPressRecipes(servings: Int) -> [Recipe] {
-        return getRecipes(for: "AeroPress", servings: servings)
-    }
-    
-    func getRecipesByDifficulty(for method: String, difficulty: Difficulty) -> [Recipe] {
-        return recipes.filter { 
-            $0.brewingMethod.lowercased() == method.lowercased() && 
-            $0.difficulty == difficulty 
-        }
-    }
-    
-    func getRecipesByDifficulty(for method: String, difficulty: Difficulty, servings: Int) -> [Recipe] {
-        let baseRecipes = getRecipesByDifficulty(for: method, difficulty: difficulty)
-        if servings == 1 {
-            return baseRecipes
-        } else {
-            return baseRecipes.map { $0.scaledForServings(servings) }
-        }
-    }
-    
-    func searchRecipes(query: String) -> [Recipe] {
-        if query.isEmpty {
-            return recipes
-        }
-        return recipes.filter { recipe in
-            recipe.title.localizedCaseInsensitiveContains(query) ||
-            recipe.brewingMethod.localizedCaseInsensitiveContains(query) ||
-            recipe.skillLevel.localizedCaseInsensitiveContains(query)
-        }
-    }
-    
-    func searchRecipes(query: String, servings: Int) -> [Recipe] {
-        let baseRecipes = searchRecipes(query: query)
-        if servings == 1 {
-            return baseRecipes
-        } else {
-            return baseRecipes.map { $0.scaledForServings(servings) }
         }
     }
 }

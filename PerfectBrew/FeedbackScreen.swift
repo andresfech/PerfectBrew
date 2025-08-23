@@ -26,16 +26,28 @@ struct FeedbackScreen: View {
                 
                 // Recipe Info
                 VStack(spacing: 12) {
-                    Text(recipe.title)
+                    Text(formatRecipeTitle(recipe.title))
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
+                        .multilineTextAlignment(.center)
                     
                     Text(recipe.brewingMethod)
                         .font(.body)
                         .foregroundColor(.secondary)
                 }
                 .padding(.vertical, 10)
+                
+                // Overall Rating Section
+                FeedbackSection(title: "overall_rating".localized) {
+                    VStack(spacing: 20) {
+                        OverallRatingQuestion(
+                            id: "overall_rating",
+                            label: "",
+                            rating: $feedbackData.overallRating
+                        )
+                    }
+                }
                 
                 // Brew Execution Section
                 FeedbackSection(title: "brew_execution".localized) {
@@ -165,8 +177,9 @@ struct FeedbackScreen: View {
     }
     
     private var canSubmit: Bool {
-        // At least one input should be provided
-        return feedbackData.followedRecipe != nil ||
+        // At least overall rating should be provided
+        return feedbackData.overallRating > 0 ||
+               feedbackData.followedRecipe != nil ||
                feedbackData.brewTimeMatch != nil ||
                feedbackData.flowRate != nil ||
                feedbackData.sweetnessLevel > 0 ||
@@ -199,7 +212,7 @@ struct FeedbackScreen: View {
             grindSize: brewParameters.grindSize,
             brewTime: brewParameters.brewTime,
             feedbackData: feedbackData,
-            tasteRating: Int(feedbackData.sweetnessLevel),
+            tasteRating: Int(feedbackData.overallRating),
             strengthRating: Int(feedbackData.bitternessLevel),
             acidityRating: Int(feedbackData.acidityLevel),
             notes: feedbackData.additionalNotes,
@@ -395,9 +408,44 @@ struct TextAreaQuestion: View {
     }
 }
 
+struct OverallRatingQuestion: View {
+    let id: String
+    let label: String
+    @Binding var rating: Double
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text(label)
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                Spacer()
+                Text("\(Int(rating))★")
+                    .font(.subheadline)
+                    .foregroundColor(.orange)
+            }
+            
+            HStack(spacing: 8) {
+                ForEach(1...5, id: \.self) { star in
+                    Button(action: {
+                        rating = Double(star)
+                    }) {
+                        Image(systemName: star <= Int(rating) ? "star.fill" : "star")
+                            .font(.title2)
+                            .foregroundColor(star <= Int(rating) ? .orange : .gray)
+                    }
+                }
+            }
+        }
+    }
+}
+
 // MARK: - Data Models
 
 struct FeedbackData: Codable {
+    // Overall Rating
+    var overallRating: Double = 0
+    
     // Brew Execution
     var followedRecipe: String?
     var brewTimeMatch: String?
@@ -422,6 +470,13 @@ struct DetailedBrewFeedback: Codable {
     let brewingMethod: String
     let feedbackData: FeedbackData
     let date: Date
+}
+
+// MARK: - Helper Functions
+
+private func formatRecipeTitle(_ title: String) -> String {
+    // Remove or replace dashes with more readable separators
+    return title.replacingOccurrences(of: " - ", with: " • ")
 }
 
 #Preview {

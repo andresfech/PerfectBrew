@@ -10,8 +10,13 @@ struct RecipeSelectionScreen: View {
     var filteredRecipes: [Recipe] {
         var recipes = recipeDatabase.getRecipes(for: selectedMethod, servings: selectedServings)
         
+        print("RecipeSelectionScreen: filteredRecipes - Base recipes: \(recipes.count)")
+        print("RecipeSelectionScreen: Selected method: \(selectedMethod.rawValue)")
+        print("RecipeSelectionScreen: Selected servings: \(selectedServings)")
+        
         if let difficulty = selectedDifficulty {
             recipes = recipes.filter { $0.difficulty == difficulty }
+            print("RecipeSelectionScreen: After difficulty filter: \(recipes.count)")
         }
         
         if !searchText.isEmpty {
@@ -19,8 +24,10 @@ struct RecipeSelectionScreen: View {
                 recipe.title.localizedCaseInsensitiveContains(searchText) ||
                 recipe.skillLevel.localizedCaseInsensitiveContains(searchText)
             }
+            print("RecipeSelectionScreen: After search filter: \(recipes.count)")
         }
         
+        print("RecipeSelectionScreen: Final filtered recipes: \(recipes.count)")
         return recipes
     }
     
@@ -89,6 +96,26 @@ struct RecipeSelectionScreen: View {
                 }
             }
             
+            // Debug info
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Debug Info:")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                Text("Total recipes in DB: \(recipeDatabase.recipes.count)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                Text("Recipes for \(selectedMethod.rawValue): \(recipeDatabase.getRecipes(for: selectedMethod).count)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                Text("Filtered recipes: \(filteredRecipes.count)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+            .background(Color.gray.opacity(0.1))
+            .cornerRadius(8)
+            
             // Recipes Section
             if filteredRecipes.isEmpty {
                 VStack(spacing: 16) {
@@ -101,6 +128,28 @@ struct RecipeSelectionScreen: View {
                     Text("Try adjusting your search or filters")
                         .font(.body)
                         .foregroundColor(.secondary)
+                    
+                    // Additional debug info
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Debug: Why no recipes?")
+                            .font(.caption)
+                            .foregroundColor(.red)
+                        Text("Selected method: \(selectedMethod.rawValue)")
+                            .font(.caption)
+                            .foregroundColor(.red)
+                        Text("Selected servings: \(selectedServings)")
+                            .font(.caption)
+                            .foregroundColor(.red)
+                        Text("All recipes in DB: \(recipeDatabase.recipes.count)")
+                            .font(.caption)
+                            .foregroundColor(.red)
+                        Text("Recipes by method: \(recipeDatabase.recipesByMethod.keys.joined(separator: ", "))")
+                            .font(.caption)
+                            .foregroundColor(.red)
+                    }
+                    .padding()
+                    .background(Color.red.opacity(0.1))
+                    .cornerRadius(8)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
@@ -123,6 +172,12 @@ struct RecipeSelectionScreen: View {
             Spacer()
         }
         .navigationBarHidden(true)
+        .onAppear {
+            print("RecipeSelectionScreen: Appeared for method: \(selectedMethod.rawValue)")
+            
+            print("RecipeSelectionScreen: Recipe database has \(recipeDatabase.recipes.count) total recipes")
+            print("RecipeSelectionScreen: Recipes for \(selectedMethod.rawValue): \(recipeDatabase.getRecipes(for: selectedMethod).count)")
+        }
     }
 }
 

@@ -162,39 +162,25 @@ struct BrewingGuideScreen: View {
                                         }
                                     }
                                 }
+                            } else {
+                                // Debug info for Step Timer visibility
+                                VStack(spacing: 4) {
+                                    Text("DEBUG: Step Timer Hidden")
+                                        .font(.caption)
+                                        .foregroundColor(.red)
+                                    Text("isPreparationPhase: \(viewModel.isPreparationPhase)")
+                                        .font(.caption2)
+                                        .foregroundColor(.secondary)
+                                    Text("currentStepDuration: \(viewModel.currentStepDuration)")
+                                        .font(.caption2)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding(8)
+                                .background(Color.red.opacity(0.1))
+                                .cornerRadius(4)
                             }
                             
-                            // Bloom Timer (if applicable)
-                            if viewModel.isInBloomPhase {
-                                VStack(spacing: 6) {
-                                    Text("bloom_remaining".localized)
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.primary)
-                                    
-                                    ZStack {
-                                        Circle()
-                                            .stroke(Color.gray.opacity(0.3), lineWidth: 6)
-                                            .frame(width: 60, height: 60)
-                                        
-                                        Circle()
-                                            .trim(from: 0, to: viewModel.bloomProgress)
-                                            .stroke(Color.green, style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                                            .frame(width: 60, height: 60)
-                                            .rotationEffect(.degrees(-90))
-                                            .animation(.easeInOut(duration: 0.3), value: viewModel.bloomProgress)
-                                        
-                                        VStack(spacing: 0) {
-                                            Text("\(Int(viewModel.bloomTime - viewModel.elapsedTime))")
-                .font(.headline)
-                                                .fontWeight(.bold)
-                                            Text("s")
-                                                .font(.caption2)
-                                                .foregroundColor(.secondary)
-                                        }
-                                    }
-                                }
-                            }
+
                         }
                     }
                     
@@ -209,10 +195,46 @@ struct BrewingGuideScreen: View {
                     
                     // Current Step Section
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(viewModel.isPreparationPhase ? "preparation_step".localized : "current_step".localized)
-                .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
+                        HStack {
+                            Text(viewModel.isPreparationPhase ? "preparation_step".localized : "current_step".localized)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.primary)
+                            
+                            Spacer()
+                            
+                            // Audio controls for brewing steps
+                            if !viewModel.isPreparationPhase && viewModel.hasAudioForCurrentStep() {
+                                HStack(spacing: 8) {
+                                    // Audio on/off toggle
+                                    Button(action: {
+                                        viewModel.toggleAudio()
+                                    }) {
+                                        Image(systemName: viewModel.isAudioEnabled ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                                            .font(.title3)
+                                            .foregroundColor(viewModel.isAudioEnabled ? .blue : .gray)
+                                            .frame(width: 24, height: 24)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+                                    
+                                    // Play/pause button
+                                    Button(action: {
+                                        if viewModel.audioService.isPlaying {
+                                            viewModel.pauseAudio()
+                                        } else {
+                                            viewModel.resumeAudio()
+                                        }
+                                    }) {
+                                        Image(systemName: viewModel.audioService.isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                                            .font(.title2)
+                                            .foregroundColor(viewModel.audioService.isPlaying ? .orange : .green)
+                                            .frame(width: 30, height: 30)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+                                    .disabled(!viewModel.isAudioEnabled)
+                                }
+                            }
+                        }
                         
                         HStack(alignment: .top, spacing: 8) {
                             Image(systemName: viewModel.isPreparationPhase ? "checklist" : "cup.and.saucer.fill")
@@ -220,7 +242,7 @@ struct BrewingGuideScreen: View {
                                 .foregroundColor(viewModel.isPreparationPhase ? .blue : .orange)
                                 .frame(width: 20)
                             
-            Text(viewModel.currentStep)
+                            Text(viewModel.currentStep)
                                 .font(.body)
                                 .foregroundColor(.primary)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -431,10 +453,7 @@ struct BrewingGuideScreen: View {
         return 1 - (remaining / viewModel.totalTime)
     }
     
-    private var bloomProgress: Double {
-        let remaining = max(0, viewModel.bloomTime - viewModel.elapsedTime)
-        return 1 - (remaining / viewModel.bloomTime)
-    }
+
     
     private var preparationProgress: Double {
         guard !viewModel.preparationSteps.isEmpty else { return 0 }
@@ -447,10 +466,7 @@ struct BrewingGuideScreen: View {
         return String(format: "%.0f", remaining)
     }
     
-    private var bloomTimeString: String {
-        let remaining = max(0, viewModel.bloomTime - viewModel.elapsedTime)
-        return String(format: "%.0f", remaining)
-    }
+
 }
 
 

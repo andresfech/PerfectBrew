@@ -26,19 +26,19 @@
         "instruction": "Pour 250g hot water"
       },
       {
-        "time_seconds": 25,
+        "time_seconds": 35,
         "instruction": "Stir for 10 seconds"
       },
       {
-        "time_seconds": 20,
+        "time_seconds": 45,
         "instruction": "Insert plunger and pull up slightly"
       },
       {
-        "time_seconds": 60,
+        "time_seconds": 105,
         "instruction": "Wait 1 minute"
       },
       {
-        "time_seconds": 120,
+        "time_seconds": 135,
         "instruction": "Press down slowly over 30 seconds"
       }
     ],
@@ -79,15 +79,15 @@
         "instruction": "Pour 500g hot water"
       },
       {
-        "time_seconds": 25,
+        "time_seconds": 40,
         "instruction": "Stir for 15 seconds"
       },
       {
-        "time_seconds": 20,
+        "time_seconds": 55,
         "instruction": "Insert plunger and pull up slightly"
       },
       {
-        "time_seconds": 30,
+        "time_seconds": 115,
         "instruction": "Wait 1.25 minutes"
       },
       {
@@ -185,19 +185,19 @@
         "instruction": "Pour 500g hot water"
       },
       {
-        "time_seconds": 25,
+        "time_seconds": 40,
         "instruction": "Stir for 15 seconds"
       },
       {
-        "time_seconds": 30,
+        "time_seconds": 55,
         "instruction": "Wait 1.25 minutes"
       },
       {
-        "time_seconds": 75,
+        "time_seconds": 100,
         "instruction": "Screw on cap with filter"
       },
       {
-        "time_seconds": 150,
+        "time_seconds": 175,
         "instruction": "Flip and press down slowly over 35 seconds"
       }
     ],
@@ -296,19 +296,19 @@
         "instruction": "Place AeroPress on scale, tare. Start timer and quickly pour 200 g hot water evenly over the grounds."
       },
       {
-        "time_seconds": 10,
+        "time_seconds": 30,
         "instruction": "Stir the slurry 3 times (back-to-front is common in the café method)."
       },
       {
-        "time_seconds": 30,
+        "time_seconds": 60,
         "instruction": "Insert the plunger about 1 cm to create a seal and prevent drainage. Let steep for 30 seconds."
       },
       {
-        "time_seconds": 5,
+        "time_seconds": 65,
         "instruction": "After 30 s, remove plunger and stir gently 3 times back-to-front (this re-mixes the bed)."
       },
       {
-        "time_seconds": 30,
+        "time_seconds": 95,
         "instruction": "Re-insert plunger and press steadily; aim for ~15–25 s press time and stop when you hear the soft hiss (do not over-press)."
       }
     ],
@@ -323,109 +323,320 @@
     "servings": 1
   },
   {
-    "title": "Championship Concentrate AeroPress",
-    "brewing_method": "AeroPress",
+    "title": "Championship Concentrate AeroPress (corregida)",
+    "brewing_method": "AeroPress (inverted)",
     "skill_level": "Expert",
     "rating": 4.9,
     "parameters": {
       "coffee_grams": 20,
       "water_grams": 100,
       "ratio": "1:5",
-      "grind_size": "Fine",
-      "temperature_celsius": 85,
+      "grind_size": "fine (slightly finer than filter)",
+      "temperature_celsius": 94,
       "bloom_water_grams": 0,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 230
+      "total_brew_time_seconds": 120
     },
     "preparation_steps": [
-      "Heat water to 85°C",
-      "Grind 20 grams of coffee to fine consistency",
-      "Set AeroPress in inverted position with rinsed paper filter ready",
-      "Add 20g fine ground coffee"
+      "Rinse a paper filter under hot water and fit it into the AeroPress cap (this removes papery taste and pre-warms the cap).",
+      "Assemble the AeroPress in inverted position (plunger at the bottom, chamber open on top) and place on the scale.",
+      "Weigh 20 g of coffee and grind to a fine, filter-leaning consistency (slightly finer than typical filter).",
+      "Bring water to boil and let rest ~5–10 s (use ~94 °C). Have scale and timer ready."
     ],
     "brewing_steps": [
       {
-        "time_seconds": 25,
-        "instruction": "Pour 100g hot water"
+        "time_seconds": 10,
+        "instruction": "Start timer, tare scale and pour 100 g hot water evenly over the grounds."
       },
       {
-        "time_seconds": 25,
-        "instruction": "Stir vigorously for 20 seconds"
+        "time_seconds": 20,
+        "instruction": "Stir vigorously for ~10 seconds to ensure full saturation and uniform extraction."
       },
       {
         "time_seconds": 30,
-        "instruction": "Wait 1 minute"
-      },
-      {
-        "time_seconds": 60,
-        "instruction": "Screw on cap with filter"
+        "instruction": "Quickly wipe any drips, screw on the rinsed filter cap and wait (keep inverted)."
       },
       {
         "time_seconds": 90,
-        "instruction": "Flip AeroPress, press through completely"
-      }
-    ],
-    "equipment": [
-      "AeroPress",
-      "Standard AeroPress paper filter",
-      "Digital scale",
-      "Kettle",
-      "Timer"
-    ],
-    "notes": "High-concentration method used in competitions. Dilute with hot water to taste.",
-    "servings": 1
-  },
-  {
-    "title": "Championship Concentrate AeroPress",
-    "brewing_method": "AeroPress",
-    "skill_level": "Expert",
-    "rating": 4.9,
-    "parameters": {
-      "coffee_grams": 40,
-      "water_grams": 200,
-      "ratio": "1:5",
-      "grind_size": "Fine",
-      "temperature_celsius": 85,
-      "bloom_water_grams": 0,
-      "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 275
-    },
-    "preparation_steps": [
-      "Heat water to 85°C",
-      "Grind 40 grams of coffee to fine consistency",
-      "Set AeroPress in inverted position with rinsed paper filter ready",
-      "Add 40g fine ground coffee"
-    ],
-    "brewing_steps": [
-      {
-        "time_seconds": 25,
-        "instruction": "Pour 200g hot water"
-      },
-      {
-        "time_seconds": 25,
-        "instruction": "Stir vigorously for 25 seconds"
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Wait 1.25 minutes"
-      },
-      {
-        "time_seconds": 75,
-        "instruction": "Screw on cap with filter"
+        "instruction": "Let steep until ~1:20 on the timer (total steep ≈ 60–70 s after stirring)."
       },
       {
         "time_seconds": 120,
-        "instruction": "Flip AeroPress, press through completely"
+        "instruction": "Carefully flip the AeroPress onto your cup/server and press steadily; aim for a 20–30 s press until fully depressed."
       }
     ],
     "equipment": [
-      "AeroPress",
-      "Standard AeroPress paper filter",
+      "AeroPress (inverted method)",
+      "Standard AeroPress paper filter (rinsed)",
       "Digital scale",
       "Kettle",
       "Timer"
     ],
-    "notes": "High-concentration method used in competitions. Dilute with hot water to taste.",
-    "servings": 2
+    "notes": "High-concentration competition method: 20g/100g, 94°C, fine grind, controlled agitation (~10s), ~60-70s steep before flipping and 20-30s press. Dilute to taste or use as base for milk drinks.",
+        "servings": 1
+  },
+  {
+    "title": "2024 World AeroPress Champion - George Stanica (Romania) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 100,
+      "ratio": "1:5.56",
+      "grind_size": "medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 µm)",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 50,
+      "bloom_time_seconds": 30,
+      "total_brew_time_seconds": 120
+    },
+    "preparation_steps": [
+      "Rinse one Aesir paper filter with hot water and fit it in the cap (removes papery taste).",
+      "Assemble the AeroPress in inverted position and align it approx. to the 4th mark.",
+      "Weigh 18 g of coffee and grind to medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 µm).",
+      "Add the 18 g ground coffee to the inverted AeroPress and give a gentle shake to level the bed.",
+      "Prepare extraction water (96 °C) and a Melodrip (or similar) for controlled pours. Have scale and timer ready."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 35,
+        "instruction": "Start timer and pour 50 g of 96 °C water using the Melodrip (aim 5–6 s for the pour). Allow the coffee to bloom: wait ~30 s (bloom period ends ~00:35)."
+      },
+      {
+        "time_seconds": 41,
+        "instruction": "Pour the second 50 g of 96 °C water (again ~5–6 s pour)."
+      },
+      {
+        "time_seconds": 51,
+        "instruction": "Stir gently in a North–South–East–West (NSEW) pattern for ~10 s to homogenize."
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "At 1:05 (≈65 s) screw on the rinsed cap and gently press to remove excess air (~10 s)."
+      },
+      {
+        "time_seconds": 75,
+        "instruction": "Give a gentle swirl to the AeroPress, place it onto your serving vessel, and begin the slow, controlled press. Aim to finish pressing within 30–40 s. Target yield: ~76–79 g of concentrate."
+      },
+      {
+        "time_seconds": 115,
+        "instruction": "When press is complete, add warm water until total weight reaches 130–135 g (bypass step)."
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Add an additional 20–30 g of room-temperature 0 ppm water for balance (final total ≈150–165 g depending on target)."
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Aesir / standard paper filter (rinsed)",
+      "Comandante C40 Mk4 (o equivalente) para referencia de molido",
+      "Melodrip (u otro vertedor de flujo controlado)",
+      "Digital scale",
+      "Kettle (capaz de 96 °C)",
+      "Timer",
+      "Jarra/recipiente para diluciones"
+    ],
+    "notes": "Receta de George Stanica (World Champ 2024). Foco en química de agua precisa y dos vertidos para saturación controlada. Bypass en dos temperaturas (agua caliente para fuerza y agua 0 ppm a temperatura ambiente para balance y aclarado). El molido medium-coarse y el prensado lento buscan claridad evitando sobreextracción.",
+    "servings": 1
+  },
+  {
+    "title": "2023 World AeroPress Champion - Tay Wipvasutt (Thailand) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 100,
+      "ratio": "1:5.56",
+      "grind_size": "65 clicks on 1ZPresso ZP6 (competition setting)",
+      "temperature_celsius": 89,
+      "bloom_water_grams": 100,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 130
+    },
+    "preparation_steps": [
+      "Rinse and place a paper filter in the cap, if you prefer; assemble AeroPress inverted.",
+      "Weigh 18 g total: prepare 16 g to add initially and keep 2 g set aside for later addition.",
+      "Grind to the competition setting (1ZPresso ZP6, 65 clicks).",
+      "Heat Perfect Coffee Water to 89 °C. Prepare scale and timer."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Place 16 g of grounds in the inverted AeroPress. Start timer and pour 100 g of 89 °C water over the grounds. Then stir for ~5 s to agitate and homogenize the slurry.",
+        "audio_file_name": "2023_world_aeropress_brewing_step1.mp3"
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "At 0:45, add the remaining 2 g of coffee (late addition).",
+        "audio_file_name": "2023_world_aeropress_brewing_step2.mp3"
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "At 0:55, stir again for ~5 s to incorporate the late addition.",
+        "audio_file_name": "2023_world_aeropress_brewing_step3.mp3"
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "Slightly press the plunger up to remove excess air, then securely close the cap.",
+        "audio_file_name": "2023_world_aeropress_brewing_step4.mp3"
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "Carefully flip the AeroPress and begin pressing at 1:40 (≈100 s). Press steadily for ~30 s. Target yield: ~75 g concentrate.",
+        "audio_file_name": "2023_world_aeropress_brewing_step5.mp3"
+      },
+      {
+        "time_seconds": 125,
+        "instruction": "Bypass the concentrate with room-temperature water until total weight reaches 115 g (first bypass).",
+        "audio_file_name": "2023_world_aeropress_brewing_step6.mp3"
+      },
+      {
+        "time_seconds": 130,
+        "instruction": "Then add hot water until total weight reaches 155 g (second bypass / final tempering).",
+        "audio_file_name": "2023_world_aeropress_brewing_step7.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "1ZPresso ZP6 (u otro molino de precisión)",
+      "Digital scale",
+      "Kettle (capaz de 89 °C)",
+      "Timer",
+      "Jarra para diluciones"
+    ],
+    "notes": "Técnica de Tay Wipvasutt (World Champ 2023). Uso de 'late addition' (2 g añadidos a 0:45) para introducir compuestos aromáticos frescos sin sobreextraer el cuerpo principal. Bypass en dos etapas (room-temp y caliente) para controlar fuerza y temperatura final.",
+    "servings": 1
+  },
+  {
+    "title": "2022 World AeroPress Champion - Jibbi Little (Australia) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 94,
+      "ratio": "1:5.22",
+      "grind_size": "Dual-grind then sifted (coarse via Timemore -> refined on Kinu #4); fines removed (100–200 µm)",
+      "temperature_celsius": 92,
+      "bloom_water_grams": 94,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 135
+    },
+    "preparation_steps": [
+      "Prepare and sift grounds per method: coarse grind (Timemore) → refine on Kinu #4 → sift to remove fines (100–200 µm).",
+      "Rinse a paper filter and place in the cap; assemble AeroPress inverted.",
+      "Weigh 18.0 g of the prepared grounds and add them to the chamber.",
+      "Heat Perfect Coffee Water to 92 °C for extraction and prepare 90 °C water for bypass."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 45,
+        "instruction": "Start timer and pour 94 ml of 92 °C water evenly over the grounds. Then stir gently 35 times (steady, gentle strokes) to ensure full saturation—this will take ~30–40 s depending on pace."
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "At 1:20 (≈80 s) screw on the rinsed filter cap and press out any remaining air from the chamber."
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "At 1:30 (≈90 s) flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s."
+      },
+      {
+        "time_seconds": 125,
+        "instruction": "Complete the press (target window between 1:40 and 2:10; typical yield ≈58–64 g concentrate)."
+      },
+      {
+        "time_seconds": 130,
+        "instruction": "Bypass the concentrate with 90 °C water until total weight reaches 150 g."
+      },
+      {
+        "time_seconds": 135,
+        "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique) if serving cold or to rapidly lower temperature."
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "Timemore grinder (coarse stage)",
+      "Kinu grinder (refinement, setting #4)",
+      "Sieve for fines removal (100–200 µm)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Jarra para diluciones / hielo si aplica"
+    ],
+    "notes": "Técnica avanzada de Jibbi Little (World Champ 2022). Uso de doble molino y tamizado para control extremo de la distribución de partículas; muchas revoluciones suaves para saturación (35 stirs) y bypass a 90 °C hasta 150 g para lograr la textura y temperatura deseada. Ideal para competencias y demostraciones de claridad y textura.",
+    "servings": 1
+  },
+  {
+    "title": "2021 World AeroPress Champion - Tuomas Merikanto (Finland) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 200,
+      "ratio": "1:11.11",
+      "grind_size": "Macap Labo 70D setting 7.0",
+      "temperature_celsius": 80,
+      "bloom_water_grams": 50,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 150
+    },
+    "preparation_steps": [
+      "Weigh 18.0 g of coffee and grind on Macap Labo 70D at setting 7.0.",
+      "Assemble the AeroPress in inverted position and place on the scale.",
+      "Prepare Third Wave Water Formula 2 and heat to 80 °C.",
+      "Have pitcher and target server ready for the 'pour from altitude' stage."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 10,
+        "instruction": "Add 18.0 g of grounds to the inverted AeroPress. Start timer and add 50 g of 80 °C water between 0:00–0:10 (gentle pour)."
+      },
+      {
+        "time_seconds": 15,
+        "instruction": "From 0:10–0:15, stir very gently 3 times back and forth."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "From 0:15–0:30 continue pouring water gradually until total poured reaches 200 g (slow, controlled pour)."
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "At 0:50, stir very gently 3 more times to re-homogenize the bed."
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "At 1:00 (≈60 s), push out any excess air from the chamber and attach the filter cap; allow brewing until ~1:40 (≈100 s)."
+      },
+      {
+        "time_seconds": 100,
+        "instruction": "At ~1:35 place your pitcher on top of the AeroPress; at 1:40 (≈100 s) flip the brewer carefully."
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Immediately begin pressing from 1:40–2:00 (≈20 s press)."
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "From 2:00–2:30 (≈120–150 s) swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool."
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "Macap Labo 70D",
+      "Digital scale",
+      "Kettle (capable of 80 °C)",
+      "Third Wave Water Formula 2 (or prepared mineral profile)",
+      "Timer",
+      "Pitcher(s) for pouring from altitude"
+    ],
+    "notes": "Receta de Tuomas Merikanto (World Champ 2021). Enfoque en química de agua (TWW Formula 2), dos etapas de vertido con un bajo punto de extracción (80 °C) y técnicas de manipulación (stirs muy suaves, flip y press rápida) seguidas de 'pour from altitude' para aireación y enfriado.",
+    "servings": 1
   }
 ]
