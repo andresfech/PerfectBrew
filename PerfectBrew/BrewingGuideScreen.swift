@@ -102,9 +102,9 @@ struct BrewingGuideScreen: View {
                     } else {
                         // Brewing Timers
                         VStack(spacing: 8) {
-                            // Total Time Progress
+                            // Total Time Progress (Elapsed Time)
                             VStack(spacing: 6) {
-                                Text("time_remaining".localized)
+                                Text("time_elapsed".localized)
                                     .font(.headline)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.primary)
@@ -122,10 +122,10 @@ struct BrewingGuideScreen: View {
                                         .animation(.easeInOut(duration: 0.3), value: viewModel.totalProgress)
                                     
                                     VStack(spacing: 0) {
-                                        Text("\(Int(viewModel.totalTime - viewModel.elapsedTime))")
+                                        Text(viewModel.elapsedTimeFormatted)
                                             .font(.title2)
                                             .fontWeight(.bold)
-                                        Text("seconds".localized)
+                                        Text(viewModel.elapsedTimeUnit)
                                             .font(.caption)
                                             .foregroundColor(.secondary)
                                     }

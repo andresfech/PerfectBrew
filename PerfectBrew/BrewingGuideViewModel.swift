@@ -284,6 +284,31 @@ class BrewingGuideViewModel: ObservableObject {
         return currentStepElapsedTime / currentStepDuration
     }
     
+    // MARK: - Time Display Properties
+    
+    var elapsedTimeFormatted: String {
+        let totalSeconds = Int(elapsedTime)
+        let minutes = totalSeconds / 60
+        let seconds = totalSeconds % 60
+        
+        if minutes > 0 {
+            return "\(minutes):\(String(format: "%02d", seconds))"
+        } else {
+            return "\(seconds)s"
+        }
+    }
+    
+    var elapsedTimeUnit: String {
+        let totalSeconds = Int(elapsedTime)
+        let minutes = totalSeconds / 60
+        
+        if minutes > 0 {
+            return "min"
+        } else {
+            return "seconds"
+        }
+    }
+    
 
     
     var isBrewingComplete: Bool {

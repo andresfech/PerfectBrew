@@ -534,27 +534,33 @@
     "brewing_steps": [
       {
         "time_seconds": 45,
-        "instruction": "Start timer and pour 94 ml of 92 °C water evenly over the grounds. Then stir gently 35 times (steady, gentle strokes) to ensure full saturation—this will take ~30–40 s depending on pace."
+        "instruction": "Start timer and pour 94 ml of 92 °C water evenly over the grounds. Then stir gently 35 times (steady, gentle strokes) to ensure full saturation—this will take ~30–40 s depending on pace.",
+        "audio_file_name": "2022_world_aeropress_brewing_step1.mp3"
       },
       {
         "time_seconds": 85,
-        "instruction": "At 1:20 (≈80 s) screw on the rinsed filter cap and press out any remaining air from the chamber."
+        "instruction": "At 1:20 (≈80 s) screw on the rinsed filter cap and press out any remaining air from the chamber.",
+        "audio_file_name": "2022_world_aeropress_brewing_step2.mp3"
       },
       {
         "time_seconds": 95,
-        "instruction": "At 1:30 (≈90 s) flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s."
+        "instruction": "At 1:30 (≈90 s) flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s.",
+        "audio_file_name": "2022_world_aeropress_brewing_step3.mp3"
       },
       {
         "time_seconds": 125,
-        "instruction": "Complete the press (target window between 1:40 and 2:10; typical yield ≈58–64 g concentrate)."
+        "instruction": "Complete the press (target window between 1:40 and 2:10; typical yield ≈58–64 g concentrate).",
+        "audio_file_name": "2022_world_aeropress_brewing_step4.mp3"
       },
       {
         "time_seconds": 130,
-        "instruction": "Bypass the concentrate with 90 °C water until total weight reaches 150 g."
+        "instruction": "Bypass the concentrate with 90 °C water until total weight reaches 150 g.",
+        "audio_file_name": "2022_world_aeropress_brewing_step5.mp3"
       },
       {
         "time_seconds": 135,
-        "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique) if serving cold or to rapidly lower temperature."
+        "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique) if serving cold or to rapidly lower temperature.",
+        "audio_file_name": "2022_world_aeropress_brewing_step6.mp3"
       }
     ],
     "equipment": [
