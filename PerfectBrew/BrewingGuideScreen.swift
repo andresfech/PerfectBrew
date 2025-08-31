@@ -100,87 +100,87 @@ struct BrewingGuideScreen: View {
                             }
                         }
                     } else {
-                        // Brewing Timers
-                        VStack(spacing: 8) {
-                            // Total Time Progress (Elapsed Time)
-                            VStack(spacing: 6) {
-                                Text("time_elapsed".localized)
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.primary)
-                                
+                        // New Elegant Timer Design
+                        VStack(spacing: 12) {
+                            // Big Center Timer with Tappable Context
+                            Button(action: {
+                                viewModel.toggleTimerDisplay()
+                            }) {
                                 ZStack {
+                                    // Outer ring for total progress (faint)
                                     Circle()
-                                        .stroke(Color.gray.opacity(0.3), lineWidth: 8)
-                                        .frame(width: 80, height: 80)
+                                        .stroke(Color.gray.opacity(0.2), lineWidth: 2)
+                                        .frame(width: 120, height: 120)
                                     
                                     Circle()
                                         .trim(from: 0, to: viewModel.totalProgress)
-                                        .stroke(Color.orange, style: StrokeStyle(lineWidth: 8, lineCap: .round))
-                                        .frame(width: 80, height: 80)
+                                        .stroke(Color.orange.opacity(0.3), style: StrokeStyle(lineWidth: 2, lineCap: .round))
+                                        .frame(width: 120, height: 120)
                                         .rotationEffect(.degrees(-90))
                                         .animation(.easeInOut(duration: 0.3), value: viewModel.totalProgress)
                                     
-                                    VStack(spacing: 0) {
-                                        Text(viewModel.elapsedTimeFormatted)
-                                            .font(.title2)
-                                            .fontWeight(.bold)
-                                        Text(viewModel.elapsedTimeUnit)
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
-                                    }
-                                }
-                            }
-                            
-                            // Step Timer (for current brewing step)
-                            if !viewModel.isPreparationPhase && viewModel.currentStepDuration > 0 {
-                                VStack(spacing: 6) {
-                                    Text("step_remaining".localized)
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.primary)
+                                    // Main timer circle
+                                    Circle()
+                                        .stroke(Color.gray.opacity(0.3), lineWidth: 8)
+                                        .frame(width: 100, height: 100)
                                     
-                                    ZStack {
+                                    if viewModel.showTotalTimer {
+                                        // Total timer mode
                                         Circle()
-                                            .stroke(Color.gray.opacity(0.3), lineWidth: 6)
-                                            .frame(width: 60, height: 60)
+                                            .trim(from: 0, to: viewModel.totalProgress)
+                                            .stroke(Color.orange, style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                                            .frame(width: 100, height: 100)
+                                            .rotationEffect(.degrees(-90))
+                                            .animation(.easeInOut(duration: 0.3), value: viewModel.totalProgress)
                                         
+                                        VStack(spacing: 0) {
+                                            Text(viewModel.elapsedTimeFormatted)
+                                                .font(.title)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.primary)
+                                            Text("elapsed".localized)
+                                                .font(.caption)
+                                                .foregroundColor(.secondary)
+                                        }
+                                    } else {
+                                        // Step timer mode
                                         Circle()
                                             .trim(from: 0, to: viewModel.currentStepProgress)
-                                            .stroke(Color.purple, style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                                            .frame(width: 60, height: 60)
+                                            .stroke(Color.purple, style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                                            .frame(width: 100, height: 100)
                                             .rotationEffect(.degrees(-90))
                                             .animation(.easeInOut(duration: 0.3), value: viewModel.currentStepProgress)
                                         
                                         VStack(spacing: 0) {
-                                            Text("\(Int(viewModel.currentStepRemainingTime))")
-                                                .font(.headline)
+                                            Text(viewModel.currentStepCountdown)
+                                                .font(.title)
                                                 .fontWeight(.bold)
-                                            Text("s")
-                                                .font(.caption2)
+                                                .foregroundColor(.primary)
+                                            Text("remaining".localized)
+                                                .font(.caption)
                                                 .foregroundColor(.secondary)
                                         }
                                     }
                                 }
-                            } else {
-                                // Debug info for Step Timer visibility
-                                VStack(spacing: 4) {
-                                    Text("DEBUG: Step Timer Hidden")
-                                        .font(.caption)
-                                        .foregroundColor(.red)
-                                    Text("isPreparationPhase: \(viewModel.isPreparationPhase)")
-                                        .font(.caption2)
-                                        .foregroundColor(.secondary)
-                                    Text("currentStepDuration: \(viewModel.currentStepDuration)")
-                                        .font(.caption2)
-                                        .foregroundColor(.secondary)
-                                }
-                                .padding(8)
-                                .background(Color.red.opacity(0.1))
-                                .cornerRadius(4)
                             }
+                            .buttonStyle(PlainButtonStyle())
                             
-
+                            // Small context line
+                            HStack(spacing: 8) {
+                                Text(viewModel.elapsedTimeFormatted)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                Text("•")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                Text(viewModel.totalTimeFormatted)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 4)
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(12)
                         }
                     }
                     
@@ -193,10 +193,10 @@ struct BrewingGuideScreen: View {
                         .frame(height: 120)
                     }
                     
-                    // Current Step Section
-                    VStack(alignment: .leading, spacing: 6) {
+                    // Now / Next Step Section
+                    VStack(alignment: .leading, spacing: 8) {
                         HStack {
-                            Text(viewModel.isPreparationPhase ? "preparation_step".localized : "current_step".localized)
+                            Text("current_step".localized)
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .foregroundColor(.primary)
@@ -236,21 +236,48 @@ struct BrewingGuideScreen: View {
                             }
                         }
                         
+                        // Current Step (Now)
                         HStack(alignment: .top, spacing: 8) {
-                            Image(systemName: viewModel.isPreparationPhase ? "checklist" : "cup.and.saucer.fill")
-                                .font(.title3)
-                                .foregroundColor(viewModel.isPreparationPhase ? .blue : .orange)
-                                .frame(width: 20)
+                            Image(systemName: "circle.fill")
+                                .font(.caption)
+                                .foregroundColor(.green)
+                                .frame(width: 8)
+                                .padding(.top, 6)
                             
-                            Text(viewModel.currentStep)
-                                .font(.body)
-                                .foregroundColor(.primary)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .multilineTextAlignment(.leading)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(viewModel.isPreparationPhase ? viewModel.currentStep : viewModel.currentStepShort)
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.primary)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .multilineTextAlignment(.leading)
+                            }
                         }
                         .padding(12)
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
+                        
+                        // Next Step Preview
+                        if !viewModel.isPreparationPhase, let nextStepPreview = viewModel.nextStepPreview {
+                            HStack(alignment: .top, spacing: 8) {
+                                Image(systemName: "arrow.right.circle.fill")
+                                    .font(.caption)
+                                    .foregroundColor(.blue)
+                                    .frame(width: 8)
+                                    .padding(.top, 6)
+                                
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(nextStepPreview)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                        .multilineTextAlignment(.leading)
+                                }
+                            }
+                            .padding(12)
+                            .background(Color(.systemGray6).opacity(0.5))
+                            .cornerRadius(8)
+                        }
                     }
                     
                     // Thermometer Animation (for heating water step in preparation phase)

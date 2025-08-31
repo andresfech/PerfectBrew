@@ -2,6 +2,7 @@ import SwiftUI
 
 struct BrewDetailScreen: View {
     let recipe: Recipe
+    @StateObject private var audioService = AudioService()
     
     var body: some View {
         ScrollView {
@@ -203,9 +204,33 @@ struct BrewDetailScreen: View {
                 // Notes
                 if !recipe.notes.isEmpty {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Notes")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                        HStack {
+                            Text("Notes")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                audioService.playNotesAudio(for: recipe.title)
+                            }) {
+                                HStack(spacing: 6) {
+                                    Image(systemName: "speaker.wave.2.fill")
+                                        .font(.title3)
+                                        .foregroundColor(.orange)
+                                    Text("Audio")
+                                        .font(.caption)
+                                        .fontWeight(.medium)
+                                        .foregroundColor(.orange)
+                                }
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.orange, lineWidth: 1)
+                                )
+                            }
+                        }
                         
                         Text(recipe.notes)
                             .font(.body)

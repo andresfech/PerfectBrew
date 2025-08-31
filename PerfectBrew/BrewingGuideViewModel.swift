@@ -10,10 +10,11 @@ class BrewingGuideViewModel: ObservableObject {
     @Published var currentStepStartTime: TimeInterval = 0
     @Published var currentStepDuration: TimeInterval = 0
     @Published var isAudioEnabled = true // Control for auto-play audio
+    @Published var showTotalTimer = false // Toggle between step and total timer
     
     private var timer: AnyCancellable?
     var preparationSteps: [String] = []
-    private var brewingSteps: [(time: TimeInterval, instruction: String)] = []
+    private var brewingSteps: [BrewingStep] = []
     
     // Audio service for playing step instructions
     let audioService = AudioService()
@@ -32,7 +33,7 @@ class BrewingGuideViewModel: ObservableObject {
         // Debug: Print initial brewing steps
         print("DEBUG: Initial brewing steps:")
         for (i, step) in brewingSteps.enumerated() {
-            print("  Step \(i+1): \(step.time)s - \(step.instruction)")
+            print("  Step \(i+1): \(step.timeSeconds)s - \(step.instruction)")
         }
         
         // Debug: Print step durations calculation
@@ -40,13 +41,13 @@ class BrewingGuideViewModel: ObservableObject {
         for (i, step) in brewingSteps.enumerated() {
             let duration: TimeInterval
             if i == 0 {
-                duration = step.time
+                duration = TimeInterval(step.timeSeconds)
             } else if i + 1 < brewingSteps.count {
-                duration = step.time - brewingSteps[i - 1].time
+                duration = TimeInterval(step.timeSeconds - brewingSteps[i - 1].timeSeconds)
             } else {
-                duration = totalTime - brewingSteps[i - 1].time
+                duration = totalTime - TimeInterval(brewingSteps[i - 1].timeSeconds)
             }
-            print("  Step \(i+1): duration = \(duration)s (from \(i == 0 ? 0 : brewingSteps[i-1].time)s to \(step.time)s)")
+            print("  Step \(i+1): duration = \(duration)s (from \(i == 0 ? 0 : brewingSteps[i-1].timeSeconds)s to \(step.timeSeconds)s)")
         }
     }
     
@@ -58,23 +59,8 @@ class BrewingGuideViewModel: ObservableObject {
         // Use the new structure with separate preparation and brewing steps
         self.preparationSteps = recipe.preparationSteps
         
-        // Convert brewing steps to the format we need
-        var brewSteps: [(time: TimeInterval, instruction: String)] = []
-        
-        for brewingStep in recipe.brewingSteps {
-            brewSteps.append((
-                time: TimeInterval(brewingStep.timeSeconds),
-                instruction: brewingStep.instruction
-            ))
-        }
-        
-        // Add final step if not present
-        if !brewSteps.contains(where: { $0.instruction.contains("Enjoy") || $0.instruction.contains("Finish") }) {
-            brewSteps.append((time: 10, instruction: "Enjoy your coffee!"))
-        }
-        
-        // Keep original order - don't sort by time
-        self.brewingSteps = brewSteps
+        // Keep the original BrewingStep objects to access all properties
+        self.brewingSteps = recipe.brewingSteps
         
         // Set initial step
         if !preparationSteps.isEmpty {
@@ -94,11 +80,11 @@ class BrewingGuideViewModel: ObservableObject {
             
             // Calculate first step duration correctly
             // First step duration is from 0 to first step time
-            currentStepDuration = brewingSteps[0].time
+            currentStepDuration = TimeInterval(brewingSteps[0].timeSeconds)
             
             print("DEBUG: Started timer - First step: \(currentStep), Duration: \(currentStepDuration)s")
             print("DEBUG: startTimer - isPreparationPhase: \(isPreparationPhase), currentStepDuration: \(currentStepDuration)")
-            print("DEBUG: startTimer - brewingSteps[0].time: \(brewingSteps[0].time), brewingSteps[1].time: \(brewingSteps[1].time)")
+            print("DEBUG: startTimer - brewingSteps[0].timeSeconds: \(brewingSteps[0].timeSeconds), brewingSteps[1].timeSeconds: \(brewingSteps[1].timeSeconds)")
             
             // Force update step to ensure proper initialization
             updateStep()
@@ -170,13 +156,26 @@ class BrewingGuideViewModel: ObservableObject {
     // MARK: - Audio Functions
     
     func playCurrentStepAudio() {
-        guard !isPreparationPhase else { return }
+        print("DEBUG: playCurrentStepAudio called")
+        print("DEBUG: isPreparationPhase: \(isPreparationPhase)")
+        
+        guard !isPreparationPhase else { 
+            print("DEBUG: playCurrentStepAudio - isPreparationPhase is true, returning")
+            return 
+        }
         
         // Find the current brewing step
         let currentStepIndex = getCurrentBrewingStepIndex()
-        guard currentStepIndex >= 0 && currentStepIndex < recipe.brewingSteps.count else { return }
+        print("DEBUG: playCurrentStepAudio - currentStepIndex: \(currentStepIndex)")
+        
+        guard currentStepIndex >= 0 && currentStepIndex < recipe.brewingSteps.count else { 
+            print("DEBUG: playCurrentStepAudio - currentStepIndex out of bounds, returning")
+            return 
+        }
         
         let currentBrewingStep = recipe.brewingSteps[currentStepIndex]
+        print("DEBUG: playCurrentStepAudio - currentBrewingStep.audioFileName: \(currentBrewingStep.audioFileName ?? "nil")")
+        print("DEBUG: playCurrentStepAudio - recipe.title: '\(recipe.title)'")
         
         // Play audio for the current step
         audioService.playAudio(for: currentBrewingStep, recipeTitle: recipe.title)
@@ -188,22 +187,47 @@ class BrewingGuideViewModel: ObservableObject {
     
     private func getCurrentBrewingStepIndex() -> Int {
         // Find which brewing step we're currently in
-        for (index, (time, _)) in brewingSteps.enumerated() {
-            if elapsedTime < time {
-                return index
+        for (index, brewingStep) in brewingSteps.enumerated() {
+            let stepTime = TimeInterval(brewingStep.timeSeconds)
+            
+            // For the first step, check if we're before the step ends
+            if index == 0 {
+                if elapsedTime < stepTime {
+                    return index
+                }
+            } else {
+                // For other steps, check if we're between the previous step and current step
+                let previousStepTime = TimeInterval(brewingSteps[index - 1].timeSeconds)
+                if elapsedTime >= previousStepTime && elapsedTime < stepTime {
+                    return index
+                }
             }
         }
+        
+        // If we've passed all steps, return the last step
         return brewingSteps.count - 1
     }
     
     func hasAudioForCurrentStep() -> Bool {
-        guard !isPreparationPhase else { return false }
+        guard !isPreparationPhase else { 
+            print("DEBUG: hasAudioForCurrentStep - isPreparationPhase is true, returning false")
+            return false 
+        }
         
         let currentStepIndex = getCurrentBrewingStepIndex()
-        guard currentStepIndex >= 0 && currentStepIndex < recipe.brewingSteps.count else { return false }
+        print("DEBUG: hasAudioForCurrentStep - currentStepIndex: \(currentStepIndex), brewingSteps.count: \(recipe.brewingSteps.count)")
+        
+        guard currentStepIndex >= 0 && currentStepIndex < recipe.brewingSteps.count else { 
+            print("DEBUG: hasAudioForCurrentStep - currentStepIndex out of bounds, returning false")
+            return false 
+        }
         
         let currentBrewingStep = recipe.brewingSteps[currentStepIndex]
-        return audioService.hasAudio(for: currentBrewingStep)
+        print("DEBUG: hasAudioForCurrentStep - currentBrewingStep.audioFileName: \(currentBrewingStep.audioFileName ?? "nil")")
+        
+        let result = audioService.hasAudio(for: currentBrewingStep)
+        print("DEBUG: hasAudioForCurrentStep - final result: \(result)")
+        return result
     }
     
     // MARK: - Audio Control Methods
@@ -225,6 +249,10 @@ class BrewingGuideViewModel: ObservableObject {
         if isAudioEnabled && hasAudioForCurrentStep() {
             playCurrentStepAudio()
         }
+    }
+    
+    func toggleTimerDisplay() {
+        showTotalTimer.toggle()
     }
     
     // Computed properties for progress calculations
@@ -309,6 +337,207 @@ class BrewingGuideViewModel: ObservableObject {
         }
     }
     
+    // MARK: - New Timer UI Properties
+    
+    var totalTimeFormatted: String {
+        let totalSeconds = Int(totalTime)
+        let minutes = totalSeconds / 60
+        let seconds = totalSeconds % 60
+        
+        if minutes > 0 {
+            return "\(minutes):\(String(format: "%02d", seconds))"
+        } else {
+            return "\(seconds)s"
+        }
+    }
+    
+    var currentStepCountdown: String {
+        let remaining = max(0, currentStepDuration - currentStepElapsedTime)
+        return "\(Int(remaining))s"
+    }
+    
+    var nextStepPreview: String? {
+        guard !isPreparationPhase && !brewingSteps.isEmpty else { return nil }
+        
+        let currentIndex = getCurrentBrewingStepIndex()
+        if currentIndex >= 0 && currentIndex + 1 < brewingSteps.count {
+            let nextStep = brewingSteps[currentIndex + 1]
+            let nextStepTime = TimeInterval(nextStep.timeSeconds)
+            let nextStepTimeFormatted = formatTime(nextStepTime)
+            
+            // Use short instruction from JSON if available, otherwise fallback to auto-generated
+            let shortInstruction = nextStep.shortInstruction ?? createShortInstruction(from: nextStep.instruction)
+            return "Next at \(nextStepTimeFormatted): \(shortInstruction)"
+        }
+        return nil
+    }
+    
+    var currentStepShort: String {
+        guard !isPreparationPhase else { return currentStep }
+        
+        let currentIndex = getCurrentBrewingStepIndex()
+        if currentIndex >= 0 && currentIndex < brewingSteps.count {
+            let currentBrewingStep = brewingSteps[currentIndex]
+            
+            // Use short instruction from JSON if available, otherwise fallback to auto-generated
+            let shortInstruction = currentBrewingStep.shortInstruction ?? createShortInstruction(from: currentBrewingStep.instruction)
+            return shortInstruction
+        }
+        return currentStep
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func formatTime(_ seconds: TimeInterval) -> String {
+        let totalSeconds = Int(seconds)
+        let minutes = totalSeconds / 60
+        let secs = totalSeconds % 60
+        
+        if minutes > 0 {
+            return "\(minutes):\(String(format: "%02d", secs))"
+        } else {
+            return "\(secs)s"
+        }
+    }
+    
+    private func createShortInstruction(from instruction: String) -> String {
+        // Convert long instructions to short, imperative commands
+        let lowercased = instruction.lowercased()
+        
+        // Water pouring instructions
+        if lowercased.contains("pour") && lowercased.contains("water") {
+            if lowercased.contains("50 g") {
+                return "Pour 50g water"
+            } else if lowercased.contains("100 g") {
+                return "Pour 100g water"
+            } else if lowercased.contains("94 ml") {
+                return "Pour 94ml water"
+            } else {
+                return "Pour water"
+            }
+        }
+        
+        // Bloom and initial steps
+        if lowercased.contains("bloom") {
+            if lowercased.contains("50 g") {
+                return "Bloom 50g • 30s"
+            } else {
+                return "Bloom coffee"
+            }
+        }
+        
+        // Stirring instructions
+        if lowercased.contains("stir") {
+            if lowercased.contains("north") || lowercased.contains("nsew") {
+                return "Stir NSEW pattern"
+            } else if lowercased.contains("35 times") {
+                return "Stir 35 times"
+            } else if lowercased.contains("5 s") || lowercased.contains("5s") {
+                return "Stir for 5s"
+            } else {
+                return "Stir gently"
+            }
+        }
+        
+        // Pressing and plunger actions
+        if lowercased.contains("press") {
+            if lowercased.contains("slow") || lowercased.contains("30") {
+                return "Press slowly • 30s"
+            } else if lowercased.contains("excess air") {
+                return "Press out air"
+            } else {
+                return "Press plunger"
+            }
+        }
+        
+        // Swirling and positioning
+        if lowercased.contains("swirl") {
+            return "Swirl gently"
+        }
+        
+        if lowercased.contains("place") && lowercased.contains("vessel") {
+            return "Place on vessel"
+        }
+        
+        // Cap and filter actions
+        if lowercased.contains("cap") {
+            if lowercased.contains("screw") {
+                return "Screw on cap"
+            } else if lowercased.contains("rinse") {
+                return "Rinse filter cap"
+            } else {
+                return "Attach cap"
+            }
+        }
+        
+        if lowercased.contains("filter") {
+            return "Rinse filter"
+        }
+        
+        // Flipping AeroPress
+        if lowercased.contains("flip") {
+            return "Flip AeroPress"
+        }
+        
+        // Bypass water additions
+        if lowercased.contains("bypass") {
+            if lowercased.contains("warm") {
+                return "Add warm bypass water"
+            } else if lowercased.contains("room") {
+                return "Add room temp water"
+            } else {
+                return "Add bypass water"
+            }
+        }
+        
+        // Ice additions
+        if lowercased.contains("ice") {
+            if lowercased.contains("ball") {
+                return "Add ice balls"
+            } else {
+                return "Add ice"
+            }
+        }
+        
+        // Late coffee additions
+        if lowercased.contains("late addition") {
+            return "Add late coffee"
+        }
+        
+        // Melodrip specific
+        if lowercased.contains("melodrip") {
+            return "Use Melodrip pour"
+        }
+        
+        // Temperature specific
+        if lowercased.contains("96 °c") || lowercased.contains("96°c") {
+            return "Pour 96°C water"
+        }
+        
+        if lowercased.contains("89 °c") || lowercased.contains("89°c") {
+            return "Pour 89°C water"
+        }
+        
+        if lowercased.contains("92 °c") || lowercased.contains("92°c") {
+            return "Pour 92°C water"
+        }
+        
+        // Fallback: create a smart short version
+        let firstSentence = instruction.components(separatedBy: ".").first ?? instruction
+        let words = firstSentence.components(separatedBy: " ")
+        
+        // Take key action words (usually first 3-4 words)
+        let keyWords = Array(words.prefix(4))
+        let shortVersion = keyWords.joined(separator: " ")
+        
+        // Ensure it's not too long
+        if shortVersion.count > 25 {
+            return String(shortVersion.prefix(25)) + "..."
+        }
+        
+        return shortVersion
+    }
+    
 
     
     var isBrewingComplete: Bool {
@@ -337,7 +566,7 @@ class BrewingGuideViewModel: ObservableObject {
         var currentStepIndex = 0
         
         // Check if brewing has finished - only show completion when we've truly passed all steps
-        if elapsedTime >= totalTime && elapsedTime >= (brewingSteps.last?.time ?? 0) {
+        if elapsedTime >= totalTime && elapsedTime >= (TimeInterval(brewingSteps.last?.timeSeconds ?? 0)) {
             // Brewing is complete, show completion message
             currentBrewingStep = "Enjoy your coffee!"
             stepStartTime = totalTime
@@ -359,8 +588,9 @@ class BrewingGuideViewModel: ObservableObject {
         print("DEBUG: updateStep - brewingSteps count: \(brewingSteps.count)")
         
                 // Simplified logic: find the current step based on elapsed time
-        for (index, (time, instruction)) in brewingSteps.enumerated() {
-            let stepTime = time
+        for (index, brewingStep) in brewingSteps.enumerated() {
+            let stepTime = TimeInterval(brewingStep.timeSeconds)
+            let instruction = brewingStep.instruction
             
             // Calculate step duration correctly
             var stepDuration: TimeInterval
@@ -369,10 +599,10 @@ class BrewingGuideViewModel: ObservableObject {
                 stepDuration = stepTime
             } else if index + 1 < brewingSteps.count {
                 // Middle step: duration is from previous step time to current step time
-                stepDuration = stepTime - brewingSteps[index - 1].time
+                stepDuration = stepTime - TimeInterval(brewingSteps[index - 1].timeSeconds)
             } else {
                 // Last step: duration is from previous step time to total time
-                stepDuration = totalTime - brewingSteps[index - 1].time
+                stepDuration = totalTime - TimeInterval(brewingSteps[index - 1].timeSeconds)
             }
             
             print("DEBUG: Step \(index + 1): time=\(stepTime)s, duration=\(stepDuration)s, instruction=\(instruction)")
@@ -391,7 +621,7 @@ class BrewingGuideViewModel: ObservableObject {
                 }
             } else {
                 // Other steps: check if elapsedTime is between previous step and current step
-                let prevStepTime = brewingSteps[index - 1].time
+                let prevStepTime = TimeInterval(brewingSteps[index - 1].timeSeconds)
                 if elapsedTime >= prevStepTime && elapsedTime < stepTime {
                     currentBrewingStep = instruction
                     stepStartTime = prevStepTime
@@ -407,16 +637,16 @@ class BrewingGuideViewModel: ObservableObject {
         // If we've passed all steps but haven't reached total time, show the last step
         if !foundStep && !brewingSteps.isEmpty {
             let lastStep = brewingSteps.last!
-            let lastStepDuration = totalTime - lastStep.time
-            let lastStepEndTime = lastStep.time + lastStepDuration
+            let lastStepDuration = totalTime - TimeInterval(lastStep.timeSeconds)
+            let lastStepEndTime = TimeInterval(lastStep.timeSeconds) + lastStepDuration
             
-            if elapsedTime >= lastStep.time && elapsedTime < lastStepEndTime {
+            if elapsedTime >= TimeInterval(lastStep.timeSeconds) && elapsedTime < lastStepEndTime {
                 // We're in the last step
                 currentBrewingStep = lastStep.instruction
-                stepStartTime = lastStep.time
+                stepStartTime = TimeInterval(lastStep.timeSeconds)
                 stepDuration = lastStepDuration
                 currentStepIndex = brewingSteps.count - 1
-                print("DEBUG: In last step at time \(elapsedTime)s (step time: \(lastStep.time)s, duration: \(lastStepDuration)s)")
+                print("DEBUG: In last step at time \(elapsedTime)s (step time: \(TimeInterval(lastStep.timeSeconds))s, duration: \(lastStepDuration)s)")
             } else if elapsedTime >= lastStepEndTime {
                 // We've passed the last step, show completion
                 currentBrewingStep = "Enjoy your coffee!"
@@ -439,10 +669,29 @@ class BrewingGuideViewModel: ObservableObject {
            hasAudioForCurrentStep() && 
            !audioService.isPlaying &&
            isAudioEnabled {
+            
+            print("DEBUG: Auto-play conditions met:")
+            print("DEBUG: - !isPreparationPhase: \(!isPreparationPhase)")
+            print("DEBUG: - currentStep != previousStep: \(currentStep != previousStep)")
+            print("DEBUG: - hasAudioForCurrentStep(): \(hasAudioForCurrentStep())")
+            print("DEBUG: - !audioService.isPlaying: \(!audioService.isPlaying)")
+            print("DEBUG: - isAudioEnabled: \(isAudioEnabled)")
+            print("DEBUG: - Current step: '\(currentStep)'")
+            print("DEBUG: - Previous step: '\(previousStep)'")
+            print("DEBUG: - Current step index: \(currentStepIndex)")
+            
             // Small delay to ensure UI is updated before playing audio
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                print("DEBUG: Executing auto-play for step \(currentStepIndex + 1)")
                 self.playCurrentStepAudio()
             }
+        } else {
+            print("DEBUG: Auto-play conditions NOT met:")
+            print("DEBUG: - !isPreparationPhase: \(!isPreparationPhase)")
+            print("DEBUG: - currentStep != previousStep: \(currentStep != previousStep)")
+            print("DEBUG: - hasAudioForCurrentStep(): \(hasAudioForCurrentStep())")
+            print("DEBUG: - !audioService.isPlaying: \(!audioService.isPlaying)")
+            print("DEBUG: - isAudioEnabled: \(isAudioEnabled)")
         }
         
         // Ensure we have valid step timing even if no step was found
@@ -454,7 +703,7 @@ class BrewingGuideViewModel: ObservableObject {
             
             // Calculate first step duration correctly
             // First step duration is from 0 to first step time
-            currentStepDuration = firstStep.time
+            currentStepDuration = TimeInterval(firstStep.timeSeconds)
             
             currentStepIndex = 0
             print("DEBUG: No step found, defaulting to first step with duration: \(currentStepDuration)s")
@@ -467,13 +716,13 @@ class BrewingGuideViewModel: ObservableObject {
             print("DEBUG: WARNING - currentStepDuration is 0, fixing...")
             if currentStepIndex == 0 {
                 // First step: duration is from 0 to stepTime
-                currentStepDuration = brewingSteps[0].time
+                currentStepDuration = TimeInterval(brewingSteps[0].timeSeconds)
             } else if currentStepIndex < brewingSteps.count - 1 {
                 // Middle step: duration is from previous step time to current step time
-                currentStepDuration = brewingSteps[currentStepIndex].time - brewingSteps[currentStepIndex - 1].time
+                currentStepDuration = TimeInterval(brewingSteps[currentStepIndex].timeSeconds - brewingSteps[currentStepIndex - 1].timeSeconds)
             } else {
                 // Last step: duration is from previous step time to total time
-                currentStepDuration = totalTime - brewingSteps[currentStepIndex - 1].time
+                currentStepDuration = totalTime - TimeInterval(brewingSteps[currentStepIndex - 1].timeSeconds)
             }
             print("DEBUG: Fixed currentStepDuration to: \(currentStepDuration)s")
         }

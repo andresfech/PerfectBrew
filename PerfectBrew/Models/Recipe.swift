@@ -349,26 +349,30 @@ struct Recipe: Codable, Identifiable {
 struct BrewingStep: Codable {
     let timeSeconds: Int
     let instruction: String
+    let shortInstruction: String? // Optional short, imperative instruction
     let audioFileName: String? // Optional audio file name for this step
     
     enum CodingKeys: String, CodingKey {
         case timeSeconds = "time_seconds"
         case instruction
+        case shortInstruction = "short_instruction"
         case audioFileName = "audio_file_name"
     }
     
-    // Backward compatibility - if no audio file is specified, audioFileName will be nil
+    // Backward compatibility - if no short instruction or audio file is specified, they will be nil
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         timeSeconds = try container.decode(Int.self, forKey: .timeSeconds)
         instruction = try container.decode(String.self, forKey: .instruction)
+        shortInstruction = try container.decodeIfPresent(String.self, forKey: .shortInstruction)
         audioFileName = try container.decodeIfPresent(String.self, forKey: .audioFileName)
     }
     
-    // Convenience initializer for creating steps without audio
-    init(timeSeconds: Int, instruction: String, audioFileName: String? = nil) {
+    // Convenience initializer for creating steps
+    init(timeSeconds: Int, instruction: String, shortInstruction: String? = nil, audioFileName: String? = nil) {
         self.timeSeconds = timeSeconds
         self.instruction = instruction
+        self.shortInstruction = shortInstruction
         self.audioFileName = audioFileName
     }
 }

@@ -24,6 +24,9 @@ class AudioService: NSObject, ObservableObject {
     }
     
     func playAudio(for step: BrewingStep, recipeTitle: String) {
+        print("DEBUG: playAudio called for recipe: '\(recipeTitle)'")
+        print("DEBUG: step.audioFileName: \(step.audioFileName ?? "nil")")
+        
         guard let audioFileName = step.audioFileName else {
             print("DEBUG: No audio file specified for step")
             return
@@ -34,6 +37,7 @@ class AudioService: NSObject, ObservableObject {
         
         // Construct the audio file path
         let audioPath = getAudioPath(for: audioFileName, recipeTitle: recipeTitle)
+        print("DEBUG: Audio path: \(audioPath)")
         
         do {
             // Load and play the audio file
@@ -50,6 +54,59 @@ class AudioService: NSObject, ObservableObject {
             isPlaying = false
             currentAudioFile = nil
         }
+    }
+    
+    func playNotesAudio(for recipeTitle: String) {
+        print("DEBUG: playNotesAudio called for recipe: '\(recipeTitle)'")
+        
+        // Stop any currently playing audio
+        stopAudio()
+        
+        // Get the correct notes audio filename based on recipe title
+        let notesFileName = getNotesFileName(for: recipeTitle)
+        print("DEBUG: Notes filename: \(notesFileName)")
+        
+        // Construct the audio file path for notes
+        let audioPath = getAudioPath(for: notesFileName, recipeTitle: recipeTitle)
+        print("DEBUG: Notes audio path: \(audioPath)")
+        
+        do {
+            // Load and play the audio file
+            audioPlayer = try AVAudioPlayer(contentsOf: audioPath)
+            audioPlayer?.delegate = self
+            audioPlayer?.play()
+            
+            isPlaying = true
+            currentAudioFile = notesFileName
+            
+            print("DEBUG: Playing notes audio for recipe: \(recipeTitle)")
+        } catch {
+            print("DEBUG: Failed to play notes audio for recipe \(recipeTitle): \(error)")
+            isPlaying = false
+            currentAudioFile = nil
+        }
+    }
+    
+    private func getNotesFileName(for recipeTitle: String) -> String {
+        // Convert recipe title to the correct notes filename
+        if recipeTitle.contains("Tim Wendelboe") {
+            return "Tim_W_classic_aeropress_notes.mp3"
+        } else if recipeTitle.contains("James Hoffmann") {
+            return "James_Hoffmann_Ultimate_AeroPress_notes.mp3"
+        } else if recipeTitle.contains("2024 World AeroPress Champion") {
+            return "2024_world_aeropress_notes.mp3"
+        } else if recipeTitle.contains("2023 World AeroPress Champion") {
+            return "2023_world_aeropress_notes.mp3"
+        } else if recipeTitle.contains("2022 World AeroPress Champion") {
+            return "2022_world_aeropress_notes.mp3"
+        } else if recipeTitle.contains("2021 World AeroPress Champion") {
+            return "2021_world_aeropress_notes.mp3"
+        } else if recipeTitle.contains("Championship Concentrate") {
+            return "Championship_Concentrate_notes.mp3"
+        }
+        
+        // Default fallback
+        return "notes.mp3"
     }
     
     func stopAudio() {
@@ -112,6 +169,10 @@ class AudioService: NSObject, ObservableObject {
             return "Inverted_2_Person"
         } else if title.contains("Championship Concentrate") {
             return "Championship_Concentrate"
+        } else if title.contains("Tim W. Classic AeroPress") {
+            return "Tim_W_Classic"
+        } else if title.contains("James Hoffmann's Ultimate AeroPress") {
+            return "James_Hoffmann_Ultimate_AeroPress"
         }
         
         // Default fallback
@@ -119,7 +180,9 @@ class AudioService: NSObject, ObservableObject {
     }
     
     func hasAudio(for step: BrewingStep) -> Bool {
-        return step.audioFileName != nil
+        let hasAudio = step.audioFileName != nil
+        print("DEBUG: hasAudio check - step.audioFileName: \(step.audioFileName ?? "nil"), result: \(hasAudio)")
+        return hasAudio
     }
 }
 
