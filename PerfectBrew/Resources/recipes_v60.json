@@ -23,23 +23,33 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Bloom: Pour 40mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
+        "instruction": "Bloom: Pour 40mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets.",
+        "short_instruction": "Bloom 40mL water • Swirl brewer & stir bed",
+        "audio_file_name": "single_serve_brewing_step_01.wav"
       },
       {
         "time_seconds": 45,
-        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 75mL in this stage, reaching 115mL total. This breaks channels and raises slurry temperature."
+        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 75mL in this stage, reaching 115mL total. This breaks channels and raises slurry temperature.",
+        "short_instruction": "Main pour 75mL aggressively • Swirl to edges",
+        "audio_file_name": "single_serve_brewing_step_02.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "Stop pouring and give a gentle swirl to flatten the bed."
+        "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
+        "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
+        "audio_file_name": "single_serve_brewing_step_03.wav"
       },
       {
         "time_seconds": 90,
-        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 256mL is reached. The water above the coffee may become clear."
+        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 256mL is reached. The water above the coffee may become clear.",
+        "short_instruction": "Final pour to 256mL • Small circles in center",
+        "audio_file_name": "single_serve_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Give one more slight swirl to flatten the bed for drain down."
+        "instruction": "Give one more slight swirl to flatten the bed for drain down.",
+        "short_instruction": "Final swirl • Flatten bed for drain",
+        "audio_file_name": "single_serve_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -75,23 +85,33 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Bloom: Pour 80mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
+        "instruction": "Bloom: Pour 80mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets.",
+        "short_instruction": "Bloom 80mL • Swirl & stir",
+        "audio_file_name": "two_people_brewing_step_01.wav"
       },
       {
         "time_seconds": 50,
-        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 150mL in this stage, reaching 230mL total. This breaks channels and raises slurry temperature."
+        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 150mL in this stage, reaching 230mL total. This breaks channels and raises slurry temperature.",
+        "short_instruction": "Main pour 150mL • Swirl out",
+        "audio_file_name": "two_people_brewing_step_02.wav"
       },
       {
         "time_seconds": 70,
-        "instruction": "Stop pouring and give a gentle swirl to flatten the bed."
+        "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
+        "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
+        "audio_file_name": "two_people_brewing_step_03.wav"
       },
       {
         "time_seconds": 110,
-        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 512mL is reached. The water above the coffee may become clear."
+        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 512mL is reached. The water above the coffee may become clear.",
+        "short_instruction": "Final pour to 512mL • Small circles",
+        "audio_file_name": "two_people_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Give one more slight swirl to flatten the bed for drain down."
+        "instruction": "Give one more slight swirl to flatten the bed for drain down.",
+        "short_instruction": "Final swirl • Flatten bed for drain",
+        "audio_file_name": "two_people_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -127,23 +147,28 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Bloom: Pour 120mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
+        "instruction": "Bloom: Pour 120mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets.",
+        "audio_file_name": "three_people_brewing_step_01.wav"
       },
       {
         "time_seconds": 55,
-        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 225mL in this stage, reaching 345mL total. This breaks channels and raises slurry temperature."
+        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 225mL in this stage, reaching 345mL total. This breaks channels and raises slurry temperature.",
+        "audio_file_name": "three_people_brewing_step_02.wav"
       },
       {
         "time_seconds": 80,
-        "instruction": "Stop pouring and give a gentle swirl to flatten the bed."
+        "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
+        "audio_file_name": "three_people_brewing_step_03.wav"
       },
       {
         "time_seconds": 130,
-        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 768mL is reached. The water above the coffee may become clear."
+        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 768mL is reached. The water above the coffee may become clear.",
+        "audio_file_name": "three_people_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Give one more slight swirl to flatten the bed for drain down."
+        "instruction": "Give one more slight swirl to flatten the bed for drain down.",
+        "audio_file_name": "three_people_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -179,23 +204,28 @@
     "brewing_steps": [
       {
         "time_seconds": 30,
-        "instruction": "Bloom: Pour 160mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets."
+        "instruction": "Bloom: Pour 160mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets.",
+        "audio_file_name": "four_people_brewing_step_01.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 300mL in this stage, reaching 460mL total. This breaks channels and raises slurry temperature."
+        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 300mL in this stage, reaching 460mL total. This breaks channels and raises slurry temperature.",
+        "audio_file_name": "four_people_brewing_step_02.wav"
       },
       {
         "time_seconds": 90,
-        "instruction": "Stop pouring and give a gentle swirl to flatten the bed."
+        "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
+        "audio_file_name": "four_people_brewing_step_03.wav"
       },
       {
         "time_seconds": 150,
-        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 1024mL is reached. The water above the coffee may become clear."
+        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 1024mL is reached. The water above the coffee may become clear.",
+        "audio_file_name": "four_people_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Give one more slight swirl to flatten the bed for drain down."
+        "instruction": "Give one more slight swirl to flatten the bed for drain down.",
+        "audio_file_name": "four_people_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -220,7 +250,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 60,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 215
+      "total_brew_time_seconds": 135
     },
     "preparation_steps": [
       "Heat water to 95°C.",
@@ -231,32 +261,46 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 25,
-        "instruction": "Bloom (0:00): Start timer. Pour 60 grams of water (2x coffee dose) to saturate the grounds."
+        "time_seconds": 10,
+        "instruction": "Bloom (0:00): Start timer. Pour 60 grams of water (2x coffee dose) to saturate the grounds.",
+        "short_instruction": "Bloom 60g water (2x dose) • Start timer",
+        "audio_file_name": "single_serve_brewing_step_01.wav"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even.",
+        "short_instruction": "Swirl brewer until slurry is even",
+        "audio_file_name": "single_serve_brewing_step_02.wav"
       },
       {
         "time_seconds": 25,
-        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:45. This bloom period allows for de-gassing, which is crucial for fresh coffee."
+        "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:45. This bloom period allows for de-gassing, which is crucial for fresh coffee.",
+        "short_instruction": "Wait until 0:45 • Let bloom continue",
+        "audio_file_name": "single_serve_brewing_step_03.wav"
       },
       {
         "time_seconds": 45,
-        "instruction": "First Main Pour (0:45 - 1:15): Pour up to 300 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
+        "instruction": "First Main Pour (0:45 - 1:15): Pour up to 300 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up.",
+        "short_instruction": "First main pour to 300g • Within 30 seconds",
+        "audio_file_name": "single_serve_brewing_step_04.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Second Main Pour (1:15 - 1:45): Gently pour up to 500 grams of water (100% of total brew water) within 30 seconds."
+        "time_seconds": 75,
+        "instruction": "Second Main Pour (1:15 - 1:45): Gently pour up to 500 grams of water (100% of total brew water) within 30 seconds.",
+        "short_instruction": "Second main pour to 500g • Within 30 seconds",
+        "audio_file_name": "single_serve_brewing_step_05.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Stir (1:45): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
+        "time_seconds": 105,
+        "instruction": "Stir (1:45): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction.",
+        "short_instruction": "Stir clockwise & anticlockwise",
+        "audio_file_name": "single_serve_brewing_step_06.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Swirl (1:55): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
+        "time_seconds": 135,
+        "instruction": "Swirl (1:55): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown.",
+        "short_instruction": "Swirl to flatten bed",
+        "audio_file_name": "single_serve_brewing_step_07.wav"
       }
     ],
     "equipment": [
@@ -282,7 +326,7 @@
       "temperature_celsius": 95,
       "bloom_water_grams": 120,
       "bloom_time_seconds": 50,
-      "total_brew_time_seconds": 220
+      "total_brew_time_seconds": 170
     },
     "preparation_steps": [
       "Heat water to 95°C.",
@@ -293,32 +337,46 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 25,
-        "instruction": "Bloom (0:00): Start timer. Pour 120 grams of water (2x coffee dose) to saturate the grounds."
+        "time_seconds": 10,
+        "instruction": "Bloom (0:00): Start timer. Pour 120 grams of water (2x coffee dose) to saturate the grounds.",
+        "short_instruction": "Bloom 120g water (2x dose) • Start timer",
+        "audio_file_name": "two_people_brewing_step_01.wav"
       },
       {
-        "time_seconds": 25,
-        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:50. This bloom period allows for de-gassing, which is crucial for fresh coffee."
+        "time_seconds": 20,
+        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even.",
+        "short_instruction": "Swirl brewer until slurry is even",
+        "audio_file_name": "two_people_brewing_step_02.wav"
       },
       {
         "time_seconds": 50,
-        "instruction": "First Main Pour (0:50 - 1:20): Pour up to 600 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
+        "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:50. This bloom period allows for de-gassing, which is crucial for fresh coffee.",
+        "short_instruction": "Wait until 0:50 • Let bloom continue",
+        "audio_file_name": "two_people_brewing_step_03.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Second Main Pour (1:20 - 1:50): Gently pour up to 1000 grams of water (100% of total brew water) within 30 seconds."
+        "time_seconds": 80,
+        "instruction": "First Main Pour (0:50 - 1:20): Pour up to 600 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up.",
+        "short_instruction": "First main pour to 600g • Within 30 seconds",
+        "audio_file_name": "two_people_brewing_step_04.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Stir (1:50): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
+        "time_seconds": 110,
+        "instruction": "Second Main Pour (1:20 - 1:50): Gently pour up to 1000 grams of water (100% of total brew water) within 30 seconds.",
+        "short_instruction": "Second main pour to 1000g • Within 30 seconds",
+        "audio_file_name": "two_people_brewing_step_05.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Swirl (2:00): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
+        "time_seconds": 140,
+        "instruction": "Stir (1:50): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction.",
+        "short_instruction": "Stir clockwise & anti-clockwise",
+        "audio_file_name": "two_people_brewing_step_06.wav"
+      },
+      {
+        "time_seconds": 170,
+        "instruction": "Swirl (2:00): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown.",
+        "short_instruction": "Swirl to flatten coffee bed",
+        "audio_file_name": "two_people_brewing_step_07.wav"
       }
     ],
     "equipment": [
@@ -356,31 +414,38 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Bloom (0:00): Start timer. Pour 180 grams of water (2x coffee dose) to saturate the grounds."
+        "instruction": "Bloom (0:00): Start timer. Pour 180 grams of water (2x coffee dose) to saturate the grounds.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 25,
-        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
+        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:55. This bloom period allows for de-gassing, which is crucial for fresh coffee."
+        "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:55. This bloom period allows for de-gassing, which is crucial for fresh coffee.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 55,
-        "instruction": "First Main Pour (0:55 - 1:25): Pour up to 900 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
+        "instruction": "First Main Pour (0:55 - 1:25): Pour up to 900 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up.",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Second Main Pour (1:25 - 1:55): Gently pour up to 1500 grams of water (100% of total brew water) within 30 seconds."
+        "instruction": "Second Main Pour (1:25 - 1:55): Gently pour up to 1500 grams of water (100% of total brew water) within 30 seconds.",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Stir (1:55): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
+        "instruction": "Stir (1:55): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction.",
+        "audio_file_name": "v60_brewing_step_06.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Swirl (2:05): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
+        "instruction": "Swirl (2:05): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown.",
+        "audio_file_name": "v60_brewing_step_07.wav"
       }
     ],
     "equipment": [
@@ -418,31 +483,38 @@
     "brewing_steps": [
       {
         "time_seconds": 30,
-        "instruction": "Bloom (0:00): Start timer. Pour 240 grams of water (2x coffee dose) to saturate the grounds."
+        "instruction": "Bloom (0:00): Start timer. Pour 240 grams of water (2x coffee dose) to saturate the grounds.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 25,
-        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even."
+        "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Bloom continues (0:20): Let the coffee bloom until 1:00. This bloom period allows for de-gassing, which is crucial for fresh coffee."
+        "instruction": "Bloom continues (0:20): Let the coffee bloom until 1:00. This bloom period allows for de-gassing, which is crucial for fresh coffee.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "First Main Pour (1:00 - 1:30): Pour up to 1200 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up."
+        "instruction": "First Main Pour (1:00 - 1:30): Pour up to 1200 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up.",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Second Main Pour (1:30 - 2:00): Gently pour up to 2000 grams of water (100% of total brew water) within 30 seconds."
+        "instruction": "Second Main Pour (1:30 - 2:00): Gently pour up to 2000 grams of water (100% of total brew water) within 30 seconds.",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Stir (2:00): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction."
+        "instruction": "Stir (2:00): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction.",
+        "audio_file_name": "v60_brewing_step_06.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Swirl (2:10): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown."
+        "instruction": "Swirl (2:10): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown.",
+        "audio_file_name": "v60_brewing_step_07.wav"
       }
     ],
     "equipment": [
@@ -479,27 +551,39 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 50g water (40% of total), stir gently."
+        "instruction": "Pour 50g water (40% of total), stir gently.",
+        "short_instruction": "Pour 50g • Stir gently",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 45,
-        "instruction": "Pour 70g water (60% of remaining), gentle swirl."
+        "instruction": "Pour 70g water (60% of remaining), gentle swirl.",
+        "short_instruction": "Pour 70g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 90,
-        "instruction": "Pour 60g water, gentle swirl."
+        "instruction": "Pour 60g water, gentle swirl.",
+        "short_instruction": "Pour 60g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 135,
-        "instruction": "Pour 60g water, gentle swirl."
+        "instruction": "Pour 60g water, gentle swirl.",
+        "short_instruction": "Pour 60g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 180,
-        "instruction": "Final pour of 60g water, gentle swirl."
+        "instruction": "Final pour of 60g water, gentle swirl.",
+        "short_instruction": "Final pour 60g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "short_instruction": "Let drain completely",
+        "audio_file_name": "v60_brewing_step_06.wav"
       }
     ],
     "equipment": [
@@ -536,27 +620,33 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 100g water (40% of total), stir gently."
+        "instruction": "Pour 100g water (40% of total), stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 50,
-        "instruction": "Pour 140g water (60% of remaining), gentle swirl."
+        "instruction": "Pour 140g water (60% of remaining), gentle swirl.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 100,
-        "instruction": "Pour 120g water, gentle swirl."
+        "instruction": "Pour 120g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 150,
-        "instruction": "Pour 120g water, gentle swirl."
+        "instruction": "Pour 120g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 200,
-        "instruction": "Final pour of 120g water, gentle swirl."
+        "instruction": "Final pour of 120g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "audio_file_name": "v60_brewing_step_06.wav"
       }
     ],
     "equipment": [
@@ -593,27 +683,33 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 150g water (40% of total), stir gently."
+        "instruction": "Pour 150g water (40% of total), stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 55,
-        "instruction": "Pour 210g water (60% of remaining), gentle swirl."
+        "instruction": "Pour 210g water (60% of remaining), gentle swirl.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 110,
-        "instruction": "Pour 180g water, gentle swirl."
+        "instruction": "Pour 180g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 165,
-        "instruction": "Pour 180g water, gentle swirl."
+        "instruction": "Pour 180g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 220,
-        "instruction": "Final pour of 180g water, gentle swirl."
+        "instruction": "Final pour of 180g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "audio_file_name": "v60_brewing_step_06.wav"
       }
     ],
     "equipment": [
@@ -650,27 +746,33 @@
     "brewing_steps": [
       {
         "time_seconds": 30,
-        "instruction": "Pour 200g water (40% of total), stir gently."
+        "instruction": "Pour 200g water (40% of total), stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "Pour 280g water (60% of remaining), gentle swirl."
+        "instruction": "Pour 280g water (60% of remaining), gentle swirl.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 120,
-        "instruction": "Pour 240g water, gentle swirl."
+        "instruction": "Pour 240g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 180,
-        "instruction": "Pour 240g water, gentle swirl."
+        "instruction": "Pour 240g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 240,
-        "instruction": "Final pour of 240g water, gentle swirl."
+        "instruction": "Final pour of 240g water, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "audio_file_name": "v60_brewing_step_06.wav"
       }
     ],
     "equipment": [
@@ -707,23 +809,33 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 54g water (3x coffee weight), stir gently."
+        "instruction": "Pour 54g water (3x coffee weight), stir gently.",
+        "short_instruction": "Pour 54g water (3x coffee weight) • Stir gently",
+        "audio_file_name": "single_serve_brewing_step_01.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Pour to 150g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 150g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 150g total • Within 15 seconds",
+        "audio_file_name": "single_serve_brewing_step_02.wav"
       },
       {
         "time_seconds": 45,
-        "instruction": "Pour to 225g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 225g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 225g total • Within 15 seconds",
+        "audio_file_name": "single_serve_brewing_step_03.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "Pour to 300g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 300g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 300g total • Within 15 seconds",
+        "audio_file_name": "single_serve_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "short_instruction": "Let drain completely",
+        "audio_file_name": "single_serve_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -760,23 +872,28 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 108g water (3x coffee weight), stir gently."
+        "instruction": "Pour 108g water (3x coffee weight), stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 35,
-        "instruction": "Pour to 300g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 300g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 50,
-        "instruction": "Pour to 450g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 450g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 65,
-        "instruction": "Pour to 600g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 600g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "audio_file_name": "v60_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -813,23 +930,33 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 162g water (3x coffee weight), stir gently."
+        "instruction": "Pour 162g water (3x coffee weight), stir gently.",
+        "short_instruction": "Pour 162g water • Stir gently",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 40,
-        "instruction": "Pour to 450g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 450g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 450g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 55,
-        "instruction": "Pour to 675g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 675g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 675g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 70,
-        "instruction": "Pour to 900g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 900g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 900g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "time_seconds": 220,
+        "instruction": "Let drain completely.",
+        "short_instruction": "Let drain completely",
+        "audio_file_name": "v60_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -866,23 +993,28 @@
     "brewing_steps": [
       {
         "time_seconds": 30,
-        "instruction": "Pour 216g water (3x coffee weight), stir gently."
+        "instruction": "Pour 216g water (3x coffee weight), stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 45,
-        "instruction": "Pour to 600g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 600g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "Pour to 900g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 900g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 75,
-        "instruction": "Pour to 1200g in 15 seconds, gentle swirl."
+        "instruction": "Pour to 1200g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "audio_file_name": "v60_brewing_step_05.wav"
       }
     ],
     "equipment": [
@@ -919,15 +1051,18 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 36g water, stir gently."
+        "instruction": "Pour 36g water, stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Pour remaining water in 2-3 pours."
+        "instruction": "Pour remaining water in 2-3 pours.",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "Let drain."
+        "instruction": "Let drain.",
+        "audio_file_name": "v60_brewing_step_03.wav"
       }
     ],
     "equipment": [
@@ -963,27 +1098,39 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Pour 45g water, stir in figure-8 pattern."
+        "instruction": "Pour 45g water, stir in figure-8 pattern.",
+        "short_instruction": "Pour 45g water • Stir in figure-8 pattern",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 40,
-        "instruction": "Pour to 100g in 10 seconds, gentle swirl."
+        "instruction": "Pour to 100g in 10 seconds, gentle swirl.",
+        "short_instruction": "Pour to 100g total • Within 10 seconds",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 50,
-        "instruction": "Pour to 150g in 10 seconds, gentle swirl."
+        "instruction": "Pour to 150g in 10 seconds, gentle swirl.",
+        "short_instruction": "Pour to 150g total • Within 10 seconds",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "Pour to 200g in 10 seconds, gentle swirl."
+        "instruction": "Pour to 200g in 10 seconds, gentle swirl.",
+        "short_instruction": "Pour to 200g total • Within 10 seconds",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 70,
-        "instruction": "Final pour to 250g, gentle swirl."
+        "instruction": "Final pour to 250g, gentle swirl.",
+        "short_instruction": "Final pour to 250g total • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely."
+        "instruction": "Let drain completely.",
+        "short_instruction": "Let drain completely",
+        "audio_file_name": "v60_brewing_step_06.wav"
       }
     ],
     "equipment": [
@@ -1021,31 +1168,45 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Bloom: Pour 90g water (2x coffee weight), stir gently in circular motion"
+        "instruction": "Bloom: Pour 90g water (2x coffee weight), stir gently in circular motion",
+        "short_instruction": "Bloom 90g water (2x dose) • Circular stir",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 60,
-        "instruction": "First pour: Add 180g water in slow, steady spiral, reaching 270g total"
+        "instruction": "First pour: Add 180g water in slow, steady spiral, reaching 270g total",
+        "short_instruction": "First pour 180g water • Slow steady spiral",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 35,
-        "instruction": "Wait 30 seconds for extraction"
+        "instruction": "Wait 30 seconds for extraction",
+        "short_instruction": "Wait 30 seconds • Extraction",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 150,
-        "instruction": "Second pour: Add 225g water, reaching 495g total"
+        "instruction": "Second pour: Add 225g water, reaching 495g total",
+        "short_instruction": "Second pour 225g • Reach 495g",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Wait 30 seconds"
+        "instruction": "Wait 30 seconds",
+        "short_instruction": "Wait 30 seconds",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 240,
-        "instruction": "Final pour: Add remaining 225g water to reach 720g total"
+        "instruction": "Final pour: Add remaining 225g water to reach 720g total",
+        "short_instruction": "Final pour 225g • Reach 720g",
+        "audio_file_name": "v60_brewing_step_06.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely, should finish around 4:30-5:00"
+        "instruction": "Let drain completely, should finish around 4:30-5:00",
+        "short_instruction": "Let drain completely • 4:30-5:00",
+        "audio_file_name": "v60_brewing_step_07.wav"
       }
     ],
     "equipment": [
@@ -1083,31 +1244,45 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Bloom: Pour 64 grams of water (2x coffee dose), stir gently"
+        "instruction": "Bloom: Pour 64 grams of water (2x coffee dose), stir gently",
+        "short_instruction": "Bloom 64g • Stir gently",
+        "audio_file_name": "v60_brewing_step_01.wav"
       },
       {
         "time_seconds": 45,
-        "instruction": "First pour: Add 128g water in slow, steady stream"
+        "instruction": "First pour: Add 128g water in slow, steady stream",
+        "short_instruction": "First pour 128g • Slow stream",
+        "audio_file_name": "v60_brewing_step_02.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Wait 30 seconds for extraction"
+        "instruction": "Wait 30 seconds for extraction",
+        "short_instruction": "Wait 30 seconds • Extraction",
+        "audio_file_name": "v60_brewing_step_03.wav"
       },
       {
         "time_seconds": 120,
-        "instruction": "Second pour: Add 128g water"
+        "instruction": "Second pour: Add 128g water",
+        "short_instruction": "Second pour 128g",
+        "audio_file_name": "v60_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Wait 30 seconds"
+        "instruction": "Wait 30 seconds",
+        "short_instruction": "Wait 30 seconds",
+        "audio_file_name": "v60_brewing_step_05.wav"
       },
       {
         "time_seconds": 180,
-        "instruction": "Final pour: Add remaining 192g water to reach 512g total"
+        "instruction": "Final pour: Add remaining 192g water to reach 512g total",
+        "short_instruction": "Final pour 192g • Reach 512g",
+        "audio_file_name": "v60_brewing_step_06.wav"
       },
       {
         "time_seconds": 30,
-        "instruction": "Let drain completely, should finish around 4:00"
+        "instruction": "Let drain completely, should finish around 4:00",
+        "short_instruction": "Let drain completely • 4:00",
+        "audio_file_name": "v60_brewing_step_07.wav"
       }
     ],
     "equipment": [
