@@ -1,0 +1,68 @@
+---
+alwaysApply: false
+triggerPhrases:
+  - "create a plan"
+  - "implementation plan"
+  - "create a doc"
+  - "start a plan"
+  - "PRD"
+  - "product requirements"
+  - "feature plan"
+---
+
+# PRD Creation Rules
+
+## 🎯 Goal: Create comprehensive implementation plans for features
+
+## 📐 PerfectBrew Architecture
+- **Frontend**: iOS SwiftUI app with MVVM pattern
+- **Models**: Recipe.swift, RecipeDatabase.swift
+- **ViewModels**: BrewingGuideViewModel.swift
+- **Services**: AudioService.swift, LocalizationManager.swift, SettingsManager.swift
+- **Resources**: JSON recipe files (AeroPress, V60, FrenchPress)
+- **Audio**: Chatterbox TTS integration for step-by-step narration
+- **Storage**: Local JSON files + Core Data for brew history
+
+## 🧩 Required Components
+- **Summary** – Clear goal statement
+- **Gherkin Stories** – Given/When/Then scenarios
+- **Affected Files** – Real file paths (use codebase_search first)
+- **Git Strategy** – Branch naming, commit checkpoints
+- **QA Strategy** – LLM self-test + manual user verification
+
+## 🛠 Step 1: Core Areas to Explore
+- **Investigation** – What unknowns need resolution?
+- **Expected Behavior** – Gherkin stories (Given/When/Then)
+- **Core Functionality** – Key user actions
+- **Scope/Boundaries** – What this should NOT do
+- **File Requirements** – What files need changes?
+- **Data Schema** – Backend schema changes needed?
+- **Design/UI** – Missing designs or mockups?
+- **State/Interactions** – Follow @state-management.md
+
+## 🧭 Step 2: Implementation Plan Components
+- **Goals** – What we're achieving and how
+- **Gherkin User Stories** – Detailed expected behaviors
+- **Functional Requirements** – Measurable, specific functionalities
+- **Non-Goals** – Clear scope boundaries
+- **Success Metrics** – Measurable outcomes
+
+## 📋 Step 3: Execution Checklist
+- [ ] **Investigation Complete** – All unknowns resolved
+- [ ] **Gherkin Stories Written** – Given/When/Then scenarios defined
+- [ ] **Files Identified** – Real file paths using codebase_search
+- [ ] **Git Strategy Defined** – Branch naming and commit checkpoints
+- [ ] **QA Strategy Planned** – LLM self-test + manual verification
+- [ ] **Success Metrics Defined** – Measurable outcomes
+- [ ] **Scope Boundaries Clear** – What this should NOT do
+- [ ] **Implementation Ready** – All components defined
+
+## 🎯 Trigger Phrases
+This rule activates when user mentions:
+- "create a plan"
+- "implementation plan" 
+- "create a doc"
+- "start a plan"
+- "PRD"
+- "product requirements"
+- "feature plan"

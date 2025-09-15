@@ -245,7 +245,7 @@ struct BrewingGuideScreen: View {
                                 .padding(.top, 6)
                             
                             VStack(alignment: .leading, spacing: 4) {
-                                Text(viewModel.isPreparationPhase ? viewModel.currentStep : viewModel.currentStepShort)
+                                Text(viewModel.isPreparationPhase ? viewModel.currentStep : viewModel.currentStep)
                                     .font(.body)
                                     .fontWeight(.medium)
                                     .foregroundColor(.primary)

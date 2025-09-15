@@ -168,8 +168,9 @@ class BrewingGuideViewModel: ObservableObject {
         let currentStepIndex = getCurrentBrewingStepIndex()
         print("DEBUG: playCurrentStepAudio - currentStepIndex: \(currentStepIndex)")
         
+        // If no current step (completion or before start), don't play audio
         guard currentStepIndex >= 0 && currentStepIndex < recipe.brewingSteps.count else { 
-            print("DEBUG: playCurrentStepAudio - currentStepIndex out of bounds, returning")
+            print("DEBUG: playCurrentStepAudio - no current step (completion or before start), returning")
             return 
         }
         
@@ -204,8 +205,9 @@ class BrewingGuideViewModel: ObservableObject {
             }
         }
         
-        // If we've passed all steps, return the last step
-        return brewingSteps.count - 1
+        // If we've passed all steps, return -1 to indicate completion
+        // This prevents the audio loop issue
+        return -1
     }
     
     func hasAudioForCurrentStep() -> Bool {
@@ -217,8 +219,9 @@ class BrewingGuideViewModel: ObservableObject {
         let currentStepIndex = getCurrentBrewingStepIndex()
         print("DEBUG: hasAudioForCurrentStep - currentStepIndex: \(currentStepIndex), brewingSteps.count: \(recipe.brewingSteps.count)")
         
+        // If no current step (completion or before start), no audio
         guard currentStepIndex >= 0 && currentStepIndex < recipe.brewingSteps.count else { 
-            print("DEBUG: hasAudioForCurrentStep - currentStepIndex out of bounds, returning false")
+            print("DEBUG: hasAudioForCurrentStep - no current step (completion or before start), returning false")
             return false 
         }
         

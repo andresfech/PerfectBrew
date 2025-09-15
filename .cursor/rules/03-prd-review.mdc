@@ -1,0 +1,76 @@
+---
+alwaysApply: false
+triggerPhrases:
+  - "review plan"
+  - "check implementation"
+  - "validate plan"
+  - "ready for development"
+  - "handoff"
+  - "PRD review"
+  - "implementation readiness"
+---
+
+# PRD Review & Implementation Readiness Check
+
+## 🎯 Goal: Validate implementation plans before execution and convert to executable format
+
+## 📐 PerfectBrew Architecture
+- **Frontend**: iOS SwiftUI app with MVVM pattern
+- **Models**: Recipe.swift, RecipeDatabase.swift
+- **ViewModels**: BrewingGuideViewModel.swift
+- **Services**: AudioService.swift, LocalizationManager.swift, SettingsManager.swift
+- **Resources**: JSON recipe files (AeroPress, V60, FrenchPress)
+- **Audio**: Chatterbox TTS integration for step-by-step narration
+- **Storage**: Local JSON files + Core Data for brew history
+- **Views**: BrewingGuideScreen.swift, HomeScreen.swift, RecipeSelectionScreen.swift
+- **Animations**: Lottie animations for brewing process
+
+## ✅ Pre-Implementation Checklist
+- **Context Check** – What would another LLM need to implement this with no prior context?
+- **Rate Plan /10** – Score completeness before execution
+- **Phase Breakdown** – Split into smaller, safer chunks with 3 tasks per phase
+- **PerfectBrew Consistency** – Does this follow existing SwiftUI/MVVM patterns?
+
+## 🛡 Quality Gates
+- **Production Safety** – No mocks, placeholders, or TODOs allowed
+- **File Verification** – All mentioned paths exist via codebase_search
+- **Dependency Check** – Required services/audio files available
+- **Error Scenarios** – Edge cases and failure modes covered
+- **Audio Synchronization** – Maintain step-to-audio mapping integrity
+- **Recipe Compatibility** – Preserve existing JSON structure
+
+## 🔎 Review Protocol
+1. **Read PRD** – Understand scope and requirements
+2. **Check References** – Verify against PerfectBrew architecture
+3. **Score Completeness** – Rate /10 with specific gaps identified
+4. **Convert to Executable Format** – ALWAYS restructure into phased checklist format
+5. **User Approval** – Wait for "approved" before proceeding
+
+## 📌 MANDATORY: Convert to Executable Format
+
+**ALWAYS restructure implementation plans into this format:**
+
+### Phase 1: [Phase Name]
+- [ ] **Task 1**: [Specific, actionable task]
+- [ ] **Task 2**: [Specific, actionable task]
+- [ ] **Task 3**: [Specific, actionable task]
+
+### Phase 2: [Phase Name]
+- [ ] **Task 1**: [Specific, actionable task]
+- [ ] **Task 2**: [Specific, actionable task]
+- [ ] **Task 3**: [Specific, actionable task]
+
+### Phase 3: [Phase Name]
+- [ ] **Task 1**: [Specific, actionable task]
+- [ ] **Task 2**: [Specific, actionable task]
+- [ ] **Task 3**: [Specific, actionable task]
+
+## 🎯 Trigger Phrases
+This rule activates when user mentions:
+- "review plan"
+- "check implementation"
+- "validate plan"
+- "ready for development"
+- "handoff"
+- "PRD review"
+- "implementation readiness"

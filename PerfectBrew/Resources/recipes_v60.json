@@ -12,42 +12,42 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 40,
       "bloom_time_seconds": 45,
-      "total_brew_time_seconds": 250
+      "total_brew_time_seconds": 180
     },
     "preparation_steps": [
-      "Heat water to desired temperature (205-212°F / 96-100°C).",
-      "Grind 16 grams of coffee to medium-fine consistency.",
-      "Place filter in V60 and rinse with 50-100mL of hot water to pre-heat and remove paper taste. Discard rinse water.",
-      "Add 16 grams of ground coffee, gently shake to level, and create a deep divot in the center."
+      "Heat water to 96°C.",
+      "Grind 16g coffee to medium-fine.",
+      "Rinse V60 filter with hot water, discard rinse water.",
+      "Add coffee, shake to level, create center divot."
     ],
     "brewing_steps": [
       {
-        "time_seconds": 25,
-        "instruction": "Bloom: Pour 40mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets.",
+        "time_seconds": 45,
+        "instruction": "Bloom: Pour 40mL water into center divot, then swirl and stir.",
         "short_instruction": "Bloom 40mL water • Swirl brewer & stir bed",
         "audio_file_name": "single_serve_brewing_step_01.wav"
       },
       {
-        "time_seconds": 45,
-        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 75mL in this stage, reaching 115mL total. This breaks channels and raises slurry temperature.",
+        "time_seconds": 75,
+        "instruction": "Main Pour: Pour aggressively into center, then swirl to edges. Target 75mL.",
         "short_instruction": "Main pour 75mL aggressively • Swirl to edges",
         "audio_file_name": "single_serve_brewing_step_02.wav"
       },
       {
-        "time_seconds": 60,
+        "time_seconds": 90,
         "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
         "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
         "audio_file_name": "single_serve_brewing_step_03.wav"
       },
       {
-        "time_seconds": 90,
-        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 256mL is reached. The water above the coffee may become clear.",
+        "time_seconds": 150,
+        "instruction": "Final Pour: Pour gently in center with small circles until 256mL.",
         "short_instruction": "Final pour to 256mL • Small circles in center",
         "audio_file_name": "single_serve_brewing_step_04.wav"
       },
       {
-        "time_seconds": 30,
-        "instruction": "Give one more slight swirl to flatten the bed for drain down.",
+        "time_seconds": 180,
+        "instruction": "Final swirl to flatten bed for drain down.",
         "short_instruction": "Final swirl • Flatten bed for drain",
         "audio_file_name": "single_serve_brewing_step_05.wav"
       }
@@ -58,7 +58,7 @@
       "kettle (gooseneck preferred)",
       "stirring device (chopstick/long stick)"
     ],
-    "notes": "Total Brew Time: 2:45 to 3:30.",
+    "notes": "Total Brew Time: 3:00 (180s). Bloom: 45s, Main pour: 30s, Final pour: 60s, Drain: 30s.",
     "servings": 1
   },
   {

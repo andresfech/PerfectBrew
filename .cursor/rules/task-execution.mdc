@@ -1,0 +1,61 @@
+---
+alwaysApply: false
+triggerPhrases:
+  - "execute"
+  - "start implementation"
+  - "begin tasks"
+  - "run checklist"
+  - "implement plan"
+  - "execute tasks"
+---
+
+# Task Execution Protocol
+
+## 🎯 Goal: Execute approved task checklists systematically with production safety
+
+## 📋 Prerequisites: Implementation plan must be reviewed and converted to checklist format via @03-prd-review.mdc
+
+## 🛠 Execution Protocol
+- **ONE Task at a Time** – Execute single sub-task, wait for user "yes" to continue
+- **Mark Progress** – Change '[ ]' to '[x]' when complete, update task file
+- **No Batch Processing** – Never attempt multiple tasks simultaneously
+
+## 📈 Progress Tracking
+1. **Complete Sub-Task** – Mark '[x]' immediately
+2. **Check Parent** – Mark parent '[x]' if all children complete
+3. **Update File** – Save progress to task list
+4. **Wait for Approval** – Pause for user "yes" before next task
+
+## 🛡 PerfectBrew Production Safety Checklist
+- [ ] **Verify Paths** – Use codebase_search to confirm file locations
+- [ ] **Real Data Only** – Actual JSON recipe files, audio files
+- [ ] **No Placeholders** – All code must be production-ready
+- [ ] **Error Handling** – Include proper validation and error states
+- [ ] **Audio Integrity** – Maintain step-to-audio mapping
+- [ ] **Recipe Compatibility** – Preserve existing JSON structure
+- [ ] **Timer Accuracy** – Ensure brewing timing remains precise
+
+## 🧱 PerfectBrew Layer Execution Order
+1. **Data Layer (1.0)** – Recipe JSON files, Core Data models
+2. **Services Layer (2.0)** – AudioService, LocalizationManager, SettingsManager
+3. **ViewModels Layer (3.0)** – BrewingGuideViewModel, business logic
+4. **Views Layer (4.0)** – SwiftUI views, UI components
+5. **Audio Layer (5.0)** – Chatterbox TTS integration, audio files
+6. **Testing Layer (6.0)** – Unit tests, QA validation
+
+## ⛔ Stop Immediately If:
+- Task file is not in proper checklist format
+- Recipe JSON structure is broken
+- Audio files are missing or corrupted
+- Timer logic produces incorrect timing
+- SwiftUI views crash or don't render
+- Audio synchronization fails
+
+## 🎯 Trigger Phrases
+This rule activates when user mentions:
+- "execute"
+- "start implementation"
+- "begin tasks"
+- "run checklist"
+- "implement plan"
+- "execute tasks"

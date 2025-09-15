@@ -1,0 +1,66 @@
+---
+alwaysApply: false
+triggerPhrases:
+  - "refactor"
+  - "refactoring"
+  - "restructure"
+  - "reorganize"
+  - "clean up code"
+  - "improve structure"
+---
+
+# Code & Documentation Refactoring Rules
+
+## 🎯 Goal: Safely refactor existing codebase or large documentation
+
+## 📐 PerfectBrew Architecture
+- **Frontend**: iOS SwiftUI app with MVVM pattern
+- **Models**: Recipe.swift, RecipeDatabase.swift
+- **ViewModels**: BrewingGuideViewModel.swift
+- **Services**: AudioService.swift, LocalizationManager.swift, SettingsManager.swift
+- **Resources**: JSON recipe files (AeroPress, V60, FrenchPress)
+- **Audio**: Chatterbox TTS integration for step-by-step narration
+- **Storage**: Local JSON files + Core Data for brew history
+- **Views**: BrewingGuideScreen.swift, HomeScreen.swift, RecipeSelectionScreen.swift
+- **Animations**: Lottie animations for brewing process
+
+## 🧩 Required Components
+- **Current State Analysis** – What exists now and why it needs refactoring
+- **Refactor Goals** – Clear objectives (readability, performance, maintainability)
+- **Before/After Structure** – Specific file organization changes
+- **Safety Strategy** – Git commits, rollback plan, testing approach
+- **Old File Cleanup Plan** – How to handle deprecated files
+- **QA Strategy** – How to verify refactor didn't break functionality
+
+## 🛠 Step 1: Pre-Refactor Analysis
+- **Scope Definition** – What files/sections need refactoring?
+- **Current Problems** – Why is refactoring needed?
+- **Dependencies** – What other code/docs depend on this?
+- **Breaking Changes** – Will this affect other systems?
+- **Git Strategy** – Commit checkpoints and rollback plan
+- **Testing Plan** – How to verify no functionality is lost
+
+## 🧭 Step 2: Refactor Plan Components
+- **Goals** – What we're improving and why
+- **File Changes** – Specific files to modify/split/merge
+- **Structure Changes** – New organization pattern
+- **Migration Steps** – Ordered sequence of changes
+- **Validation Points** – How to verify each step
+- **Rollback Plan** – How to undo if something breaks
+
+## 📋 Step 3: PerfectBrew-Specific Considerations
+- **Recipe JSON Structure** – Maintain backward compatibility
+- **Audio File Organization** – Preserve existing audio paths
+- **SwiftUI View Hierarchy** – Keep MVVM pattern intact
+- **Timer Logic** – Ensure brewing timing remains accurate
+- **Audio Synchronization** – Maintain step-to-audio mapping
+- **User Experience** – Preserve existing UI/UX patterns
+
+## 🎯 Trigger Phrases
+This rule activates when user mentions:
+- "refactor"
+- "refactoring"
+- "restructure"
+- "reorganize"
+- "clean up code"
+- "improve structure"
