@@ -21,9 +21,3 @@ alwaysApply: true
 - **Usage**: Rubber ducks to understand code behavior
 - **Awareness**: Edge cases and data structure focused
 
-## 🎯 PerfectBrew Project Context
-- **App Type**: iOS coffee brewing guide with audio narration
-- **Key Features**: Recipe management, timer logic, audio playback, step-by-step instructions
-- **Current Focus**: Audio synchronization, recipe timing, UI/UX improvements
-- **Technical Stack**: SwiftUI, MVVM, JSON recipes, Chatterbox TTS
-- **Quality Standards**: Concise instructions (max 2 lines), professional audio narration, precise timing

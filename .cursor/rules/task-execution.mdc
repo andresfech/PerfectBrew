@@ -45,17 +45,24 @@ triggerPhrases:
 
 ## ⛔ Stop Immediately If:
 - Task file is not in proper checklist format
-- Recipe JSON structure is broken
-- Audio files are missing or corrupted
-- Timer logic produces incorrect timing
-- SwiftUI views crash or don't render
-- Audio synchronization fails
+- Database migration fails
+- API returns 500 errors
+- iOS app crashes
+- Placeholder/mock code detected
+- User requests clarification
 
-## 🎯 Trigger Phrases
-This rule activates when user mentions:
-- "execute"
-- "start implementation"
-- "begin tasks"
-- "run checklist"
-- "implement plan"
-- "execute tasks"
+## 📄 Task File Format
+```markdown
+## Relevant Files
+- path/to/file.swift – [Brief description]
+
+## Tasks
+- [x] 1.1 [Completed task]
+- [ ] 1.2 [Current task]
+
+## ⚠️ AI Instructions
+1. **Check Next Task** – Identify current uncompleted `[ ]` sub-task  
+2. **Execute Single Task** – Complete only current item  
+3. **Update Progress** – Mark `[x]` and save file  
+4. **Wait for Approval** – Get user “yes” before continuing  
+5. **Never Skip Format** – If plan isn’t in checklist format, redirect to @03-prd-review.mdc first
