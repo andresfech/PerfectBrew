@@ -25,30 +25,35 @@
         "time_seconds": 45,
         "instruction": "Bloom: Pour 40mL water into center divot, then swirl and stir.",
         "short_instruction": "Bloom 40mL water • Swirl brewer & stir bed",
+        "audio_script": "Let's begin the bloom phase. Pour 40 milliliters of hot water directly into that center divot you created. Pour slowly and steadily, watching as the coffee begins to bloom and release carbon dioxide. Give the V60 a gentle swirl, then stir the bed. This crucial step ensures even saturation.",
         "audio_file_name": "single_serve_brewing_step_01.wav"
       },
       {
         "time_seconds": 75,
         "instruction": "Main Pour: Pour aggressively into center, then swirl to edges. Target 75mL.",
         "short_instruction": "Main pour 75mL aggressively • Swirl to edges",
+        "audio_script": "Now for the main pour - this is where V60 technique truly shines. Pour aggressively into the center, then spiral outward to the edges. We're targeting 75 milliliters total. Maintain that aggressive flow rate to create turbulence in the coffee bed. Watch how the bed rises as extraction begins. This confident pour is the key to V60 success.",
         "audio_file_name": "single_serve_brewing_step_02.wav"
       },
       {
         "time_seconds": 90,
         "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
         "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
+        "audio_script": "Perfect! Now stop pouring and set your kettle aside. Take a moment to pause and observe the coffee bed. Notice how it's actively bubbling and extracting. Now pick up your V60 dripper and give it a gentle swirl to flatten the coffee bed for even distribution.",
         "audio_file_name": "single_serve_brewing_step_03.wav"
       },
       {
         "time_seconds": 150,
         "instruction": "Final Pour: Pour gently in center with small circles until 256mL.",
         "short_instruction": "Final pour to 256mL • Small circles in center",
+        "audio_script": "Time for the final pour! Now we'll pour much more gently than before. Start in the center of the coffee bed and make small, controlled circles with your kettle. Keep the pour steady and controlled as you work your way up to 256 milliliters total. Watch your scale closely - we want to hit that 256 milliliter target precisely. The coffee should have a beautiful, even color by now.",
         "audio_file_name": "single_serve_brewing_step_04.wav"
       },
       {
         "time_seconds": 180,
         "instruction": "Final swirl to flatten bed for drain down.",
         "short_instruction": "Final swirl • Flatten bed for drain",
+        "audio_script": "Excellent! For the final step, give your V60 dripper one last gentle swirl to flatten the coffee bed completely. Now watch as the coffee bed settles into a nice, flat surface. Let gravity do its work - the coffee will drain down through the filter at its own natural pace. You should finish draining right around the 3-minute mark. And there you have it - a perfect single-serve V60 coffee using Kaldi's method!",
         "audio_file_name": "single_serve_brewing_step_05.wav"
       }
     ],
@@ -264,43 +269,43 @@
         "time_seconds": 10,
         "instruction": "Bloom (0:00): Start timer. Pour 60 grams of water (2x coffee dose) to saturate the grounds.",
         "short_instruction": "Bloom 60g water (2x dose) • Start timer",
-        "audio_file_name": "single_serve_brewing_step_01.wav"
+        "audio_file_name": "hoffmann_single_brewing_step_01.wav"
       },
       {
         "time_seconds": 20,
         "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even.",
         "short_instruction": "Swirl brewer until slurry is even",
-        "audio_file_name": "single_serve_brewing_step_02.wav"
+        "audio_file_name": "hoffmann_single_brewing_step_02.wav"
       },
       {
         "time_seconds": 25,
         "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:45. This bloom period allows for de-gassing, which is crucial for fresh coffee.",
         "short_instruction": "Wait until 0:45 • Let bloom continue",
-        "audio_file_name": "single_serve_brewing_step_03.wav"
+        "audio_file_name": "hoffmann_single_brewing_step_03.wav"
       },
       {
         "time_seconds": 45,
         "instruction": "First Main Pour (0:45 - 1:15): Pour up to 300 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up.",
         "short_instruction": "First main pour to 300g • Within 30 seconds",
-        "audio_file_name": "single_serve_brewing_step_04.wav"
+        "audio_file_name": "hoffmann_single_brewing_step_04.wav"
       },
       {
         "time_seconds": 75,
         "instruction": "Second Main Pour (1:15 - 1:45): Gently pour up to 500 grams of water (100% of total brew water) within 30 seconds.",
         "short_instruction": "Second main pour to 500g • Within 30 seconds",
-        "audio_file_name": "single_serve_brewing_step_05.wav"
+        "audio_file_name": "hoffmann_single_brewing_step_05.wav"
       },
       {
         "time_seconds": 105,
         "instruction": "Stir (1:45): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction.",
         "short_instruction": "Stir clockwise & anticlockwise",
-        "audio_file_name": "single_serve_brewing_step_06.wav"
+        "audio_file_name": "hoffmann_single_brewing_step_06.wav"
       },
       {
         "time_seconds": 135,
         "instruction": "Swirl (1:55): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown.",
         "short_instruction": "Swirl to flatten bed",
-        "audio_file_name": "single_serve_brewing_step_07.wav"
+        "audio_file_name": "hoffmann_single_brewing_step_07.wav"
       }
     ],
     "equipment": [
@@ -811,31 +816,31 @@
         "time_seconds": 25,
         "instruction": "Pour 54g water (3x coffee weight), stir gently.",
         "short_instruction": "Pour 54g water (3x coffee weight) • Stir gently",
-        "audio_file_name": "single_serve_brewing_step_01.wav"
+        "audio_file_name": "scott_rao_brewing_step_01.wav"
       },
       {
         "time_seconds": 30,
         "instruction": "Pour to 150g in 15 seconds, gentle swirl.",
         "short_instruction": "Pour to 150g total • Within 15 seconds",
-        "audio_file_name": "single_serve_brewing_step_02.wav"
+        "audio_file_name": "scott_rao_brewing_step_02.wav"
       },
       {
         "time_seconds": 45,
         "instruction": "Pour to 225g in 15 seconds, gentle swirl.",
         "short_instruction": "Pour to 225g total • Within 15 seconds",
-        "audio_file_name": "single_serve_brewing_step_03.wav"
+        "audio_file_name": "scott_rao_brewing_step_03.wav"
       },
       {
         "time_seconds": 60,
         "instruction": "Pour to 300g in 15 seconds, gentle swirl.",
         "short_instruction": "Pour to 300g total • Within 15 seconds",
-        "audio_file_name": "single_serve_brewing_step_04.wav"
+        "audio_file_name": "scott_rao_brewing_step_04.wav"
       },
       {
         "time_seconds": 30,
         "instruction": "Let drain completely.",
         "short_instruction": "Let drain completely",
-        "audio_file_name": "single_serve_brewing_step_05.wav"
+        "audio_file_name": "scott_rao_brewing_step_05.wav"
       }
     ],
     "equipment": [

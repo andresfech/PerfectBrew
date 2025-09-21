@@ -351,29 +351,33 @@ struct BrewingStep: Codable {
     let instruction: String
     let shortInstruction: String? // Optional short, imperative instruction
     let audioFileName: String? // Optional audio file name for this step
+    let audioScript: String? // Optional detailed narration text for TTS generation
     
     enum CodingKeys: String, CodingKey {
         case timeSeconds = "time_seconds"
         case instruction
         case shortInstruction = "short_instruction"
         case audioFileName = "audio_file_name"
+        case audioScript = "audio_script"
     }
     
-    // Backward compatibility - if no short instruction or audio file is specified, they will be nil
+    // Backward compatibility - if no short instruction, audio file, or audio script is specified, they will be nil
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         timeSeconds = try container.decode(Int.self, forKey: .timeSeconds)
         instruction = try container.decode(String.self, forKey: .instruction)
         shortInstruction = try container.decodeIfPresent(String.self, forKey: .shortInstruction)
         audioFileName = try container.decodeIfPresent(String.self, forKey: .audioFileName)
+        audioScript = try container.decodeIfPresent(String.self, forKey: .audioScript)
     }
     
     // Convenience initializer for creating steps
-    init(timeSeconds: Int, instruction: String, shortInstruction: String? = nil, audioFileName: String? = nil) {
+    init(timeSeconds: Int, instruction: String, shortInstruction: String? = nil, audioFileName: String? = nil, audioScript: String? = nil) {
         self.timeSeconds = timeSeconds
         self.instruction = instruction
         self.shortInstruction = shortInstruction
         self.audioFileName = audioFileName
+        self.audioScript = audioScript
     }
 }
 
