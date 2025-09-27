@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Kaldi's Coffee - Single Serve",
+    "brewing_method": "V60",
+    "skill_level": "Beginner",
+    "rating": 4.3,
+    "parameters": {
+      "coffee_grams": 16,
+      "water_grams": 256,
+      "ratio": "1:16",
+      "grind_size": "Medium-fine, aiming for a grind that allows for a long, steady pour with a slight pool of water on top.",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 40,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 180
+    },
+    "preparation_steps": [
+      "Heat water to 96°C.",
+      "Grind 16g coffee to medium-fine.",
+      "Rinse V60 filter with hot water, discard rinse water.",
+      "Add coffee, shake to level, create center divot."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 45,
+        "instruction": "Bloom: Pour 40mL water into center divot, then swirl and stir.",
+        "short_instruction": "Bloom 40mL water • Swirl brewer & stir bed",
+        "audio_script": "Let's begin the bloom phase. Pour 40 milliliters of hot water directly into that center divot you created. Pour slowly and steadily, watching as the coffee begins to bloom and release carbon dioxide. Give the V60 a gentle swirl, then stir the bed. This crucial step ensures even saturation.",
+        "audio_file_name": "single_serve_brewing_step_01.wav"
+      },
+      {
+        "time_seconds": 75,
+        "instruction": "Main Pour: Pour aggressively into center, then swirl to edges. Target 75mL.",
+        "short_instruction": "Main pour 75mL aggressively • Swirl to edges",
+        "audio_script": "Now for the main pour - this is where V60 technique truly shines. Pour aggressively into the center, then spiral outward to the edges. We're targeting 75 milliliters total. Maintain that aggressive flow rate to create turbulence in the coffee bed. Watch how the bed rises as extraction begins. This confident pour is the key to V60 success.",
+        "audio_file_name": "single_serve_brewing_step_02.wav"
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
+        "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
+        "audio_script": "Perfect! Now stop pouring and set your kettle aside. Take a moment to pause and observe the coffee bed. Notice how it's actively bubbling and extracting. Now pick up your V60 dripper and give it a gentle swirl to flatten the coffee bed for even distribution.",
+        "audio_file_name": "single_serve_brewing_step_03.wav"
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Final Pour: Pour gently in center with small circles until 256mL.",
+        "short_instruction": "Final pour to 256mL • Small circles in center",
+        "audio_script": "Time for the final pour! Now we'll pour much more gently than before. Start in the center of the coffee bed and make small, controlled circles with your kettle. Keep the pour steady and controlled as you work your way up to 256 milliliters total. Watch your scale closely - we want to hit that 256 milliliter target precisely. The coffee should have a beautiful, even color by now.",
+        "audio_file_name": "single_serve_brewing_step_04.wav"
+      },
+      {
+        "time_seconds": 180,
+        "instruction": "Final swirl to flatten bed for drain down.",
+        "short_instruction": "Final swirl • Flatten bed for drain",
+        "audio_script": "Excellent! For the final step, give your V60 dripper one last gentle swirl to flatten the coffee bed completely. Now watch as the coffee bed settles into a nice, flat surface. Let gravity do its work - the coffee will drain down through the filter at its own natural pace. You should finish draining right around the 3-minute mark. And there you have it - a perfect single-serve V60 coffee using Kaldi's method!",
+        "audio_file_name": "single_serve_brewing_step_05.wav"
+      }
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "scale",
+      "kettle (gooseneck preferred)",
+      "stirring device (chopstick/long stick)"
+    ],
+    "notes": "Total Brew Time: 3:00 (180s). Bloom: 45s, Main pour: 30s, Final pour: 60s, Drain: 30s.",
+    "servings": 1
+  }
+]

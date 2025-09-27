@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Counter Culture Coffee French Press",
+    "brewing_method": "French Press",
+    "skill_level": "Intermediate",
+    "rating": 4.4,
+    "parameters": {
+      "coffee_grams": 31,
+      "water_grams": 496,
+      "ratio": "1:16",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 450
+    },
+    "preparation_steps": [
+      "Heat water to 94°C (just off boil)",
+      "Grind 31 grams of coffee to medium-coarse consistency",
+      "Pre-warm French Press with hot water",
+      "Empty and dry completely",
+      "Add 31g ground coffee to French Press"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Start timer and pour 496g hot water in circular motion",
+        "short_instruction": "Pour 496g in circular motion"
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "Stir gently with wooden spoon to saturate all grounds",
+        "short_instruction": "Stir with wooden spoon"
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "Place lid on top, do not press plunger",
+        "short_instruction": "Place lid • Do not press"
+      },
+      {
+        "time_seconds": 410,
+        "instruction": "Wait 5.4 minutes for full extraction",
+        "short_instruction": "Wait 5.4 minutes • Full extraction"
+      },
+      {
+        "time_seconds": 450,
+        "instruction": "Press plunger down slowly, pour within 20 seconds",
+        "short_instruction": "Press slowly • Pour within 20s"
+      }
+    ],
+    "equipment": [
+      "French Press (0.5L capacity)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Wooden spoon for stirring"
+    ],
+    "notes": "Counter Culture's French Press method emphasizes sustainability and quality. The wooden spoon prevents scratching, while the precise timing and medium-coarse grind create a balanced cup with excellent body and clarity.",
+    "servings": 1
+  }
+]

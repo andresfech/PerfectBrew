@@ -143,35 +143,37 @@ class AudioService: NSObject, ObservableObject {
     }
     
     private func getAudioPath(for fileName: String, recipeTitle: String) -> URL {
-        // Convert recipe title to folder name format
-        let folderName = convertTitleToFolderName(recipeTitle)
-        let method = getBrewingMethod(recipeTitle)
+        print("DEBUG: Looking for audio file: \(fileName) for recipe: \(recipeTitle)")
         
-        // Try to find the audio file with the exact name (including extension)
-        let audioPath = Bundle.main.url(forResource: "Audio/\(method)/\(folderName)/\(fileName)", withExtension: nil)
+        // Xcode flattens the Audio structure, so look directly in bundle root
+        // Try to find the audio file directly in bundle root
+        if let path = Bundle.main.url(forResource: fileName, withExtension: nil) {
+            print("DEBUG: Found audio file in bundle root: \(path)")
+            return path
+        }
         
         // If not found, try to find it by name without extension
-        if audioPath == nil {
-            let fileNameWithoutExtension = (fileName as NSString).deletingPathExtension
-            let fileExtension = (fileName as NSString).pathExtension
-            
-            if fileExtension.isEmpty {
-                // Try common audio extensions
-                for ext in ["mp3", "m4a", "wav", "aac"] {
-                    if let path = Bundle.main.url(forResource: "Audio/\(method)/\(folderName)/\(fileNameWithoutExtension)", withExtension: ext) {
-                        return path
-                    }
-                }
-            } else {
-                // Try with the specified extension
-                if let path = Bundle.main.url(forResource: "Audio/\(method)/\(folderName)/\(fileNameWithoutExtension)", withExtension: fileExtension) {
+        let fileNameWithoutExtension = (fileName as NSString).deletingPathExtension
+        let fileExtension = (fileName as NSString).pathExtension
+        
+        if fileExtension.isEmpty {
+            // Try common audio extensions
+            for ext in ["mp3", "m4a", "wav", "aac"] {
+                if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: ext) {
+                    print("DEBUG: Found audio file with extension \(ext): \(path)")
                     return path
                 }
             }
+        } else {
+            // Try with the specified extension
+            if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: fileExtension) {
+                print("DEBUG: Found audio file with specified extension: \(path)")
+                return path
+            }
         }
         
-        // Fallback to default path if specific path not found
-        return audioPath ?? Bundle.main.url(forResource: fileName, withExtension: nil) ?? URL(fileURLWithPath: "")
+        print("DEBUG: Audio file not found: \(fileName) in bundle root")
+        return URL(fileURLWithPath: "")
     }
     
     private func getBrewingMethod(_ title: String) -> String {
@@ -231,6 +233,9 @@ class AudioService: NSObject, ObservableObject {
             return "James_Hoffmann_V60_Three_People"
         } else if title.contains("James Hoffmann V60 - Four People") {
             return "James_Hoffmann_V60_Four_People"
+        } else if title.contains("Tetsu Kasuya") {
+            // Map all Tetsu Kasuya V60 variants to a single folder
+            return "Tetsu_Kasuya"
         } else if title.contains("Scott Rao V60 - Two People") {
             return "Scott_Rao_V60_Two_People"
         } else if title.contains("Scott Rao V60 - Three People") {

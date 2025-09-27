@@ -1,0 +1,274 @@
+[
+  {
+    "title": "Scott Rao V60 - Single Serve",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 300,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 54,
+      "bloom_time_seconds": 30,
+      "total_brew_time_seconds": 190
+    },
+    "preparation_steps": [
+      "Heat water to 94°C.",
+      "Grind 18 grams of coffee to medium-fine consistency.",
+      "Rinse filter thoroughly.",
+      "Add 18g coffee, level bed."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 54g water (3x coffee weight), stir gently.",
+        "short_instruction": "Pour 54g water (3x coffee weight) • Stir gently",
+        "audio_file_name": "scott_rao_brewing_step_01.wav",
+        "audio_script": "Stir the coffee bed gently to ensure even extraction."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Pour to 150g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 150g total • Within 15 seconds",
+        "audio_file_name": "scott_rao_brewing_step_02.wav",
+        "audio_script": "Continue with the brewing process. Pour to 150g in 15 seconds, gentle swirl."
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "Pour to 225g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 225g total • Within 15 seconds",
+        "audio_file_name": "scott_rao_brewing_step_03.wav",
+        "audio_script": "Continue with the brewing process. Pour to 225g in 15 seconds, gentle swirl. Take your time and focus on technique."
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "Pour to 300g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 300g total • Within 15 seconds",
+        "audio_file_name": "scott_rao_brewing_step_04.wav",
+        "audio_script": "Continue with the brewing process. Pour to 300g in 15 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Let drain completely.",
+        "short_instruction": "Let drain completely",
+        "audio_file_name": "scott_rao_brewing_step_05.wav",
+        "audio_script": "Let the coffee drain completely at its natural pace."
+      }
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Focus on maintaining consistent pour rate and minimal agitation.",
+    "servings": 1
+  },
+  {
+    "title": "Scott Rao V60",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 36,
+      "water_grams": 600,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 108,
+      "bloom_time_seconds": 35,
+      "total_brew_time_seconds": 205
+    },
+    "preparation_steps": [
+      "Heat water to 94°C.",
+      "Grind 36 grams of coffee to medium-fine consistency.",
+      "Rinse filter thoroughly.",
+      "Add 36g coffee, level bed."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 108g water (3x coffee weight), stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav",
+        "short_instruction": "Stir gently • Break up dry pockets",
+        "audio_script": "Stir the coffee bed gently to ensure even extraction."
+      },
+      {
+        "time_seconds": 35,
+        "instruction": "Pour to 300g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_02.wav",
+        "short_instruction": "Pour • to • 300g • in",
+        "audio_script": "Continue with the brewing process. Pour to 300g in 15 seconds, gentle swirl."
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "Pour to 450g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_03.wav",
+        "short_instruction": "Pour • to • 450g • in",
+        "audio_script": "Continue with the brewing process. Pour to 450g in 15 seconds, gentle swirl. Take your time and focus on technique."
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "Pour to 600g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_04.wav",
+        "short_instruction": "Pour • to • 600g • in",
+        "audio_script": "Continue with the brewing process. Pour to 600g in 15 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Let drain completely.",
+        "audio_file_name": "v60_brewing_step_05.wav",
+        "short_instruction": "Let drain completely",
+        "audio_script": "Let the coffee drain completely at its natural pace."
+      }
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Focus on maintaining consistent pour rate and minimal agitation. Perfect for 2 people.",
+    "servings": 2
+  },
+  {
+    "title": "Scott Rao V60",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 54,
+      "water_grams": 900,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 162,
+      "bloom_time_seconds": 40,
+      "total_brew_time_seconds": 220
+    },
+    "preparation_steps": [
+      "Heat water to 94°C.",
+      "Grind 54 grams of coffee to medium-fine consistency.",
+      "Rinse filter thoroughly.",
+      "Add 54g coffee, level bed."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Pour 162g water (3x coffee weight), stir gently.",
+        "short_instruction": "Pour 162g water • Stir gently",
+        "audio_file_name": "v60_brewing_step_01.wav",
+        "audio_script": "Stir the coffee bed gently to ensure even extraction."
+      },
+      {
+        "time_seconds": 40,
+        "instruction": "Pour to 450g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 450g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_02.wav",
+        "audio_script": "Continue with the brewing process. Pour to 450g in 15 seconds, gentle swirl. Take your time and focus on technique."
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "Pour to 675g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 675g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_03.wav",
+        "audio_script": "Continue with the brewing process. Pour to 675g in 15 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
+      },
+      {
+        "time_seconds": 70,
+        "instruction": "Pour to 900g in 15 seconds, gentle swirl.",
+        "short_instruction": "Pour to 900g • Gentle swirl",
+        "audio_file_name": "v60_brewing_step_04.wav",
+        "audio_script": "Continue with the brewing process. Pour to 900g in 15 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
+      },
+      {
+        "time_seconds": 220,
+        "instruction": "Let drain completely.",
+        "short_instruction": "Let drain completely",
+        "audio_file_name": "v60_brewing_step_05.wav",
+        "audio_script": "Let the coffee drain completely at its natural pace. Watch as the coffee bed settles and the liquid drains through the filter. The total brew time should align with your recipe target."
+      }
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Focus on maintaining consistent pour rate and minimal agitation. Perfect for 3 people.",
+    "servings": 3
+  },
+  {
+    "title": "Scott Rao V60",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 72,
+      "water_grams": 1200,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 216,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 240
+    },
+    "preparation_steps": [
+      "Heat water to 94°C.",
+      "Grind 72 grams of coffee to medium-fine consistency.",
+      "Rinse filter thoroughly.",
+      "Add 72g coffee, level bed."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Pour 216g water (3x coffee weight), stir gently.",
+        "audio_file_name": "v60_brewing_step_01.wav",
+        "short_instruction": "Stir gently • Break up dry pockets",
+        "audio_script": "Stir the coffee bed gently to ensure even extraction."
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "Pour to 600g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_02.wav",
+        "short_instruction": "Pour • to • 600g • in",
+        "audio_script": "Continue with the brewing process. Pour to 600g in 15 seconds, gentle swirl. Take your time and focus on technique."
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "Pour to 900g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_03.wav",
+        "short_instruction": "Pour • to • 900g • in",
+        "audio_script": "Continue with the brewing process. Pour to 900g in 15 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
+      },
+      {
+        "time_seconds": 75,
+        "instruction": "Pour to 1200g in 15 seconds, gentle swirl.",
+        "audio_file_name": "v60_brewing_step_04.wav",
+        "short_instruction": "Pour • to • 1200g • in",
+        "audio_script": "Continue with the brewing process. Pour to 1200g in 15 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Let drain completely.",
+        "audio_file_name": "v60_brewing_step_05.wav",
+        "short_instruction": "Let drain completely",
+        "audio_script": "Let the coffee drain completely at its natural pace."
+      }
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer",
+      "Stirring stick"
+    ],
+    "notes": "Focus on maintaining consistent pour rate and minimal agitation. Perfect for 4 people.",
+    "servings": 4
+  }
+]

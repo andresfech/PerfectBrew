@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Stumptown Coffee Roasters French Press",
+    "brewing_method": "French Press",
+    "skill_level": "Intermediate",
+    "rating": 4.6,
+    "parameters": {
+      "coffee_grams": 32,
+      "water_grams": 512,
+      "ratio": "1:16",
+      "grind_size": "Coarse",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 480
+    },
+    "preparation_steps": [
+      "Heat water to 94°C (just off boil)",
+      "Grind 32 grams of coffee to coarse consistency",
+      "Pre-warm French Press with hot water",
+      "Empty and dry completely",
+      "Add 32g ground coffee to French Press"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 20,
+        "instruction": "Start timer and pour 512g hot water evenly over grounds",
+        "short_instruction": "Pour 512g hot water evenly"
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "Stir gently with wooden spoon to saturate all grounds",
+        "short_instruction": "Stir gently with wooden spoon"
+      },
+      {
+        "time_seconds": 80,
+        "instruction": "Place lid on top, do not press plunger",
+        "short_instruction": "Place lid • Do not press"
+      },
+      {
+        "time_seconds": 440,
+        "instruction": "Wait 6 minutes for full extraction",
+        "short_instruction": "Wait 6 minutes • Full extraction"
+      },
+      {
+        "time_seconds": 480,
+        "instruction": "Press plunger down slowly, pour immediately",
+        "short_instruction": "Press slowly • Pour immediately"
+      }
+    ],
+    "equipment": [
+      "French Press (0.5L capacity)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Wooden spoon for stirring"
+    ],
+    "notes": "Stumptown's French Press method uses a longer extraction time and coarse grind to create a rich, full-bodied cup with deep flavors. The wooden spoon prevents scratching and the extended steep time ensures complete extraction.",
+    "servings": 1
+  }
+]

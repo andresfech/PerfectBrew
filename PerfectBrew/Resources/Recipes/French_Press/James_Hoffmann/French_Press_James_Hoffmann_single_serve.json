@@ -1,0 +1,61 @@
+[
+  {
+    "title": "James Hoffmann's French Press Method",
+    "brewing_method": "French Press",
+    "skill_level": "Advanced",
+    "rating": 4.8,
+    "parameters": {
+      "coffee_grams": 30,
+      "water_grams": 500,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 420
+    },
+    "preparation_steps": [
+      "Heat water to 95°C (just off boil)",
+      "Grind 30 grams of coffee to medium-coarse consistency",
+      "Pre-warm your French Press with hot water",
+      "Empty and dry the French Press completely",
+      "Add 30g ground coffee to the French Press"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Start timer and pour 500g hot water evenly over grounds",
+        "short_instruction": "Pour 500g hot water evenly"
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "Stir gently with a spoon to ensure all grounds are saturated",
+        "short_instruction": "Stir gently to saturate grounds"
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Place lid on top (do not press plunger yet)",
+        "short_instruction": "Place lid • Do not press yet"
+      },
+      {
+        "time_seconds": 390,
+        "instruction": "Wait 5 minutes for extraction (do not disturb)",
+        "short_instruction": "Wait 5 minutes • Do not disturb"
+      },
+      {
+        "time_seconds": 420,
+        "instruction": "Press plunger down slowly and steadily, then pour immediately",
+        "short_instruction": "Press slowly • Pour immediately"
+      }
+    ],
+    "equipment": [
+      "French Press (0.5L capacity)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Spoon for stirring"
+    ],
+    "notes": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using medium-coarse grind, precise timing, and avoiding over-extraction by pressing slowly and pouring immediately.",
+    "servings": 1
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Blue Bottle Coffee French Press",
+    "brewing_method": "French Press",
+    "skill_level": "Intermediate",
+    "rating": 4.5,
+    "parameters": {
+      "coffee_grams": 30,
+      "water_grams": 480,
+      "ratio": "1:16",
+      "grind_size": "Medium-coarse",
+      "temperature_celsius": 93,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 390
+    },
+    "preparation_steps": [
+      "Heat water to 93°C (just off boil)",
+      "Grind 30 grams of coffee to medium-coarse consistency",
+      "Pre-warm French Press with hot water",
+      "Empty and dry completely",
+      "Add 30g ground coffee to French Press"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Start timer and pour 480g hot water in slow spiral",
+        "short_instruction": "Pour 480g in slow spiral"
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "Stir gently 4 times to ensure even saturation",
+        "short_instruction": "Stir 4 times • Even saturation"
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "Place lid on top, do not press plunger",
+        "short_instruction": "Place lid • Do not press"
+      },
+      {
+        "time_seconds": 355,
+        "instruction": "Wait 4.5 minutes for optimal extraction",
+        "short_instruction": "Wait 4.5 minutes • Optimal extraction"
+      },
+      {
+        "time_seconds": 390,
+        "instruction": "Press plunger down slowly, pour within 15 seconds",
+        "short_instruction": "Press slowly • Pour within 15s"
+      }
+    ],
+    "equipment": [
+      "French Press (0.5L capacity)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Spoon for stirring"
+    ],
+    "notes": "Blue Bottle's French Press method focuses on precision and consistency. The slow spiral pour and gentle stirring ensure even extraction, while the medium-coarse grind provides the perfect balance of body and clarity.",
+    "servings": 1
+  }
+]

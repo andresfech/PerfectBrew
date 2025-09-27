@@ -1,0 +1,26 @@
+
+# Add these files to Xcode project:
+# Resources/Recipes/French_Press/James_Hoffmann/French_Press_James_Hoffmann_single_serve.json
+# Resources/Recipes/French_Press/Stumptown/French_Press_Stumptown_single_serve.json
+# Resources/Recipes/French_Press/Tim_Wendelboe/French_Press_Tim_Wendelboe_single_serve.json
+# Resources/Recipes/French_Press/Four_Barrel/French_Press_Four_Barrel_four_people.json
+# Resources/Recipes/French_Press/Blue_Bottle/French_Press_Blue_Bottle_single_serve.json
+# Resources/Recipes/French_Press/Intelligentsia/French_Press_Intelligentsia_single_serve.json
+# Resources/Recipes/French_Press/Counter_Culture/French_Press_Counter_Culture_single_serve.json
+# Resources/Recipes/French_Press/Ritual/French_Press_Ritual_single_serve.json
+# Resources/Recipes/French_Press/Verve/French_Press_Verve_single_serve.json
+# Resources/Recipes/AeroPress/World_Champions/AeroPress_World_Champions_single_serve.json
+# Resources/Recipes/AeroPress/James_Hoffmann/AeroPress_James_Hoffmann_single_serve.json
+# Resources/Recipes/AeroPress/Tim_Wendelboe/AeroPress_Tim_Wendelboe_single_serve.json
+# Resources/Recipes/AeroPress/Champions/AeroPress_Champions_single_serve.json
+# Resources/Recipes/Chemex/Classic/Chemex_Classic_single_serve.json
+# Resources/Recipes/V60/Scott_Rao/V60_Scott_Rao_single_serve.json
+# Resources/Recipes/V60/James_Hoffmann/V60_James_Hoffmann_single_serve.json
+# Resources/Recipes/V60/James_Hoffmann/V60_James_Hoffmann_two_people.json
+# Resources/Recipes/V60/Others/V60_Others_single_serve.json
+# Resources/Recipes/V60/Tetsu_Kasuya/V60_Tetsu_Kasuya_single_serve.json
+# Resources/Recipes/V60/Unknown/V60_Unknown_single_serve.json
+# Resources/Recipes/V60/Kaldis_Coffee/V60_Kaldis_Coffee_three_people.json
+# Resources/Recipes/V60/Kaldis_Coffee/V60_Kaldis_Coffee_single_serve.json
+# Resources/Recipes/V60/Kaldis_Coffee/V60_Kaldis_Coffee_two_people.json
+# Resources/Recipes/V60/Kaldis_Coffee/V60_Kaldis_Coffee_four_people.json

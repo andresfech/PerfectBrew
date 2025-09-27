@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Ritual Coffee Roasters French Press",
+    "brewing_method": "French Press",
+    "skill_level": "Advanced",
+    "rating": 4.6,
+    "parameters": {
+      "coffee_grams": 28,
+      "water_grams": 448,
+      "ratio": "1:16",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 360
+    },
+    "preparation_steps": [
+      "Heat water to 96°C (just off boil)",
+      "Grind 28 grams of coffee to medium-fine consistency",
+      "Pre-warm French Press with hot water",
+      "Empty and dry completely",
+      "Add 28g ground coffee to French Press"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 20,
+        "instruction": "Start timer and pour 448g hot water evenly over grounds",
+        "short_instruction": "Pour 448g hot water evenly"
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "Stir gently with bamboo spoon to create even extraction",
+        "short_instruction": "Stir with bamboo spoon • Even extraction"
+      },
+      {
+        "time_seconds": 70,
+        "instruction": "Place lid on top, do not press plunger",
+        "short_instruction": "Place lid • Do not press"
+      },
+      {
+        "time_seconds": 325,
+        "instruction": "Wait 4.25 minutes for optimal extraction",
+        "short_instruction": "Wait 4.25 minutes • Optimal extraction"
+      },
+      {
+        "time_seconds": 360,
+        "instruction": "Press plunger down slowly, pour immediately",
+        "short_instruction": "Press slowly • Pour immediately"
+      }
+    ],
+    "equipment": [
+      "French Press (0.5L capacity)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Bamboo spoon for stirring"
+    ],
+    "notes": "Ritual Coffee's French Press method focuses on precision and artistry. The medium-fine grind and shorter extraction time create a bright, nuanced cup while maintaining the characteristic body. Perfect for showcasing single-origin coffees.",
+    "servings": 1
+  }
+]

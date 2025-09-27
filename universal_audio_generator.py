@@ -161,16 +161,152 @@ class UniversalAudioGenerator:
         
         return rewritten.strip()
     
-    def _create_narration_style(self, text: str, is_detailed_script: bool = False) -> str:
+    def _create_guided_mode_audio(self, text: str, step_duration: int, step_name: str) -> str:
+        """
+        Create Guided Mode audio with action-timed callouts.
+        Breaks every step into micro-actions with specific timing cues.
+        
+        Args:
+            text: Original step text
+            step_duration: Duration of the step in seconds
+            step_name: Name of the step for context
+        """
+        # Extract key brewing actions from text
+        actions = self._extract_brewing_actions(text)
+        
+        # Create guided mode script with timing cues
+        guided_script = []
+        
+        # Pre-cue (T-10s or T-5s)
+        if step_duration >= 10:
+            pre_cue_time = 10
+        elif step_duration >= 5:
+            pre_cue_time = 5
+        else:
+            pre_cue_time = 2
+            
+        if pre_cue_time < step_duration:
+            guided_script.append(f"In {pre_cue_time} seconds, {actions['action']}.")
+        
+        # Go cue (T-0)
+        guided_script.append(f"{actions['go_cue']}.")
+        
+        # Pace cues for longer steps
+        if step_duration >= 20:
+            # Midpoint cue
+            midpoint = step_duration // 2
+            guided_script.append(f"Halfway through... keep a steady stream.")
+        elif step_duration >= 15:
+            # 10-second mark cue
+            guided_script.append(f"Keep going... steady pace.")
+        
+        # Wrap cue (T-5s)
+        if step_duration >= 8:
+            guided_script.append(f"Five seconds remaining...")
+        elif step_duration >= 5:
+            guided_script.append(f"Almost done...")
+        
+        # Next cue (end)
+        if actions.get('next_action'):
+            guided_script.append(f"Stop. Next: {actions['next_action']}. Ready?")
+        
+        return ". ".join(guided_script) + "."
+    
+    def _convert_title_to_folder_name(self, recipe_title: str) -> str:
+        """
+        Convert recipe title to a valid folder name for audio organization.
+        
+        Args:
+            recipe_title: The title of the recipe
+            
+        Returns:
+            A valid folder name string (e.g., "Tetsu_Kasuya_4_6_Method")
+        """
+        # Remove special characters and replace spaces with underscores
+        folder_name = re.sub(r'[^\w\s]', '', recipe_title)
+        folder_name = re.sub(r'\s+', '_', folder_name.strip())
+        
+        # Limit length to avoid filesystem issues
+        if len(folder_name) > 50:
+            folder_name = folder_name[:50]
+        
+        return folder_name
+    
+    def _extract_brewing_actions(self, text: str) -> Dict[str, str]:
+        """Extract brewing actions and create appropriate cues."""
+        text_lower = text.lower()
+        
+        # Determine main action
+        if "pour" in text_lower:
+            # Extract pour amount and duration
+            amount_match = re.search(r'(\d+)\s*(g|grams?|ml|milliliters?)', text_lower)
+            amount = amount_match.group(1) + " " + amount_match.group(2) if amount_match else "water"
+            
+            # Extract duration if mentioned
+            duration_match = re.search(r'(\d+)\s*seconds?', text_lower)
+            duration = duration_match.group(1) + " seconds" if duration_match else ""
+            
+            action = f"start pouring {amount}"
+            go_cue = f"Pour {amount}"
+            next_action = "wait for extraction"
+            
+        elif "swirl" in text_lower:
+            action = "swirl the dripper"
+            go_cue = "Swirl now"
+            next_action = "wait for drawdown"
+            
+        elif "stir" in text_lower:
+            action = "stir the coffee"
+            go_cue = "Stir gently"
+            next_action = "wait for bloom"
+            
+        elif "wait" in text_lower or "let" in text_lower:
+            action = "wait for the process"
+            go_cue = "Wait"
+            next_action = "check the bed"
+            
+        elif "bloom" in text_lower:
+            action = "begin the bloom phase"
+            go_cue = "Bloom starts now"
+            next_action = "watch for expansion"
+            
+        elif "heat" in text_lower and "water" in text_lower:
+            action = "heat the water"
+            go_cue = "Heat water"
+            next_action = "prepare the coffee"
+            
+        elif "grind" in text_lower:
+            action = "grind the coffee"
+            go_cue = "Grind coffee"
+            next_action = "prepare the dripper"
+            
+        else:
+            # Default action
+            action = "perform this step"
+            go_cue = "Begin now"
+            next_action = "continue to next step"
+        
+        return {
+            'action': action,
+            'go_cue': go_cue,
+            'next_action': next_action
+        }
+    
+    def _create_narration_style(self, text: str, is_detailed_script: bool = False, step_duration: int = 0, step_name: str = "") -> str:
         """
         Transform text into professional coffee brewing narration.
-        Uses warm, engaging tone of an expert barista guide.
+        Uses warm, engaging tone of an expert barista guide with Guided Mode.
         
         Args:
             text: Text to enhance
             is_detailed_script: True if text is already a detailed audioScript
+            step_duration: Duration of the step in seconds (for Guided Mode)
+            step_name: Name of the step for context
         """
-        if is_detailed_script:
+        if is_detailed_script and step_duration > 0:
+            # Use Guided Mode for detailed scripts with timing
+            return self._create_guided_mode_audio(text, step_duration, step_name)
+        elif is_detailed_script:
             # For detailed audioScript, enhance with professional narration
             enhanced_text = text
             
@@ -192,33 +328,33 @@ class UniversalAudioGenerator:
         else:
             # For basic instructions, apply full enhancement
             enhanced_text = f"Welcome to PerfectBrew. {text}"
-            
-            # Add strategic pauses after important sentences
-            enhanced_text = re.sub(r'\.([A-Z])', r'. \1', enhanced_text)  # Pause before new sentences
-            enhanced_text = re.sub(r'([.!?])\s+([A-Z])', r'\1. \2', enhanced_text)  # Ensure pauses
-            
-            # Add warmth and engagement
-            enhanced_text = enhanced_text.replace("Pour", "Now, let's pour")
-            enhanced_text = enhanced_text.replace("Start", "Let's start")
-            enhanced_text = enhanced_text.replace("Stop", "Now, let's stop")
-            enhanced_text = enhanced_text.replace("Wait", "Let's wait")
-            enhanced_text = enhanced_text.replace("Give", "Let's give")
-            enhanced_text = enhanced_text.replace("Add", "Let's add")
-            enhanced_text = enhanced_text.replace("Heat", "Let's heat")
-            enhanced_text = enhanced_text.replace("Grind", "Let's grind")
-            enhanced_text = enhanced_text.replace("Place", "Let's place")
-            enhanced_text = enhanced_text.replace("Rinse", "Let's rinse")
-            
-            # Add subtle surprise and engagement
-            enhanced_text = enhanced_text.replace("Bloom", "Ah, the bloom")
-            enhanced_text = enhanced_text.replace("Swirl", "Gently swirl")
-            enhanced_text = enhanced_text.replace("Stir", "Carefully stir")
-            enhanced_text = enhanced_text.replace("Final", "And now, the final")
-            
-            # Add professional closing
-            enhanced_text += " Perfect. You've mastered this technique. Enjoy your perfect brew."
-            
-            return enhanced_text
+        
+        # Add strategic pauses after important sentences
+        enhanced_text = re.sub(r'\.([A-Z])', r'. \1', enhanced_text)  # Pause before new sentences
+        enhanced_text = re.sub(r'([.!?])\s+([A-Z])', r'\1. \2', enhanced_text)  # Ensure pauses
+        
+        # Add warmth and engagement
+        enhanced_text = enhanced_text.replace("Pour", "Now, let's pour")
+        enhanced_text = enhanced_text.replace("Start", "Let's start")
+        enhanced_text = enhanced_text.replace("Stop", "Now, let's stop")
+        enhanced_text = enhanced_text.replace("Wait", "Let's wait")
+        enhanced_text = enhanced_text.replace("Give", "Let's give")
+        enhanced_text = enhanced_text.replace("Add", "Let's add")
+        enhanced_text = enhanced_text.replace("Heat", "Let's heat")
+        enhanced_text = enhanced_text.replace("Grind", "Let's grind")
+        enhanced_text = enhanced_text.replace("Place", "Let's place")
+        enhanced_text = enhanced_text.replace("Rinse", "Let's rinse")
+        
+        # Add subtle surprise and engagement
+        enhanced_text = enhanced_text.replace("Bloom", "Ah, the bloom")
+        enhanced_text = enhanced_text.replace("Swirl", "Gently swirl")
+        enhanced_text = enhanced_text.replace("Stir", "Carefully stir")
+        enhanced_text = enhanced_text.replace("Final", "And now, the final")
+        
+        # Add professional closing
+        enhanced_text += " Perfect. You've mastered this technique. Enjoy your perfect brew."
+        
+        return enhanced_text
     
     def _clean_text(self, text: str) -> str:
         """Clean text for better TTS output."""
@@ -236,24 +372,22 @@ class UniversalAudioGenerator:
         
         return text.strip()
     
-    def _generate_audio_file(self, text: str, output_path: str, is_detailed_script: bool = False) -> bool:
-        """Generate audio file from text using TTS."""
+    def _generate_audio_file(self, step: Dict[str, Any], output_path: str) -> bool:
+        """Generate audio file from step's audio_script using TTS."""
         try:
-            # Clean and enhance text
-            clean_text = self._clean_text(text)
-            enhanced_text = self._create_narration_style(clean_text, is_detailed_script)
+            # Get audio_script from step
+            audio_script = step.get('audio_script', '')
+            if not audio_script:
+                print(f"    ❌ No audio_script found in step")
+                return False
+            
+            # Clean text for better TTS output
+            clean_text = self._clean_text(audio_script)
             
             print(f"    Generating audio for: {clean_text[:50]}...")
             
-            # Set narrator style for TTS (if supported by model)
-            if is_detailed_script:
-                # Professional barista narrator style - warm, expert, engaging
-                narrator_style = "professional_instructor"
-            else:
-                narrator_style = "friendly_guide"
-            
-            # Generate audio with enhanced text only (no prompt in audio)
-            wav = self.tts.generate(enhanced_text)
+            # Generate audio directly from audio_script (no enhancement needed)
+            wav = self.tts.generate(clean_text)
             
             # Convert to numpy array if needed
             if isinstance(wav, torch.Tensor):
@@ -284,7 +418,7 @@ class UniversalAudioGenerator:
                             include_brewing: bool = True, 
                             include_notes: bool = True) -> bool:
         """
-        Generate audio for a specific recipe using its existing instructions.
+        Generate audio for a specific recipe using ONLY the audio_script field.
         
         Args:
             recipe: Recipe dictionary from JSON
@@ -299,8 +433,10 @@ class UniversalAudioGenerator:
         title = recipe.get('title', 'Unknown Recipe')
         print(f"\n🎵 Generating audio for: {title}")
         
-        # Create output directory
-        os.makedirs(output_dir, exist_ok=True)
+        # Create output directory with recipe name
+        recipe_folder = self._convert_title_to_folder_name(title)
+        recipe_output_dir = os.path.join(output_dir, recipe_folder)
+        os.makedirs(recipe_output_dir, exist_ok=True)
         
         success = True
         
@@ -308,42 +444,41 @@ class UniversalAudioGenerator:
         if include_preparation and 'preparation_steps' in recipe:
             preparation_steps = recipe['preparation_steps']
             for i, step in enumerate(preparation_steps, 1):
-                filename = f"preparation_step_{i:02d}.wav"
-                output_path = os.path.join(output_dir, filename)
-                if not self._generate_audio_file(step, output_path):
-                    success = False
+                # Skip preparation steps - they don't have audio_script
+                print(f"    ⚠️  Skipping preparation step {i}: preparation steps don't have audio_script")
         
         # Generate brewing step audio
         if include_brewing and 'brewing_steps' in recipe:
             brewing_steps = recipe['brewing_steps']
             for i, step in enumerate(brewing_steps, 1):
-                # Use audioScript if available, otherwise fallback to instruction
-                audio_text = step.get('audio_script') or step.get('instruction', '')
-                is_detailed = bool(step.get('audio_script'))
+                # ONLY use audio_script - no fallback to instruction
+                audio_script = step.get('audio_script')
+                if not audio_script:
+                    print(f"    ⚠️  Skipping brewing step {i}: no audio_script")
+                    continue
                 
-                # Note: audioScript should be pre-sized for step duration in JSON
+                # Calculate step duration for validation
+                step_duration = 0
+                if i == 1:
+                    step_duration = step.get('time_seconds', 0)
+                elif i <= len(brewing_steps):
+                    prev_step_time = brewing_steps[i-2].get('time_seconds', 0)
+                    current_step_time = step.get('time_seconds', 0)
+                    step_duration = current_step_time - prev_step_time
                 
-                # Log which text source we're using
-                if is_detailed:
-                    print(f"    Using detailed audioScript for step {i} ({len(audio_text)} chars)")
-                else:
-                    print(f"    Using instruction fallback for step {i} ({len(audio_text)} chars)")
+                print(f"    Using audio_script for step {i} ({len(audio_script)} chars, {step_duration}s duration)")
                 
-                # Use original filename from JSON if available, otherwise default naming
-                original_filename = step.get('audio_file_name')
-                if original_filename and original_filename.endswith('.wav'):
-                    filename = original_filename
-                else:
-                    filename = f"brewing_step_{i:02d}.wav"
-                output_path = os.path.join(output_dir, filename)
-                if not self._generate_audio_file(audio_text, output_path, is_detailed):
+                # Use unified naming convention
+                filename = f"step_{i:02d}.wav"
+                output_path = os.path.join(recipe_output_dir, filename)
+                if not self._generate_audio_file(step, output_path):
                     success = False
         
         # Generate notes audio
         if include_notes and 'notes' in recipe:
             notes = recipe.get('notes', '')
             if notes:
-                filename = "notes.wav"
+                filename = f"{recipe_prefix}notes.wav"
                 output_path = os.path.join(output_dir, filename)
                 if not self._generate_audio_file(notes, output_path):
                     success = False
@@ -388,9 +523,9 @@ class UniversalAudioGenerator:
             title = recipe.get('title', 'Unknown')
             brewing_method = recipe.get('brewing_method', 'Unknown')
             
-            # Create recipe-specific output directory
-            safe_title = re.sub(r'[^\w\s-]', '', title).replace(' ', '_')
-            recipe_output_dir = os.path.join(base_output_dir, brewing_method, safe_title)
+            # Create recipe-specific output directory (flat structure)
+            # base_output_dir is already the correct path (e.g., PerfectBrew/Resources/Audio/V60/Tetsu_Kasuya)
+            recipe_output_dir = base_output_dir
             
             # Generate audio
             self.generate_recipe_audio(recipe, recipe_output_dir)

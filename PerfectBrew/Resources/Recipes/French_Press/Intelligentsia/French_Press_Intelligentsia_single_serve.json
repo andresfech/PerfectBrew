@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Intelligentsia Coffee French Press",
+    "brewing_method": "French Press",
+    "skill_level": "Advanced",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 29,
+      "water_grams": 464,
+      "ratio": "1:16",
+      "grind_size": "Medium",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 330
+    },
+    "preparation_steps": [
+      "Heat water to 95°C (just off boil)",
+      "Grind 29 grams of coffee to medium consistency",
+      "Pre-warm French Press with hot water",
+      "Empty and dry completely",
+      "Add 29g ground coffee to French Press"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 20,
+        "instruction": "Start timer and pour 464g hot water evenly over grounds",
+        "short_instruction": "Pour 464g hot water evenly"
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "Stir gently with bamboo spoon to saturate grounds",
+        "short_instruction": "Stir with bamboo spoon"
+      },
+      {
+        "time_seconds": 70,
+        "instruction": "Place lid on top, do not press plunger",
+        "short_instruction": "Place lid • Do not press"
+      },
+      {
+        "time_seconds": 295,
+        "instruction": "Wait 3.75 minutes for extraction",
+        "short_instruction": "Wait 3.75 minutes • Extraction"
+      },
+      {
+        "time_seconds": 330,
+        "instruction": "Press plunger down slowly, pour immediately",
+        "short_instruction": "Press slowly • Pour immediately"
+      }
+    ],
+    "equipment": [
+      "French Press (0.5L capacity)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Bamboo spoon for stirring"
+    ],
+    "notes": "Intelligentsia's French Press method uses medium grind and shorter extraction time to create a bright, clean cup while maintaining the characteristic body. The bamboo spoon prevents scratching and adds a touch of elegance.",
+    "servings": 1
+  }
+]

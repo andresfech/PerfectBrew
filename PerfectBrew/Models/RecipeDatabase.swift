@@ -5,47 +5,96 @@ class RecipeDatabase: ObservableObject {
     @Published var recipesByMethod: [String: [Recipe]] = [:]
     
     init() {
+        print("🔧 RecipeDatabase: Initializing...")
         loadAllRecipes()
+        print("🔧 RecipeDatabase: Initialization complete. Total recipes: \(recipes.count)")
     }
     
     private func loadAllRecipes() {
+        print("🔧 RecipeDatabase: loadAllRecipes() called")
+        // Load recipes from hierarchical structure under Resources/Recipes
+        loadRecipesFromHierarchicalStructure()
+        print("🔧 RecipeDatabase: loadAllRecipes() completed. Total recipes: \(recipes.count)")
+    }
+
+    // MARK: - Hierarchical loader
+    private func loadRecipesFromHierarchicalStructure() {
+        print("🔧 RecipeDatabase: loadRecipesFromHierarchicalStructure() called")
         var allRecipes: [Recipe] = []
+        var grouped: [String: [Recipe]] = [:]
         
-        // Load recipes from each method file
-        let methodFiles = [
-            "recipes_v60.json": "V60",
-            "recipes_frenchpress.json": "French Press",
-            "recipes_chemex.json": "Chemex",
-            "recipes_aeropress.json": "AeroPress"
-        ]
+        // Locate Recipes directory in bundle (Xcode flattens the structure)
+        guard let bundlePath = Bundle.main.resourcePath else {
+            print("❌ Bundle resource path not found")
+            return
+        }
         
-        for (filename, method) in methodFiles {
-            if let recipes = loadRecipesFromFile(filename) {
-                allRecipes.append(contentsOf: recipes)
-                recipesByMethod[method] = recipes
-                print("Loaded \(recipes.count) recipes for \(method)")
+        let recipesRootUrl = URL(fileURLWithPath: bundlePath)
+        print("✅ Using bundle root as recipes directory: \(recipesRootUrl.path)")
+        
+        print("✅ Found Recipes directory at: \(recipesRootUrl.path)")
+        
+        do {
+            // Since Xcode flattens the structure, look for JSON files directly in bundle root
+            let jsonFiles = try FileManager.default.contentsOfDirectory(at: recipesRootUrl, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles]).filter { $0.pathExtension.lowercased() == "json" }
+            
+            print("Found \(jsonFiles.count) JSON files in bundle")
+            
+            for fileUrl in jsonFiles {
+                let fileName = fileUrl.lastPathComponent
+                print("Processing file: \(fileName)")
+                
+                // Skip non-recipe JSON files
+                if fileName.contains("Coffee Beans Loader") || 
+                   fileName.contains("Thermometer") || 
+                   fileName.contains("Water Bubble") ||
+                   fileName.contains("aeropress_minimal_zen_lottie") {
+                    print("Skipping non-recipe file: \(fileName)")
+                    continue
+                }
+                
+                do {
+                    let data = try Data(contentsOf: fileUrl)
+                    let decoded = try JSONDecoder().decode([Recipe].self, from: data)
+                    
+                    for recipe in decoded {
+                        let method = recipe.brewingMethod
+                        if grouped[method] == nil {
+                            grouped[method] = []
+                        }
+                        grouped[method]?.append(recipe)
+                        allRecipes.append(recipe)
+                    }
+                    
+                    print("✅ Loaded \(decoded.count) recipes from \(fileName)")
+                } catch {
+                    print("❌ Error decoding recipes at \(fileName): \(error)")
+                }
             }
+        } catch {
+            print("Error reading bundle directory: \(error)")
+            return
+        }
+        
+        guard !allRecipes.isEmpty else {
+            print("No recipes found in bundle")
+            return
         }
         
         self.recipes = allRecipes
+        self.recipesByMethod = grouped
         print("Total recipes loaded: \(allRecipes.count)")
+        print("Recipes by method: \(grouped.keys.joined(separator: ", "))")
     }
     
-    private func loadRecipesFromFile(_ filename: String) -> [Recipe]? {
-        guard let url = Bundle.main.url(forResource: filename.replacingOccurrences(of: ".json", with: ""), withExtension: "json") else {
-            print("Could not find file: \(filename)")
-            return nil
-        }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let recipes = try JSONDecoder().decode([Recipe].self, from: data)
-            return recipes
-        } catch {
-            print("Error loading recipes from \(filename): \(error)")
-            return nil
+    private func methodDisplayName(_ folderName: String) -> String {
+        // Map folder names to display names used elsewhere
+        switch folderName {
+        case "French_Press": return "French Press"
+        default: return folderName
         }
     }
+    
     
     func getRecipes(for method: HomeScreen.BrewMethod) -> [Recipe] {
         let methodString = method.rawValue

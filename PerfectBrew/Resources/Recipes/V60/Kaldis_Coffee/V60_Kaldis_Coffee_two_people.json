@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Kaldi's Coffee - Two People",
+    "brewing_method": "V60",
+    "skill_level": "Beginner",
+    "rating": 4.3,
+    "parameters": {
+      "coffee_grams": 32,
+      "water_grams": 512,
+      "ratio": "1:16",
+      "grind_size": "Medium-fine, slightly coarser than single serving to prevent over-extraction.",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 80,
+      "bloom_time_seconds": 50,
+      "total_brew_time_seconds": 285
+    },
+    "preparation_steps": [
+      "Heat water to desired temperature (205-212°F / 96-100°C).",
+      "Grind 32 grams of coffee to medium-fine consistency.",
+      "Place filter in V60 and rinse with 50-100mL of hot water to pre-heat and remove paper taste. Discard rinse water.",
+      "Add 32 grams of ground coffee, gently shake to level, and create a deep divot in the center."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Bloom: Pour 80mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets.",
+        "short_instruction": "Bloom 80mL • Swirl & stir",
+        "audio_file_name": "two_people_brewing_step_01.wav",
+        "audio_script": "Let's begin the bloom phase."
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 150mL in this stage, reaching 230mL total. This breaks channels and raises slurry temperature.",
+        "short_instruction": "Main pour 150mL • Swirl out",
+        "audio_file_name": "two_people_brewing_step_02.wav",
+        "audio_script": "Now for the main pour - this is where V60 technique truly shines. Pour aggressively into the center, then spiral outward to the edges."
+      },
+      {
+        "time_seconds": 70,
+        "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
+        "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
+        "audio_file_name": "two_people_brewing_step_03.wav",
+        "audio_script": "Perfect! Now stop pouring and set your kettle aside. Take a moment to pause and observe the coffee bed. Notice how it's actively bubbling and extracting. Give the V60 a gentle swirl to flatten the coffee bed."
+      },
+      {
+        "time_seconds": 110,
+        "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 512mL is reached. The water above the coffee may become clear.",
+        "short_instruction": "Final pour to 512mL • Small circles",
+        "audio_file_name": "two_people_brewing_step_04.wav",
+        "audio_script": "Time for the final pour! Now we'll pour much more gently than before. Start in the center of the coffee bed and make small, controlled circles with your kettle. Work your way up to 512 milliliters total. Watch your scale closely."
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Give one more slight swirl to flatten the bed for drain down.",
+        "short_instruction": "Final swirl • Flatten bed for drain",
+        "audio_file_name": "two_people_brewing_step_05.wav",
+        "audio_script": "Let the coffee drain completely at its natural pace."
+      }
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "scale",
+      "kettle (gooseneck preferred)",
+      "stirring device (chopstick/long stick)"
+    ],
+    "notes": "Total Brew Time: 3:00 to 3:45. Perfect for 2 people.",
+    "servings": 2
+  }
+]

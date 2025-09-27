@@ -1,0 +1,64 @@
+# Recipe Audio Structure Rules
+
+## 📋 **Mandatory Recipe Structure**
+
+Every recipe in PerfectBrew MUST follow this exact three-tier text structure:
+
+### 🎯 **1. Current Step Instruction (UI Display)**
+- **Maximum**: 3 lines
+- **Purpose**: Clean, concise instruction shown in the brewing interface
+- **Format**: Direct, actionable steps
+- **Example**: 
+  ```
+  "Pour 40mL hot water in slow spiral.
+  Start from center, work outward.
+  Complete pour in 15 seconds."
+  ```
+
+### 🔍 **2. Short Description (Next Step Preview)**
+- **Maximum**: 1 line
+- **Purpose**: Brief preview of what comes next
+- **Format**: Simple, anticipatory statement
+- **Example**: `"Next: Wait for bloom to complete"`
+
+### 🎵 **3. Audio Script (TTS Generation)**
+- **Purpose**: Rich, immersive narration for professional audio generation
+- **Requirements**:
+  - Must be **engaging and descriptive**
+  - Include **sensory details** (sound, visual, aroma cues)
+  - Use **professional barista terminology**
+  - **CRITICAL**: Audio generation uses ONLY this text - no truncation, no rewriting
+  - Must fit within the `time_seconds` allocated for the step
+  - Include timing guidance and technique details
+
+### 📝 **JSON Structure**
+```json
+{
+  "time_seconds": 45,
+  "instruction": "Pour 40mL hot water in slow spiral.\nStart from center, work outward.\nComplete pour in 15 seconds.",
+  "short_instruction": "Next: Wait for bloom to complete",
+  "audio_file_name": "brewing_step_01.wav",
+  "audio_script": "Let's begin the bloom phase. Pour 40 milliliters of hot water in a slow, deliberate spiral motion. Start from the very center of the coffee bed and work your way outward in concentric circles. You should hear a gentle sizzling as the water hits the fresh grounds - that's the CO2 being released. Complete this pour in about 15 seconds, ensuring all grounds are evenly saturated."
+}
+```
+
+## 🚨 **Critical Rules**
+
+1. **Audio Generation**: The TTS system uses EXACTLY the `audio_script` content - no modifications
+2. **Time Constraints**: `audio_script` must be manually sized to fit `time_seconds`
+3. **No Truncation**: Never allow automatic truncation of audio content
+4. **Consistency**: All recipes must follow this structure without exception
+5. **Manual Validation**: Always verify audio script length matches step duration before generation
+
+## 🎯 **Quality Standards**
+
+- **Current Step**: Clear, actionable, concise
+- **Short Description**: Anticipatory, brief, helpful
+- **Audio Script**: Immersive, professional, perfectly timed
+
+This structure ensures:
+- ✅ Clean UI experience
+- ✅ Helpful step previews  
+- ✅ Rich audio narration
+- ✅ No audio cutoffs
+- ✅ Professional brewing guidance

@@ -36,8 +36,8 @@ struct Recipe: Codable, Identifiable {
         skillLevel = try container.decode(String.self, forKey: .skillLevel)
         rating = try container.decode(Double.self, forKey: .rating)
         parameters = try container.decode(RecipeBrewParameters.self, forKey: .parameters)
-        equipment = try container.decode([String].self, forKey: .equipment)
-        notes = try container.decode(String.self, forKey: .notes)
+        equipment = try container.decodeIfPresent([String].self, forKey: .equipment) ?? []
+        notes = try container.decodeIfPresent(String.self, forKey: .notes) ?? ""
         servings = try container.decodeIfPresent(Int.self, forKey: .servings) ?? 1 // Default a 1 persona
         
         // Try to decode new structure first

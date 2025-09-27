@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Tim Wendelboe French Press Technique",
+    "brewing_method": "French Press",
+    "skill_level": "Expert",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 28,
+      "water_grams": 450,
+      "ratio": "1:16.1",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 360
+    },
+    "preparation_steps": [
+      "Heat water to 96°C (just off boil)",
+      "Grind 28 grams of coffee to medium-fine consistency",
+      "Pre-warm French Press with hot water",
+      "Empty and dry completely",
+      "Add 28g ground coffee to French Press"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 25,
+        "instruction": "Start timer and pour 450g hot water in circular motion",
+        "short_instruction": "Pour 450g in circular motion"
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "Stir gently 3 times back-to-front to create even extraction",
+        "short_instruction": "Stir 3 times back-to-front"
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "Place lid on top, do not press plunger",
+        "short_instruction": "Place lid • Do not press"
+      },
+      {
+        "time_seconds": 325,
+        "instruction": "Wait 4 minutes for optimal extraction",
+        "short_instruction": "Wait 4 minutes • Optimal extraction"
+      },
+      {
+        "time_seconds": 360,
+        "instruction": "Press plunger down slowly, pour within 30 seconds",
+        "short_instruction": "Press slowly • Pour within 30s"
+      }
+    ],
+    "equipment": [
+      "French Press (0.5L capacity)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Spoon for stirring"
+    ],
+    "notes": "Tim Wendelboe's French Press method emphasizes precision and control. Using medium-fine grind and shorter extraction time produces a brighter, more nuanced cup while maintaining the characteristic body of French Press coffee.",
+    "servings": 1
+  }
+]
