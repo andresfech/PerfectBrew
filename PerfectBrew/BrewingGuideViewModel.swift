@@ -188,19 +188,22 @@ class BrewingGuideViewModel: ObservableObject {
     
     private func getCurrentBrewingStepIndex() -> Int {
         // Find which brewing step we're currently in
-        // Each step's time_seconds represents when that step should start
+        // Each step's time_seconds represents when that step should END
         var currentStepIndex = -1
         
         for (index, brewingStep) in brewingSteps.enumerated() {
-            let stepTime = TimeInterval(brewingStep.timeSeconds)
+            let stepEndTime = TimeInterval(brewingStep.timeSeconds)
             
-            // If we've reached or passed this step's start time, this is our current step
-            if elapsedTime >= stepTime {
+            // If we haven't reached this step's end time yet, this is our current step
+            if elapsedTime < stepEndTime {
                 currentStepIndex = index
-            } else {
-                // If we haven't reached this step yet, we're done
                 break
             }
+        }
+        
+        // If we're past all steps, return the last step
+        if currentStepIndex == -1 && !brewingSteps.isEmpty {
+            currentStepIndex = brewingSteps.count - 1
         }
         
         return currentStepIndex
@@ -595,17 +598,17 @@ class BrewingGuideViewModel: ObservableObject {
             currentStepIndex = currentIndex
             
             // Calculate step timing
-            let stepTime = TimeInterval(currentBrewingStepData.timeSeconds)
-            stepStartTime = stepTime
+            let stepEndTime = TimeInterval(currentBrewingStepData.timeSeconds)
             
-            // Calculate step duration: from current step start to next step start
-            if currentIndex + 1 < brewingSteps.count {
-                let nextStepTime = TimeInterval(brewingSteps[currentIndex + 1].timeSeconds)
-                stepDuration = nextStepTime - stepTime
+            // Calculate step start time: previous step's end time (or 0 for first step)
+            if currentIndex == 0 {
+                stepStartTime = 0
             } else {
-                // Last step: duration until total time
-                stepDuration = totalTime - stepTime
+                stepStartTime = TimeInterval(brewingSteps[currentIndex - 1].timeSeconds)
             }
+            
+            // Calculate step duration: from step start to step end
+            stepDuration = stepEndTime - stepStartTime
             
             foundStep = true
             print("DEBUG: Using getCurrentBrewingStepIndex - currentIndex: \(currentIndex), instruction: \(currentBrewingStep)")

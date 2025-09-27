@@ -28,189 +28,22 @@ class UniversalAudioGenerator:
     
     def _validate_audio_duration(self, text: str, max_duration_seconds: int, step_name: str) -> str:
         """
-        Validate and rewrite audio text to fit within step duration.
-        
-        Args:
-            text: Original text to validate
-            max_duration_seconds: Maximum duration allowed for this step
-            step_name: Name of the step for logging
-            
-        Returns:
-            Validated (possibly rewritten) text
+        Simple validation - just return the text as-is.
+        No duration validation or text rewriting.
         """
-        # Estimate audio duration: ~4.5 characters per second for narrated speech
-        # This accounts for natural pauses and pronunciation clarity
-        max_chars = int(max_duration_seconds * 4.5)
-        
-        if len(text) <= max_chars:
-            return text
-            
-        # Text is too long, need to rewrite intelligently
-        print(f"    ⚠️  {step_name}: Text too long ({len(text)} chars > {max_chars} chars for {max_duration_seconds}s)")
-        
-        # Rewrite the text to be more concise while preserving key information
-        rewritten_text = self._rewrite_audio_script(text, max_chars, max_duration_seconds)
-        
-        print(f"    ✏️  {step_name}: Rewritten to {len(rewritten_text)} chars")
-        return rewritten_text
+        return text
     
     def _rewrite_audio_script(self, original_text: str, max_chars: int, max_duration: int) -> str:
         """
-        Intelligently rewrite audio script to fit duration while preserving key information.
-        
-        Args:
-            original_text: Original audio script
-            max_chars: Maximum characters allowed
-            max_duration: Maximum duration in seconds
-            
-        Returns:
-            Rewritten concise audio script
+        Not used - just return original text.
         """
-        # Key brewing terms and their concise alternatives
-        replacements = {
-            "milliliters": "mL",
-            "milliliter": "mL", 
-            "grams": "g",
-            "gram": "g",
-            "degrees Celsius": "°C",
-            "degrees": "°C",
-            "temperature": "temp",
-            "approximately": "about",
-            "carefully": "",
-            "gently": "",
-            "slowly": "",
-            "make sure to": "",
-            "you want to": "",
-            "you should": "",
-            "it's important to": "",
-            "this will help": "this helps",
-            "in order to": "to",
-            "at this point": "now",
-            "continue to": "",
-            "go ahead and": "",
-            "Let's start with": "Start",
-            "Now for the": "",
-            "Time for the": "",
-            "Perfect! Now": "Now",
-            "Excellent! Now": "Now",
-            "This time": "Now",
-            "You should see": "Watch for",
-            "coffee bed": "bed",
-            "coffee grounds": "grounds",
-            "Pour water": "Pour",
-            "the center of the": "center",
-            "small circles": "circles",
-            "gentle swirl": "swirl",
-            "controlled": "",
-            "steady": "",
-            "evenly": "",
-        }
-        
-        # Apply replacements
-        rewritten = original_text
-        for long_form, short_form in replacements.items():
-            rewritten = rewritten.replace(long_form, short_form)
-        
-        # Remove extra spaces and clean up
-        rewritten = " ".join(rewritten.split())
-        
-        # If still too long, extract key action words
-        if len(rewritten) > max_chars:
-            # Extract the most important brewing actions
-            key_phrases = []
-            
-            # Look for key brewing actions
-            if "pour" in rewritten.lower():
-                if "40" in rewritten and "ml" in rewritten.lower():
-                    key_phrases.append("Pour 40mL for bloom")
-                elif "256" in rewritten and "ml" in rewritten.lower():
-                    key_phrases.append("Pour to 256mL total")
-                elif "center" in rewritten.lower():
-                    key_phrases.append("Pour in center")
-                else:
-                    key_phrases.append("Pour water")
-                    
-            if "swirl" in rewritten.lower():
-                key_phrases.append("Swirl dripper")
-                
-            if "bloom" in rewritten.lower():
-                key_phrases.append("Bloom phase")
-                
-            if "wait" in rewritten.lower() or "let" in rewritten.lower():
-                key_phrases.append("Wait")
-                
-            if "grind" in rewritten.lower():
-                key_phrases.append("Grind coffee")
-                
-            if "heat" in rewritten.lower() and "water" in rewritten.lower():
-                key_phrases.append("Heat water")
-                
-            # Create concise script from key phrases
-            if key_phrases:
-                rewritten = ". ".join(key_phrases) + "."
-            else:
-                # Fallback: take first part of rewritten text
-                words = rewritten.split()
-                rewritten = ""
-                for word in words:
-                    if len(rewritten + word + " ") <= max_chars - 1:
-                        rewritten += word + " "
-                    else:
-                        break
-                rewritten = rewritten.strip() + "."
-        
-        return rewritten.strip()
+        return original_text
     
     def _create_guided_mode_audio(self, text: str, step_duration: int, step_name: str) -> str:
         """
-        Create Guided Mode audio with action-timed callouts.
-        Breaks every step into micro-actions with specific timing cues.
-        
-        Args:
-            text: Original step text
-            step_duration: Duration of the step in seconds
-            step_name: Name of the step for context
+        Not used - just return original text.
         """
-        # Extract key brewing actions from text
-        actions = self._extract_brewing_actions(text)
-        
-        # Create guided mode script with timing cues
-        guided_script = []
-        
-        # Pre-cue (T-10s or T-5s)
-        if step_duration >= 10:
-            pre_cue_time = 10
-        elif step_duration >= 5:
-            pre_cue_time = 5
-        else:
-            pre_cue_time = 2
-            
-        if pre_cue_time < step_duration:
-            guided_script.append(f"In {pre_cue_time} seconds, {actions['action']}.")
-        
-        # Go cue (T-0)
-        guided_script.append(f"{actions['go_cue']}.")
-        
-        # Pace cues for longer steps
-        if step_duration >= 20:
-            # Midpoint cue
-            midpoint = step_duration // 2
-            guided_script.append(f"Halfway through... keep a steady stream.")
-        elif step_duration >= 15:
-            # 10-second mark cue
-            guided_script.append(f"Keep going... steady pace.")
-        
-        # Wrap cue (T-5s)
-        if step_duration >= 8:
-            guided_script.append(f"Five seconds remaining...")
-        elif step_duration >= 5:
-            guided_script.append(f"Almost done...")
-        
-        # Next cue (end)
-        if actions.get('next_action'):
-            guided_script.append(f"Stop. Next: {actions['next_action']}. Ready?")
-        
-        return ". ".join(guided_script) + "."
+        return text
     
     def _convert_title_to_folder_name(self, recipe_title: str) -> str:
         """
@@ -233,128 +66,14 @@ class UniversalAudioGenerator:
         return folder_name
     
     def _extract_brewing_actions(self, text: str) -> Dict[str, str]:
-        """Extract brewing actions and create appropriate cues."""
-        text_lower = text.lower()
-        
-        # Determine main action
-        if "pour" in text_lower:
-            # Extract pour amount and duration
-            amount_match = re.search(r'(\d+)\s*(g|grams?|ml|milliliters?)', text_lower)
-            amount = amount_match.group(1) + " " + amount_match.group(2) if amount_match else "water"
-            
-            # Extract duration if mentioned
-            duration_match = re.search(r'(\d+)\s*seconds?', text_lower)
-            duration = duration_match.group(1) + " seconds" if duration_match else ""
-            
-            action = f"start pouring {amount}"
-            go_cue = f"Pour {amount}"
-            next_action = "wait for extraction"
-            
-        elif "swirl" in text_lower:
-            action = "swirl the dripper"
-            go_cue = "Swirl now"
-            next_action = "wait for drawdown"
-            
-        elif "stir" in text_lower:
-            action = "stir the coffee"
-            go_cue = "Stir gently"
-            next_action = "wait for bloom"
-            
-        elif "wait" in text_lower or "let" in text_lower:
-            action = "wait for the process"
-            go_cue = "Wait"
-            next_action = "check the bed"
-            
-        elif "bloom" in text_lower:
-            action = "begin the bloom phase"
-            go_cue = "Bloom starts now"
-            next_action = "watch for expansion"
-            
-        elif "heat" in text_lower and "water" in text_lower:
-            action = "heat the water"
-            go_cue = "Heat water"
-            next_action = "prepare the coffee"
-            
-        elif "grind" in text_lower:
-            action = "grind the coffee"
-            go_cue = "Grind coffee"
-            next_action = "prepare the dripper"
-            
-        else:
-            # Default action
-            action = "perform this step"
-            go_cue = "Begin now"
-            next_action = "continue to next step"
-        
-        return {
-            'action': action,
-            'go_cue': go_cue,
-            'next_action': next_action
-        }
+        """Not used - return empty dict."""
+        return {}
     
     def _create_narration_style(self, text: str, is_detailed_script: bool = False, step_duration: int = 0, step_name: str = "") -> str:
         """
-        Transform text into professional coffee brewing narration.
-        Uses warm, engaging tone of an expert barista guide with Guided Mode.
-        
-        Args:
-            text: Text to enhance
-            is_detailed_script: True if text is already a detailed audioScript
-            step_duration: Duration of the step in seconds (for Guided Mode)
-            step_name: Name of the step for context
+        Not used - just return original text.
         """
-        if is_detailed_script and step_duration > 0:
-            # Use Guided Mode for detailed scripts with timing
-            return self._create_guided_mode_audio(text, step_duration, step_name)
-        elif is_detailed_script:
-            # For detailed audioScript, enhance with professional narration
-            enhanced_text = text
-            
-            # Enhance measurements and technical terms for richer narration
-            enhanced_text = re.sub(r'\b(\d+)\s*mL\b', r'\1 milliliters', enhanced_text)
-            enhanced_text = re.sub(r'\b(\d+)\s*g\b', r'\1 grams', enhanced_text)
-            enhanced_text = re.sub(r'\b(\d+)\s*°C\b', r'\1 degrees Celsius', enhanced_text)
-            enhanced_text = re.sub(r'\bV60\b', 'V-sixty dripper', enhanced_text)
-            
-            # Add engaging language for better listening experience
-            enhanced_text = re.sub(r'\bWatch\b', 'Notice how', enhanced_text)
-            enhanced_text = re.sub(r'\bNow we\'ll\b', 'Now we will', enhanced_text)
-            
-            # Add strategic pauses and emphasis
-            enhanced_text = re.sub(r'\.([A-Z])', r'. \1', enhanced_text)  # Pause before new sentences
-            enhanced_text = re.sub(r'([.!?])\s+([A-Z])', r'\1. \2', enhanced_text)  # Ensure pauses
-            
-            return enhanced_text
-        else:
-            # For basic instructions, apply full enhancement
-            enhanced_text = f"Welcome to PerfectBrew. {text}"
-        
-        # Add strategic pauses after important sentences
-        enhanced_text = re.sub(r'\.([A-Z])', r'. \1', enhanced_text)  # Pause before new sentences
-        enhanced_text = re.sub(r'([.!?])\s+([A-Z])', r'\1. \2', enhanced_text)  # Ensure pauses
-        
-        # Add warmth and engagement
-        enhanced_text = enhanced_text.replace("Pour", "Now, let's pour")
-        enhanced_text = enhanced_text.replace("Start", "Let's start")
-        enhanced_text = enhanced_text.replace("Stop", "Now, let's stop")
-        enhanced_text = enhanced_text.replace("Wait", "Let's wait")
-        enhanced_text = enhanced_text.replace("Give", "Let's give")
-        enhanced_text = enhanced_text.replace("Add", "Let's add")
-        enhanced_text = enhanced_text.replace("Heat", "Let's heat")
-        enhanced_text = enhanced_text.replace("Grind", "Let's grind")
-        enhanced_text = enhanced_text.replace("Place", "Let's place")
-        enhanced_text = enhanced_text.replace("Rinse", "Let's rinse")
-        
-        # Add subtle surprise and engagement
-        enhanced_text = enhanced_text.replace("Bloom", "Ah, the bloom")
-        enhanced_text = enhanced_text.replace("Swirl", "Gently swirl")
-        enhanced_text = enhanced_text.replace("Stir", "Carefully stir")
-        enhanced_text = enhanced_text.replace("Final", "And now, the final")
-        
-        # Add professional closing
-        enhanced_text += " Perfect. You've mastered this technique. Enjoy your perfect brew."
-        
-        return enhanced_text
+        return text
     
     def _clean_text(self, text: str) -> str:
         """Clean text for better TTS output."""
@@ -457,16 +176,7 @@ class UniversalAudioGenerator:
                     print(f"    ⚠️  Skipping brewing step {i}: no audio_script")
                     continue
                 
-                # Calculate step duration for validation
-                step_duration = 0
-                if i == 1:
-                    step_duration = step.get('time_seconds', 0)
-                elif i <= len(brewing_steps):
-                    prev_step_time = brewing_steps[i-2].get('time_seconds', 0)
-                    current_step_time = step.get('time_seconds', 0)
-                    step_duration = current_step_time - prev_step_time
-                
-                print(f"    Using audio_script for step {i} ({len(audio_script)} chars, {step_duration}s duration)")
+                print(f"    Using audio_script for step {i} ({len(audio_script)} chars)")
                 
                 # Use unified naming convention
                 filename = f"step_{i:02d}.wav"
@@ -474,14 +184,7 @@ class UniversalAudioGenerator:
                 if not self._generate_audio_file(step, output_path):
                     success = False
         
-        # Generate notes audio
-        if include_notes and 'notes' in recipe:
-            notes = recipe.get('notes', '')
-            if notes:
-                filename = f"{recipe_prefix}notes.wav"
-                output_path = os.path.join(output_dir, filename)
-                if not self._generate_audio_file(notes, output_path):
-                    success = False
+        # Skip notes audio generation
         
         if success:
             print(f"🎉 Audio generation complete for: {title}")
