@@ -35,8 +35,8 @@ class RecipeDatabase: ObservableObject {
         print("✅ Found Recipes directory at: \(recipesRootUrl.path)")
         
         do {
-            // Since Xcode flattens the structure, look for JSON files directly in bundle root
-            let jsonFiles = try FileManager.default.contentsOfDirectory(at: recipesRootUrl, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles]).filter { $0.pathExtension.lowercased() == "json" }
+            // Look for JSON files recursively in the bundle
+            let jsonFiles = try findJSONFilesRecursively(in: recipesRootUrl)
             
             print("Found \(jsonFiles.count) JSON files in bundle")
             
@@ -93,6 +93,28 @@ class RecipeDatabase: ObservableObject {
         case "French_Press": return "French Press"
         default: return folderName
         }
+    }
+    
+    private func findJSONFilesRecursively(in directory: URL) throws -> [URL] {
+        var jsonFiles: [URL] = []
+        
+        print("🔍 Searching for JSON files in: \(directory.path)")
+        
+        let enumerator = FileManager.default.enumerator(
+            at: directory,
+            includingPropertiesForKeys: [.isRegularFileKey],
+            options: [.skipsHiddenFiles, .skipsPackageDescendants]
+        )
+        
+        while let fileURL = enumerator?.nextObject() as? URL {
+            if fileURL.pathExtension.lowercased() == "json" {
+                print("📄 Found JSON file: \(fileURL.path)")
+                jsonFiles.append(fileURL)
+            }
+        }
+        
+        print("📊 Total JSON files found: \(jsonFiles.count)")
+        return jsonFiles
     }
     
     
