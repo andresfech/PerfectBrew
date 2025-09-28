@@ -1,0 +1,555 @@
+[
+  {
+    "title": "Championship Concentrate AeroPress",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 4.9,
+    "parameters": {
+      "coffee_grams": 20,
+      "water_grams": 100,
+      "ratio": "1:5",
+      "grind_size": "fine (slightly finer than filter)",
+      "temperature_celsius": 94,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 120
+    },
+    "preparation_steps": [
+      "Rinse a paper filter under hot water and fit it into the AeroPress cap (this removes papery taste and pre-warms the cap).",
+      "Assemble the AeroPress in inverted position (plunger at the bottom, chamber open on top) and place on the scale.",
+      "Weigh 20 g of coffee and grind to a fine, filter-leaning consistency (slightly finer than typical filter).",
+      "Bring water to boil and let rest ~5–10 s (use ~94 °C). Have scale and timer ready."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 10,
+        "instruction": "Start timer, tare scale and pour 100 g hot water evenly over the grounds.",
+        "short_instruction": "Pour 100g hot water evenly",
+        "audio_script": "In 10 seconds, you should have poured all the water. Start your timer, tare the scale to zero, and begin pouring 100 grams of hot water evenly over the coffee grounds. Pour in a steady, circular motion to ensure complete saturation.",
+        "audio_file_name": "Championship_Concentrate_step1.mp3"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Stir vigorously for ~10 seconds to ensure full saturation and uniform extraction.",
+        "short_instruction": "Stir vigorously • 10 seconds",
+        "audio_script": "In 10 seconds, you should have finished stirring. Now stir vigorously for about 10 seconds to ensure full saturation and uniform extraction. Use a spoon or paddle to mix the coffee and water thoroughly.",
+        "audio_file_name": "Championship_Concentrate_step2.mp3"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Quickly wipe any drips, screw on the rinsed filter cap and wait (keep inverted).",
+        "short_instruction": "Wipe drips • Screw on filter cap",
+        "audio_script": "In 10 seconds, you should have the filter cap on. Quickly wipe any drips from the AeroPress chamber, then screw on the rinsed filter cap. Keep the AeroPress inverted and wait for the next step.",
+        "audio_file_name": "Championship_Concentrate_step3.mp3"
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Let steep until ~1:20 on the timer (total steep ≈ 60–70 s after stirring).",
+        "short_instruction": "Let steep • Until 1:20",
+        "audio_script": "You have 60 seconds to complete this step. Let the coffee steep until the timer reaches 1:20. This gives the coffee about 60 to 70 seconds of total steeping time after stirring, allowing for proper extraction.",
+        "audio_file_name": "Championship_Concentrate_step4.mp3"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Carefully flip the AeroPress onto your cup/server and press steadily; aim for a 20–30 s press until fully depressed.",
+        "short_instruction": "Flip AeroPress • Press 20-30 seconds",
+        "audio_script": "In 30 seconds, you should have finished pressing. Carefully flip the AeroPress onto your cup or server and begin pressing steadily. Aim for a 20 to 30 second press time until the plunger is fully depressed.",
+        "audio_file_name": "Championship_Concentrate_step5.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted method)",
+      "Standard AeroPress paper filter (rinsed)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "High-concentration competition method: 20g/100g, 94°C, fine grind, controlled agitation (~10s), ~60-70s steep before flipping and 20-30s press. Dilute to taste or use as base for milk drinks.",
+    "servings": 1
+  },
+  {
+    "title": "James Hoffmann's Ultimate AeroPress",
+    "brewing_method": "AeroPress",
+    "skill_level": "Advanced",
+    "rating": 4.8,
+    "parameters": {
+      "coffee_grams": 11,
+      "water_grams": 200,
+      "ratio": "1:18.18",
+      "grind_size": "finer-end-of-medium",
+      "temperature_celsius": 95,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 165
+    },
+    "preparation_steps": [
+      "Place a paper filter into the AeroPress cap (do NOT rinse) and twist it onto the main chamber.",
+      "Place the AeroPress upright directly onto your cup or server.",
+      "Weigh out 11 g of coffee and grind to the finer end of medium.",
+      "Bring 200 g of water to a boil and let it rest ~15–30 s (or use 95 °C).",
+      "Add the ground coffee to the AeroPress chamber; make sure the bed is level."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 10,
+        "instruction": "Place setup on scale, tare to zero. Start timer and pour 200 g hot water over coffee evenly (aim to wet all grounds).",
+        "short_instruction": "Pour 200g hot water evenly",
+        "audio_script": "In 10 seconds, you should have poured all the water. Place your AeroPress setup on the scale and tare it to zero. Start your timer and begin pouring 200 grams of hot water over the coffee grounds. Pour evenly in a circular motion, starting from the center and working your way outward. Make sure to wet all the grounds - you want complete saturation.",
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step1.mp3"
+      },
+      {
+        "time_seconds": 20,
+        "instruction": "Immediately insert plunger about 1 cm to create a partial vacuum seal (do not press).",
+        "short_instruction": "Insert plunger 1cm • Create vacuum seal",
+        "audio_script": "In 10 seconds, you should have the plunger inserted. Now, immediately after pouring, take the plunger and insert it about 1 centimeter into the AeroPress chamber. This is crucial - you want to create a partial vacuum seal that will prevent the coffee from dripping through too quickly. Don't press down, just insert it enough to create that seal.",
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step2.mp3"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Let coffee steep (first phase) — wait until ~2:00 on the timer.",
+        "short_instruction": "Let coffee steep • Wait until 2:00",
+        "audio_script": "You have 100 seconds to complete this step. Perfect! Now we wait for the first steeping phase. The coffee needs to extract for about 2 minutes - that's until the timer reaches 2:00. During this time, the hot water is extracting all the wonderful flavors, oils, and compounds from the coffee grounds. You'll notice the coffee bed has settled and the extraction is happening slowly and evenly thanks to that vacuum seal we created.",
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step3.mp3"
+      },
+      {
+        "time_seconds": 125,
+        "instruction": "Gently swirl the AeroPress (hold brewer + cup together) for ~5–10 s to agitate the slurry.",
+        "short_instruction": "Gently swirl • 5-10 seconds",
+        "audio_script": "In 5 seconds, you should have finished swirling. Now it's time for a gentle swirl. Hold both the AeroPress and your cup together firmly - you don't want them to separate during this step. Give the whole setup a gentle swirl for about 5 to 10 seconds. This agitates the coffee slurry and ensures even extraction by redistributing the grounds.",
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step4.mp3"
+      },
+      {
+        "time_seconds": 135,
+        "instruction": "Let rest ~30 s (until ~2:30).",
+        "short_instruction": "Let rest • 30 seconds",
+        "audio_script": "In 10 seconds, you should have finished resting. After that swirl, we let the coffee rest for another 30 seconds - until the timer reaches 2:30. This brief rest period allows the agitated grounds to settle again and gives the extraction just a little more time to work its magic. You'll notice the coffee has a nice, even color now, and the aroma should be fantastic.",
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step5.mp3"
+      },
+      {
+        "time_seconds": 165,
+        "instruction": "Slow, steady press the plunger down — aim for ~20–30 s press time — stop when you hear a soft hiss or when fully depressed.",
+        "short_instruction": "Slow steady press • 20-30 seconds",
+        "audio_script": "In 30 seconds, you should have finished pressing. Now for the final step - the press. Apply slow, steady pressure to the plunger and press it down gradually. This should take about 20 to 30 seconds - don't rush it. You want consistent, even pressure throughout the press. Listen carefully - when you hear a soft hiss, that means you've reached the end and should stop pressing.",
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step6.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress",
+      "Standard AeroPress paper filter (unrinsed)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "James Hoffmann's Ultimate AeroPress Technique — 11g coffee, 200g water, no filter rinse, finer end of medium grind, immediate plunger insertion, 2 min steep + 30s rest before pressing. Adjust temperature between 95–100 °C based on roast level.",
+    "servings": 1
+  },
+  {
+    "title": "Tim Wendelboe Classic AeroPress",
+    "brewing_method": "AeroPress",
+    "skill_level": "Advanced",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 14,
+      "water_grams": 200,
+      "ratio": "1:14.29",
+      "grind_size": "fine-filter",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 97
+    },
+    "preparation_steps": [
+      "Rinse a paper filter under hot water for a few seconds and place it in the AeroPress cap (this removes papery taste and warms the cap).",
+      "Assemble the AeroPress in standard position placed on your cup or server.",
+      "Weigh 14 g of coffee and grind to a fine 'filter' consistency (finer than medium-fine).",
+      "Bring water to a boil and let rest ~5–10 s (or use ~96 °C). Prepare your scale and timer."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 20,
+        "instruction": "Place AeroPress on scale, tare. Start timer and quickly pour 200 g hot water evenly over the grounds.",
+        "short_instruction": "Pour 200g hot water evenly",
+        "audio_script": "In 20 seconds, you should have poured all the water. Place your AeroPress on the scale and tare it to zero. Start your timer and quickly pour 200 grams of hot water evenly over the coffee grounds. Pour in a steady, circular motion to ensure complete saturation.",
+        "audio_file_name": "Tim_W_classic_aeropress_step1.mp3"
+      },
+      {
+        "time_seconds": 27,
+        "instruction": "Stir the slurry 3 times (back-to-front is common in the café method).",
+        "short_instruction": "Stir 3 times back-to-front",
+        "audio_script": "In 7 seconds, you should have finished stirring. Now stir the slurry 3 times using a back-to-front motion, which is common in the café method. This ensures the coffee grounds are fully saturated and mixed with the water.",
+        "audio_file_name": "Tim_W_classic_aeropress_step2.mp3"
+      },
+      {
+        "time_seconds": 57,
+        "instruction": "Insert the plunger about 1 cm to create a seal and prevent drainage. Let steep for 30 seconds.",
+        "short_instruction": "Insert plunger 1cm • Steep 30 seconds",
+        "audio_script": "You have 30 seconds to complete this step. Insert the plunger about 1 centimeter into the AeroPress chamber to create a seal and prevent drainage. This will allow the coffee to steep for 30 seconds without dripping through too quickly.",
+        "audio_file_name": "Tim_W_classic_aeropress_step3.mp3"
+      },
+      {
+        "time_seconds": 72,
+        "instruction": "After 30 s, remove plunger and stir gently 3 times back-to-front (this re-mixes the bed).",
+        "short_instruction": "Remove plunger • Stir 3 times",
+        "audio_script": "In 15 seconds, you should have finished stirring. After 30 seconds, remove the plunger and stir gently 3 times back-to-front. This re-mixes the coffee bed and ensures even extraction before the final press.",
+        "audio_file_name": "Tim_W_classic_aeropress_step4.mp3"
+      },
+      {
+        "time_seconds": 97,
+        "instruction": "Re-insert plunger and press steadily; aim for ~15–25 s press time and stop when you hear the soft hiss (do not over-press).",
+        "short_instruction": "Re-insert plunger • Press 15-25 seconds",
+        "audio_script": "In 25 seconds, you should have finished pressing. Re-insert the plunger and press steadily. Aim for about 15 to 25 seconds of press time and stop when you hear the soft hiss - do not over-press. This ensures optimal extraction without over-compressing the coffee bed.",
+        "audio_file_name": "Tim_W_classic_aeropress_step5.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress",
+      "Standard AeroPress paper filter (rinsed)",
+      "Digital scale",
+      "Kettle",
+      "Timer"
+    ],
+    "notes": "Based on the classic recipe used at Tim Wendelboe's café: 14g/200g, near-boiling water, rinsed filter, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant cup highlighting the coffee's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted coffees.",
+    "servings": 1
+  },
+  {
+    "title": "2024 World AeroPress Champion - George Stanica (Romania) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 100,
+      "ratio": "1:5.56",
+      "grind_size": "medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 µm)",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 50,
+      "bloom_time_seconds": 30,
+      "total_brew_time_seconds": 130
+    },
+    "preparation_steps": [
+      "Rinse one Aesir paper filter with hot water and fit it in the cap (removes papery taste).",
+      "Assemble the AeroPress in inverted position and align it approx. to the 4th mark.",
+      "Weigh 18 g of coffee and grind to medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 µm).",
+      "Add the 18 g ground coffee to the inverted AeroPress and give a gentle shake to level the bed.",
+      "Prepare extraction water (96 °C) and a Melodrip (or similar) for controlled pours. Have scale and timer ready."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 35,
+        "instruction": "Start timer and pour 50 g of 96 °C water using the Melodrip (aim 5–6 s for the pour). Allow the coffee to bloom: wait ~30 s (bloom period ends ~00:35).",
+        "short_instruction": "Pour 50g 96°C water • Bloom 30s",
+        "audio_script": "In 35 seconds, you should have finished the bloom. Start your timer and pour 50 grams of 96 degrees Celsius water using the Melodrip. Aim for about 5 to 6 seconds for the pour. Allow the coffee to bloom and wait about 30 seconds - the bloom period ends at 35 seconds.",
+        "audio_file_name": "2024_world_aeropress_brewing_step1.mp3"
+      },
+      {
+        "time_seconds": 41,
+        "instruction": "Pour the second 50 g of 96 °C water (again ~5–6 s pour).",
+        "short_instruction": "Pour second 50g water",
+        "audio_script": "In 6 seconds, you should have poured the second water. Now pour the second 50 grams of 96 degrees Celsius water. Again, aim for about 5 to 6 seconds for this pour to maintain consistency.",
+        "audio_file_name": "2024_world_aeropress_brewing_step2.mp3"
+      },
+      {
+        "time_seconds": 51,
+        "instruction": "Stir gently in a North–South–East–West (NSEW) pattern for ~10 s to homogenize.",
+        "short_instruction": "Stir NSEW pattern • 10 seconds",
+        "audio_script": "In 10 seconds, you should have finished stirring. Now stir gently in a North-South-East-West pattern for about 10 seconds to homogenize the coffee slurry. This ensures even extraction and proper mixing of the grounds.",
+        "audio_file_name": "2024_world_aeropress_brewing_step3.mp3"
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "At 1:05 (≈65 s) screw on the rinsed cap and gently press to remove excess air (~10 s).",
+        "short_instruction": "Screw on cap • Press out air",
+        "audio_script": "In 14 seconds, you should have the cap on and air pressed out. At 1:05, screw on the rinsed cap and gently press to remove excess air. This should take about 10 seconds and helps create a proper seal.",
+        "audio_file_name": "2024_world_aeropress_brewing_step4.mp3"
+      },
+      {
+        "time_seconds": 105,
+        "instruction": "Give a gentle swirl to the AeroPress, place it onto your serving vessel, and begin the slow, controlled press. Aim to finish pressing within 30–40 s. Target yield: ~76–79 g of concentrate.",
+        "short_instruction": "Swirl gently • Place on vessel • Press 30-40s",
+        "audio_script": "You have 40 seconds to complete this step. Give a gentle swirl to the AeroPress, place it onto your serving vessel, and begin the slow, controlled press. Aim to finish pressing within 30 to 40 seconds. Your target yield should be about 76 to 79 grams of concentrate.",
+        "audio_file_name": "2024_world_aeropress_brewing_step5.mp3"
+      },
+      {
+        "time_seconds": 125,
+        "instruction": "When press is complete, add warm water until total weight reaches 130–135 g (bypass step).",
+        "short_instruction": "Add warm water • Total 130-135g",
+        "audio_script": "In 20 seconds, you should have added the warm water. When the press is complete, add warm water until the total weight reaches 130 to 135 grams. This is the bypass step that dilutes the concentrate to your desired strength.",
+        "audio_file_name": "2024_world_aeropress_brewing_step6.mp3"
+      },
+      {
+        "time_seconds": 130,
+        "instruction": "Add an additional 20–30 g of room-temperature 0 ppm water for balance (final total ≈150–165 g depending on target).",
+        "short_instruction": "Add room-temp water • Total 150-165g",
+        "audio_script": "In 5 seconds, you should have finished adding water. Add an additional 20 to 30 grams of room-temperature 0 parts per million water for balance. The final total should be about 150 to 165 grams depending on your target strength.",
+        "audio_file_name": "2024_world_aeropress_brewing_step7.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Aesir / standard paper filter (rinsed)",
+      "Comandante C40 Mk4 (or equivalent) for grind reference",
+      "Melodrip (or other controlled flow pourer)",
+      "Digital scale",
+      "Kettle (capable of 96°C)",
+      "Timer",
+      "Jar/container for dilutions"
+    ],
+    "notes": "Recipe by George Stanica (World Champ 2024). Focus on precise water chemistry and two pours for controlled saturation. Bypass at two temperatures (hot water for strength and 0 ppm water at room temperature for balance and clarity). The medium-coarse grind and slow pressing seek clarity while avoiding over-extraction.",
+    "servings": 1
+  },
+  {
+    "title": "2023 World AeroPress Champion - Tay Wipvasutt (Thailand) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 100,
+      "ratio": "1:5.56",
+      "grind_size": "65 clicks on 1ZPresso ZP6 (competition setting)",
+      "temperature_celsius": 89,
+      "bloom_water_grams": 100,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 130
+    },
+    "preparation_steps": [
+      "Rinse and place a paper filter in the cap, if you prefer; assemble AeroPress inverted.",
+      "Weigh 18 g total: prepare 16 g to add initially and keep 2 g set aside for later addition.",
+      "Grind to the competition setting (1ZPresso ZP6, 65 clicks).",
+      "Heat Perfect Coffee Water to 89 °C. Prepare scale and timer."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Place 16 g of grounds in the inverted AeroPress. Start timer and pour 100 g of 89 °C water over the grounds. Then stir for ~5 s to agitate and homogenize the slurry.",
+        "short_instruction": "Place 16g grounds • Pour 100g 89°C water • Stir 5s",
+        "audio_script": "In 30 seconds, you should have finished stirring. Place 16 grams of grounds in the inverted AeroPress. Start your timer and pour 100 grams of 89 degrees Celsius water over the grounds. Then stir for about 5 seconds to agitate and homogenize the slurry.",
+        "audio_file_name": "2023_world_aeropress_brewing_step1.mp3"
+      },
+      {
+        "time_seconds": 45,
+        "instruction": "At 0:45, add the remaining 2 g of coffee (late addition).",
+        "short_instruction": "Add 2g late coffee",
+        "audio_script": "In 15 seconds, you should have added the late coffee. At 0:45, add the remaining 2 grams of coffee. This late addition technique introduces fresh aromatic compounds without over-extracting the main body.",
+        "audio_file_name": "2023_world_aeropress_brewing_step2.mp3"
+      },
+      {
+        "time_seconds": 55,
+        "instruction": "At 0:55, stir again for ~5 s to incorporate the late addition.",
+        "short_instruction": "Stir 5s to incorporate",
+        "audio_script": "In 10 seconds, you should have finished stirring. At 0:55, stir again for about 5 seconds to incorporate the late addition. This ensures the fresh coffee grounds are properly mixed into the slurry.",
+        "audio_file_name": "2023_world_aeropress_brewing_step3.mp3"
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "Slightly press the plunger up to remove excess air, then securely close the cap.",
+        "short_instruction": "Press out air • Close cap",
+        "audio_script": "In 10 seconds, you should have the cap closed. Slightly press the plunger up to remove excess air, then securely close the cap. This creates a proper seal for the steeping phase.",
+        "audio_file_name": "2023_world_aeropress_brewing_step4.mp3"
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "Carefully flip the AeroPress and begin pressing at 1:40 (≈100 s). Press steadily for ~30 s. Target yield: ~75 g concentrate.",
+        "short_instruction": "Flip AeroPress • Press 30s • Target 75g",
+        "audio_script": "You have 30 seconds to complete this step. Carefully flip the AeroPress and begin pressing at 1:40. Press steadily for about 30 seconds. Your target yield should be about 75 grams of concentrate.",
+        "audio_file_name": "2023_world_aeropress_brewing_step5.mp3"
+      },
+      {
+        "time_seconds": 125,
+        "instruction": "Bypass the concentrate with room-temperature water until total weight reaches 115 g (first bypass).",
+        "short_instruction": "Add room-temp water • Total 115g",
+        "audio_script": "In 30 seconds, you should have finished the first bypass. Bypass the concentrate with room-temperature water until the total weight reaches 115 grams. This is the first bypass that controls strength and temperature.",
+        "audio_file_name": "2023_world_aeropress_brewing_step6.mp3"
+      },
+      {
+        "time_seconds": 130,
+        "instruction": "Then add hot water until total weight reaches 155 g (second bypass / final tempered).",
+        "short_instruction": "Add hot water • Total 155g",
+        "audio_script": "In 5 seconds, you should have finished adding hot water. Then add hot water until the total weight reaches 155 grams. This is the second bypass for final tempering and achieving the desired strength.",
+        "audio_file_name": "2023_world_aeropress_brewing_step7.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "1ZPresso ZP6 (or other precision grinder)",
+      "Digital scale",
+      "Kettle (capable of 89°C)",
+      "Timer",
+      "Jar for dilutions"
+    ],
+    "notes": "Technique by Tay Wipvasutt (World Champ 2023). Use of 'late addition' (2g added at 0:45) to introduce fresh aromatic compounds without over-extracting the main body. Bypass in two stages (room-temp and hot) to control strength and final temperature.",
+    "servings": 1
+  },
+  {
+    "title": "2022 World AeroPress Champion - Jibbi Little (Australia) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 94,
+      "ratio": "1:5.22",
+      "grind_size": "Dual-grind then sifted (coarse via Timemore -> refined on Kinu #4); fines removed (100–200 µm)",
+      "temperature_celsius": 92,
+      "bloom_water_grams": 94,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 135
+    },
+    "preparation_steps": [
+      "Prepare and sift grounds per method: coarse grind (Timemore) → refine on Kinu #4 → sift to remove fines (100–200 µm).",
+      "Rinse a paper filter and place in the cap; assemble AeroPress inverted.",
+      "Weigh 18.0 g of the prepared grounds and add them to the chamber.",
+      "Heat Perfect Coffee Water to 92 °C for extraction and prepare 90 °C water for bypass."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 45,
+        "instruction": "Start timer and pour 94 ml of 92 °C water evenly over the grounds. Then stir gently 35 times (steady, gentle strokes) to ensure full saturation—this will take ~30–40 s depending on pace.",
+        "short_instruction": "Pour 94ml 92°C water • Stir 35 times",
+        "audio_script": "You have 45 seconds to complete this step. Start your timer and pour 94 milliliters of 92 degrees Celsius water evenly over the grounds. Then stir gently 35 times using steady, gentle strokes to ensure full saturation. This will take about 30 to 40 seconds depending on your pace.",
+        "audio_file_name": "2022_world_aeropress_brewing_step1.mp3"
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "At 1:20 (≈80 s) screw on the rinsed filter cap and press out any remaining air from the chamber.",
+        "short_instruction": "Screw on cap • Press out air",
+        "audio_script": "You have 40 seconds to complete this step. At 1:20, screw on the rinsed filter cap and press out any remaining air from the chamber. This creates a proper seal for the steeping phase.",
+        "audio_file_name": "2022_world_aeropress_brewing_step2.mp3"
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "At 1:30 (≈90 s) flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s.",
+        "short_instruction": "Flip AeroPress • Begin pressing",
+        "audio_script": "In 10 seconds, you should have flipped the AeroPress. At 1:30, flip the AeroPress carefully onto your server and begin pressing. Press steadily for about 30 seconds.",
+        "audio_file_name": "2022_world_aeropress_brewing_step3.mp3"
+      },
+      {
+        "time_seconds": 125,
+        "instruction": "Complete the press (target window between 1:40 and 2:10; typical yield ≈58–64 g concentrate).",
+        "short_instruction": "Complete press • Target 58-64g",
+        "audio_script": "You have 30 seconds to complete the press. Complete the press within the target window between 1:40 and 2:10. Your typical yield should be about 58 to 64 grams of concentrate.",
+        "audio_file_name": "2022_world_aeropress_brewing_step4.mp3"
+      },
+      {
+        "time_seconds": 130,
+        "instruction": "Bypass the concentrate with 90 °C water until total weight reaches 150 g.",
+        "short_instruction": "Add 90°C bypass water • Total 150g",
+        "audio_script": "In 5 seconds, you should have finished adding bypass water. Bypass the concentrate with 90 degrees Celsius water until the total weight reaches 150 grams.",
+        "audio_file_name": "2022_world_aeropress_brewing_step5.mp3"
+      },
+      {
+        "time_seconds": 135,
+        "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique) if serving cold or to rapidly lower temperature.",
+        "short_instruction": "Optional: Add 4 ice balls",
+        "audio_script": "In 5 seconds, you should have finished adding ice. Optional: add 4 chilled ice balls for smoother mouthfeel using the ice-bypass technique. This is useful if serving cold or to rapidly lower the temperature.",
+        "audio_file_name": "2022_world_aeropress_brewing_step6.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "Timemore grinder (coarse stage)",
+      "Kinu grinder (refinement, setting #4)",
+      "Sieve for fines removal (100–200 µm)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Jar for dilutions / ice if applicable"
+    ],
+    "notes": "Advanced technique by Jibbi Little (World Champ 2022). Use of dual grinder and sieving for extreme control of particle distribution; many gentle revolutions for saturation (35 stirs) and bypass at 90°C up to 150g to achieve desired texture and temperature. Ideal for competitions and demonstrations of clarity and texture.",
+    "servings": 1
+  },
+  {
+    "title": "2021 World AeroPress Champion - Tuomas Merikanto (Finland) - Inverted",
+    "brewing_method": "AeroPress (inverted)",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 200,
+      "ratio": "1:11.11",
+      "grind_size": "Macap Labo 70D setting 7.0",
+      "temperature_celsius": 80,
+      "bloom_water_grams": 50,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 150
+    },
+    "preparation_steps": [
+      "Weigh 18.0 g of coffee and grind on Macap Labo 70D at setting 7.0.",
+      "Assemble the AeroPress in inverted position and place on the scale.",
+      "Prepare Third Wave Water Formula 2 and heat to 80 °C.",
+      "Have pitcher and target server ready for the 'pour from altitude' stage."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 10,
+        "instruction": "Add 18.0 g of grounds to the inverted AeroPress. Start timer and add 50 g of 80 °C water between 0:00–0:10 (gentle pour).",
+        "short_instruction": "Add 18g grounds • Pour 50g 80°C water",
+        "audio_script": "In 10 seconds, you should have poured the first water. Add 18.0 grams of grounds to the inverted AeroPress. Start your timer and add 50 grams of 80 degrees Celsius water between 0:00 and 0:10 using a gentle pour.",
+        "audio_file_name": "2021_world_aeropress_brewing_step1.mp3"
+      },
+      {
+        "time_seconds": 15,
+        "instruction": "From 0:10–0:15, stir very gently 3 times back and forth.",
+        "short_instruction": "Stir gently 3 times",
+        "audio_script": "In 5 seconds, you should have finished stirring. From 0:10 to 0:15, stir very gently 3 times back and forth. This gentle agitation helps with initial extraction without over-agitating the coffee.",
+        "audio_file_name": "2021_world_aeropress_brewing_step2.mp3"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "From 0:15–0:30 continue pouring water gradually until total poured reaches 200 g (slow, controlled pour).",
+        "short_instruction": "Continue pouring • Total 200g",
+        "audio_script": "In 15 seconds, you should have poured all the water. From 0:15 to 0:30, continue pouring water gradually until the total poured reaches 200 grams. Use a slow, controlled pour to maintain consistency.",
+        "audio_file_name": "2021_world_aeropress_brewing_step3.mp3"
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "At 0:50, stir very gently 3 more times to re-homogenize the bed.",
+        "short_instruction": "Stir 3 more times",
+        "audio_script": "In 20 seconds, you should have finished stirring. At 0:50, stir very gently 3 more times to re-homogenize the coffee bed. This ensures even extraction throughout the brewing process.",
+        "audio_file_name": "2021_world_aeropress_brewing_step4.mp3"
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "At 1:00 (≈60 s), push out any excess air from the chamber and attach the filter cap; allow brewing until ~1:40 (≈100 s).",
+        "short_instruction": "Press out air • Attach filter cap",
+        "audio_script": "In 10 seconds, you should have the filter cap attached. At 1:00, push out any excess air from the chamber and attach the filter cap. Allow brewing until about 1:40, which is about 100 seconds total.",
+        "audio_file_name": "2021_world_aeropress_brewing_step5.mp3"
+      },
+      {
+        "time_seconds": 100,
+        "instruction": "At ~1:35 place your pitcher on top of the AeroPress; at 1:40 (≈100 s) flip the brewer carefully.",
+        "short_instruction": "Place pitcher • Flip AeroPress",
+        "audio_script": "You have 40 seconds to complete this step. At about 1:35, place your pitcher on top of the AeroPress. At 1:40, flip the brewer carefully onto the pitcher.",
+        "audio_file_name": "2021_world_aeropress_brewing_step6.mp3"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Immediately begin pressing from 1:40–2:00 (≈20 s press).",
+        "short_instruction": "Begin pressing • 20s press",
+        "audio_script": "In 20 seconds, you should have finished pressing. Immediately begin pressing from 1:40 to 2:00. This should take about 20 seconds of press time.",
+        "audio_file_name": "2021_world_aeropress_brewing_step7.mp3"
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "From 2:00–2:30 (≈120–150 s) swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool.",
+        "short_instruction": "Swirl coffee • Pour from altitude",
+        "audio_script": "You have 30 seconds to complete this step. From 2:00 to 2:30, swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool the coffee. This technique helps with aeration and temperature control.",
+        "audio_file_name": "2021_world_aeropress_brewing_step8.mp3"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "Macap Labo 70D",
+      "Digital scale",
+      "Kettle (capable of 80 °C)",
+      "Third Wave Water Formula 2 (or prepared mineral profile)",
+      "Timer",
+      "Pitcher(s) for pouring from altitude"
+    ],
+    "notes": "Recipe by Tuomas Merikanto (World Champ 2021). Focus on water chemistry (TWW Formula 2), two pouring stages with a low extraction point (80°C) and manipulation techniques (very gentle stirs, quick flip and press) followed by 'pour from altitude' for aeration and cooling.",
+    "servings": 1
+  }
+]
