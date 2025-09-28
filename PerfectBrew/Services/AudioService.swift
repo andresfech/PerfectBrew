@@ -232,7 +232,7 @@ class AudioService: NSObject, ObservableObject {
         } else if title.contains("2023 World AeroPress Champion") {
             return "2023_World_Champion"
         } else if title.contains("2022 World AeroPress Champion") {
-            return "2022_World_Champion"
+            return "2022_Jibbi_Little_Australia"
         } else if title.contains("2021 World AeroPress Champion") {
             return "2021_World_AeroPress_Champion_Tuomas_Merikanto_Finland_Inverted"
         } else if title.contains("Standard") && title.contains("1") {
