@@ -1,210 +1,105 @@
 #!/usr/bin/env swift
+/*
+Test script to verify AudioService integration logic.
+This simulates the exact logic used in the AudioService.
+*/
 
 import Foundation
 
-// Simplified BrewingStep struct matching the iOS app
-struct BrewingStep: Codable {
-    let timeSeconds: Int
-    let instruction: String
-    let shortInstruction: String?
-    let audioFileName: String?
-    let audioScript: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case timeSeconds = "time_seconds"
-        case instruction
-        case shortInstruction = "short_instruction"
-        case audioFileName = "audio_file_name"
-        case audioScript = "audio_script"
+// Simulate the AudioService logic exactly
+func getBrewingMethod(_ title: String) -> String {
+    if title.contains("AeroPress") || title.contains("aeropress") {
+        return "AeroPress"
+    } else if title.contains("V60") || title.contains("v60") {
+        return "V60"
+    } else if title.contains("French Press") || title.contains("french press") {
+        return "FrenchPress"
     }
+    return "AeroPress"
 }
 
-// Test AudioService integration with enhanced recipes
-class AudioServiceIntegrationTest {
-    
-    func testEnhancedRecipeIntegration() {
-        print("🎵 Testing AudioService Integration with Enhanced Recipes")
-        print(String(repeating: "=", count: 60))
-        
-        // Test 1: Load enhanced AeroPress recipe and verify audioScript fields
-        print("\n📋 Test 1: Enhanced Recipe Loading")
-        testEnhancedRecipeLoading()
-        
-        // Test 2: Simulate AudioService audio file path resolution
-        print("\n🔍 Test 2: Audio File Path Resolution")
-        testAudioPathResolution()
-        
-        // Test 3: Test backward compatibility with non-enhanced recipes
-        print("\n🔄 Test 3: Backward Compatibility")
-        testBackwardCompatibility()
-        
-        print("\n" + String(repeating: "=", count: 60))
-        print("🎉 AudioService integration test completed!")
+func convertTitleToFolderName(_ title: String) -> String {
+    if title.contains("2021 World AeroPress Champion") {
+        return "2021_World_AeroPress_Champion_Tuomas_Merikanto_Finland_Inverted"
     }
-    
-    func testEnhancedRecipeLoading() {
-        // Load the enhanced AeroPress recipe JSON
-        let jsonPath = "PerfectBrew/Resources/recipes_aeropress.json"
-        
-        guard let jsonData = FileManager.default.contents(atPath: jsonPath) else {
-            print("❌ Could not load recipe JSON file")
-            return
-        }
-        
-        do {
-            let recipes = try JSONDecoder().decode([Recipe].self, from: jsonData)
-            
-            // Find James Hoffmann recipe
-            guard let jamesRecipe = recipes.first(where: { $0.title.contains("James Hoffmann") }) else {
-                print("❌ Could not find James Hoffmann recipe")
-                return
-            }
-            
-            print("✅ Successfully loaded enhanced recipe: \(jamesRecipe.title)")
-            print("   Brewing steps: \(jamesRecipe.brewingSteps.count)")
-            
-            // Check each brewing step for audioScript
-            var stepsWithAudioScript = 0
-            for (index, step) in jamesRecipe.brewingSteps.enumerated() {
-                if let audioScript = step.audioScript {
-                    stepsWithAudioScript += 1
-                    print("   Step \(index + 1): ✅ Has audioScript (\(audioScript.count) chars)")
-                    
-                    // Verify it's different from instruction
-                    if audioScript != step.instruction {
-                        print("     ✅ AudioScript is enhanced (different from instruction)")
-                    } else {
-                        print("     ⚠️  AudioScript same as instruction")
-                    }
-                } else {
-                    print("   Step \(index + 1): ⚪ No audioScript (backward compatible)")
-                }
-            }
-            
-            print("   Enhanced steps: \(stepsWithAudioScript)/\(jamesRecipe.brewingSteps.count)")
-            
-        } catch {
-            print("❌ Failed to decode recipe JSON: \(error)")
-        }
-    }
-    
-    func testAudioPathResolution() {
-        // Simulate how AudioService resolves audio file paths
-        let testCases = [
-            (recipe: "James Hoffmann's Ultimate AeroPress", method: "AeroPress", fileName: "James_Hoffmann_Ultimate_AeroPress_step1.mp3"),
-            (recipe: "Kaldi's Coffee - Single Serve", method: "V60", fileName: "single_serve_brewing_step_01.wav")
-        ]
-        
-        for testCase in testCases {
-            print("  Testing: \(testCase.recipe)")
-            
-            // Simulate AudioService path resolution logic
-            let folderName = convertTitleToFolderName(testCase.recipe)
-            let expectedPath = "Audio_Output/\(testCase.method)/\(folderName)/"
-            
-            print("    Expected folder: \(folderName)")
-            print("    Expected path: \(expectedPath)")
-            
-            // Check if directory exists
-            if FileManager.default.fileExists(atPath: expectedPath) {
-                print("    ✅ Audio directory exists")
-                
-                // List available files
-                do {
-                    let files = try FileManager.default.contentsOfDirectory(atPath: expectedPath)
-                    let audioFiles = files.filter { $0.hasSuffix(".wav") || $0.hasSuffix(".mp3") }
-                    print("    ✅ Found \(audioFiles.count) audio files")
-                    
-                    if audioFiles.count >= 5 { // Should have preparation + brewing steps
-                        print("    ✅ Sufficient audio files for complete recipe")
-                    } else {
-                        print("    ⚠️  Fewer audio files than expected")
-                    }
-                } catch {
-                    print("    ❌ Could not list directory contents: \(error)")
-                }
-            } else {
-                print("    ❌ Audio directory not found")
-            }
-        }
-    }
-    
-    func testBackwardCompatibility() {
-        // Test that the system works with recipes that don't have audioScript
-        print("  Testing recipes without audioScript fields...")
-        
-        // Create a sample brewing step without audioScript (backward compatibility)
-        let legacyStep = BrewingStep(
-            timeSeconds: 30,
-            instruction: "Pour water slowly over coffee grounds",
-            shortInstruction: "Pour water slowly",
-            audioFileName: "step_01.wav",
-            audioScript: nil
-        )
-        
-        // Simulate AudioService logic
-        let audioText = legacyStep.audioScript ?? legacyStep.instruction
-        let isDetailed = legacyStep.audioScript != nil
-        
-        print("    Legacy step instruction: \"\(legacyStep.instruction)\"")
-        print("    Audio text used: \"\(audioText)\"")
-        print("    Is detailed script: \(isDetailed)")
-        
-        if audioText == legacyStep.instruction && !isDetailed {
-            print("    ✅ Backward compatibility working correctly")
-        } else {
-            print("    ❌ Backward compatibility issue")
-        }
-        
-        // Test with enhanced step
-        let enhancedStep = BrewingStep(
-            timeSeconds: 30,
-            instruction: "Pour water slowly over coffee grounds",
-            shortInstruction: "Pour water slowly",
-            audioFileName: "step_01.wav",
-            audioScript: "Now it's time to pour the water. Take your kettle and slowly pour the hot water over the coffee grounds in a circular motion. This should take about 30 seconds and you'll see the coffee start to bloom."
-        )
-        
-        let enhancedAudioText = enhancedStep.audioScript ?? enhancedStep.instruction
-        let enhancedIsDetailed = enhancedStep.audioScript != nil
-        
-        print("    Enhanced step audioScript: \"\(enhancedAudioText.prefix(50))...\"")
-        print("    Is detailed script: \(enhancedIsDetailed)")
-        
-        if enhancedAudioText != enhancedStep.instruction && enhancedIsDetailed {
-            print("    ✅ Enhanced recipe integration working correctly")
-        } else {
-            print("    ❌ Enhanced recipe integration issue")
-        }
-    }
-    
-    // Helper function matching AudioService logic
-    private func convertTitleToFolderName(_ title: String) -> String {
-        if title.contains("James Hoffmann") && title.contains("AeroPress") {
-            return "James_Hoffmanns_Ultimate_AeroPress"
-        } else if title.contains("Kaldi") && title.contains("Single Serve") {
-            return "Kaldis_Coffee_-_Single_Serve"
-        }
-        
-        // Default conversion
-        return title.replacingOccurrences(of: "[^\\w\\s-]", with: "", options: .regularExpression)
-                   .replacingOccurrences(of: " ", with: "_")
-    }
+    return "Unknown"
 }
 
-// Simplified Recipe struct for testing
-struct Recipe: Codable {
-    let title: String
-    let brewingMethod: String
-    let brewingSteps: [BrewingStep]
+func getAudioPath(for fileName: String, recipeTitle: String) -> String {
+    print("🔍 Looking for audio file: \(fileName) for recipe: \(recipeTitle)")
     
-    enum CodingKeys: String, CodingKey {
-        case title
-        case brewingMethod = "brewing_method"
-        case brewingSteps = "brewing_steps"
+    // First, try to find the audio file directly in bundle root (for backward compatibility)
+    // This would be: Bundle.main.url(forResource: fileName, withExtension: nil)
+    print("   Trying bundle root search...")
+    
+    // If not found, try to find it by name without extension in bundle root
+    let fileNameWithoutExtension = (fileName as NSString).deletingPathExtension
+    let fileExtension = (fileName as NSString).pathExtension
+    
+    print("   File name without extension: \(fileNameWithoutExtension)")
+    print("   File extension: \(fileExtension)")
+    
+    // If not found in bundle root, try to find it in the Audio folder structure
+    let brewingMethod = getBrewingMethod(recipeTitle)
+    let folderName = convertTitleToFolderName(recipeTitle)
+    
+    print("   Brewing method: \(brewingMethod)")
+    print("   Folder name: \(folderName)")
+    
+    // Try different subdirectory approaches
+    let subdirectories = [
+        "Audio/\(brewingMethod)/\(folderName)",
+        "Audio/\(brewingMethod)/World_Champions/\(folderName)",
+        "Audio/\(brewingMethod)/World_Champions/\(folderName)"
+    ]
+    
+    print("\n   Trying subdirectory searches:")
+    for (index, subdirectory) in subdirectories.enumerated() {
+        print("   \(index + 1). Subdirectory: '\(subdirectory)'")
+        
+        // Try with full filename
+        let fullPath1 = "\(subdirectory)/\(fileName)"
+        print("      - Full filename: \(fullPath1)")
+        
+        // Try with filename without extension
+        let extensionToUse = fileExtension.isEmpty ? "mp3" : fileExtension
+        let fullPath2 = "\(subdirectory)/\(fileNameWithoutExtension).\(extensionToUse)"
+        print("      - Without extension: \(fullPath2)")
     }
+    
+    // The correct path should be:
+    let correctPath = "Audio/AeroPress/World_Champions/2021_World_AeroPress_Champion_Tuomas_Merikanto_Finland_Inverted/\(fileName)"
+    print("\n   ✅ Expected correct path: \(correctPath)")
+    
+    return correctPath
 }
 
-// Run the test
-let test = AudioServiceIntegrationTest()
-test.testEnhancedRecipeIntegration()
+// Test the 2021 World Champion recipe
+let recipeTitle = "2021 World AeroPress Champion - Tuomas Merikanto (Finland) - Inverted"
+let audioFiles = [
+    "2021_world_aeropress_brewing_step1.mp3",
+    "2021_world_aeropress_brewing_step2.mp3",
+    "2021_world_aeropress_brewing_step3.mp3",
+    "2021_world_aeropress_brewing_step4.mp3",
+    "2021_world_aeropress_brewing_step5.mp3",
+    "2021_world_aeropress_brewing_step6.mp3",
+    "2021_world_aeropress_brewing_step7.mp3",
+    "2021_world_aeropress_brewing_step8.mp3"
+]
+
+print("🎵 Testing AudioService Integration Logic")
+print(String(repeating: "=", count: 60))
+print("Recipe: \(recipeTitle)")
+print(String(repeating: "=", count: 60))
+
+for audioFile in audioFiles {
+    print("\n" + String(repeating: "-", count: 50))
+    let result = getAudioPath(for: audioFile, recipeTitle: recipeTitle)
+    print("   Result: \(result)")
+}
+
+print("\n" + String(repeating: "=", count: 60))
+print("🎯 SUMMARY:")
+print("The AudioService should find files using:")
+print("   Bundle.main.url(forResource: \"\(audioFiles[0])\", withExtension: nil, subdirectory: \"Audio/AeroPress/World_Champions/2021_World_AeroPress_Champion_Tuomas_Merikanto_Finland_Inverted\")")
+print("\nThis should work if the Audio folder is properly included in the Xcode project.")

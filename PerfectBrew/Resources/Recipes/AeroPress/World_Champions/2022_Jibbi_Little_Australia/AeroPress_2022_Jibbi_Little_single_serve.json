@@ -1,0 +1,81 @@
+[
+  {
+    "title": "2022 World AeroPress Champion - Jibbi Little (Australia) - Inverted",
+    "brewing_method": "AeroPress",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 94,
+      "ratio": "1:5.22",
+      "grind_size": "Dual-grind then sifted (coarse via Timemore -> refined on Kinu #4); fines removed (100\u2013200 \u00b5m)",
+      "temperature_celsius": 92,
+      "bloom_water_grams": 94,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 135
+    },
+    "preparation_steps": [
+      "Prepare and sift grounds per method: coarse grind (Timemore) \u2192 refine on Kinu #4 \u2192 sift to remove fines (100\u2013200 \u00b5m).",
+      "Rinse a paper filter and place in the cap; assemble AeroPress inverted.",
+      "Weigh 18.0 g of the prepared grounds and add them to the chamber.",
+      "Heat Perfect Coffee Water to 92 \u00b0C for extraction and prepare 90 \u00b0C water for bypass."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 45,
+        "instruction": "Start timer and pour 94 ml of 92 \u00b0C water evenly over the grounds. Then stir gently 35 times (steady, gentle strokes) to ensure full saturation\u2014this will take ~30\u201340 s depending on pace.",
+        "short_instruction": "Pour 94ml 92\u00b0C water \u2022 Stir 35 times",
+        "audio_script": "You have 45 seconds to complete this step. Start your timer and pour 94 milliliters of 92 degrees Celsius water evenly over the grounds. Then stir gently 35 times using steady, gentle strokes to ensure full saturation. This will take about 30 to 40 seconds depending on your pace.",
+        "audio_file_name": "2022_world_aeropress_brewing_step1.m4a"
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "At 1:20 (\u224880 s) screw on the rinsed filter cap and press out any remaining air from the chamber.",
+        "short_instruction": "Screw on cap \u2022 Press out air",
+        "audio_script": "You have 40 seconds to complete this step. At 1:20, screw on the rinsed filter cap and press out any remaining air from the chamber. This creates a proper seal for the steeping phase.",
+        "audio_file_name": "2022_world_aeropress_brewing_step2.m4a"
+      },
+      {
+        "time_seconds": 95,
+        "instruction": "At 1:30 (\u224890 s) flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s.",
+        "short_instruction": "Flip AeroPress \u2022 Begin pressing",
+        "audio_script": "In 10 seconds, you should have flipped the AeroPress. At 1:30, flip the AeroPress carefully onto your server and begin pressing. Press steadily for about 30 seconds.",
+        "audio_file_name": "2022_world_aeropress_brewing_step3.m4a"
+      },
+      {
+        "time_seconds": 125,
+        "instruction": "Complete the press (target window between 1:40 and 2:10; typical yield \u224858\u201364 g concentrate).",
+        "short_instruction": "Complete press \u2022 Target 58-64g",
+        "audio_script": "You have 30 seconds to complete the press. Complete the press within the target window between 1:40 and 2:10. Your typical yield should be about 58 to 64 grams of concentrate.",
+        "audio_file_name": "2022_world_aeropress_brewing_step4.m4a"
+      },
+      {
+        "time_seconds": 130,
+        "instruction": "Bypass the concentrate with 90 \u00b0C water until total weight reaches 150 g.",
+        "short_instruction": "Add 90\u00b0C bypass water \u2022 Total 150g",
+        "audio_script": "In 5 seconds, you should have finished adding bypass water. Bypass the concentrate with 90 degrees Celsius water until the total weight reaches 150 grams.",
+        "audio_file_name": "2022_world_aeropress_brewing_step5.m4a"
+      },
+      {
+        "time_seconds": 135,
+        "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique) if serving cold or to rapidly lower temperature.",
+        "short_instruction": "Optional: Add 4 ice balls",
+        "audio_script": "In 5 seconds, you should have finished adding ice. Optional: add 4 chilled ice balls for smoother mouthfeel using the ice-bypass technique. This is useful if serving cold or to rapidly lower the temperature.",
+        "audio_file_name": "2022_world_aeropress_brewing_step6.m4a"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "Timemore grinder (coarse stage)",
+      "Kinu grinder (refinement, setting #4)",
+      "Sieve for fines removal (100\u2013200 \u00b5m)",
+      "Digital scale",
+      "Kettle",
+      "Timer",
+      "Jar for dilutions / ice if applicable"
+    ],
+    "notes": "Advanced technique by Jibbi Little (World Champ 2022). Use of dual grinder and sieving for extreme control of particle distribution; many gentle revolutions for saturation (35 stirs) and bypass at 90\u00b0C up to 150g to achieve desired texture and temperature. Ideal for competitions and demonstrations of clarity and texture.",
+    "servings": 1
+  }
+]

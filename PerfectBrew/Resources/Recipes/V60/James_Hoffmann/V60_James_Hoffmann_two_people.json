@@ -15,7 +15,7 @@
       "total_brew_time_seconds": 170
     },
     "preparation_steps": [
-      "Heat water to 95°C.",
+      "Heat water to 95\u00b0C.",
       "Grind 60 grams of coffee to medium-fine consistency.",
       "Fold filter paper along seam and fit to V60.",
       "Pre-heat with hot water and discard.",
@@ -25,50 +25,50 @@
       {
         "time_seconds": 10,
         "instruction": "Bloom (0:00): Start timer. Pour 120 grams of water (2x coffee dose) to saturate the grounds.",
-        "short_instruction": "Bloom 120g water (2x dose) • Start timer",
-        "audio_file_name": "two_people_brewing_step_01.wav",
-        "audio_script": "Start your timer. Pour exactly 120 grams of hot water — twice the coffee dose — evenly over the bed to fully wet the grounds. Aim for smooth coverage with no dry spots."
+        "short_instruction": "Bloom 120g water (2x dose) \u2022 Start timer",
+        "audio_file_name": "two_people_brewing_step_01.m4a",
+        "audio_script": "Start your timer. Pour exactly 120 grams of hot water \u2014 twice the coffee dose \u2014 evenly over the bed to fully wet the grounds. Aim for smooth coverage with no dry spots."
       },
       {
         "time_seconds": 20,
         "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even.",
         "short_instruction": "Swirl brewer until slurry is even",
-        "audio_file_name": "two_people_brewing_step_02.wav",
+        "audio_file_name": "two_people_brewing_step_02.m4a",
         "audio_script": "Now gently swirl the V60 so the slurry becomes uniform. This evens out saturation and prepares the bed for optimal extraction."
       },
       {
         "time_seconds": 50,
         "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:50. This bloom period allows for de-gassing, which is crucial for fresh coffee.",
-        "short_instruction": "Wait until 0:50 • Let bloom continue",
-        "audio_file_name": "two_people_brewing_step_03.wav",
+        "short_instruction": "Wait until 0:50 \u2022 Let bloom continue",
+        "audio_file_name": "two_people_brewing_step_03.m4a",
         "audio_script": "Let's begin with James Hoffmann's expert bloom technique."
       },
       {
         "time_seconds": 50,
         "instruction": "First Main Pour (0:50 - 1:20): Pour up to 600 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up.",
-        "short_instruction": "First main pour to 600g • Within 30 seconds",
-        "audio_file_name": "two_people_brewing_step_04.wav",
-        "audio_script": "Time for the first main pour. Raise the total to 600 grams — sixty percent of your brew water — over 30 seconds. Keep the bed high and your pour steady and centered, expanding in gentle circles."
+        "short_instruction": "First main pour to 600g \u2022 Within 30 seconds",
+        "audio_file_name": "two_people_brewing_step_04.m4a",
+        "audio_script": "Time for the first main pour. Raise the total to 600 grams \u2014 sixty percent of your brew water \u2014 over 30 seconds. Keep the bed high and your pour steady and centered, expanding in gentle circles."
       },
       {
         "time_seconds": 80,
         "instruction": "Second Main Pour (1:20 - 1:50): Gently pour up to 1000 grams of water (100% of total brew water) within 30 seconds.",
-        "short_instruction": "Second main pour to 1000g • Within 30 seconds",
-        "audio_file_name": "two_people_brewing_step_05.wav",
+        "short_instruction": "Second main pour to 1000g \u2022 Within 30 seconds",
+        "audio_file_name": "two_people_brewing_step_05.m4a",
         "audio_script": "Second main pour. Bring the total up to 1000 grams over the next 30 seconds. Pour gently to avoid channeling, finishing with a smooth, even surface."
       },
       {
         "time_seconds": 140,
         "instruction": "Stir (1:50): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction.",
         "short_instruction": "Stir clockwise & anti-clockwise",
-        "audio_file_name": "two_people_brewing_step_06.wav",
+        "audio_file_name": "two_people_brewing_step_06.m4a",
         "audio_script": "Time for Hoffmann's signature stirring technique. Stir gently clockwise, then anticlockwise - about 1 to 1.5 revolutions each way. This dislodges grounds from the sides and ensures all coffee particles are fully engaged in extraction."
       },
       {
         "time_seconds": 170,
         "instruction": "Swirl (2:00): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown.",
         "short_instruction": "Swirl to flatten coffee bed",
-        "audio_file_name": "two_people_brewing_step_07.wav",
+        "audio_file_name": "two_people_brewing_step_07.m4a",
         "audio_script": "Continue with the brewing process. Swirl (2:00): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown. Take your time and focus on technique. Every step contributes to the final cup quality."
       }
     ],
@@ -79,7 +79,7 @@
       "kettle (gooseneck preferred)",
       "stirring stick or spoon"
     ],
-    "notes": "Water Temperature: 95°C general, 100°C for high-quality light roasts, 90–95°C or 80–90°C for darker roasts. Aim to finish drawdown by 4 minutes. Perfect for 2 people.",
+    "notes": "Water Temperature: 95\u00b0C general, 100\u00b0C for high-quality light roasts, 90\u201395\u00b0C or 80\u201390\u00b0C for darker roasts. Aim to finish drawdown by 4 minutes. Perfect for 2 people.",
     "servings": 2
   }
 ]

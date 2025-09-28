@@ -18,7 +18,7 @@
       "Rinse a paper filter under hot water and fit it into the AeroPress cap (this removes papery taste and pre-warms the cap).",
       "Assemble the AeroPress in inverted position (plunger at the bottom, chamber open on top) and place on the scale.",
       "Weigh 20 g of coffee and grind to a fine, filter-leaning consistency (slightly finer than typical filter).",
-      "Bring water to boil and let rest ~5–10 s (use ~94 °C). Have scale and timer ready."
+      "Bring water to boil and let rest ~5\u201310 s (use ~94 \u00b0C). Have scale and timer ready."
     ],
     "brewing_steps": [
       {
@@ -26,35 +26,35 @@
         "instruction": "Start timer, tare scale and pour 100 g hot water evenly over the grounds.",
         "short_instruction": "Pour 100g hot water evenly",
         "audio_script": "In 10 seconds, you should have poured all the water. Start your timer, tare the scale to zero, and begin pouring 100 grams of hot water evenly over the coffee grounds. Pour in a steady, circular motion to ensure complete saturation.",
-        "audio_file_name": "Championship_Concentrate_step1.mp3"
+        "audio_file_name": "Championship_Concentrate_step1.m4a"
       },
       {
         "time_seconds": 20,
         "instruction": "Stir vigorously for ~10 seconds to ensure full saturation and uniform extraction.",
-        "short_instruction": "Stir vigorously • 10 seconds",
+        "short_instruction": "Stir vigorously \u2022 10 seconds",
         "audio_script": "In 10 seconds, you should have finished stirring. Now stir vigorously for about 10 seconds to ensure full saturation and uniform extraction. Use a spoon or paddle to mix the coffee and water thoroughly.",
-        "audio_file_name": "Championship_Concentrate_step2.mp3"
+        "audio_file_name": "Championship_Concentrate_step2.m4a"
       },
       {
         "time_seconds": 30,
         "instruction": "Quickly wipe any drips, screw on the rinsed filter cap and wait (keep inverted).",
-        "short_instruction": "Wipe drips • Screw on filter cap",
+        "short_instruction": "Wipe drips \u2022 Screw on filter cap",
         "audio_script": "In 10 seconds, you should have the filter cap on. Quickly wipe any drips from the AeroPress chamber, then screw on the rinsed filter cap. Keep the AeroPress inverted and wait for the next step.",
-        "audio_file_name": "Championship_Concentrate_step3.mp3"
+        "audio_file_name": "Championship_Concentrate_step3.m4a"
       },
       {
         "time_seconds": 90,
-        "instruction": "Let steep until ~1:20 on the timer (total steep ≈ 60–70 s after stirring).",
-        "short_instruction": "Let steep • Until 1:20",
+        "instruction": "Let steep until ~1:20 on the timer (total steep \u2248 60\u201370 s after stirring).",
+        "short_instruction": "Let steep \u2022 Until 1:20",
         "audio_script": "You have 60 seconds to complete this step. Let the coffee steep until the timer reaches 1:20. This gives the coffee about 60 to 70 seconds of total steeping time after stirring, allowing for proper extraction.",
-        "audio_file_name": "Championship_Concentrate_step4.mp3"
+        "audio_file_name": "Championship_Concentrate_step4.m4a"
       },
       {
         "time_seconds": 120,
-        "instruction": "Carefully flip the AeroPress onto your cup/server and press steadily; aim for a 20–30 s press until fully depressed.",
-        "short_instruction": "Flip AeroPress • Press 20-30 seconds",
+        "instruction": "Carefully flip the AeroPress onto your cup/server and press steadily; aim for a 20\u201330 s press until fully depressed.",
+        "short_instruction": "Flip AeroPress \u2022 Press 20-30 seconds",
         "audio_script": "In 30 seconds, you should have finished pressing. Carefully flip the AeroPress onto your cup or server and begin pressing steadily. Aim for a 20 to 30 second press time until the plunger is fully depressed.",
-        "audio_file_name": "Championship_Concentrate_step5.mp3"
+        "audio_file_name": "Championship_Concentrate_step5.m4a"
       }
     ],
     "equipment": [
@@ -64,7 +64,7 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "High-concentration competition method: 20g/100g, 94°C, fine grind, controlled agitation (~10s), ~60-70s steep before flipping and 20-30s press. Dilute to taste or use as base for milk drinks.",
+    "notes": "High-concentration competition method: 20g/100g, 94\u00b0C, fine grind, controlled agitation (~10s), ~60-70s steep before flipping and 20-30s press. Dilute to taste or use as base for milk drinks.",
     "servings": 1
   }
 ]

@@ -116,13 +116,49 @@ class UniversalAudioGenerator:
             if wav.ndim > 1:
                 wav = wav.flatten()
             
-            # Save audio file
-            from scipy.io import wavfile
-            wavfile.write(output_path, 22050, (wav * 32767).astype(np.int16))
+            # Convert to M4A format for iOS compatibility
+            import subprocess
+            import tempfile
+            
+            # Create temporary WAV file
+            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_wav:
+                from scipy.io import wavfile
+                wavfile.write(temp_wav.name, 22050, (wav * 32767).astype(np.int16))
+                
+                # Convert WAV to M4A using ffmpeg
+                try:
+                    cmd = [
+                        'ffmpeg',
+                        '-i', temp_wav.name,           # Input WAV file
+                        '-c:a', 'aac',                 # Audio codec: AAC
+                        '-b:a', '128k',                # Audio bitrate: 128kbps
+                        '-ar', '44100',                # Sample rate: 44.1kHz
+                        '-ac', '2',                    # Stereo
+                        '-y',                          # Overwrite output file
+                        output_path
+                    ]
+                    
+                    result = subprocess.run(cmd, capture_output=True, text=True)
+                    
+                    if result.returncode == 0:
+                        print(f"    ✅ Audio file saved as M4A: {os.path.getsize(output_path)} bytes")
+                        success = True
+                    else:
+                        print(f"    ❌ FFmpeg conversion failed: {result.stderr}")
+                        success = False
+                        
+                except FileNotFoundError:
+                    print(f"    ❌ FFmpeg not found. Please install ffmpeg: brew install ffmpeg")
+                    success = False
+                finally:
+                    # Clean up temporary file
+                    try:
+                        os.unlink(temp_wav.name)
+                    except:
+                        pass
             
             # Verify file was created and has content
-            if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"    ✅ Audio file saved: {os.path.getsize(output_path)} bytes")
+            if success and os.path.exists(output_path) and os.path.getsize(output_path) > 0:
                 return True
             else:
                 print(f"    ❌ Audio file is empty or not created")
@@ -178,9 +214,14 @@ class UniversalAudioGenerator:
                 
                 print(f"    Using audio_script for step {i} ({len(audio_script)} chars)")
                 
-                # Use unified naming convention
-                filename = f"step_{i:02d}.wav"
-                output_path = os.path.join(recipe_output_dir, filename)
+                # Use the unique audio_file_name from the recipe, but ensure it's M4A
+                audio_file_name = step.get('audio_file_name', f"step_{i:02d}.m4a")
+                # Convert any existing extension to .m4a
+                if '.' in audio_file_name:
+                    audio_file_name = audio_file_name.rsplit('.', 1)[0] + '.m4a'
+                else:
+                    audio_file_name = audio_file_name + '.m4a'
+                output_path = os.path.join(recipe_output_dir, audio_file_name)
                 if not self._generate_audio_file(step, output_path):
                     success = False
         

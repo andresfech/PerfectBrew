@@ -18,7 +18,7 @@
       "Place a paper filter into the AeroPress cap (do NOT rinse) and twist it onto the main chamber.",
       "Place the AeroPress upright directly onto your cup or server.",
       "Weigh out 11 g of coffee and grind to the finer end of medium.",
-      "Bring 200 g of water to a boil and let it rest ~15–30 s (or use 95 °C).",
+      "Bring 200 g of water to a boil and let it rest ~15\u201330 s (or use 95 \u00b0C).",
       "Add the ground coffee to the AeroPress chamber; make sure the bed is level."
     ],
     "brewing_steps": [
@@ -27,42 +27,42 @@
         "instruction": "Place setup on scale, tare to zero. Start timer and pour 200 g hot water over coffee evenly (aim to wet all grounds).",
         "short_instruction": "Pour 200g hot water evenly",
         "audio_script": "In 10 seconds, you should have poured all the water. Place your AeroPress setup on the scale and tare it to zero. Start your timer and begin pouring 200 grams of hot water over the coffee grounds. Pour evenly in a circular motion, starting from the center and working your way outward. Make sure to wet all the grounds - you want complete saturation.",
-        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step1.mp3"
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step1.m4a"
       },
       {
         "time_seconds": 20,
         "instruction": "Immediately insert plunger about 1 cm to create a partial vacuum seal (do not press).",
-        "short_instruction": "Insert plunger 1cm • Create vacuum seal",
+        "short_instruction": "Insert plunger 1cm \u2022 Create vacuum seal",
         "audio_script": "In 10 seconds, you should have the plunger inserted. Now, immediately after pouring, take the plunger and insert it about 1 centimeter into the AeroPress chamber. This is crucial - you want to create a partial vacuum seal that will prevent the coffee from dripping through too quickly. Don't press down, just insert it enough to create that seal.",
-        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step2.mp3"
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step2.m4a"
       },
       {
         "time_seconds": 120,
-        "instruction": "Let coffee steep (first phase) — wait until ~2:00 on the timer.",
-        "short_instruction": "Let coffee steep • Wait until 2:00",
+        "instruction": "Let coffee steep (first phase) \u2014 wait until ~2:00 on the timer.",
+        "short_instruction": "Let coffee steep \u2022 Wait until 2:00",
         "audio_script": "You have 100 seconds to complete this step. Perfect! Now we wait for the first steeping phase. The coffee needs to extract for about 2 minutes - that's until the timer reaches 2:00. During this time, the hot water is extracting all the wonderful flavors, oils, and compounds from the coffee grounds. You'll notice the coffee bed has settled and the extraction is happening slowly and evenly thanks to that vacuum seal we created.",
-        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step3.mp3"
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step3.m4a"
       },
       {
         "time_seconds": 125,
-        "instruction": "Gently swirl the AeroPress (hold brewer + cup together) for ~5–10 s to agitate the slurry.",
-        "short_instruction": "Gently swirl • 5-10 seconds",
+        "instruction": "Gently swirl the AeroPress (hold brewer + cup together) for ~5\u201310 s to agitate the slurry.",
+        "short_instruction": "Gently swirl \u2022 5-10 seconds",
         "audio_script": "In 5 seconds, you should have finished swirling. Now it's time for a gentle swirl. Hold both the AeroPress and your cup together firmly - you don't want them to separate during this step. Give the whole setup a gentle swirl for about 5 to 10 seconds. This agitates the coffee slurry and ensures even extraction by redistributing the grounds.",
-        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step4.mp3"
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step4.m4a"
       },
       {
         "time_seconds": 135,
         "instruction": "Let rest ~30 s (until ~2:30).",
-        "short_instruction": "Let rest • 30 seconds",
+        "short_instruction": "Let rest \u2022 30 seconds",
         "audio_script": "In 10 seconds, you should have finished resting. After that swirl, we let the coffee rest for another 30 seconds - until the timer reaches 2:30. This brief rest period allows the agitated grounds to settle again and gives the extraction just a little more time to work its magic. You'll notice the coffee has a nice, even color now, and the aroma should be fantastic.",
-        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step5.mp3"
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step5.m4a"
       },
       {
         "time_seconds": 165,
-        "instruction": "Slow, steady press the plunger down — aim for ~20–30 s press time — stop when you hear a soft hiss or when fully depressed.",
-        "short_instruction": "Slow steady press • 20-30 seconds",
+        "instruction": "Slow, steady press the plunger down \u2014 aim for ~20\u201330 s press time \u2014 stop when you hear a soft hiss or when fully depressed.",
+        "short_instruction": "Slow steady press \u2022 20-30 seconds",
         "audio_script": "In 30 seconds, you should have finished pressing. Now for the final step - the press. Apply slow, steady pressure to the plunger and press it down gradually. This should take about 20 to 30 seconds - don't rush it. You want consistent, even pressure throughout the press. Listen carefully - when you hear a soft hiss, that means you've reached the end and should stop pressing.",
-        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step6.mp3"
+        "audio_file_name": "James_Hoffmann_Ultimate_AeroPress_step6.m4a"
       }
     ],
     "equipment": [
@@ -72,7 +72,7 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "James Hoffmann's Ultimate AeroPress Technique — 11g coffee, 200g water, no filter rinse, finer end of medium grind, immediate plunger insertion, 2 min steep + 30s rest before pressing. Adjust temperature between 95–100 °C based on roast level.",
+    "notes": "James Hoffmann's Ultimate AeroPress Technique \u2014 11g coffee, 200g water, no filter rinse, finer end of medium grind, immediate plunger insertion, 2 min steep + 30s rest before pressing. Adjust temperature between 95\u2013100 \u00b0C based on roast level.",
     "servings": 1
   }
 ]

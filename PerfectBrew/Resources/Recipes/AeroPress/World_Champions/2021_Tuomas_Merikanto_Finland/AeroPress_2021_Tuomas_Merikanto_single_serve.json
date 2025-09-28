@@ -1,0 +1,94 @@
+[
+  {
+    "title": "2021 World AeroPress Champion - Tuomas Merikanto (Finland) - Inverted",
+    "brewing_method": "AeroPress",
+    "skill_level": "Expert",
+    "rating": 5.0,
+    "parameters": {
+      "coffee_grams": 18,
+      "water_grams": 200,
+      "ratio": "1:11.11",
+      "grind_size": "Macap Labo 70D setting 7.0",
+      "temperature_celsius": 80,
+      "bloom_water_grams": 50,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 150
+    },
+    "preparation_steps": [
+      "Weigh 18.0 g of coffee and grind on Macap Labo 70D at setting 7.0.",
+      "Assemble the AeroPress in inverted position and place on the scale.",
+      "Prepare Third Wave Water Formula 2 and heat to 80 \u00b0C.",
+      "Have pitcher and target server ready for the 'pour from altitude' stage."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 10,
+        "instruction": "Add 18.0 g of grounds to the inverted AeroPress. Start timer and add 50 g of 80 \u00b0C water between 0:00\u20130:10 (gentle pour).",
+        "short_instruction": "Add 18g grounds \u2022 Pour 50g 80\u00b0C water",
+        "audio_script": "In 10 seconds, you should have poured the first water. Add 18.0 grams of grounds to the inverted AeroPress. Add 50 grams of 80 degrees Celsius water using a gentle pour.",
+        "audio_file_name": "2021_world_aeropress_brewing_step1.m4a"
+      },
+      {
+        "time_seconds": 15,
+        "instruction": "From 0:10\u20130:15, stir very gently 3 times back and forth.",
+        "short_instruction": "Stir gently 3 times",
+        "audio_script": "In 5 seconds, you should have finished stirring. Stir very gently 3 times back and forth. This gentle agitation helps with initial extraction without over-agitating the coffee.",
+        "audio_file_name": "2021_world_aeropress_brewing_step2.m4a"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "From 0:15\u20130:30 continue pouring water gradually until total poured reaches 200 g (slow, controlled pour).",
+        "short_instruction": "Continue pouring \u2022 Total 200g",
+        "audio_script": "In 15 seconds, you should have poured all the water. Continue pouring water gradually until the total poured reaches 200 grams. Use a slow, controlled pour to maintain consistency.",
+        "audio_file_name": "2021_world_aeropress_brewing_step3.m4a"
+      },
+      {
+        "time_seconds": 50,
+        "instruction": "At 0:50, stir very gently 3 more times to re-homogenize the bed.",
+        "short_instruction": "Stir 3 more times",
+        "audio_script": "In 20 seconds, you should have finished stirring. Stir very gently 3 more times to re-homogenize the coffee bed. This ensures even extraction throughout the brewing process.",
+        "audio_file_name": "2021_world_aeropress_brewing_step4.m4a"
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "At 1:00 (\u224860 s), push out any excess air from the chamber and attach the filter cap; allow brewing until ~1:40 (\u2248100 s).",
+        "short_instruction": "Press out air \u2022 Attach filter cap",
+        "audio_script": "Push out excess air and attach the filter cap.",
+        "audio_file_name": "2021_world_aeropress_brewing_step5.m4a"
+      },
+      {
+        "time_seconds": 100,
+        "instruction": "At ~1:35 place your pitcher on top of the AeroPress; at 1:40 (\u2248100 s) flip the brewer carefully.",
+        "short_instruction": "Place pitcher \u2022 Flip AeroPress",
+        "audio_script": "In 40 seconds, you should have flipped the AeroPress. Place your pitcher on top of the AeroPress. Flip the brewer carefully onto the pitcher.",
+        "audio_file_name": "2021_world_aeropress_brewing_step6.m4a"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Immediately begin pressing from 1:40\u20132:00 (\u224820 s press).",
+        "short_instruction": "Begin pressing \u2022 20s press",
+        "audio_script": "In 20 seconds, you should have finished pressing. Immediately begin pressing. This should take about 20 seconds of press time.",
+        "audio_file_name": "2021_world_aeropress_brewing_step7.m4a"
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "From 2:00\u20132:30 (\u2248120\u2013150 s) swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool.",
+        "short_instruction": "Swirl coffee \u2022 Pour from altitude",
+        "audio_script": "In 30 seconds, you should have finished the pour from altitude. Swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool the coffee. This technique helps with aeration and temperature control.",
+        "audio_file_name": "2021_world_aeropress_brewing_step8.m4a"
+      }
+    ],
+    "equipment": [
+      "AeroPress (inverted)",
+      "Paper filter (rinsed)",
+      "Macap Labo 70D",
+      "Digital scale",
+      "Kettle (capable of 80 \u00b0C)",
+      "Third Wave Water Formula 2 (or prepared mineral profile)",
+      "Timer",
+      "Pitcher(s) for pouring from altitude"
+    ],
+    "notes": "Recipe by Tuomas Merikanto (World Champ 2021). Focus on water chemistry (TWW Formula 2), two pouring stages with a low extraction point (80\u00b0C) and manipulation techniques (very gentle stirs, quick flip and press) followed by 'pour from altitude' for aeration and cooling.",
+    "servings": 1
+  }
+]

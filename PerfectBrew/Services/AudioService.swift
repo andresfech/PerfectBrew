@@ -145,34 +145,67 @@ class AudioService: NSObject, ObservableObject {
     private func getAudioPath(for fileName: String, recipeTitle: String) -> URL {
         print("DEBUG: Looking for audio file: \(fileName) for recipe: \(recipeTitle)")
         
-        // Xcode flattens the Audio structure, so look directly in bundle root
-        // Try to find the audio file directly in bundle root
+        // First, try to find the audio file directly in bundle root (for backward compatibility)
         if let path = Bundle.main.url(forResource: fileName, withExtension: nil) {
             print("DEBUG: Found audio file in bundle root: \(path)")
             return path
         }
         
-        // If not found, try to find it by name without extension
+        // If not found, try to find it by name without extension in bundle root
         let fileNameWithoutExtension = (fileName as NSString).deletingPathExtension
         let fileExtension = (fileName as NSString).pathExtension
         
         if fileExtension.isEmpty {
-            // Try common audio extensions
+            // Try common audio extensions in bundle root
             for ext in ["mp3", "m4a", "wav", "aac"] {
                 if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: ext) {
-                    print("DEBUG: Found audio file with extension \(ext): \(path)")
+                    print("DEBUG: Found audio file with extension \(ext) in bundle root: \(path)")
                     return path
                 }
             }
         } else {
-            // Try with the specified extension
+            // Try with the specified extension in bundle root
             if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: fileExtension) {
-                print("DEBUG: Found audio file with specified extension: \(path)")
+                print("DEBUG: Found audio file with specified extension in bundle root: \(path)")
                 return path
             }
         }
         
-        print("DEBUG: Audio file not found: \(fileName) in bundle root")
+        // If not found in bundle root, try to find it in the Audio folder structure
+        let brewingMethod = getBrewingMethod(recipeTitle)
+        let folderName = convertTitleToFolderName(recipeTitle)
+        
+        // Try different subdirectory approaches
+        let subdirectories = [
+            "Audio/\(brewingMethod)/\(folderName)",
+            "Audio/\(brewingMethod)/World_Champions/\(folderName)",
+            "Audio/\(brewingMethod)/World_Champions/\(folderName)"
+        ]
+        
+        for subdirectory in subdirectories {
+            // Try with full filename
+            if let url = Bundle.main.url(forResource: fileName, withExtension: nil, subdirectory: subdirectory) {
+                print("DEBUG: Found audio file in subdirectory '\(subdirectory)': \(url)")
+                return url
+            }
+            
+            // Try with filename without extension
+            if let url = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: fileExtension.isEmpty ? "mp3" : fileExtension, subdirectory: subdirectory) {
+                print("DEBUG: Found audio file in subdirectory '\(subdirectory)' with extension: \(url)")
+                return url
+            }
+        }
+        
+        // Try to find by searching in the Audio folder
+        if let audioFolderURL = Bundle.main.url(forResource: "Audio", withExtension: nil) {
+            let audioPath = audioFolderURL.appendingPathComponent(fileName)
+            if FileManager.default.fileExists(atPath: audioPath.path) {
+                print("DEBUG: Found audio file in Audio folder: \(audioPath)")
+                return audioPath
+            }
+        }
+        
+        print("DEBUG: Audio file not found: \(fileName) anywhere in bundle")
         return URL(fileURLWithPath: "")
     }
     
@@ -201,7 +234,7 @@ class AudioService: NSObject, ObservableObject {
         } else if title.contains("2022 World AeroPress Champion") {
             return "2022_World_Champion"
         } else if title.contains("2021 World AeroPress Champion") {
-            return "2021_World_Champion"
+            return "2021_World_AeroPress_Champion_Tuomas_Merikanto_Finland_Inverted"
         } else if title.contains("Standard") && title.contains("1") {
             return "Standard_1_Person"
         } else if title.contains("Standard") && title.contains("2") {

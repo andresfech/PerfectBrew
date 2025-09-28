@@ -15,7 +15,7 @@
       "total_brew_time_seconds": 115
     },
     "preparation_steps": [
-      "Heat water to 95°C.",
+      "Heat water to 95\u00b0C.",
       "Grind 12 grams of coffee to medium consistency.",
       "Rinse filter quickly.",
       "Add 12g coffee."
@@ -24,21 +24,21 @@
       {
         "time_seconds": 25,
         "instruction": "Pour 36g water, stir gently.",
-        "audio_file_name": "v60_brewing_step_01.wav",
-        "short_instruction": "Stir gently • Break up dry pockets",
+        "audio_file_name": "v60_brewing_step_01.m4a",
+        "short_instruction": "Stir gently \u2022 Break up dry pockets",
         "audio_script": "Stir the coffee bed gently to ensure even extraction."
       },
       {
         "time_seconds": 30,
         "instruction": "Pour remaining water in 2-3 pours.",
-        "audio_file_name": "v60_brewing_step_02.wav",
-        "short_instruction": "Pour • remaining • water • in",
+        "audio_file_name": "v60_brewing_step_02.m4a",
+        "short_instruction": "Pour \u2022 remaining \u2022 water \u2022 in",
         "audio_script": "Continue with the brewing process. Pour remaining water in 2-3 pours."
       },
       {
         "time_seconds": 60,
         "instruction": "Let drain.",
-        "audio_file_name": "v60_brewing_step_03.wav",
+        "audio_file_name": "v60_brewing_step_03.m4a",
         "short_instruction": "Let drain completely",
         "audio_script": "Let the coffee drain completely at its natural pace. Watch as the coffee bed settles and the liquid drains through the filter."
       }
@@ -68,7 +68,7 @@
       "total_brew_time_seconds": 275
     },
     "preparation_steps": [
-      "Heat water to 93°C.",
+      "Heat water to 93\u00b0C.",
       "Grind 15 grams of coffee to medium-fine consistency.",
       "Rinse filter thoroughly and preheat.",
       "Add 15g coffee, create flat bed."
@@ -77,43 +77,43 @@
       {
         "time_seconds": 25,
         "instruction": "Pour 45g water, stir in figure-8 pattern.",
-        "short_instruction": "Pour 45g water • Stir in figure-8 pattern",
-        "audio_file_name": "v60_brewing_step_01.wav",
+        "short_instruction": "Pour 45g water \u2022 Stir in figure-8 pattern",
+        "audio_file_name": "v60_brewing_step_01.m4a",
         "audio_script": "Stir the coffee bed gently to ensure even extraction."
       },
       {
         "time_seconds": 40,
         "instruction": "Pour to 100g in 10 seconds, gentle swirl.",
-        "short_instruction": "Pour to 100g total • Within 10 seconds",
-        "audio_file_name": "v60_brewing_step_02.wav",
+        "short_instruction": "Pour to 100g total \u2022 Within 10 seconds",
+        "audio_file_name": "v60_brewing_step_02.m4a",
         "audio_script": "Continue with the brewing process. Pour to 100g in 10 seconds, gentle swirl. Take your time and focus on technique."
       },
       {
         "time_seconds": 50,
         "instruction": "Pour to 150g in 10 seconds, gentle swirl.",
-        "short_instruction": "Pour to 150g total • Within 10 seconds",
-        "audio_file_name": "v60_brewing_step_03.wav",
+        "short_instruction": "Pour to 150g total \u2022 Within 10 seconds",
+        "audio_file_name": "v60_brewing_step_03.m4a",
         "audio_script": "Continue with the brewing process. Pour to 150g in 10 seconds, gentle swirl. Take your time and focus on technique."
       },
       {
         "time_seconds": 60,
         "instruction": "Pour to 200g in 10 seconds, gentle swirl.",
-        "short_instruction": "Pour to 200g total • Within 10 seconds",
-        "audio_file_name": "v60_brewing_step_04.wav",
+        "short_instruction": "Pour to 200g total \u2022 Within 10 seconds",
+        "audio_file_name": "v60_brewing_step_04.m4a",
         "audio_script": "Continue with the brewing process. Pour to 200g in 10 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
       },
       {
         "time_seconds": 70,
         "instruction": "Final pour to 250g, gentle swirl.",
-        "short_instruction": "Final pour to 250g total • Gentle swirl",
-        "audio_file_name": "v60_brewing_step_05.wav",
+        "short_instruction": "Final pour to 250g total \u2022 Gentle swirl",
+        "audio_file_name": "v60_brewing_step_05.m4a",
         "audio_script": "Final pour to complete the brew. Add the remaining water to reach 250 grams total. Pour gently and steadily, maintaining control as you approach the target weight."
       },
       {
         "time_seconds": 30,
         "instruction": "Let drain completely.",
         "short_instruction": "Let drain completely",
-        "audio_file_name": "v60_brewing_step_06.wav",
+        "audio_file_name": "v60_brewing_step_06.m4a",
         "audio_script": "Let the coffee drain completely at its natural pace."
       }
     ],
@@ -143,7 +143,7 @@
       "total_brew_time_seconds": 570
     },
     "preparation_steps": [
-      "Heat water to 94°C",
+      "Heat water to 94\u00b0C",
       "Grind 45 grams of coffee to medium-coarse consistency",
       "Use V60 03 size for larger capacity",
       "Rinse filter thoroughly and preheat",
@@ -153,50 +153,50 @@
       {
         "time_seconds": 25,
         "instruction": "Bloom: Pour 90g water (2x coffee weight), stir gently in circular motion",
-        "short_instruction": "Bloom 90g water (2x dose) • Circular stir",
-        "audio_file_name": "v60_brewing_step_01.wav",
+        "short_instruction": "Bloom 90g water (2x dose) \u2022 Circular stir",
+        "audio_file_name": "v60_brewing_step_01.m4a",
         "audio_script": ""
       },
       {
         "time_seconds": 60,
         "instruction": "First pour: Add 180g water in slow, steady spiral, reaching 270g total",
-        "short_instruction": "First pour 180g water • Slow steady spiral",
-        "audio_file_name": "v60_brewing_step_02.wav",
+        "short_instruction": "First pour 180g water \u2022 Slow steady spiral",
+        "audio_file_name": "v60_brewing_step_02.m4a",
         "audio_script": "Continue with the brewing process. First pour: Add 180g water in slow, steady spiral, reaching 270g total Take your time and focus on technique."
       },
       {
         "time_seconds": 35,
         "instruction": "Wait 30 seconds for extraction",
-        "short_instruction": "Wait 30 seconds • Extraction",
-        "audio_file_name": "v60_brewing_step_03.wav",
+        "short_instruction": "Wait 30 seconds \u2022 Extraction",
+        "audio_file_name": "v60_brewing_step_03.m4a",
         "audio_script": "Wait for 35 seconds to allow proper extraction."
       },
       {
         "time_seconds": 150,
         "instruction": "Second pour: Add 225g water, reaching 495g total",
-        "short_instruction": "Second pour 225g • Reach 495g",
-        "audio_file_name": "v60_brewing_step_04.wav",
+        "short_instruction": "Second pour 225g \u2022 Reach 495g",
+        "audio_file_name": "v60_brewing_step_04.m4a",
         "audio_script": "Continue with the brewing process. Second pour: Add 225g water, reaching 495g total Take your time and focus on technique. Every step contributes to the final cup quality."
       },
       {
         "time_seconds": 30,
         "instruction": "Wait 30 seconds",
         "short_instruction": "Wait 30 seconds",
-        "audio_file_name": "v60_brewing_step_05.wav",
+        "audio_file_name": "v60_brewing_step_05.m4a",
         "audio_script": "Wait for 30 seconds to allow proper extraction."
       },
       {
         "time_seconds": 240,
         "instruction": "Final pour: Add remaining 225g water to reach 720g total",
-        "short_instruction": "Final pour 225g • Reach 720g",
-        "audio_file_name": "v60_brewing_step_06.wav",
+        "short_instruction": "Final pour 225g \u2022 Reach 720g",
+        "audio_file_name": "v60_brewing_step_06.m4a",
         "audio_script": "Final pour to complete the brew. Add the remaining water to reach 225 grams total. Pour gently and steadily, maintaining control as you approach the target weight."
       },
       {
         "time_seconds": 30,
         "instruction": "Let drain completely, should finish around 4:30-5:00",
-        "short_instruction": "Let drain completely • 4:30-5:00",
-        "audio_file_name": "v60_brewing_step_07.wav",
+        "short_instruction": "Let drain completely \u2022 4:30-5:00",
+        "audio_file_name": "v60_brewing_step_07.m4a",
         "audio_script": "Let the coffee drain completely at its natural pace."
       }
     ],
