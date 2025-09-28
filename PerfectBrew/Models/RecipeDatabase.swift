@@ -36,22 +36,36 @@ class RecipeDatabase: ObservableObject {
         
         do {
             // Look for JSON files recursively in the bundle
-            let jsonFiles = try findJSONFilesRecursively(in: recipesRootUrl)
+            var jsonFiles = try findJSONFilesRecursively(in: recipesRootUrl)
             
             print("Found \(jsonFiles.count) JSON files in bundle")
             
+            // Also check for root-level recipe files
+            let rootRecipeFiles = ["recipes_aeropress.json", "recipes_v60.json", "recipes_chemex.json", "recipes_frenchpress.json"]
+            for fileName in rootRecipeFiles {
+                let fileUrl = recipesRootUrl.appendingPathComponent(fileName)
+                if FileManager.default.fileExists(atPath: fileUrl.path) {
+                    print("Found root recipe file: \(fileName)")
+                    jsonFiles.append(fileUrl)
+                }
+            }
+            
+            print("Total files to process: \(jsonFiles.count)")
+            
             for fileUrl in jsonFiles {
                 let fileName = fileUrl.lastPathComponent
-                print("Processing file: \(fileName)")
+                print("🔍 Processing file: \(fileName)")
                 
                 // Skip non-recipe JSON files
                 if fileName.contains("Coffee Beans Loader") || 
                    fileName.contains("Thermometer") || 
                    fileName.contains("Water Bubble") ||
                    fileName.contains("aeropress_minimal_zen_lottie") {
-                    print("Skipping non-recipe file: \(fileName)")
+                    print("⏭️ Skipping non-recipe file: \(fileName)")
                     continue
                 }
+                
+                print("✅ Processing recipe file: \(fileName)")
                 
                 do {
                     let data = try Data(contentsOf: fileUrl)
@@ -136,7 +150,8 @@ class RecipeDatabase: ObservableObject {
         var recipesByBaseTitle: [String: [Recipe]] = [:]
         
         for recipe in methodRecipes {
-            let baseTitle = getBaseTitle(from: recipe.title)
+            // For World Champions recipes, use the full title as base title
+            let baseTitle = recipe.title.contains("World AeroPress Champion") ? recipe.title : getBaseTitle(from: recipe.title)
             if recipesByBaseTitle[baseTitle] == nil {
                 recipesByBaseTitle[baseTitle] = []
             }
