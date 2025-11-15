@@ -22,48 +22,60 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 45,
-        "instruction": "Start timer and pour 94 ml of 92 \u00b0C water evenly over the grounds. Then stir gently 35 times (steady, gentle strokes) to ensure full saturation\u2014this will take ~30\u201340 s depending on pace.",
-        "short_instruction": "Pour 94ml 92\u00b0C water \u2022 Stir 35 times",
-        "audio_script": "You have 45 seconds to complete this step. Start your timer and pour 94 milliliters of 92 degrees Celsius water evenly over the grounds. Then stir gently 35 times using steady, gentle strokes to ensure full saturation. This will take about 30 to 40 seconds depending on your pace.",
+        "time_seconds": 10,
+        "instruction": "Pour 94 ml of 92 \u00b0C water evenly over the grounds. Aim to finish the pour in about 20\u201325 seconds.",
+        "short_instruction": "Pour 94ml 92\u00b0C water \u2022 20\u201325s",
+        "audio_script": "You have 10 seconds, and by the end of it those 94 milliliters of 92 degree water should be spread evenly across the bed.",
         "audio_file_name": "2022_jibbi_little_aeropress_step1_pour_stir.m4a"
       },
       {
-        "time_seconds": 85,
-        "instruction": "At 1:20 (\u224880 s) screw on the rinsed filter cap and press out any remaining air from the chamber.",
+        "time_seconds": 35,
+        "instruction": "Stir gently 35 times with steady, gentle strokes to ensure full saturation.",
+        "short_instruction": "Stir 35 times",
+        "audio_script": "Over the next 25 seconds, work through 35 calm stirs so every particle stays fully saturated.",
+        "audio_file_name": "2022_jibbi_little_aeropress_step1b_stir_35_times.m4a"
+      },
+      {
+        "time_seconds": 80,
+        "instruction": "Screw on the rinsed filter cap and press out any remaining air from the chamber.",
         "short_instruction": "Screw on cap \u2022 Press out air",
-        "audio_script": "You have 40 seconds to complete this step. At 1:20, screw on the rinsed filter cap and press out any remaining air from the chamber. This creates a proper seal for the steeping phase.",
+        "audio_script": "Take these 15 seconds to lock on the rinsed cap and nudge out any trapped air for a tight seal.",
         "audio_file_name": "2022_jibbi_little_aeropress_step2_cap_air.m4a"
       },
       {
         "time_seconds": 95,
-        "instruction": "At 1:30 (\u224890 s) flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s.",
+        "instruction": "Flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s.",
         "short_instruction": "Flip AeroPress \u2022 Begin pressing",
-        "audio_script": "In 10 seconds, you should have flipped the AeroPress. At 1:30, flip the AeroPress carefully onto your server and begin pressing. Press steadily for about 30 seconds.",
+        "audio_script": "Use the next 30 seconds to flip onto your server and settle into a smooth, steady press.",
         "audio_file_name": "2022_jibbi_little_aeropress_step3_flip_press.m4a"
       },
       {
         "time_seconds": 125,
         "instruction": "Complete the press (target window between 1:40 and 2:10; typical yield \u224858\u201364 g concentrate).",
         "short_instruction": "Complete press \u2022 Target 58-64g",
-        "audio_script": "You have 30 seconds to complete the press. Complete the press within the target window between 1:40 and 2:10. Your typical yield should be about 58 to 64 grams of concentrate.",
+        "audio_script": "Another 30 seconds to wrap the press within that 1:40 to 2:10 window and land near 58 to 64 grams of concentrate.",
         "audio_file_name": "2022_jibbi_little_aeropress_step4_complete_press.m4a"
       },
       {
         "time_seconds": 130,
         "instruction": "Bypass the concentrate with 90 \u00b0C water until total weight reaches 150 g.",
         "short_instruction": "Add 90\u00b0C bypass water \u2022 Total 150g",
-        "audio_script": "In 5 seconds, you should have finished adding bypass water. Bypass the concentrate with 90 degrees Celsius water until the total weight reaches 150 grams.",
+        "audio_script": "Give it five quick seconds to pour in 90 degree water until the scale reads 150 grams total.",
         "audio_file_name": "2022_jibbi_little_aeropress_step5_bypass_water.m4a"
       },
       {
         "time_seconds": 135,
         "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique) if serving cold or to rapidly lower temperature.",
         "short_instruction": "Optional: Add 4 ice balls",
-        "audio_script": "In 5 seconds, you should have finished adding ice. Optional: add 4 chilled ice balls for smoother mouthfeel using the ice-bypass technique. This is useful if serving cold or to rapidly lower the temperature.",
+        "audio_script": "If you want the ice bypass finish, use these last five seconds to drop in up to four chilled ice balls.",
         "audio_file_name": "2022_jibbi_little_aeropress_step6_ice_balls.m4a"
       }
     ],
+    "what_to_expect": {
+      "description": "The 2022 World AeroPress Champion recipe by Jibbi Little represents the pinnacle of precision brewing with advanced particle distribution control. This revolutionary method uses dual grinding (Timemore for coarse stage, Kinu for refinement) combined with sieving to achieve extreme control over particle size distribution. The technique involves 35 gentle stirs for optimal saturation, precise temperature management at 90°C, and strategic bypass water up to 150g to achieve the desired texture and temperature. Expect an exceptionally clean cup with remarkable clarity, precise flavor separation, and a silky-smooth mouthfeel. This method is ideal for competitions and demonstrations, showcasing how particle distribution control can dramatically improve extraction efficiency and cup quality. The result is a coffee that highlights every nuance of the bean with unprecedented clarity and texture.",
+      "audio_file_name": "jibbi_2022_intro.m4a",
+      "audio_script": "The 2022 World AeroPress Champion recipe by Jibbi Little represents the pinnacle of precision brewing. This revolutionary method uses dual grinding combined with sieving to achieve extreme control over particle size distribution. The technique involves 35 gentle stirs for optimal saturation, precise temperature management at 90 degrees Celsius, and strategic bypass water to achieve the desired texture. Expect an exceptionally clean cup with remarkable clarity, precise flavor separation, and a silky-smooth mouthfeel. This method showcases how particle distribution control can dramatically improve extraction efficiency and cup quality."
+    },
     "equipment": [
       "AeroPress (inverted)",
       "Paper filter (rinsed)",

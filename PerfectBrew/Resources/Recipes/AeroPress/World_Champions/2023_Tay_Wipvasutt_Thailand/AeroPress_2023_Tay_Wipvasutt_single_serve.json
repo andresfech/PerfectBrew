@@ -25,50 +25,50 @@
         "time_seconds": 30,
         "instruction": "Place 16 g of grounds in the inverted AeroPress. Start timer and pour 100 g of 89 \u00b0C water over the grounds. Then stir for ~5 s to agitate and homogenize the slurry.",
         "short_instruction": "Place 16g grounds \u2022 Pour 100g 89\u00b0C water \u2022 Stir 5s",
-        "audio_script": "In 30 seconds, you should have finished stirring. Place 16 grams of grounds in the inverted AeroPress. Start your timer and pour 100 grams of 89 degrees Celsius water over the grounds. Then stir for about 5 seconds to agitate and homogenize the slurry.",
-        "audio_file_name": "2023_world_aeropress_brewing_step1.m4a"
+        "audio_script": "You have 30 seconds to pour 100 grams of 89 degrees water and stir for 5 seconds.",
+        "audio_file_name": "2023_tay_wipvasutt_step1_pour_stir.m4a"
       },
       {
         "time_seconds": 45,
         "instruction": "At 0:45, add the remaining 2 g of coffee (late addition).",
         "short_instruction": "Add 2g late coffee",
-        "audio_script": "In 15 seconds, you should have added the late coffee. At 0:45, add the remaining 2 grams of coffee. This late addition technique introduces fresh aromatic compounds without over-extracting the main body.",
-        "audio_file_name": "2023_world_aeropress_brewing_step2.m4a"
+        "audio_script": "Add the remaining 2 grams of coffee for the late addition.",
+        "audio_file_name": "2023_tay_wipvasutt_step2_late_addition.m4a"
       },
       {
         "time_seconds": 55,
         "instruction": "At 0:55, stir again for ~5 s to incorporate the late addition.",
         "short_instruction": "Stir 5s to incorporate",
-        "audio_script": "In 10 seconds, you should have finished stirring. At 0:55, stir again for about 5 seconds to incorporate the late addition. This ensures the fresh coffee grounds are properly mixed into the slurry.",
-        "audio_file_name": "2023_world_aeropress_brewing_step3.m4a"
+        "audio_script": "Stir for 5 seconds to incorporate the late addition.",
+        "audio_file_name": "2023_tay_wipvasutt_step3_stir_incorporate.m4a"
       },
       {
         "time_seconds": 65,
         "instruction": "Slightly press the plunger up to remove excess air, then securely close the cap.",
         "short_instruction": "Press out air \u2022 Close cap",
-        "audio_script": "In 10 seconds, you should have the cap closed. Slightly press the plunger up to remove excess air, then securely close the cap. This creates a proper seal for the steeping phase.",
-        "audio_file_name": "2023_world_aeropress_brewing_step4.m4a"
+        "audio_script": "Press out excess air and close the cap securely.",
+        "audio_file_name": "2023_tay_wipvasutt_step4_press_air_cap.m4a"
       },
       {
         "time_seconds": 95,
         "instruction": "Carefully flip the AeroPress and begin pressing at 1:40 (\u2248100 s). Press steadily for ~30 s. Target yield: ~75 g concentrate.",
         "short_instruction": "Flip AeroPress \u2022 Press 30s \u2022 Target 75g",
-        "audio_script": "You have 30 seconds to complete this step. Carefully flip the AeroPress and begin pressing at 1:40. Press steadily for about 30 seconds. Your target yield should be about 75 grams of concentrate.",
-        "audio_file_name": "2023_world_aeropress_brewing_step5.m4a"
+        "audio_script": "Flip the AeroPress and press steadily for 30 seconds. Target 75 grams of concentrate.",
+        "audio_file_name": "2023_tay_wipvasutt_step5_flip_press.m4a"
       },
       {
         "time_seconds": 125,
         "instruction": "Bypass the concentrate with room-temperature water until total weight reaches 115 g (first bypass).",
         "short_instruction": "Add room-temp water \u2022 Total 115g",
-        "audio_script": "In 30 seconds, you should have finished the first bypass. Bypass the concentrate with room-temperature water until the total weight reaches 115 grams. This is the first bypass that controls strength and temperature.",
-        "audio_file_name": "2023_world_aeropress_brewing_step6.m4a"
+        "audio_script": "Add room-temperature water until total weight reaches 115 grams.",
+        "audio_file_name": "2023_tay_wipvasutt_step6_first_bypass.m4a"
       },
       {
         "time_seconds": 130,
         "instruction": "Then add hot water until total weight reaches 155 g (second bypass / final tempered).",
         "short_instruction": "Add hot water \u2022 Total 155g",
-        "audio_script": "In 5 seconds, you should have finished adding hot water. Then add hot water until the total weight reaches 155 grams. This is the second bypass for final tempering and achieving the desired strength.",
-        "audio_file_name": "2023_world_aeropress_brewing_step7.m4a"
+        "audio_script": "Add hot water until total weight reaches 155 grams.",
+        "audio_file_name": "2023_tay_wipvasutt_step7_second_bypass.m4a"
       }
     ],
     "equipment": [

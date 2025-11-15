@@ -4,11 +4,31 @@ Single Recipe Audio Generator for PerfectBrew
 Generates audio for one specific recipe with organized folder structure
 """
 
-import json
 import os
+# Set OpenMP environment variables BEFORE any imports that use them
+os.environ['OMP_NUM_THREADS'] = '1'
+os.environ['MKL_NUM_THREADS'] = '1'
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
+os.environ['KMP_INIT_AT_FORK'] = 'FALSE'
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
+os.environ['TORCH_USE_CUDA_DSA'] = '0'
+
+import json
 import re
+import subprocess
+import tempfile
+import os
 from typing import Dict, List, Any
+import torch
+import numpy as np
+torch.set_num_threads(1)
 from chatterbox.tts import ChatterboxTTS
+try:
+    from scipy.io import wavfile
+    SCIPY_AVAILABLE = True
+except ImportError:
+    SCIPY_AVAILABLE = False
+    print("⚠️  scipy not available - audio conversion may fail")
 
 class SingleRecipeAudioGenerator:
     def __init__(self):
@@ -39,15 +59,67 @@ class SingleRecipeAudioGenerator:
     def _generate_audio_file(self, audio_script: str, output_path: str) -> bool:
         """Generate audio file from script."""
         try:
+            if not SCIPY_AVAILABLE:
+                print(f"    ❌ scipy not available - cannot generate audio")
+                return False
+                
             print(f"    Generating audio: {os.path.basename(output_path)}")
-            audio_data = self.tts.generate(audio_script)
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            with open(output_path, 'wb') as f:
-                f.write(audio_data)
-            print(f"    ✅ Generated: {os.path.basename(output_path)} ({len(audio_data)} bytes)")
-            return True
+            
+            # Generate audio
+            wav = self.tts.generate(audio_script)
+            
+            # Convert to numpy array if needed
+            if isinstance(wav, torch.Tensor):
+                wav = wav.cpu().numpy()
+            
+            # Ensure it's a 1D array
+            if wav.ndim > 1:
+                wav = wav.flatten()
+            
+            # Create temporary WAV file
+            with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_wav:
+                wavfile.write(temp_wav.name, 22050, (wav * 32767).astype(np.int16))
+                
+                # Convert WAV to M4A using ffmpeg
+                try:
+                    cmd = [
+                        'ffmpeg',
+                        '-i', temp_wav.name,
+                        '-c:a', 'aac',
+                        '-b:a', '128k',
+                        '-ar', '44100',
+                        '-ac', '2',
+                        '-y',
+                        output_path
+                    ]
+                    
+                    result = subprocess.run(cmd, capture_output=True, text=True)
+                    
+                    if result.returncode == 0:
+                        file_size = os.path.getsize(output_path)
+                        print(f"    ✅ Generated: {os.path.basename(output_path)} ({file_size} bytes)")
+                        success = True
+                    else:
+                        print(f"    ❌ FFmpeg conversion failed: {result.stderr}")
+                        success = False
+                        
+                except FileNotFoundError:
+                    print(f"    ❌ FFmpeg not found. Please install ffmpeg: brew install ffmpeg")
+                    success = False
+                finally:
+                    # Clean up temporary file
+                    try:
+                        os.unlink(temp_wav.name)
+                    except:
+                        pass
+            
+            return success
+            
         except Exception as e:
             print(f"    ❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
             return False
     
     def generate_recipe_audio(self, recipe_file: str, base_dir: str) -> None:

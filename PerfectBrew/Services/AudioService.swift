@@ -179,7 +179,12 @@ class AudioService: NSObject, ObservableObject {
         let subdirectories = [
             "Audio/\(brewingMethod)/\(folderName)",
             "Audio/\(brewingMethod)/World_Champions/\(folderName)",
-            "Audio/\(brewingMethod)/World_Champions/\(folderName)"
+            "Audio/\(brewingMethod)/\(folderName)/\(folderName)_AeroPress",
+            "Audio/\(brewingMethod)/\(folderName)/\(folderName)_Classic_AeroPress",
+            "Audio/\(brewingMethod)/\(folderName)/\(folderName)s_Ultimate_AeroPress",
+            "Audio/\(brewingMethod)/World_Champions/\(folderName)/\(folderName)_AeroPress",
+            "Audio/\(brewingMethod)/World_Champions/\(folderName)/\(folderName)_Classic_AeroPress",
+            "Audio/\(brewingMethod)/World_Champions/\(folderName)/\(folderName)s_Ultimate_AeroPress"
         ]
         
         for subdirectory in subdirectories {
@@ -228,13 +233,13 @@ class AudioService: NSObject, ObservableObject {
         
         // AeroPress recipes
         if title.contains("2024 World AeroPress Champion") {
-            return "2024_World_Champion"
+            return "2024_George_Stanica_Romania"
         } else if title.contains("2023 World AeroPress Champion") {
-            return "2023_World_Champion"
+            return "2023_Tay_Wipvasutt_Thailand"
         } else if title.contains("2022 World AeroPress Champion") {
             return "2022_Jibbi_Little_Australia"
         } else if title.contains("2021 World AeroPress Champion") {
-            return "2021_World_AeroPress_Champion_Tuomas_Merikanto_Finland_Inverted"
+            return "2021_Tuomas_Merikanto_Finland"
         } else if title.contains("Standard") && title.contains("1") {
             return "Standard_1_Person"
         } else if title.contains("Standard") && title.contains("2") {
@@ -246,9 +251,9 @@ class AudioService: NSObject, ObservableObject {
         } else if title.contains("Championship Concentrate") {
             return "Championship_Concentrate"
         } else if title.contains("Tim W. Classic AeroPress") {
-            return "Tim_W_Classic"
+            return "Tim_Wendelboe"
         } else if title.contains("James Hoffmann's Ultimate AeroPress") {
-            return "James_Hoffmann_Ultimate_AeroPress"
+            return "James_Hoffmann"
         }
         
         // V60 recipes
