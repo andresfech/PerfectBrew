@@ -1,6 +1,6 @@
 [
   {
-    "title": "Tetsu Kasuya 4:6 Method (Original)",
+    "title": "Tetsu Kasuya 4:6 Method (Original - Detailed)",
     "brewing_method": "V60",
     "skill_level": "Advanced",
     "rating": 4.8,
@@ -15,54 +15,68 @@
       "total_brew_time_seconds": 210
     },
     "preparation_steps": [
-      "Heat water to 92\u00b0C.",
-      "Grind 20 grams of coffee to medium-coarse consistency.",
-      "Rinse filter and preheat V60.",
-      "Add 20g coffee and level the bed."
+      "Heat water to 92°C.",
+      "Grind 20 grams of coffee to a medium-coarse setting.",
+      "Rinse filter and preheat the V60 brewer.",
+      "Add 20 g coffee and level the bed for even extraction."
     ],
     "brewing_steps": [
       {
-        "time_seconds": 0,
-        "instruction": "Start with 60 grams of water to wet the coffee and begin extraction.",
-        "short_instruction": "Pour 60g",
+        "time_seconds": 18,
+        "instruction": "First pour: Add 60 g of water steadily over the grounds. This initial pour acts as bloom and begins extraction, shaping the balance between sweetness and acidity.",
+        "short_instruction": "First pour • 60 g",
         "audio_file_name": "tetsu_step_01.m4a",
-        "audio_script": "First pour: Add 60g of water steadily over the grounds. This step begins extraction and sets sweetness and acidity balance."
+        "audio_script": "You have 18 seconds to pour 60 grams of water steadily over the grounds. Wet all the coffee evenly to set the foundation for sweetness and acidity."
       },
       {
         "time_seconds": 45,
-        "instruction": "Add 60 grams more water, pouring evenly to shape flavor balance.",
-        "short_instruction": "Pour 60g",
+        "instruction": "Second pour: Add another 60 g of water evenly across the bed. Together with the first pour, these 40% of total water control the balance of acidity and sweetness in the cup.",
+        "short_instruction": "Second pour • 60 g",
         "audio_file_name": "tetsu_step_02.m4a",
-        "audio_script": "Second pour: Add another 60g of water evenly across the bed. This continues balancing sweetness with acidity."
+        "audio_script": "You have 27 seconds to pour another 60 grams evenly across the bed. These first two pours decide whether the cup leans toward sweetness or acidity."
       },
       {
         "time_seconds": 90,
-        "instruction": "Pour 60 grams steadily. This step begins to define body and clarity.",
-        "short_instruction": "Pour 60g",
+        "instruction": "Third pour: Add 60 g of water with a steady flow. This pour starts shaping the body and clarity of the brew, guiding overall texture.",
+        "short_instruction": "Third pour • 60 g",
         "audio_file_name": "tetsu_step_03.m4a",
-        "audio_script": "Third pour: Add 60g water with a controlled, steady stream. This influences the cup's body and clarity."
+        "audio_script": "You have 45 seconds to add 60 grams with a steady flow. From here, pours begin to shape body and clarity."
       },
       {
         "time_seconds": 135,
-        "instruction": "Add 60 grams more water, keeping the pour steady and even.",
-        "short_instruction": "Pour 60g",
+        "instruction": "Fourth pour: Add 60 g of water evenly. Maintain a consistent flow to keep extraction balanced and avoid channeling.",
+        "short_instruction": "Fourth pour • 60 g",
         "audio_file_name": "tetsu_step_04.m4a",
-        "audio_script": "Fourth pour: Add 60g water evenly. Maintain consistency for balanced extraction and structure."
+        "audio_script": "You have 45 seconds to pour another 60 grams evenly. Keep your flow consistent to maintain a balanced extraction."
       },
       {
         "time_seconds": 180,
-        "instruction": "Finish with the last 60 grams of water. Let it flow through naturally.",
-        "short_instruction": "Final pour 60g",
+        "instruction": "Final pour: Add the last 60 g of water gently. Allow the bed to settle naturally as the extraction completes.",
+        "short_instruction": "Final pour • 60 g",
         "audio_file_name": "tetsu_step_05.m4a",
-        "audio_script": "Final pour: Add the last 60g of water gently. Let the bed settle and extraction complete naturally."
+        "audio_script": "You have 45 seconds to finish with the last 60 grams, pouring gently. Let the bed settle naturally as extraction completes."
       },
       {
         "time_seconds": 210,
-        "instruction": "Let the coffee drain on its own. The brew ends around three and a half minutes.",
+        "instruction": "Let the coffee drain fully. The total brew time should finish around 3 minutes 30 seconds, producing a clean and balanced cup.",
         "short_instruction": "Let drain completely",
         "audio_file_name": "tetsu_step_06.m4a",
-        "audio_script": "Allow the coffee to drain fully. The brew should finish in about 3.5 minutes with a clean, balanced cup."
+        "audio_script": "You have 30 seconds to let the coffee drain completely. Allow it to finish naturally for a clean, balanced cup."
       }
-    ]
+    ],
+    "equipment": [
+      "Hario V60 02 Brewer",
+      "V60 paper filter",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Timer"
+    ],
+    "what_to_expect": {
+      "description": "The 4:6 method by 2016 World Brewers Cup Champion Tetsu Kasuya is a revolutionary technique that gives you direct control over sweetness, acidity, and strength. The first 40% of water (120g in two 60g pours) controls the balance between sweetness and acidity—equal pours yield balance, adjusting the ratio shifts the profile. The remaining 60% (three 60g pours) determines body and strength. Expect a clean, structured cup with remarkable clarity and the ability to dial in your preferred flavor profile. This method works exceptionally well with washed coffees and medium roasts, producing a balanced cup that highlights origin characteristics without overwhelming complexity. The systematic approach makes it easier to reproduce consistent results once you find your preferred split.",
+      "audio_file_name": "tetsu_intro.m4a",
+      "audio_script": "The Tetsu Kasuya 4:6 method is a revolutionary brewing technique that puts you in control. The first 40% of your water—that's the first two pours of 60 grams each—controls the balance between sweetness and acidity. Equal pours give you balance, while adjusting this ratio lets you dial in your preferred flavor. The remaining 60%, split into three pours, determines the body and strength of your cup. Expect a clean, structured coffee with remarkable clarity. This method works exceptionally well with washed coffees and medium roasts, highlighting origin characteristics with consistency and precision."
+    },
+    "notes": "Based on Tetsu Kasuya's 2016 World Brewers Cup winning method. The key innovation is the systematic control over flavor variables through water distribution. Adjust the first two pours (40% total) to shift sweetness/acidity balance, and modify the number of remaining pours (keeping 60% total) to control strength.",
+    "servings": 1
   }
 ]

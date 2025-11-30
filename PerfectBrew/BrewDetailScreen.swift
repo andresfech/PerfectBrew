@@ -212,7 +212,7 @@ struct BrewDetailScreen: View {
                             Spacer()
                             
                             Button(action: {
-                                audioService.playNotesAudio(for: recipe.title)
+                                audioService.playNotesAudio(for: recipe.title, audioFileName: recipe.whatToExpect?.audioFileName)
                             }) {
                                 HStack(spacing: 6) {
                                     Image(systemName: "speaker.wave.2.fill")

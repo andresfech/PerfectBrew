@@ -644,15 +644,22 @@ class BrewingGuideViewModel: ObservableObject {
         currentStepDuration = stepDuration
         
         // Auto-play audio for new brewing steps (if audio is enabled and step changed)
+        let stepChanged = currentStep != previousStep
+
+        // If we changed steps and audio is still playing from the previous step, stop it
+        if stepChanged && audioService.isPlaying {
+            audioService.stopAudio()
+        }
+
         if !isPreparationPhase && 
-           currentStep != previousStep && 
+           stepChanged && 
            hasAudioForCurrentStep() && 
            !audioService.isPlaying &&
            isAudioEnabled {
             
             print("DEBUG: Auto-play conditions met:")
             print("DEBUG: - !isPreparationPhase: \(!isPreparationPhase)")
-            print("DEBUG: - currentStep != previousStep: \(currentStep != previousStep)")
+            print("DEBUG: - currentStep != previousStep: \(stepChanged)")
             print("DEBUG: - hasAudioForCurrentStep(): \(hasAudioForCurrentStep())")
             print("DEBUG: - !audioService.isPlaying: \(!audioService.isPlaying)")
             print("DEBUG: - isAudioEnabled: \(isAudioEnabled)")

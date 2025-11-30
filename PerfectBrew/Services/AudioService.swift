@@ -56,14 +56,14 @@ class AudioService: NSObject, ObservableObject {
         }
     }
     
-    func playNotesAudio(for recipeTitle: String) {
+    func playNotesAudio(for recipeTitle: String, audioFileName: String? = nil) {
         print("DEBUG: playNotesAudio called for recipe: '\(recipeTitle)'")
         
         // Stop any currently playing audio
         stopAudio()
         
-        // Get the correct notes audio filename based on recipe title
-        let notesFileName = getNotesFileName(for: recipeTitle)
+        // Get the correct notes audio filename: use provided one or fallback to mapping
+        let notesFileName = audioFileName ?? getNotesFileName(for: recipeTitle)
         print("DEBUG: Notes filename: \(notesFileName)")
         
         // Construct the audio file path for notes
@@ -92,32 +92,43 @@ class AudioService: NSObject, ObservableObject {
         
         // AeroPress notes
         if recipeTitle.contains("Tim Wendelboe") && recipeTitle.contains("AeroPress") {
-            return "Tim_W_classic_aeropress_notes.mp3"
+            return "tim_wendelboe_intro.m4a"
         } else if recipeTitle.contains("James Hoffmann") && recipeTitle.contains("AeroPress") {
-            return "James_Hoffmann_Ultimate_AeroPress_notes.mp3"
+            // Use dedicated intro file generated for James Hoffmann AeroPress
+            return "james_hoffmann_aeropress_intro.m4a"
         } else if recipeTitle.contains("2024 World AeroPress Champion") {
-            return "2024_world_aeropress_notes.mp3"
+            // Use dedicated intro file generated for George Stanica 2024
+            return "george_2024_intro.m4a"
         } else if recipeTitle.contains("2023 World AeroPress Champion") {
-            return "2023_world_aeropress_notes.mp3"
+            // Use dedicated intro file generated for Tay Wipvasutt 2023
+            return "tay_2023_intro.m4a"
         } else if recipeTitle.contains("2022 World AeroPress Champion") {
-            return "2022_world_aeropress_notes.mp3"
+            // Use dedicated intro file generated for Jibbi Little 2022
+            return "jibbi_2022_intro.m4a"
         } else if recipeTitle.contains("2021 World AeroPress Champion") {
-            return "2021_world_aeropress_notes.mp3"
+            // Use dedicated intro file generated for Tuomas Merikanto 2021
+            return "tuomas_2021_intro.m4a"
         } else if recipeTitle.contains("Championship Concentrate") {
             return "Championship_Concentrate_notes.mp3"
         }
         
         // V60 notes
         else if recipeTitle.contains("Kaldi's Coffee - Single Serve") {
-            return "single_serve_notes.wav"
+            // Use dedicated intro file generated for Kaldis Coffee Single Serve
+            return "kaldis_single_intro.m4a"
         } else if recipeTitle.contains("Kaldi's Coffee - Two People") {
             return "two_people_notes.wav"
         } else if recipeTitle.contains("Kaldi's Coffee - Three People") {
             return "three_people_notes.wav"
         } else if recipeTitle.contains("James Hoffmann V60") {
-            return "james_hoffmann_v60_notes.wav"
+            // Use dedicated intro file generated for James Hoffmann
+            return "hoffmann_intro.m4a"
         } else if recipeTitle.contains("Scott Rao V60") {
-            return "scott_rao_v60_notes.wav"
+            // Prefer per-recipe intro file to avoid generic notes.wav collisions
+            return "scott_rao_intro.m4a"
+        } else if recipeTitle.contains("Tetsu Kasuya") {
+            // Use dedicated intro file generated for Tetsu
+            return "tetsu_intro.m4a"
         } else if recipeTitle.contains("Quick Morning V60") {
             return "quick_morning_v60_notes.wav"
         }
@@ -145,33 +156,11 @@ class AudioService: NSObject, ObservableObject {
     private func getAudioPath(for fileName: String, recipeTitle: String) -> URL {
         print("DEBUG: Looking for audio file: \(fileName) for recipe: \(recipeTitle)")
         
-        // First, try to find the audio file directly in bundle root (for backward compatibility)
-        if let path = Bundle.main.url(forResource: fileName, withExtension: nil) {
-            print("DEBUG: Found audio file in bundle root: \(path)")
-            return path
-        }
-        
-        // If not found, try to find it by name without extension in bundle root
+        // Prefer structured Audio folder paths first to avoid stale bundle-root files
         let fileNameWithoutExtension = (fileName as NSString).deletingPathExtension
         let fileExtension = (fileName as NSString).pathExtension
         
-        if fileExtension.isEmpty {
-            // Try common audio extensions in bundle root
-            for ext in ["mp3", "m4a", "wav", "aac"] {
-                if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: ext) {
-                    print("DEBUG: Found audio file with extension \(ext) in bundle root: \(path)")
-                    return path
-                }
-            }
-        } else {
-            // Try with the specified extension in bundle root
-            if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: fileExtension) {
-                print("DEBUG: Found audio file with specified extension in bundle root: \(path)")
-                return path
-            }
-        }
-        
-        // If not found in bundle root, try to find it in the Audio folder structure
+        // Try to find it in the Audio folder structure
         let brewingMethod = getBrewingMethod(recipeTitle)
         let folderName = convertTitleToFolderName(recipeTitle)
         
@@ -210,6 +199,25 @@ class AudioService: NSObject, ObservableObject {
             }
         }
         
+        // Fallbacks: bundle root as last resort
+        if let path = Bundle.main.url(forResource: fileName, withExtension: nil) {
+            print("DEBUG: Found audio file in bundle root (fallback): \(path)")
+            return path
+        }
+        if !fileExtension.isEmpty {
+            if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: fileExtension) {
+                print("DEBUG: Found audio file with specified extension in bundle root (fallback): \(path)")
+                return path
+            }
+        } else {
+            for ext in ["mp3", "m4a", "wav", "aac"] {
+                if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: ext) {
+                    print("DEBUG: Found audio file with extension \(ext) in bundle root (fallback): \(path)")
+                    return path
+                }
+            }
+        }
+
         print("DEBUG: Audio file not found: \(fileName) anywhere in bundle")
         return URL(fileURLWithPath: "")
     }
@@ -274,6 +282,10 @@ class AudioService: NSObject, ObservableObject {
         } else if title.contains("Tetsu Kasuya") {
             // Map all Tetsu Kasuya V60 variants to a single folder
             return "Tetsu_Kasuya"
+        } else if title.contains("Scott Rao V60 Method (Single Serve - Detailed)") {
+            return "Scott_Rao_V60_Method_Single_Serve_Detailed"
+        } else if title.contains("Scott Rao V60 Method (Single Serve)") {
+            return "Scott_Rao_V60_Method_Single_Serve_Detailed"
         } else if title.contains("Scott Rao V60 - Two People") {
             return "Scott_Rao_V60_Two_People"
         } else if title.contains("Scott Rao V60 - Three People") {

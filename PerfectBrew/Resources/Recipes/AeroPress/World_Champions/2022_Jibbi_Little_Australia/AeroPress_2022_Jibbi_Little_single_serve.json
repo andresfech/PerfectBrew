@@ -12,7 +12,7 @@
       "temperature_celsius": 92,
       "bloom_water_grams": 94,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 135
+      "total_brew_time_seconds": 170
     },
     "preparation_steps": [
       "Prepare and sift grounds per method: coarse grind (Timemore) \u2192 refine on Kinu #4 \u2192 sift to remove fines (100\u2013200 \u00b5m).",
@@ -22,52 +22,52 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 10,
+        "time_seconds": 25,
         "instruction": "Pour 94 ml of 92 \u00b0C water evenly over the grounds. Aim to finish the pour in about 20\u201325 seconds.",
         "short_instruction": "Pour 94ml 92\u00b0C water \u2022 20\u201325s",
-        "audio_script": "You have 10 seconds, and by the end of it those 94 milliliters of 92 degree water should be spread evenly across the bed.",
+        "audio_script": "Start pouring. You have 25 seconds to evenly saturate the grounds with 94 milliliters of water.",
         "audio_file_name": "2022_jibbi_little_aeropress_step1_pour_stir.m4a"
       },
       {
-        "time_seconds": 35,
+        "time_seconds": 60,
         "instruction": "Stir gently 35 times with steady, gentle strokes to ensure full saturation.",
         "short_instruction": "Stir 35 times",
-        "audio_script": "Over the next 25 seconds, work through 35 calm stirs so every particle stays fully saturated.",
+        "audio_script": "Now stir gently 35 times. Keep it steady and calm to ensure everything is fully saturated.",
         "audio_file_name": "2022_jibbi_little_aeropress_step1b_stir_35_times.m4a"
       },
       {
-        "time_seconds": 80,
+        "time_seconds": 100,
         "instruction": "Screw on the rinsed filter cap and press out any remaining air from the chamber.",
         "short_instruction": "Screw on cap \u2022 Press out air",
-        "audio_script": "Take these 15 seconds to lock on the rinsed cap and nudge out any trapped air for a tight seal.",
+        "audio_script": "Attach the cap and press out excess air. Make sure the seal is tight.",
         "audio_file_name": "2022_jibbi_little_aeropress_step2_cap_air.m4a"
       },
       {
-        "time_seconds": 95,
-        "instruction": "Flip the AeroPress carefully onto your server and begin pressing. Press steadily for ~30 s.",
+        "time_seconds": 110,
+        "instruction": "Flip the AeroPress carefully onto your server and begin pressing.",
         "short_instruction": "Flip AeroPress \u2022 Begin pressing",
-        "audio_script": "Use the next 30 seconds to flip onto your server and settle into a smooth, steady press.",
+        "audio_script": "Carefully flip the AeroPress onto your server and get ready to press.",
         "audio_file_name": "2022_jibbi_little_aeropress_step3_flip_press.m4a"
       },
       {
-        "time_seconds": 125,
-        "instruction": "Complete the press (target window between 1:40 and 2:10; typical yield \u224858\u201364 g concentrate).",
-        "short_instruction": "Complete press \u2022 Target 58-64g",
-        "audio_script": "Another 30 seconds to wrap the press within that 1:40 to 2:10 window and land near 58 to 64 grams of concentrate.",
+        "time_seconds": 140,
+        "instruction": "Press steadily for ~30 s (target window between 1:40 and 2:10).",
+        "short_instruction": "Press steadily \u2022 30s",
+        "audio_script": "Press steadily for 30 seconds. Aim for a smooth, consistent flow.",
         "audio_file_name": "2022_jibbi_little_aeropress_step4_complete_press.m4a"
       },
       {
-        "time_seconds": 130,
+        "time_seconds": 160,
         "instruction": "Bypass the concentrate with 90 \u00b0C water until total weight reaches 150 g.",
         "short_instruction": "Add 90\u00b0C bypass water \u2022 Total 150g",
-        "audio_script": "Give it five quick seconds to pour in 90 degree water until the scale reads 150 grams total.",
+        "audio_script": "Add 90-degree water until you reach 150 grams total weight.",
         "audio_file_name": "2022_jibbi_little_aeropress_step5_bypass_water.m4a"
       },
       {
-        "time_seconds": 135,
-        "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique) if serving cold or to rapidly lower temperature.",
+        "time_seconds": 170,
+        "instruction": "Optional: add 4 chilled ice balls for smoother mouthfeel (ice-bypass technique).",
         "short_instruction": "Optional: Add 4 ice balls",
-        "audio_script": "If you want the ice bypass finish, use these last five seconds to drop in up to four chilled ice balls.",
+        "audio_script": "Finally, drop in 4 chilled ice balls if you want that signature smooth finish.",
         "audio_file_name": "2022_jibbi_little_aeropress_step6_ice_balls.m4a"
       }
     ],

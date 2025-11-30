@@ -12,7 +12,7 @@
       "temperature_celsius": 89,
       "bloom_water_grams": 100,
       "bloom_time_seconds": 0,
-      "total_brew_time_seconds": 130
+      "total_brew_time_seconds": 160
     },
     "preparation_steps": [
       "Rinse and place a paper filter in the cap, if you prefer; assemble AeroPress inverted.",
@@ -22,61 +22,67 @@
     ],
     "brewing_steps": [
       {
-        "time_seconds": 30,
+        "time_seconds": 45,
         "instruction": "Place 16 g of grounds in the inverted AeroPress. Start timer and pour 100 g of 89 \u00b0C water over the grounds. Then stir for ~5 s to agitate and homogenize the slurry.",
         "short_instruction": "Place 16g grounds \u2022 Pour 100g 89\u00b0C water \u2022 Stir 5s",
-        "audio_script": "You have 30 seconds to pour 100 grams of 89 degrees water and stir for 5 seconds.",
+        "audio_script": "You have 45 seconds to pour 100 grams of 89 degrees water and stir for 5 seconds.",
         "audio_file_name": "2023_tay_wipvasutt_step1_pour_stir.m4a"
       },
       {
-        "time_seconds": 45,
+        "time_seconds": 55,
         "instruction": "At 0:45, add the remaining 2 g of coffee (late addition).",
         "short_instruction": "Add 2g late coffee",
         "audio_script": "Add the remaining 2 grams of coffee for the late addition.",
         "audio_file_name": "2023_tay_wipvasutt_step2_late_addition.m4a"
       },
       {
-        "time_seconds": 55,
+        "time_seconds": 60,
         "instruction": "At 0:55, stir again for ~5 s to incorporate the late addition.",
         "short_instruction": "Stir 5s to incorporate",
         "audio_script": "Stir for 5 seconds to incorporate the late addition.",
         "audio_file_name": "2023_tay_wipvasutt_step3_stir_incorporate.m4a"
       },
       {
-        "time_seconds": 65,
+        "time_seconds": 100,
         "instruction": "Slightly press the plunger up to remove excess air, then securely close the cap.",
         "short_instruction": "Press out air \u2022 Close cap",
-        "audio_script": "Press out excess air and close the cap securely.",
+        "audio_script": "Press out excess air and close the cap securely. Wait until 1 minute 40.",
         "audio_file_name": "2023_tay_wipvasutt_step4_press_air_cap.m4a"
       },
       {
-        "time_seconds": 95,
+        "time_seconds": 130,
         "instruction": "Carefully flip the AeroPress and begin pressing at 1:40 (\u2248100 s). Press steadily for ~30 s. Target yield: ~75 g concentrate.",
         "short_instruction": "Flip AeroPress \u2022 Press 30s \u2022 Target 75g",
         "audio_script": "Flip the AeroPress and press steadily for 30 seconds. Target 75 grams of concentrate.",
         "audio_file_name": "2023_tay_wipvasutt_step5_flip_press.m4a"
       },
       {
-        "time_seconds": 125,
+        "time_seconds": 145,
         "instruction": "Bypass the concentrate with room-temperature water until total weight reaches 115 g (first bypass).",
         "short_instruction": "Add room-temp water \u2022 Total 115g",
         "audio_script": "Add room-temperature water until total weight reaches 115 grams.",
         "audio_file_name": "2023_tay_wipvasutt_step6_first_bypass.m4a"
       },
       {
-        "time_seconds": 130,
+        "time_seconds": 160,
         "instruction": "Then add hot water until total weight reaches 155 g (second bypass / final tempered).",
         "short_instruction": "Add hot water \u2022 Total 155g",
         "audio_script": "Add hot water until total weight reaches 155 grams.",
         "audio_file_name": "2023_tay_wipvasutt_step7_second_bypass.m4a"
       }
     ],
+    "what_to_expect": {
+      "description": "The 2023 World AeroPress Champion recipe by Tay Wipvasutt uses an inverted method with a late coffee addition to refresh aromatics and enhance complexity without over-extraction. The press yields a concentrated base that is carefully diluted in two stages—first with room-temperature water for clarity and temperature control, then with hot water for strength. Expect a clean, fragrant cup with layered sweetness, lively acidity, and a silky texture. The technique highlights aroma retention, balance, and precision suitable for competition and everyday brewing.",
+      "audio_file_name": "tay_2023_intro.m4a",
+      "audio_script": "This 2023 champion recipe uses an inverted method with a late coffee addition to refresh aromatics. Press a small, sweet concentrate and dilute in two stages—first room-temperature water for clarity and control, then hot water for strength. Expect a clean, layered cup with lively acidity and a silky texture."
+    },
     "equipment": [
       "AeroPress (inverted)",
       "Paper filter (rinsed)",
       "1ZPresso ZP6 (or other precision grinder)",
       "Digital scale",
       "Kettle (capable of 89\u00b0C)",
+      "Temperature water",
       "Timer",
       "Jar for dilutions"
     ],

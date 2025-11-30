@@ -32,7 +32,7 @@
         "time_seconds": 27,
         "instruction": "Stir the slurry 3 times (back-to-front is common in the caf\u00e9 method).",
         "short_instruction": "Stir 3 times back-to-front",
-        "audio_script": "In 7 seconds, you should have finished stirring. Now stir the slurry 3 times using a back-to-front motion, which is common in the caf\u00e9 method. This ensures the coffee grounds are fully saturated and mixed with the water.",
+        "audio_script": "Stir three times back-to-front motion.",
         "audio_file_name": "tim_wendelboe_step2_stir_backfront.m4a"
       },
       {
@@ -57,6 +57,11 @@
         "audio_file_name": "tim_wendelboe_step5_reinsert_press.m4a"
       }
     ],
+    "what_to_expect": {
+      "description": "Based on the classic recipe used at Tim Wendelboe's caf\u00e9: 14g/200g, near-boiling water, rinsed filter, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant cup highlighting the coffee's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted coffees.",
+      "audio_file_name": "tim_wendelboe_intro.m4a",
+      "audio_script": "This is the classic Tim Wendelboe AeroPress recipe. It focuses on a clean, sweet, and vibrant cup that highlights the coffee's acidity and clarity. We use a fine grind, near-boiling water, and a short steep time to produce a light, bright flavor with pronounced fruity and floral notes. This method is ideal for high-quality, single-origin light roasts, letting the unique origin character shine through with minimal bitterness."
+    },
     "equipment": [
       "AeroPress",
       "Standard AeroPress paper filter (rinsed)",

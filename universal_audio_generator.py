@@ -225,7 +225,27 @@ class UniversalAudioGenerator:
                 if not self._generate_audio_file(step, output_path):
                     success = False
         
-        # Skip notes audio generation
+        # Generate notes/what_to_expect audio
+        if include_notes and 'what_to_expect' in recipe:
+            what_to_expect = recipe['what_to_expect']
+            if isinstance(what_to_expect, dict):
+                audio_script = what_to_expect.get('audio_script')
+                if audio_script:
+                    print(f"    Using audio_script for what_to_expect ({len(audio_script)} chars)")
+                    
+                    # Use the unique audio_file_name from the recipe, but ensure it's M4A
+                    audio_file_name = what_to_expect.get('audio_file_name', "intro.m4a")
+                    # Convert any existing extension to .m4a
+                    if '.' in audio_file_name:
+                        audio_file_name = audio_file_name.rsplit('.', 1)[0] + '.m4a'
+                    else:
+                        audio_file_name = audio_file_name + '.m4a'
+                        
+                    output_path = os.path.join(recipe_output_dir, audio_file_name)
+                    if not self._generate_audio_file(what_to_expect, output_path):
+                        success = False
+                else:
+                    print(f"    ⚠️  Skipping what_to_expect: no audio_script")
         
         if success:
             print(f"🎉 Audio generation complete for: {title}")

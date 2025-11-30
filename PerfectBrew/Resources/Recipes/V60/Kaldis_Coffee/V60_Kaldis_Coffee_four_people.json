@@ -15,55 +15,61 @@
       "total_brew_time_seconds": 360
     },
     "preparation_steps": [
-      "Heat water to desired temperature (205-212°F / 96-100°C).",
+      "Heat water to 96°C.",
       "Grind 64 grams of coffee to medium-coarse consistency.",
-      "Place filter in V60 and rinse with 50-100mL of hot water to pre-heat and remove paper taste. Discard rinse water.",
+      "Place filter in V60 and rinse with hot water to pre-heat and remove paper taste. Discard rinse water.",
       "Add 64 grams of ground coffee, gently shake to level, and create a deep divot in the center."
     ],
     "brewing_steps": [
       {
         "time_seconds": 30,
-        "instruction": "Bloom: Pour 160mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed (e.g., zig-zags) to break up dry pockets.",
-        "audio_file_name": "four_people_brewing_step_01.wav",
-        "short_instruction": "Bloom 160g water • Start timer",
-        "audio_script": "Let's begin the bloom phase."
+        "instruction": "Bloom: Pour 160mL of water (2.5x coffee weight) into the divot, then move circularly to the outside grounds. Swirl the brewer immediately to distribute water, then stir through the bed to break up dry pockets.",
+        "short_instruction": "Bloom 160mL water • Swirl & stir",
+        "audio_script": "Pour 160 milliliters of hot water directly into that center divot. Pour slowly and steadily, watching as the coffee begins to bloom and release carbon dioxide. Move circularly to the outside grounds, then give the V60 a gentle swirl to distribute water evenly. Stir through the bed to break up any dry pockets.",
+        "audio_file_name": "kaldis_four_step_01.m4a"
       },
       {
         "time_seconds": 60,
         "instruction": "Main Pour: Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. Aim for 300mL in this stage, reaching 460mL total. This breaks channels and raises slurry temperature.",
-        "audio_file_name": "four_people_brewing_step_02.wav",
-        "short_instruction": "Main pour 300g • Aggressive flow",
-        "audio_script": "Now for the main pour - this is where V60 technique truly shines. Pour aggressively into the center, then spiral outward to the edges. We're targeting 300 milliliters total."
+        "short_instruction": "Main pour 300mL • Aggressive flow",
+        "audio_script": "You have 30 seconds for the main pour - this is where V60 technique truly shines. Pour aggressively, full tilt, directly into the middle, then swirl out to the edge. We're aiming for 300 milliliters in this stage, reaching 460 total. This aggressive pour breaks channels and raises slurry temperature.",
+        "audio_file_name": "kaldis_four_step_02.m4a"
       },
       {
         "time_seconds": 90,
         "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
-        "audio_file_name": "four_people_brewing_step_03.wav",
         "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
-        "audio_script": "Perfect! Now stop pouring and set your kettle aside. Take a moment to pause and observe the coffee bed. Notice how it's actively bubbling and extracting. Give the V60 a gentle swirl to flatten the coffee bed."
+        "audio_script": "In 30 seconds, stop pouring and set your kettle aside. Take a moment to pause and observe the coffee bed. Notice how it's actively bubbling and extracting. Now give your V60 dripper a gentle swirl to flatten the coffee bed for even distribution.",
+        "audio_file_name": "kaldis_four_step_03.m4a"
       },
       {
         "time_seconds": 150,
         "instruction": "Final Pour: Begin pouring very gently in the center, maintaining the water level with small circles, until 1024mL is reached. The water above the coffee may become clear.",
-        "audio_file_name": "four_people_brewing_step_04.wav",
-        "short_instruction": "Final pour to 1024g • Gentle circles",
-        "audio_script": "Time for the final pour! Now we'll pour much more gently than before. Start in the center of the coffee bed and make small, controlled circles with your kettle. Work your way up to 1024 milliliters total. Watch your scale closely."
+        "short_instruction": "Final pour to 1024mL • Gentle circles",
+        "audio_script": "Now for the final pour! Take 60 seconds to pour very gently in the center, maintaining the water level with small circles. Work your way up to 1024 milliliters total. Watch your scale closely - the water above the coffee may become clear as extraction continues.",
+        "audio_file_name": "kaldis_four_step_04.m4a"
       },
       {
-        "time_seconds": 30,
+        "time_seconds": 360,
         "instruction": "Give one more slight swirl to flatten the bed for drain down.",
-        "audio_file_name": "four_people_brewing_step_05.wav",
-        "short_instruction": "Let drain completely",
-        "audio_script": "Let the coffee drain completely at its natural pace."
+        "short_instruction": "Final swirl • Let drain completely",
+        "audio_script": "Finally, give your V60 dripper one last gentle swirl to flatten the coffee bed completely. You have the remaining time for the coffee to drain completely at its natural pace. This should finish right around the 6 minute mark.",
+        "audio_file_name": "kaldis_four_step_05.m4a"
       }
     ],
     "equipment": [
       "Hario V60 02 Brewer",
-      "scale",
-      "kettle (gooseneck preferred)",
-      "stirring device (chopstick/long stick)"
+      "V60 paper filter",
+      "Digital scale",
+      "Gooseneck kettle",
+      "Stirring device (chopstick/long stick)"
     ],
-    "notes": "Total Brew Time: 3:30 to 4:15. Perfect for 4 people.",
+    "what_to_expect": {
+      "description": "Kaldi's Coffee V60 method for four people represents the largest scale of this beginner-friendly technique. This version uses 64 grams of coffee with a 2.5:1 bloom ratio, requiring a medium-coarse grind to prevent over-extraction with the substantial dose. The aggressive main pour creates turbulence across the large coffee bed, while the gentle final pour ensures consistent extraction to 1024 milliliters. Expect a clean, balanced cup with good body and clarity, perfect for sharing among four people. The large dose allows for rich, complex flavor development while maintaining the approachable technique. This method works exceptionally well with medium to dark roasts and is ideal for entertaining or large family gatherings where you want to serve excellent coffee to everyone.",
+      "audio_file_name": "kaldis_four_intro.m4a",
+      "audio_script": "Kaldi's Coffee V60 method for four people represents the largest scale of this beginner-friendly technique. This version uses 64 grams of coffee with a 2.5:1 bloom ratio, requiring a medium-coarse grind to prevent over-extraction with the substantial dose. Expect a clean, balanced cup with good body and clarity, perfect for sharing among four people. The large dose allows for rich, complex flavor development while maintaining the approachable technique. This method works exceptionally well with medium to dark roasts and is ideal for entertaining or large family gatherings where you want to serve excellent coffee to everyone."
+    },
+    "notes": "Total Brew Time: 6:00 (360s). Perfect for 4 people. Medium-coarse grind prevents over-extraction with large dose.",
     "servings": 4
   }
 ]

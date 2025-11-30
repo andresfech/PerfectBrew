@@ -1,5 +1,17 @@
 import Foundation
 
+struct WhatToExpect: Codable {
+    let description: String
+    let audioFileName: String?
+    let audioScript: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case description
+        case audioFileName = "audio_file_name"
+        case audioScript = "audio_script"
+    }
+}
+
 struct Recipe: Codable, Identifiable {
     var id = UUID()
     let title: String
@@ -11,7 +23,8 @@ struct Recipe: Codable, Identifiable {
     let brewingSteps: [BrewingStep]
     let equipment: [String]
     let notes: String
-    let servings: Int // Nueva propiedad para cantidad de personas
+    let servings: Int
+    let whatToExpect: WhatToExpect?
     
     enum CodingKeys: String, CodingKey {
         case title
@@ -25,6 +38,7 @@ struct Recipe: Codable, Identifiable {
         case equipment
         case notes
         case servings
+        case whatToExpect = "what_to_expect"
     }
     
     // Backward compatibility - if only 'steps' is provided, treat them as brewing steps
@@ -37,8 +51,17 @@ struct Recipe: Codable, Identifiable {
         rating = try container.decode(Double.self, forKey: .rating)
         parameters = try container.decode(RecipeBrewParameters.self, forKey: .parameters)
         equipment = try container.decodeIfPresent([String].self, forKey: .equipment) ?? []
-        notes = try container.decodeIfPresent(String.self, forKey: .notes) ?? ""
-        servings = try container.decodeIfPresent(Int.self, forKey: .servings) ?? 1 // Default a 1 persona
+        servings = try container.decodeIfPresent(Int.self, forKey: .servings) ?? 1
+        
+        // Decode what_to_expect first
+        whatToExpect = try container.decodeIfPresent(WhatToExpect.self, forKey: .whatToExpect)
+        
+        // Use whatToExpect description for notes if available, otherwise fallback to notes field
+        if let wte = whatToExpect {
+            notes = wte.description
+        } else {
+            notes = try container.decodeIfPresent(String.self, forKey: .notes) ?? ""
+        }
         
         // Try to decode new structure first
         if let prepSteps = try? container.decode([String].self, forKey: .preparationSteps),
@@ -71,10 +94,11 @@ struct Recipe: Codable, Identifiable {
         try container.encode(equipment, forKey: .equipment)
         try container.encode(notes, forKey: .notes)
         try container.encode(servings, forKey: .servings)
+        try container.encodeIfPresent(whatToExpect, forKey: .whatToExpect)
     }
     
     // Regular initializer for creating instances in previews and tests
-    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String, servings: Int = 1) {
+    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String, servings: Int = 1, whatToExpect: WhatToExpect? = nil) {
         self.title = title
         self.brewingMethod = brewingMethod
         self.skillLevel = skillLevel
@@ -85,6 +109,7 @@ struct Recipe: Codable, Identifiable {
         self.equipment = equipment
         self.notes = notes
         self.servings = servings
+        self.whatToExpect = whatToExpect
     }
     
     // Función para escalar la receta según la cantidad de personas
@@ -141,7 +166,8 @@ struct Recipe: Codable, Identifiable {
             brewingSteps: scaledBrewingSteps,
             equipment: equipment,
             notes: notes,
-            servings: newServings
+            servings: newServings,
+            whatToExpect: whatToExpect
         )
     }
     
@@ -463,6 +489,7 @@ extension Recipe {
         ],
         equipment: ["V60", "Paper filter", "Kettle", "Scale", "Grinder"],
         notes: "A simple and delicious V60 recipe for beginners.",
-        servings: 1
+        servings: 1,
+        whatToExpect: nil
     )
 }

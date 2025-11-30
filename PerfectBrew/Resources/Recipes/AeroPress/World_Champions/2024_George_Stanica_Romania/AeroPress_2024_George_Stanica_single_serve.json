@@ -12,7 +12,7 @@
       "temperature_celsius": 96,
       "bloom_water_grams": 50,
       "bloom_time_seconds": 30,
-      "total_brew_time_seconds": 130
+      "total_brew_time_seconds": 155
     },
     "preparation_steps": [
       "Rinse one Aesir paper filter with hot water and fit it in the cap (removes papery taste).",
@@ -24,54 +24,59 @@
     "brewing_steps": [
       {
         "time_seconds": 35,
-        "instruction": "Start timer and pour 50 g of 96 \u00b0C water using the Melodrip (aim 5\u20136 s for the pour). Allow the coffee to bloom: wait ~30 s (bloom period ends ~00:35).",
-        "short_instruction": "Pour 50g 96\u00b0C water \u2022 Bloom 30s",
-        "audio_script": "In 35 seconds, you should have finished the bloom. Start your timer and pour 50 grams of 96 degrees Celsius water using the Melodrip. Aim for about 5 to 6 seconds for the pour. Allow the coffee to bloom and wait about 30 seconds - the bloom period ends at 35 seconds.",
+        "instruction": "Pour 50 g of 96 \u00b0C water using the Melodrip (aim 5\u20136 s for the pour). Allow the coffee to bloom.",
+        "short_instruction": "Pour 50g 96\u00b0C water \u2022 Bloom",
+        "audio_script": "Start the timer and pour 50 grams of water quickly. This first pour initiates the bloom, releasing carbon dioxide and preparing the bed for even extraction. Let it bubble and degas.",
         "audio_file_name": "2024_george_stanica_step1_bloom_pour.m4a"
       },
       {
-        "time_seconds": 41,
+        "time_seconds": 45,
         "instruction": "Pour the second 50 g of 96 \u00b0C water (again ~5\u20136 s pour).",
         "short_instruction": "Pour second 50g water",
-        "audio_script": "In 6 seconds, you should have poured the second water. Now pour the second 50 grams of 96 degrees Celsius water. Again, aim for about 5 to 6 seconds for this pour to maintain consistency.",
+        "audio_script": "Now pour the second 50 grams of water. This split pour helps control the slurry temperature.",
         "audio_file_name": "2024_george_stanica_step2_second_pour.m4a"
       },
       {
-        "time_seconds": 51,
-        "instruction": "Stir gently in a North\u2013South\u2013East\u2013West (NSEW) pattern for ~10 s to homogenize.",
-        "short_instruction": "Stir NSEW pattern \u2022 10 seconds",
-        "audio_script": "In 10 seconds, you should have finished stirring. Now stir gently in a North-South-East-West pattern for about 10 seconds to homogenize the coffee slurry. This ensures even extraction and proper mixing of the grounds.",
+        "time_seconds": 65,
+        "instruction": "Stir gently in a North\u2013South\u2013East\u2013West (NSEW) pattern for ~10 s. Then wait until 1:05.",
+        "short_instruction": "Stir NSEW pattern \u2022 Wait",
+        "audio_script": "Stir gently in a North, South, East, West pattern. This homogenizes the mixture, ensuring every ground interacts with the water evenly.",
         "audio_file_name": "2024_george_stanica_step3_nsew_stir.m4a"
       },
       {
-        "time_seconds": 65,
-        "instruction": "At 1:05 (\u224865 s) screw on the rinsed cap and gently press to remove excess air (~10 s).",
+        "time_seconds": 80,
+        "instruction": "Screw on the rinsed cap and gently press to remove excess air (~10 s).",
         "short_instruction": "Screw on cap \u2022 Press out air",
-        "audio_script": "In 14 seconds, you should have the cap on and air pressed out. At 1:05, screw on the rinsed cap and gently press to remove excess air. This should take about 10 seconds and helps create a proper seal.",
+        "audio_script": "Screw on the cap and gently press out excess air. This creates a vacuum seal to stop dripping when we flip.",
         "audio_file_name": "2024_george_stanica_step4_cap_air.m4a"
       },
       {
-        "time_seconds": 105,
-        "instruction": "Give a gentle swirl to the AeroPress, place it onto your serving vessel, and begin the slow, controlled press. Aim to finish pressing within 30\u201340 s. Target yield: ~76\u201379 g of concentrate.",
-        "short_instruction": "Swirl gently \u2022 Place on vessel \u2022 Press 30-40s",
-        "audio_script": "You have 40 seconds to complete this step. Give a gentle swirl to the AeroPress, place it onto your serving vessel, and begin the slow, controlled press. Aim to finish pressing within 30 to 40 seconds. Your target yield should be about 76 to 79 grams of concentrate.",
+        "time_seconds": 120,
+        "instruction": "Give a gentle swirl, place onto serving vessel, and press (30\u201340 s). Target yield: ~76\u201379 g.",
+        "short_instruction": "Swirl \u2022 Flip \u2022 Press 30-40s",
+        "audio_script": "Swirl gently to catch any grounds on the side, then flip onto your server. Press steadily for 30 to 40 seconds. We want a slow, controlled expression of flavor, not a rush.",
         "audio_file_name": "2024_george_stanica_step5_swirl_press.m4a"
       },
       {
-        "time_seconds": 125,
-        "instruction": "When press is complete, add warm water until total weight reaches 130\u2013135 g (bypass step).",
+        "time_seconds": 140,
+        "instruction": "Add warm water until total weight reaches 130\u2013135 g (bypass step).",
         "short_instruction": "Add warm water \u2022 Total 130-135g",
-        "audio_script": "In 20 seconds, you should have added the warm water. When the press is complete, add warm water until the total weight reaches 130 to 135 grams. This is the bypass step that dilutes the concentrate to your desired strength.",
+        "audio_script": "Add warm water until the total weight reaches 135 grams. This bypass dilutes the concentrate, opening up the flavor profile.",
         "audio_file_name": "2024_george_stanica_step6_warm_bypass.m4a"
       },
       {
-        "time_seconds": 130,
-        "instruction": "Add an additional 20\u201330 g of room-temperature 0 ppm water for balance (final total \u2248150\u2013165 g depending on target).",
-        "short_instruction": "Add room-temp water \u2022 Total 150-165g",
-        "audio_script": "In 5 seconds, you should have finished adding water. Add an additional 20 to 30 grams of room-temperature 0 parts per million water for balance. The final total should be about 150 to 165 grams depending on your target strength.",
+        "time_seconds": 155,
+        "instruction": "Add an additional 20\u201330 g of room-temperature 0 ppm water for balance.",
+        "short_instruction": "Add room-temp water \u2022 Balance",
+        "audio_script": "Finally, add 20 grams of room temperature water. This technique, called 'tempering', brings the coffee to a perfect drinking temperature immediately.",
         "audio_file_name": "2024_george_stanica_step7_room_temp_balance.m4a"
       }
     ],
+    "what_to_expect": {
+      "description": "The 2024 World AeroPress Champion recipe by George Stanica emphasizes precision and clarity. Two controlled Melodrip pours create even saturation, followed by gentle NSEW stirring and a slow press for a clean, structured concentrate. Final balance is achieved with a warm-water bypass and a touch of 0 ppm room-temperature water. Expect remarkable clarity, refined sweetness, and a balanced, elegant cup that showcases origin character without harshness.",
+      "audio_file_name": "george_2024_intro.m4a",
+      "audio_script": "This 2024 champion method focuses on precision and clarity. Use two controlled Melodrip pours, a gentle NSEW stir, and a slow press to produce a clean concentrate. Finish with warm-water bypass and a touch of 0 ppm water for balance. Expect clarity, refined sweetness, and an elegant cup."
+    },
     "equipment": [
       "AeroPress (inverted)",
       "Aesir / standard paper filter (rinsed)",
