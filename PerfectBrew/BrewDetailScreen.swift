@@ -212,22 +212,29 @@ struct BrewDetailScreen: View {
                             Spacer()
                             
                             Button(action: {
-                                audioService.playNotesAudio(for: recipe.title, audioFileName: recipe.whatToExpect?.audioFileName)
+                                audioService.toggleNotesAudio(for: recipe.title, audioFileName: recipe.whatToExpect?.audioFileName)
                             }) {
+                                let notesFileName = recipe.whatToExpect?.audioFileName ?? audioService.getNotesFileName(for: recipe.title)
+                                let isCurrentAudio = audioService.currentAudioFile == notesFileName
+                                let isPlaying = isCurrentAudio && audioService.isPlaying
+                                
                                 HStack(spacing: 6) {
-                                    Image(systemName: "speaker.wave.2.fill")
-                                        .font(.title3)
-                                        .foregroundColor(.orange)
-                                    Text("Audio")
-                                        .font(.caption)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(.orange)
+                                    Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                                        .font(.system(size: 14, weight: .semibold))
+                                    Text(isPlaying ? "Pause" : (isCurrentAudio ? "Resume" : "Listen"))
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
                                 }
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 6)
+                                .foregroundColor(isCurrentAudio ? .white : .orange)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
                                 .background(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.orange, lineWidth: 1)
+                                    Capsule()
+                                        .fill(isCurrentAudio ? Color.orange : Color.clear)
+                                )
+                                .overlay(
+                                    Capsule()
+                                        .stroke(Color.orange, lineWidth: 1.5)
                                 )
                             }
                         }

@@ -87,7 +87,35 @@ class AudioService: NSObject, ObservableObject {
         }
     }
     
-    private func getNotesFileName(for recipeTitle: String) -> String {
+    func pauseAudio() {
+        if isPlaying {
+            audioPlayer?.pause()
+            isPlaying = false
+        }
+    }
+    
+    func resumeAudio() {
+        if let player = audioPlayer, !player.isPlaying {
+            player.play()
+            isPlaying = true
+        }
+    }
+    
+    func toggleNotesAudio(for recipeTitle: String, audioFileName: String? = nil) {
+        let notesFileName = audioFileName ?? getNotesFileName(for: recipeTitle)
+        
+        if currentAudioFile == notesFileName {
+            if isPlaying {
+                pauseAudio()
+            } else {
+                resumeAudio()
+            }
+        } else {
+            playNotesAudio(for: recipeTitle, audioFileName: audioFileName)
+        }
+    }
+    
+    func getNotesFileName(for recipeTitle: String) -> String {
         // Convert recipe title to the correct notes filename
         
         // AeroPress notes
