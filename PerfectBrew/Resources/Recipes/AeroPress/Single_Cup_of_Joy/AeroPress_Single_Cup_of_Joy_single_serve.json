@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Single Cup of Joy - AeroPress",
+    "brewing_method": "AeroPress",
+    "skill_level": "Intermediate",
+    "rating": 4.8,
+    "parameters": {
+      "coffee_grams": 10,
+      "water_grams": 130,
+      "ratio": "1:13",
+      "grind_size": "Coarse (34 clicks on Comandante C40)",
+      "temperature_celsius": 93,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 240
+    },
+    "preparation_steps": [
+      "Grind 10g of coffee to a coarse setting (34 clicks on Comandante).",
+      "Assemble AeroPress in the inverted position.",
+      "Pre-heat your AeroPress and server while rinsing the paper filter.",
+      "Add the ground coffee to the chamber."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Pour 130ml of 93°C water over your coffee.",
+        "short_instruction": "Pour 130ml water",
+        "audio_script": "Start the timer. Pour 130 milliliters of 93-degree water over the coffee. Ensure all grounds are wet.",
+        "audio_file_name": "single_cup_joy_step1_pour.m4a"
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Wait patiently until 2:30. Do not stir.",
+        "short_instruction": "Wait until 2:30 • No stir",
+        "audio_script": "Now, wait patiently until the timer reaches 2 minutes and 30 seconds. Do not stir the coffee.",
+        "audio_file_name": "single_cup_joy_step2_wait.m4a"
+      },
+      {
+        "time_seconds": 240,
+        "instruction": "At 2:30, flip the AeroPress and start pressing. Aim to finish at 4:00 (90s press).",
+        "short_instruction": "Flip & Press slowly • 90s",
+        "audio_script": "Flip the AeroPress and start pressing. This is a very slow press—take your time and aim to finish exactly at the 4-minute mark.",
+        "audio_file_name": "single_cup_joy_step3_press.m4a"
+      }
+    ],
+    "what_to_expect": {
+      "description": "Inspired by SCA cupping methods, this recipe uses a coarse grind, long steep time (4 minutes), and no agitation (stirring) to bring out the best sweetness in natural and honey processed coffees. It's designed specifically for a single 10g cup that stays at the ideal temperature from start to finish.",
+      "audio_file_name": "single_cup_joy_intro.m4a",
+      "audio_script": "The Single Cup of Joy is inspired by SCA cupping methods. It uses a coarse grind, a long steep, and no agitation to highlight sweetness, especially in natural and honey processed coffees. Designed for a perfect single serving."
+    },
+    "equipment": [
+      "AeroPress (Inverted)",
+      "Paper Filter (rinsed)",
+      "Grinder",
+      "Kettle",
+      "Server or Cup",
+      "Scale"
+    ],
+    "notes": "Inspired by SCA cupping. Uses a 1:13 ratio with 10g coffee. Inverted method, coarse grind, no stirring. The long 90-second press provides the agitation needed at the end. Best for natural/honey processed beans.",
+    "servings": 1
+  }
+]
