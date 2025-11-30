@@ -137,46 +137,21 @@ class RecipeDatabase: ObservableObject {
         return recipesByMethod[methodString] ?? []
     }
     
-    func getRecipes(for method: HomeScreen.BrewMethod, servings: Int) -> [Recipe] {
+    func getRecipes(for method: HomeScreen.BrewMethod, servings: Int = 1) -> [Recipe] {
+        // NOTE: 'servings' parameter is now ignored for loading, as we only have single-serve recipes.
+        // It will be replaced by dynamic scaling in the View layer.
+        
         let methodRecipes = getRecipes(for: method)
         
-        // If no recipes found for the method, return empty array
         if methodRecipes.isEmpty {
             print("No recipes found for method: \(method.rawValue)")
             return []
         }
         
-        // Group recipes by their base title (removing serving-specific suffixes)
-        var recipesByBaseTitle: [String: [Recipe]] = [:]
-        
-        for recipe in methodRecipes {
-            // For World Champions recipes, use the full title as base title
-            let baseTitle = recipe.title.contains("World AeroPress Champion") ? recipe.title : getBaseTitle(from: recipe.title)
-            if recipesByBaseTitle[baseTitle] == nil {
-                recipesByBaseTitle[baseTitle] = []
-            }
-            recipesByBaseTitle[baseTitle]?.append(recipe)
-        }
-        
-        // For each base recipe, find the best match for the requested servings
-        var matchingRecipes: [Recipe] = []
-        
-        for (baseTitle, recipes) in recipesByBaseTitle {
-            // First, try to find an exact match for the requested servings
-            if let exactMatch = recipes.first(where: { $0.servings == servings }) {
-                matchingRecipes.append(exactMatch)
-                print("Found exact match for '\(baseTitle)' with \(servings) servings")
-            } else {
-                // If no exact match, find the closest recipe and scale it
-                let closestRecipe = findClosestRecipe(recipes, targetServings: servings)
-                let scaledRecipe = closestRecipe.scaledForServings(servings)
-                matchingRecipes.append(scaledRecipe)
-                print("Scaled '\(baseTitle)' from \(closestRecipe.servings) to \(servings) servings")
-            }
-        }
-        
-        print("Found \(matchingRecipes.count) unique recipes for \(method.rawValue) with \(servings) servings")
-        return matchingRecipes
+        // Since we deleted multi-serving recipes, we just return the base recipes.
+        // Scaling happens in the UI layer via Recipe.scaled(to:)
+        print("Found \(methodRecipes.count) base recipes for \(method.rawValue)")
+        return methodRecipes
     }
     
     // Helper function to extract base title from recipe title

@@ -1,0 +1,72 @@
+# PRD: Dynamic Recipe Scaling by Coffee Dose
+
+## 🎯 Goal
+Replace the rigid "Number of People" (1-4) filter with a dynamic "Coffee Dose" (Grams) slider. This allows users to brew any amount of coffee (e.g., 18g, 22g, 30g) using the standard recipes. The system will dynamically scale water ratios, timing, and instructions from the base recipe, eliminating the need for static "2/3/4 Person" JSON files.
+
+## 📐 Architecture Changes
+- **Frontend (`RecipeSelectionScreen`)**:
+    - Remove `ServingsChip` (1, 2, 3, 4 buttons).
+    - Add `Slider` for Coffee Grams (Range: 10g - 60g, Step: 1g).
+    - Display current selection: "Dose: 18g".
+- **Models (`Recipe`)**:
+    - Deprecate `scaledForServings(_:)`.
+    - Add `scaled(to targetCoffeeGrams: Double) -> Recipe`.
+    - Logic:
+        - Calculate `scaleFactor = targetGrams / baseGrams`.
+        - Scale `waterGrams`, `bloomWaterGrams`.
+        - Scale instruction text (Regex replacement for coffee/water amounts).
+        - Adjust `totalBrewTimeSeconds` and step times using a heuristic (e.g., time increases by 20% for every doubling of dose, or simpler linear damping).
+- **Resources**:
+    - **DELETE** all recipe JSON files suffixed with `_two_people`, `_three_people`, `_four_people` (or similar variants).
+    - Keep only the "standard" (single serve) recipes as the source of truth.
+
+## 🧩 Components
+
+### 1. UI Changes
+**Scenario**: User wants to brew a large batch (30g).
+- **Given** the Recipe Selection Screen.
+- **When** the user drags the slider to "30g".
+- **Then**:
+    - The list shows base recipes (e.g., "Tim Wendelboe") but scaled.
+    - The Recipe Card displays "30g Coffee • [Calculated]g Water".
+    - Clicking a recipe opens `BrewDetailScreen` with the *scaled* parameters and instructions.
+
+### 2. Scaling Logic
+```swift
+func scaled(to targetMass: Double) -> Recipe {
+    let factor = targetMass / self.parameters.coffeeGrams
+    // Scale water
+    let newWater = self.parameters.waterGrams * factor
+    // Scale text
+    // ... replace "15g" with "30g" in strings ...
+    return newRecipe
+}
+```
+
+## 🛠 Affected Files
+- `PerfectBrew/Models/Recipe.swift` (Add scaling logic)
+- `PerfectBrew/RecipeSelectionScreen.swift` (UI update)
+- `PerfectBrew/Resources/Recipes/...` (Delete files)
+
+## 📋 Implementation Plan
+### Phase 1: Data Cleanup & Model Logic
+- [ ] **Task 1**: Delete all static multi-serving recipe JSON files.
+- [ ] **Task 2**: Implement `Recipe.scaled(to: Double)` in `Recipe.swift`.
+- [ ] **Task 3**: Unit test scaling logic (ensure text replacement works for "Pour 200g water").
+
+### Phase 2: UI Implementation
+- [ ] **Task 1**: Update `RecipeSelectionScreen` to replace Servings Filter with Grams Slider.
+- [ ] **Task 2**: Bind the slider value to a computed property that returns scaled recipes.
+- [ ] **Task 3**: Update `RecipeCard` to display the *current* scaled parameters (Coffee/Water) instead of just static tags.
+
+### Phase 3: Refinement
+- [ ] **Task 1**: Tune time scaling heuristic (prevent 60g brews from having 10-minute timers if inappropriate).
+- [ ] **Task 2**: Verify persistence (does the scaled recipe pass correctly to `BrewDetailScreen`?).
+
+## 🛑 Non-Goals
+- Saving custom scaled recipes as new permanent files (in-memory scaling only).
+- Complex brew time physics simulation (use simple heuristics).
+
+## ✅ Success Metrics
+- User can select "18g" and see the standard AeroPress recipe updated to use 18g coffee and correct water ratio.
+- "2 People" JSONs are removed from the codebase.

@@ -4,30 +4,46 @@ struct RecipeSelectionScreen: View {
     let selectedMethod: HomeScreen.BrewMethod
     @StateObject private var recipeDatabase = RecipeDatabase()
     @State private var selectedDifficulty: Difficulty? = nil
-    @State private var selectedServings: Int = 1 // Default a 1 persona
+    @State private var selectedDoseRange: DoseRange = .medium // Default to 15-20g
     @State private var searchText = ""
     
+    enum DoseRange: String, CaseIterable {
+        case small = "< 15g"
+        case medium = "15 - 20g"
+        case large = "> 20g"
+        
+        func matches(_ grams: Double) -> Bool {
+            switch self {
+            case .small: return grams < 15
+            case .medium: return grams >= 15 && grams <= 20
+            case .large: return grams > 20
+            }
+        }
+    }
+    
     var filteredRecipes: [Recipe] {
-        var recipes = recipeDatabase.getRecipes(for: selectedMethod, servings: selectedServings)
+        // 1. Load base recipes for the method
+        var recipes = recipeDatabase.getRecipes(for: selectedMethod)
         
-        print("RecipeSelectionScreen: filteredRecipes - Base recipes: \(recipes.count)")
-        print("RecipeSelectionScreen: Selected method: \(selectedMethod.rawValue)")
-        print("RecipeSelectionScreen: Selected servings: \(selectedServings)")
+        print("RecipeSelectionScreen: Base recipes: \(recipes.count)")
         
+        // 2. Filter by dose range
+        recipes = recipes.filter { selectedDoseRange.matches($0.parameters.coffeeGrams) }
+        print("RecipeSelectionScreen: After dose filter (\(selectedDoseRange.rawValue)): \(recipes.count)")
+        
+        // 3. Filter by difficulty if selected
         if let difficulty = selectedDifficulty {
             recipes = recipes.filter { $0.difficulty == difficulty }
-            print("RecipeSelectionScreen: After difficulty filter: \(recipes.count)")
         }
         
+        // 4. Filter by search text
         if !searchText.isEmpty {
             recipes = recipes.filter { recipe in
                 recipe.title.localizedCaseInsensitiveContains(searchText) ||
                 recipe.skillLevel.localizedCaseInsensitiveContains(searchText)
             }
-            print("RecipeSelectionScreen: After search filter: \(recipes.count)")
         }
         
-        print("RecipeSelectionScreen: Final filtered recipes: \(recipes.count)")
         return recipes
     }
     
@@ -75,25 +91,23 @@ struct RecipeSelectionScreen: View {
                 .padding(.horizontal)
             }
             
-            // Servings Filter
+            // Coffee Dose Filter
             VStack(alignment: .leading, spacing: 8) {
-                Text("Cantidad de personas")
+                Text("Amount of Coffee (grams)")
                     .font(.headline)
                     .foregroundColor(.primary)
                     .padding(.horizontal)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 12) {
-                        ForEach(1...4, id: \.self) { servings in
-                            ServingsChip(
-                                servings: servings,
-                                isSelected: selectedServings == servings,
-                                action: { selectedServings = servings }
-                            )
-                        }
+                HStack(spacing: 12) {
+                    ForEach(DoseRange.allCases, id: \.self) { range in
+                        DoseRangeChip(
+                            title: range.rawValue,
+                            isSelected: selectedDoseRange == range,
+                            action: { selectedDoseRange = range }
+                        )
                     }
-                    .padding(.horizontal)
                 }
+                .padding(.horizontal)
             }
             
             // Debug info
@@ -137,7 +151,7 @@ struct RecipeSelectionScreen: View {
                         Text("Selected method: \(selectedMethod.rawValue)")
                             .font(.caption)
                             .foregroundColor(.red)
-                        Text("Selected servings: \(selectedServings)")
+                        Text("Selected dose range: \(selectedDoseRange.rawValue)")
                             .font(.caption)
                             .foregroundColor(.red)
                         Text("All recipes in DB: \(recipeDatabase.recipes.count)")
@@ -200,25 +214,22 @@ struct FilterChip: View {
     }
 }
 
-struct ServingsChip: View {
-    let servings: Int
+struct DoseRangeChip: View {
+    let title: String
     let isSelected: Bool
     let action: () -> Void
     
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 4) {
-                Image(systemName: servings == 1 ? "person.fill" : "person.2.fill")
-                    .font(.caption)
-                Text("\(servings)")
-                    .font(.caption)
-                    .fontWeight(.medium)
-            }
-            .foregroundColor(isSelected ? .white : .primary)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(isSelected ? Color.blue : Color.gray.opacity(0.2))
-            .cornerRadius(16)
+            Text(title)
+                .font(.subheadline) // Slightly larger for touch target
+                .fontWeight(.medium)
+                .foregroundColor(isSelected ? .white : .primary)
+                .frame(maxWidth: .infinity) // Make them equal width if in a grid, or flexible
+                .padding(.vertical, 10)
+                .padding(.horizontal, 12)
+                .background(isSelected ? Color.brown : Color.gray.opacity(0.1)) // Brown for coffee context
+                .cornerRadius(8) // More squared like the screenshot
         }
     }
 }
@@ -247,16 +258,14 @@ struct RecipeCard: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
             
-            // Servings indicator
-            if recipe.servings > 1 {
-                HStack(spacing: 4) {
-                    Image(systemName: "person.2.fill")
-                        .font(.caption2)
-                        .foregroundColor(.blue)
-                    Text("\(recipe.servings) personas")
-                        .font(.caption2)
-                        .foregroundColor(.blue)
-                }
+            // Dose indicator
+            HStack(spacing: 4) {
+                Image(systemName: "scalemass.fill")
+                    .font(.caption2)
+                    .foregroundColor(.blue)
+                Text("\(Int(recipe.parameters.coffeeGrams))g")
+                    .font(.caption2)
+                    .foregroundColor(.blue)
             }
             
             // Rating Stars

@@ -112,49 +112,51 @@ struct Recipe: Codable, Identifiable {
         self.whatToExpect = whatToExpect
     }
     
-    // Función para escalar la receta según la cantidad de personas
-    func scaledForServings(_ newServings: Int) -> Recipe {
-        guard newServings > 0 && newServings <= 4 else { return self }
-        
-        print("DEBUG: Scaling recipe '\(title)' from \(servings) to \(newServings) servings")
-        print("DEBUG: Original coffee: \(parameters.coffeeGrams)g, water: \(parameters.waterGrams)g")
-        
-        // Si la receta ya está diseñada para la cantidad de personas solicitada, no escalar
-        if servings == newServings {
-            print("DEBUG: Recipe already designed for \(newServings) servings, returning as-is")
+    // MARK: - Dynamic Scaling Logic
+    
+    /// Scales the recipe parameters and instructions to match a target coffee dose.
+    /// - Parameter targetCoffeeGrams: The desired amount of coffee in grams.
+    /// - Returns: A new Recipe instance with scaled parameters and instructions.
+    func scaled(to targetCoffeeGrams: Double) -> Recipe {
+        // Avoid scaling if the target is the same (with small epsilon for float comparison)
+        if abs(targetCoffeeGrams - parameters.coffeeGrams) < 0.1 {
+            print("DEBUG: Target dose \(targetCoffeeGrams)g matches base recipe, returning as-is")
             return self
         }
         
-        // Si la receta está diseñada para más personas de las solicitadas, escalar hacia abajo
-        let scaleFactor = Double(newServings) / Double(servings)
-        print("DEBUG: Scale factor: \(scaleFactor)")
+        // Avoid scaling to unrealistic values
+        let safeTarget = max(5.0, min(100.0, targetCoffeeGrams))
+        let scaleFactor = safeTarget / parameters.coffeeGrams
         
-        // Escalar parámetros de la receta
+        print("DEBUG: Scaling recipe '\(title)' from \(parameters.coffeeGrams)g to \(safeTarget)g (Factor: \(String(format: "%.2f", scaleFactor)))")
+        
+        // Scale numeric parameters
         let scaledParameters = RecipeBrewParameters(
-            coffeeGrams: parameters.coffeeGrams * scaleFactor,
+            coffeeGrams: safeTarget,
             waterGrams: parameters.waterGrams * scaleFactor,
             ratio: parameters.ratio,
-            grindSize: adjustGrindSizeForServings(parameters.grindSize, servings: newServings),
+            grindSize: parameters.grindSize, // Keep grind size description static for now, or consider dynamic adjustment logic later
             temperatureCelsius: parameters.temperatureCelsius,
             bloomWaterGrams: parameters.bloomWaterGrams * scaleFactor,
-            bloomTimeSeconds: adjustStepTime(parameters.bloomTimeSeconds, servings: newServings),
-            totalBrewTimeSeconds: adjustStepTime(parameters.totalBrewTimeSeconds, servings: newServings)
+            bloomTimeSeconds: parameters.bloomTimeSeconds, // Keep timing static for simplicity in this phase
+            totalBrewTimeSeconds: parameters.totalBrewTimeSeconds // Keep timing static for simplicity in this phase
         )
         
-        // Escalar pasos de preparación de manera inteligente
+        // Scale preparation steps text
         let scaledPreparationSteps = preparationSteps.map { step in
-            scalePreparationStepIntelligently(step, scaleFactor: scaleFactor, originalCoffee: parameters.coffeeGrams, originalWater: parameters.waterGrams)
+            scaleText(step, scaleFactor: scaleFactor, originalCoffee: parameters.coffeeGrams, originalWater: parameters.waterGrams)
         }
         
-        // Escalar pasos de preparación de manera inteligente
+        // Scale brewing steps instructions
         let scaledBrewingSteps = brewingSteps.map { step in
             BrewingStep(
-                timeSeconds: adjustStepTime(step.timeSeconds, servings: newServings),
-                instruction: scaleBrewingStepIntelligently(step.instruction, scaleFactor: scaleFactor, originalCoffee: parameters.coffeeGrams, originalWater: parameters.waterGrams)
+                timeSeconds: step.timeSeconds, // Keep timing static
+                instruction: scaleText(step.instruction, scaleFactor: scaleFactor, originalCoffee: parameters.coffeeGrams, originalWater: parameters.waterGrams),
+                shortInstruction: step.shortInstruction.map { scaleText($0, scaleFactor: scaleFactor, originalCoffee: parameters.coffeeGrams, originalWater: parameters.waterGrams) },
+                audioFileName: step.audioFileName,
+                audioScript: step.audioScript
             )
         }
-        
-        print("DEBUG: Scaled coffee: \(scaledParameters.coffeeGrams)g, water: \(scaledParameters.waterGrams)g")
         
         return Recipe(
             title: title,
@@ -166,189 +168,75 @@ struct Recipe: Codable, Identifiable {
             brewingSteps: scaledBrewingSteps,
             equipment: equipment,
             notes: notes,
-            servings: newServings,
+            servings: servings, // Deprecated concept, but keeping for model compatibility
             whatToExpect: whatToExpect
         )
     }
     
-    // Función auxiliar para ajustar el tamaño del molido según la cantidad de personas
-    private func adjustGrindSizeForServings(_ originalGrindSize: String, servings: Int) -> String {
-        if servings <= 2 {
-            return originalGrindSize
-        } else if servings == 3 {
-            // Para 3 personas, hacer el molido ligeramente más grueso
-            return originalGrindSize.replacingOccurrences(of: "fine", with: "medium-fine", options: .caseInsensitive)
-                .replacingOccurrences(of: "medium-fine", with: "medium", options: .caseInsensitive)
-        } else {
-            // Para 4 personas, hacer el molido más grueso
-            return originalGrindSize.replacingOccurrences(of: "fine", with: "medium", options: .caseInsensitive)
-                .replacingOccurrences(of: "medium-fine", with: "medium-coarse", options: .caseInsensitive)
-                .replacingOccurrences(of: "medium", with: "medium-coarse", options: .caseInsensitive)
-        }
-    }
-    
-    // Función auxiliar para ajustar el tiempo de bloom
-    private func adjustBloomTimeForServings(_ originalTime: Int, servings: Int) -> Int {
-        if servings <= 2 {
-            return originalTime
-        } else if servings == 3 {
-            return originalTime + 15 // 15 segundos más
-        } else {
-            return originalTime + 30 // 30 segundos más
-        }
-    }
-    
-    // Función auxiliar para ajustar el tiempo total de preparación
-    private func adjustBrewTimeForServings(_ originalTime: Int, servings: Int) -> Int {
-        if servings <= 2 {
-            return originalTime
-        } else if servings == 3 {
-            return originalTime + 30 // 30 segundos más
-        } else {
-            return originalTime + 60 // 1 minuto más
-        }
-    }
-    
-    // Función auxiliar para ajustar el tiempo de cada paso
-    private func adjustStepTime(_ originalTime: Int, servings: Int) -> Int {
-        if servings <= 2 {
-            return originalTime
-        } else if servings == 3 {
-            return Int(Double(originalTime) * 1.2) // 20% más de tiempo
-        } else {
-            return Int(Double(originalTime) * 1.4) // 40% más de tiempo
-        }
-    }
-    
-    // Función auxiliar para escalar pasos de preparación
-    private func scalePreparationStep(_ step: String, scaleFactor: Double) -> String {
-        // Buscar números en el texto y escalarlos
-        var scaledStep = step
+    /// Helper to scale numeric values found within instruction text.
+    private func scaleText(_ text: String, scaleFactor: Double, originalCoffee: Double, originalWater: Double) -> String {
+        var scaledText = text
         
-        print("DEBUG: Scaling step: '\(step)' with factor: \(scaleFactor)")
+        // Detect and scale coffee amounts (e.g., "15g", "15 g", "15 grams")
+        // Using a heuristic: match numbers close to originalCoffee
+        let coffeeInt = Int(originalCoffee)
+        let coffeePattern = "\\b\(coffeeInt)\\s*(?:g|grams?)\\b"
         
-        // Patrones específicos para cantidades de café y agua
-        let coffeePatterns = [
-            (regex: "Grind\\s+(\\d+)\\s+grams?\\s+of\\s+coffee", unit: "grams of coffee"),
-            (regex: "Moler\\s+(\\d+)\\s+gramos?\\s+de\\s+café", unit: "gramos de café"),
-            (regex: "Add\\s+(\\d+)\\s+grams?\\s+of\\s+ground\\s+coffee", unit: "grams of ground coffee"),
-            (regex: "Agregar\\s+(\\d+)\\s+gramos?\\s+de\\s+café\\s+molido", unit: "gramos de café molido"),
-            (regex: "\\b(\\d+)\\s*g\\s+of\\s+coffee\\b", unit: "g of coffee"),
-            (regex: "\\b(\\d+)\\s*gramos\\s+de\\s+café\\b", unit: "gramos de café"),
-            (regex: "\\b(\\d+)\\s*grams\\s+of\\s+coffee\\b", unit: "grams of coffee"),
-            (regex: "\\b(\\d+)\\s*g\\s+café\\b", unit: "g café"),
-            (regex: "\\b(\\d+)\\s*g\\s+coffee\\b", unit: "g coffee")
-        ]
-        
-        let waterPatterns = [
-            (regex: "Pour\\s+(\\d+)\\s*mL\\s+of\\s+water", unit: "mL of water"),
-            (regex: "Verter\\s+(\\d+)\\s*mL\\s+de\\s+agua", unit: "mL de agua"),
-            (regex: "Bloom:\\s+Pour\\s+(\\d+)\\s*mL\\s+of\\s+water", unit: "mL of water"),
-            (regex: "Bloom:\\s+Verter\\s+(\\d+)\\s*mL\\s+de\\s+agua", unit: "mL de agua"),
-            (regex: "\\b(\\d+)\\s*ml\\s+of\\s+water\\b", unit: "ml of water"),
-            (regex: "\\b(\\d+)\\s*mL\\s+of\\s+water\\b", unit: "mL of water"),
-            (regex: "\\b(\\d+)\\s*ml\\s+de\\s+agua\\b", unit: "ml de agua"),
-            (regex: "\\b(\\d+)\\s*mL\\s+de\\s+agua\\b", unit: "mL de agua")
-        ]
-        
-        // Escalar cantidades de café
-        for pattern in coffeePatterns {
-            if let regex = try? NSRegularExpression(pattern: pattern.regex, options: .caseInsensitive) {
-                let range = NSRange(location: 0, length: scaledStep.utf16.count)
-                let matches = regex.matches(in: scaledStep, options: [], range: range)
-                
-                for match in matches.reversed() {
-                    if let range = Range(match.range(at: 1), in: scaledStep) {
-                        let number = Double(scaledStep[range]) ?? 0
-                        let scaledNumber = number * scaleFactor
-                        let roundedNumber = Int(round(scaledNumber))
-                        
-                        print("DEBUG: Found coffee amount \(number), scaling to \(roundedNumber)")
-                        scaledStep.replaceSubrange(range, with: "\(roundedNumber)")
-                    }
-                }
-            }
-        }
-        
-        // Escalar cantidades de agua
-        for pattern in waterPatterns {
-            if let regex = try? NSRegularExpression(pattern: pattern.regex, options: .caseInsensitive) {
-                let range = NSRange(location: 0, length: scaledStep.utf16.count)
-                let matches = regex.matches(in: scaledStep, options: [], range: range)
-                
-                for match in matches.reversed() {
-                    if let range = Range(match.range(at: 1), in: scaledStep) {
-                        let number = Double(scaledStep[range]) ?? 0
-                        let scaledNumber = number * scaleFactor
-                        let roundedNumber = Int(round(scaledNumber))
-                        
-                        print("DEBUG: Found water amount \(number), scaling to \(roundedNumber)")
-                        scaledStep.replaceSubrange(range, with: "\(roundedNumber)")
-                    }
-                }
-            }
-        }
-        
-        print("DEBUG: Scaled step result: '\(scaledStep)'")
-        return scaledStep
-    }
-    
-    // Función auxiliar para escalar pasos de preparación
-    private func scaleBrewingStep(_ step: String, scaleFactor: Double) -> String {
-        // Similar a scalePreparationStep pero para pasos de preparación
-        return scalePreparationStep(step, scaleFactor: scaleFactor)
-    }
-    
-    // Función auxiliar para escalar pasos de preparación de manera inteligente
-    private func scalePreparationStepIntelligently(_ step: String, scaleFactor: Double, originalCoffee: Double, originalWater: Double) -> String {
-        var scaledStep = step
-        
-        print("DEBUG: Intelligently scaling step: '\(step)' with factor: \(scaleFactor)")
-        
-        // Solo escalar números que coincidan exactamente con las cantidades originales de café o agua
-        let coffeeAmount = Int(originalCoffee)
-        let waterAmount = Int(originalWater)
-        
-        // Escalar cantidad de café usando regex más robusto
-        let coffeeRegex = "\\b\(coffeeAmount)\\s*(?:grams?|g)\\s+of\\s+coffee\\b"
-        if let regex = try? NSRegularExpression(pattern: coffeeRegex, options: .caseInsensitive) {
-            let range = NSRange(location: 0, length: scaledStep.utf16.count)
-            let matches = regex.matches(in: scaledStep, options: [], range: range)
-            
+        if let regex = try? NSRegularExpression(pattern: coffeePattern, options: .caseInsensitive) {
+            let matches = regex.matches(in: scaledText, range: NSRange(scaledText.startIndex..., in: scaledText))
+            // Iterate backwards to avoid range invalidation
             for match in matches.reversed() {
-                if let range = Range(match.range, in: scaledStep) {
-                    let scaledAmount = Int(Double(coffeeAmount) * scaleFactor)
-                    let replacement = scaledStep[range].replacingOccurrences(of: "\(coffeeAmount)", with: "\(scaledAmount)")
-                    scaledStep.replaceSubrange(range, with: replacement)
-                    print("DEBUG: Scaled coffee amount from \(coffeeAmount) to \(scaledAmount)")
+                if let range = Range(match.range, in: scaledText) {
+                    let newAmount = Int(round(originalCoffee * scaleFactor))
+                    // Replace only the number part, keep the unit
+                    let originalString = String(scaledText[range])
+                    let replacedString = originalString.replacingOccurrences(of: "\(coffeeInt)", with: "\(newAmount)")
+                    scaledText.replaceSubrange(range, with: replacedString)
                 }
             }
         }
         
-        // Escalar cantidad de agua usando regex más robusto
-        let waterRegex = "\\b\(waterAmount)\\s*(?:grams?|g|ml|mL)\\s+of\\s+water\\b"
-        if let regex = try? NSRegularExpression(pattern: waterRegex, options: .caseInsensitive) {
-            let range = NSRange(location: 0, length: scaledStep.utf16.count)
-            let matches = regex.matches(in: scaledStep, options: [], range: range)
-            
+        // Detect and scale water amounts (e.g., "250g", "250ml", "250 ml")
+        // Using a heuristic: match numbers close to originalWater
+        let waterInt = Int(originalWater)
+        let waterPattern = "\\b\(waterInt)\\s*(?:g|ml|grams?|milliliters?)\\b"
+        
+        if let regex = try? NSRegularExpression(pattern: waterPattern, options: .caseInsensitive) {
+            let matches = regex.matches(in: scaledText, range: NSRange(scaledText.startIndex..., in: scaledText))
             for match in matches.reversed() {
-                if let range = Range(match.range, in: scaledStep) {
-                    let scaledAmount = Int(Double(waterAmount) * scaleFactor)
-                    let replacement = scaledStep[range].replacingOccurrences(of: "\(waterAmount)", with: "\(scaledAmount)")
-                    scaledStep.replaceSubrange(range, with: replacement)
-                    print("DEBUG: Scaled water amount from \(waterAmount) to \(scaledAmount)")
+                if let range = Range(match.range, in: scaledText) {
+                    let newAmount = Int(round(originalWater * scaleFactor))
+                    let originalString = String(scaledText[range])
+                    let replacedString = originalString.replacingOccurrences(of: "\(waterInt)", with: "\(newAmount)")
+                    scaledText.replaceSubrange(range, with: replacedString)
                 }
             }
         }
         
-        print("DEBUG: Intelligently scaled step result: '\(scaledStep)'")
-        return scaledStep
+        // Also detect bloom water if distinct (e.g., "pour 30g for bloom")
+        // This is a bit riskier if bloom amount == coffee amount, but acceptable for heuristic
+        // Note: The previous implementation had specific patterns. We can keep using general pattern matching for numbers
+        // but centered around known parameter values to reduce false positives.
+        
+        return scaledText
+    }
+
+    // DEPRECATED: Legacy scaling by servings count
+    // Keeping temporarily to avoid breaking existing calls during migration
+    func scaledForServings(_ newServings: Int) -> Recipe {
+       // ... legacy logic ... 
+       // For now, just return self or simple logic, as we are moving to gram-based scaling.
+       // Ideally, we should map servings to grams (e.g. 1 -> base, 2 -> 2*base) and call scaled(to:)
+       let targetGrams = parameters.coffeeGrams * Double(newServings) / Double(servings)
+       return scaled(to: targetGrams)
     }
     
-    // Función auxiliar para escalar pasos de preparación de manera inteligente
-    private func scaleBrewingStepIntelligently(_ step: String, scaleFactor: Double, originalCoffee: Double, originalWater: Double) -> String {
-        return scalePreparationStepIntelligently(step, scaleFactor: scaleFactor, originalCoffee: originalCoffee, originalWater: originalWater)
+    /* Old implementation commented out for reference or deletion in cleanup phase
+    func scaledForServings(_ newServings: Int) -> Recipe {
+        guard newServings > 0 && newServings <= 4 else { return self }
+        // ... (rest of old code)
     }
+    */
     
     var difficulty: Difficulty {
         switch skillLevel.lowercased() {
