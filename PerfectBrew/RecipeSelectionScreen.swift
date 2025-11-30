@@ -25,11 +25,8 @@ struct RecipeSelectionScreen: View {
         // 1. Load base recipes for the method
         var recipes = recipeDatabase.getRecipes(for: selectedMethod)
         
-        print("RecipeSelectionScreen: Base recipes: \(recipes.count)")
-        
         // 2. Filter by dose range
         recipes = recipes.filter { selectedDoseRange.matches($0.parameters.coffeeGrams) }
-        print("RecipeSelectionScreen: After dose filter (\(selectedDoseRange.rawValue)): \(recipes.count)")
         
         // 3. Filter by difficulty if selected
         if let difficulty = selectedDifficulty {
@@ -110,26 +107,6 @@ struct RecipeSelectionScreen: View {
                 .padding(.horizontal)
             }
             
-            // Debug info
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Debug Info:")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                Text("Total recipes in DB: \(recipeDatabase.recipes.count)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                Text("Recipes for \(selectedMethod.rawValue): \(recipeDatabase.getRecipes(for: selectedMethod).count)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                Text("Filtered recipes: \(filteredRecipes.count)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-            }
-            .padding(.horizontal)
-            .padding(.vertical, 8)
-            .background(Color.gray.opacity(0.1))
-            .cornerRadius(8)
-            
             // Recipes Section
             if filteredRecipes.isEmpty {
                 VStack(spacing: 16) {
@@ -142,28 +119,6 @@ struct RecipeSelectionScreen: View {
                     Text("Try adjusting your search or filters")
                         .font(.body)
                         .foregroundColor(.secondary)
-                    
-                    // Additional debug info
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Debug: Why no recipes?")
-                            .font(.caption)
-                            .foregroundColor(.red)
-                        Text("Selected method: \(selectedMethod.rawValue)")
-                            .font(.caption)
-                            .foregroundColor(.red)
-                        Text("Selected dose range: \(selectedDoseRange.rawValue)")
-                            .font(.caption)
-                            .foregroundColor(.red)
-                        Text("All recipes in DB: \(recipeDatabase.recipes.count)")
-                            .font(.caption)
-                            .foregroundColor(.red)
-                        Text("Recipes by method: \(recipeDatabase.recipesByMethod.keys.joined(separator: ", "))")
-                            .font(.caption)
-                            .foregroundColor(.red)
-                    }
-                    .padding()
-                    .background(Color.red.opacity(0.1))
-                    .cornerRadius(8)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
@@ -187,10 +142,7 @@ struct RecipeSelectionScreen: View {
         }
         .navigationBarHidden(true)
         .onAppear {
-            print("RecipeSelectionScreen: Appeared for method: \(selectedMethod.rawValue)")
-            
-            print("RecipeSelectionScreen: Recipe database has \(recipeDatabase.recipes.count) total recipes")
-            print("RecipeSelectionScreen: Recipes for \(selectedMethod.rawValue): \(recipeDatabase.getRecipes(for: selectedMethod).count)")
+            // Removed debug print statements
         }
     }
 }
