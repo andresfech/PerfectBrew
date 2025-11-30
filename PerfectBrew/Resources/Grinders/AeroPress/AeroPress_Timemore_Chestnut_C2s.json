@@ -1,0 +1,16 @@
+{
+  "name": "Timemore Chestnut C2s",
+  "method": "AeroPress",
+  "settings": {
+    "default": "13-14 clicks",
+    "recipes": {
+      "Tim Wendelboe Classic AeroPress": "12 clicks",
+      "James Hoffmann's Ultimate AeroPress": "14 clicks",
+      "2022 World AeroPress Champion - Jibbi Little (Australia) - Inverted": "26 clicks",
+      "2021 World AeroPress Champion - Tuomas Merikanto (Finland) - Inverted": "14 clicks",
+      "2023 World AeroPress Champion - Tay Wipvasutt (Thailand) - Inverted": "22 clicks",
+      "2024 World AeroPress Champion - George Stanica (Romania) - Inverted": "24 clicks",
+      "AeroPress Championship Concentrate": "10 clicks"
+    }
+  }
+}

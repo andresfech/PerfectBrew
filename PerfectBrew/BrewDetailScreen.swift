@@ -3,6 +3,8 @@ import SwiftUI
 struct BrewDetailScreen: View {
     let recipe: Recipe
     @StateObject private var audioService = AudioService()
+    @StateObject private var grinderService = GrinderService.shared
+    @AppStorage("selectedGrinder") private var selectedGrinder: String = "None"
     
     var body: some View {
         ScrollView {
@@ -102,11 +104,47 @@ struct BrewDetailScreen: View {
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                                 .textCase(.uppercase)
+                            
+                            Spacer()
+                            
+                            // Grinder Selector
+                            Menu {
+                                Button("None (Description)", action: { selectedGrinder = "None" })
+                                ForEach(grinderService.availableGrinders, id: \.self) { grinder in
+                                    Button(grinder, action: { selectedGrinder = grinder })
+                                }
+                            } label: {
+                                HStack(spacing: 4) {
+                                    Text(selectedGrinder == "None" ? "Grinder Brand" : selectedGrinder)
+                                        .font(.caption)
+                                        .fontWeight(.medium)
+                                    Image(systemName: "chevron.down")
+                                        .font(.caption2)
+                                }
+                                .foregroundColor(.purple)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.purple.opacity(0.1))
+                                .cornerRadius(8)
+                            }
                         }
-                        Text(recipe.parameters.grindSize)
-                            .font(.body)
-                            .foregroundColor(.primary)
-                            .multilineTextAlignment(.leading)
+                        
+                        if selectedGrinder != "None" {
+                            Text(grinderService.getSetting(for: selectedGrinder, recipe: recipe))
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.primary)
+                            
+                            Text(recipe.parameters.grindSize)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.leading)
+                        } else {
+                            Text(recipe.parameters.grindSize)
+                                .font(.body)
+                                .foregroundColor(.primary)
+                                .multilineTextAlignment(.leading)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(16)

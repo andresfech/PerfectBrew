@@ -1,0 +1,10 @@
+{
+  "name": "Timemore Chestnut C2s",
+  "method": "French Press",
+  "settings": {
+    "default": "24-26 clicks",
+    "recipes": {
+      "James Hoffmann's French Press Method": "24 clicks"
+    }
+  }
+}

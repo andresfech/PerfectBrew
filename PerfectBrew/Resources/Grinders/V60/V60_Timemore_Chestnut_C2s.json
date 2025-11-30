@@ -1,0 +1,11 @@
+{
+  "name": "Timemore Chestnut C2s",
+  "method": "V60",
+  "settings": {
+    "default": "16-18 clicks",
+    "recipes": {
+      "James Hoffmann V60 - Single Serve": "16 clicks",
+      "Tetsu Kasuya 4:6 Method (Original - Detailed)": "24 clicks"
+    }
+  }
+}
