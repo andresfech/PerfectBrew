@@ -1,0 +1,68 @@
+[
+  {
+    "title": "14g Two-Cup Scaled Down",
+    "brewing_method": "V60",
+    "skill_level": "Beginner",
+    "rating": 4.6,
+    "parameters": {
+      "coffee_grams": 14,
+      "water_grams": 240,
+      "ratio": "1:17",
+      "grind_size": "Medium",
+      "temperature_celsius": 92,
+      "bloom_water_grams": 30,
+      "bloom_time_seconds": 30,
+      "total_brew_time_seconds": 210
+    },
+    "preparation_steps": [
+      "Heat water to 92°C (197°F)",
+      "Grind 14g of medium roast coffee (medium)",
+      "Rinse filter and pre-heat V60",
+      "Add coffee to V60 and tare scale"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Pour 30g water for bloom. Wait 30s.",
+        "short_instruction": "Bloom 30g • Wait 30s",
+        "audio_script": "Start timer. Pour 30 grams of water for the bloom. Wait for 30 seconds. This is a standard, reliable bloom.",
+        "audio_file_name": "two_cup_scaled_14g_step1.m4a"
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Pour to 105g total.",
+        "short_instruction": "Pour to 105g",
+        "audio_script": "Start your first main pour. Bring the total weight up to 105 grams. Pour steadily in a circle.",
+        "audio_file_name": "two_cup_scaled_14g_step2.m4a"
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Pour to 170g total.",
+        "short_instruction": "Pour to 170g",
+        "audio_script": "Second pour. Bring the weight up to 170 grams. Keep the water level in the cone relatively high.",
+        "audio_file_name": "two_cup_scaled_14g_step3.m4a"
+      },
+      {
+        "time_seconds": 210,
+        "instruction": "Final pour to 240g total.",
+        "short_instruction": "Pour to 240g",
+        "audio_script": "Final pour. Reach your target weight of 240 grams. Let it draw down fully. You're aiming for a total time between 3 minutes and 3 minutes 30 seconds.",
+        "audio_file_name": "two_cup_scaled_14g_step4.m4a"
+      }
+    ],
+    "equipment": [
+      "V60 Brewer",
+      "Paper Filter",
+      "Scale",
+      "Kettle",
+      "Timer"
+    ],
+    "what_to_expect": {
+      "description": "An easy-to-master ratio and technique, perfect for those moving up slightly from the smallest doses. The 1:17 ratio provides a lighter, tea-like body that highlights the coffee's origin characteristics.",
+      "audio_file_name": "two_cup_scaled_14g_notes.m4a",
+      "audio_script": "This 14-gram recipe is a great starting point if you want a slightly larger cup than the micro-doses. The 1 to 17 ratio gives you a delicate, tea-like body that really lets the bean's character shine."
+    },
+    "notes": "Easy ratio to scale. Good starting point if moving up from 10–12g.",
+    "servings": 1
+  }
+]

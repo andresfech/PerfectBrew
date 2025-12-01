@@ -1,0 +1,76 @@
+[
+  {
+    "title": "10g Cafec Slow Filter",
+    "brewing_method": "V60",
+    "skill_level": "Advanced",
+    "rating": 4.5,
+    "parameters": {
+      "coffee_grams": 10,
+      "water_grams": 160,
+      "ratio": "1:16",
+      "grind_size": "Medium",
+      "temperature_celsius": 93,
+      "bloom_water_grams": 30,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 180
+    },
+    "preparation_steps": [
+      "Heat water to 93°C (200°F)",
+      "Grind 10g of light/medium roast coffee (medium)",
+      "Use Cafec T-92 (Light Roast) filter if available",
+      "Rinse filter and pre-heat V60",
+      "Add coffee to V60 and tare scale"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 45,
+        "instruction": "Pour 30g water for bloom.",
+        "short_instruction": "Bloom 30g",
+        "audio_script": "Start timer. Pour 30 grams for the bloom. You have 45 seconds. The T-92 filters flow slower, allowing for better saturation.",
+        "audio_file_name": "cafec_slow_10g_step1.m4a"
+      },
+      {
+        "time_seconds": 60,
+        "instruction": "Pour to 60g total.",
+        "short_instruction": "Pour to 60g",
+        "audio_script": "Pour to reach 60 grams by the 1 minute mark. Keep it slow.",
+        "audio_file_name": "cafec_slow_10g_step2.m4a"
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Pour to 100g total.",
+        "short_instruction": "Pour to 100g",
+        "audio_script": "Continue pouring to 100 grams by 1 minute 30 seconds. The filter is doing the work of restricting the flow for you.",
+        "audio_file_name": "cafec_slow_10g_step3.m4a"
+      },
+      {
+        "time_seconds": 135,
+        "instruction": "Final pour to 160g total.",
+        "short_instruction": "Pour to 160g",
+        "audio_script": "Pour the remaining water to reach 160 grams total by 2 minutes 15 seconds. Maintain a steady stream.",
+        "audio_file_name": "cafec_slow_10g_step4.m4a"
+      },
+      {
+        "time_seconds": 180,
+        "instruction": "Let draw down.",
+        "short_instruction": "Draw down",
+        "audio_script": "Let it draw down. It should finish around 3 minutes. This method gives you high extraction without the risk of channeling.",
+        "audio_file_name": "cafec_slow_10g_step5.m4a"
+      }
+    ],
+    "equipment": [
+      "V60 Brewer",
+      "Cafec T-92 Filters (or standard V60)",
+      "Scale",
+      "Kettle",
+      "Timer"
+    ],
+    "what_to_expect": {
+      "description": "Specifically designed for use with Cafec T-92 slow-flow filters. These filters artificially slow down the brew, allowing you to use a standard grind size even with a small 10g dose, preventing the common 'too fast' drawdown issue.",
+      "audio_file_name": "cafec_slow_10g_notes.m4a",
+      "audio_script": "This recipe leverages Cafec T-92 filters, which are designed to flow slowly. This is perfect for small 10-gram doses because it prevents the water from rushing through too fast, giving you a rich, developed cup without grinding perfectly fine."
+    },
+    "notes": "The Cafec T-92 filters (designed for light roasts) work better for small V60 doses because they slow the flow rate and prevent clogging.",
+    "servings": 1
+  }
+]

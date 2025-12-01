@@ -5,7 +5,17 @@
     "default": "16-18 clicks",
     "recipes": {
       "James Hoffmann V60 - Single Serve": "16 clicks",
-      "Tetsu Kasuya 4:6 Method (Original - Detailed)": "24 clicks"
+      "Tetsu Kasuya 4:6 Method (Original - Detailed)": "24 clicks",
+      "10g Standard Light Roast": "18 clicks",
+      "12g Extended Bloom": "24 clicks",
+      "12g James Hoffmann Scaled Down": "18 clicks",
+      "10g Micro-Dose High Agitation": "20 clicks",
+      "14g Two-Cup Scaled Down": "20 clicks",
+      "10g Cafec Slow Filter": "20 clicks",
+      "12g Mugen Technique": "18 clicks",
+      "10g Slow Pour Single Stream": "24 clicks",
+      "14g \"121 Recipe\"": "26 clicks",
+      "12g Slow Drawdown Minimal Pour": "20 clicks"
     }
   }
 }

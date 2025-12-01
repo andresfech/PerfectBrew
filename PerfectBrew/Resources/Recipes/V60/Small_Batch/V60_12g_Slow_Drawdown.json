@@ -1,0 +1,68 @@
+[
+  {
+    "title": "12g Slow Drawdown Minimal Pour",
+    "brewing_method": "V60",
+    "skill_level": "Intermediate",
+    "rating": 4.5,
+    "parameters": {
+      "coffee_grams": 12,
+      "water_grams": 200,
+      "ratio": "1:16.7",
+      "grind_size": "Medium",
+      "temperature_celsius": 93,
+      "bloom_water_grams": 36,
+      "bloom_time_seconds": 35,
+      "total_brew_time_seconds": 180
+    },
+    "preparation_steps": [
+      "Heat water to 93°C (199°F)",
+      "Grind 12g of medium roast coffee (medium)",
+      "Rinse filter and pre-heat V60",
+      "Add coffee to V60 and tare scale"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 35,
+        "instruction": "Pour 36g water for bloom. Minimal agitation.",
+        "short_instruction": "Bloom 36g • Gentle",
+        "audio_script": "Start timer. Pour 36 grams for the bloom. Be gentle—minimal agitation is the goal here.",
+        "audio_file_name": "slow_drawdown_12g_step1.m4a"
+      },
+      {
+        "time_seconds": 65,
+        "instruction": "Pour to 130g total.",
+        "short_instruction": "Pour to 130g",
+        "audio_script": "Pour smoothly to reach 130 grams by 1 minute and 5 seconds. Keep the stream low and steady.",
+        "audio_file_name": "slow_drawdown_12g_step2.m4a"
+      },
+      {
+        "time_seconds": 85,
+        "instruction": "Final pour to 200g total.",
+        "short_instruction": "Pour to 200g",
+        "audio_script": "Pour the rest to reach 200 grams by 1 minute 25 seconds. Avoid turbulence.",
+        "audio_file_name": "slow_drawdown_12g_step3.m4a"
+      },
+      {
+        "time_seconds": 180,
+        "instruction": "Let draw down.",
+        "short_instruction": "Draw down",
+        "audio_script": "Let it draw down naturally. By minimizing agitation, we keep the fines from clogging the paper, leading to a smooth finish.",
+        "audio_file_name": "slow_drawdown_12g_step4.m4a"
+      }
+    ],
+    "equipment": [
+      "V60 Brewer",
+      "Paper Filter",
+      "Scale",
+      "Gooseneck Kettle",
+      "Timer"
+    ],
+    "what_to_expect": {
+      "description": "This method relies on minimal agitation to prevent fine migration and clogging, which is crucial for maintaining flow rate in small doses without using a coarse grind.",
+      "audio_file_name": "slow_drawdown_12g_notes.m4a",
+      "audio_script": "Turbulence is the enemy of small doses. This recipe uses a gentle hand and minimal agitation to keep the bed structured, preventing clogging and ensuring a clean, consistent brew."
+    },
+    "notes": "Use a gooseneck kettle for precise control. The key is keeping everything as smooth as possible to avoid turbulence, which causes clogging with small doses.",
+    "servings": 1
+  }
+]

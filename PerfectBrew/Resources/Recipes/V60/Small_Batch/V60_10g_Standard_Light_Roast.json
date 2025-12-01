@@ -1,0 +1,75 @@
+[
+  {
+    "title": "10g Standard Light Roast",
+    "brewing_method": "V60",
+    "skill_level": "Intermediate",
+    "rating": 4.5,
+    "parameters": {
+      "coffee_grams": 10,
+      "water_grams": 160,
+      "ratio": "1:16",
+      "grind_size": "Medium-fine",
+      "temperature_celsius": 96,
+      "bloom_water_grams": 30,
+      "bloom_time_seconds": 45,
+      "total_brew_time_seconds": 180
+    },
+    "preparation_steps": [
+      "Heat water to 96°C (205°F)",
+      "Grind 10g of light to medium roast coffee (medium-fine)",
+      "Rinse filter and pre-heat V60",
+      "Add coffee to V60 and tare scale"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 45,
+        "instruction": "Pour 30g water for bloom. Swirl gently.",
+        "short_instruction": "Bloom 30g • Swirl",
+        "audio_script": "Start your timer. Pour 30 grams of water for the bloom and give it a gentle swirl. You have 45 seconds. This releases CO2 and prepares the bed for extraction.",
+        "audio_file_name": "standard_light_10g_step1.m4a"
+      },
+      {
+        "time_seconds": 80,
+        "instruction": "Pour to 70g slowly.",
+        "short_instruction": "Pour to 70g",
+        "audio_script": "Pour slowly in a spiral until you reach 70 grams. Keep the stream gentle to avoid agitation.",
+        "audio_file_name": "standard_light_10g_step2.m4a"
+      },
+      {
+        "time_seconds": 110,
+        "instruction": "Pour to 110g slowly.",
+        "short_instruction": "Pour to 110g",
+        "audio_script": "Continue pouring slowly until you reach 110 grams. Maintain that consistent, low agitation stream.",
+        "audio_file_name": "standard_light_10g_step3.m4a"
+      },
+      {
+        "time_seconds": 140,
+        "instruction": "Pour to 140g slowly.",
+        "short_instruction": "Pour to 140g",
+        "audio_script": "Pour again, bringing the weight up to 140 grams. Slow and steady wins this race.",
+        "audio_file_name": "standard_light_10g_step4.m4a"
+      },
+      {
+        "time_seconds": 180,
+        "instruction": "Final pour to 160g. Let draw down.",
+        "short_instruction": "Pour to 160g • Draw down",
+        "audio_script": "Final pour. Bring the total weight to 160 grams. Now let it draw down. Aim to finish between 2 minutes 30 and 3 minutes.",
+        "audio_file_name": "standard_light_10g_step5.m4a"
+      }
+    ],
+    "equipment": [
+      "V60 Brewer",
+      "Paper Filter",
+      "Scale",
+      "Kettle",
+      "Timer"
+    ],
+    "what_to_expect": {
+      "description": "A precision recipe for small 10g doses. By using multiple slow pours, we maintain the 1:16 ratio without bypassing the coffee bed, ensuring a high extraction even with less coffee.",
+      "audio_file_name": "standard_light_10g_notes.m4a",
+      "audio_script": "This recipe is designed for the 10-gram dose. By keeping your pours slow and split into stages, we prevent water from bypassing the coffee, ensuring you get a rich, full extraction even with a small amount of beans."
+    },
+    "notes": "Keep pours slow to prevent bypass. This maintains the 1:16 ratio that works well for smaller doses.",
+    "servings": 1
+  }
+]
