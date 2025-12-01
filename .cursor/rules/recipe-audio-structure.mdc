@@ -9,7 +9,7 @@ Every recipe in PerfectBrew MUST follow this exact three-tier text structure:
 - **Purpose**: Clean, concise instruction shown in the brewing interface
 - **Format**: Direct, actionable steps
 - **Example**: 
-  ```
+  ```text
   "Pour 40mL hot water in slow spiral.
   Start from center, work outward.
   Complete pour in 15 seconds."
@@ -22,43 +22,53 @@ Every recipe in PerfectBrew MUST follow this exact three-tier text structure:
 - **Example**: `"Next: Wait for bloom to complete"`
 
 ### 🎵 **3. Audio Script (TTS Generation)**
-- **Purpose**: Rich, immersive narration for professional audio generation
-- **Requirements**:
-  - Must be **engaging and descriptive**
-  - Include **sensory details** (sound, visual, aroma cues)
-  - Use **professional barista terminology**
-  - **CRITICAL**: Audio generation uses ONLY this text - no truncation, no rewriting
-  - Must fit within the `time_seconds` allocated for the step
-  - Include timing guidance and technique details
+- **Purpose**: Rich, immersive narration that guides the user through time and technique.
+- **CRITICAL**: Audio generation uses ONLY this text - no truncation, no rewriting.
 
-### 📝 **JSON Structure**
+#### ⏱️ **Requirement A: Audible Time Cues**
+Since users may not be looking at the screen, you MUST include verbal time cues. Vary the phrasing to avoid repetition:
+- *"You have 10 seconds to complete this pour."*
+- *"In 15 seconds, we will stir."*
+- *"Aim to finish by the 30-second mark."*
+- *"Take your time, you have 20 seconds."*
+- *"Start pouring now. 10 seconds remaining."*
+
+#### 🎓 **Requirement B: Educational & Engaging**
+Explain **WHY** an action is taken. Use the available time to educate the user on the process:
+- *"...this bloom releases CO2, which improves sweetness."*
+- *"...pouring slowly ensures even saturation for a balanced cup."*
+- *"...agitation here helps extract the fruity notes."*
+- *"...the vacuum seal prevents dripping, keeping the temperature stable."*
+
+#### ⏳ **Requirement C: Time Constraints**
+- **Strict Limit**: The spoken text MUST fit within the `time_seconds` allocated.
+- **Rule of Thumb**: ~2.5 words per second.
+- **Priority**: If time is tight, prioritize the instruction and time cue over the educational content. Do NOT risk cutting off the audio.
+
+### 📝 **JSON Structure Example**
 ```json
 {
   "time_seconds": 45,
   "instruction": "Pour 40mL hot water in slow spiral.\nStart from center, work outward.\nComplete pour in 15 seconds.",
   "short_instruction": "Next: Wait for bloom to complete",
-  "audio_file_name": "brewing_step_01.wav",
-  "audio_script": "Let's begin the bloom phase. Pour 40 milliliters of hot water in a slow, deliberate spiral motion. Start from the very center of the coffee bed and work your way outward in concentric circles. You should hear a gentle sizzling as the water hits the fresh grounds - that's the CO2 being released. Complete this pour in about 15 seconds, ensuring all grounds are evenly saturated."
+  "audio_file_name": "brewing_step_01.m4a",
+  "audio_script": "Start your timer. Pour 40 milliliters of hot water in a slow spiral. You have 15 seconds to complete this. This bloom phase releases carbon dioxide, preparing the bed for even extraction. Listen for the gentle fizz—that's the gas escaping."
 }
 ```
 
 ## 🚨 **Critical Rules**
 
-1. **Audio Generation**: The TTS system uses EXACTLY the `audio_script` content - no modifications
-2. **Time Constraints**: `audio_script` must be manually sized to fit `time_seconds`
-3. **No Truncation**: Never allow automatic truncation of audio content
-4. **Consistency**: All recipes must follow this structure without exception
-5. **Manual Validation**: Always verify audio script length matches step duration before generation
+1. **Audio Generation**: The TTS system uses EXACTLY the `audio_script` content.
+2. **Time Constraints**: `audio_script` must be manually sized to fit `time_seconds`.
+3. **No Truncation**: Never allow automatic truncation of audio content.
+4. **Consistency**: All recipes must follow this structure without exception.
+5. **Manual Validation**: Always verify audio script length matches step duration before generation.
 
 ## 🎯 **Quality Standards**
 
-- **Current Step**: Clear, actionable, concise
-- **Short Description**: Anticipatory, brief, helpful
-- **Audio Script**: Immersive, professional, perfectly timed
-
-This structure ensures:
-- ✅ Clean UI experience
-- ✅ Helpful step previews  
-- ✅ Rich audio narration
-- ✅ No audio cutoffs
-- ✅ Professional brewing guidance
+- **Current Step**: Clear, actionable, concise.
+- **Short Description**: Anticipatory, brief, helpful.
+- **Audio Script**: 
+    - ✅ **Audible Time Cues** (Varied phrasing)
+    - ✅ **Educational Value** (Explain the "Why")
+    - ✅ **Perfectly Timed** (No cutoffs)

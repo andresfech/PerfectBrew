@@ -25,27 +25,37 @@
       {
         "time_seconds": 25,
         "instruction": "Start timer and pour 480g hot water in slow spiral",
-        "short_instruction": "Pour 480g in slow spiral"
+        "short_instruction": "Pour 480g in slow spiral",
+        "audio_script": "Start your timer. Pour 480 grams of hot water in a slow, deliberate spiral. You have 25 seconds. Covering all the grounds ensures even extraction.",
+        "audio_file_name": "verve_french_press_step1.m4a"
       },
       {
         "time_seconds": 55,
         "instruction": "Stir gently with wooden spoon to saturate all grounds",
-        "short_instruction": "Stir with wooden spoon"
+        "short_instruction": "Stir with wooden spoon",
+        "audio_script": "Stir gently with a wooden spoon. You have 30 seconds. Make sure all the coffee is fully saturated.",
+        "audio_file_name": "verve_french_press_step2.m4a"
       },
       {
         "time_seconds": 85,
         "instruction": "Place lid on top, do not press plunger",
-        "short_instruction": "Place lid • Do not press"
+        "short_instruction": "Place lid • Do not press",
+        "audio_script": "Place the lid on top to retain heat, but do not press the plunger yet. Let the coffee steep.",
+        "audio_file_name": "verve_french_press_step3.m4a"
       },
       {
         "time_seconds": 385,
         "instruction": "Wait 5 minutes for full extraction",
-        "short_instruction": "Wait 5 minutes • Full extraction"
+        "short_instruction": "Wait 5 minutes • Full extraction",
+        "audio_script": "Now wait for 5 minutes. This time allows for a full, robust extraction, developing the coffee's body and sweetness.",
+        "audio_file_name": "verve_french_press_step4.m4a"
       },
       {
         "time_seconds": 420,
         "instruction": "Press plunger down slowly, pour within 15 seconds",
-        "short_instruction": "Press slowly • Pour within 15s"
+        "short_instruction": "Press slowly • Pour within 15s",
+        "audio_script": "Press the plunger down slowly. Pour immediately within 15 seconds to enjoy the coffee at its peak.",
+        "audio_file_name": "verve_french_press_step5.m4a"
       }
     ],
     "equipment": [
@@ -55,6 +65,11 @@
       "Timer",
       "Wooden spoon for stirring"
     ],
+    "what_to_expect": {
+      "description": "Verve Coffee's French Press method emphasizes sustainability and community. The wooden spoon prevents scratching, while the precise timing and medium-coarse grind create a balanced cup with excellent body and clarity.",
+      "audio_file_name": "verve_french_press_notes.wav",
+      "audio_script": "Verve Coffee combines sustainability with quality. Using a wooden spoon and precise timing, this method delivers a balanced cup with excellent body and clarity."
+    },
     "notes": "Verve Coffee's French Press method emphasizes sustainability and community. The wooden spoon prevents scratching, while the precise timing and medium-coarse grind create a balanced cup with excellent body and clarity.",
     "servings": 1
   }

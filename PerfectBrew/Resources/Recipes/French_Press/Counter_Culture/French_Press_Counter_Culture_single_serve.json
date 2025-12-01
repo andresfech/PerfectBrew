@@ -25,27 +25,37 @@
       {
         "time_seconds": 25,
         "instruction": "Start timer and pour 496g hot water in circular motion",
-        "short_instruction": "Pour 496g in circular motion"
+        "short_instruction": "Pour 496g in circular motion",
+        "audio_script": "Start the timer. Pour 496 grams of hot water in a steady circular motion. You have 25 seconds. Wetting the grounds evenly is crucial for a balanced extraction.",
+        "audio_file_name": "counter_culture_french_press_step1.m4a"
       },
       {
         "time_seconds": 55,
         "instruction": "Stir gently with wooden spoon to saturate all grounds",
-        "short_instruction": "Stir with wooden spoon"
+        "short_instruction": "Stir with wooden spoon",
+        "audio_script": "Use a wooden spoon to stir gently. You have 30 seconds. Ensure every bit of coffee is wet to prevent dry pockets that could lead to uneven flavor.",
+        "audio_file_name": "counter_culture_french_press_step2.m4a"
       },
       {
         "time_seconds": 85,
         "instruction": "Place lid on top, do not press plunger",
-        "short_instruction": "Place lid • Do not press"
+        "short_instruction": "Place lid • Do not press",
+        "audio_script": "Place the lid on top to keep the heat in, but do not press the plunger yet. Let it steep.",
+        "audio_file_name": "counter_culture_french_press_step3.m4a"
       },
       {
         "time_seconds": 410,
         "instruction": "Wait 5.4 minutes for full extraction",
-        "short_instruction": "Wait 5.4 minutes • Full extraction"
+        "short_instruction": "Wait 5.4 minutes • Full extraction",
+        "audio_script": "Now wait until the timer hits 6 minutes and 50 seconds total. This long steep extracts the deep, rich flavors characteristic of Counter Culture's method.",
+        "audio_file_name": "counter_culture_french_press_step4.m4a"
       },
       {
         "time_seconds": 450,
         "instruction": "Press plunger down slowly, pour within 20 seconds",
-        "short_instruction": "Press slowly • Pour within 20s"
+        "short_instruction": "Press slowly • Pour within 20s",
+        "audio_script": "Press the plunger down slowly and steadily. Aim to pour within 20 seconds. Enjoy the rich, full-bodied result.",
+        "audio_file_name": "counter_culture_french_press_step5.m4a"
       }
     ],
     "equipment": [
@@ -55,6 +65,11 @@
       "Timer",
       "Wooden spoon for stirring"
     ],
+    "what_to_expect": {
+      "description": "Counter Culture's French Press method emphasizes sustainability and quality. The wooden spoon prevents scratching, while the precise timing and medium-coarse grind create a balanced cup with excellent body and clarity.",
+      "audio_file_name": "counter_culture_french_press_notes.wav",
+      "audio_script": "Counter Culture emphasizes quality and sustainability. This method uses a wooden spoon and precise timing to create a balanced, full-bodied cup."
+    },
     "notes": "Counter Culture's French Press method emphasizes sustainability and quality. The wooden spoon prevents scratching, while the precise timing and medium-coarse grind create a balanced cup with excellent body and clarity.",
     "servings": 1
   }

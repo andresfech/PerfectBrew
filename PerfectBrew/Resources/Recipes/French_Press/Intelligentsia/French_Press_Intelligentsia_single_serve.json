@@ -25,27 +25,37 @@
       {
         "time_seconds": 20,
         "instruction": "Start timer and pour 464g hot water evenly over grounds",
-        "short_instruction": "Pour 464g hot water evenly"
+        "short_instruction": "Pour 464g hot water evenly",
+        "audio_script": "Start the timer. Pour 464 grams of hot water evenly over the grounds. You have 20 seconds. Ensure everything is wet quickly.",
+        "audio_file_name": "intelligentsia_french_press_step1.m4a"
       },
       {
         "time_seconds": 45,
         "instruction": "Stir gently with bamboo spoon to saturate grounds",
-        "short_instruction": "Stir with bamboo spoon"
+        "short_instruction": "Stir with bamboo spoon",
+        "audio_script": "Stir gently with a bamboo spoon. You have 25 seconds. Bamboo is preferred as it doesn't sap heat like metal, keeping the slurry temperature stable.",
+        "audio_file_name": "intelligentsia_french_press_step2.m4a"
       },
       {
         "time_seconds": 70,
         "instruction": "Place lid on top, do not press plunger",
-        "short_instruction": "Place lid • Do not press"
+        "short_instruction": "Place lid • Do not press",
+        "audio_script": "Place the lid on top to insulate, but do not press yet. Let the coffee work its magic.",
+        "audio_file_name": "intelligentsia_french_press_step3.m4a"
       },
       {
         "time_seconds": 295,
         "instruction": "Wait 3.75 minutes for extraction",
-        "short_instruction": "Wait 3.75 minutes • Extraction"
+        "short_instruction": "Wait 3.75 minutes • Extraction",
+        "audio_script": "Wait for 3 minutes and 45 seconds. Intelligentsia uses a slightly finer grind and shorter steep time for a cleaner, brighter cup.",
+        "audio_file_name": "intelligentsia_french_press_step4.m4a"
       },
       {
         "time_seconds": 330,
         "instruction": "Press plunger down slowly, pour immediately",
-        "short_instruction": "Press slowly • Pour immediately"
+        "short_instruction": "Press slowly • Pour immediately",
+        "audio_script": "Press the plunger down slowly. Pour immediately into your favorite mug. Enjoy the clarity.",
+        "audio_file_name": "intelligentsia_french_press_step5.m4a"
       }
     ],
     "equipment": [
@@ -55,6 +65,11 @@
       "Timer",
       "Bamboo spoon for stirring"
     ],
+    "what_to_expect": {
+      "description": "Intelligentsia's French Press method uses medium grind and shorter extraction time to create a bright, clean cup while maintaining the characteristic body. The bamboo spoon prevents scratching and adds a touch of elegance.",
+      "audio_file_name": "intelligentsia_french_press_notes.wav",
+      "audio_script": "Intelligentsia uses a medium grind and a shorter steep to achieve a brighter, cleaner French Press. It balances body with clarity perfectly."
+    },
     "notes": "Intelligentsia's French Press method uses medium grind and shorter extraction time to create a bright, clean cup while maintaining the characteristic body. The bamboo spoon prevents scratching and adds a touch of elegance.",
     "servings": 1
   }

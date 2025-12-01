@@ -195,6 +195,7 @@ class AudioService: NSObject, ObservableObject {
         // Try different subdirectory approaches
         let subdirectories = [
             "Audio/\(brewingMethod)/\(folderName)",
+            "Resources/Audio/\(brewingMethod)/\(folderName)",
             "Audio/\(brewingMethod)/World_Champions/\(folderName)",
             "Audio/\(brewingMethod)/\(folderName)/\(folderName)_AeroPress",
             "Audio/\(brewingMethod)/\(folderName)/\(folderName)_Classic_AeroPress",
@@ -205,6 +206,8 @@ class AudioService: NSObject, ObservableObject {
         ]
         
         for subdirectory in subdirectories {
+            print("DEBUG: Checking subdirectory: '\(subdirectory)'") // DEBUG LOG
+            
             // Try with full filename
             if let url = Bundle.main.url(forResource: fileName, withExtension: nil, subdirectory: subdirectory) {
                 print("DEBUG: Found audio file in subdirectory '\(subdirectory)': \(url)")
@@ -215,6 +218,14 @@ class AudioService: NSObject, ObservableObject {
             if let url = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: fileExtension.isEmpty ? "mp3" : fileExtension, subdirectory: subdirectory) {
                 print("DEBUG: Found audio file in subdirectory '\(subdirectory)' with extension: \(url)")
                 return url
+            }
+            
+            // Try with common audio extensions if the specific one failed (mismatch between JSON and file)
+            for ext in ["m4a", "mp3", "wav", "aac"] {
+                if let url = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: ext, subdirectory: subdirectory) {
+                    print("DEBUG: Found audio file via extension fallback in subdir '\(subdirectory)': \(url)")
+                    return url
+                }
             }
         }
         
@@ -228,21 +239,31 @@ class AudioService: NSObject, ObservableObject {
         }
         
         // Fallbacks: bundle root as last resort
+        
+        // 1. Try exactly as requested (full filename)
         if let path = Bundle.main.url(forResource: fileName, withExtension: nil) {
-            print("DEBUG: Found audio file in bundle root (fallback): \(path)")
+            print("DEBUG: Found audio file in bundle root (exact match): \(path)")
             return path
         }
+        
+        // 2. Try with parsed components
         if !fileExtension.isEmpty {
             if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: fileExtension) {
-                print("DEBUG: Found audio file with specified extension in bundle root (fallback): \(path)")
+                print("DEBUG: Found audio file in bundle root (parsed extension): \(path)")
                 return path
             }
-        } else {
-            for ext in ["mp3", "m4a", "wav", "aac"] {
-                if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: ext) {
-                    print("DEBUG: Found audio file with extension \(ext) in bundle root (fallback): \(path)")
-                    return path
-                }
+        }
+        
+        // 3. Try fallback extensions (CRITICAL: Do this even if extension was provided, in case of mismatch)
+        for ext in ["m4a", "mp3", "wav", "aac"] {
+            // Skip if we already checked this extension in step 2
+            if !fileExtension.isEmpty && ext.lowercased() == fileExtension.lowercased() {
+                continue
+            }
+            
+            if let path = Bundle.main.url(forResource: fileNameWithoutExtension, withExtension: ext) {
+                print("DEBUG: Found audio file via extension fallback in bundle root: \(path)")
+                return path
             }
         }
 
@@ -257,7 +278,8 @@ class AudioService: NSObject, ObservableObject {
         } else if title.contains("V60") || title.contains("v60") {
             return "V60"
         } else if title.contains("French Press") || title.contains("french press") {
-            return "FrenchPress"
+            // Updated to match directory structure "French_Press"
+            return "French_Press"
         }
         
         // Default to AeroPress for backward compatibility
@@ -265,88 +287,32 @@ class AudioService: NSObject, ObservableObject {
     }
     
     private func convertTitleToFolderName(_ title: String) -> String {
-        // Convert recipe title to folder name format
+        // Convert recipe title to folder name format dynamically
+        // Matching Python script logic:
+        // 1. Remove special characters (keep alphanumerics and spaces)
+        // 2. Replace spaces with underscores
         
-        // AeroPress recipes
-        if title.contains("2024 World AeroPress Champion") {
-            return "2024_George_Stanica_Romania"
-        } else if title.contains("2023 World AeroPress Champion") {
-            return "2023_Tay_Wipvasutt_Thailand"
-        } else if title.contains("2022 World AeroPress Champion") {
-            return "2022_Jibbi_Little_Australia"
-        } else if title.contains("2021 World AeroPress Champion") {
-            return "2021_Tuomas_Merikanto_Finland"
-        } else if title.contains("Standard") && title.contains("1") {
-            return "Standard_1_Person"
-        } else if title.contains("Standard") && title.contains("2") {
-            return "Standard_2_Person"
-        } else if title.contains("Inverted") && title.contains("1") {
-            return "Inverted_1_Person"
-        } else if title.contains("Inverted") && title.contains("2") {
-            return "Inverted_2_Person"
-        } else if title.contains("Championship Concentrate") {
-            return "Championship_Concentrate"
-        } else if title.contains("Tim W. Classic AeroPress") {
-            return "Tim_Wendelboe"
-        } else if title.contains("James Hoffmann's Ultimate AeroPress") {
-            return "James_Hoffmann"
+        do {
+            // Remove non-word characters (except spaces)
+            let regex = try NSRegularExpression(pattern: "[^\\w\\s]", options: [])
+            let range = NSRange(location: 0, length: title.utf16.count)
+            let stripped = regex.stringByReplacingMatches(in: title, options: [], range: range, withTemplate: "")
+            
+            // Replace spaces (and multiple spaces) with underscores
+            let spaceRegex = try NSRegularExpression(pattern: "\\s+", options: [])
+            let spaceRange = NSRange(location: 0, length: stripped.utf16.count)
+            let folderName = spaceRegex.stringByReplacingMatches(in: stripped, options: [], range: spaceRange, withTemplate: "_")
+            
+            // Limit length to 50 chars
+            if folderName.count > 50 {
+                return String(folderName.prefix(50))
+            }
+            
+            return folderName
+        } catch {
+            print("DEBUG: Regex error in convertTitleToFolderName: \(error)")
+            return "Standard_1_Person" // Fallback
         }
-        
-        // V60 recipes
-        else if title.contains("Kaldi's Coffee - Single Serve") {
-            return "Kaldi_Coffee_Single_Serve"
-        } else if title.contains("Kaldi's Coffee - Two People") {
-            return "Kaldi_Coffee_Two_People"
-        } else if title.contains("Kaldi's Coffee - Three People") {
-            return "Kaldi_Coffee_Three_People"
-        } else if title.contains("James Hoffmann V60 - Single Serve") {
-            return "James_Hoffmann_V60_Single_Serve"
-        } else if title.contains("James Hoffmann V60 - Two People") {
-            return "James_Hoffmann_V60_Two_People"
-        } else if title.contains("James Hoffmann V60 - Three People") {
-            return "James_Hoffmann_V60_Three_People"
-        } else if title.contains("James Hoffmann V60 - Four People") {
-            return "James_Hoffmann_V60_Four_People"
-        } else if title.contains("Tetsu Kasuya") {
-            // Map all Tetsu Kasuya V60 variants to a single folder
-            return "Tetsu_Kasuya"
-        } else if title.contains("Scott Rao V60 Method (Single Serve - Detailed)") {
-            return "Scott_Rao_V60_Method_Single_Serve_Detailed"
-        } else if title.contains("Scott Rao V60 Method (Single Serve)") {
-            return "Scott_Rao_V60_Method_Single_Serve_Detailed"
-        } else if title.contains("Scott Rao V60 - Two People") {
-            return "Scott_Rao_V60_Two_People"
-        } else if title.contains("Scott Rao V60 - Three People") {
-            return "Scott_Rao_V60_Three_People"
-        } else if title.contains("Scott Rao V60 - Four People") {
-            return "Scott_Rao_V60_Four_People"
-        } else if title.contains("Quick Morning V60") {
-            return "Quick_Morning_V60"
-        }
-        
-        // French Press recipes
-        else if title.contains("James Hoffmann's French Press Method") {
-            return "James_Hoffmann_French_Press_Method"
-        } else if title.contains("Tim Wendelboe French Press Method") {
-            return "Tim_Wendelboe_French_Press_Method"
-        } else if title.contains("Scott Rao French Press Method") {
-            return "Scott_Rao_French_Press_Method"
-        } else if title.contains("Blue Bottle French Press Method") {
-            return "Blue_Bottle_French_Press_Method"
-        } else if title.contains("Intelligentsia French Press Method") {
-            return "Intelligentsia_French_Press_Method"
-        } else if title.contains("Stumptown French Press Method") {
-            return "Stumptown_French_Press_Method"
-        } else if title.contains("Counter Culture French Press Method") {
-            return "Counter_Culture_French_Press_Method"
-        } else if title.contains("Verve French Press Method") {
-            return "Verve_French_Press_Method"
-        } else if title.contains("Four Barrel French Press Method") {
-            return "Four_Barrel_French_Press_Method"
-        }
-        
-        // Default fallback
-        return "Standard_1_Person"
     }
     
     func hasAudio(for step: BrewingStep) -> Bool {
