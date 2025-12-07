@@ -1,0 +1,59 @@
+[
+  {
+    "title": "13.5g Strength Focus",
+    "brewing_method": "AeroPress",
+    "skill_level": "Intermediate",
+    "rating": 4.6,
+    "parameters": {
+      "coffee_grams": 13.5,
+      "water_grams": 200,
+      "ratio": "1:14.8",
+      "grind_size": "Medium-Fine",
+      "temperature_celsius": 90,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 120
+    },
+    "preparation_steps": [
+      "Grind 13.5g coffee medium-fine.",
+      "Standard position.",
+      "Heat water to 90°C."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Pour 200g water. Stir 5 times.",
+        "short_instruction": "Pour 200g • Stir",
+        "audio_script": "Pour 200 grams of water. Take your paddle and stir 5 times to ensure even wetting. The slightly higher dose gives this cup more punch.",
+        "audio_file_name": "strength_135g_step1.m4a"
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Insert plunger. Steep until 1:30.",
+        "short_instruction": "Steep to 1:30",
+        "audio_script": "Insert the plunger to create a seal and let it steep. We are going for a shorter brew time here to keep acidity high and avoid heavy bitterness.",
+        "audio_file_name": "strength_135g_step2.m4a"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Press gently.",
+        "short_instruction": "Press",
+        "audio_script": "At 1 minute 30, begin pressing. Aim to finish by the 2-minute mark. This quick brew highlights brightness and body.",
+        "audio_file_name": "strength_135g_step3.m4a"
+      }
+    ],
+    "equipment": [
+      "AeroPress",
+      "Paper Filter",
+      "Scale",
+      "Kettle"
+    ],
+    "what_to_expect": {
+      "description": "A slightly up-dosed recipe (13.5g) for those who prefer a bit more strength and body than the standard 12g cup. The shorter brew time and lower temperature (90°C) keep it smooth and avoid harshness.",
+      "audio_file_name": "strength_135g_notes.m4a",
+      "audio_script": "If you find standard recipes a bit watery, this one is for you. With 13.5 grams of coffee and a shorter brew time, we aim for a punchy, vibrant cup with great body, perfect for starting your morning."
+    },
+    "notes": "Adjust grind coarser if it feels too heavy.",
+    "servings": 1
+  }
+]

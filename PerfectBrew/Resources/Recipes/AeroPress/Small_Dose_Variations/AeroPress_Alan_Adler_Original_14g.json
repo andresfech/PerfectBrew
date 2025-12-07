@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Alan Adler's Original Method",
+    "brewing_method": "AeroPress",
+    "skill_level": "Beginner",
+    "rating": 4.5,
+    "parameters": {
+      "coffee_grams": 14,
+      "water_grams": 130,
+      "ratio": "1:9",
+      "grind_size": "Fine Drip",
+      "temperature_celsius": 80,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 90
+    },
+    "preparation_steps": [
+      "Place a paper filter in the cap and rinse it.",
+      "Assemble AeroPress in standard position on a sturdy mug.",
+      "Grind 14g (one scoop) of coffee fine (like table salt).",
+      "Heat water to 80°C (175°F) - much cooler than usual!"
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 20,
+        "instruction": "Pour water to Level 2 (approx 130g).",
+        "short_instruction": "Pour to Level 2",
+        "audio_script": "Start the timer. Pour hot water quickly to the number 2 circle on the chamber. This uses about 130 grams of water at 80 degrees Celsius. The low temperature is key for sweetness.",
+        "audio_file_name": "adler_original_step1.m4a"
+      },
+      {
+        "time_seconds": 30,
+        "instruction": "Stir briskly for 10 seconds.",
+        "short_instruction": "Stir 10s",
+        "audio_script": "Grab your paddle and stir briskly for 10 seconds. This rapid agitation ensures all grounds are wet and extraction happens quickly.",
+        "audio_file_name": "adler_original_step2.m4a"
+      },
+      {
+        "time_seconds": 90,
+        "instruction": "Insert plunger and press gently.",
+        "short_instruction": "Gentle Press",
+        "audio_script": "Insert the plunger and press gently. Don't push too hard; let the air pressure do the work. Stop as soon as you hear the hiss. You now have a concentrated coffee that you can dilute with hot water or milk to taste.",
+        "audio_file_name": "adler_original_step3.m4a"
+      }
+    ],
+    "equipment": [
+      "AeroPress",
+      "Paper Filter",
+      "Scale (Optional)",
+      "Kettle",
+      "Paddle"
+    ],
+    "what_to_expect": {
+      "description": "This is the method recommended by Alan Adler, the inventor of the AeroPress. It defies modern specialty coffee norms by using a very short brew time and low water temperature (80°C). The result is a sweet, low-acidity concentrate that mimics espresso strength, intended to be diluted with water (Americano style) or milk.",
+      "audio_file_name": "adler_original_notes.m4a",
+      "audio_script": "This is the original recipe by Alan Adler, the inventor of the AeroPress. It uses a fine grind, a short brew time, and surprisingly cool water at 80 degrees Celsius. This combination reduces acidity and bitterness, producing a sweet, concentrated shot perfect for diluting with water or milk."
+    },
+    "notes": "Add hot water to the cup after brewing to make a full cup (Americano), or add hot milk for a latte style drink.",
+    "servings": 1
+  }
+]

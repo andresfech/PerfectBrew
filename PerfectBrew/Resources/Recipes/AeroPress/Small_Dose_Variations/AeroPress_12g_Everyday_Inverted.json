@@ -1,0 +1,61 @@
+[
+  {
+    "title": "12g Everyday Inverted",
+    "brewing_method": "AeroPress",
+    "skill_level": "Intermediate",
+    "rating": 4.7,
+    "parameters": {
+      "coffee_grams": 12,
+      "water_grams": 200,
+      "ratio": "1:16.7",
+      "grind_size": "Medium-Fine",
+      "temperature_celsius": 93,
+      "bloom_water_grams": 0,
+      "bloom_time_seconds": 0,
+      "total_brew_time_seconds": 150
+    },
+    "preparation_steps": [
+      "Set AeroPress in Inverted position (plunger on table, chamber open side up).",
+      "Place filter in cap and rinse.",
+      "Grind 12g of coffee medium-fine.",
+      "Heat water to 93°C."
+    ],
+    "brewing_steps": [
+      {
+        "time_seconds": 30,
+        "instruction": "Pour 200g of water. Stir 3 times.",
+        "short_instruction": "Pour 200g • Stir",
+        "audio_script": "Start timer. Pour 200 grams of water rapidly to ensure all grounds are saturated. Give it 3 gentle stirs to break up any dry clumps.",
+        "audio_file_name": "everyday_12g_step1.m4a"
+      },
+      {
+        "time_seconds": 120,
+        "instruction": "Screw cap on. Steep until 2:00.",
+        "short_instruction": "Cap & Steep",
+        "audio_script": "Screw the filter cap on tightly. Now, squeeze the excess air out if you like, and let it steep until the timer hits 2 minutes. This immersion time gives full body.",
+        "audio_file_name": "everyday_12g_step2.m4a"
+      },
+      {
+        "time_seconds": 150,
+        "instruction": "Flip and press gently for 30s.",
+        "short_instruction": "Flip & Press",
+        "audio_script": "At 2 minutes, carefully flip the AeroPress onto your mug. Press down gently and steadily for about 30 seconds. Stop at the hiss.",
+        "audio_file_name": "everyday_12g_step3.m4a"
+      }
+    ],
+    "equipment": [
+      "AeroPress",
+      "Paper Filter",
+      "Scale",
+      "Kettle",
+      "Timer"
+    ],
+    "what_to_expect": {
+      "description": "A reliable daily driver using the inverted method to prevent any premature dripping. The 12g dose with a standard 1:16 ratio provides a balanced cup with medium body and clear flavor notes. Ideal for medium roast coffees.",
+      "audio_file_name": "everyday_12g_notes.m4a",
+      "audio_script": "This recipe is a perfect daily driver. By using the inverted position, we prevent any coffee from dripping through early, ensuring total control over the immersion time. The result is a consistent, balanced cup that highlights the best of your beans."
+    },
+    "notes": "Ensure cap is tight before flipping! Use a sturdy mug.",
+    "servings": 1
+  }
+]

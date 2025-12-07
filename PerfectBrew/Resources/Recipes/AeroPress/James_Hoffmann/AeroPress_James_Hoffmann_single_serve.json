@@ -24,7 +24,7 @@
     "brewing_steps": [
       {
         "time_seconds": 15,
-        "instruction": "Place setup on scale, tare to zero. Pour 200 g hot water over coffee evenly (aim to wet all grounds).",
+        "instruction": "Pour 200 g hot water over coffee evenly (aim to wet all grounds).",
         "short_instruction": "Pour 200g hot water evenly",
         "audio_script": "You have 15 seconds to pour 200 grams of hot water. Pour evenly in a circular motion, starting from the center and working your way outward. Make sure to wet all the grounds for complete saturation.",
         "audio_file_name": "james_hoffmann_step1_pour_water.m4a"
