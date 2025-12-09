@@ -225,6 +225,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F4EA58692E39444F00903EAD /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F4BDC1B82EE777EE00053252 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F497309B2E35356D001D8E6D /* Products */;
@@ -583,6 +584,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F4BDC1B82EE777EE00053252 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
 		F4EA58692E39444F00903EAD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";

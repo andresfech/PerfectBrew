@@ -7,6 +7,14 @@ class RecipeDatabase: ObservableObject {
     init() {
         print("🔧 RecipeDatabase: Initializing...")
         loadAllRecipes()
+        
+        // Asynchronously fetch remote recipes
+        // Disabled temporarily for build fix
+        /*
+        Task {
+            await fetchRemoteRecipes()
+        }
+        */
         print("🔧 RecipeDatabase: Initialization complete. Total recipes: \(recipes.count)")
     }
     
@@ -15,6 +23,60 @@ class RecipeDatabase: ObservableObject {
         // Load recipes from hierarchical structure under Resources/Recipes
         loadRecipesFromHierarchicalStructure()
         print("🔧 RecipeDatabase: loadAllRecipes() completed. Total recipes: \(recipes.count)")
+    }
+    
+    // MARK: - Supabase Integration
+    func fetchRemoteRecipes() async {
+        // Disabled temporarily for build fix
+        /*
+        print("🌍 Fetching remote recipes from Supabase...")
+        do {
+            let remoteRecipes = try await SupabaseManager.shared.fetchRecipes()
+            print("✅ Fetched \(remoteRecipes.count) recipes from cloud")
+            
+            DispatchQueue.main.async {
+                self.mergeRecipes(remoteRecipes)
+            }
+        } catch {
+            print("❌ Error fetching remote recipes: \(error)")
+        }
+        */
+    }
+    
+    private func mergeRecipes(_ remoteRecipes: [Recipe]) {
+        var currentRecipes = self.recipes
+        var updatedCount = 0
+        var newCount = 0
+        
+        for remote in remoteRecipes {
+            if let index = currentRecipes.firstIndex(where: { $0.title == remote.title }) {
+                // Update existing recipe logic
+                // For now, we assume cloud is source of truth if titles match
+                // In a robust system, we'd check 'version' or 'updated_at'
+                currentRecipes[index] = remote
+                updatedCount += 1
+            } else {
+                // Append new recipe
+                currentRecipes.append(remote)
+                newCount += 1
+            }
+        }
+        
+        if updatedCount > 0 || newCount > 0 {
+            print("🔄 Merge complete: Updated \(updatedCount), Added \(newCount) recipes")
+            self.recipes = currentRecipes
+            
+            // Re-group by method
+            var grouped: [String: [Recipe]] = [:]
+            for recipe in currentRecipes {
+                let method = recipe.brewingMethod
+                if grouped[method] == nil { grouped[method] = [] }
+                grouped[method]?.append(recipe)
+            }
+            self.recipesByMethod = grouped
+        } else {
+            print("✅ Local recipes match cloud recipes. No changes needed.")
+        }
     }
 
     // MARK: - Hierarchical loader

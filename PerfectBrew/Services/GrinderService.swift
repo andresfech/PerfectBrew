@@ -8,7 +8,15 @@ class GrinderService: ObservableObject {
     // Cache loaded grinders: [Method: [GrinderName: Grinder]]
     private var grindersCache: [String: [String: Grinder]] = [:]
     
-    init() {}
+    init() {
+        // Fetch remote grinders on init
+        // Disabled temporarily for build fix
+        /*
+        Task {
+            await fetchRemoteGrinders()
+        }
+        */
+    }
     
     func getSetting(for grinderName: String, recipe: Recipe) -> String {
         let method = normalizeMethod(recipe.brewingMethod)
@@ -23,6 +31,32 @@ class GrinderService: ObservableObject {
         }
         
         return grinder.getSetting(for: recipe.title)
+    }
+    
+    private func fetchRemoteGrinders() async {
+        // Disabled temporarily for build fix
+        /*
+        print("🌍 Fetching remote grinders...")
+        do {
+            let remoteGrinders = try await SupabaseManager.shared.fetchGrinders()
+            DispatchQueue.main.async {
+                for grinder in remoteGrinders {
+                    // Normalize method to match our internal cache keys (e.g. "FrenchPress")
+                    let method = self.normalizeMethod(grinder.method)
+                    
+                    if self.grindersCache[method] == nil {
+                        self.grindersCache[method] = [:]
+                    }
+                    
+                    // Cache the remote grinder (overwriting local if exists)
+                    self.grindersCache[method]?[grinder.name] = grinder
+                    print("✅ Cached remote grinder: \(grinder.name) for \(method)")
+                }
+            }
+        } catch {
+            print("❌ Failed to fetch remote grinders: \(error)")
+        }
+        */
     }
     
     private func loadGrinder(name: String, method: String) {
@@ -54,7 +88,7 @@ class GrinderService: ObservableObject {
                 grindersCache[method] = [:]
             }
             grindersCache[method]?[name] = grinder
-            print("DEBUG: Loaded grinder \(name) for method \(method)")
+            print("DEBUG: Loaded local grinder \(name) for method \(method)")
         } catch {
             print("DEBUG: Failed to decode grinder \(name): \(error)")
         }
@@ -72,4 +106,3 @@ class GrinderService: ObservableObject {
         return method
     }
 }
-
