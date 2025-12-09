@@ -1,24 +1,44 @@
 import Foundation
-// import Supabase // Disabled for build safety until package is linked
+import Supabase
 
 class SupabaseManager: ObservableObject {
     static let shared = SupabaseManager()
     
-    // let client: SupabaseClient
+    let client: SupabaseClient
     
     private init() {
-        print("DEBUG: SupabaseManager init - Code temporarily disabled for build check")
+        print("DEBUG: SupabaseManager init (Active)")
         
-        // let supabaseUrl = URL(string: "https://fimzbgfmforervajguoa.supabase.co")!
-        // let supabaseKey = "sb_publishable_wI4HtzYkifad4f83xMXI9g_uJzQCXp-"
-        // self.client = SupabaseClient(supabaseURL: supabaseUrl, supabaseKey: supabaseKey)
+        let supabaseUrl = URL(string: "https://fimzbgfmforervajguoa.supabase.co")!
+        let supabaseKey = "sb_publishable_wI4HtzYkifad4f83xMXI9g_uJzQCXp-"
+        
+        self.client = SupabaseClient(supabaseURL: supabaseUrl, supabaseKey: supabaseKey)
     }
     
-    func fetchRecipes() async throws -> [Recipe] { return [] }
-    func fetchGrinders() async throws -> [Grinder] { return [] }
+    // MARK: - Recipes
+    func fetchRecipes() async throws -> [Recipe] {
+        let response: [RecipeDBModel] = try await client
+            .from("recipes")
+            .select()
+            .execute()
+            .value
+            
+        return response.map { $0.toRecipe() }
+    }
+    
+    // MARK: - Grinders
+    func fetchGrinders() async throws -> [Grinder] {
+        let response: [GrinderDBModel] = try await client
+            .from("grinders")
+            .select()
+            .execute()
+            .value
+            
+        return response.map { $0.toGrinder() }
+    }
 }
 
-// Intermediate struct to match SQL table for Recipes
+// Keeping structs for compatibility
 struct RecipeDBModel: Codable {
     let id: UUID
     let title: String
@@ -26,18 +46,12 @@ struct RecipeDBModel: Codable {
     let jsonData: Recipe
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case title
-        case method
+        case id, title, method
         case jsonData = "json_data"
     }
-    
-    func toRecipe() -> Recipe {
-        return jsonData
-    }
+    func toRecipe() -> Recipe { return jsonData }
 }
 
-// Intermediate struct to match SQL table for Grinders
 struct GrinderDBModel: Codable {
     let id: UUID
     let name: String
@@ -48,7 +62,6 @@ struct GrinderDBModel: Codable {
         case id, name, method
         case settingsJson = "settings_json"
     }
-    
     func toGrinder() -> Grinder {
         return Grinder(name: name, method: method, settings: settingsJson)
     }

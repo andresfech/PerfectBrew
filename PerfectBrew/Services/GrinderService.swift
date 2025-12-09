@@ -10,12 +10,9 @@ class GrinderService: ObservableObject {
     
     init() {
         // Fetch remote grinders on init
-        // Disabled temporarily for build fix
-        /*
         Task {
             await fetchRemoteGrinders()
         }
-        */
     }
     
     func getSetting(for grinderName: String, recipe: Recipe) -> String {
@@ -34,8 +31,6 @@ class GrinderService: ObservableObject {
     }
     
     private func fetchRemoteGrinders() async {
-        // Disabled temporarily for build fix
-        /*
         print("🌍 Fetching remote grinders...")
         do {
             let remoteGrinders = try await SupabaseManager.shared.fetchGrinders()
@@ -56,7 +51,6 @@ class GrinderService: ObservableObject {
         } catch {
             print("❌ Failed to fetch remote grinders: \(error)")
         }
-        */
     }
     
     private func loadGrinder(name: String, method: String) {

@@ -9,12 +9,9 @@ class RecipeDatabase: ObservableObject {
         loadAllRecipes()
         
         // Asynchronously fetch remote recipes
-        // Disabled temporarily for build fix
-        /*
         Task {
             await fetchRemoteRecipes()
         }
-        */
         print("🔧 RecipeDatabase: Initialization complete. Total recipes: \(recipes.count)")
     }
     
@@ -27,8 +24,6 @@ class RecipeDatabase: ObservableObject {
     
     // MARK: - Supabase Integration
     func fetchRemoteRecipes() async {
-        // Disabled temporarily for build fix
-        /*
         print("🌍 Fetching remote recipes from Supabase...")
         do {
             let remoteRecipes = try await SupabaseManager.shared.fetchRecipes()
@@ -40,7 +35,6 @@ class RecipeDatabase: ObservableObject {
         } catch {
             print("❌ Error fetching remote recipes: \(error)")
         }
-        */
     }
     
     private func mergeRecipes(_ remoteRecipes: [Recipe]) {

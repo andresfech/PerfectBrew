@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4BDC1BC2EE7A7EC00053252 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = F4BDC1BB2EE7A7EC00053252 /* Supabase */; };
 		F4EA586B2E39444F00903EAD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F4EA586A2E39444F00903EAD /* Lottie */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BDC1BC2EE7A7EC00053252 /* Supabase in Frameworks */,
 				F4EA586B2E39444F00903EAD /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +142,7 @@
 			name = PerfectBrew;
 			packageProductDependencies = (
 				F4EA586A2E39444F00903EAD /* Lottie */,
+				F4BDC1BB2EE7A7EC00053252 /* Supabase */,
 			);
 			productName = PerfectBrew;
 			productReference = F497309A2E35356D001D8E6D /* PerfectBrew.app */;
@@ -603,6 +606,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F4BDC1BB2EE7A7EC00053252 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4BDC1B82EE777EE00053252 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
 		F4EA586A2E39444F00903EAD /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4EA58692E39444F00903EAD /* XCRemoteSwiftPackageReference "lottie-ios" */;
