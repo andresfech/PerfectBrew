@@ -70,6 +70,11 @@
       "audio_file_name": "james_hoffmann_french_press_notes.wav",
       "audio_script": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using a medium-coarse grind and precise timing. By avoiding over-agitation and pressing slowly, you get a rich cup without the grit."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Dark"],
+      "recommended_processes": ["Washed", "Natural", "Other"],
+      "recommended_flavor_tags": ["Chocolate", "Nutty", "Savory"]
+    },
     "notes": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using medium-coarse grind, precise timing, and avoiding over-extraction by pressing slowly and pouring immediately.",
     "servings": 1
   }

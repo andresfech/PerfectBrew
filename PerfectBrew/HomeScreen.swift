@@ -47,6 +47,42 @@ struct HomeScreen: View {
             }
             .padding(.top, 20)
             
+            // Match My Coffee (Coffee-First)
+            NavigationLink(destination: CoffeeListView()) {
+                HStack(spacing: 15) {
+                    ZStack {
+                        Circle()
+                            .fill(Color.white.opacity(0.2))
+                            .frame(width: 44, height: 44)
+                        Image(systemName: "sparkles")
+                            .font(.system(size: 20))
+                            .foregroundColor(.white)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Match My Coffee")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        Text("Find the perfect recipe for your beans")
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.9))
+                    }
+                    
+                    Spacer()
+                    
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.white.opacity(0.6))
+                }
+                .padding(16)
+                .background(
+                    LinearGradient(gradient: Gradient(colors: [Color.brown, Color.brown.opacity(0.8)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
+                .cornerRadius(16)
+                .shadow(color: Color.brown.opacity(0.3), radius: 8, x: 0, y: 4)
+            }
+            .padding(.horizontal)
+            
             VStack(alignment: .leading, spacing: 20) {
                 Text("Brew Method")
                     .font(.title2)

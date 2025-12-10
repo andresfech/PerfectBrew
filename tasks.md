@@ -1,27 +1,28 @@
 ## Relevant Files
-- supabase_schema.sql - SQL schema definition for Supabase
-- PerfectBrew/Services/SupabaseManager.swift - Singleton service for Supabase integration
-- PerfectBrew.xcodeproj/project.pbxproj - Xcode project file (for dependency)
+- PerfectBrew/Models/Recipe.swift
+- PerfectBrew/Models/Coffee.swift
+- PerfectBrew/Services/CoffeeRepository.swift
+- PerfectBrew/Services/RecommendationService.swift
+- PerfectBrew/Views/Home/HomeScreen.swift
 
 ## Tasks
 
-### Phase 1: Setup & Schema Definition
-- [x] **Task 1**: Create `supabase_schema.sql` defining the `recipes` table with columns: `id` (UUID), `title` (Text), `method` (Text), `version` (Int), and `json_data` (JSONB) to store the full recipe structure.
-- [x] **Task 2**: Define the `grinders` table schema in SQL to store grinder settings (e.g., Timemore C2s) separately, linking to recipes via ID or Name.
-- [x] **Task 3**: Add the `supabase-swift` package dependency to the Xcode project and create a `SupabaseManager` singleton service to handle initialization.
+### Phase 1: Data Architecture & Persistence
+- [x] **Task 1**: Create `PerfectBrew/Models/Coffee.swift` with Enums (`RoastLevel`, `Process`, `FlavorTag`).
+- [x] **Task 2**: Update `PerfectBrew/Models/Recipe.swift` to include `RecipeProfile` struct. Ensure backward compatibility (optional decoding).
+- [x] **Task 3**: Create `PerfectBrew/Services/CoffeeRepository.swift` to handle CRUD operations for `Coffee` entities (saving to a local JSON file in Documents directory).
 
-### Phase 2: Data Migration & Population
-- [x] **Task 1**: Create a Python script `migrate_recipes_to_supabase.py` that reads all local JSON recipes from `PerfectBrew/Resources/Recipes/` and formats them for SQL insertion or API upload.
-- [x] **Task 2**: Extend the script to validate that all recipes have required fields (`parameters`, `brewingSteps`) before upload to prevent bad data in the cloud.
-- [x] **Task 3**: Execute the migration script to populate the Supabase `recipes` table with the current local dataset (including the new V60 and AeroPress recipes).
+### Phase 2: Scoring Logic (The Brain)
+- [x] **Task 1**: Create `PerfectBrew/Services/RecommendationService.swift` prototype. Implement the matching algorithm: `match(coffee, recipe) -> Score`.
+- [x] **Task 2**: Implement the "Reasoning" generator: `generateReasons(coffee, recipe) -> [String]` based on the match details.
+- [x] **Task 3**: Create `RecommendationServiceTests.swift` and validate the algorithm with at least 3 test cases (Perfect Match, Partial Match, No Match).
 
-### Phase 3: iOS Integration (Code Complete, Temporarily Disabled)
-- [x] **Task 1**: Update `RecipeDatabase.swift` (Code ready, commented out).
-- [x] **Task 2**: Implement Merge Strategy (Code ready).
-- [x] **Task 3**: Update `GrinderService` (Code ready, commented out).
+### Phase 3: UI - Management & Entry
+- [x] **Task 1**: Create `CoffeeViewModel` and `CoffeeFormView` (SwiftUI) for adding/editing a coffee bag.
+- [x] **Task 2**: Create `CoffeeListViewModel` and `CoffeeListView` to display saved coffees.
+- [x] **Task 3**: Update `HomeScreen` to add the "Match My Coffee" button/section navigating to the Coffee List.
 
-### Phase 4: Testing & Reliability
-- [x] **Task 1**: Create decoding tests.
-- [x] **Task 2**: Verify Build (Code disabled for safety).
-- [ ] **Task 3**: Enable Supabase (Requires Xcode package linking fix by user).
-
+### Phase 4: UI - Recommendations & Integration
+- [x] **Task 1**: Create `RecommendationsViewModel` that uses `RecommendationService` to sort recipes for a given coffee.
+- [x] **Task 2**: Create `RecommendationsView` to display the sorted results with "Match Score" and "Reasons" pills.
+- [x] **Task 3**: Update a few key recipes (e.g., 5 varied ones) in `Resources/Recipes/...` with `recipe_profile` data to demonstrate the feature works.

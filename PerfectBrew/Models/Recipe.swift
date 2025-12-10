@@ -12,6 +12,21 @@ struct WhatToExpect: Codable {
     }
 }
 
+// MARK: - Recipe Profile (Match My Coffee)
+struct RecipeProfile: Codable {
+    let recommendedRoastLevels: [RoastLevel]
+    let recommendedProcesses: [Process]
+    let recommendedFlavorTags: [FlavorTag]
+    
+    // Optional: Could add forgiveness, etc.
+    
+    enum CodingKeys: String, CodingKey {
+        case recommendedRoastLevels = "recommended_roast_levels"
+        case recommendedProcesses = "recommended_processes"
+        case recommendedFlavorTags = "recommended_flavor_tags"
+    }
+}
+
 struct Recipe: Codable, Identifiable {
     var id = UUID()
     let title: String
@@ -25,6 +40,7 @@ struct Recipe: Codable, Identifiable {
     let notes: String
     let servings: Int
     let whatToExpect: WhatToExpect?
+    let recipeProfile: RecipeProfile?
     
     enum CodingKeys: String, CodingKey {
         case title
@@ -39,6 +55,7 @@ struct Recipe: Codable, Identifiable {
         case notes
         case servings
         case whatToExpect = "what_to_expect"
+        case recipeProfile = "recipe_profile"
     }
     
     // Backward compatibility - if only 'steps' is provided, treat them as brewing steps
@@ -53,8 +70,11 @@ struct Recipe: Codable, Identifiable {
         equipment = try container.decodeIfPresent([String].self, forKey: .equipment) ?? []
         servings = try container.decodeIfPresent(Int.self, forKey: .servings) ?? 1
         
-        // Decode what_to_expect first
+        // Decode what_to_expect
         whatToExpect = try container.decodeIfPresent(WhatToExpect.self, forKey: .whatToExpect)
+        
+        // Decode recipe_profile (Match My Coffee metadata)
+        recipeProfile = try container.decodeIfPresent(RecipeProfile.self, forKey: .recipeProfile)
         
         // Use whatToExpect description for notes if available, otherwise fallback to notes field
         if let wte = whatToExpect {
@@ -95,10 +115,11 @@ struct Recipe: Codable, Identifiable {
         try container.encode(notes, forKey: .notes)
         try container.encode(servings, forKey: .servings)
         try container.encodeIfPresent(whatToExpect, forKey: .whatToExpect)
+        try container.encodeIfPresent(recipeProfile, forKey: .recipeProfile)
     }
     
     // Regular initializer for creating instances in previews and tests
-    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String, servings: Int = 1, whatToExpect: WhatToExpect? = nil) {
+    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String, servings: Int = 1, whatToExpect: WhatToExpect? = nil, recipeProfile: RecipeProfile? = nil) {
         self.title = title
         self.brewingMethod = brewingMethod
         self.skillLevel = skillLevel
@@ -110,6 +131,7 @@ struct Recipe: Codable, Identifiable {
         self.notes = notes
         self.servings = servings
         self.whatToExpect = whatToExpect
+        self.recipeProfile = recipeProfile
     }
     
     // MARK: - Dynamic Scaling Logic
@@ -169,7 +191,8 @@ struct Recipe: Codable, Identifiable {
             equipment: equipment,
             notes: notes,
             servings: servings, // Deprecated concept, but keeping for model compatibility
-            whatToExpect: whatToExpect
+            whatToExpect: whatToExpect,
+            recipeProfile: recipeProfile // Preserve original profile (metadata doesn't change with scale)
         )
     }
     
@@ -378,6 +401,11 @@ extension Recipe {
         equipment: ["V60", "Paper filter", "Kettle", "Scale", "Grinder"],
         notes: "A simple and delicious V60 recipe for beginners.",
         servings: 1,
-        whatToExpect: nil
+        whatToExpect: nil,
+        recipeProfile: RecipeProfile(
+            recommendedRoastLevels: [.medium],
+            recommendedProcesses: [.washed, .natural],
+            recommendedFlavorTags: [.nutty, .chocolate]
+        )
     )
 }

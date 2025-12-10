@@ -76,6 +76,11 @@
       "audio_file_name": "tetsu_intro.m4a",
       "audio_script": "The Tetsu Kasuya 4:6 method is a revolutionary brewing technique that puts you in control. The first 40% of your water—that's the first two pours of 60 grams each—controls the balance between sweetness and acidity. Equal pours give you balance, while adjusting this ratio lets you dial in your preferred flavor. The remaining 60%, split into three pours, determines the body and strength of your cup. Expect a clean, structured coffee with remarkable clarity. This method works exceptionally well with washed coffees and medium roasts, highlighting origin characteristics with consistency and precision."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Light"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Sweet", "Clean", "Acidity"]
+    },
     "notes": "Based on Tetsu Kasuya's 2016 World Brewers Cup winning method. The key innovation is the systematic control over flavor variables through water distribution. Adjust the first two pours (40% total) to shift sweetness/acidity balance, and modify the number of remaining pours (keeping 60% total) to control strength.",
     "servings": 1
   }

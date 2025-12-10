@@ -62,6 +62,11 @@
       "audio_file_name": "tim_wendelboe_intro.m4a",
       "audio_script": "This is the classic Tim Wendelboe AeroPress recipe. It focuses on a clean, sweet, and vibrant cup that highlights the coffee's acidity and clarity. We use a fine grind, near-boiling water, and a short steep time to produce a light, bright flavor with pronounced fruity and floral notes. This method is ideal for high-quality, single-origin light roasts, letting the unique origin character shine through with minimal bitterness."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Fruity", "Floral", "Acidity"]
+    },
     "equipment": [
       "AeroPress",
       "Standard AeroPress paper filter (rinsed)",

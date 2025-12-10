@@ -1,6 +1,8 @@
 import Foundation
 
 class RecipeDatabase: ObservableObject {
+    static let shared = RecipeDatabase()
+    
     @Published var recipes: [Recipe] = []
     @Published var recipesByMethod: [String: [Recipe]] = [:]
     
