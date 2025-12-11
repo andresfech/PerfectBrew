@@ -73,5 +73,27 @@ class BrewingRuleEngineTests: XCTestCase {
         XCTAssertEqual(profile.thermal, .low, "Dark roast must strictly use low thermal energy")
         XCTAssertGreaterThan(profile.body, 0.6, "Dark roast should favor body")
     }
+    
+    func testFlavorTagInfluence() {
+        // Baseline coffee
+        var coffee = Coffee(name: "Test", roastLevel: .medium, process: .washed)
+        let baseProfile = engine.computeTargetProfile(for: coffee)
+        
+        // Same coffee with "Fermented" tag
+        coffee.flavorTags = [.fermented]
+        let funkyProfile = engine.computeTargetProfile(for: coffee)
+        
+        // Fermented adds Acidity, Sweetness, Body
+        XCTAssertGreaterThan(funkyProfile.acidity, baseProfile.acidity)
+        XCTAssertGreaterThan(funkyProfile.body, baseProfile.body)
+        
+        // Same coffee with "Floral"
+        coffee.flavorTags = [.floral]
+        let floralProfile = engine.computeTargetProfile(for: coffee)
+        
+        // Floral adds Clarity, reduces Body
+        XCTAssertGreaterThan(floralProfile.clarity, baseProfile.clarity)
+        XCTAssertLessThan(floralProfile.body, baseProfile.body)
+    }
 }
 

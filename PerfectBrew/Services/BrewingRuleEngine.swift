@@ -26,7 +26,10 @@ class BrewingRuleEngine {
         // 4. Apply Physical Rules (Roast, Altitude)
         applyPhysicalRules(for: coffee, to: &target)
         
-        // 5. Clamp values to 0.0 - 1.0
+        // 5. Apply Flavor Tags (Fine-tuning)
+        applyFlavorTags(for: coffee, to: &target)
+        
+        // 6. Clamp values to 0.0 - 1.0
         clamp(&target)
         
         return target
@@ -92,6 +95,29 @@ class BrewingRuleEngine {
         } else if altitude < 1000 && altitude > 0 {
             // Low density -> Gentle
             target.thermal = .medium // Cap at medium if it was high
+        }
+    }
+    
+    private func applyFlavorTags(for coffee: Coffee, to target: inout ExtractionCharacteristics) {
+        for tag in coffee.flavorTags {
+            switch tag {
+            case .fruity, .berry, .citrus, .stoneFruit, .tropical, .acidity:
+                target.acidity += 0.05
+                target.clarity += 0.05
+            case .floral, .tea, .herbaceous:
+                target.clarity += 0.1
+                target.body -= 0.05
+            case .nutty, .chocolate, .caramel, .vanilla, .sweet, .roasted:
+                target.sweetness += 0.05
+                target.body += 0.05
+            case .fermented:
+                target.body += 0.05
+                target.sweetness += 0.05
+                target.acidity += 0.05
+            case .spicy, .savory, .earthy:
+                target.body += 0.05
+                target.acidity -= 0.05
+            }
         }
     }
     

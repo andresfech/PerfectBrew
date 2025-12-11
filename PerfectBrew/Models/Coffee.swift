@@ -31,6 +31,13 @@ enum FlavorTag: String, CaseIterable, Codable, Identifiable {
     case savory = "Savory"
     case tea = "Tea-like"
     case caramel = "Caramel"
+    case stoneFruit = "Stone Fruit"
+    case tropical = "Tropical"
+    case fermented = "Fermented"
+    case vanilla = "Vanilla"
+    case earthy = "Earthy"
+    case roasted = "Roasted"
+    case herbaceous = "Herbaceous"
     
     var id: String { rawValue }
 }
