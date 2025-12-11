@@ -65,7 +65,17 @@
     "recipe_profile": {
       "recommended_roast_levels": ["Light"],
       "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Fruity", "Floral", "Acidity"]
+      "recommended_flavor_tags": ["Fruity", "Floral", "Acidity"],
+      "recommended_origins": ["Ethiopia", "Kenya", "Colombia"],
+      "recommended_varieties": ["Geisha", "Heirloom"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.4,
+      "agitation": "Low",
+      "thermal": "High"
     },
     "equipment": [
       "AeroPress",

@@ -75,6 +75,14 @@
       "recommended_processes": ["Washed", "Natural", "Other"],
       "recommended_flavor_tags": ["Chocolate", "Nutty", "Savory"]
     },
+    "extraction_characteristics": {
+      "clarity": 0.5,
+      "acidity": 0.5,
+      "sweetness": 0.7,
+      "body": 0.8,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "notes": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using medium-coarse grind, precise timing, and avoiding over-extraction by pressing slowly and pouring immediately.",
     "servings": 1
   }

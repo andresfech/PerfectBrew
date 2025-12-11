@@ -9,6 +9,14 @@ class CoffeeFormViewModel: ObservableObject {
     @Published var selectedFlavorTags: Set<FlavorTag> = []
     @Published var notes: String = ""
     
+    // New Fields
+    @Published var country: String = ""
+    @Published var region: String = ""
+    @Published var variety: String = ""
+    @Published var altitude: String = ""
+    @Published var roastDate: Date = Date()
+    @Published var hasRoastDate: Bool = false
+    
     private var editingCoffeeId: UUID?
     private let repository: CoffeeRepository
     
@@ -24,6 +32,15 @@ class CoffeeFormViewModel: ObservableObject {
             self.process = coffee.process
             self.selectedFlavorTags = Set(coffee.flavorTags)
             self.notes = coffee.notes
+            
+            self.country = coffee.country
+            self.region = coffee.region
+            self.variety = coffee.variety
+            self.altitude = coffee.altitude
+            if let date = coffee.roastDate {
+                self.roastDate = date
+                self.hasRoastDate = true
+            }
         }
     }
     
@@ -35,7 +52,12 @@ class CoffeeFormViewModel: ObservableObject {
             roastLevel: roastLevel,
             process: process,
             flavorTags: Array(selectedFlavorTags),
-            notes: notes
+            notes: notes,
+            country: country,
+            region: region,
+            variety: variety,
+            altitude: altitude,
+            roastDate: hasRoastDate ? roastDate : nil
         )
         
         if isEditing {
@@ -57,4 +79,3 @@ class CoffeeFormViewModel: ObservableObject {
         !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 }
-

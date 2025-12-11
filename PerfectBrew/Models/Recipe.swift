@@ -13,10 +13,12 @@ struct WhatToExpect: Codable {
 }
 
 // MARK: - Recipe Profile (Match My Coffee)
-struct RecipeProfile: Codable {
+struct RecipeProfile: Codable, Equatable {
     let recommendedRoastLevels: [RoastLevel]
     let recommendedProcesses: [Process]
     let recommendedFlavorTags: [FlavorTag]
+    let recommendedOrigins: [String]?
+    let recommendedVarieties: [String]?
     
     // Optional: Could add forgiveness, etc.
     
@@ -24,6 +26,8 @@ struct RecipeProfile: Codable {
         case recommendedRoastLevels = "recommended_roast_levels"
         case recommendedProcesses = "recommended_processes"
         case recommendedFlavorTags = "recommended_flavor_tags"
+        case recommendedOrigins = "recommended_origins"
+        case recommendedVarieties = "recommended_varieties"
     }
 }
 
@@ -41,6 +45,7 @@ struct Recipe: Codable, Identifiable {
     let servings: Int
     let whatToExpect: WhatToExpect?
     let recipeProfile: RecipeProfile?
+    let extractionCharacteristics: ExtractionCharacteristics?
     
     enum CodingKeys: String, CodingKey {
         case title
@@ -56,6 +61,7 @@ struct Recipe: Codable, Identifiable {
         case servings
         case whatToExpect = "what_to_expect"
         case recipeProfile = "recipe_profile"
+        case extractionCharacteristics = "extraction_characteristics"
     }
     
     // Backward compatibility - if only 'steps' is provided, treat them as brewing steps
@@ -73,8 +79,11 @@ struct Recipe: Codable, Identifiable {
         // Decode what_to_expect
         whatToExpect = try container.decodeIfPresent(WhatToExpect.self, forKey: .whatToExpect)
         
-        // Decode recipe_profile (Match My Coffee metadata)
+        // Decode recipe_profile (Legacy Match My Coffee metadata)
         recipeProfile = try container.decodeIfPresent(RecipeProfile.self, forKey: .recipeProfile)
+        
+        // Decode extraction_characteristics (New Brew Intent Engine)
+        extractionCharacteristics = try container.decodeIfPresent(ExtractionCharacteristics.self, forKey: .extractionCharacteristics)
         
         // Use whatToExpect description for notes if available, otherwise fallback to notes field
         if let wte = whatToExpect {
@@ -116,10 +125,25 @@ struct Recipe: Codable, Identifiable {
         try container.encode(servings, forKey: .servings)
         try container.encodeIfPresent(whatToExpect, forKey: .whatToExpect)
         try container.encodeIfPresent(recipeProfile, forKey: .recipeProfile)
+        try container.encodeIfPresent(extractionCharacteristics, forKey: .extractionCharacteristics)
     }
     
     // Regular initializer for creating instances in previews and tests
-    init(title: String, brewingMethod: String, skillLevel: String, rating: Double, parameters: RecipeBrewParameters, preparationSteps: [String], brewingSteps: [BrewingStep], equipment: [String], notes: String, servings: Int = 1, whatToExpect: WhatToExpect? = nil, recipeProfile: RecipeProfile? = nil) {
+    init(
+        title: String,
+        brewingMethod: String,
+        skillLevel: String,
+        rating: Double,
+        parameters: RecipeBrewParameters,
+        preparationSteps: [String],
+        brewingSteps: [BrewingStep],
+        equipment: [String],
+        notes: String,
+        servings: Int = 1,
+        whatToExpect: WhatToExpect? = nil,
+        recipeProfile: RecipeProfile? = nil,
+        extractionCharacteristics: ExtractionCharacteristics? = nil
+    ) {
         self.title = title
         self.brewingMethod = brewingMethod
         self.skillLevel = skillLevel
@@ -132,6 +156,7 @@ struct Recipe: Codable, Identifiable {
         self.servings = servings
         self.whatToExpect = whatToExpect
         self.recipeProfile = recipeProfile
+        self.extractionCharacteristics = extractionCharacteristics
     }
     
     // MARK: - Dynamic Scaling Logic
@@ -192,7 +217,8 @@ struct Recipe: Codable, Identifiable {
             notes: notes,
             servings: servings, // Deprecated concept, but keeping for model compatibility
             whatToExpect: whatToExpect,
-            recipeProfile: recipeProfile // Preserve original profile (metadata doesn't change with scale)
+            recipeProfile: recipeProfile, // Preserve original profile (metadata doesn't change with scale)
+            extractionCharacteristics: extractionCharacteristics
         )
     }
     
@@ -283,7 +309,7 @@ struct Recipe: Codable, Identifiable {
     }
 }
 
-struct BrewingStep: Codable {
+struct BrewingStep: Codable, Equatable {
     let timeSeconds: Int
     let instruction: String
     let shortInstruction: String? // Optional short, imperative instruction
@@ -334,7 +360,7 @@ struct BrewParameters: Codable {
     )
 }
 
-struct RecipeBrewParameters: Codable {
+struct RecipeBrewParameters: Codable, Equatable {
     let coffeeGrams: Double
     let waterGrams: Double
     let ratio: String
@@ -405,7 +431,17 @@ extension Recipe {
         recipeProfile: RecipeProfile(
             recommendedRoastLevels: [.medium],
             recommendedProcesses: [.washed, .natural],
-            recommendedFlavorTags: [.nutty, .chocolate]
+            recommendedFlavorTags: [.nutty, .chocolate],
+            recommendedOrigins: nil,
+            recommendedVarieties: nil
+        ),
+        extractionCharacteristics: ExtractionCharacteristics(
+            clarity: 0.8,
+            acidity: 0.7,
+            sweetness: 0.6,
+            body: 0.4,
+            agitation: .medium,
+            thermal: .medium
         )
     )
 }

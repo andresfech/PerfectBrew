@@ -19,15 +19,12 @@ class RecommendationServiceTests: XCTestCase {
             flavorTags: [.citrus, .floral]
         )
         
-        let recipe = Recipe.sampleRecipe
-        // Override sample recipe profile to match perfectly
-        // Assuming we can't easily mutate the let property in the test without creating a new instance
-        // But we can create a new Recipe instance
-        
         let profile = RecipeProfile(
             recommendedRoastLevels: [.light],
             recommendedProcesses: [.washed],
-            recommendedFlavorTags: [.citrus, .floral]
+            recommendedFlavorTags: [.citrus, .floral],
+            recommendedOrigins: nil,
+            recommendedVarieties: nil
         )
         
         let matchingRecipe = Recipe(
@@ -68,7 +65,9 @@ class RecommendationServiceTests: XCTestCase {
         let profile = RecipeProfile(
             recommendedRoastLevels: [.medium], // Match (50)
             recommendedProcesses: [.washed],   // Mismatch (0)
-            recommendedFlavorTags: [.nutty]    // Mismatch (0)
+            recommendedFlavorTags: [.nutty],    // Mismatch (0)
+            recommendedOrigins: nil,
+            recommendedVarieties: nil
         )
         
         let partialRecipe = Recipe(
@@ -93,6 +92,88 @@ class RecommendationServiceTests: XCTestCase {
         // 50 (Roast) + 0 (Process) + 0 (Tags) = 50
         XCTAssertEqual(rec.score, 50)
         XCTAssertTrue(rec.reasons.contains("Matches Medium roast"))
+    }
+    
+    func testOriginMatch() {
+        // Arrange
+        let coffee = Coffee(
+            name: "Yirgacheffe",
+            roastLevel: .light,
+            process: .washed,
+            country: "Ethiopia"
+        )
+        
+        let profile = RecipeProfile(
+            recommendedRoastLevels: [.light],
+            recommendedProcesses: [.washed],
+            recommendedFlavorTags: [],
+            recommendedOrigins: ["Ethiopia", "Kenya"],
+            recommendedVarieties: nil
+        )
+        
+        let originRecipe = Recipe(
+            title: "African Coffee Method",
+            brewingMethod: "V60",
+            skillLevel: "Any",
+            rating: 5.0,
+            parameters: Recipe.sampleRecipe.parameters,
+            preparationSteps: [],
+            brewingSteps: [],
+            equipment: [],
+            notes: "",
+            whatToExpect: nil,
+            recipeProfile: profile
+        )
+        
+        // Act
+        let recommendations = service.getRecommendations(for: coffee, from: [originRecipe])
+        let rec = recommendations.first!
+        
+        // Assert
+        // 50 (Roast) + 30 (Process) + 15 (Origin) = 95
+        XCTAssertEqual(rec.score, 95)
+        XCTAssertTrue(rec.reasons.contains("Best for Ethiopia coffee"))
+    }
+    
+    func testVarietyMatch() {
+        // Arrange
+        let coffee = Coffee(
+            name: "Panama Geisha",
+            roastLevel: .light,
+            process: .natural,
+            variety: "Geisha"
+        )
+        
+        let profile = RecipeProfile(
+            recommendedRoastLevels: [.light],
+            recommendedProcesses: [.natural],
+            recommendedFlavorTags: [],
+            recommendedOrigins: nil,
+            recommendedVarieties: ["Geisha"]
+        )
+        
+        let varietyRecipe = Recipe(
+            title: "Competition V60",
+            brewingMethod: "V60",
+            skillLevel: "Expert",
+            rating: 5.0,
+            parameters: Recipe.sampleRecipe.parameters,
+            preparationSteps: [],
+            brewingSteps: [],
+            equipment: [],
+            notes: "",
+            whatToExpect: nil,
+            recipeProfile: profile
+        )
+        
+        // Act
+        let recommendations = service.getRecommendations(for: coffee, from: [varietyRecipe])
+        let rec = recommendations.first!
+        
+        // Assert
+        // 50 (Roast) + 30 (Process) + 10 (Variety) = 90
+        XCTAssertEqual(rec.score, 90)
+        XCTAssertTrue(rec.reasons.contains("Perfect for Geisha"))
     }
     
     func testNoProfileFallback() {
@@ -120,4 +201,3 @@ class RecommendationServiceTests: XCTestCase {
         XCTAssertEqual(recommendations.first?.score, 30)
     }
 }
-

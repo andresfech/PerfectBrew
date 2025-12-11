@@ -43,11 +43,32 @@ struct Coffee: Identifiable, Codable, Equatable {
     var process: Process
     var flavorTags: [FlavorTag]
     var notes: String
+    
+    // New Fields
+    var country: String
+    var region: String
+    var variety: String
+    var altitude: String
+    var roastDate: Date?
+    
     var createdAt: Date = Date()
     var updatedAt: Date = Date()
     
     // Default empty init
-    init(id: UUID = UUID(), name: String = "", roaster: String = "", roastLevel: RoastLevel = .medium, process: Process = .washed, flavorTags: [FlavorTag] = [], notes: String = "") {
+    init(
+        id: UUID = UUID(),
+        name: String = "",
+        roaster: String = "",
+        roastLevel: RoastLevel = .medium,
+        process: Process = .washed,
+        flavorTags: [FlavorTag] = [],
+        notes: String = "",
+        country: String = "",
+        region: String = "",
+        variety: String = "",
+        altitude: String = "",
+        roastDate: Date? = nil
+    ) {
         self.id = id
         self.name = name
         self.roaster = roaster
@@ -55,6 +76,10 @@ struct Coffee: Identifiable, Codable, Equatable {
         self.process = process
         self.flavorTags = flavorTags
         self.notes = notes
+        self.country = country
+        self.region = region
+        self.variety = variety
+        self.altitude = altitude
+        self.roastDate = roastDate
     }
 }
-

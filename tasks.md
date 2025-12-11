@@ -1,28 +1,29 @@
 ## Relevant Files
+- PerfectBrew/Models/BrewingScience.swift
 - PerfectBrew/Models/Recipe.swift
-- PerfectBrew/Models/Coffee.swift
-- PerfectBrew/Services/CoffeeRepository.swift
+- PerfectBrew/Services/KnowledgeBaseService.swift
+- PerfectBrew/Resources/KnowledgeBase/VarietyProfiles.json
+- PerfectBrew/Services/BrewingRuleEngine.swift
 - PerfectBrew/Services/RecommendationService.swift
-- PerfectBrew/Views/Home/HomeScreen.swift
 
 ## Tasks
 
-### Phase 1: Data Architecture & Persistence
-- [x] **Task 1**: Create `PerfectBrew/Models/Coffee.swift` with Enums (`RoastLevel`, `Process`, `FlavorTag`).
-- [x] **Task 2**: Update `PerfectBrew/Models/Recipe.swift` to include `RecipeProfile` struct. Ensure backward compatibility (optional decoding).
-- [x] **Task 3**: Create `PerfectBrew/Services/CoffeeRepository.swift` to handle CRUD operations for `Coffee` entities (saving to a local JSON file in Documents directory).
+### Phase 1: Data Modeling (The Vocabulary)
+- [ ] **Task 1**: Create `PerfectBrew/Models/BrewingScience.swift` with `ExtractionCharacteristics` struct and Enums (`AgitationLevel`, `ThermalEnergy`).
+- [ ] **Task 2**: Update `PerfectBrew/Models/Recipe.swift` to include `extractionCharacteristics` property.
+- [ ] **Task 3**: Create `PerfectBrew/Services/KnowledgeBaseService.swift` stub.
 
-### Phase 2: Scoring Logic (The Brain)
-- [x] **Task 1**: Create `PerfectBrew/Services/RecommendationService.swift` prototype. Implement the matching algorithm: `match(coffee, recipe) -> Score`.
-- [x] **Task 2**: Implement the "Reasoning" generator: `generateReasons(coffee, recipe) -> [String]` based on the match details.
-- [x] **Task 3**: Create `RecommendationServiceTests.swift` and validate the algorithm with at least 3 test cases (Perfect Match, Partial Match, No Match).
+### Phase 2: Knowledge Base (The Database)
+- [ ] **Task 1**: Create `PerfectBrew/Resources/KnowledgeBase/VarietyProfiles.json` with initial data (Geisha, Bourbon, Caturra).
+- [ ] **Task 2**: Create `PerfectBrew/Resources/KnowledgeBase/ProcessProfiles.json` with initial data (Washed, Natural, Honey).
+- [ ] **Task 3**: Implement `KnowledgeBaseService` loading logic to parse these JSONs.
 
-### Phase 3: UI - Management & Entry
-- [x] **Task 1**: Create `CoffeeViewModel` and `CoffeeFormView` (SwiftUI) for adding/editing a coffee bag.
-- [x] **Task 2**: Create `CoffeeListViewModel` and `CoffeeListView` to display saved coffees.
-- [x] **Task 3**: Update `HomeScreen` to add the "Match My Coffee" button/section navigating to the Coffee List.
+### Phase 3: The Rule Engine (Layer 1)
+- [ ] **Task 1**: Create `PerfectBrew/Services/BrewingRuleEngine.swift`.
+- [ ] **Task 2**: Implement `computeTargetProfile(for coffee: Coffee) -> ExtractionCharacteristics` logic using the Knowledge Base.
+- [ ] **Task 3**: Create unit tests `BrewingRuleEngineTests.swift` to verify "Geisha" and "Natural" rules.
 
-### Phase 4: UI - Recommendations & Integration
-- [x] **Task 1**: Create `RecommendationsViewModel` that uses `RecommendationService` to sort recipes for a given coffee.
-- [x] **Task 2**: Create `RecommendationsView` to display the sorted results with "Match Score" and "Reasons" pills.
-- [x] **Task 3**: Update a few key recipes (e.g., 5 varied ones) in `Resources/Recipes/...` with `recipe_profile` data to demonstrate the feature works.
+### Phase 4: The Matcher & Migration (Layer 2)
+- [ ] **Task 1**: Refactor `RecommendationService.swift` to use `BrewingRuleEngine` and implement vector distance scoring.
+- [ ] **Task 2**: Update `RecommendationsView.swift` to display the new "Intent-based" reasons.
+- [ ] **Task 3**: Update key recipes (Tim Wendelboe, Tetsu) with `extraction_characteristics` in their JSON files.

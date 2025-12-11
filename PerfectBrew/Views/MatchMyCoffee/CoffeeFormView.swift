@@ -17,7 +17,16 @@ struct CoffeeFormView: View {
                     TextField("Roaster", text: $viewModel.roaster)
                 }
                 
-                Section(header: Text("Profile")) {
+                Section(header: Text("Origin")) {
+                    TextField("Country (e.g. Ethiopia)", text: $viewModel.country)
+                    TextField("Region (e.g. Yirgacheffe)", text: $viewModel.region)
+                    TextField("Altitude (e.g. 2000m)", text: $viewModel.altitude)
+                        .keyboardType(.numbersAndPunctuation)
+                }
+                
+                Section(header: Text("Bean Info")) {
+                    TextField("Variety (e.g. Geisha)", text: $viewModel.variety)
+                    
                     Picker("Roast Level", selection: $viewModel.roastLevel) {
                         ForEach(RoastLevel.allCases) { level in
                             Text(level.rawValue).tag(level)
@@ -28,6 +37,13 @@ struct CoffeeFormView: View {
                         ForEach(Process.allCases) { process in
                             Text(process.rawValue).tag(process)
                         }
+                    }
+                }
+                
+                Section(header: Text("Roast Date")) {
+                    Toggle("Include Roast Date", isOn: $viewModel.hasRoastDate)
+                    if viewModel.hasRoastDate {
+                        DatePicker("Date", selection: $viewModel.roastDate, displayedComponents: .date)
                     }
                 }
                 
@@ -98,4 +114,3 @@ struct CoffeeFormView_Previews: PreviewProvider {
         CoffeeFormView()
     }
 }
-

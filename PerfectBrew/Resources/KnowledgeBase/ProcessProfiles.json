@@ -1,0 +1,59 @@
+[
+  {
+    "process": "Washed",
+    "extraction_modifier": {
+      "clarity": 0.1,
+      "acidity": 0.1,
+      "sweetness": 0.0,
+      "body": -0.1
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "High",
+      "thermal_mass_need": "High"
+    },
+    "description": "Cleanest representation of the bean. Tolerates higher agitation and temperature."
+  },
+  {
+    "process": "Natural",
+    "extraction_modifier": {
+      "clarity": -0.1,
+      "acidity": -0.1,
+      "sweetness": 0.2,
+      "body": 0.2
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Low",
+      "thermal_mass_need": "Medium"
+    },
+    "description": "Dried with fruit on. Produces more fines, so requires gentle agitation to prevent stalling."
+  },
+  {
+    "process": "Honey",
+    "extraction_modifier": {
+      "clarity": 0.0,
+      "acidity": 0.0,
+      "sweetness": 0.3,
+      "body": 0.1
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Medium",
+      "thermal_mass_need": "Medium"
+    },
+    "description": "Hybrid process. Generally sweeter with moderate body. Agitation depends on mucilage amount."
+  },
+  {
+    "process": "Anaerobic",
+    "extraction_modifier": {
+      "clarity": 0.0,
+      "acidity": 0.2,
+      "sweetness": 0.1,
+      "body": 0.1
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Low",
+      "thermal_mass_need": "Medium"
+    },
+    "description": "Fermented without oxygen. Can be intense and soluble. Gentle extraction helps avoid overpowering funky notes."
+  }
+]
+

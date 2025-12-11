@@ -1,0 +1,87 @@
+[
+  {
+    "variety": "Geisha",
+    "extraction_bias": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.3
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Low",
+      "thermal_mass_need": "High"
+    },
+    "description": "Prized for its complex floral and tea-like aromatics. Requires high clarity extraction to avoid masking delicate notes."
+  },
+  {
+    "variety": "Bourbon",
+    "extraction_bias": {
+      "clarity": 0.5,
+      "acidity": 0.6,
+      "sweetness": 0.8,
+      "body": 0.6
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Medium",
+      "thermal_mass_need": "Medium"
+    },
+    "description": "Known for its excellent sweetness and balance. A versatile variety that responds well to standard extraction."
+  },
+  {
+    "variety": "Caturra",
+    "extraction_bias": {
+      "clarity": 0.4,
+      "acidity": 0.6,
+      "sweetness": 0.6,
+      "body": 0.5
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Medium",
+      "thermal_mass_need": "Medium"
+    },
+    "description": "A mutation of Bourbon with good acidity but often less clarity. Benefits from recipes that enhance sweetness."
+  },
+  {
+    "variety": "Pacamara",
+    "extraction_bias": {
+      "clarity": 0.6,
+      "acidity": 0.7,
+      "sweetness": 0.7,
+      "body": 0.7
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Low",
+      "thermal_mass_need": "High"
+    },
+    "description": "Large beans with distinct savory and fruity notes. Requires careful heat management due to bean size."
+  },
+  {
+    "variety": "SL-28",
+    "extraction_bias": {
+      "clarity": 0.8,
+      "acidity": 0.9,
+      "sweetness": 0.7,
+      "body": 0.5
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Medium",
+      "thermal_mass_need": "High"
+    },
+    "description": "Famous Kenyan variety with intense fruit acidity (blackcurrant). High thermal energy helps extract these acids fully."
+  },
+  {
+    "variety": "Ethiopian Heirloom",
+    "extraction_bias": {
+      "clarity": 0.8,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.4
+    },
+    "brewing_parameters": {
+      "agitation_tolerance": "Low",
+      "thermal_mass_need": "High"
+    },
+    "description": "A mix of indigenous varieties. Usually small, dense beans requiring high heat and gentle agitation to avoid clogging."
+  }
+]
+

@@ -56,12 +56,13 @@ struct RecommendationRow: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(recommendation.reasons, id: \.self) { reason in
+                            let isWarning = reason.contains("Warning")
                             Text(reason)
                                 .font(.caption2)
                                 .padding(.horizontal, 6)
                                 .padding(.vertical, 2)
-                                .background(Color.blue.opacity(0.1))
-                                .foregroundColor(.blue)
+                                .background(isWarning ? Color.red.opacity(0.1) : Color.blue.opacity(0.1))
+                                .foregroundColor(isWarning ? .red : .blue)
                                 .cornerRadius(4)
                         }
                     }

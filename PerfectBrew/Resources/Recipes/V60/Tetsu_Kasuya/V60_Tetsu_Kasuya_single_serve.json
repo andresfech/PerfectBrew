@@ -79,7 +79,17 @@
     "recipe_profile": {
       "recommended_roast_levels": ["Medium", "Light"],
       "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Sweet", "Clean", "Acidity"]
+      "recommended_flavor_tags": ["Sweet", "Clean", "Acidity"],
+      "recommended_origins": ["Ethiopia", "Panama"],
+      "recommended_varieties": ["Geisha", "Pacamara"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.7,
+      "sweetness": 0.8,
+      "body": 0.4,
+      "agitation": "Low",
+      "thermal": "Medium"
     },
     "notes": "Based on Tetsu Kasuya's 2016 World Brewers Cup winning method. The key innovation is the systematic control over flavor variables through water distribution. Adjust the first two pours (40% total) to shift sweetness/acidity balance, and modify the number of remaining pours (keeping 60% total) to control strength.",
     "servings": 1
