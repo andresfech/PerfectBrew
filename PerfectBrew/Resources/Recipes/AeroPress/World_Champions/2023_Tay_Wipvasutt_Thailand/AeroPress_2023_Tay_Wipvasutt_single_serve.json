@@ -76,6 +76,19 @@
       "audio_file_name": "tay_2023_intro.m4a",
       "audio_script": "This 2023 champion recipe uses an inverted method with a late coffee addition to refresh aromatics. Press a small, sweet concentrate and dilute in two stages—first room-temperature water for clarity and control, then hot water for strength. Expect a clean, layered cup with lively acidity and a silky texture."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Aromatic", "Layered", "Silky"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.5,
+      "agitation": "Medium",
+      "thermal": "Medium"
+    },
     "equipment": [
       "AeroPress (inverted)",
       "Paper filter (rinsed)",

@@ -77,6 +77,19 @@
       "audio_file_name": "scott_rao_intro.m4a",
       "audio_script": "Scott Rao's V60 method emphasizes precision and consistency through controlled pouring and minimal agitation. This technique focuses on maintaining bed structure while achieving even extraction. Expect a clean, bright cup with excellent clarity and balanced acidity. The method works particularly well with light to medium roasts, highlighting origin characteristics. The systematic approach of gentle stirring and controlled pouring produces consistent results and helps develop proper brewing technique."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Clean", "High Acidity", "Structured"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.9,
+      "sweetness": 0.5,
+      "body": 0.3,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "notes": "Based on Scott Rao's brewing principles emphasizing precision, consistency, and minimal agitation. The key is maintaining bed structure through controlled pouring and gentle stirring. Focus on steady pour rates and avoid excessive agitation to achieve clean, balanced extraction.",
     "servings": 1
   }

@@ -58,6 +58,19 @@
         "audio_file_name": "intelligentsia_french_press_step5.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Bright", "Clean", "Elegant"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.7,
+      "acidity": 0.7,
+      "sweetness": 0.7,
+      "body": 0.6,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "French Press (0.5L capacity)",
       "Digital scale",

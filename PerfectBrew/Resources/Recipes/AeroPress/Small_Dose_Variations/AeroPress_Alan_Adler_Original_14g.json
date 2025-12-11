@@ -43,6 +43,19 @@
         "audio_file_name": "adler_original_step3.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Dark"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Sweet", "Low Acidity", "Smooth"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.6,
+      "acidity": 0.4,
+      "sweetness": 0.9,
+      "body": 0.7,
+      "agitation": "High",
+      "thermal": "Low"
+    },
     "equipment": [
       "AeroPress",
       "Paper Filter",

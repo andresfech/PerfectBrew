@@ -58,6 +58,19 @@
         "audio_file_name": "stumptown_french_press_step5.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Dark"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Rich", "Deep", "Bold"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.5,
+      "acidity": 0.5,
+      "sweetness": 0.8,
+      "body": 0.8,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "French Press (0.5L capacity)",
       "Digital scale",

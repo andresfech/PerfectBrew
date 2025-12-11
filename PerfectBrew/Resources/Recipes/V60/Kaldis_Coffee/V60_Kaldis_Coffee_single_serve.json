@@ -69,6 +69,20 @@
       "audio_file_name": "kaldis_single_intro.m4a",
       "audio_script": "Kaldi's Coffee V60 method is a beginner-friendly approach that emphasizes simplicity and consistency. This technique uses a straightforward 2.5:1 bloom ratio followed by an aggressive main pour and a gentle final pour. Expect a clean, balanced cup with good body and clarity. The aggressive main pour creates turbulence for even extraction, while the gentle final pour ensures you don't over-extract. This method works well with medium to dark roasts and is perfect for those new to V60 brewing."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Dark"],
+      "recommended_processes": ["Washed", "Honey"],
+      "recommended_flavor_tags": ["Chocolate", "Nutty", "Balanced"],
+      "recommended_origins": ["Guatemala", "Brazil", "Costa Rica"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.7,
+      "acidity": 0.6,
+      "sweetness": 0.8,
+      "body": 0.6,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "notes": "Beginner-friendly V60 with clean, balanced cup. Aggressive main pour creates even extraction; gentle finish preserves clarity. Works well with medium–dark roasts.",
     "servings": 1
   }

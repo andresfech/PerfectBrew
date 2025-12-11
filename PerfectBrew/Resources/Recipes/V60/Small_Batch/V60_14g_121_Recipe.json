@@ -50,6 +50,19 @@
         "audio_file_name": "recipe_121_14g_step4.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light"],
+      "recommended_processes": ["Washed", "Natural", "Anaerobic"],
+      "recommended_flavor_tags": ["Sweet", "Complex", "Delicate"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.7,
+      "sweetness": 0.9,
+      "body": 0.5,
+      "agitation": "Low",
+      "thermal": "High"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

@@ -50,6 +50,19 @@
         "audio_file_name": "hoffmann_scaled_12g_step4.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Bright", "Juicy", "Balanced"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.8,
+      "sweetness": 0.6,
+      "body": 0.4,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

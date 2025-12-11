@@ -43,6 +43,19 @@
         "audio_file_name": "slow_stream_10g_step3.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium", "Dark"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Sweet", "Balanced", "Syrupy"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.7,
+      "sweetness": 0.9,
+      "body": 0.7,
+      "agitation": "Low",
+      "thermal": "High"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

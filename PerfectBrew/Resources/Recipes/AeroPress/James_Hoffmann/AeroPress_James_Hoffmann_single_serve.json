@@ -70,6 +70,19 @@
       "audio_file_name": "james_hoffmann_aeropress_intro.m4a",
       "audio_script": "James Hoffmann's Ultimate AeroPress Technique represents a refined approach that prioritizes simplicity and consistency. This method uses a medium-fine grind, no filter rinse, and immediate plunger insertion to create a vacuum seal. The 2-minute steep time followed by a 30-second rest allows for optimal extraction. Expect a clean, balanced cup with good body and clarity. This technique works exceptionally well across different roast levels by adjusting temperature between 95 and 100 degrees Celsius. Perfect for daily brewing with excellent results and maximum reproducibility."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Sweet", "Balanced", "Clean"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.7,
+      "sweetness": 0.8,
+      "body": 0.4,
+      "agitation": "Low",
+      "thermal": "High"
+    },
     "equipment": [
       "AeroPress",
       "Standard AeroPress paper filter (unrinsed)",

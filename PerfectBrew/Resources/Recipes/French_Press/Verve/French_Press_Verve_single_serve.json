@@ -58,6 +58,19 @@
         "audio_file_name": "verve_french_press_step5.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Vibrant", "Balanced", "Sweet"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.6,
+      "acidity": 0.6,
+      "sweetness": 0.7,
+      "body": 0.7,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "French Press (0.5L capacity)",
       "Digital scale",

@@ -58,6 +58,19 @@
         "audio_file_name": "cafec_slow_10g_step5.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Rich", "Sweet", "Full-bodied"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.7,
+      "acidity": 0.7,
+      "sweetness": 0.8,
+      "body": 0.7,
+      "agitation": "Medium",
+      "thermal": "Medium"
+    },
     "equipment": [
       "V60 Brewer",
       "Cafec T-92 Filters (or standard V60)",

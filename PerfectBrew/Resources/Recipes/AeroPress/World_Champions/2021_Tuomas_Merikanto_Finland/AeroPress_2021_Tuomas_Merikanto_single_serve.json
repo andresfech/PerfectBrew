@@ -83,6 +83,19 @@
       "audio_file_name": "tuomas_2021_intro.m4a",
       "audio_script": "The 2021 World AeroPress Champion recipe by Tuomas Merikanto showcases advanced brewing techniques. This method uses Third Wave Water Formula 2 for optimal mineral balance, a low extraction temperature of 80 degrees Celsius to highlight delicate flavors, and innovative techniques including gentle stirring and the signature 'pour from altitude' method. Expect a cup with exceptional clarity, bright acidity, and complex flavor layers that highlight the coffee's origin characteristics. The inverted method with precise timing creates a clean, structured profile perfect for showcasing high-quality single-origin coffees."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Complex", "Bright", "Floral"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.9,
+      "sweetness": 0.7,
+      "body": 0.4,
+      "agitation": "Medium",
+      "thermal": "Low"
+    },
     "equipment": [
       "AeroPress (inverted)",
       "Paper filter (rinsed)",

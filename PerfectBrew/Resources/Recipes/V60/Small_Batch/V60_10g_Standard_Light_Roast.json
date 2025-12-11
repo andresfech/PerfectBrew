@@ -57,6 +57,21 @@
         "audio_file_name": "standard_light_10g_step5.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Acidity", "Fruity", "Sweet"],
+      "recommended_origins": ["Ethiopia", "Kenya", "Colombia"],
+      "recommended_varieties": ["Geisha", "Heirloom"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.8,
+      "sweetness": 0.6,
+      "body": 0.4,
+      "agitation": "Low",
+      "thermal": "High"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

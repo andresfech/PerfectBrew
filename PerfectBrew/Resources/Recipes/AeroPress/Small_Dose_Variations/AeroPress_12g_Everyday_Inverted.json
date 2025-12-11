@@ -43,6 +43,19 @@
         "audio_file_name": "everyday_12g_step3.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Balanced", "Reliable", "Round"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.6,
+      "acidity": 0.6,
+      "sweetness": 0.7,
+      "body": 0.6,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "AeroPress",
       "Paper Filter",

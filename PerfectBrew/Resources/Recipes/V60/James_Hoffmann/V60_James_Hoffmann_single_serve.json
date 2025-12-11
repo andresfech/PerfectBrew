@@ -84,6 +84,21 @@
       "audio_file_name": "hoffmann_intro.m4a",
       "audio_script": "James Hoffmann's V60 method is a refined technique that emphasizes precision and control. This method uses a 2:1 bloom ratio for optimal de-gassing, followed by two main pours that keep the V60 topped up. Expect a clean, bright cup with excellent clarity and balanced acidity. The technique works exceptionally well with light to medium roasts, highlighting origin characteristics while maintaining consistency."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Bright", "Clean", "Complex"],
+      "recommended_origins": ["Kenya", "Ethiopia", "Colombia"],
+      "recommended_varieties": ["SL-28", "Bourbon"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.8,
+      "sweetness": 0.6,
+      "body": 0.4,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "notes": "Water Temperature: 95°C general, 100°C for high-quality light roasts, 90–95°C or 80–90°C for darker roasts. Aim to finish drawdown by 3 minutes 30 seconds. Total brew time can vary, but focus on a complete, even drain.",
     "servings": 1
   }

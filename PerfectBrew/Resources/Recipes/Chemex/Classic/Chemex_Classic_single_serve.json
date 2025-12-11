@@ -46,6 +46,19 @@
         "instruction": "Allow final drawdown to complete"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.3,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "Chemex 6-cup brewer",
       "Chemex filters",
@@ -103,6 +116,19 @@
         "instruction": "Allow final drawdown to complete"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.3,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "Chemex 8-cup brewer",
       "Chemex filters",
@@ -160,6 +186,19 @@
         "instruction": "Allow final drawdown to complete"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.3,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "Chemex 10-cup brewer",
       "Chemex filters",
@@ -217,6 +256,19 @@
         "instruction": "Allow final drawdown to complete"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.3,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "equipment": [
       "Chemex 10-cup brewer",
       "Chemex filters",

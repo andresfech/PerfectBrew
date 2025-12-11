@@ -77,6 +77,19 @@
       "audio_file_name": "george_2024_intro.m4a",
       "audio_script": "This 2024 champion method focuses on precision and clarity. Use two controlled Melodrip pours, a gentle NSEW stir, and a slow press to produce a clean concentrate. Finish with warm-water bypass and a touch of 0 ppm water for balance. Expect clarity, refined sweetness, and an elegant cup."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Elegant", "Clarified", "Refined"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.8,
+      "body": 0.4,
+      "agitation": "Low",
+      "thermal": "High"
+    },
     "equipment": [
       "AeroPress (inverted)",
       "Aesir / standard paper filter (rinsed)",

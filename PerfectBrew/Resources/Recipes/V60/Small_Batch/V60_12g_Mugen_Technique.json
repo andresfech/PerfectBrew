@@ -57,6 +57,19 @@
         "audio_file_name": "mugen_tech_12g_step5.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Sweet", "Balanced", "Clean"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.7,
+      "sweetness": 0.8,
+      "body": 0.6,
+      "agitation": "Low",
+      "thermal": "High"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

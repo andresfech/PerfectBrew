@@ -50,6 +50,19 @@
         "audio_file_name": "slow_drawdown_12g_step4.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Clean", "Crisp", "Delicate"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.6,
+      "body": 0.3,
+      "agitation": "Low",
+      "thermal": "Medium"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

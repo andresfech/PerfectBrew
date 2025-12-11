@@ -57,6 +57,19 @@
         "audio_file_name": "championship_concentrate_step5_flip_press.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Intense", "Complex", "Full-bodied"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.6,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.9,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "equipment": [
       "AeroPress (inverted method)",
       "Standard AeroPress paper filter (rinsed)",

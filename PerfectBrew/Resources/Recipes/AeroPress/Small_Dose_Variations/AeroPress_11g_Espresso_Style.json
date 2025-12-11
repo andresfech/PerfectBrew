@@ -42,6 +42,19 @@
         "audio_file_name": "latte_11g_step3.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Dark", "Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Espresso-like", "Bold", "Thick"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.4,
+      "acidity": 0.5,
+      "sweetness": 0.6,
+      "body": 0.9,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "equipment": [
       "AeroPress",
       "Paper Filter",

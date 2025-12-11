@@ -43,6 +43,19 @@
         "audio_file_name": "bypass_14g_step3.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Dark"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Smooth", "Sweet", "Classic"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.7,
+      "acidity": 0.5,
+      "sweetness": 0.8,
+      "body": 0.5,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "equipment": [
       "AeroPress",
       "Paper Filter",

@@ -76,6 +76,19 @@
       "audio_file_name": "jibbi_2022_intro.m4a",
       "audio_script": "The 2022 World AeroPress Champion recipe by Jibbi Little represents the pinnacle of precision brewing. This revolutionary method uses dual grinding combined with sieving to achieve extreme control over particle size distribution. The technique involves 35 gentle stirs for optimal saturation, precise temperature management at 90 degrees Celsius, and strategic bypass water to achieve the desired texture. Expect an exceptionally clean cup with remarkable clarity, precise flavor separation, and a silky-smooth mouthfeel. This method showcases how particle distribution control can dramatically improve extraction efficiency and cup quality."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light"],
+      "recommended_processes": ["Washed", "Anaerobic"],
+      "recommended_flavor_tags": ["Silky", "Clean", "Complex"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.9,
+      "acidity": 0.8,
+      "sweetness": 0.8,
+      "body": 0.3,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "equipment": [
       "AeroPress (inverted)",
       "Paper filter (rinsed)",

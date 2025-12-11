@@ -48,6 +48,19 @@
       "audio_file_name": "single_cup_joy_intro.m4a",
       "audio_script": "The Single Cup of Joy is inspired by SCA cupping methods. It uses a coarse grind, a long steep, and no agitation to highlight sweetness, especially in natural and honey processed coffees. Designed for a perfect single serving."
     },
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Natural", "Honey"],
+      "recommended_flavor_tags": ["Sweet", "Fruity", "Clean"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.6,
+      "sweetness": 0.9,
+      "body": 0.5,
+      "agitation": "Low",
+      "thermal": "Medium"
+    },
     "equipment": [
       "AeroPress (Inverted)",
       "Paper Filter (rinsed)",

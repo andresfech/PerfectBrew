@@ -50,6 +50,19 @@
         "audio_file_name": "two_cup_scaled_14g_step4.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Tea-like", "Floral", "Citrus"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.7,
+      "sweetness": 0.6,
+      "body": 0.3,
+      "agitation": "Medium",
+      "thermal": "Medium"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

@@ -57,6 +57,19 @@
         "audio_file_name": "micro_dose_10g_step5.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed"],
+      "recommended_flavor_tags": ["Sweet", "Fruity"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.7,
+      "acidity": 0.7,
+      "sweetness": 0.7,
+      "body": 0.5,
+      "agitation": "High",
+      "thermal": "Medium"
+    },
     "equipment": [
       "V60 Brewer",
       "Paper Filter",

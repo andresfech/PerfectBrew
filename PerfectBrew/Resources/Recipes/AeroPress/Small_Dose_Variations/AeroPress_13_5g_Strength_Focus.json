@@ -42,6 +42,19 @@
         "audio_file_name": "strength_135g_step3.m4a"
       }
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Dark"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Strong", "Bold", "Punchy"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.6,
+      "acidity": 0.6,
+      "sweetness": 0.7,
+      "body": 0.8,
+      "agitation": "Medium",
+      "thermal": "Medium"
+    },
     "equipment": [
       "AeroPress",
       "Paper Filter",

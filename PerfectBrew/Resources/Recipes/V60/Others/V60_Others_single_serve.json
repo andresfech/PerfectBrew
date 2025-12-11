@@ -49,6 +49,19 @@
       "Kettle",
       "Timer"
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Balanced", "Smooth"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.6,
+      "acidity": 0.5,
+      "sweetness": 0.6,
+      "body": 0.5,
+      "agitation": "Medium",
+      "thermal": "Medium"
+    },
     "notes": "Perfect for busy mornings when you need coffee quickly.",
     "servings": 1
   },
@@ -124,6 +137,19 @@
       "Timer",
       "Stirring stick"
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Light", "Medium"],
+      "recommended_processes": ["Washed", "Anaerobic"],
+      "recommended_flavor_tags": ["Bright", "Complex", "Acidity"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.8,
+      "acidity": 0.8,
+      "sweetness": 0.7,
+      "body": 0.4,
+      "agitation": "High",
+      "thermal": "High"
+    },
     "notes": "Competition-style brewing focuses on precision and consistency.",
     "servings": 1
   },
@@ -208,6 +234,19 @@
       "Timer",
       "Stirring stick"
     ],
+    "recipe_profile": {
+      "recommended_roast_levels": ["Medium", "Dark"],
+      "recommended_processes": ["Washed", "Natural"],
+      "recommended_flavor_tags": ["Rich", "Bold", "Crowd-pleaser"]
+    },
+    "extraction_characteristics": {
+      "clarity": 0.5,
+      "acidity": 0.5,
+      "sweetness": 0.7,
+      "body": 0.8,
+      "agitation": "Medium",
+      "thermal": "High"
+    },
     "notes": "Perfect for serving 3-4 people. Use coarser grind to prevent over-extraction with larger dose.",
     "servings": 3
   }
