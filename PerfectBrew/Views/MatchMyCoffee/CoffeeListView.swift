@@ -63,12 +63,25 @@ struct CoffeeRow: View {
                 .buttonStyle(BorderlessButtonStyle()) // Prevent list row selection hijack
             }
             
-            if !coffee.roaster.isEmpty {
-                Text(coffee.roaster)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+            // Roaster & Origin
+            if !coffee.roaster.isEmpty || !coffee.country.isEmpty {
+                HStack(spacing: 4) {
+                    if !coffee.roaster.isEmpty {
+                        Text(coffee.roaster)
+                            .fontWeight(.medium)
+                    }
+                    if !coffee.roaster.isEmpty && !coffee.country.isEmpty {
+                        Text("•")
+                    }
+                    if !coffee.country.isEmpty {
+                        Text(coffee.country)
+                    }
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
             }
             
+            // Badges
             HStack(spacing: 8) {
                 Text(coffee.roastLevel.rawValue)
                     .font(.caption)
@@ -97,6 +110,14 @@ struct CoffeeRow: View {
                 }
             }
             .padding(.top, 2)
+            
+            // Roast Date (if available)
+            if let date = coffee.roastDate {
+                Text("Roasted: \(date.formatted(date: .abbreviated, time: .omitted))")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+                    .padding(.top, 2)
+            }
         }
         .padding(.vertical, 4)
     }
@@ -109,4 +130,3 @@ struct CoffeeListView_Previews: PreviewProvider {
         }
     }
 }
-
