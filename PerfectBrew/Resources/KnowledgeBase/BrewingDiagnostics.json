@@ -1,0 +1,110 @@
+{
+  "sour": {
+    "problem": "Sour / Tart / Salty",
+    "diagnosis": "Under-extraction",
+    "description": "The water passed through too quickly or didn't dissolve enough flavor compounds.",
+    "fixes": {
+      "V60": [
+        "Grind Finer (increase contact time)",
+        "Pour Slower (reduce agitation)",
+        "Use Hotter Water (increase solubility)"
+      ],
+      "AeroPress": [
+        "Grind Finer",
+        "Steep Longer (add 30s)",
+        "Stir More (increase agitation)"
+      ],
+      "French Press": [
+        "Steep Longer (add 1-2 mins)",
+        "Grind Finer",
+        "Use Hotter Water"
+      ],
+      "Chemex": [
+        "Grind Finer",
+        "Pour Slower",
+        "Use Hotter Water"
+      ],
+      "default": [
+        "Grind Finer",
+        "Increase Ratio (more water)",
+        "Increase Temperature"
+      ]
+    }
+  },
+  "bitter": {
+    "problem": "Bitter / Dry / Astringent",
+    "diagnosis": "Over-extraction",
+    "description": "Too much flavor was dissolved, pulling out harsh tannins and dry compounds.",
+    "fixes": {
+      "V60": [
+        "Grind Coarser (reduce contact time)",
+        "Pour Faster (increase agitation)",
+        "Use Cooler Water"
+      ],
+      "AeroPress": [
+        "Grind Coarser",
+        "Steep Shorter (reduce 30s)",
+        "Press Gentler"
+      ],
+      "French Press": [
+        "Steep Shorter (reduce 1 min)",
+        "Grind Coarser",
+        "Scoop Crust/Foam earlier"
+      ],
+      "Chemex": [
+        "Grind Coarser",
+        "Pour Faster",
+        "Use Cooler Water"
+      ],
+      "default": [
+        "Grind Coarser",
+        "Decrease Ratio (less water)",
+        "Decrease Temperature"
+      ]
+    }
+  },
+  "weak": {
+    "problem": "Weak / Watery / Thin",
+    "diagnosis": "Low Strength (TDS)",
+    "description": "Not enough coffee material is dissolved in the water.",
+    "fixes": {
+      "default": [
+        "Increase Dose (more coffee)",
+        "Decrease Water (tighter ratio)",
+        "Grind Finer (if also sour)"
+      ]
+    }
+  },
+  "strong": {
+    "problem": "Strong / Heavy / Muddy",
+    "diagnosis": "High Strength (TDS)",
+    "description": "Too much coffee material is dissolved, overpowering the nuance.",
+    "fixes": {
+      "default": [
+        "Decrease Dose (less coffee)",
+        "Increase Water (bypass or wider ratio)",
+        "Grind Coarser (if also bitter)"
+      ]
+    }
+  },
+  "hollow": {
+    "problem": "Hollow / Empty Finish",
+    "diagnosis": "Channeling (Uneven Extraction)",
+    "description": "Water flowed through some parts too fast and others too slow.",
+    "fixes": {
+      "V60": [
+        "Stir/Swirl Bloom more effectively",
+        "Pour more steadily",
+        "Check for flat bed at end"
+      ],
+      "Chemex": [
+        "Ensure filter adherence",
+        "Pour spiral more evenly"
+      ],
+      "default": [
+        "Improve distribution technique",
+        "WDT (Weiss Distribution Technique)"
+      ]
+    }
+  }
+}

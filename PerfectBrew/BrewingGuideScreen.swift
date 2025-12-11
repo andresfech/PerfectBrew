@@ -4,7 +4,10 @@ import Lottie
 struct BrewingGuideScreen: View {
     @ObservedObject var viewModel: BrewingGuideViewModel
     @StateObject private var localizationManager = LocalizationManager.shared
+    @StateObject private var storageService = StorageService() // AEC-11
     @State private var showingFeedback = false
+    @State private var showingCoffeeSelection = false
+    @State private var lastBrewAdvice: String? = nil // AEC-11
     
     let coffeeDose: Double
     let waterAmount: Double
@@ -12,6 +15,7 @@ struct BrewingGuideScreen: View {
     let grindSize: Int
     let brewTime: TimeInterval
     let recipe: Recipe
+    let coffee: Coffee? // AEC-11
     
     // Check if current step is about heating water
     private var isHeatingWaterStep: Bool {
@@ -33,19 +37,20 @@ struct BrewingGuideScreen: View {
                (step.contains("invert") && step.contains("aeropress"))
     }
 
-    init(coffeeDose: Double, waterAmount: Double, waterTemperature: Double, grindSize: Int, brewTime: TimeInterval, recipe: Recipe) {
+    init(coffeeDose: Double, waterAmount: Double, waterTemperature: Double, grindSize: Int, brewTime: TimeInterval, recipe: Recipe, coffee: Coffee? = nil) {
         self.coffeeDose = coffeeDose
         self.waterAmount = waterAmount
         self.waterTemperature = waterTemperature
         self.grindSize = grindSize
         self.brewTime = brewTime
         self.recipe = recipe
+        self.coffee = coffee
         
         print("DEBUG: BrewingGuideScreen init with recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
         print("DEBUG: BrewingGuideScreen coffeeDose: \(coffeeDose)g, waterAmount: \(waterAmount)g")
         
-        // Initialize view model with recipe
-        let viewModel = BrewingGuideViewModel(recipe: recipe)
+        // Initialize view model with recipe and coffee
+        let viewModel = BrewingGuideViewModel(recipe: recipe, coffee: coffee)
         self._viewModel = ObservedObject(wrappedValue: viewModel)
     }
 
@@ -68,6 +73,60 @@ struct BrewingGuideScreen: View {
             // Main Content - Scrollable if needed
             ScrollView {
                 VStack(spacing: 12) {
+                    // Coffee Context Button (Preparation Phase only)
+                    if viewModel.isPreparationPhase {
+                        Button(action: {
+                            showingCoffeeSelection = true
+                        }) {
+                            HStack {
+                                Image(systemName: "cup.and.saucer.fill")
+                                    .foregroundColor(.brown)
+                                Text(viewModel.selectedCoffee?.name ?? "Select Coffee (for logs)")
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.primary)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(10)
+                        }
+                        .padding(.horizontal, 20)
+                        .sheet(isPresented: $showingCoffeeSelection) {
+                            BrewContextView(viewModel: viewModel)
+                        }
+                    }
+                    
+                    // Last Brew Advice (AEC-11)
+                    if viewModel.isPreparationPhase, let advice = lastBrewAdvice {
+                        HStack(spacing: 12) {
+                            Image(systemName: "lightbulb.fill")
+                                .font(.title3)
+                                .foregroundColor(.orange)
+                            
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Last time you brewed this:")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                Text(advice)
+                                    .font(.subheadline)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.primary)
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .background(Color.orange.opacity(0.1))
+                        .cornerRadius(12)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color.orange.opacity(0.3), lineWidth: 1)
+                        )
+                        .padding(.horizontal, 20)
+                    }
+                    
                     // Timer Section
                     if viewModel.isPreparationPhase {
                         // Preparation Progress
@@ -458,7 +517,8 @@ struct BrewingGuideScreen: View {
                 waterTemperature: waterTemperature,
                 grindSize: grindSize,
                 brewTime: brewTime
-                                )
+                                ),
+                                coffee: viewModel.selectedCoffee  // AEC-12: Pass selected coffee
                             ), isActive: $showingFeedback) {
                                 EmptyView()
                             }
@@ -469,6 +529,24 @@ struct BrewingGuideScreen: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 20)
             .background(Color(.systemBackground))
+        }
+        .onAppear {
+            if let coffee = viewModel.selectedCoffee {
+                // Find most recent brew for this recipe + coffee
+                let history = storageService.loadBrews().filter { 
+                    $0.recipeTitle == recipe.title && 
+                    $0.coffeeID == coffee.id 
+                }.sorted(by: { $0.date > $1.date })
+                
+                if let lastBrew = history.first, 
+                   let defect = lastBrew.defect, 
+                   let adjustment = lastBrew.adjustment {
+                    // Only show if there was a defect
+                    if defect != "none" && defect != "None (Balanced)" {
+                       lastBrewAdvice = "\(defect) → \(adjustment)" 
+                    }
+                }
+            }
         }
     }
     
@@ -529,7 +607,8 @@ struct BrewingGuideScreen_Previews: PreviewProvider {
                 ],
                 equipment: ["V60", "Scale", "Kettle"],
                 notes: "Sample notes"
-            )
+            ),
+            coffee: nil
         )
     }
 }

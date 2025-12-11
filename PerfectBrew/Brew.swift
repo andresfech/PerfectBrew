@@ -17,6 +17,11 @@ struct Brew: Codable, Identifiable {
     // Detailed Feedback Data
     let feedbackData: FeedbackData
     
+    // New Fields for AEC-11 Smart Feedback
+    var coffeeID: UUID?
+    var defect: String?
+    var adjustment: String?
+    
     // Legacy fields for backward compatibility
     let tasteRating: Int
     let strengthRating: Int
@@ -26,7 +31,7 @@ struct Brew: Codable, Identifiable {
     let date: Date
     
     // Custom initializer for new structure
-    init(recipeTitle: String, brewingMethod: String, coffeeDose: Double, waterAmount: Double, waterTemperature: Double, grindSize: Int, brewTime: TimeInterval, feedbackData: FeedbackData, tasteRating: Int, strengthRating: Int, acidityRating: Int, notes: String, date: Date) {
+    init(recipeTitle: String, brewingMethod: String, coffeeDose: Double, waterAmount: Double, waterTemperature: Double, grindSize: Int, brewTime: TimeInterval, feedbackData: FeedbackData, tasteRating: Int, strengthRating: Int, acidityRating: Int, notes: String, date: Date, coffeeID: UUID? = nil, defect: String? = nil, adjustment: String? = nil) {
         self.recipeTitle = recipeTitle
         self.brewingMethod = brewingMethod
         self.coffeeDose = coffeeDose
@@ -40,27 +45,13 @@ struct Brew: Codable, Identifiable {
         self.acidityRating = acidityRating
         self.notes = notes
         self.date = date
+        self.coffeeID = coffeeID
+        self.defect = defect
+        self.adjustment = adjustment
     }
     
-    // Computed properties for backward compatibility
+    // Computed property for overall rating
     var overallRating: Int {
-        // Calculate overall rating from detailed feedback
-        var totalRating = 0
-        var ratingCount = 0
-        
-        if feedbackData.sweetnessLevel > 0 {
-            totalRating += Int(feedbackData.sweetnessLevel)
-            ratingCount += 1
-        }
-        if feedbackData.bitternessLevel > 0 {
-            totalRating += Int(feedbackData.bitternessLevel)
-            ratingCount += 1
-        }
-        if feedbackData.acidityLevel > 0 {
-            totalRating += Int(feedbackData.acidityLevel)
-            ratingCount += 1
-        }
-        
-        return ratingCount > 0 ? totalRating / ratingCount : 0
+        return Int(feedbackData.overallRating)
     }
 }

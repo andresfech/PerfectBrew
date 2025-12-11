@@ -19,9 +19,13 @@ class BrewingGuideViewModel: ObservableObject {
     // Audio service for playing step instructions
     let audioService = AudioService()
     private var recipe: Recipe
+    
+    // AEC-11: Track the selected coffee for brew history and diagnostics
+    @Published var selectedCoffee: Coffee?
 
-    init(recipe: Recipe) {
+    init(recipe: Recipe, coffee: Coffee? = nil) {
         self.recipe = recipe
+        self.selectedCoffee = coffee
         print("DEBUG: BrewingGuideViewModel init with recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
         
         // Use recipe parameters

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct BrewDetailScreen: View {
     let recipe: Recipe
+    var coffee: Coffee? = nil // AEC-11
     @StateObject private var audioService = AudioService()
     @StateObject private var grinderService = GrinderService.shared
     @AppStorage("selectedGrinder") private var selectedGrinder: String = "None"
@@ -290,7 +291,8 @@ struct BrewDetailScreen: View {
                     waterTemperature: recipe.parameters.temperatureCelsius,
                     grindSize: 5, // Default grind size
                     brewTime: TimeInterval(recipe.parameters.totalBrewTimeSeconds),
-                    recipe: recipe
+                    recipe: recipe,
+                    coffee: coffee
                 )) {
                     HStack {
                         Image(systemName: "play.fill")

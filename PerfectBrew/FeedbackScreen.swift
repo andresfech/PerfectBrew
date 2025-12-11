@@ -5,8 +5,13 @@ struct FeedbackScreen: View {
     @StateObject private var storageService = StorageService()
     @State private var showingThankYou = false
     @State private var feedbackData = FeedbackData()
+    @State private var showingRecommendations = false  // AEC-12
+    @State private var diagnosticResult: BrewDiagnosticResult?  // AEC-12
+    @State private var showingCoffeeSelection = false  // AEC-12
     let recipe: Recipe
     let brewParameters: BrewParameters
+    var coffee: Coffee? = nil  // AEC-12: Optional coffee for smart recommendations
+    @State private var selectedCoffee: Coffee? = nil  // AEC-12: Local selection if not passed
     
     var body: some View {
         ScrollView {
@@ -37,6 +42,9 @@ struct FeedbackScreen: View {
                         .foregroundColor(.secondary)
                 }
                 .padding(.vertical, 10)
+                
+                // Coffee Selection Prompt (AEC-12)
+                coffeeSelectionCard
                 
                 // Overall Rating Section
                 FeedbackSection(title: "overall_rating".localized) {
@@ -72,6 +80,46 @@ struct FeedbackScreen: View {
                             options: ["too_fast".localized, "just_right".localized, "too_slow".localized],
                             selection: $feedbackData.flowRate
                         )
+                    }
+                }
+                
+                // Diagnostic Section (AEC-11)
+                FeedbackSection(title: "Diagnosis") {
+                    VStack(spacing: 16) {
+                        Text("How did it taste?")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
+                            ForEach(["None (Balanced)", "Sour/Tart", "Bitter/Dry", "Weak/Watery", "Strong/Heavy", "Hollow"], id: \.self) { option in
+                                Button(action: {
+                                    updateDefect(option)
+                                }) {
+                                    Text(option)
+                                        .font(.caption)
+                                        .padding(12)
+                                        .frame(maxWidth: .infinity)
+                                        .background(feedbackData.defect == option ? Color.blue : Color(.systemGray5))
+                                        .foregroundColor(feedbackData.defect == option ? .white : .primary)
+                                        .cornerRadius(8)
+                                }
+                            }
+                        }
+                        
+                        if let advice = feedbackData.diagnosticAdvice {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("💡 Suggestion for Next Time:")
+                                    .font(.headline)
+                                    .foregroundColor(.orange)
+                                Text(advice)
+                                    .font(.body)
+                                    .padding()
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .background(Color.orange.opacity(0.1))
+                                    .cornerRadius(8)
+                            }
+                            .transition(.opacity)
+                        }
                     }
                 }
                 
@@ -167,12 +215,99 @@ struct FeedbackScreen: View {
         }
         .navigationTitle("feedback".localized)
         .navigationBarTitleDisplayMode(.inline)
-        .alert("thank_you".localized, isPresented: $showingThankYou) {
-            Button("ok".localized) {
-                // Navigate back to home or dismiss
+        .sheet(isPresented: $showingCoffeeSelection) {
+            CoffeeSelectionSheet(selectedCoffee: $selectedCoffee)
+        }
+        .background(
+            NavigationLink(
+                destination: Group {
+                    if let result = diagnosticResult {
+                        BrewRecommendationsView(
+                            result: result,
+                            recipe: recipe,
+                            coffee: effectiveCoffee
+                        )
+                    }
+                },
+                isActive: $showingRecommendations
+            ) {
+                EmptyView()
             }
-        } message: {
-            Text("feedback_submitted".localized)
+        )
+        .onAppear {
+            // Initialize selectedCoffee from passed coffee
+            if selectedCoffee == nil {
+                selectedCoffee = coffee
+            }
+        }
+    }
+    
+    // MARK: - Effective Coffee (AEC-12)
+    
+    private var effectiveCoffee: Coffee? {
+        selectedCoffee ?? coffee
+    }
+    
+    // MARK: - Coffee Selection Card (AEC-12)
+    
+    private var coffeeSelectionCard: some View {
+        VStack(spacing: 12) {
+            if let coffee = effectiveCoffee {
+                // Coffee is selected
+                HStack {
+                    Image(systemName: "cup.and.saucer.fill")
+                        .foregroundColor(.orange)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(coffee.name)
+                            .font(.headline)
+                        Text("\(coffee.roastLevel.rawValue) • \(coffee.process.rawValue)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                    Button(action: { showingCoffeeSelection = true }) {
+                        Text("Change")
+                            .font(.caption)
+                            .foregroundColor(.blue)
+                    }
+                }
+                .padding()
+                .background(Color.orange.opacity(0.1))
+                .cornerRadius(12)
+            } else {
+                // No coffee selected - prompt
+                VStack(spacing: 8) {
+                    HStack {
+                        Image(systemName: "exclamationmark.circle")
+                            .foregroundColor(.orange)
+                        Text("Which coffee did you brew?")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                    }
+                    
+                    Text("Select your coffee for personalized recommendations")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    Button(action: { showingCoffeeSelection = true }) {
+                        HStack {
+                            Image(systemName: "plus.circle")
+                            Text("Select Coffee")
+                        }
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(Color.orange)
+                        .cornerRadius(8)
+                    }
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.orange.opacity(0.1))
+                .cornerRadius(12)
+            }
         }
     }
     
@@ -216,14 +351,47 @@ struct FeedbackScreen: View {
             strengthRating: Int(feedbackData.bitternessLevel),
             acidityRating: Int(feedbackData.acidityLevel),
             notes: feedbackData.additionalNotes,
-            date: Date()
+            date: Date(),
+            coffeeID: effectiveCoffee?.id,  // AEC-12: Link to coffee
+            defect: feedbackData.defect,
+            adjustment: feedbackData.diagnosticAdvice
         )
         
         // Save both detailed feedback and brew record
         storageService.saveDetailedFeedback(detailedFeedback)
         storageService.saveBrew(brew)
         
-        showingThankYou = true
+        // AEC-12: Generate smart diagnostics and navigate to recommendations
+        diagnosticResult = SmartDiagnosticService.shared.diagnose(
+            coffee: effectiveCoffee,
+            recipe: recipe,
+            feedback: feedbackData
+        )
+        showingRecommendations = true
+    }
+    
+    private func updateDefect(_ option: String) {
+        feedbackData.defect = option
+        
+        if option == "None (Balanced)" {
+            feedbackData.diagnosticAdvice = nil
+            return
+        }
+        
+        // Map UI string to internal key
+        let key: String
+        switch option {
+        case "Sour/Tart": key = "sour"
+        case "Bitter/Dry": key = "bitter"
+        case "Weak/Watery": key = "weak"
+        case "Strong/Heavy": key = "strong"
+        case "Hollow": key = "hollow"
+        default: key = "none"
+        }
+        
+        if let advice = DiagnosticService.shared.diagnose(defect: key, method: recipe.brewingMethod) {
+            feedbackData.diagnosticAdvice = "\(advice.action) (\(advice.reason))"
+        }
     }
 }
 
@@ -451,6 +619,10 @@ struct FeedbackData: Codable {
     var brewTimeMatch: String?
     var flowRate: String?
     
+    // Sensory Defect (AEC-11)
+    var defect: String?
+    var diagnosticAdvice: String? // Store the generated advice
+    
     // Taste Profile
     var sweetnessLevel: Double = 0
     var bitternessLevel: Double = 0
@@ -477,6 +649,82 @@ struct DetailedBrewFeedback: Codable {
 private func formatRecipeTitle(_ title: String) -> String {
     // Remove or replace dashes with more readable separators
     return title.replacingOccurrences(of: " - ", with: " • ")
+}
+
+// MARK: - Coffee Selection Sheet (AEC-12)
+
+struct CoffeeSelectionSheet: View {
+    @Binding var selectedCoffee: Coffee?
+    @StateObject private var repository = CoffeeRepository.shared
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        NavigationView {
+            List {
+                // Option to clear selection
+                Button(action: {
+                    selectedCoffee = nil
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "xmark.circle")
+                            .foregroundColor(.secondary)
+                        Text("No Coffee (Generic Recommendations)")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        if selectedCoffee == nil {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.blue)
+                        }
+                    }
+                }
+                
+                // List of saved coffees
+                Section(header: Text("Your Coffees")) {
+                    if repository.coffees.isEmpty {
+                        Text("No coffees saved yet")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    } else {
+                        ForEach(repository.coffees) { coffee in
+                            Button(action: {
+                                selectedCoffee = coffee
+                                dismiss()
+                            }) {
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(coffee.name)
+                                            .font(.headline)
+                                            .foregroundColor(.primary)
+                                        Text("\(coffee.roaster) • \(coffee.roastLevel.rawValue)")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    Spacer()
+                                    if selectedCoffee?.id == coffee.id {
+                                        Image(systemName: "checkmark")
+                                            .foregroundColor(.blue)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Select Coffee")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+            }
+        }
+        .onAppear {
+            repository.load()
+        }
+    }
 }
 
 #Preview {

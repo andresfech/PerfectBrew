@@ -9,7 +9,7 @@ class CoffeeRepository: ObservableObject {
     private let fileName = "user_coffees.json"
     
     init() {
-        loadCoffees()
+        load()
     }
     
     // MARK: - CRUD Operations
@@ -57,7 +57,7 @@ class CoffeeRepository: ObservableObject {
         }
     }
     
-    private func loadCoffees() {
+    func load() {
         // First check if file exists
         guard FileManager.default.fileExists(atPath: fileURL.path) else {
             print("ℹ️ CoffeeRepository: No saved coffees found (new file)")
