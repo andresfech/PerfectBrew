@@ -101,22 +101,38 @@ class BrewingRuleEngine {
     private func applyFlavorTags(for coffee: Coffee, to target: inout ExtractionCharacteristics) {
         for tag in coffee.flavorTags {
             switch tag {
-            case .fruity, .berry, .citrus, .stoneFruit, .tropical, .acidity:
+            // Fruity/Acidic profiles
+            case .fruity, .berry, .citrus, .stoneFruit, .tropical, .acidity, .bright, .vibrant, .juicy, .crisp:
                 target.acidity += 0.05
                 target.clarity += 0.05
-            case .floral, .tea, .herbaceous:
+            // Delicate/Floral profiles
+            case .floral, .tea, .herbaceous, .delicate, .elegant, .clean, .clarityFocused, .lightBodied:
                 target.clarity += 0.1
                 target.body -= 0.05
-            case .nutty, .chocolate, .caramel, .vanilla, .sweet, .roasted:
+            // Sweet/Rich profiles
+            case .nutty, .chocolate, .caramel, .vanilla, .sweet, .roasted, .rich, .syrupy, .creamy:
                 target.sweetness += 0.05
                 target.body += 0.05
-            case .fermented:
+            // Fermented profiles
+            case .fermented, .winey, .complex:
                 target.body += 0.05
                 target.sweetness += 0.05
                 target.acidity += 0.05
-            case .spicy, .savory, .earthy:
+            // Bold/Heavy profiles
+            case .spicy, .savory, .earthy, .bold, .intense, .strong, .fullBodied, .punchy, .espressoLike:
                 target.body += 0.05
                 target.acidity -= 0.05
+            // Balanced/Neutral profiles - no adjustment
+            case .balanced, .smooth, .mellow, .refined, .structured, .nuanced, .aromatic, .silky, .lowAcidity,
+                 .reliable, .round, .classic, .consistent, .artisan, .sustainable:
+                break // Balanced tags don't shift extraction
+            // Heavy/Thick profiles
+            case .thick, .deep, .layered:
+                target.body += 0.1
+            // Clarity profiles
+            case .clarified, .highAcidity:
+                target.clarity += 0.1
+                target.acidity += 0.05
             }
         }
     }

@@ -5,10 +5,60 @@ struct WhatToExpect: Codable {
     let audioFileName: String?
     let audioScript: String?
     
+    // Spanish localization fields (AEC-13)
+    let descriptionEs: String?
+    let audioFileNameEs: String?
+    let audioScriptEs: String?
+    
     enum CodingKeys: String, CodingKey {
         case description
         case audioFileName = "audio_file_name"
         case audioScript = "audio_script"
+        // Spanish keys
+        case descriptionEs = "description_es"
+        case audioFileNameEs = "audio_file_name_es"
+        case audioScriptEs = "audio_script_es"
+    }
+    
+    // Backward compatible decoder
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        description = try container.decode(String.self, forKey: .description)
+        audioFileName = try container.decodeIfPresent(String.self, forKey: .audioFileName)
+        audioScript = try container.decodeIfPresent(String.self, forKey: .audioScript)
+        // Spanish fields (optional)
+        descriptionEs = try container.decodeIfPresent(String.self, forKey: .descriptionEs)
+        audioFileNameEs = try container.decodeIfPresent(String.self, forKey: .audioFileNameEs)
+        audioScriptEs = try container.decodeIfPresent(String.self, forKey: .audioScriptEs)
+    }
+    
+    // MARK: - Localized Accessors (AEC-13)
+    
+    /// Returns description in current language, falls back to English
+    var localizedDescription: String {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = descriptionEs, !es.isEmpty {
+            return es
+        }
+        return description
+    }
+    
+    /// Returns audio file name in current language, falls back to English
+    var localizedAudioFileName: String? {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = audioFileNameEs, !es.isEmpty {
+            return es
+        }
+        return audioFileName
+    }
+    
+    /// Returns audio script in current language, falls back to English
+    var localizedAudioScript: String? {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = audioScriptEs, !es.isEmpty {
+            return es
+        }
+        return audioScript
     }
 }
 
@@ -47,6 +97,11 @@ struct Recipe: Codable, Identifiable {
     let recipeProfile: RecipeProfile?
     let extractionCharacteristics: ExtractionCharacteristics?
     
+    // Spanish localization fields (AEC-13)
+    let titleEs: String?
+    let preparationStepsEs: [String]?
+    let notesEs: String?
+    
     enum CodingKeys: String, CodingKey {
         case title
         case brewingMethod = "brewing_method"
@@ -62,6 +117,10 @@ struct Recipe: Codable, Identifiable {
         case whatToExpect = "what_to_expect"
         case recipeProfile = "recipe_profile"
         case extractionCharacteristics = "extraction_characteristics"
+        // Spanish keys
+        case titleEs = "title_es"
+        case preparationStepsEs = "preparation_steps_es"
+        case notesEs = "notes_es"
     }
     
     // Backward compatibility - if only 'steps' is provided, treat them as brewing steps
@@ -92,6 +151,11 @@ struct Recipe: Codable, Identifiable {
             notes = try container.decodeIfPresent(String.self, forKey: .notes) ?? ""
         }
         
+        // Spanish fields (AEC-13)
+        titleEs = try container.decodeIfPresent(String.self, forKey: .titleEs)
+        preparationStepsEs = try container.decodeIfPresent([String].self, forKey: .preparationStepsEs)
+        notesEs = try container.decodeIfPresent(String.self, forKey: .notesEs)
+        
         // Try to decode new structure first
         if let prepSteps = try? container.decode([String].self, forKey: .preparationSteps),
            let brewSteps = try? container.decode([BrewingStep].self, forKey: .brewingSteps) {
@@ -110,6 +174,40 @@ struct Recipe: Codable, Identifiable {
         }
     }
     
+    // MARK: - Localized Accessors (AEC-13)
+    
+    /// Returns title in current language, falls back to English
+    var localizedTitle: String {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = titleEs, !es.isEmpty {
+            return es
+        }
+        return title
+    }
+    
+    /// Returns preparation steps in current language, falls back to English
+    var localizedPreparationSteps: [String] {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = preparationStepsEs, !es.isEmpty {
+            return es
+        }
+        return preparationSteps
+    }
+    
+    /// Returns notes in current language, falls back to English (or whatToExpect)
+    var localizedNotes: String {
+        if LocalizationManager.shared.currentLanguage == .spanish {
+            // First try notesEs, then whatToExpect.descriptionEs
+            if let es = notesEs, !es.isEmpty {
+                return es
+            }
+            if let wte = whatToExpect, let descEs = wte.descriptionEs, !descEs.isEmpty {
+                return descEs
+            }
+        }
+        return notes
+    }
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
@@ -126,6 +224,10 @@ struct Recipe: Codable, Identifiable {
         try container.encodeIfPresent(whatToExpect, forKey: .whatToExpect)
         try container.encodeIfPresent(recipeProfile, forKey: .recipeProfile)
         try container.encodeIfPresent(extractionCharacteristics, forKey: .extractionCharacteristics)
+        // Spanish fields (AEC-13)
+        try container.encodeIfPresent(titleEs, forKey: .titleEs)
+        try container.encodeIfPresent(preparationStepsEs, forKey: .preparationStepsEs)
+        try container.encodeIfPresent(notesEs, forKey: .notesEs)
     }
     
     // Regular initializer for creating instances in previews and tests
@@ -142,7 +244,10 @@ struct Recipe: Codable, Identifiable {
         servings: Int = 1,
         whatToExpect: WhatToExpect? = nil,
         recipeProfile: RecipeProfile? = nil,
-        extractionCharacteristics: ExtractionCharacteristics? = nil
+        extractionCharacteristics: ExtractionCharacteristics? = nil,
+        titleEs: String? = nil,
+        preparationStepsEs: [String]? = nil,
+        notesEs: String? = nil
     ) {
         self.title = title
         self.brewingMethod = brewingMethod
@@ -157,6 +262,9 @@ struct Recipe: Codable, Identifiable {
         self.whatToExpect = whatToExpect
         self.recipeProfile = recipeProfile
         self.extractionCharacteristics = extractionCharacteristics
+        self.titleEs = titleEs
+        self.preparationStepsEs = preparationStepsEs
+        self.notesEs = notesEs
     }
     
     // MARK: - Dynamic Scaling Logic
@@ -316,15 +424,26 @@ struct BrewingStep: Codable, Equatable {
     let audioFileName: String? // Optional audio file name for this step
     let audioScript: String? // Optional detailed narration text for TTS generation
     
+    // Spanish localization fields (AEC-13)
+    let instructionEs: String?
+    let shortInstructionEs: String?
+    let audioFileNameEs: String?
+    let audioScriptEs: String?
+    
     enum CodingKeys: String, CodingKey {
         case timeSeconds = "time_seconds"
         case instruction
         case shortInstruction = "short_instruction"
         case audioFileName = "audio_file_name"
         case audioScript = "audio_script"
+        // Spanish keys
+        case instructionEs = "instruction_es"
+        case shortInstructionEs = "short_instruction_es"
+        case audioFileNameEs = "audio_file_name_es"
+        case audioScriptEs = "audio_script_es"
     }
     
-    // Backward compatibility - if no short instruction, audio file, or audio script is specified, they will be nil
+    // Backward compatibility decoder
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         timeSeconds = try container.decode(Int.self, forKey: .timeSeconds)
@@ -332,15 +451,62 @@ struct BrewingStep: Codable, Equatable {
         shortInstruction = try container.decodeIfPresent(String.self, forKey: .shortInstruction)
         audioFileName = try container.decodeIfPresent(String.self, forKey: .audioFileName)
         audioScript = try container.decodeIfPresent(String.self, forKey: .audioScript)
+        // Spanish fields (optional)
+        instructionEs = try container.decodeIfPresent(String.self, forKey: .instructionEs)
+        shortInstructionEs = try container.decodeIfPresent(String.self, forKey: .shortInstructionEs)
+        audioFileNameEs = try container.decodeIfPresent(String.self, forKey: .audioFileNameEs)
+        audioScriptEs = try container.decodeIfPresent(String.self, forKey: .audioScriptEs)
     }
     
     // Convenience initializer for creating steps
-    init(timeSeconds: Int, instruction: String, shortInstruction: String? = nil, audioFileName: String? = nil, audioScript: String? = nil) {
+    init(timeSeconds: Int, instruction: String, shortInstruction: String? = nil, audioFileName: String? = nil, audioScript: String? = nil, instructionEs: String? = nil, shortInstructionEs: String? = nil, audioFileNameEs: String? = nil, audioScriptEs: String? = nil) {
         self.timeSeconds = timeSeconds
         self.instruction = instruction
         self.shortInstruction = shortInstruction
         self.audioFileName = audioFileName
         self.audioScript = audioScript
+        self.instructionEs = instructionEs
+        self.shortInstructionEs = shortInstructionEs
+        self.audioFileNameEs = audioFileNameEs
+        self.audioScriptEs = audioScriptEs
+    }
+    
+    // MARK: - Localized Accessors (AEC-13)
+    
+    /// Returns instruction in current language, falls back to English
+    var localizedInstruction: String {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = instructionEs, !es.isEmpty {
+            return es
+        }
+        return instruction
+    }
+    
+    /// Returns short instruction in current language, falls back to English
+    var localizedShortInstruction: String? {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = shortInstructionEs, !es.isEmpty {
+            return es
+        }
+        return shortInstruction
+    }
+    
+    /// Returns audio file name in current language, falls back to English
+    var localizedAudioFileName: String? {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = audioFileNameEs, !es.isEmpty {
+            return es
+        }
+        return audioFileName
+    }
+    
+    /// Returns audio script in current language, falls back to English
+    var localizedAudioScript: String? {
+        if LocalizationManager.shared.currentLanguage == .spanish,
+           let es = audioScriptEs, !es.isEmpty {
+            return es
+        }
+        return audioScript
     }
 }
 
@@ -392,6 +558,14 @@ enum Difficulty: String, CaseIterable, Codable {
         case .beginner: return "green"
         case .intermediate: return "orange"
         case .advanced: return "red"
+        }
+    }
+    
+    var localizedName: String {
+        switch self {
+        case .beginner: return "beginner".localized
+        case .intermediate: return "intermediate".localized
+        case .advanced: return "advanced".localized
         }
     }
 }

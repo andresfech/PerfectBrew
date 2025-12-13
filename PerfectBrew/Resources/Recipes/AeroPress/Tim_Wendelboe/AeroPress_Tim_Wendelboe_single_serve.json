@@ -18,7 +18,7 @@
       "Rinse a paper filter under hot water for a few seconds and place it in the AeroPress cap (this removes papery taste and warms the cap).",
       "Assemble the AeroPress in standard position placed on your cup or server.",
       "Weigh 14 g of coffee and grind to a fine 'filter' consistency (finer than medium-fine).",
-      "Bring water to a boil and let rest ~5\u201310 s (or use ~96 \u00b0C). Prepare your scale and timer."
+      "Bring water to a boil and let rest ~5–10 s (or use ~96 °C). Prepare your scale and timer."
     ],
     "brewing_steps": [
       {
@@ -26,48 +26,80 @@
         "instruction": "Place AeroPress on scale, tare. Start timer and quickly pour 200 g hot water evenly over the grounds.",
         "short_instruction": "Pour 200g hot water evenly",
         "audio_script": "In 20 seconds, you should have poured all the water. Place your AeroPress on the scale and tare it to zero. Start your timer and quickly pour 200 grams of hot water evenly over the coffee grounds. Pour in a steady, circular motion to ensure complete saturation.",
-        "audio_file_name": "tim_wendelboe_step1_pour_water.m4a"
+        "audio_file_name": "tim_wendelboe_step1_pour_water.m4a",
+        "instruction_es": "Coloca el AeroPress en la báscula, tara. Inicia el cronómetro y vierte rápidamente 200g de agua caliente uniformemente sobre el molido.",
+        "short_instruction_es": "Vierte 200g de agua caliente uniformemente",
+        "audio_script_es": "En 20 segundos, deberías haber vertido toda el agua. Coloca tu AeroPress en la báscula y tárala a cero. Inicia tu cronómetro y vierte rápidamente 200 gramos de agua caliente uniformemente sobre el café molido. Vierte en un movimiento circular constante para asegurar saturación completa."
       },
       {
         "time_seconds": 27,
-        "instruction": "Stir the slurry 3 times (back-to-front is common in the caf\u00e9 method).",
+        "instruction": "Stir the slurry 3 times (back-to-front is common in the café method).",
         "short_instruction": "Stir 3 times back-to-front",
         "audio_script": "Stir three times back-to-front motion.",
-        "audio_file_name": "tim_wendelboe_step2_stir_backfront.m4a"
+        "audio_file_name": "tim_wendelboe_step2_stir_backfront.m4a",
+        "instruction_es": "Revuelve la mezcla 3 veces (de atrás hacia adelante es común en el método del café).",
+        "short_instruction_es": "Revuelve 3 veces de atrás hacia adelante",
+        "audio_script_es": "Revuelve tres veces con movimiento de atrás hacia adelante."
       },
       {
         "time_seconds": 57,
         "instruction": "Insert the plunger about 1 cm to create a seal and prevent drainage. Let steep for 30 seconds.",
-        "short_instruction": "Insert plunger 1cm \u2022 Steep 30 seconds",
+        "short_instruction": "Insert plunger 1cm • Steep 30 seconds",
         "audio_script": "You have 30 seconds to complete this step. Insert the plunger about 1 centimeter into the AeroPress chamber to create a seal and prevent drainage. This will allow the coffee to steep for 30 seconds without dripping through too quickly.",
-        "audio_file_name": "tim_wendelboe_step3_insert_plunger.m4a"
+        "audio_file_name": "tim_wendelboe_step3_insert_plunger.m4a",
+        "instruction_es": "Inserta el émbolo aproximadamente 1cm para crear un sello y prevenir el goteo. Deja reposar 30 segundos.",
+        "short_instruction_es": "Inserta émbolo 1cm • Reposa 30 segundos",
+        "audio_script_es": "Tienes 30 segundos para completar este paso. Inserta el émbolo aproximadamente 1 centímetro en la cámara del AeroPress para crear un sello y prevenir el goteo. Esto permitirá que el café repose 30 segundos sin gotear demasiado rápido."
       },
       {
         "time_seconds": 72,
         "instruction": "After 30 s, remove plunger and stir gently 3 times back-to-front (this re-mixes the bed).",
-        "short_instruction": "Remove plunger \u2022 Stir 3 times",
+        "short_instruction": "Remove plunger • Stir 3 times",
         "audio_script": "In 15 seconds, you should have finished stirring. After 30 seconds, remove the plunger and stir gently 3 times back-to-front. This re-mixes the coffee bed and ensures even extraction before the final press.",
-        "audio_file_name": "tim_wendelboe_step4_remove_stir.m4a"
+        "audio_file_name": "tim_wendelboe_step4_remove_stir.m4a",
+        "instruction_es": "Después de 30s, retira el émbolo y revuelve suavemente 3 veces de atrás hacia adelante (esto vuelve a mezclar la cama).",
+        "short_instruction_es": "Retira émbolo • Revuelve 3 veces",
+        "audio_script_es": "En 15 segundos, deberías haber terminado de revolver. Después de 30 segundos, retira el émbolo y revuelve suavemente 3 veces de atrás hacia adelante. Esto vuelve a mezclar la cama de café y asegura una extracción uniforme antes de presionar."
       },
       {
         "time_seconds": 97,
-        "instruction": "Re-insert plunger and press steadily; aim for ~15\u201325 s press time and stop when you hear the soft hiss (do not over-press).",
-        "short_instruction": "Re-insert plunger \u2022 Press 15-25 seconds",
+        "instruction": "Re-insert plunger and press steadily; aim for ~15–25 s press time and stop when you hear the soft hiss (do not over-press).",
+        "short_instruction": "Re-insert plunger • Press 15-25 seconds",
         "audio_script": "In 25 seconds, you should have finished pressing. Re-insert the plunger and press steadily. Aim for about 15 to 25 seconds of press time and stop when you hear the soft hiss - do not over-press. This ensures optimal extraction without over-compressing the coffee bed.",
-        "audio_file_name": "tim_wendelboe_step5_reinsert_press.m4a"
+        "audio_file_name": "tim_wendelboe_step5_reinsert_press.m4a",
+        "instruction_es": "Reinserta el émbolo y presiona constantemente; apunta a ~15–25s de tiempo de presión y detente cuando escuches el silbido suave (no presiones de más).",
+        "short_instruction_es": "Reinserta émbolo • Presiona 15-25 segundos",
+        "audio_script_es": "En 25 segundos, deberías haber terminado de presionar. Reinserta el émbolo y presiona constantemente. Apunta a aproximadamente 15 a 25 segundos de tiempo de presión y detente cuando escuches el silbido suave - no presiones de más. Esto asegura una extracción óptima sin comprimir demasiado la cama de café."
       }
     ],
     "what_to_expect": {
-      "description": "Based on the classic recipe used at Tim Wendelboe's caf\u00e9: 14g/200g, near-boiling water, rinsed filter, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant cup highlighting the coffee's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted coffees.",
+      "description": "Based on the classic recipe used at Tim Wendelboe's café: 14g/200g, near-boiling water, rinsed filter, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant cup highlighting the coffee's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted coffees.",
       "audio_file_name": "tim_wendelboe_intro.m4a",
-      "audio_script": "This is the classic Tim Wendelboe AeroPress recipe. It focuses on a clean, sweet, and vibrant cup that highlights the coffee's acidity and clarity. We use a fine grind, near-boiling water, and a short steep time to produce a light, bright flavor with pronounced fruity and floral notes. This method is ideal for high-quality, single-origin light roasts, letting the unique origin character shine through with minimal bitterness."
+      "audio_script": "This is the classic Tim Wendelboe AeroPress recipe. It focuses on a clean, sweet, and vibrant cup that highlights the coffee's acidity and clarity. We use a fine grind, near-boiling water, and a short steep time to produce a light, bright flavor with pronounced fruity and floral notes. This method is ideal for high-quality, single-origin light roasts, letting the unique origin character shine through with minimal bitterness.",
+      "description_es": "Basado en la receta clásica del café de Tim Wendelboe: 14g/200g, agua casi hirviendo, filtro enjuagado, infusión de 60s, revolver y presionar.\n\nQué esperar:\n\nUna taza limpia, dulce y vibrante que resalta la acidez y claridad del café.\n\nSabor ligero y brillante con notas frutales y florales pronunciadas.\n\nEquilibrado y matizado con amargor mínimo cuando se prepara con precisión.\n\nEste método saca lo mejor de granos de alta calidad, dejando que su carácter de origen brille. Es ideal para cafés de origen único de tueste claro a medio.",
+      "audio_script_es": "Esta es la receta clásica de AeroPress de Tim Wendelboe. Se enfoca en una taza limpia, dulce y vibrante que resalta la acidez y claridad del café. Usamos una molienda fina, agua casi hirviendo y un tiempo de reposo corto para producir un sabor ligero y brillante con notas frutales y florales pronunciadas. Este método es ideal para tuestes claros de origen único de alta calidad, dejando que el carácter único del origen brille con amargor mínimo."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Fruity", "Floral", "Acidity"],
-      "recommended_origins": ["Ethiopia", "Kenya", "Colombia"],
-      "recommended_varieties": ["Geisha", "Heirloom"]
+      "recommended_roast_levels": [
+        "Light"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Fruity",
+        "Floral",
+        "Acidity"
+      ],
+      "recommended_origins": [
+        "Ethiopia",
+        "Kenya",
+        "Colombia"
+      ],
+      "recommended_varieties": [
+        "Geisha",
+        "Heirloom"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -84,7 +116,15 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "Based on the classic recipe used at Tim Wendelboe's caf\u00e9: 14g/200g, near-boiling water, rinsed filter, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant cup highlighting the coffee's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted coffees.",
-    "servings": 1
+    "notes": "Based on the classic recipe used at Tim Wendelboe's café: 14g/200g, near-boiling water, rinsed filter, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant cup highlighting the coffee's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted coffees.",
+    "servings": 1,
+    "title_es": "AeroPress Clásico de Tim Wendelboe",
+    "notes_es": "Basado en la receta clásica del café de Tim Wendelboe: 14g/200g, agua casi hirviendo, filtro enjuagado, infusión de 60s, revolver y presionar.\n\nQué esperar:\n\nUna taza limpia, dulce y vibrante que resalta la acidez y claridad del café.\n\nSabor ligero y brillante con notas frutales y florales pronunciadas.\n\nEquilibrado y matizado con amargor mínimo cuando se prepara con precisión.\n\nEste método saca lo mejor de granos de alta calidad. Ideal para cafés de origen único de tueste claro a medio.",
+    "preparation_steps_es": [
+      "Enjuaga un filtro de papel bajo agua caliente durante unos segundos y colócalo en la tapa del AeroPress (esto elimina el sabor a papel y calienta la tapa).",
+      "Ensambla el AeroPress en posición estándar sobre tu taza o servidor.",
+      "Pesa 14g de café y muele a consistencia fina tipo 'filtro' (más fino que medio-fino).",
+      "Hierve agua y deja reposar ~5–10s (o usa ~96°C). Prepara tu báscula y cronómetro."
+    ]
   }
 ]

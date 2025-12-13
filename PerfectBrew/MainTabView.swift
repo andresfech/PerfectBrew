@@ -12,10 +12,10 @@ struct MainTabView: View {
             NavigationStack {
                 HomeScreen()
             }
-                          .tabItem {
-                  Image(systemName: "house.fill")
-                  Text("Home")
-              }
+            .tabItem {
+                Image(systemName: "house.fill")
+                Text("home".localized)
+            }
             .tag(0)
             
             NavigationStack {
@@ -23,7 +23,7 @@ struct MainTabView: View {
             }
             .tabItem {
                 Image(systemName: "list.bullet")
-                Text("Log")
+                Text("log".localized)
             }
             .tag(1)
             

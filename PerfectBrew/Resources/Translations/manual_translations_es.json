@@ -1,0 +1,258 @@
+{
+  "_comment": "Traducciones manuales 100% en español para recetas prioritarias. NO usar traducción automática.",
+  "translations": {
+    "AeroPress_Tim_Wendelboe_single_serve": {
+      "title_es": "AeroPress Clásico de Tim Wendelboe",
+      "notes_es": "Basado en la receta clásica del café de Tim Wendelboe: 14g/200g, agua casi hirviendo, filtro enjuagado, infusión de 60s, revolver y presionar.\n\nQué esperar:\n\nUna taza limpia, dulce y vibrante que resalta la acidez y claridad del café.\n\nSabor ligero y brillante con notas frutales y florales pronunciadas.\n\nEquilibrado y matizado con amargor mínimo cuando se prepara con precisión.\n\nEste método saca lo mejor de granos de alta calidad. Ideal para cafés de origen único de tueste claro a medio.",
+      "preparation_steps_es": [
+        "Enjuaga un filtro de papel bajo agua caliente durante unos segundos y colócalo en la tapa del AeroPress (esto elimina el sabor a papel y calienta la tapa).",
+        "Ensambla el AeroPress en posición estándar sobre tu taza o servidor.",
+        "Pesa 14g de café y muele a consistencia fina tipo 'filtro' (más fino que medio-fino).",
+        "Hierve agua y deja reposar ~5–10s (o usa ~96°C). Prepara tu báscula y cronómetro."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 20,
+          "instruction_es": "Coloca el AeroPress en la báscula, tara. Inicia el cronómetro y vierte rápidamente 200g de agua caliente uniformemente sobre el molido.",
+          "short_instruction_es": "Vierte 200g de agua caliente uniformemente",
+          "audio_script_es": "En 20 segundos, deberías haber vertido toda el agua. Coloca tu AeroPress en la báscula y tárala a cero. Inicia tu cronómetro y vierte rápidamente 200 gramos de agua caliente uniformemente sobre el café molido. Vierte en un movimiento circular constante para asegurar saturación completa."
+        },
+        {
+          "time_seconds": 27,
+          "instruction_es": "Revuelve la mezcla 3 veces (de atrás hacia adelante es común en el método del café).",
+          "short_instruction_es": "Revuelve 3 veces de atrás hacia adelante",
+          "audio_script_es": "Revuelve tres veces con movimiento de atrás hacia adelante."
+        },
+        {
+          "time_seconds": 57,
+          "instruction_es": "Inserta el émbolo aproximadamente 1cm para crear un sello y prevenir el goteo. Deja reposar 30 segundos.",
+          "short_instruction_es": "Inserta émbolo 1cm • Reposa 30 segundos",
+          "audio_script_es": "Tienes 30 segundos para completar este paso. Inserta el émbolo aproximadamente 1 centímetro en la cámara del AeroPress para crear un sello y prevenir el goteo. Esto permitirá que el café repose 30 segundos sin gotear demasiado rápido."
+        },
+        {
+          "time_seconds": 72,
+          "instruction_es": "Después de 30s, retira el émbolo y revuelve suavemente 3 veces de atrás hacia adelante (esto vuelve a mezclar la cama).",
+          "short_instruction_es": "Retira émbolo • Revuelve 3 veces",
+          "audio_script_es": "En 15 segundos, deberías haber terminado de revolver. Después de 30 segundos, retira el émbolo y revuelve suavemente 3 veces de atrás hacia adelante. Esto vuelve a mezclar la cama de café y asegura una extracción uniforme antes de presionar."
+        },
+        {
+          "time_seconds": 97,
+          "instruction_es": "Reinserta el émbolo y presiona constantemente; apunta a ~15–25s de tiempo de presión y detente cuando escuches el silbido suave (no presiones de más).",
+          "short_instruction_es": "Reinserta émbolo • Presiona 15-25 segundos",
+          "audio_script_es": "En 25 segundos, deberías haber terminado de presionar. Reinserta el émbolo y presiona constantemente. Apunta a aproximadamente 15 a 25 segundos de tiempo de presión y detente cuando escuches el silbido suave - no presiones de más. Esto asegura una extracción óptima sin comprimir demasiado la cama de café."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Basado en la receta clásica del café de Tim Wendelboe: 14g/200g, agua casi hirviendo, filtro enjuagado, infusión de 60s, revolver y presionar.\n\nQué esperar:\n\nUna taza limpia, dulce y vibrante que resalta la acidez y claridad del café.\n\nSabor ligero y brillante con notas frutales y florales pronunciadas.\n\nEquilibrado y matizado con amargor mínimo cuando se prepara con precisión.\n\nEste método saca lo mejor de granos de alta calidad, dejando que su carácter de origen brille. Es ideal para cafés de origen único de tueste claro a medio.",
+        "audio_script_es": "Esta es la receta clásica de AeroPress de Tim Wendelboe. Se enfoca en una taza limpia, dulce y vibrante que resalta la acidez y claridad del café. Usamos una molienda fina, agua casi hirviendo y un tiempo de reposo corto para producir un sabor ligero y brillante con notas frutales y florales pronunciadas. Este método es ideal para tuestes claros de origen único de alta calidad, dejando que el carácter único del origen brille con amargor mínimo."
+      }
+    },
+    "AeroPress_James_Hoffmann_single_serve": {
+      "title_es": "AeroPress Definitivo de James Hoffmann",
+      "notes_es": "Técnica Definitiva de James Hoffmann para AeroPress — 11g de café, 200g de agua, sin enjuague del filtro, molienda medio-fina, inserción inmediata del émbolo, 2 min de reposo + 30s de descanso antes de presionar. Ajusta la temperatura entre 95–100°C según el nivel de tueste.",
+      "preparation_steps_es": [
+        "Coloca un filtro de papel en la tapa del AeroPress (NO enjuagues) y enróscala en la cámara principal.",
+        "Coloca el AeroPress verticalmente sobre tu taza o servidor.",
+        "Pesa 11g de café y muele al extremo fino de medio.",
+        "Hierve 200g de agua y deja reposar ~15–30s (o usa 95°C).",
+        "Añade el café molido a la cámara del AeroPress; asegúrate de que la cama esté nivelada."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 15,
+          "instruction_es": "Vierte 200g de agua caliente sobre el café uniformemente (intenta mojar todo el molido).",
+          "short_instruction_es": "Vierte 200g de agua caliente uniformemente",
+          "audio_script_es": "Tienes 15 segundos para verter 200 gramos de agua caliente. Vierte uniformemente en movimiento circular, empezando desde el centro y avanzando hacia afuera. Asegúrate de mojar todo el molido para saturación completa."
+        },
+        {
+          "time_seconds": 30,
+          "instruction_es": "Inmediatamente inserta el émbolo aproximadamente 1cm para crear un sello de vacío parcial (no presiones).",
+          "short_instruction_es": "Inserta émbolo 1cm • Crea sello de vacío",
+          "audio_script_es": "Inmediatamente toma el émbolo e insértalo aproximadamente 1 centímetro en la cámara. Esto crea un sello de vacío parcial que evita que el café gotee. No presiones todavía."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Deja que el café repose (primera fase) — espera hasta ~2:30 en el cronómetro.",
+          "short_instruction_es": "Deja reposar el café • Espera hasta 2:30",
+          "audio_script_es": "Ahora simplemente espera. El café reposará durante 2 minutos. Durante este tiempo, el agua extrae los sabores mientras el sello de vacío mantiene todo estable."
+        },
+        {
+          "time_seconds": 160,
+          "instruction_es": "Agita suavemente el AeroPress (sostén el preparador + taza juntos) durante ~5–10s para agitar la mezcla.",
+          "short_instruction_es": "Agita suavemente • 5-10 segundos",
+          "audio_script_es": "Sostén tanto el AeroPress como la taza juntos firmemente, luego agita suavemente todo el conjunto durante aproximadamente 10 segundos. Esto rompe la costra y hunde el molido."
+        },
+        {
+          "time_seconds": 190,
+          "instruction_es": "Deja reposar ~30s.",
+          "short_instruction_es": "Deja reposar • 30 segundos",
+          "audio_script_es": "Deja que el café repose otros 30 segundos. Esto permite que el molido agitado se asiente de nuevo para una taza más limpia."
+        },
+        {
+          "time_seconds": 220,
+          "instruction_es": "Presiona el émbolo lenta y constantemente — apunta a ~30s de tiempo de presión — detente cuando escuches un silbido suave o cuando esté completamente presionado.",
+          "short_instruction_es": "Presiona lento y constante • 30 segundos",
+          "audio_script_es": "Finalmente, aplica presión lenta y constante al émbolo. Apunta a una presión de 30 segundos. Detente inmediatamente cuando escuches el silbido."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "La Técnica Definitiva de AeroPress de James Hoffmann representa un enfoque refinado que prioriza la simplicidad y consistencia. Este método usa una molienda medio-fina, sin enjuague del filtro, e inserción inmediata del émbolo para crear un sello de vacío. El tiempo de reposo de 2 minutos seguido de un descanso de 30 segundos permite una extracción óptima manteniendo la estabilidad de temperatura. Espera una taza limpia y equilibrada con buen cuerpo y claridad. La técnica funciona muy bien en diferentes niveles de tueste ajustando la temperatura entre 95-100°C. Perfecto para preparación diaria con excelentes resultados y máxima reproducibilidad.",
+        "audio_script_es": "La Técnica Definitiva de AeroPress de James Hoffmann representa un enfoque refinado que prioriza la simplicidad y consistencia. Este método usa una molienda medio-fina, sin enjuague del filtro, e inserción inmediata del émbolo para crear un sello de vacío. El tiempo de reposo de 2 minutos seguido de un descanso de 30 segundos permite una extracción óptima. Espera una taza limpia y equilibrada con buen cuerpo y claridad. Perfecto para preparación diaria con máxima reproducibilidad."
+      }
+    },
+    "V60_James_Hoffmann_single_serve": {
+      "title_es": "V60 de James Hoffmann - Individual",
+      "notes_es": "Temperatura del agua: 95°C general, 100°C para tuestes claros de alta calidad, 90–95°C u 80–90°C para tuestes más oscuros. Apunta a terminar el drenaje a los 3 minutos 30 segundos. El tiempo total puede variar, pero enfócate en un drenaje completo y uniforme.",
+      "preparation_steps_es": [
+        "Calienta el agua a 95°C.",
+        "Muele 30 gramos de café a consistencia medio-fina.",
+        "Dobla el filtro de papel por la costura y ajústalo al V60.",
+        "Precalienta con agua caliente y descarta.",
+        "Añade el café al V60 y haz un pequeño hueco en el centro de la cama."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 10,
+          "instruction_es": "Bloom (0:00): Inicia el cronómetro. Vierte 60 gramos de agua (2x la dosis de café) para saturar el molido.",
+          "short_instruction_es": "Bloom 60g de agua (2x dosis) • Inicia cronómetro",
+          "audio_script_es": "Inicia tu cronómetro y vierte 60 gramos de agua caliente. Esto es el doble de tu dosis de café para saturar todo el molido uniformemente."
+        },
+        {
+          "time_seconds": 20,
+          "instruction_es": "Agita (0:10): Agita suavemente el preparador hasta que la mezcla de café esté uniforme.",
+          "short_instruction_es": "Agita el preparador hasta que esté uniforme",
+          "audio_script_es": "Tienes 10 segundos para agitar suavemente tu V60 hasta que la mezcla esté uniforme. Esto asegura una extracción uniforme."
+        },
+        {
+          "time_seconds": 45,
+          "instruction_es": "El bloom continúa (0:20): Deja que el café haga bloom hasta 0:45. Este período de bloom permite la desgasificación, crucial para café fresco.",
+          "short_instruction_es": "Espera hasta 0:45 • Deja que el bloom continúe",
+          "audio_script_es": "Ahora espera 25 segundos para que el bloom continúe hasta 0:45. Este bloom extendido permite una desgasificación adecuada para café fresco."
+        },
+        {
+          "time_seconds": 75,
+          "instruction_es": "Primer Vertido Principal (0:45 - 1:15): Vierte hasta 300 gramos de agua (60% del total) en 30 segundos. Este vertido mantiene el V60 lleno.",
+          "short_instruction_es": "Primer vertido hasta 300g • En 30 segundos",
+          "audio_script_es": "Tienes 30 segundos para verter hasta 300 gramos de agua, eso es el 60% de tu agua total. Mantén el V60 lleno con un flujo constante."
+        },
+        {
+          "time_seconds": 105,
+          "instruction_es": "Segundo Vertido Principal (1:15 - 1:45): Vierte suavemente hasta 500 gramos de agua (100% del total) en 30 segundos.",
+          "short_instruction_es": "Segundo vertido hasta 500g • En 30 segundos",
+          "audio_script_es": "Tienes 30 segundos para verter suavemente hasta 500 gramos de agua, tu total completo de agua para la preparación."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Revuelve (1:45): Revuelve suavemente en sentido horario y luego antihorario (aproximadamente 1 a 1.5 vueltas en cada dirección) para desprender el molido de los lados.",
+          "short_instruction_es": "Revuelve en sentido horario y antihorario",
+          "audio_script_es": "Ahora revuelve suavemente en sentido horario, luego antihorario, aproximadamente 1 a 1.5 vueltas en cada dirección. Tienes 15 segundos. Esto desprende el molido de los lados."
+        },
+        {
+          "time_seconds": 135,
+          "instruction_es": "Agita (1:55): Agita suavemente el preparador para nivelar la cama de café y lograr una extracción uniforme.",
+          "short_instruction_es": "Agita para nivelar la cama",
+          "audio_script_es": "Finalmente, agita suavemente para nivelar la cama de café. Tienes 15 segundos. Una cama nivelada asegura un drenaje consistente."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "El método V60 de James Hoffmann es una técnica refinada que enfatiza la precisión y el control. Este método usa una proporción de bloom de 2:1 (el doble del peso del café) para una desgasificación óptima, seguido de dos vertidos principales que mantienen el V60 lleno. La técnica incluye revolver y agitar estratégicamente para asegurar una extracción uniforme y una cama de café nivelada. Espera una taza limpia y brillante con excelente claridad y acidez equilibrada. El método funciona muy bien con tuestes claros a medios, resaltando las características de origen mientras mantiene la consistencia.",
+        "audio_script_es": "El método V60 de James Hoffmann es una técnica refinada que enfatiza la precisión y el control. Este método usa una proporción de bloom de 2:1 para una desgasificación óptima, seguido de dos vertidos principales que mantienen el V60 lleno. Espera una taza limpia y brillante con excelente claridad y acidez equilibrada. La técnica funciona muy bien con tuestes claros a medios."
+      }
+    },
+    "French_Press_James_Hoffmann_single_serve": {
+      "title_es": "Prensa Francesa de James Hoffmann",
+      "notes_es": "El método refinado de James Hoffmann para prensa francesa produce una taza limpia y con cuerpo completo con sedimento mínimo. La clave es usar una molienda medio-gruesa, tiempos precisos, y evitar la sobre-extracción presionando lentamente y sirviendo inmediatamente.",
+      "preparation_steps_es": [
+        "Calienta el agua a 95°C (justo después de hervir)",
+        "Muele 30 gramos de café a consistencia medio-gruesa",
+        "Precalienta tu prensa francesa con agua caliente",
+        "Vacía y seca la prensa francesa completamente",
+        "Añade 30g de café molido a la prensa francesa"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Inicia el cronómetro y vierte 500g de agua caliente uniformemente sobre el molido.",
+          "short_instruction_es": "Vierte 500g de agua caliente uniformemente",
+          "audio_script_es": "Inicia tu cronómetro ahora. Vierte 500 gramos de agua caliente uniformemente sobre el molido. Tienes 30 segundos. Intenta mojar todo el café para asegurar una extracción uniforme desde el inicio."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Revuelve suavemente con una cuchara para asegurar que todo el molido esté saturado.",
+          "short_instruction_es": "Revuelve suavemente para saturar el molido",
+          "audio_script_es": "Toma una cuchara y revuelve suavemente. Tienes 30 segundos. Queremos romper cualquier grumo seco y asegurar que cada partícula esté saturada para una taza con cuerpo completo."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Coloca la tapa encima (no presiones el émbolo todavía).",
+          "short_instruction_es": "Coloca tapa • No presiones todavía",
+          "audio_script_es": "Coloca la tapa encima para retener el calor, pero no presiones el émbolo todavía. Necesitamos mantener la temperatura estable para el largo reposo que viene."
+        },
+        {
+          "time_seconds": 390,
+          "instruction_es": "Espera 5 minutos para la extracción (no muevas).",
+          "short_instruction_es": "Espera 5 minutos • No muevas",
+          "audio_script_es": "Ahora, espera 5 minutos. Deja que el café repose sin perturbarlo. Este tiempo extendido permite que el agua extraiga completamente los sabores y aceites solubles, creando un cuerpo rico y denso."
+        },
+        {
+          "time_seconds": 420,
+          "instruction_es": "Presiona el émbolo lenta y constantemente, luego sirve inmediatamente.",
+          "short_instruction_es": "Presiona lentamente • Sirve inmediatamente",
+          "audio_script_es": "Es hora de terminar. Presiona el émbolo lenta y constantemente. No te apresures. Una vez presionado, sirve inmediatamente para detener el proceso de preparación y disfruta tu café."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "El método refinado de prensa francesa de James Hoffmann produce una taza limpia y con cuerpo completo con sedimento mínimo. La clave es usar una molienda medio-gruesa, tiempos precisos, y evitar la sobre-extracción presionando lentamente y sirviendo inmediatamente.",
+        "audio_script_es": "El método refinado de prensa francesa de James Hoffmann produce una taza limpia y con cuerpo completo con sedimento mínimo. La clave es usar una molienda medio-gruesa y tiempos precisos. Al evitar sobre-agitar y presionar lentamente, obtienes una taza rica sin los grumos."
+      }
+    },
+    "V60_Tetsu_Kasuya_single_serve": {
+      "title_es": "Método 4:6 de Tetsu Kasuya para V60",
+      "notes_es": "El famoso método 4:6 te permite ajustar el perfil de sabor dividiendo el vertido total en dos fases: 40% para dulzura/acidez y 60% para fuerza. Molienda gruesa, agua a 92°C.",
+      "preparation_steps_es": [
+        "Calienta el agua a 92°C.",
+        "Muele 20 gramos de café a molienda gruesa.",
+        "Enjuaga el filtro de papel con agua caliente y descarta.",
+        "Añade el café al V60 y nivela la cama.",
+        "Prepara el servidor debajo del V60."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Primer vertido (0:00): Vierte 60g de agua. Este primer vertido controla el equilibrio dulzura-acidez.",
+          "short_instruction_es": "Primer vertido 60g • Controla dulzura/acidez",
+          "audio_script_es": "Inicia tu cronómetro y vierte 60 gramos de agua. Este primer vertido es crucial - controla el equilibrio entre dulzura y acidez en tu taza final. Espera hasta los 45 segundos."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Segundo vertido (0:45): Vierte otros 60g de agua (total: 120g). Este completa la fase de acidez/dulzura.",
+          "short_instruction_es": "Segundo vertido a 120g total",
+          "audio_script_es": "A los 45 segundos, vierte otros 60 gramos de agua, llevando el total a 120 gramos. Esto completa la primera fase que controla la acidez y dulzura. Espera hasta el minuto 1:30."
+        },
+        {
+          "time_seconds": 135,
+          "instruction_es": "Tercer vertido (1:30): Vierte 60g de agua (total: 180g). Comienza la fase de fuerza.",
+          "short_instruction_es": "Tercer vertido a 180g total • Fase de fuerza",
+          "audio_script_es": "Al minuto 1:30, vierte 60 gramos más, llevando el total a 180 gramos. Esto comienza la segunda fase que controla la fuerza de tu café."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Cuarto vertido (2:15): Vierte 60g de agua (total: 240g).",
+          "short_instruction_es": "Cuarto vertido a 240g total",
+          "audio_script_es": "A los 2 minutos 15 segundos, vierte otros 60 gramos, llevando el total a 240 gramos."
+        },
+        {
+          "time_seconds": 225,
+          "instruction_es": "Quinto vertido (3:00): Vierte los últimos 60g de agua (total: 300g). Espera el drenaje completo.",
+          "short_instruction_es": "Vertido final a 300g • Espera drenaje",
+          "audio_script_es": "Al minuto 3, vierte los últimos 60 gramos para alcanzar tu total de 300 gramos. Ahora espera a que el café drene completamente. El tiempo total de preparación debería ser alrededor de 3 minutos 30 segundos."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "El método 4:6 de Tetsu Kasuya, ganador del Campeonato Mundial de Baristas 2016, te da control completo sobre el perfil de sabor de tu café. Al dividir el agua en proporciones de 40% (dos vertidos) y 60% (tres vertidos), puedes ajustar la dulzura, acidez y fuerza de tu taza. Es un método versátil que funciona bien con todo tipo de cafés.",
+        "audio_script_es": "El método 4:6 de Tetsu Kasuya es revolucionario porque te da control total sobre el sabor de tu café. Al dividir el agua en dos fases, 40 por ciento y 60 por ciento, puedes ajustar la dulzura, acidez y fuerza según tus preferencias. Perfecto para experimentar y encontrar tu perfil de sabor ideal."
+      }
+    }
+  }
+}
+

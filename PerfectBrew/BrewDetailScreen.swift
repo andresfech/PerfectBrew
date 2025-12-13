@@ -10,9 +10,9 @@ struct BrewDetailScreen: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                // Header
+                // Header (AEC-13: localized title)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(recipe.title)
+                    Text(recipe.localizedTitle)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     
@@ -45,7 +45,7 @@ struct BrewDetailScreen: View {
                         Image(systemName: "slider.horizontal.3")
                             .font(.title2)
                             .foregroundColor(.orange)
-                        Text("Brew Parameters")
+                        Text("brew_parameters".localized)
                             .font(.title2)
                             .fontWeight(.bold)
                         Spacer()
@@ -55,13 +55,13 @@ struct BrewDetailScreen: View {
                     HStack(spacing: 16) {
                         ParameterRow(
                             icon: "drop.fill",
-                            title: "Coffee",
+                            title: "coffee".localized.uppercased(),
                             value: "\(recipe.parameters.coffeeGrams)g",
                             color: .brown
                         )
                         ParameterRow(
                             icon: "drop.fill",
-                            title: "Water",
+                            title: "water".localized.uppercased(),
                             value: "\(recipe.parameters.waterGrams)g",
                             color: .blue
                         )
@@ -71,13 +71,13 @@ struct BrewDetailScreen: View {
                     HStack(spacing: 16) {
                         ParameterRow(
                             icon: "arrow.left.arrow.right",
-                            title: "Ratio",
+                            title: "ratio".localized.uppercased(),
                             value: recipe.parameters.ratio,
                             color: .green
                         )
                         ParameterRow(
                             icon: "thermometer",
-                            title: "Temperature",
+                            title: "temperature".localized.uppercased(),
                             value: "\(Int(recipe.parameters.temperatureCelsius))°C",
                             color: .red
                         )
@@ -87,7 +87,7 @@ struct BrewDetailScreen: View {
                     HStack(spacing: 16) {
                         ParameterRow(
                             icon: "clock.fill",
-                            title: "Brew Time",
+                            title: "brew_time".localized.uppercased(),
                             value: "\(recipe.parameters.totalBrewTimeSeconds)s",
                             color: .orange
                         )
@@ -101,10 +101,9 @@ struct BrewDetailScreen: View {
                                 .font(.title2)
                                 .foregroundColor(.purple)
                                 .frame(width: 24, height: 24)
-                            Text("GRIND SIZE")
+                            Text("grind_size".localized.uppercased())
                                 .font(.caption)
                                 .foregroundColor(.secondary)
-                                .textCase(.uppercase)
                             
                             Spacer()
                             
@@ -116,7 +115,7 @@ struct BrewDetailScreen: View {
                                 }
                             } label: {
                                 HStack(spacing: 4) {
-                                    Text(selectedGrinder == "None" ? "Grinder Brand" : selectedGrinder)
+                                    Text(selectedGrinder == "None" ? "grinder_brand".localized : selectedGrinder)
                                         .font(.caption)
                                         .fontWeight(.medium)
                                     Image(systemName: "chevron.down")
@@ -166,13 +165,13 @@ struct BrewDetailScreen: View {
                 )
                 
                 // Preparation Steps
-                if !recipe.preparationSteps.isEmpty {
+                if !recipe.localizedPreparationSteps.isEmpty {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Preparation Steps")
+                        Text("preparation_steps".localized)
                             .font(.title2)
                             .fontWeight(.bold)
                         
-                        ForEach(Array(recipe.preparationSteps.enumerated()), id: \.offset) { index, step in
+                        ForEach(Array(recipe.localizedPreparationSteps.enumerated()), id: \.offset) { index, step in
                             HStack(alignment: .top, spacing: 12) {
                                 Text("\(index + 1)")
                                     .font(.headline)
@@ -194,7 +193,7 @@ struct BrewDetailScreen: View {
                 
                 // Brewing Steps
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("Brewing Steps")
+                    Text("brewing_steps".localized)
                         .font(.title2)
                         .fontWeight(.bold)
                     
@@ -209,7 +208,7 @@ struct BrewDetailScreen: View {
                                 .clipShape(Circle())
                             
                             VStack(alignment: .leading, spacing: 4) {
-                                Text(step.instruction)
+                                Text(step.localizedInstruction)
                                     .font(.body)
                                     .multilineTextAlignment(.leading)
                                 
@@ -225,7 +224,7 @@ struct BrewDetailScreen: View {
                 
                 // Equipment
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Equipment Needed")
+                    Text("equipment_needed".localized)
                         .font(.title2)
                         .fontWeight(.bold)
                     
@@ -240,27 +239,33 @@ struct BrewDetailScreen: View {
                     }
                 }
                 
-                // Notes
-                if !recipe.notes.isEmpty {
+                // Notes (AEC-13: localized)
+                if !recipe.localizedNotes.isEmpty {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
-                            Text("Notes")
+                            Text("notes".localized)
                                 .font(.title2)
                                 .fontWeight(.bold)
                             
                             Spacer()
                             
                             Button(action: {
-                                audioService.toggleNotesAudio(for: recipe.title, audioFileName: recipe.whatToExpect?.audioFileName)
+                                // AEC-13: Pass both English and Spanish audio filenames
+                                audioService.toggleNotesAudio(
+                                    for: recipe.title,
+                                    audioFileName: recipe.whatToExpect?.audioFileName,
+                                    audioFileNameEs: recipe.whatToExpect?.audioFileNameEs
+                                )
                             }) {
-                                let notesFileName = recipe.whatToExpect?.audioFileName ?? audioService.getNotesFileName(for: recipe.title)
+                                // AEC-13: Use localized audio filename for state check
+                                let notesFileName = recipe.whatToExpect?.localizedAudioFileName ?? audioService.getNotesFileName(for: recipe.title)
                                 let isCurrentAudio = audioService.currentAudioFile == notesFileName
                                 let isPlaying = isCurrentAudio && audioService.isPlaying
                                 
                                 HStack(spacing: 6) {
                                     Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                                         .font(.system(size: 14, weight: .semibold))
-                                    Text(isPlaying ? "Pause" : (isCurrentAudio ? "Resume" : "Listen"))
+                                    Text(isPlaying ? "pause".localized : (isCurrentAudio ? "resume".localized : "listen".localized))
                                         .font(.subheadline)
                                         .fontWeight(.semibold)
                                 }
@@ -278,7 +283,7 @@ struct BrewDetailScreen: View {
                             }
                         }
                         
-                        Text(recipe.notes)
+                        Text(recipe.localizedNotes)
                             .font(.body)
                             .foregroundColor(.secondary)
                     }
@@ -297,7 +302,7 @@ struct BrewDetailScreen: View {
                     HStack {
                         Image(systemName: "play.fill")
                             .font(.title3)
-                        Text("Start Brewing")
+                        Text("start_brewing".localized)
                             .font(.title3)
                             .fontWeight(.semibold)
                     }
@@ -311,7 +316,7 @@ struct BrewDetailScreen: View {
             }
             .padding()
         }
-        .navigationTitle("Recipe Details")
+        .navigationTitle("recipe_details".localized)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

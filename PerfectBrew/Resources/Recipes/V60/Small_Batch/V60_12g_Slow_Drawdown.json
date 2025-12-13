@@ -26,34 +26,55 @@
         "instruction": "Pour 36g water for bloom. Minimal agitation.",
         "short_instruction": "Bloom 36g • Gentle",
         "audio_script": "Start timer. Pour 36 grams for the bloom. Be gentle—minimal agitation is the goal here.",
-        "audio_file_name": "slow_drawdown_12g_step1.m4a"
+        "audio_file_name": "slow_drawdown_12g_step1.m4a",
+        "instruction_es": "Vierte 36g de agua para bloom. Agitación mínima.",
+        "short_instruction_es": "Bloom 36g • Suave",
+        "audio_script_es": "Inicia el cronómetro. Vierte 36 gramos para el bloom. Sé suave—la agitación mínima es el objetivo aquí."
       },
       {
         "time_seconds": 65,
         "instruction": "Pour to 130g total.",
         "short_instruction": "Pour to 130g",
         "audio_script": "Pour smoothly to reach 130 grams by 1 minute and 5 seconds. Keep the stream low and steady.",
-        "audio_file_name": "slow_drawdown_12g_step2.m4a"
+        "audio_file_name": "slow_drawdown_12g_step2.m4a",
+        "instruction_es": "Vierte hasta 130g total.",
+        "short_instruction_es": "Vierte hasta 130g",
+        "audio_script_es": "Vierte suavemente para alcanzar 130 gramos a 1 minuto 5 segundos. Mantén el flujo bajo y constante."
       },
       {
         "time_seconds": 85,
         "instruction": "Final pour to 200g total.",
         "short_instruction": "Pour to 200g",
         "audio_script": "Pour the rest to reach 200 grams by 1 minute 25 seconds. Avoid turbulence.",
-        "audio_file_name": "slow_drawdown_12g_step3.m4a"
+        "audio_file_name": "slow_drawdown_12g_step3.m4a",
+        "instruction_es": "Vertido final hasta 200g total.",
+        "short_instruction_es": "Vierte hasta 200g",
+        "audio_script_es": "Vierte el resto para alcanzar 200 gramos a 1 minuto 25 segundos. Evita turbulencia."
       },
       {
         "time_seconds": 180,
         "instruction": "Let draw down.",
         "short_instruction": "Draw down",
         "audio_script": "Let it draw down naturally. By minimizing agitation, we keep the fines from clogging the paper, leading to a smooth finish.",
-        "audio_file_name": "slow_drawdown_12g_step4.m4a"
+        "audio_file_name": "slow_drawdown_12g_step4.m4a",
+        "instruction_es": "Deja drenar.",
+        "short_instruction_es": "Drenar",
+        "audio_script_es": "Deja que drene naturalmente. Al minimizar la agitación, evitamos que los finos tapen el papel, logrando un acabado suave."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Clean", "Crisp", "Delicate"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Clean",
+        "Crisp",
+        "Delicate"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.9,
@@ -73,11 +94,18 @@
     "what_to_expect": {
       "description": "This method relies on minimal agitation to prevent fine migration and clogging, which is crucial for maintaining flow rate in small doses without using a coarse grind.",
       "audio_file_name": "slow_drawdown_12g_notes.m4a",
-      "audio_script": "Turbulence is the enemy of small doses. This recipe uses a gentle hand and minimal agitation to keep the bed structured, preventing clogging and ensuring a clean, consistent brew."
+      "audio_script": "Turbulence is the enemy of small doses. This recipe uses a gentle hand and minimal agitation to keep the bed structured, preventing clogging and ensuring a clean, consistent brew.",
+      "description_es": "La molienda fina extiende el tiempo de contacto para máxima dulzura. El drenaje lento de 4 minutos produce una taza con cuerpo y sabores desarrollados.",
+      "audio_script_es": "Usamos molienda fina para extender el tiempo de contacto a 4 minutos. Este drenaje lento maximiza la dulzura y produce una taza con cuerpo completo."
     },
     "notes": "Use a gooseneck kettle for precise control. The key is keeping everything as smooth as possible to avoid turbulence, which causes clogging with small doses.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 12g Drenaje Lento",
+    "notes_es": "Molienda fina para extender el tiempo de contacto y maximizar la dulzura.",
+    "preparation_steps_es": [
+      "Calienta el agua a 92°C.",
+      "Muele 12g de café a molienda fina.",
+      "Enjuaga el filtro."
+    ]
   }
 ]
-
-

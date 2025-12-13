@@ -26,42 +26,60 @@
         "instruction": "Bloom: Pour 54g water (3x coffee weight) in a gentle circular motion. This initial pour saturates all grounds and begins the extraction process. The 3:1 ratio ensures complete wetting without over-extraction.",
         "short_instruction": "Bloom • 54g water (3x coffee weight)",
         "audio_file_name": "scott_rao_step_01.m4a",
-        "audio_script": "In 30 seconds, you should have finished the bloom. Pour 54 grams of water in gentle circles. This three-to-one ratio ensures all grounds are saturated and begins extraction evenly."
+        "audio_script": "In 30 seconds, you should have finished the bloom. Pour 54 grams of water in gentle circles. This three-to-one ratio ensures all grounds are saturated and begins extraction evenly.",
+        "instruction_es": "Bloom: Vierte 54g de agua (3x peso del café) en movimiento circular suave. Este vertido inicial satura todo el molido y comienza la extracción.",
+        "short_instruction_es": "Bloom • 54g agua (3x café)",
+        "audio_script_es": "Vierte 54 gramos de agua en círculos suaves. Esta proporción 3:1 asegura que todo el molido esté saturado y comience la extracción uniformemente."
       },
       {
         "time_seconds": 35,
         "instruction": "Stir gently: Use a stirring stick to break up dry pockets and ensure even saturation. This step is crucial for preventing channeling and achieving uniform extraction across the entire coffee bed.",
         "short_instruction": "Stir gently • Break up dry pockets",
         "audio_file_name": "scott_rao_step_02.m4a",
-        "audio_script": "In 5 seconds, stir gently to break up dry pockets."
+        "audio_script": "In 5 seconds, stir gently to break up dry pockets.",
+        "instruction_es": "Revuelve suavemente: Usa un agitador para romper los bolsillos secos y asegurar saturación uniforme.",
+        "short_instruction_es": "Revuelve suave • Rompe bolsillos secos",
+        "audio_script_es": "En 5 segundos, revuelve suavemente para romper los bolsillos secos."
       },
       {
         "time_seconds": 50,
         "instruction": "First pour: Add water to reach 150g total in 15 seconds. Pour in slow, steady circles from the center outward. This controlled flow maintains bed structure while building the foundation for flavor development.",
         "short_instruction": "First pour • 150g total • 15 seconds",
         "audio_file_name": "scott_rao_step_03.m4a",
-        "audio_script": "In 15 seconds, you should have reached 150 grams total. Pour with slow, steady circles from the center outward. Keep the bed stable while building the flavor foundation."
+        "audio_script": "In 15 seconds, you should have reached 150 grams total. Pour with slow, steady circles from the center outward. Keep the bed stable while building the flavor foundation.",
+        "instruction_es": "Primer vertido: Añade agua hasta alcanzar 150g en 15 segundos. Vierte en círculos lentos y constantes desde el centro hacia afuera.",
+        "short_instruction_es": "Primer vertido • 150g total • 15s",
+        "audio_script_es": "En 15 segundos, deberías alcanzar 150 gramos totales. Vierte en círculos lentos y constantes desde el centro hacia afuera. Mantén la cama estable."
       },
       {
         "time_seconds": 65,
         "instruction": "Second pour: Continue to 225g total in 15 seconds. Maintain the same gentle, circular pouring pattern. This pour continues building complexity while keeping extraction balanced and controlled.",
         "short_instruction": "Second pour • 225g total • 15 seconds",
         "audio_file_name": "scott_rao_step_04.m4a",
-        "audio_script": "In 15 seconds, you should have reached 225 grams total. Continue pouring with the same gentle, circular pattern to build complexity while maintaining balanced extraction."
+        "audio_script": "In 15 seconds, you should have reached 225 grams total. Continue pouring with the same gentle, circular pattern to build complexity while maintaining balanced extraction.",
+        "instruction_es": "Segundo vertido: Continúa hasta 225g en 15 segundos. Mantén el mismo patrón de vertido circular y suave.",
+        "short_instruction_es": "Segundo vertido • 225g total • 15s",
+        "audio_script_es": "En 15 segundos, deberías alcanzar 225 gramos totales. Continúa vertiendo con el mismo patrón circular suave para construir complejidad."
       },
       {
         "time_seconds": 80,
         "instruction": "Final pour: Complete to 300g total in 15 seconds. Finish with gentle circles and a light swirl to settle the bed. This final pour completes the extraction and prepares the coffee for optimal draining.",
         "short_instruction": "Final pour • 300g total • 15 seconds",
         "audio_file_name": "scott_rao_step_05.m4a",
-        "audio_script": "In 15 seconds, you should have completed the pour to reach 300 grams total. Finish with gentle circles and a light swirl to settle the bed for optimal draining."
+        "audio_script": "In 15 seconds, you should have completed the pour to reach 300 grams total. Finish with gentle circles and a light swirl to settle the bed for optimal draining.",
+        "instruction_es": "Vertido final: Completa hasta 300g en 15 segundos. Termina con círculos suaves y una agitación ligera para asentar la cama.",
+        "short_instruction_es": "Vertido final • 300g total • 15s",
+        "audio_script_es": "En 15 segundos, deberías completar el vertido hasta 300 gramos. Termina con círculos suaves y una agitación ligera para asentar la cama."
       },
       {
         "time_seconds": 190,
         "instruction": "Let drain completely: Allow the coffee to drain at its natural pace. The total brew time should finish around 3 minutes 10 seconds, producing a clean, balanced cup with excellent clarity and structure.",
         "short_instruction": "Let drain completely",
         "audio_file_name": "scott_rao_step_06.m4a",
-        "audio_script": "In about 110 seconds, you should have a complete brew. Allow the coffee to drain naturally. The brew should finish around three minutes and ten seconds, producing a clean, balanced cup with excellent clarity."
+        "audio_script": "In about 110 seconds, you should have a complete brew. Allow the coffee to drain naturally. The brew should finish around three minutes and ten seconds, producing a clean, balanced cup with excellent clarity.",
+        "instruction_es": "Deja drenar completamente: Permite que el café drene a su ritmo natural. El tiempo total debería ser alrededor de 3 minutos 10 segundos.",
+        "short_instruction_es": "Deja drenar completamente",
+        "audio_script_es": "En unos 110 segundos, tendrás una preparación completa. Deja que el café drene naturalmente. Debería terminar alrededor de 3 minutos 10 segundos, produciendo una taza limpia y equilibrada."
       }
     ],
     "equipment": [
@@ -75,12 +93,23 @@
     "what_to_expect": {
       "description": "Scott Rao's V60 method emphasizes precision and consistency through controlled pouring and minimal agitation. This technique focuses on maintaining bed structure while achieving even extraction. Expect a clean, bright cup with excellent clarity and balanced acidity. The method works particularly well with light to medium roasts, highlighting origin characteristics without overwhelming complexity. The systematic approach of gentle stirring and controlled pouring produces consistent results and helps develop proper brewing technique. This method is ideal for those who appreciate clean, structured coffees with pronounced acidity and clarity.",
       "audio_file_name": "scott_rao_intro.m4a",
-      "audio_script": "Scott Rao's V60 method emphasizes precision and consistency through controlled pouring and minimal agitation. This technique focuses on maintaining bed structure while achieving even extraction. Expect a clean, bright cup with excellent clarity and balanced acidity. The method works particularly well with light to medium roasts, highlighting origin characteristics. The systematic approach of gentle stirring and controlled pouring produces consistent results and helps develop proper brewing technique."
+      "audio_script": "Scott Rao's V60 method emphasizes precision and consistency through controlled pouring and minimal agitation. This technique focuses on maintaining bed structure while achieving even extraction. Expect a clean, bright cup with excellent clarity and balanced acidity. The method works particularly well with light to medium roasts, highlighting origin characteristics. The systematic approach of gentle stirring and controlled pouring produces consistent results and helps develop proper brewing technique.",
+      "description_es": "El método de Scott Rao produce una taza equilibrada y consistente. La técnica de excavar durante el bloom asegura saturación completa, mientras que el vertido continuo mantiene temperatura y extracción uniformes.",
+      "audio_script_es": "El método de Scott Rao enfatiza la saturación completa durante el bloom y un vertido continuo. Esto produce una taza equilibrada con excelente consistencia cada vez."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Clean", "High Acidity", "Structured"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Clean",
+        "High Acidity",
+        "Structured"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.9,
@@ -91,6 +120,14 @@
       "thermal": "High"
     },
     "notes": "Based on Scott Rao's brewing principles emphasizing precision, consistency, and minimal agitation. The key is maintaining bed structure through controlled pouring and gentle stirring. Focus on steady pour rates and avoid excessive agitation to achieve clean, balanced extraction.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 de Scott Rao - Individual",
+    "notes_es": "El método de Scott Rao enfatiza un bloom vigoroso y un solo vertido largo para máxima uniformidad.",
+    "preparation_steps_es": [
+      "Calienta el agua a 95-96°C.",
+      "Muele 22g de café a molienda media.",
+      "Enjuaga el filtro con agua caliente y descarta.",
+      "Coloca el V60 sobre tu servidor."
+    ]
   }
 ]

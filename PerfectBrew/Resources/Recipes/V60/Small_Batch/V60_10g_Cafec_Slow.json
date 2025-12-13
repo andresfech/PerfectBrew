@@ -27,41 +27,66 @@
         "instruction": "Pour 30g water for bloom.",
         "short_instruction": "Bloom 30g",
         "audio_script": "Start timer. Pour 30 grams for the bloom. You have 45 seconds. The T-92 filters flow slower, allowing for better saturation.",
-        "audio_file_name": "cafec_slow_10g_step1.m4a"
+        "audio_file_name": "cafec_slow_10g_step1.m4a",
+        "instruction_es": "Vierte 30g de agua para bloom.",
+        "short_instruction_es": "Bloom 30g",
+        "audio_script_es": "Inicia el cronómetro. Vierte 30 gramos para el bloom. Tienes 45 segundos. Los filtros T-92 fluyen más lento, permitiendo mejor saturación."
       },
       {
         "time_seconds": 60,
         "instruction": "Pour to 60g total.",
         "short_instruction": "Pour to 60g",
         "audio_script": "Pour to reach 60 grams by the 1 minute mark. Keep it slow.",
-        "audio_file_name": "cafec_slow_10g_step2.m4a"
+        "audio_file_name": "cafec_slow_10g_step2.m4a",
+        "instruction_es": "Vierte hasta 60g total.",
+        "short_instruction_es": "Vierte hasta 60g",
+        "audio_script_es": "Vierte para alcanzar 60 gramos al minuto. Mantenlo lento."
       },
       {
         "time_seconds": 90,
         "instruction": "Pour to 100g total.",
         "short_instruction": "Pour to 100g",
         "audio_script": "Continue pouring to 100 grams by 1 minute 30 seconds. The filter is doing the work of restricting the flow for you.",
-        "audio_file_name": "cafec_slow_10g_step3.m4a"
+        "audio_file_name": "cafec_slow_10g_step3.m4a",
+        "instruction_es": "Vierte hasta 100g total.",
+        "short_instruction_es": "Vierte hasta 100g",
+        "audio_script_es": "Continúa vertiendo hasta 100 gramos a 1 minuto 30 segundos. El filtro hace el trabajo de restringir el flujo por ti."
       },
       {
         "time_seconds": 135,
         "instruction": "Final pour to 160g total.",
         "short_instruction": "Pour to 160g",
         "audio_script": "Pour the remaining water to reach 160 grams total by 2 minutes 15 seconds. Maintain a steady stream.",
-        "audio_file_name": "cafec_slow_10g_step4.m4a"
+        "audio_file_name": "cafec_slow_10g_step4.m4a",
+        "instruction_es": "Vertido final hasta 160g total.",
+        "short_instruction_es": "Vierte hasta 160g",
+        "audio_script_es": "Vierte el agua restante para alcanzar 160 gramos a 2 minutos 15 segundos. Mantén un flujo constante."
       },
       {
         "time_seconds": 180,
         "instruction": "Let draw down.",
         "short_instruction": "Draw down",
         "audio_script": "Let it draw down. It should finish around 3 minutes. This method gives you high extraction without the risk of channeling.",
-        "audio_file_name": "cafec_slow_10g_step5.m4a"
+        "audio_file_name": "cafec_slow_10g_step5.m4a",
+        "instruction_es": "Deja drenar.",
+        "short_instruction_es": "Drenar",
+        "audio_script_es": "Deja que drene. Debería terminar alrededor de 3 minutos. Este método te da alta extracción sin riesgo de channeling."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Rich", "Sweet", "Full-bodied"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Rich",
+        "Sweet",
+        "Full-bodied"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.7,
@@ -81,11 +106,18 @@
     "what_to_expect": {
       "description": "Specifically designed for use with Cafec T-92 slow-flow filters. These filters artificially slow down the brew, allowing you to use a standard grind size even with a small 10g dose, preventing the common 'too fast' drawdown issue.",
       "audio_file_name": "cafec_slow_10g_notes.m4a",
-      "audio_script": "This recipe leverages Cafec T-92 filters, which are designed to flow slowly. This is perfect for small 10-gram doses because it prevents the water from rushing through too fast, giving you a rich, developed cup without grinding perfectly fine."
+      "audio_script": "This recipe leverages Cafec T-92 filters, which are designed to flow slowly. This is perfect for small 10-gram doses because it prevents the water from rushing through too fast, giving you a rich, developed cup without grinding perfectly fine.",
+      "description_es": "Un método meditativo que produce una taza excepcionalmente dulce y suave. La temperatura baja y el vertido lento evitan cualquier amargor o aspereza.",
+      "audio_script_es": "Este método lento inspirado en Cafec es para quienes disfrutan un proceso meditativo. La temperatura baja y el vertido extremadamente lento producen una taza dulce y suave sin ningún amargor."
     },
     "notes": "The Cafec T-92 filters (designed for light roasts) work better for small V60 doses because they slow the flow rate and prevent clogging.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 10g Método Cafec Lento",
+    "notes_es": "Método de vertido muy lento inspirado en los filtros Cafec. Para quienes disfrutan un proceso meditativo.",
+    "preparation_steps_es": [
+      "Calienta el agua a 88°C (temperatura baja para extracción lenta).",
+      "Muele 10g de café a molienda media-gruesa.",
+      "Usa filtro Cafec o similar de drenaje lento."
+    ]
   }
 ]
-
-

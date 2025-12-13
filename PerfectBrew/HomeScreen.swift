@@ -36,12 +36,12 @@ struct HomeScreen: View {
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 8) {
-                Text("Perfect Brew")
+                Text("perfect_brew".localized)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                 
-                Text("Craft the perfect cup")
+                Text("craft_perfect_cup".localized)
                     .font(.title3)
                     .foregroundColor(.secondary)
             }
@@ -60,10 +60,10 @@ struct HomeScreen: View {
                     }
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Match My Coffee")
+                        Text("match_my_coffee".localized)
                             .font(.headline)
                             .foregroundColor(.white)
-                        Text("Find the perfect recipe for your beans")
+                        Text("find_perfect_recipe".localized)
                             .font(.caption)
                             .foregroundColor(.white.opacity(0.9))
                     }
@@ -84,7 +84,7 @@ struct HomeScreen: View {
             .padding(.horizontal)
             
             VStack(alignment: .leading, spacing: 20) {
-                Text("Brew Method")
+                Text("brew_method".localized)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
@@ -111,7 +111,7 @@ struct HomeScreen: View {
             VStack(spacing: 16) {
                 if selectedMethod.isAvailable {
                     NavigationLink(destination: RecipeSelectionScreen(selectedMethod: selectedMethod)) {
-                        Text("Start New Brew")
+                        Text("start_new_brew".localized)
                             .font(.title2)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
@@ -122,7 +122,7 @@ struct HomeScreen: View {
                     }
                     
                     NavigationLink(destination: BrewHistoryScreen()) {
-                        Text("Brew History")
+                        Text("brew_history".localized)
                             .font(.title3)
                             .fontWeight(.medium)
                             .foregroundColor(.orange)

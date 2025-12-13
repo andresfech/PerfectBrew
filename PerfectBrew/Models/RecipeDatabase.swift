@@ -10,11 +10,18 @@ class RecipeDatabase: ObservableObject {
         print("🔧 RecipeDatabase: Initializing...")
         loadAllRecipes()
         
-        // Asynchronously fetch remote recipes
-        Task {
-            await fetchRemoteRecipes()
+        // TEMPORARILY DISABLED - Supabase fetch
+        // Uncomment when Supabase has all 38 recipes
+        // Task {
+        //     await fetchRemoteRecipes()
+        // }
+        
+        print("🔧 RecipeDatabase: Initialization complete. Total LOCAL recipes: \(recipes.count)")
+        
+        // Debug: Print loaded recipes by method
+        for (method, methodRecipes) in recipesByMethod {
+            print("   📋 \(method): \(methodRecipes.count) recipes")
         }
-        print("🔧 RecipeDatabase: Initialization complete. Total recipes: \(recipes.count)")
     }
     
     private func loadAllRecipes() {
@@ -118,7 +125,12 @@ class RecipeDatabase: ObservableObject {
                 if fileName.contains("Coffee Beans Loader") || 
                    fileName.contains("Thermometer") || 
                    fileName.contains("Water Bubble") ||
-                   fileName.contains("aeropress_minimal_zen_lottie") {
+                   fileName.contains("aeropress_minimal_zen_lottie") ||
+                   fileName.contains("Grinder") ||
+                   fileName.contains("Timemore") ||
+                   fileName.contains("translations") ||
+                   fileName.contains("Diagnostics") ||
+                   fileName.contains("Profiles") {
                     print("⏭️ Skipping non-recipe file: \(fileName)")
                     continue
                 }
@@ -170,22 +182,64 @@ class RecipeDatabase: ObservableObject {
     private func findJSONFilesRecursively(in directory: URL) throws -> [URL] {
         var jsonFiles: [URL] = []
         
-        print("🔍 Searching for JSON files in: \(directory.path)")
+        print("🔍 Searching for JSON files...")
         
-        let enumerator = FileManager.default.enumerator(
-            at: directory,
-            includingPropertiesForKeys: [.isRegularFileKey],
-            options: [.skipsHiddenFiles, .skipsPackageDescendants]
-        )
+        // Primary method: Use Bundle.main.urls to find all JSON files
+        // This is the most reliable way since Xcode flattens the bundle
+        if let bundleJsonFiles = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil) {
+            print("📦 Bundle.main found \(bundleJsonFiles.count) total JSON files")
+            
+            for url in bundleJsonFiles {
+                let name = url.lastPathComponent
+                let nameLower = name.lowercased()
+                
+                // Include files that start with brewing method names
+                if nameLower.hasPrefix("aeropress") || 
+                   nameLower.hasPrefix("v60") || 
+                   nameLower.hasPrefix("french_press") || 
+                   nameLower.hasPrefix("chemex") {
+                    print("📄 Found recipe: \(name)")
+                    jsonFiles.append(url)
+                }
+            }
+        } else {
+            print("⚠️ Bundle.main.urls returned nil")
+        }
         
-        while let fileURL = enumerator?.nextObject() as? URL {
-            if fileURL.pathExtension.lowercased() == "json" {
-                print("📄 Found JSON file: \(fileURL.path)")
-                jsonFiles.append(fileURL)
+        // Fallback: Direct file enumeration (for development/testing)
+        if jsonFiles.isEmpty {
+            print("🔄 Fallback: Using directory enumeration")
+            let enumerator = FileManager.default.enumerator(
+                at: directory,
+                includingPropertiesForKeys: [.isRegularFileKey],
+                options: [.skipsHiddenFiles, .skipsPackageDescendants]
+            )
+            
+            while let fileURL = enumerator?.nextObject() as? URL {
+                if fileURL.pathExtension.lowercased() == "json" {
+                    let name = fileURL.lastPathComponent.lowercased()
+                    if name.hasPrefix("aeropress") || name.hasPrefix("v60") || 
+                       name.hasPrefix("french_press") || name.hasPrefix("chemex") {
+                        print("📄 Found recipe (fallback): \(fileURL.lastPathComponent)")
+                        jsonFiles.append(fileURL)
+                    }
+                }
             }
         }
         
-        print("📊 Total JSON files found: \(jsonFiles.count)")
+        print("📊 Total recipe files found: \(jsonFiles.count)")
+        
+        // Debug: If still low count, show what's in the bundle
+        if jsonFiles.count < 30 {
+            print("⚠️ Expected ~38 recipes but found \(jsonFiles.count). Debug info:")
+            if let allJsons = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil) {
+                print("   All JSON files in bundle (\(allJsons.count) total):")
+                for url in allJsons {
+                    print("     - \(url.lastPathComponent)")
+                }
+            }
+        }
+        
         return jsonFiles
     }
     

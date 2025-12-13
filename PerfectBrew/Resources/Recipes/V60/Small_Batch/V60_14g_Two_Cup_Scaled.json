@@ -26,34 +26,55 @@
         "instruction": "Pour 30g water for bloom. Wait 30s.",
         "short_instruction": "Bloom 30g • Wait 30s",
         "audio_script": "Start timer. Pour 30 grams of water for the bloom. Wait for 30 seconds. This is a standard, reliable bloom.",
-        "audio_file_name": "two_cup_scaled_14g_step1.m4a"
+        "audio_file_name": "two_cup_scaled_14g_step1.m4a",
+        "instruction_es": "Vierte 30g de agua para bloom. Espera 30s.",
+        "short_instruction_es": "Bloom 30g • Espera 30s",
+        "audio_script_es": "Inicia el cronómetro. Vierte 30 gramos de agua para el bloom. Espera 30 segundos. Este es un bloom estándar y confiable."
       },
       {
         "time_seconds": 90,
         "instruction": "Pour to 105g total.",
         "short_instruction": "Pour to 105g",
         "audio_script": "Start your first main pour. Bring the total weight up to 105 grams. Pour steadily in a circle.",
-        "audio_file_name": "two_cup_scaled_14g_step2.m4a"
+        "audio_file_name": "two_cup_scaled_14g_step2.m4a",
+        "instruction_es": "Vierte hasta 105g total.",
+        "short_instruction_es": "Vierte hasta 105g",
+        "audio_script_es": "Comienza tu primer vertido principal. Lleva el peso total a 105 gramos. Vierte constantemente en círculo."
       },
       {
         "time_seconds": 150,
         "instruction": "Pour to 170g total.",
         "short_instruction": "Pour to 170g",
         "audio_script": "Second pour. Bring the weight up to 170 grams. Keep the water level in the cone relatively high.",
-        "audio_file_name": "two_cup_scaled_14g_step3.m4a"
+        "audio_file_name": "two_cup_scaled_14g_step3.m4a",
+        "instruction_es": "Vierte hasta 170g total.",
+        "short_instruction_es": "Vierte hasta 170g",
+        "audio_script_es": "Segundo vertido. Lleva el peso a 170 gramos. Mantén el nivel del agua en el cono relativamente alto."
       },
       {
         "time_seconds": 210,
         "instruction": "Final pour to 240g total.",
         "short_instruction": "Pour to 240g",
         "audio_script": "Final pour. Reach your target weight of 240 grams. Let it draw down fully. You're aiming for a total time between 3 minutes and 3 minutes 30 seconds.",
-        "audio_file_name": "two_cup_scaled_14g_step4.m4a"
+        "audio_file_name": "two_cup_scaled_14g_step4.m4a",
+        "instruction_es": "Vertido final hasta 240g total.",
+        "short_instruction_es": "Vierte hasta 240g",
+        "audio_script_es": "Vertido final. Alcanza tu peso objetivo de 240 gramos. Deja drenar completamente. Apuntas a un tiempo total entre 3 minutos y 3 minutos 30 segundos."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Tea-like", "Floral", "Citrus"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Tea-like",
+        "Floral",
+        "Citrus"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -73,11 +94,18 @@
     "what_to_expect": {
       "description": "An easy-to-master ratio and technique, perfect for those moving up slightly from the smallest doses. The 1:17 ratio provides a lighter, tea-like body that highlights the coffee's origin characteristics.",
       "audio_file_name": "two_cup_scaled_14g_notes.m4a",
-      "audio_script": "This 14-gram recipe is a great starting point if you want a slightly larger cup than the micro-doses. The 1 to 17 ratio gives you a delicate, tea-like body that really lets the bean's character shine."
+      "audio_script": "This 14-gram recipe is a great starting point if you want a slightly larger cup than the micro-doses. The 1 to 17 ratio gives you a delicate, tea-like body that really lets the bean's character shine.",
+      "description_es": "Una receta escalada para dos tazas pequeñas o una taza grande. Mantiene el equilibrio y la claridad de una porción individual pero con mayor volumen.",
+      "audio_script_es": "Esta receta está escalada para dos tazas pequeñas o una grande. El proceso mantiene el equilibrio y claridad pero produce más café."
     },
     "notes": "Easy ratio to scale. Good starting point if moving up from 10–12g.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 14g Dos Tazas Escalado",
+    "notes_es": "Versión escalada para preparar dos tazas pequeñas o una grande.",
+    "preparation_steps_es": [
+      "Calienta el agua a 94°C.",
+      "Muele 14g de café a molienda media.",
+      "Usa V60 tamaño 02."
+    ]
   }
 ]
-
-

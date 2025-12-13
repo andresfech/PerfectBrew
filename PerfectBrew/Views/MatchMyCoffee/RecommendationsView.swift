@@ -32,7 +32,7 @@ struct RecommendationRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                Text(recommendation.recipe.title)
+                Text(recommendation.recipe.localizedTitle)
                     .font(.headline)
                 Spacer()
                 

@@ -25,9 +25,17 @@ class AudioService: NSObject, ObservableObject {
     
     func playAudio(for step: BrewingStep, recipeTitle: String) {
         print("DEBUG: playAudio called for recipe: '\(recipeTitle)'")
-        print("DEBUG: step.audioFileName: \(step.audioFileName ?? "nil")")
         
-        guard let audioFileName = step.audioFileName else {
+        // AEC-13: Use localized audio file name (Spanish if available, else English)
+        let currentLang = LocalizationManager.shared.currentLanguage
+        print("DEBUG: Current language: \(currentLang.rawValue)")
+        print("DEBUG: step.audioFileName: \(step.audioFileName ?? "nil")")
+        print("DEBUG: step.audioFileNameEs: \(step.audioFileNameEs ?? "nil")")
+        
+        // Try localized version first, then fallback to English
+        let audioFileName = step.localizedAudioFileName
+        
+        guard let fileName = audioFileName else {
             print("DEBUG: No audio file specified for step")
             return
         }
@@ -36,8 +44,17 @@ class AudioService: NSObject, ObservableObject {
         stopAudio()
         
         // Construct the audio file path
-        let audioPath = getAudioPath(for: audioFileName, recipeTitle: recipeTitle)
-        print("DEBUG: Audio path: \(audioPath)")
+        var audioPath = getAudioPath(for: fileName, recipeTitle: recipeTitle)
+        
+        // AEC-13: Fallback to English audio if Spanish not found
+        if currentLang == .spanish,
+           audioPath.path.isEmpty || !FileManager.default.fileExists(atPath: audioPath.path),
+           let englishFileName = step.audioFileName {
+            print("DEBUG: Spanish audio not found, falling back to English: \(englishFileName)")
+            audioPath = getAudioPath(for: englishFileName, recipeTitle: recipeTitle)
+        }
+        
+        print("DEBUG: Final audio path: \(audioPath)")
         
         do {
             // Load and play the audio file
@@ -46,29 +63,49 @@ class AudioService: NSObject, ObservableObject {
             audioPlayer?.play()
             
             isPlaying = true
-            currentAudioFile = audioFileName
+            currentAudioFile = fileName
             
-            print("DEBUG: Playing audio: \(audioFileName)")
+            print("DEBUG: Playing audio: \(fileName)")
         } catch {
-            print("DEBUG: Failed to play audio \(audioFileName): \(error)")
+            print("DEBUG: Failed to play audio \(fileName): \(error)")
             isPlaying = false
             currentAudioFile = nil
         }
     }
     
-    func playNotesAudio(for recipeTitle: String, audioFileName: String? = nil) {
+    func playNotesAudio(for recipeTitle: String, audioFileName: String? = nil, audioFileNameEs: String? = nil) {
         print("DEBUG: playNotesAudio called for recipe: '\(recipeTitle)'")
         
         // Stop any currently playing audio
         stopAudio()
         
-        // Get the correct notes audio filename: use provided one or fallback to mapping
-        let notesFileName = audioFileName ?? getNotesFileName(for: recipeTitle)
-        print("DEBUG: Notes filename: \(notesFileName)")
+        // AEC-13: Use localized audio file name
+        let currentLang = LocalizationManager.shared.currentLanguage
+        print("DEBUG: Current language: \(currentLang.rawValue)")
+        
+        // Determine which filename to use based on language
+        var notesFileName: String
+        if currentLang == .spanish, let esFileName = audioFileNameEs, !esFileName.isEmpty {
+            notesFileName = esFileName
+            print("DEBUG: Using Spanish notes filename: \(notesFileName)")
+        } else {
+            notesFileName = audioFileName ?? getNotesFileName(for: recipeTitle)
+            print("DEBUG: Using English notes filename: \(notesFileName)")
+        }
         
         // Construct the audio file path for notes
-        let audioPath = getAudioPath(for: notesFileName, recipeTitle: recipeTitle)
-        print("DEBUG: Notes audio path: \(audioPath)")
+        var audioPath = getAudioPath(for: notesFileName, recipeTitle: recipeTitle)
+        
+        // AEC-13: Fallback to English if Spanish not found
+        if currentLang == .spanish,
+           (audioPath.path.isEmpty || !FileManager.default.fileExists(atPath: audioPath.path)),
+           let englishFileName = audioFileName {
+            print("DEBUG: Spanish notes audio not found, falling back to English: \(englishFileName)")
+            notesFileName = englishFileName
+            audioPath = getAudioPath(for: notesFileName, recipeTitle: recipeTitle)
+        }
+        
+        print("DEBUG: Final notes audio path: \(audioPath)")
         
         do {
             // Load and play the audio file
@@ -101,17 +138,24 @@ class AudioService: NSObject, ObservableObject {
         }
     }
     
-    func toggleNotesAudio(for recipeTitle: String, audioFileName: String? = nil) {
-        let notesFileName = audioFileName ?? getNotesFileName(for: recipeTitle)
+    func toggleNotesAudio(for recipeTitle: String, audioFileName: String? = nil, audioFileNameEs: String? = nil) {
+        // AEC-13: Determine effective filename based on language
+        let currentLang = LocalizationManager.shared.currentLanguage
+        let effectiveFileName: String
+        if currentLang == .spanish, let esFileName = audioFileNameEs, !esFileName.isEmpty {
+            effectiveFileName = esFileName
+        } else {
+            effectiveFileName = audioFileName ?? getNotesFileName(for: recipeTitle)
+        }
         
-        if currentAudioFile == notesFileName {
+        if currentAudioFile == effectiveFileName {
             if isPlaying {
                 pauseAudio()
             } else {
                 resumeAudio()
             }
         } else {
-            playNotesAudio(for: recipeTitle, audioFileName: audioFileName)
+            playNotesAudio(for: recipeTitle, audioFileName: audioFileName, audioFileNameEs: audioFileNameEs)
         }
     }
     
@@ -316,8 +360,9 @@ class AudioService: NSObject, ObservableObject {
     }
     
     func hasAudio(for step: BrewingStep) -> Bool {
-        let hasAudio = step.audioFileName != nil
-        print("DEBUG: hasAudio check - step.audioFileName: \(step.audioFileName ?? "nil"), result: \(hasAudio)")
+        // AEC-13: Check localized audio file (tries Spanish first if language is Spanish)
+        let hasAudio = step.localizedAudioFileName != nil
+        print("DEBUG: hasAudio check - localizedAudioFileName: \(step.localizedAudioFileName ?? "nil"), result: \(hasAudio)")
         return hasAudio
     }
 }

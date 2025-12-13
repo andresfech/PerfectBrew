@@ -26,43 +26,75 @@
         "instruction": "Pour 30g water for bloom. Swirl gently.",
         "short_instruction": "Bloom 30g • Swirl",
         "audio_script": "Start your timer. Pour 30 grams of water for the bloom and give it a gentle swirl. You have 45 seconds. This releases CO2 and prepares the bed for extraction.",
-        "audio_file_name": "standard_light_10g_step1.m4a"
+        "audio_file_name": "standard_light_10g_step1.m4a",
+        "instruction_es": "Vierte 30g de agua para bloom. Agita suavemente.",
+        "short_instruction_es": "Bloom 30g • Agita",
+        "audio_script_es": "Inicia el cronómetro. Vierte 30 gramos de agua para el bloom y dale una agitación suave. Tienes 45 segundos. Esto libera CO2 y prepara la cama para extracción."
       },
       {
         "time_seconds": 80,
         "instruction": "Pour to 70g slowly.",
         "short_instruction": "Pour to 70g",
         "audio_script": "Pour slowly in a spiral until you reach 70 grams. Keep the stream gentle to avoid agitation.",
-        "audio_file_name": "standard_light_10g_step2.m4a"
+        "audio_file_name": "standard_light_10g_step2.m4a",
+        "instruction_es": "Vierte lentamente hasta 70g.",
+        "short_instruction_es": "Vierte hasta 70g",
+        "audio_script_es": "Vierte lentamente en espiral hasta alcanzar 70 gramos. Mantén el flujo suave para evitar agitación."
       },
       {
         "time_seconds": 110,
         "instruction": "Pour to 110g slowly.",
         "short_instruction": "Pour to 110g",
         "audio_script": "Continue pouring slowly until you reach 110 grams. Maintain that consistent, low agitation stream.",
-        "audio_file_name": "standard_light_10g_step3.m4a"
+        "audio_file_name": "standard_light_10g_step3.m4a",
+        "instruction_es": "Vierte lentamente hasta 110g.",
+        "short_instruction_es": "Vierte hasta 110g",
+        "audio_script_es": "Continúa vertiendo lentamente hasta alcanzar 110 gramos. Mantén ese flujo constante de baja agitación."
       },
       {
         "time_seconds": 140,
         "instruction": "Pour to 140g slowly.",
         "short_instruction": "Pour to 140g",
         "audio_script": "Pour again, bringing the weight up to 140 grams. Slow and steady wins this race.",
-        "audio_file_name": "standard_light_10g_step4.m4a"
+        "audio_file_name": "standard_light_10g_step4.m4a",
+        "instruction_es": "Vierte lentamente hasta 140g.",
+        "short_instruction_es": "Vierte hasta 140g",
+        "audio_script_es": "Vierte de nuevo, llevando el peso a 140 gramos. Lento y constante gana esta carrera."
       },
       {
         "time_seconds": 180,
         "instruction": "Final pour to 160g. Let draw down.",
         "short_instruction": "Pour to 160g • Draw down",
         "audio_script": "Final pour. Bring the total weight to 160 grams. Now let it draw down. Aim to finish between 2 minutes 30 and 3 minutes.",
-        "audio_file_name": "standard_light_10g_step5.m4a"
+        "audio_file_name": "standard_light_10g_step5.m4a",
+        "instruction_es": "Vertido final hasta 160g. Deja drenar.",
+        "short_instruction_es": "Vierte hasta 160g • Drenar",
+        "audio_script_es": "Vertido final. Lleva el peso total a 160 gramos. Ahora deja drenar. Apunta a terminar entre 2 minutos 30 y 3 minutos."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Acidity", "Fruity", "Sweet"],
-      "recommended_origins": ["Ethiopia", "Kenya", "Colombia"],
-      "recommended_varieties": ["Geisha", "Heirloom"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Acidity",
+        "Fruity",
+        "Sweet"
+      ],
+      "recommended_origins": [
+        "Ethiopia",
+        "Kenya",
+        "Colombia"
+      ],
+      "recommended_varieties": [
+        "Geisha",
+        "Heirloom"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -82,11 +114,18 @@
     "what_to_expect": {
       "description": "A precision recipe for small 10g doses. By using multiple slow pours, we maintain the 1:16 ratio without bypassing the coffee bed, ensuring a high extraction even with less coffee.",
       "audio_file_name": "standard_light_10g_notes.m4a",
-      "audio_script": "This recipe is designed for the 10-gram dose. By keeping your pours slow and split into stages, we prevent water from bypassing the coffee, ensuring you get a rich, full extraction even with a small amount of beans."
+      "audio_script": "This recipe is designed for the 10-gram dose. By keeping your pours slow and split into stages, we prevent water from bypassing the coffee, ensuring you get a rich, full extraction even with a small amount of beans.",
+      "description_es": "Diseñado específicamente para tuestes claros. La temperatura alta extrae toda la acidez brillante y sabores frutales que hacen especiales a estos cafés.",
+      "audio_script_es": "Esta receta está optimizada para tuestes claros. Usamos agua más caliente para extraer toda la acidez brillante y notas frutales que hacen especiales a estos cafés."
     },
     "notes": "Keep pours slow to prevent bypass. This maintains the 1:16 ratio that works well for smaller doses.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 10g Estándar para Tueste Claro",
+    "notes_es": "Optimizado para resaltar los sabores brillantes de tuestes claros.",
+    "preparation_steps_es": [
+      "Calienta el agua a 98°C (alta para tuestes claros).",
+      "Muele 10g de café a molienda media-fina.",
+      "Enjuaga el filtro con agua caliente."
+    ]
   }
 ]
-
-

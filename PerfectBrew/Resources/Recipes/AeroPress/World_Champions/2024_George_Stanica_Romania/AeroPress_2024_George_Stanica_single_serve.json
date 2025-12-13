@@ -8,7 +8,7 @@
       "coffee_grams": 18,
       "water_grams": 100,
       "ratio": "1:5.56",
-      "grind_size": "medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 \u00b5m)",
+      "grind_size": "medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 µm)",
       "temperature_celsius": 96,
       "bloom_water_grams": 50,
       "bloom_time_seconds": 30,
@@ -17,70 +17,101 @@
     "preparation_steps": [
       "Rinse one Aesir paper filter with hot water and fit it in the cap (removes papery taste).",
       "Assemble the AeroPress in inverted position and align it approx. to the 4th mark.",
-      "Weigh 18 g of coffee and grind to medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 \u00b5m).",
+      "Weigh 18 g of coffee and grind to medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 µm).",
       "Add the 18 g ground coffee to the inverted AeroPress and give a gentle shake to level the bed.",
-      "Prepare extraction water (96 \u00b0C) and a Melodrip (or similar) for controlled pours. Have scale and timer ready."
+      "Prepare extraction water (96 °C) and a Melodrip (or similar) for controlled pours. Have scale and timer ready."
     ],
     "brewing_steps": [
       {
         "time_seconds": 35,
-        "instruction": "Pour 50 g of 96 \u00b0C water using the Melodrip (aim 5\u20136 s for the pour). Allow the coffee to bloom.",
-        "short_instruction": "Pour 50g 96\u00b0C water \u2022 Bloom",
+        "instruction": "Pour 50 g of 96 °C water using the Melodrip (aim 5–6 s for the pour). Allow the coffee to bloom.",
+        "short_instruction": "Pour 50g 96°C water • Bloom",
         "audio_script": "Start the timer and pour 50 grams of water quickly. This first pour initiates the bloom, releasing carbon dioxide and preparing the bed for even extraction. Let it bubble and degas.",
-        "audio_file_name": "2024_george_stanica_step1_bloom_pour.m4a"
+        "audio_file_name": "2024_george_stanica_step1_bloom_pour.m4a",
+        "instruction_es": "Vierte 50g de agua a 96°C usando el Melodrip (apunta a 5-6s para el vertido). Permite que el café florezca.",
+        "short_instruction_es": "Vierte 50g a 96°C • Bloom",
+        "audio_script_es": "Inicia el cronómetro y vierte 50 gramos de agua rápidamente. Este primer vertido inicia el bloom, liberando dióxido de carbono y preparando la cama para extracción uniforme. Deja que burbujee y desgasifique."
       },
       {
         "time_seconds": 45,
-        "instruction": "Pour the second 50 g of 96 \u00b0C water (again ~5\u20136 s pour).",
+        "instruction": "Pour the second 50 g of 96 °C water (again ~5–6 s pour).",
         "short_instruction": "Pour second 50g water",
         "audio_script": "Now pour the second 50 grams of water. This split pour helps control the slurry temperature.",
-        "audio_file_name": "2024_george_stanica_step2_second_pour.m4a"
+        "audio_file_name": "2024_george_stanica_step2_second_pour.m4a",
+        "instruction_es": "Vierte los segundos 50g de agua a 96°C (nuevamente ~5-6s de vertido).",
+        "short_instruction_es": "Vierte segundos 50g de agua",
+        "audio_script_es": "Ahora vierte los segundos 50 gramos de agua. Este vertido dividido ayuda a controlar la temperatura de la mezcla."
       },
       {
         "time_seconds": 65,
-        "instruction": "Stir gently in a North\u2013South\u2013East\u2013West (NSEW) pattern for ~10 s. Then wait until 1:05.",
-        "short_instruction": "Stir NSEW pattern \u2022 Wait",
+        "instruction": "Stir gently in a North–South–East–West (NSEW) pattern for ~10 s. Then wait until 1:05.",
+        "short_instruction": "Stir NSEW pattern • Wait",
         "audio_script": "Stir gently in a North, South, East, West pattern. This homogenizes the mixture, ensuring every ground interacts with the water evenly.",
-        "audio_file_name": "2024_george_stanica_step3_nsew_stir.m4a"
+        "audio_file_name": "2024_george_stanica_step3_nsew_stir.m4a",
+        "instruction_es": "Revuelve suavemente en patrón Norte-Sur-Este-Oeste (NSEO) durante ~10s. Luego espera hasta 1:05.",
+        "short_instruction_es": "Revuelve patrón NSEO • Espera",
+        "audio_script_es": "Revuelve suavemente en patrón Norte, Sur, Este, Oeste. Esto homogeneiza la mezcla, asegurando que cada partícula interactúe uniformemente con el agua."
       },
       {
         "time_seconds": 80,
         "instruction": "Screw on the rinsed cap and gently press to remove excess air (~10 s).",
-        "short_instruction": "Screw on cap \u2022 Press out air",
+        "short_instruction": "Screw on cap • Press out air",
         "audio_script": "Screw on the cap and gently press out excess air. This creates a vacuum seal to stop dripping when we flip.",
-        "audio_file_name": "2024_george_stanica_step4_cap_air.m4a"
+        "audio_file_name": "2024_george_stanica_step4_cap_air.m4a",
+        "instruction_es": "Enrosca la tapa enjuagada y presiona suavemente para remover el exceso de aire (~10s).",
+        "short_instruction_es": "Enrosca tapa • Saca el aire",
+        "audio_script_es": "Enrosca la tapa y presiona suavemente para sacar el exceso de aire. Esto crea un sello de vacío para evitar goteo cuando volteemos."
       },
       {
         "time_seconds": 120,
-        "instruction": "Give a gentle swirl, place onto serving vessel, and press (30\u201340 s). Target yield: ~76\u201379 g.",
-        "short_instruction": "Swirl \u2022 Flip \u2022 Press 30-40s",
+        "instruction": "Give a gentle swirl, place onto serving vessel, and press (30–40 s). Target yield: ~76–79 g.",
+        "short_instruction": "Swirl • Flip • Press 30-40s",
         "audio_script": "Swirl gently to catch any grounds on the side, then flip onto your server. Press steadily for 30 to 40 seconds. We want a slow, controlled expression of flavor, not a rush.",
-        "audio_file_name": "2024_george_stanica_step5_swirl_press.m4a"
+        "audio_file_name": "2024_george_stanica_step5_swirl_press.m4a",
+        "instruction_es": "Agita suavemente, coloca sobre el servidor y presiona (30-40s). Rendimiento objetivo: ~76-79g.",
+        "short_instruction_es": "Agita • Voltea • Presiona 30-40s",
+        "audio_script_es": "Agita suavemente para atrapar el molido de los lados, luego voltea sobre tu servidor. Presiona constantemente durante 30 a 40 segundos. Queremos una expresión lenta y controlada de sabor, no prisa."
       },
       {
         "time_seconds": 140,
-        "instruction": "Add warm water until total weight reaches 130\u2013135 g (bypass step).",
-        "short_instruction": "Add warm water \u2022 Total 130-135g",
+        "instruction": "Add warm water until total weight reaches 130–135 g (bypass step).",
+        "short_instruction": "Add warm water • Total 130-135g",
         "audio_script": "Add warm water until the total weight reaches 135 grams. This bypass dilutes the concentrate, opening up the flavor profile.",
-        "audio_file_name": "2024_george_stanica_step6_warm_bypass.m4a"
+        "audio_file_name": "2024_george_stanica_step6_warm_bypass.m4a",
+        "instruction_es": "Agrega agua tibia hasta que el peso total alcance 130-135g (paso de bypass).",
+        "short_instruction_es": "Añade agua tibia • Total 130-135g",
+        "audio_script_es": "Agrega agua tibia hasta que el peso total alcance 135 gramos. Este bypass diluye el concentrado, abriendo el perfil de sabor."
       },
       {
         "time_seconds": 155,
-        "instruction": "Add an additional 20\u201330 g of room-temperature 0 ppm water for balance.",
-        "short_instruction": "Add room-temp water \u2022 Balance",
+        "instruction": "Add an additional 20–30 g of room-temperature 0 ppm water for balance.",
+        "short_instruction": "Add room-temp water • Balance",
         "audio_script": "Finally, add 20 grams of room temperature water. This technique, called 'tempering', brings the coffee to a perfect drinking temperature immediately.",
-        "audio_file_name": "2024_george_stanica_step7_room_temp_balance.m4a"
+        "audio_file_name": "2024_george_stanica_step7_room_temp_balance.m4a",
+        "instruction_es": "Agrega 20-30g adicionales de agua a temperatura ambiente de 0 ppm para equilibrio.",
+        "short_instruction_es": "Añade agua ambiente • Equilibrio",
+        "audio_script_es": "Finalmente, agrega 20 gramos de agua a temperatura ambiente. Esta técnica, llamada 'temperado', lleva el café a temperatura perfecta para beber inmediatamente."
       }
     ],
     "what_to_expect": {
       "description": "The 2024 World AeroPress Champion recipe by George Stanica emphasizes precision and clarity. Two controlled Melodrip pours create even saturation, followed by gentle NSEW stirring and a slow press for a clean, structured concentrate. Final balance is achieved with a warm-water bypass and a touch of 0 ppm room-temperature water. Expect remarkable clarity, refined sweetness, and a balanced, elegant cup that showcases origin character without harshness.",
       "audio_file_name": "george_2024_intro.m4a",
-      "audio_script": "This 2024 champion method focuses on precision and clarity. Use two controlled Melodrip pours, a gentle NSEW stir, and a slow press to produce a clean concentrate. Finish with warm-water bypass and a touch of 0 ppm water for balance. Expect clarity, refined sweetness, and an elegant cup."
+      "audio_script": "This 2024 champion method focuses on precision and clarity. Use two controlled Melodrip pours, a gentle NSEW stir, and a slow press to produce a clean concentrate. Finish with warm-water bypass and a touch of 0 ppm water for balance. Expect clarity, refined sweetness, and an elegant cup.",
+      "description_es": "La receta del Campeón Mundial AeroPress 2024 de George Stanica enfatiza precisión y claridad. Dos vertidos controlados con Melodrip crean saturación uniforme, seguidos de revolvimiento suave NSEO y presión lenta para un concentrado limpio y estructurado. El equilibrio final se logra con bypass de agua tibia y un toque de agua a temperatura ambiente de 0 ppm. Espera claridad notable, dulzura refinada y una taza equilibrada y elegante que muestra el carácter de origen sin asperezas.",
+      "audio_script_es": "Este método campeón de 2024 se enfoca en precisión y claridad. Usa dos vertidos controlados con Melodrip, revolvimiento suave NSEO, y presión lenta para producir un concentrado limpio. Termina con bypass de agua tibia y un toque de agua de 0 ppm para equilibrio. Espera claridad, dulzura refinada y una taza elegante."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Elegant", "Clarified", "Refined"]
+      "recommended_roast_levels": [
+        "Light"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Elegant",
+        "Clarified",
+        "Refined"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.9,
@@ -96,11 +127,20 @@
       "Comandante C40 Mk4 (or equivalent) for grind reference",
       "Melodrip (or other controlled flow pourer)",
       "Digital scale",
-      "Kettle (capable of 96\u00b0C)",
+      "Kettle (capable of 96°C)",
       "Timer",
       "Jar/container for dilutions"
     ],
     "notes": "Recipe by George Stanica (World Champ 2024). Focus on precise water chemistry and two pours for controlled saturation. Bypass at two temperatures (hot water for strength and 0 ppm water at room temperature for balance and clarity). The medium-coarse grind and slow pressing seek clarity while avoiding over-extraction.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "Campeón Mundial AeroPress 2024 - George Stanica (Rumania) - Invertido",
+    "notes_es": "Receta ganadora del Campeonato Mundial de AeroPress 2024. Enfatiza precisión y claridad con Melodrip y bypass de dos temperaturas.",
+    "preparation_steps_es": [
+      "Enjuaga un filtro de papel Aesir con agua caliente y colócalo en la tapa (elimina sabor a papel).",
+      "Ensambla el AeroPress en posición invertida y alinea aproximadamente con la marca 4.",
+      "Pesa 18g de café y muele a medio-grueso (Comandante C40 Mk4, ~58 clicks / ~870 µm).",
+      "Añade los 18g de café al AeroPress invertido y agita suavemente para nivelar la cama.",
+      "Prepara agua de extracción (96°C) y un Melodrip (o similar) para vertidos controlados. Ten báscula y cronómetro listos."
+    ]
   }
 ]

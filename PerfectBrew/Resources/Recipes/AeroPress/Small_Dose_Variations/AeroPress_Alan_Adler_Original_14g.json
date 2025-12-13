@@ -26,27 +26,46 @@
         "instruction": "Pour water to Level 2 (approx 130g).",
         "short_instruction": "Pour to Level 2",
         "audio_script": "Start the timer. Pour hot water quickly to the number 2 circle on the chamber. This uses about 130 grams of water at 80 degrees Celsius. The low temperature is key for sweetness.",
-        "audio_file_name": "adler_original_step1.m4a"
+        "audio_file_name": "adler_original_step1.m4a",
+        "instruction_es": "Vierte agua hasta el Nivel 2 (aprox 130g).",
+        "short_instruction_es": "Vierte hasta Nivel 2",
+        "audio_script_es": "Inicia el cronómetro. Vierte agua caliente rápidamente hasta el círculo número 2 en la cámara. Esto usa aproximadamente 130 gramos de agua a 80 grados Celsius. La temperatura baja es clave para la dulzura."
       },
       {
         "time_seconds": 30,
         "instruction": "Stir briskly for 10 seconds.",
         "short_instruction": "Stir 10s",
         "audio_script": "Grab your paddle and stir briskly for 10 seconds. This rapid agitation ensures all grounds are wet and extraction happens quickly.",
-        "audio_file_name": "adler_original_step2.m4a"
+        "audio_file_name": "adler_original_step2.m4a",
+        "instruction_es": "Revuelve enérgicamente por 10 segundos.",
+        "short_instruction_es": "Revuelve 10s",
+        "audio_script_es": "Toma tu paleta y revuelve enérgicamente durante 10 segundos. Esta agitación rápida asegura que todo el café esté mojado y la extracción ocurra rápidamente."
       },
       {
         "time_seconds": 90,
         "instruction": "Insert plunger and press gently.",
         "short_instruction": "Gentle Press",
         "audio_script": "Insert the plunger and press gently. Don't push too hard; let the air pressure do the work. Stop as soon as you hear the hiss. You now have a concentrated coffee that you can dilute with hot water or milk to taste.",
-        "audio_file_name": "adler_original_step3.m4a"
+        "audio_file_name": "adler_original_step3.m4a",
+        "instruction_es": "Inserta el émbolo y presiona suavemente.",
+        "short_instruction_es": "Presiona suave",
+        "audio_script_es": "Inserta el émbolo y presiona suavemente. No presiones demasiado fuerte; deja que la presión del aire haga el trabajo. Para cuando escuches el silbido. Ahora tienes un café concentrado que puedes diluir con agua caliente o leche al gusto."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Medium", "Dark"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Sweet", "Low Acidity", "Smooth"]
+      "recommended_roast_levels": [
+        "Medium",
+        "Dark"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Sweet",
+        "Low Acidity",
+        "Smooth"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.6,
@@ -66,9 +85,18 @@
     "what_to_expect": {
       "description": "This is the method recommended by Alan Adler, the inventor of the AeroPress. It defies modern specialty coffee norms by using a very short brew time and low water temperature (80°C). The result is a sweet, low-acidity concentrate that mimics espresso strength, intended to be diluted with water (Americano style) or milk.",
       "audio_file_name": "adler_original_notes.m4a",
-      "audio_script": "This is the original recipe by Alan Adler, the inventor of the AeroPress. It uses a fine grind, a short brew time, and surprisingly cool water at 80 degrees Celsius. This combination reduces acidity and bitterness, producing a sweet, concentrated shot perfect for diluting with water or milk."
+      "audio_script": "This is the original recipe by Alan Adler, the inventor of the AeroPress. It uses a fine grind, a short brew time, and surprisingly cool water at 80 degrees Celsius. This combination reduces acidity and bitterness, producing a sweet, concentrated shot perfect for diluting with water or milk.",
+      "description_es": "La receta original del inventor del AeroPress, Alan Adler. Usa temperatura baja (80°C) para evitar amargor y un proceso rápido para producir una taza suave y agradable en menos de un minuto.",
+      "audio_script_es": "Esta es la receta original del inventor del AeroPress. Alan Adler usa agua a temperatura más baja que la mayoría para evitar amargor. Es simple, rápida y produce una taza suave cada vez."
     },
     "notes": "Add hot water to the cup after brewing to make a full cup (Americano), or add hot milk for a latte style drink.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "AeroPress Original de Alan Adler 14g",
+    "notes_es": "La receta original del inventor del AeroPress. Simple, rápida y confiable.",
+    "preparation_steps_es": [
+      "Muele 14g de café a molienda fina.",
+      "Ensambla el AeroPress en posición estándar.",
+      "Calienta el agua a 80°C (más baja que la mayoría de recetas)."
+    ]
   }
 ]

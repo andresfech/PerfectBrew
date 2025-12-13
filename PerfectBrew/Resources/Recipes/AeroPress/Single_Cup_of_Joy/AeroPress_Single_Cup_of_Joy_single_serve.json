@@ -26,32 +26,53 @@
         "instruction": "Pour 130ml of 93°C water over your coffee.",
         "short_instruction": "Pour 130ml water",
         "audio_script": "Start the timer. Pour 130 milliliters of 93-degree water over the coffee. Ensure all grounds are wet.",
-        "audio_file_name": "single_cup_joy_step1_pour.m4a"
+        "audio_file_name": "single_cup_joy_step1_pour.m4a",
+        "instruction_es": "Vierte 130ml de agua a 93°C sobre tu café.",
+        "short_instruction_es": "Vierte 130ml de agua",
+        "audio_script_es": "Inicia el cronómetro. Vierte 130 mililitros de agua a 93 grados sobre el café. Asegúrate de que todo el café esté mojado."
       },
       {
         "time_seconds": 150,
         "instruction": "Wait patiently until 2:30. Do not stir.",
         "short_instruction": "Wait until 2:30 • No stir",
         "audio_script": "Now, wait patiently until the timer reaches 2 minutes and 30 seconds. Do not stir the coffee.",
-        "audio_file_name": "single_cup_joy_step2_wait.m4a"
+        "audio_file_name": "single_cup_joy_step2_wait.m4a",
+        "instruction_es": "Espera pacientemente hasta 2:30. No revuelvas.",
+        "short_instruction_es": "Espera hasta 2:30 • No revuelvas",
+        "audio_script_es": "Ahora, espera pacientemente hasta que el cronómetro alcance 2 minutos y 30 segundos. No revuelvas el café."
       },
       {
         "time_seconds": 240,
         "instruction": "At 2:30, flip the AeroPress and start pressing. Aim to finish at 4:00 (90s press).",
         "short_instruction": "Flip & Press slowly • 90s",
         "audio_script": "Flip the AeroPress and start pressing. This is a very slow press—take your time and aim to finish exactly at the 4-minute mark.",
-        "audio_file_name": "single_cup_joy_step3_press.m4a"
+        "audio_file_name": "single_cup_joy_step3_press.m4a",
+        "instruction_es": "A las 2:30, voltea el AeroPress y comienza a presionar. Termina a las 4:00 (90s de presión).",
+        "short_instruction_es": "Voltea y presiona lento • 90s",
+        "audio_script_es": "Voltea el AeroPress y comienza a presionar. Esta es una presión muy lenta—tómate tu tiempo y termina exactamente a los 4 minutos."
       }
     ],
     "what_to_expect": {
       "description": "Inspired by SCA cupping methods, this recipe uses a coarse grind, long steep time (4 minutes), and no agitation (stirring) to bring out the best sweetness in natural and honey processed coffees. It's designed specifically for a single 10g cup that stays at the ideal temperature from start to finish.",
       "audio_file_name": "single_cup_joy_intro.m4a",
-      "audio_script": "The Single Cup of Joy is inspired by SCA cupping methods. It uses a coarse grind, a long steep, and no agitation to highlight sweetness, especially in natural and honey processed coffees. Designed for a perfect single serving."
+      "audio_script": "The Single Cup of Joy is inspired by SCA cupping methods. It uses a coarse grind, a long steep, and no agitation to highlight sweetness, especially in natural and honey processed coffees. Designed for a perfect single serving.",
+      "description_es": "Una taza equilibrada y reconfortante perfecta para el día a día. Esta receta es accesible para principiantes y produce resultados consistentes con cualquier tipo de café.",
+      "audio_script_es": "Esta receta produce una taza equilibrada y reconfortante. Es perfecta para principiantes y funciona bien con cualquier tipo de café. Espera un sabor suave, dulce y sin complicaciones."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Natural", "Honey"],
-      "recommended_flavor_tags": ["Sweet", "Fruity", "Clean"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Natural",
+        "Honey"
+      ],
+      "recommended_flavor_tags": [
+        "Sweet",
+        "Fruity",
+        "Clean"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -70,8 +91,14 @@
       "Scale"
     ],
     "notes": "Inspired by SCA cupping. Uses a 1:13 ratio with 10g coffee. Inverted method, coarse grind, no stirring. The long 90-second press provides the agitation needed at the end. Best for natural/honey processed beans.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "AeroPress Taza de Alegría",
+    "notes_es": "Una receta sencilla y reconfortante para el día a día. Equilibrada, accesible y perfecta para cualquier tipo de café.",
+    "preparation_steps_es": [
+      "Enjuaga el filtro de papel con agua caliente.",
+      "Ensambla el AeroPress en posición estándar sobre tu taza.",
+      "Muele 15g de café a molienda media.",
+      "Calienta el agua a 92°C."
+    ]
   }
 ]
-
-

@@ -18,68 +18,101 @@
       "Rinse and place a paper filter in the cap, if you prefer; assemble AeroPress inverted.",
       "Weigh 18 g total: prepare 16 g to add initially and keep 2 g set aside for later addition.",
       "Grind to the competition setting (1ZPresso ZP6, 65 clicks).",
-      "Heat Perfect Coffee Water to 89 \u00b0C. Prepare scale and timer."
+      "Heat Perfect Coffee Water to 89 °C. Prepare scale and timer."
     ],
     "brewing_steps": [
       {
         "time_seconds": 45,
-        "instruction": "Place 16 g of grounds in the inverted AeroPress. Start timer and pour 100 g of 89 \u00b0C water over the grounds. Then stir for ~5 s to agitate and homogenize the slurry.",
-        "short_instruction": "Place 16g grounds \u2022 Pour 100g 89\u00b0C water \u2022 Stir 5s",
+        "instruction": "Place 16 g of grounds in the inverted AeroPress. Start timer and pour 100 g of 89 °C water over the grounds. Then stir for ~5 s to agitate and homogenize the slurry.",
+        "short_instruction": "Place 16g grounds • Pour 100g 89°C water • Stir 5s",
         "audio_script": "You have 45 seconds to pour 100 grams of 89 degrees water and stir for 5 seconds.",
-        "audio_file_name": "2023_tay_wipvasutt_step1_pour_stir.m4a"
+        "audio_file_name": "2023_tay_wipvasutt_step1_pour_stir.m4a",
+        "instruction_es": "Coloca 16g de café en el AeroPress invertido. Inicia cronómetro y vierte 100g de agua a 89°C. Luego revuelve ~5s para agitar y homogeneizar.",
+        "short_instruction_es": "16g café • Vierte 100g a 89°C • Revuelve 5s",
+        "audio_script_es": "Tienes 45 segundos para verter 100 gramos de agua a 89 grados y revolver durante 5 segundos."
       },
       {
         "time_seconds": 55,
         "instruction": "At 0:45, add the remaining 2 g of coffee (late addition).",
         "short_instruction": "Add 2g late coffee",
         "audio_script": "Add the remaining 2 grams of coffee for the late addition.",
-        "audio_file_name": "2023_tay_wipvasutt_step2_late_addition.m4a"
+        "audio_file_name": "2023_tay_wipvasutt_step2_late_addition.m4a",
+        "instruction_es": "A las 0:45, agrega los 2g de café restantes (adición tardía).",
+        "short_instruction_es": "Agrega 2g café tardío",
+        "audio_script_es": "Agrega los 2 gramos de café restantes para la adición tardía."
       },
       {
         "time_seconds": 60,
         "instruction": "At 0:55, stir again for ~5 s to incorporate the late addition.",
         "short_instruction": "Stir 5s to incorporate",
         "audio_script": "Stir for 5 seconds to incorporate the late addition.",
-        "audio_file_name": "2023_tay_wipvasutt_step3_stir_incorporate.m4a"
+        "audio_file_name": "2023_tay_wipvasutt_step3_stir_incorporate.m4a",
+        "instruction_es": "A las 0:55, revuelve nuevamente ~5s para incorporar la adición tardía.",
+        "short_instruction_es": "Revuelve 5s para incorporar",
+        "audio_script_es": "Revuelve durante 5 segundos para incorporar la adición tardía."
       },
       {
         "time_seconds": 100,
         "instruction": "Slightly press the plunger up to remove excess air, then securely close the cap.",
-        "short_instruction": "Press out air \u2022 Close cap",
+        "short_instruction": "Press out air • Close cap",
         "audio_script": "Press out excess air and close the cap securely. Wait until 1 minute 40.",
-        "audio_file_name": "2023_tay_wipvasutt_step4_press_air_cap.m4a"
+        "audio_file_name": "2023_tay_wipvasutt_step4_press_air_cap.m4a",
+        "instruction_es": "Presiona ligeramente el émbolo para remover el exceso de aire, luego cierra la tapa firmemente.",
+        "short_instruction_es": "Saca aire • Cierra tapa",
+        "audio_script_es": "Expulsa el exceso de aire y cierra la tapa firmemente. Espera hasta 1 minuto 40."
       },
       {
         "time_seconds": 130,
-        "instruction": "Carefully flip the AeroPress and begin pressing at 1:40 (\u2248100 s). Press steadily for ~30 s. Target yield: ~75 g concentrate.",
-        "short_instruction": "Flip AeroPress \u2022 Press 30s \u2022 Target 75g",
+        "instruction": "Carefully flip the AeroPress and begin pressing at 1:40 (≈100 s). Press steadily for ~30 s. Target yield: ~75 g concentrate.",
+        "short_instruction": "Flip AeroPress • Press 30s • Target 75g",
         "audio_script": "Flip the AeroPress and press steadily for 30 seconds. Target 75 grams of concentrate.",
-        "audio_file_name": "2023_tay_wipvasutt_step5_flip_press.m4a"
+        "audio_file_name": "2023_tay_wipvasutt_step5_flip_press.m4a",
+        "instruction_es": "Voltea cuidadosamente el AeroPress y comienza a presionar a 1:40 (~100s). Presiona constantemente por ~30s. Rendimiento objetivo: ~75g concentrado.",
+        "short_instruction_es": "Voltea • Presiona 30s • Objetivo 75g",
+        "audio_script_es": "Voltea el AeroPress y presiona constantemente durante 30 segundos. Objetivo 75 gramos de concentrado."
       },
       {
         "time_seconds": 145,
         "instruction": "Bypass the concentrate with room-temperature water until total weight reaches 115 g (first bypass).",
-        "short_instruction": "Add room-temp water \u2022 Total 115g",
+        "short_instruction": "Add room-temp water • Total 115g",
         "audio_script": "Add room-temperature water until total weight reaches 115 grams.",
-        "audio_file_name": "2023_tay_wipvasutt_step6_first_bypass.m4a"
+        "audio_file_name": "2023_tay_wipvasutt_step6_first_bypass.m4a",
+        "instruction_es": "Diluye el concentrado con agua a temperatura ambiente hasta que el peso total alcance 115g (primer bypass).",
+        "short_instruction_es": "Añade agua ambiente • Total 115g",
+        "audio_script_es": "Añade agua a temperatura ambiente hasta alcanzar 115 gramos de peso total."
       },
       {
         "time_seconds": 160,
         "instruction": "Then add hot water until total weight reaches 155 g (second bypass / final tempered).",
-        "short_instruction": "Add hot water \u2022 Total 155g",
+        "short_instruction": "Add hot water • Total 155g",
         "audio_script": "Add hot water until total weight reaches 155 grams.",
-        "audio_file_name": "2023_tay_wipvasutt_step7_second_bypass.m4a"
+        "audio_file_name": "2023_tay_wipvasutt_step7_second_bypass.m4a",
+        "instruction_es": "Luego añade agua caliente hasta que el peso total alcance 155g (segundo bypass / temperado final).",
+        "short_instruction_es": "Añade agua caliente • Total 155g",
+        "audio_script_es": "Añade agua caliente hasta alcanzar 155 gramos de peso total."
       }
     ],
     "what_to_expect": {
       "description": "The 2023 World AeroPress Champion recipe by Tay Wipvasutt uses an inverted method with a late coffee addition to refresh aromatics and enhance complexity without over-extraction. The press yields a concentrated base that is carefully diluted in two stages—first with room-temperature water for clarity and temperature control, then with hot water for strength. Expect a clean, fragrant cup with layered sweetness, lively acidity, and a silky texture. The technique highlights aroma retention, balance, and precision suitable for competition and everyday brewing.",
       "audio_file_name": "tay_2023_intro.m4a",
-      "audio_script": "This 2023 champion recipe uses an inverted method with a late coffee addition to refresh aromatics. Press a small, sweet concentrate and dilute in two stages—first room-temperature water for clarity and control, then hot water for strength. Expect a clean, layered cup with lively acidity and a silky texture."
+      "audio_script": "This 2023 champion recipe uses an inverted method with a late coffee addition to refresh aromatics. Press a small, sweet concentrate and dilute in two stages—first room-temperature water for clarity and control, then hot water for strength. Expect a clean, layered cup with lively acidity and a silky texture.",
+      "description_es": "La receta ganadora de Tay Wipvasutt enfatiza el control de temperatura con un bypass de agua fría. Produce una taza compleja y equilibrada con excelente claridad y temperatura de servicio perfecta.",
+      "audio_script_es": "El método de Tay Wipvasutt usa bypass con agua fría para controlar la temperatura final y abrir sabores sutiles. El resultado es una taza compleja, equilibrada y a la temperatura perfecta para beber inmediatamente."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Aromatic", "Layered", "Silky"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Aromatic",
+        "Layered",
+        "Silky"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -94,12 +127,20 @@
       "Paper filter (rinsed)",
       "1ZPresso ZP6 (or other precision grinder)",
       "Digital scale",
-      "Kettle (capable of 89\u00b0C)",
+      "Kettle (capable of 89°C)",
       "Temperature water",
       "Timer",
       "Jar for dilutions"
     ],
     "notes": "Technique by Tay Wipvasutt (World Champ 2023). Use of 'late addition' (2g added at 0:45) to introduce fresh aromatic compounds without over-extracting the main body. Bypass in two stages (room-temp and hot) to control strength and final temperature.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "Campeón Mundial AeroPress 2023 - Tay Wipvasutt (Tailandia)",
+    "notes_es": "Receta ganadora del Campeonato Mundial de AeroPress 2023. Método meticuloso con múltiples vertidos y bypass frío.",
+    "preparation_steps_es": [
+      "Enjuaga el filtro de papel con agua caliente.",
+      "Ensambla el AeroPress en posición invertida.",
+      "Muele 18g de café a molienda medio-fina.",
+      "Prepara agua a 92°C y agua a temperatura ambiente."
+    ]
   }
 ]

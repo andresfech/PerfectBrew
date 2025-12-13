@@ -26,41 +26,65 @@
         "instruction": "Pour 40g water for bloom.",
         "short_instruction": "Bloom 40g",
         "audio_script": "Start timer. Pour 40 grams for the bloom. You have 45 seconds. Wet all the grounds evenly.",
-        "audio_file_name": "mugen_tech_12g_step1.m4a"
+        "audio_file_name": "mugen_tech_12g_step1.m4a",
+        "instruction_es": "Vierte 40g de agua para bloom.",
+        "short_instruction_es": "Bloom 40g",
+        "audio_script_es": "Inicia el cronómetro. Vierte 40 gramos para el bloom. Tienes 45 segundos. Moja todo el café uniformemente."
       },
       {
         "time_seconds": 75,
         "instruction": "Spiral pour to 100g total.",
         "short_instruction": "Spiral pour to 100g",
         "audio_script": "Pour in a controlled spiral to reach 100 grams by 1 minute 15 seconds. Focus on keeping the water in the center to avoid the edges.",
-        "audio_file_name": "mugen_tech_12g_step2.m4a"
+        "audio_file_name": "mugen_tech_12g_step2.m4a",
+        "instruction_es": "Vertido en espiral hasta 100g total.",
+        "short_instruction_es": "Espiral hasta 100g",
+        "audio_script_es": "Vierte en espiral controlada para alcanzar 100 gramos a 1 minuto 15 segundos. Enfócate en mantener el agua en el centro para evitar los bordes."
       },
       {
         "time_seconds": 110,
         "instruction": "Spiral pour to 160g total.",
         "short_instruction": "Spiral pour to 160g",
         "audio_script": "Second pour. Continue spiraling to reach 160 grams by 1 minute 50 seconds. Keep the stream central.",
-        "audio_file_name": "mugen_tech_12g_step3.m4a"
+        "audio_file_name": "mugen_tech_12g_step3.m4a",
+        "instruction_es": "Vertido en espiral hasta 160g total.",
+        "short_instruction_es": "Espiral hasta 160g",
+        "audio_script_es": "Segundo vertido. Continúa en espiral para alcanzar 160 gramos a 1 minuto 50 segundos. Mantén el flujo central."
       },
       {
         "time_seconds": 140,
         "instruction": "Final pour to 200g total.",
         "short_instruction": "Pour to 200g",
         "audio_script": "Final pour. Reach 200 grams by 2 minutes 20 seconds. Let it draw down.",
-        "audio_file_name": "mugen_tech_12g_step4.m4a"
+        "audio_file_name": "mugen_tech_12g_step4.m4a",
+        "instruction_es": "Vertido final hasta 200g total.",
+        "short_instruction_es": "Vierte hasta 200g",
+        "audio_script_es": "Vertido final. Alcanza 200 gramos a 2 minutos 20 segundos. Deja drenar."
       },
       {
         "time_seconds": 190,
         "instruction": "Let draw down.",
         "short_instruction": "Draw down",
         "audio_script": "Allow the coffee to draw down completely. It should finish just past the 3 minute mark.",
-        "audio_file_name": "mugen_tech_12g_step5.m4a"
+        "audio_file_name": "mugen_tech_12g_step5.m4a",
+        "instruction_es": "Deja drenar.",
+        "short_instruction_es": "Drenar",
+        "audio_script_es": "Permite que el café drene completamente. Debería terminar justo después de los 3 minutos."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Sweet", "Balanced", "Clean"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Sweet",
+        "Balanced",
+        "Clean"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -80,11 +104,18 @@
     "what_to_expect": {
       "description": "Inspired by the Hario Mugen brewer, this technique uses controlled central spiral pours to minimize bypass. By keeping the water away from the filter walls, we force it through the coffee bed, increasing extraction efficiency for small doses.",
       "audio_file_name": "mugen_tech_12g_notes.m4a",
-      "audio_script": "This technique borrows from the Mugen brewer concept. By pouring in tight spirals and avoiding the walls, we force the water through the coffee bed instead of around it, solving the bypass issue common with small doses."
+      "audio_script": "This technique borrows from the Mugen brewer concept. By pouring in tight spirals and avoiding the walls, we force the water through the coffee bed instead of around it, solving the bypass issue common with small doses.",
+      "description_es": "La técnica Mugen evita toda agitación para producir una taza increíblemente suave y delicada. El vertido central crea un flujo natural que extrae sin perturbar.",
+      "audio_script_es": "La técnica Mugen japonesa evita toda agitación. Al verter solo en el centro sin movimientos circulares, creamos una extracción suave que produce una taza delicada y dulce."
     },
     "notes": "The mugen (spiral) technique is specifically designed to reduce bypass issues in small doses by keeping the water contained in a central area.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 12g Técnica Mugen",
+    "notes_es": "Inspirado en la técnica japonesa Mugen de vertido continuo sin agitación.",
+    "preparation_steps_es": [
+      "Calienta el agua a 90°C (temperatura baja).",
+      "Muele 12g de café a molienda gruesa.",
+      "Enjuaga el filtro."
+    ]
   }
 ]
-
-

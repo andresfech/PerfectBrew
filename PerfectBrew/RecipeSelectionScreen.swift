@@ -2,18 +2,29 @@ import SwiftUI
 
 struct RecipeSelectionScreen: View {
     let selectedMethod: HomeScreen.BrewMethod
-    @StateObject private var recipeDatabase = RecipeDatabase()
+    @ObservedObject private var recipeDatabase = RecipeDatabase.shared
     @State private var selectedDifficulty: Difficulty? = nil
-    @State private var selectedDoseRange: DoseRange = .medium // Default to 15-20g
+    @State private var selectedDoseRange: DoseRange = .all // Default to show all
     @State private var searchText = ""
     
     enum DoseRange: String, CaseIterable {
+        case all = "all_doses"
         case small = "< 15g"
         case medium = "15 - 20g"
         case large = "> 20g"
         
+        var displayName: String {
+            switch self {
+            case .all: return "all_doses".localized
+            case .small: return "< 15g"
+            case .medium: return "15 - 20g"
+            case .large: return "> 20g"
+            }
+        }
+        
         func matches(_ grams: Double) -> Bool {
             switch self {
+            case .all: return true
             case .small: return grams < 15
             case .medium: return grams >= 15 && grams <= 20
             case .large: return grams > 20
@@ -33,10 +44,11 @@ struct RecipeSelectionScreen: View {
             recipes = recipes.filter { $0.difficulty == difficulty }
         }
         
-        // 4. Filter by search text
+        // 4. Filter by search text (AEC-13: search both English and localized titles)
         if !searchText.isEmpty {
             recipes = recipes.filter { recipe in
                 recipe.title.localizedCaseInsensitiveContains(searchText) ||
+                recipe.localizedTitle.localizedCaseInsensitiveContains(searchText) ||
                 recipe.skillLevel.localizedCaseInsensitiveContains(searchText)
             }
         }
@@ -48,12 +60,12 @@ struct RecipeSelectionScreen: View {
         VStack(spacing: 20) {
             // Header
             VStack(spacing: 8) {
-                Text("Perfect Brew")
+                Text("perfect_brew".localized)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                 
-                Text("\(selectedMethod.rawValue) Recipes")
+                Text("\(selectedMethod.rawValue) \("recipes".localized)")
                     .font(.title3)
                     .foregroundColor(.secondary)
             }
@@ -63,7 +75,7 @@ struct RecipeSelectionScreen: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
-                TextField("Search recipes...", text: $searchText)
+                TextField("search_recipes".localized, text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             .padding(.horizontal)
@@ -72,14 +84,14 @@ struct RecipeSelectionScreen: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     FilterChip(
-                        title: "All",
+                        title: "all".localized,
                         isSelected: selectedDifficulty == nil,
                         action: { selectedDifficulty = nil }
                     )
                     
                     ForEach(Difficulty.allCases, id: \.self) { difficulty in
                         FilterChip(
-                            title: difficulty.rawValue,
+                            title: difficulty.localizedName,
                             isSelected: selectedDifficulty == difficulty,
                             action: { selectedDifficulty = difficulty }
                         )
@@ -90,7 +102,7 @@ struct RecipeSelectionScreen: View {
             
             // Coffee Dose Filter
             VStack(alignment: .leading, spacing: 8) {
-                Text("Amount of Coffee (grams)")
+                Text("amount_of_coffee".localized)
                     .font(.headline)
                     .foregroundColor(.primary)
                     .padding(.horizontal)
@@ -98,7 +110,7 @@ struct RecipeSelectionScreen: View {
                 HStack(spacing: 12) {
                     ForEach(DoseRange.allCases, id: \.self) { range in
                         DoseRangeChip(
-                            title: range.rawValue,
+                            title: range.displayName,
                             isSelected: selectedDoseRange == range,
                             action: { selectedDoseRange = range }
                         )
@@ -113,10 +125,10 @@ struct RecipeSelectionScreen: View {
                     Image(systemName: "cup.and.saucer")
                         .font(.system(size: 48))
                         .foregroundColor(.gray)
-                    Text("No recipes found")
+                    Text("no_recipes_found".localized)
                         .font(.title2)
                         .foregroundColor(.gray)
-                    Text("Try adjusting your search or filters")
+                    Text("try_adjusting_filters".localized)
                         .font(.body)
                         .foregroundColor(.secondary)
                 }
@@ -202,8 +214,8 @@ struct RecipeCard: View {
             }
             .frame(height: 40)
             
-            // Recipe Name
-            Text(recipe.title)
+            // Recipe Name (AEC-13: localized)
+            Text(recipe.localizedTitle)
                 .font(.headline)
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)

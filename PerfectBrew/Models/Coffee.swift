@@ -19,6 +19,7 @@ enum Process: String, CaseIterable, Codable, Identifiable {
 }
 
 enum FlavorTag: String, CaseIterable, Codable, Identifiable {
+    // Original flavor descriptors
     case fruity = "Fruity"
     case floral = "Floral"
     case nutty = "Nutty"
@@ -38,6 +39,50 @@ enum FlavorTag: String, CaseIterable, Codable, Identifiable {
     case earthy = "Earthy"
     case roasted = "Roasted"
     case herbaceous = "Herbaceous"
+    
+    // Brew profile descriptors (used in recipe_profile)
+    case complex = "Complex"
+    case silky = "Silky"
+    case clean = "Clean"
+    case rich = "Rich"
+    case bright = "Bright"
+    case balanced = "Balanced"
+    case strong = "Strong"
+    case espressoLike = "Espresso-like"
+    case elegant = "Elegant"
+    case intense = "Intense"
+    case smooth = "Smooth"
+    case lowAcidity = "Low Acidity"
+    case nuanced = "Nuanced"
+    case delicate = "Delicate"
+    case aromatic = "Aromatic"
+    case vibrant = "Vibrant"
+    case bold = "Bold"
+    case creamy = "Creamy"
+    case crisp = "Crisp"
+    case fullBodied = "Full-bodied"
+    case lightBodied = "Light-bodied"
+    case mellow = "Mellow"
+    case punchy = "Punchy"
+    case refined = "Refined"
+    case structured = "Structured"
+    case syrupy = "Syrupy"
+    case winey = "Winey"
+    case juicy = "Juicy"
+    case clarityFocused = "Clarity-focused"
+    
+    // Additional brew descriptors
+    case thick = "Thick"
+    case reliable = "Reliable"
+    case round = "Round"
+    case classic = "Classic"
+    case layered = "Layered"
+    case clarified = "Clarified"
+    case deep = "Deep"
+    case highAcidity = "High Acidity"
+    case consistent = "Consistent"
+    case artisan = "Artisan"
+    case sustainable = "Sustainable"
     
     var id: String { rawValue }
 }

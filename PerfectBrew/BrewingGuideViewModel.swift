@@ -56,17 +56,17 @@ class BrewingGuideViewModel: ObservableObject {
     }
     
     private func generateSteps(from recipe: Recipe) {
-        print("DEBUG: generateSteps for recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee")
-        print("DEBUG: Preparation steps count: \(recipe.preparationSteps.count)")
-        print("DEBUG: First preparation step: \(recipe.preparationSteps.first ?? "none")")
+        print("DEBUG: generateSteps for recipe '\(recipe.localizedTitle)' with \(recipe.parameters.coffeeGrams)g coffee")
+        print("DEBUG: Preparation steps count: \(recipe.localizedPreparationSteps.count)")
+        print("DEBUG: First preparation step: \(recipe.localizedPreparationSteps.first ?? "none")")
         
-        // Use the new structure with separate preparation and brewing steps
-        self.preparationSteps = recipe.preparationSteps
+        // AEC-13: Use localized preparation steps
+        self.preparationSteps = recipe.localizedPreparationSteps
         
-        // Keep the original BrewingStep objects to access all properties
+        // Keep the original BrewingStep objects to access all properties (localized via computed props)
         self.brewingSteps = recipe.brewingSteps
         
-        // Set initial step
+        // Set initial step (localized)
         if !preparationSteps.isEmpty {
             currentStep = preparationSteps[0]
             print("DEBUG: Set initial step: \(currentStep)")
@@ -77,9 +77,9 @@ class BrewingGuideViewModel: ObservableObject {
         isTimerRunning = true
         isPreparationPhase = false
         
-        // Start with first brewing step
+        // Start with first brewing step (AEC-13: use localized instruction)
         if !brewingSteps.isEmpty {
-            currentStep = brewingSteps[0].instruction
+            currentStep = brewingSteps[0].localizedInstruction
             currentStepStartTime = 0
             
             // Calculate first step duration correctly
@@ -266,7 +266,7 @@ class BrewingGuideViewModel: ObservableObject {
         guard !preparationSteps.isEmpty else { return 0 }
         
         // If we're at "Ready to start brewing!" step, show 100% completion
-        if currentStep == "Ready to start brewing!" {
+        if currentStep == "ready_to_start_brewing".localized {
             return 1.0
         }
         
@@ -276,7 +276,7 @@ class BrewingGuideViewModel: ObservableObject {
     
     var currentPreparationStepIndex: Int {
         // If we're at "Ready to start brewing!" step, return the last index
-        if currentStep == "Ready to start brewing!" {
+        if currentStep == "ready_to_start_brewing".localized {
             return preparationSteps.count - 1
         }
         return preparationSteps.firstIndex(of: currentStep) ?? 0
@@ -372,8 +372,8 @@ class BrewingGuideViewModel: ObservableObject {
             let nextStepTimeFormatted = formatTime(nextStepTime)
             
             // Use short instruction from JSON if available, otherwise fallback to auto-generated
-            let shortInstruction = nextStep.shortInstruction ?? createShortInstruction(from: nextStep.instruction)
-            return "Next at \(nextStepTimeFormatted): \(shortInstruction)"
+            let shortInstruction = nextStep.localizedShortInstruction ?? createShortInstruction(from: nextStep.localizedInstruction)
+            return "\("next_at".localized) \(nextStepTimeFormatted): \(shortInstruction)"
         }
         return nil
     }
@@ -386,7 +386,7 @@ class BrewingGuideViewModel: ObservableObject {
             let currentBrewingStep = brewingSteps[currentIndex]
             
             // Use short instruction from JSON if available, otherwise fallback to auto-generated
-            let shortInstruction = currentBrewingStep.shortInstruction ?? createShortInstruction(from: currentBrewingStep.instruction)
+            let shortInstruction = currentBrewingStep.localizedShortInstruction ?? createShortInstruction(from: currentBrewingStep.localizedInstruction)
             return shortInstruction
         }
         return currentStep
@@ -559,14 +559,14 @@ class BrewingGuideViewModel: ObservableObject {
                 currentStep = preparationSteps[nextIndex]
             } else {
                 // All preparation steps completed, ready to start brewing
-                currentStep = "Ready to start brewing!"
+                currentStep = "ready_to_start_brewing".localized
             }
         }
     }
 
     private func updateStep() {
         // Find the current brewing step based on elapsed time
-        var currentBrewingStep = brewingSteps.first?.instruction ?? "Brewing..."
+        var currentBrewingStep = brewingSteps.first?.localizedInstruction ?? "brewing_in_progress".localized
         var stepStartTime: TimeInterval = 0
         var stepDuration: TimeInterval = 0
         var currentStepIndex = 0
@@ -574,7 +574,7 @@ class BrewingGuideViewModel: ObservableObject {
         // Check if brewing has finished - only show completion when we've truly passed all steps
         if elapsedTime >= totalTime && elapsedTime >= (TimeInterval(brewingSteps.last?.timeSeconds ?? 0)) {
             // Brewing is complete, show completion message
-            currentBrewingStep = "Enjoy your coffee!"
+            currentBrewingStep = "enjoy_your_coffee".localized
             stepStartTime = totalTime
             stepDuration = 0  // No remaining time for the step
             currentStepIndex = -1  // Indicates completion
@@ -598,7 +598,7 @@ class BrewingGuideViewModel: ObservableObject {
         
         if currentIndex >= 0 && currentIndex < brewingSteps.count {
             let currentBrewingStepData = brewingSteps[currentIndex]
-            currentBrewingStep = currentBrewingStepData.instruction
+            currentBrewingStep = currentBrewingStepData.localizedInstruction
             currentStepIndex = currentIndex
             
             // Calculate step timing
@@ -626,14 +626,14 @@ class BrewingGuideViewModel: ObservableObject {
             
             if elapsedTime >= TimeInterval(lastStep.timeSeconds) && elapsedTime < lastStepEndTime {
                 // We're in the last step
-                currentBrewingStep = lastStep.instruction
+                currentBrewingStep = lastStep.localizedInstruction
                 stepStartTime = TimeInterval(lastStep.timeSeconds)
                 stepDuration = lastStepDuration
                 currentStepIndex = brewingSteps.count - 1
                 print("DEBUG: In last step at time \(elapsedTime)s (step time: \(TimeInterval(lastStep.timeSeconds))s, duration: \(lastStepDuration)s)")
             } else if elapsedTime >= lastStepEndTime {
                 // We've passed the last step, show completion
-                currentBrewingStep = "Enjoy your coffee!"
+                currentBrewingStep = "enjoy_your_coffee".localized
                 stepStartTime = totalTime
                 stepDuration = 0
                 currentStepIndex = -1
@@ -689,7 +689,7 @@ class BrewingGuideViewModel: ObservableObject {
         if !foundStep && !brewingSteps.isEmpty {
             // Default to first step if we haven't found any step yet
             let firstStep = brewingSteps[0]
-            currentStep = firstStep.instruction
+            currentStep = firstStep.localizedInstruction
             currentStepStartTime = 0
             
             // Calculate first step duration correctly

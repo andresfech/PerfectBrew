@@ -29,9 +29,9 @@ struct FeedbackScreen: View {
                 }
                 .padding(.top, 20)
                 
-                // Recipe Info
+                // Recipe Info (AEC-13: localized title)
                 VStack(spacing: 12) {
-                    Text(formatRecipeTitle(recipe.title))
+                    Text(formatRecipeTitle(recipe.localizedTitle))
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
@@ -292,7 +292,7 @@ struct FeedbackScreen: View {
                     Button(action: { showingCoffeeSelection = true }) {
                         HStack {
                             Image(systemName: "plus.circle")
-                            Text("Select Coffee")
+                            Text("select_coffee".localized)
                         }
                         .font(.subheadline)
                         .fontWeight(.medium)
@@ -711,11 +711,11 @@ struct CoffeeSelectionSheet: View {
                     }
                 }
             }
-            .navigationTitle("Select Coffee")
+            .navigationTitle("select_coffee".localized)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("cancel".localized) {
                         dismiss()
                     }
                 }

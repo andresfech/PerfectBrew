@@ -18,7 +18,7 @@
       "Place a paper filter into the AeroPress cap (do NOT rinse) and twist it onto the main chamber.",
       "Place the AeroPress upright directly onto your cup or server.",
       "Weigh out 11 g of coffee and grind to the finer end of medium.",
-      "Bring 200 g of water to a boil and let it rest ~15\u201330 s (or use 95 \u00b0C).",
+      "Bring 200 g of water to a boil and let it rest ~15–30 s (or use 95 °C).",
       "Add the ground coffee to the AeroPress chamber; make sure the bed is level."
     ],
     "brewing_steps": [
@@ -27,53 +27,82 @@
         "instruction": "Pour 200 g hot water over coffee evenly (aim to wet all grounds).",
         "short_instruction": "Pour 200g hot water evenly",
         "audio_script": "You have 15 seconds to pour 200 grams of hot water. Pour evenly in a circular motion, starting from the center and working your way outward. Make sure to wet all the grounds for complete saturation.",
-        "audio_file_name": "james_hoffmann_step1_pour_water.m4a"
+        "audio_file_name": "james_hoffmann_step1_pour_water.m4a",
+        "instruction_es": "Vierte 200g de agua caliente sobre el café uniformemente (intenta mojar todo el molido).",
+        "short_instruction_es": "Vierte 200g de agua caliente uniformemente",
+        "audio_script_es": "Tienes 15 segundos para verter 200 gramos de agua caliente. Vierte uniformemente en movimiento circular, empezando desde el centro y avanzando hacia afuera. Asegúrate de mojar todo el molido para saturación completa."
       },
       {
         "time_seconds": 30,
         "instruction": "Immediately insert plunger about 1 cm to create a partial vacuum seal (do not press).",
-        "short_instruction": "Insert plunger 1cm \u2022 Create vacuum seal",
+        "short_instruction": "Insert plunger 1cm • Create vacuum seal",
         "audio_script": "Immediately take the plunger and insert it about 1 centimeter into the chamber. This creates a partial vacuum seal that prevents the coffee from dripping. Don't press down yet.",
-        "audio_file_name": "james_hoffmann_step2_insert_plunger.m4a"
+        "audio_file_name": "james_hoffmann_step2_insert_plunger.m4a",
+        "instruction_es": "Inmediatamente inserta el émbolo aproximadamente 1cm para crear un sello de vacío parcial (no presiones).",
+        "short_instruction_es": "Inserta émbolo 1cm • Crea sello de vacío",
+        "audio_script_es": "Inmediatamente toma el émbolo e insértalo aproximadamente 1 centímetro en la cámara. Esto crea un sello de vacío parcial que evita que el café gotee. No presiones todavía."
       },
       {
         "time_seconds": 150,
-        "instruction": "Let coffee steep (first phase) \u2014 wait until ~2:30 on the timer.",
-        "short_instruction": "Let coffee steep \u2022 Wait until 2:30",
+        "instruction": "Let coffee steep (first phase) — wait until ~2:30 on the timer.",
+        "short_instruction": "Let coffee steep • Wait until 2:30",
         "audio_script": "Now simply wait. The coffee will steep for 2 minutes. During this time, the water extracts the flavors while the vacuum seal keeps everything stable.",
-        "audio_file_name": "james_hoffmann_step3_steep_wait.m4a"
+        "audio_file_name": "james_hoffmann_step3_steep_wait.m4a",
+        "instruction_es": "Deja que el café repose (primera fase) — espera hasta ~2:30 en el cronómetro.",
+        "short_instruction_es": "Deja reposar el café • Espera hasta 2:30",
+        "audio_script_es": "Ahora simplemente espera. El café reposará durante 2 minutos. Durante este tiempo, el agua extrae los sabores mientras el sello de vacío mantiene todo estable."
       },
       {
         "time_seconds": 160,
-        "instruction": "Gently swirl the AeroPress (hold brewer + cup together) for ~5\u201310 s to agitate the slurry.",
-        "short_instruction": "Gently swirl \u2022 5-10 seconds",
+        "instruction": "Gently swirl the AeroPress (hold brewer + cup together) for ~5–10 s to agitate the slurry.",
+        "short_instruction": "Gently swirl • 5-10 seconds",
         "audio_script": "Hold both the AeroPress and cup together securely, then give the whole setup a gentle swirl for about 10 seconds. This breaks the crust and sinks the grounds.",
-        "audio_file_name": "james_hoffmann_step4_swirl_grounds.m4a"
+        "audio_file_name": "james_hoffmann_step4_swirl_grounds.m4a",
+        "instruction_es": "Agita suavemente el AeroPress (sostén el preparador + taza juntos) durante ~5–10s para agitar la mezcla.",
+        "short_instruction_es": "Agita suavemente • 5-10 segundos",
+        "audio_script_es": "Sostén tanto el AeroPress como la taza juntos firmemente, luego agita suavemente todo el conjunto durante aproximadamente 10 segundos. Esto rompe la costra y hunde el molido."
       },
       {
         "time_seconds": 190,
         "instruction": "Let rest ~30 s.",
-        "short_instruction": "Let rest \u2022 30 seconds",
+        "short_instruction": "Let rest • 30 seconds",
         "audio_script": "Let the coffee rest for another 30 seconds. This allows the agitated grounds to settle back down for a cleaner cup.",
-        "audio_file_name": "james_hoffmann_step5_rest_wait.m4a"
+        "audio_file_name": "james_hoffmann_step5_rest_wait.m4a",
+        "instruction_es": "Deja reposar ~30s.",
+        "short_instruction_es": "Deja reposar • 30 segundos",
+        "audio_script_es": "Deja que el café repose otros 30 segundos. Esto permite que el molido agitado se asiente de nuevo para una taza más limpia."
       },
       {
         "time_seconds": 220,
-        "instruction": "Slow, steady press the plunger down \u2014 aim for ~30 s press time \u2014 stop when you hear a soft hiss or when fully depressed.",
-        "short_instruction": "Slow steady press \u2022 30 seconds",
+        "instruction": "Slow, steady press the plunger down — aim for ~30 s press time — stop when you hear a soft hiss or when fully depressed.",
+        "short_instruction": "Slow steady press • 30 seconds",
         "audio_script": "Finally, apply slow, steady pressure to the plunger. Aim for a 30-second press. Stop immediately when you hear the hissing sound.",
-        "audio_file_name": "james_hoffmann_step6_slow_press.m4a"
+        "audio_file_name": "james_hoffmann_step6_slow_press.m4a",
+        "instruction_es": "Presiona el émbolo lenta y constantemente — apunta a ~30s de tiempo de presión — detente cuando escuches un silbido suave o cuando esté completamente presionado.",
+        "short_instruction_es": "Presiona lento y constante • 30 segundos",
+        "audio_script_es": "Finalmente, aplica presión lenta y constante al émbolo. Apunta a una presión de 30 segundos. Detente inmediatamente cuando escuches el silbido."
       }
     ],
     "what_to_expect": {
       "description": "James Hoffmann's Ultimate AeroPress Technique represents a refined approach to AeroPress brewing that prioritizes simplicity and consistency. This method uses a medium-fine grind, no filter rinse, and a unique technique of immediate plunger insertion to create a vacuum seal. The 2-minute steep time followed by a 30-second rest allows for optimal extraction while maintaining temperature stability. Expect a clean, balanced cup with good body and clarity. The technique works exceptionally well across different roast levels by adjusting temperature between 95-100°C. This method is perfect for daily brewing, offering excellent results with minimal complexity and maximum reproducibility. The vacuum seal created by the plunger insertion helps maintain consistent extraction and prevents over-extraction, resulting in a smooth, well-rounded coffee that highlights the bean's natural characteristics.",
       "audio_file_name": "james_hoffmann_aeropress_intro.m4a",
-      "audio_script": "James Hoffmann's Ultimate AeroPress Technique represents a refined approach that prioritizes simplicity and consistency. This method uses a medium-fine grind, no filter rinse, and immediate plunger insertion to create a vacuum seal. The 2-minute steep time followed by a 30-second rest allows for optimal extraction. Expect a clean, balanced cup with good body and clarity. This technique works exceptionally well across different roast levels by adjusting temperature between 95 and 100 degrees Celsius. Perfect for daily brewing with excellent results and maximum reproducibility."
+      "audio_script": "James Hoffmann's Ultimate AeroPress Technique represents a refined approach that prioritizes simplicity and consistency. This method uses a medium-fine grind, no filter rinse, and immediate plunger insertion to create a vacuum seal. The 2-minute steep time followed by a 30-second rest allows for optimal extraction. Expect a clean, balanced cup with good body and clarity. This technique works exceptionally well across different roast levels by adjusting temperature between 95 and 100 degrees Celsius. Perfect for daily brewing with excellent results and maximum reproducibility.",
+      "description_es": "La Técnica Definitiva de AeroPress de James Hoffmann representa un enfoque refinado que prioriza la simplicidad y consistencia. Este método usa una molienda medio-fina, sin enjuague del filtro, e inserción inmediata del émbolo para crear un sello de vacío. El tiempo de reposo de 2 minutos seguido de un descanso de 30 segundos permite una extracción óptima manteniendo la estabilidad de temperatura. Espera una taza limpia y equilibrada con buen cuerpo y claridad. La técnica funciona muy bien en diferentes niveles de tueste ajustando la temperatura entre 95-100°C. Perfecto para preparación diaria con excelentes resultados y máxima reproducibilidad.",
+      "audio_script_es": "La Técnica Definitiva de AeroPress de James Hoffmann representa un enfoque refinado que prioriza la simplicidad y consistencia. Este método usa una molienda medio-fina, sin enjuague del filtro, e inserción inmediata del émbolo para crear un sello de vacío. El tiempo de reposo de 2 minutos seguido de un descanso de 30 segundos permite una extracción óptima. Espera una taza limpia y equilibrada con buen cuerpo y claridad. Perfecto para preparación diaria con máxima reproducibilidad."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Sweet", "Balanced", "Clean"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Sweet",
+        "Balanced",
+        "Clean"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -90,7 +119,16 @@
       "Kettle",
       "Timer"
     ],
-    "notes": "James Hoffmann's Ultimate AeroPress Technique \u2014 11g coffee, 200g water, no filter rinse, finer end of medium grind, immediate plunger insertion, 2 min steep + 30s rest before pressing. Adjust temperature between 95\u2013100 \u00b0C based on roast level.",
-    "servings": 1
+    "notes": "James Hoffmann's Ultimate AeroPress Technique — 11g coffee, 200g water, no filter rinse, finer end of medium grind, immediate plunger insertion, 2 min steep + 30s rest before pressing. Adjust temperature between 95–100 °C based on roast level.",
+    "servings": 1,
+    "title_es": "AeroPress Definitivo de James Hoffmann",
+    "notes_es": "Técnica Definitiva de James Hoffmann para AeroPress — 11g de café, 200g de agua, sin enjuague del filtro, molienda medio-fina, inserción inmediata del émbolo, 2 min de reposo + 30s de descanso antes de presionar. Ajusta la temperatura entre 95–100°C según el nivel de tueste.",
+    "preparation_steps_es": [
+      "Coloca un filtro de papel en la tapa del AeroPress (NO enjuagues) y enróscala en la cámara principal.",
+      "Coloca el AeroPress verticalmente sobre tu taza o servidor.",
+      "Pesa 11g de café y muele al extremo fino de medio.",
+      "Hierve 200g de agua y deja reposar ~15–30s (o usa 95°C).",
+      "Añade el café molido a la cámara del AeroPress; asegúrate de que la cama esté nivelada."
+    ]
   }
 ]

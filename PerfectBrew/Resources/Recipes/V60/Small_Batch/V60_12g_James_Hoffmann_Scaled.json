@@ -26,34 +26,56 @@
         "instruction": "Pour 40g water for bloom. Swirl.",
         "short_instruction": "Bloom 40g • Swirl",
         "audio_script": "Start timer. Pour 40 grams for the bloom and swirl the V60 to wet all grounds. You have 45 seconds. This ensures an even start to your extraction.",
-        "audio_file_name": "hoffmann_scaled_12g_step1.m4a"
+        "audio_file_name": "hoffmann_scaled_12g_step1.m4a",
+        "instruction_es": "Vierte 40g de agua para bloom. Agita.",
+        "short_instruction_es": "Bloom 40g • Agita",
+        "audio_script_es": "Inicia el cronómetro. Vierte 40 gramos para el bloom y agita el V60 para mojar todo el café. Tienes 45 segundos. Esto asegura un inicio uniforme."
       },
       {
         "time_seconds": 75,
         "instruction": "Pour to 130g total (Spiral).",
         "short_instruction": "Pour to 130g",
         "audio_script": "Pour in a spiral pattern up to 130 grams. Aim to reach this weight by 1 minute and 5 seconds. Keep the flow rate somewhat brisk to lift the bed.",
-        "audio_file_name": "hoffmann_scaled_12g_step2.m4a"
+        "audio_file_name": "hoffmann_scaled_12g_step2.m4a",
+        "instruction_es": "Vierte en espiral hasta 130g total.",
+        "short_instruction_es": "Vierte hasta 130g",
+        "audio_script_es": "Vierte en patrón espiral hasta 130 gramos. Apunta a alcanzar este peso a 1 minuto 5 segundos. Mantén el flujo algo rápido para levantar la cama."
       },
       {
         "time_seconds": 100,
         "instruction": "Swirl, then pour to 200g total.",
         "short_instruction": "Swirl • Pour to 200g",
         "audio_script": "Give the brewer a little swirl, then pour the remaining water to reach 200 grams total. You should finish pouring by 1 minute 40 seconds.",
-        "audio_file_name": "hoffmann_scaled_12g_step3.m4a"
+        "audio_file_name": "hoffmann_scaled_12g_step3.m4a",
+        "instruction_es": "Agita, luego vierte hasta 200g total.",
+        "short_instruction_es": "Agita • Vierte hasta 200g",
+        "audio_script_es": "Dale al preparador una pequeña agitación, luego vierte el agua restante hasta alcanzar 200 gramos. Deberías terminar de verter a 1 minuto 40 segundos."
       },
       {
         "time_seconds": 180,
         "instruction": "Swirl and let draw down.",
         "short_instruction": "Swirl • Draw down",
         "audio_script": "One final gentle swirl to flatten the bed, then let it draw down. Your target finish time is around 3 minutes.",
-        "audio_file_name": "hoffmann_scaled_12g_step4.m4a"
+        "audio_file_name": "hoffmann_scaled_12g_step4.m4a",
+        "instruction_es": "Agita y deja drenar.",
+        "short_instruction_es": "Agita • Drenar",
+        "audio_script_es": "Una agitación final suave para nivelar la cama, luego deja drenar. Tu tiempo objetivo es alrededor de 3 minutos."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Bright", "Juicy", "Balanced"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Bright",
+        "Juicy",
+        "Balanced"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -73,11 +95,18 @@
     "what_to_expect": {
       "description": "A direct scaling of James Hoffmann's popular 1-cup V60 technique for a 12g dose. It uses higher agitation (swirling) and slightly faster pours to maintain high extraction temperatures and consistency.",
       "audio_file_name": "hoffmann_scaled_12g_notes.m4a",
-      "audio_script": "This is James Hoffmann's reliable ultimate V60 method, scaled down perfectly for a 12-gram dose. The key here is the swirling—it keeps the extraction even and prevents channeling, giving you a bright, clean cup."
+      "audio_script": "This is James Hoffmann's reliable ultimate V60 method, scaled down perfectly for a 12-gram dose. The key here is the swirling—it keeps the extraction even and prevents channeling, giving you a bright, clean cup.",
+      "description_es": "La técnica refinada de James Hoffmann adaptada para porciones más pequeñas. Mantiene la misma precisión y consistencia en formato individual.",
+      "audio_script_es": "Esta es la técnica de James Hoffmann escalada para una porción individual. Mantiene toda la precisión del método original pero para una sola taza."
     },
     "notes": "This is a scaled-down version of Hoffmann's 1-cup recipe. Works well with light roasts.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 12g James Hoffmann Escalado",
+    "notes_es": "La técnica de James Hoffmann adaptada para una porción individual más pequeña.",
+    "preparation_steps_es": [
+      "Calienta el agua a 95°C.",
+      "Muele 12g de café a molienda media-fina.",
+      "Dobla el filtro por la costura y enjuaga."
+    ]
   }
 ]
-
-

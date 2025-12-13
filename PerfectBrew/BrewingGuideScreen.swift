@@ -81,7 +81,7 @@ struct BrewingGuideScreen: View {
                             HStack {
                                 Image(systemName: "cup.and.saucer.fill")
                                     .foregroundColor(.brown)
-                                Text(viewModel.selectedCoffee?.name ?? "Select Coffee (for logs)")
+                                Text(viewModel.selectedCoffee?.name ?? "select_coffee_for_logs".localized)
                                     .fontWeight(.medium)
                                     .foregroundColor(.primary)
                                 Spacer()
@@ -107,7 +107,7 @@ struct BrewingGuideScreen: View {
                                 .foregroundColor(.orange)
                             
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("Last time you brewed this:")
+                                Text("last_time_brewed".localized)
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                                 Text(advice)
@@ -399,7 +399,7 @@ struct BrewingGuideScreen: View {
                 if viewModel.isPreparationPhase {
                     // Preparation phase buttons
                     // Only show Next Step and Reset buttons if not on the final step
-                    if viewModel.currentStep != "Ready to start brewing!" {
+                    if viewModel.currentStep != "ready_to_start_brewing".localized {
                         HStack(spacing: 12) {
                             Button(action: {
                                 viewModel.nextPreparationStep()

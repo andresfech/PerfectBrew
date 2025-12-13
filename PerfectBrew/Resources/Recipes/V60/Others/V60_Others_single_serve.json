@@ -15,7 +15,7 @@
       "total_brew_time_seconds": 115
     },
     "preparation_steps": [
-      "Heat water to 95\u00b0C.",
+      "Heat water to 95°C.",
       "Grind 12 grams of coffee to medium consistency.",
       "Rinse filter quickly.",
       "Add 12g coffee."
@@ -25,22 +25,31 @@
         "time_seconds": 25,
         "instruction": "Pour 36g water, stir gently.",
         "audio_file_name": "v60_brewing_step_01.m4a",
-        "short_instruction": "Stir gently \u2022 Break up dry pockets",
-        "audio_script": "Stir the coffee bed gently to ensure even extraction."
+        "short_instruction": "Stir gently • Break up dry pockets",
+        "audio_script": "Stir the coffee bed gently to ensure even extraction.",
+        "instruction_es": "Vierte 36g de agua, revuelve suavemente.",
+        "short_instruction_es": "Revuelve suave • Rompe bolsillos secos",
+        "audio_script_es": "Revuelve la cama de café suavemente para asegurar una extracción uniforme."
       },
       {
         "time_seconds": 30,
         "instruction": "Pour remaining water in 2-3 pours.",
         "audio_file_name": "v60_brewing_step_02.m4a",
-        "short_instruction": "Pour \u2022 remaining \u2022 water \u2022 in",
-        "audio_script": "Continue with the brewing process. Pour remaining water in 2-3 pours."
+        "short_instruction": "Pour • remaining • water • in",
+        "audio_script": "Continue with the brewing process. Pour remaining water in 2-3 pours.",
+        "instruction_es": "Vierte el agua restante en 2-3 vertidos.",
+        "short_instruction_es": "Vierte restante en 2-3 vertidos",
+        "audio_script_es": "Continúa con el proceso de preparación. Vierte el agua restante en 2-3 vertidos."
       },
       {
         "time_seconds": 60,
         "instruction": "Let drain.",
         "audio_file_name": "v60_brewing_step_03.m4a",
         "short_instruction": "Let drain completely",
-        "audio_script": "Let the coffee drain completely at its natural pace. Watch as the coffee bed settles and the liquid drains through the filter."
+        "audio_script": "Let the coffee drain completely at its natural pace. Watch as the coffee bed settles and the liquid drains through the filter.",
+        "instruction_es": "Deja drenar.",
+        "short_instruction_es": "Deja drenar completamente",
+        "audio_script_es": "Deja que el café drene completamente a su ritmo natural. Observa cómo la cama de café se asienta y el líquido drena a través del filtro."
       }
     ],
     "equipment": [
@@ -50,9 +59,17 @@
       "Timer"
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Balanced", "Smooth"]
+      "recommended_roast_levels": [
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Balanced",
+        "Smooth"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.6,
@@ -63,191 +80,18 @@
       "thermal": "Medium"
     },
     "notes": "Perfect for busy mornings when you need coffee quickly.",
-    "servings": 1
-  },
-  {
-    "title": "Competition Style V60",
-    "brewing_method": "V60",
-    "skill_level": "Advanced",
-    "rating": 4.9,
-    "parameters": {
-      "coffee_grams": 15,
-      "water_grams": 250,
-      "ratio": "1:16.7",
-      "grind_size": "Medium-fine",
-      "temperature_celsius": 93,
-      "bloom_water_grams": 45,
-      "bloom_time_seconds": 40,
-      "total_brew_time_seconds": 275
-    },
-    "preparation_steps": [
-      "Heat water to 93\u00b0C.",
-      "Grind 15 grams of coffee to medium-fine consistency.",
-      "Rinse filter thoroughly and preheat.",
-      "Add 15g coffee, create flat bed."
+    "servings": 1,
+    "title_es": "V60 Método Clásico - Individual",
+    "notes_es": "Un método V60 tradicional y versátil que funciona con todo tipo de cafés.",
+    "preparation_steps_es": [
+      "Calienta el agua a 94°C.",
+      "Muele 18g de café a molienda media-fina.",
+      "Enjuaga el filtro con agua caliente."
     ],
-    "brewing_steps": [
-      {
-        "time_seconds": 25,
-        "instruction": "Pour 45g water, stir in figure-8 pattern.",
-        "short_instruction": "Pour 45g water \u2022 Stir in figure-8 pattern",
-        "audio_file_name": "v60_brewing_step_01.m4a",
-        "audio_script": "Stir the coffee bed gently to ensure even extraction."
-      },
-      {
-        "time_seconds": 40,
-        "instruction": "Pour to 100g in 10 seconds, gentle swirl.",
-        "short_instruction": "Pour to 100g total \u2022 Within 10 seconds",
-        "audio_file_name": "v60_brewing_step_02.m4a",
-        "audio_script": "Continue with the brewing process. Pour to 100g in 10 seconds, gentle swirl. Take your time and focus on technique."
-      },
-      {
-        "time_seconds": 50,
-        "instruction": "Pour to 150g in 10 seconds, gentle swirl.",
-        "short_instruction": "Pour to 150g total \u2022 Within 10 seconds",
-        "audio_file_name": "v60_brewing_step_03.m4a",
-        "audio_script": "Continue with the brewing process. Pour to 150g in 10 seconds, gentle swirl. Take your time and focus on technique."
-      },
-      {
-        "time_seconds": 60,
-        "instruction": "Pour to 200g in 10 seconds, gentle swirl.",
-        "short_instruction": "Pour to 200g total \u2022 Within 10 seconds",
-        "audio_file_name": "v60_brewing_step_04.m4a",
-        "audio_script": "Continue with the brewing process. Pour to 200g in 10 seconds, gentle swirl. Take your time and focus on technique. Every step contributes to the final cup quality."
-      },
-      {
-        "time_seconds": 70,
-        "instruction": "Final pour to 250g, gentle swirl.",
-        "short_instruction": "Final pour to 250g total \u2022 Gentle swirl",
-        "audio_file_name": "v60_brewing_step_05.m4a",
-        "audio_script": "Final pour to complete the brew. Add the remaining water to reach 250 grams total. Pour gently and steadily, maintaining control as you approach the target weight."
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Let drain completely.",
-        "short_instruction": "Let drain completely",
-        "audio_file_name": "v60_brewing_step_06.m4a",
-        "audio_script": "Let the coffee drain completely at its natural pace."
-      }
-    ],
-    "equipment": [
-      "Hario V60 02 Brewer",
-      "Digital scale",
-      "Gooseneck kettle",
-      "Timer",
-      "Stirring stick"
-    ],
-    "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Anaerobic"],
-      "recommended_flavor_tags": ["Bright", "Complex", "Acidity"]
-    },
-    "extraction_characteristics": {
-      "clarity": 0.8,
-      "acidity": 0.8,
-      "sweetness": 0.7,
-      "body": 0.4,
-      "agitation": "High",
-      "thermal": "High"
-    },
-    "notes": "Competition-style brewing focuses on precision and consistency.",
-    "servings": 1
-  },
-  {
-    "title": "V60 Family Brew",
-    "brewing_method": "V60",
-    "skill_level": "Intermediate",
-    "rating": 4.4,
-    "parameters": {
-      "coffee_grams": 45,
-      "water_grams": 720,
-      "ratio": "1:16",
-      "grind_size": "Medium-coarse",
-      "temperature_celsius": 94,
-      "bloom_water_grams": 90,
-      "bloom_time_seconds": 60,
-      "total_brew_time_seconds": 570
-    },
-    "preparation_steps": [
-      "Heat water to 94\u00b0C",
-      "Grind 45 grams of coffee to medium-coarse consistency",
-      "Use V60 03 size for larger capacity",
-      "Rinse filter thoroughly and preheat",
-      "Add 45g coffee, level the bed"
-    ],
-    "brewing_steps": [
-      {
-        "time_seconds": 25,
-        "instruction": "Bloom: Pour 90g water (2x coffee weight), stir gently in circular motion",
-        "short_instruction": "Bloom 90g water (2x dose) \u2022 Circular stir",
-        "audio_file_name": "v60_brewing_step_01.m4a",
-        "audio_script": ""
-      },
-      {
-        "time_seconds": 60,
-        "instruction": "First pour: Add 180g water in slow, steady spiral, reaching 270g total",
-        "short_instruction": "First pour 180g water \u2022 Slow steady spiral",
-        "audio_file_name": "v60_brewing_step_02.m4a",
-        "audio_script": "Continue with the brewing process. First pour: Add 180g water in slow, steady spiral, reaching 270g total Take your time and focus on technique."
-      },
-      {
-        "time_seconds": 35,
-        "instruction": "Wait 30 seconds for extraction",
-        "short_instruction": "Wait 30 seconds \u2022 Extraction",
-        "audio_file_name": "v60_brewing_step_03.m4a",
-        "audio_script": "Wait for 35 seconds to allow proper extraction."
-      },
-      {
-        "time_seconds": 150,
-        "instruction": "Second pour: Add 225g water, reaching 495g total",
-        "short_instruction": "Second pour 225g \u2022 Reach 495g",
-        "audio_file_name": "v60_brewing_step_04.m4a",
-        "audio_script": "Continue with the brewing process. Second pour: Add 225g water, reaching 495g total Take your time and focus on technique. Every step contributes to the final cup quality."
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Wait 30 seconds",
-        "short_instruction": "Wait 30 seconds",
-        "audio_file_name": "v60_brewing_step_05.m4a",
-        "audio_script": "Wait for 30 seconds to allow proper extraction."
-      },
-      {
-        "time_seconds": 240,
-        "instruction": "Final pour: Add remaining 225g water to reach 720g total",
-        "short_instruction": "Final pour 225g \u2022 Reach 720g",
-        "audio_file_name": "v60_brewing_step_06.m4a",
-        "audio_script": "Final pour to complete the brew. Add the remaining water to reach 225 grams total. Pour gently and steadily, maintaining control as you approach the target weight."
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Let drain completely, should finish around 4:30-5:00",
-        "short_instruction": "Let drain completely \u2022 4:30-5:00",
-        "audio_file_name": "v60_brewing_step_07.m4a",
-        "audio_script": "Let the coffee drain completely at its natural pace."
-      }
-    ],
-    "equipment": [
-      "Hario V60 03 Brewer",
-      "V60 03 filters",
-      "Digital scale",
-      "Gooseneck kettle",
-      "Timer",
-      "Stirring stick"
-    ],
-    "recipe_profile": {
-      "recommended_roast_levels": ["Medium", "Dark"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Rich", "Bold", "Crowd-pleaser"]
-    },
-    "extraction_characteristics": {
-      "clarity": 0.5,
-      "acidity": 0.5,
-      "sweetness": 0.7,
-      "body": 0.8,
-      "agitation": "Medium",
-      "thermal": "High"
-    },
-    "notes": "Perfect for serving 3-4 people. Use coarser grind to prevent over-extraction with larger dose.",
-    "servings": 3
+    "what_to_expect": {
+      "description": "",
+      "description_es": "Un método V60 clásico y versátil que produce una taza limpia y equilibrada. Funciona bien con todo tipo de cafés y es fácil de dominar.",
+      "audio_script_es": "Este método V60 clásico es versátil y fácil de dominar. Produce una taza limpia y equilibrada con cualquier café."
+    }
   }
 ]

@@ -25,27 +25,46 @@
         "instruction": "Pour 60g water. Stir vigorously.",
         "short_instruction": "Pour 60g • Stir",
         "audio_script": "Pour just 60 grams of boiling water. Stir vigorously for 20 seconds. We need energy to extract everything from this small amount of water.",
-        "audio_file_name": "latte_11g_step1.m4a"
+        "audio_file_name": "latte_11g_step1.m4a",
+        "instruction_es": "Vierte 60g de agua. Revuelve vigorosamente.",
+        "short_instruction_es": "Vierte 60g • Revuelve",
+        "audio_script_es": "Vierte solo 60 gramos de agua hirviendo. Revuelve vigorosamente durante 20 segundos. Necesitamos energía para extraer todo con esta pequeña cantidad de agua."
       },
       {
         "time_seconds": 60,
         "instruction": "Cap and wait.",
         "short_instruction": "Cap & Wait",
         "audio_script": "Attach the cap with a rinsed filter. Squeeze out air. Let it sit for 30 seconds.",
-        "audio_file_name": "latte_11g_step2.m4a"
+        "audio_file_name": "latte_11g_step2.m4a",
+        "instruction_es": "Pon la tapa y espera.",
+        "short_instruction_es": "Tapa • Espera",
+        "audio_script_es": "Coloca la tapa con el filtro enjuagado. Expulsa el aire. Deja reposar 30 segundos."
       },
       {
         "time_seconds": 90,
         "instruction": "Flip and Press firmly.",
         "short_instruction": "Flip & Press",
         "audio_script": "Flip and press firmly into a small cup. This strong shot is designed to be mixed with steamed milk for a flat white or latte.",
-        "audio_file_name": "latte_11g_step3.m4a"
+        "audio_file_name": "latte_11g_step3.m4a",
+        "instruction_es": "Voltea y presiona con fuerza.",
+        "short_instruction_es": "Voltea • Presiona",
+        "audio_script_es": "Voltea y presiona con fuerza en una taza pequeña. Este shot concentrado está diseñado para mezclarse con leche vaporizada para un flat white o latte."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Dark", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Espresso-like", "Bold", "Thick"]
+      "recommended_roast_levels": [
+        "Dark",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Espresso-like",
+        "Bold",
+        "Thick"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.4,
@@ -64,9 +83,19 @@
     "what_to_expect": {
       "description": "Designed to create a mock-espresso shot for milk drinks. Using a very fine grind, high temperature, and a short 1:5 ratio creates a thick, strong liquid that stands up well to milk.",
       "audio_file_name": "latte_11g_notes.m4a",
-      "audio_script": "If you love lattes but only have an AeroPress, this is your recipe. We use a very tight ratio and fine grind to create a concentrated 'shot'. It won't have crema like a machine, but it has the strength and body needed to cut through milk."
+      "audio_script": "If you love lattes but only have an AeroPress, this is your recipe. We use a very tight ratio and fine grind to create a concentrated 'shot'. It won't have crema like a machine, but it has the strength and body needed to cut through milk.",
+      "description_es": "Un concentrado estilo espresso con cuerpo denso y sabores intensos. Perfecto para agregar leche caliente y crear un latte casero o beber solo si prefieres café fuerte.",
+      "audio_script_es": "Este método crea un concentrado similar al espresso. La molienda muy fina, poca agua y presión fuerte producen un shot intenso. Perfecto para lattes o para quienes aman el café fuerte."
     },
     "notes": "Use two filters if you want a cleaner shot, or a metal filter for more body.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "AeroPress Estilo Espresso 11g",
+    "notes_es": "Concentrado que imita el espresso. Ideal para lattes o consumir solo si te gusta el café fuerte.",
+    "preparation_steps_es": [
+      "Muele 11g de café muy fino (casi espresso).",
+      "Ensambla el AeroPress invertido.",
+      "Calienta el agua a 92°C.",
+      "Ten lista una taza pequeña."
+    ]
   }
 ]

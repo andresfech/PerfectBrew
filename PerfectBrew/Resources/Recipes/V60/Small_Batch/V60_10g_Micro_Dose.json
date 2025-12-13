@@ -26,41 +26,64 @@
         "instruction": "Pour 40g water for bloom. Swirl vigorously.",
         "short_instruction": "Bloom 40g • Swirl hard",
         "audio_script": "Start timer. Pour 40 grams for the bloom. Swirl the brewer vigorously! With this small dose, we need to ensure every particle is wet immediately.",
-        "audio_file_name": "micro_dose_10g_step1.m4a"
+        "audio_file_name": "micro_dose_10g_step1.m4a",
+        "instruction_es": "Vierte 40g de agua para bloom. Agita vigorosamente.",
+        "short_instruction_es": "Bloom 40g • Agita fuerte",
+        "audio_script_es": "Inicia el cronómetro. Vierte 40 gramos para el bloom. ¡Agita el preparador vigorosamente! Con esta dosis pequeña, necesitamos asegurar que cada partícula esté mojada inmediatamente."
       },
       {
         "time_seconds": 60,
         "instruction": "Pour to 100g total.",
         "short_instruction": "Pour to 100g",
         "audio_script": "Pour quickly to reach 100 grams by the 1 minute mark. Keep the agitation high.",
-        "audio_file_name": "micro_dose_10g_step2.m4a"
+        "audio_file_name": "micro_dose_10g_step2.m4a",
+        "instruction_es": "Vierte hasta 100g total.",
+        "short_instruction_es": "Vierte hasta 100g",
+        "audio_script_es": "Vierte rápidamente para alcanzar 100 gramos al minuto. Mantén la agitación alta."
       },
       {
         "time_seconds": 85,
         "instruction": "Swirl aggressively.",
         "short_instruction": "Swirl aggressively",
         "audio_script": "Stop and swirl aggressively. This prevents channeling, which is a major risk with such a shallow coffee bed.",
-        "audio_file_name": "micro_dose_10g_step3.m4a"
+        "audio_file_name": "micro_dose_10g_step3.m4a",
+        "instruction_es": "Agita agresivamente.",
+        "short_instruction_es": "Agita agresivamente",
+        "audio_script_es": "Para y agita agresivamente. Esto previene el channeling, que es un riesgo mayor con una cama de café tan poco profunda."
       },
       {
         "time_seconds": 105,
         "instruction": "Final pour to 150g total.",
         "short_instruction": "Pour to 150g",
         "audio_script": "Pour the final 50 grams to reach 150 grams total. Finish pouring by 1 minute 45 seconds.",
-        "audio_file_name": "micro_dose_10g_step4.m4a"
+        "audio_file_name": "micro_dose_10g_step4.m4a",
+        "instruction_es": "Vertido final hasta 150g total.",
+        "short_instruction_es": "Vierte hasta 150g",
+        "audio_script_es": "Vierte los últimos 50 gramos para alcanzar 150 gramos totales. Termina de verter a 1 minuto 45 segundos."
       },
       {
         "time_seconds": 165,
         "instruction": "Let draw down.",
         "short_instruction": "Draw down",
         "audio_script": "Let it draw down. It should finish around 2 minutes 45 seconds. The agitation compensates for the lower thermal mass.",
-        "audio_file_name": "micro_dose_10g_step5.m4a"
+        "audio_file_name": "micro_dose_10g_step5.m4a",
+        "instruction_es": "Deja drenar.",
+        "short_instruction_es": "Drenar",
+        "audio_script_es": "Deja que drene. Debería terminar alrededor de 2 minutos 45 segundos. La agitación compensa la menor masa térmica."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Sweet", "Fruity"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Sweet",
+        "Fruity"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.7,
@@ -80,11 +103,18 @@
     "what_to_expect": {
       "description": "Small doses often suffer from 'bypass', where water goes around the coffee rather than through it. This recipe uses high agitation and a slightly tighter ratio (1:15) to ensure full flavor extraction from just 10g of coffee.",
       "audio_file_name": "micro_dose_10g_notes.m4a",
-      "audio_script": "Brewing with just 10 grams can be tricky because the water tries to run around the coffee. We fix this with high agitation—aggressive swirls—to force the water through the grounds and get a rich, intense cup."
+      "audio_script": "Brewing with just 10 grams can be tricky because the water tries to run around the coffee. We fix this with high agitation—aggressive swirls—to force the water through the grounds and get a rich, intense cup.",
+      "description_es": "Una porción pequeña perfecta para probar cafés nuevos sin comprometer una bolsa entera. Proporciona una evaluación clara del perfil de sabor.",
+      "audio_script_es": "Esta micro dosis es perfecta para probar cafés nuevos. Con solo 10 gramos, puedes evaluar un café sin usar mucho de tu bolsa."
     },
     "notes": "Aggressive agitation helps avoid the bypass problem with small doses.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 10g Micro Dosis",
+    "notes_es": "Porción pequeña para una sola taza concentrada. Ideal para probar cafés nuevos.",
+    "preparation_steps_es": [
+      "Calienta el agua a 96°C.",
+      "Muele 10g de café a molienda media-fina.",
+      "Usa V60 tamaño 01."
+    ]
   }
 ]
-
-

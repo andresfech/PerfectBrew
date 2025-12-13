@@ -14,9 +14,16 @@ import torch
 import numpy as np
 
 class UniversalAudioGenerator:
-    def __init__(self, device: str = "cpu"):
-        """Initialize the universal audio generator."""
+    def __init__(self, device: str = "cpu", language: str = "en"):
+        """
+        Initialize the universal audio generator.
+        
+        Args:
+            device: Device to use (cpu or cuda)
+            language: Language for audio generation (en or es)
+        """
         self.device = device
+        self.language = language
         self.tts = None
         self._load_model()
     
@@ -94,8 +101,16 @@ class UniversalAudioGenerator:
     def _generate_audio_file(self, step: Dict[str, Any], output_path: str) -> bool:
         """Generate audio file from step's audio_script using TTS."""
         try:
-            # Get audio_script from step
-            audio_script = step.get('audio_script', '')
+            # AEC-13: Get audio_script based on language setting
+            if self.language == 'es':
+                audio_script = step.get('audio_script_es', '')
+                if not audio_script:
+                    # Fallback to English if Spanish not available
+                    audio_script = step.get('audio_script', '')
+                    print(f"    ⚠️  No Spanish audio_script, falling back to English")
+            else:
+                audio_script = step.get('audio_script', '')
+            
             if not audio_script:
                 print(f"    ❌ No audio_script found in step")
                 return False
@@ -214,8 +229,16 @@ class UniversalAudioGenerator:
                 
                 print(f"    Using audio_script for step {i} ({len(audio_script)} chars)")
                 
-                # Use the unique audio_file_name from the recipe, but ensure it's M4A
-                audio_file_name = step.get('audio_file_name', f"step_{i:02d}.m4a")
+                # AEC-13: Use language-specific audio_file_name
+                if self.language == 'es':
+                    audio_file_name = step.get('audio_file_name_es') or step.get('audio_file_name', f"step_{i:02d}_es.m4a")
+                    # Ensure _es suffix if using fallback
+                    if not step.get('audio_file_name_es') and '_es' not in audio_file_name:
+                        base_name = audio_file_name.rsplit('.', 1)[0] if '.' in audio_file_name else audio_file_name
+                        audio_file_name = f"{base_name}_es.m4a"
+                else:
+                    audio_file_name = step.get('audio_file_name', f"step_{i:02d}.m4a")
+                
                 # Convert any existing extension to .m4a
                 if '.' in audio_file_name:
                     audio_file_name = audio_file_name.rsplit('.', 1)[0] + '.m4a'
@@ -229,12 +252,29 @@ class UniversalAudioGenerator:
         if include_notes and 'what_to_expect' in recipe:
             what_to_expect = recipe['what_to_expect']
             if isinstance(what_to_expect, dict):
-                audio_script = what_to_expect.get('audio_script')
+                # AEC-13: Use language-specific audio_script
+                if self.language == 'es':
+                    audio_script = what_to_expect.get('audio_script_es') or what_to_expect.get('audio_script')
+                    if what_to_expect.get('audio_script_es'):
+                        print(f"    Using Spanish audio_script for what_to_expect ({len(audio_script)} chars)")
+                    else:
+                        print(f"    ⚠️  No Spanish audio_script for what_to_expect, using English")
+                else:
+                    audio_script = what_to_expect.get('audio_script')
+                
                 if audio_script:
                     print(f"    Using audio_script for what_to_expect ({len(audio_script)} chars)")
                     
-                    # Use the unique audio_file_name from the recipe, but ensure it's M4A
-                    audio_file_name = what_to_expect.get('audio_file_name', "intro.m4a")
+                    # AEC-13: Use language-specific audio_file_name
+                    if self.language == 'es':
+                        audio_file_name = what_to_expect.get('audio_file_name_es') or what_to_expect.get('audio_file_name', "intro_es.m4a")
+                        # Ensure _es suffix if using fallback
+                        if not what_to_expect.get('audio_file_name_es') and '_es' not in audio_file_name:
+                            base_name = audio_file_name.rsplit('.', 1)[0] if '.' in audio_file_name else audio_file_name
+                            audio_file_name = f"{base_name}_es.m4a"
+                    else:
+                        audio_file_name = what_to_expect.get('audio_file_name', "intro.m4a")
+                    
                     # Convert any existing extension to .m4a
                     if '.' in audio_file_name:
                         audio_file_name = audio_file_name.rsplit('.', 1)[0] + '.m4a'
@@ -302,11 +342,15 @@ def main():
     parser.add_argument('--method', help='Filter by brewing method (AeroPress, V60, FrenchPress)')
     parser.add_argument('--recipe', help='Filter by specific recipe title')
     parser.add_argument('--device', default='cpu', help='Device to use (cpu or cuda)')
+    parser.add_argument('--language', '-l', default='en', choices=['en', 'es'],
+                        help='Language for audio generation (en=English, es=Spanish)')
     
     args = parser.parse_args()
     
-    # Initialize generator
-    generator = UniversalAudioGenerator(device=args.device)
+    print(f"🌐 Language: {args.language.upper()}")
+    
+    # Initialize generator with language setting
+    generator = UniversalAudioGenerator(device=args.device, language=args.language)
     
     # Generate audio
     generator.generate_all_recipes_audio(

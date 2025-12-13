@@ -17,76 +17,112 @@
     "preparation_steps": [
       "Weigh 18.0 g of coffee and grind on Macap Labo 70D at setting 7.0.",
       "Assemble the AeroPress in inverted position and place on the scale.",
-      "Prepare Third Wave Water Formula 2 and heat to 80 \u00b0C.",
+      "Prepare Third Wave Water Formula 2 and heat to 80 °C.",
       "Have pitcher and target server ready for the 'pour from altitude' stage."
     ],
     "brewing_steps": [
       {
         "time_seconds": 10,
-        "instruction": "Add 18.0 g of grounds to the inverted AeroPress. Start timer and add 50 g of 80 \u00b0C water between 0:00\u20130:10 (gentle pour).",
-        "short_instruction": "Add 18g grounds \u2022 Pour 50g 80\u00b0C water",
+        "instruction": "Add 18.0 g of grounds to the inverted AeroPress. Start timer and add 50 g of 80 °C water between 0:00–0:10 (gentle pour).",
+        "short_instruction": "Add 18g grounds • Pour 50g 80°C water",
         "audio_script": "You have 10 seconds to add 18 grams of grounds and gently pour 50 grams of 80-degree water.",
-        "audio_file_name": "2021_world_aeropress_brewing_step1.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step1.m4a",
+        "instruction_es": "Agrega 18g de café al AeroPress invertido. Inicia el cronómetro y vierte 50g de agua a 80°C entre 0:00-0:10 (vertido suave).",
+        "short_instruction_es": "Agrega 18g café • Vierte 50g agua 80°C",
+        "audio_script_es": "Tienes 10 segundos para agregar 18 gramos de café y verter suavemente 50 gramos de agua a 80 grados."
       },
       {
         "time_seconds": 15,
-        "instruction": "From 0:10\u20130:15, stir very gently 3 times back and forth.",
+        "instruction": "From 0:10–0:15, stir very gently 3 times back and forth.",
         "short_instruction": "Stir gently 3 times",
         "audio_script": "Now, stir very gently three times back and forth.",
-        "audio_file_name": "2021_world_aeropress_brewing_step2.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step2.m4a",
+        "instruction_es": "De 0:10-0:15, revuelve muy suavemente 3 veces de adelante hacia atrás.",
+        "short_instruction_es": "Revuelve suave 3 veces",
+        "audio_script_es": "Ahora, revuelve muy suavemente tres veces de adelante hacia atrás."
       },
       {
         "time_seconds": 30,
-        "instruction": "From 0:15\u20130:30 continue pouring water gradually until total poured reaches 200 g (slow, controlled pour).",
-        "short_instruction": "Continue pouring \u2022 Total 200g",
+        "instruction": "From 0:15–0:30 continue pouring water gradually until total poured reaches 200 g (slow, controlled pour).",
+        "short_instruction": "Continue pouring • Total 200g",
         "audio_script": "Continue pouring slowly until you reach 200 grams total weight.",
-        "audio_file_name": "2021_world_aeropress_brewing_step3.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step3.m4a",
+        "instruction_es": "De 0:15-0:30 continúa vertiendo agua gradualmente hasta alcanzar 200g en total (vertido lento y controlado).",
+        "short_instruction_es": "Continúa vertiendo • Total 200g",
+        "audio_script_es": "Continúa vertiendo lentamente hasta alcanzar 200 gramos de peso total."
       },
       {
         "time_seconds": 50,
         "instruction": "At 0:50, stir very gently 3 more times to re-homogenize the bed.",
         "short_instruction": "Stir 3 more times",
         "audio_script": "Stir gently three more times to mix everything evenly.",
-        "audio_file_name": "2021_world_aeropress_brewing_step4.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step4.m4a",
+        "instruction_es": "A las 0:50, revuelve muy suavemente 3 veces más para re-homogeneizar la cama.",
+        "short_instruction_es": "Revuelve 3 veces más",
+        "audio_script_es": "Revuelve suavemente tres veces más para mezclar todo de manera uniforme."
       },
       {
         "time_seconds": 60,
         "instruction": "Push out any excess air from the chamber and attach the filter cap.",
-        "short_instruction": "Press out air \u2022 Attach filter cap",
+        "short_instruction": "Press out air • Attach filter cap",
         "audio_script": "Push out excess air and attach the cap. You have 10 seconds.",
-        "audio_file_name": "2021_world_aeropress_brewing_step5.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step5.m4a",
+        "instruction_es": "Expulsa el aire excedente de la cámara y coloca la tapa del filtro.",
+        "short_instruction_es": "Saca aire • Pon tapa filtro",
+        "audio_script_es": "Expulsa el aire excedente y coloca la tapa. Tienes 10 segundos."
       },
       {
         "time_seconds": 100,
-        "instruction": "Allow to steep. At ~1:35 place pitcher on top. At 1:40 (\u2248100 s) flip the brewer carefully.",
-        "short_instruction": "Steep \u2022 Place pitcher \u2022 Flip",
+        "instruction": "Allow to steep. At ~1:35 place pitcher on top. At 1:40 (≈100 s) flip the brewer carefully.",
+        "short_instruction": "Steep • Place pitcher • Flip",
         "audio_script": "Let the coffee steep. You have 40 seconds. At 1 minute 35, place the pitcher on top and flip.",
-        "audio_file_name": "2021_world_aeropress_brewing_step6.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step6.m4a",
+        "instruction_es": "Deja reposar. A las ~1:35 coloca la jarra encima. A 1:40 (~100s) voltea el preparador con cuidado.",
+        "short_instruction_es": "Reposo • Pon jarra • Voltea",
+        "audio_script_es": "Deja que el café repose. Tienes 40 segundos. A 1 minuto 35, coloca la jarra encima y voltea."
       },
       {
         "time_seconds": 120,
-        "instruction": "Immediately begin pressing from 1:40\u20132:00 (\u224820 s press).",
-        "short_instruction": "Begin pressing \u2022 20s press",
+        "instruction": "Immediately begin pressing from 1:40–2:00 (≈20 s press).",
+        "short_instruction": "Begin pressing • 20s press",
         "audio_script": "Start pressing immediately. You have 20 seconds to finish the press.",
-        "audio_file_name": "2021_world_aeropress_brewing_step7.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step7.m4a",
+        "instruction_es": "Inmediatamente comienza a presionar de 1:40-2:00 (~20s de presión).",
+        "short_instruction_es": "Comienza a presionar • 20s",
+        "audio_script_es": "Comienza a presionar inmediatamente. Tienes 20 segundos para terminar de presionar."
       },
       {
         "time_seconds": 150,
-        "instruction": "From 2:00\u20132:30 (\u2248120\u2013150 s) swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool.",
-        "short_instruction": "Swirl coffee \u2022 Pour from altitude",
+        "instruction": "From 2:00–2:30 (≈120–150 s) swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool.",
+        "short_instruction": "Swirl coffee • Pour from altitude",
         "audio_script": "Swirl the coffee and pour from altitude. You have 30 seconds to aerate and cool.",
-        "audio_file_name": "2021_world_aeropress_brewing_step8.m4a"
+        "audio_file_name": "2021_world_aeropress_brewing_step8.m4a",
+        "instruction_es": "De 2:00-2:30 (~120-150s) agita el café preparado y haz un 'vertido desde altura' a otra jarra para airear y enfriar.",
+        "short_instruction_es": "Agita café • Vierte desde altura",
+        "audio_script_es": "Agita el café y viértelo desde altura. Tienes 30 segundos para airear y enfriar."
       }
     ],
     "what_to_expect": {
       "description": "The 2021 World AeroPress Champion recipe by Tuomas Merikanto showcases advanced brewing techniques focused on water chemistry and precise temperature control. This method uses Third Wave Water Formula 2 for optimal mineral balance, a low extraction temperature of 80°C to highlight delicate flavors, and innovative manipulation techniques including very gentle stirring and the signature 'pour from altitude' method. Expect a cup with exceptional clarity, bright acidity, and complex flavor layers that highlight the coffee's origin characteristics. The inverted method with precise timing and gentle agitation creates a clean, structured profile perfect for showcasing high-quality single-origin coffees. The final aeration step adds a unique texture and cooling effect that enhances the overall drinking experience.",
       "audio_file_name": "tuomas_2021_intro.m4a",
-      "audio_script": "The 2021 World AeroPress Champion recipe by Tuomas Merikanto showcases advanced brewing techniques. This method uses Third Wave Water Formula 2 for optimal mineral balance, a low extraction temperature of 80 degrees Celsius to highlight delicate flavors, and innovative techniques including gentle stirring and the signature 'pour from altitude' method. Expect a cup with exceptional clarity, bright acidity, and complex flavor layers that highlight the coffee's origin characteristics. The inverted method with precise timing creates a clean, structured profile perfect for showcasing high-quality single-origin coffees."
+      "audio_script": "The 2021 World AeroPress Champion recipe by Tuomas Merikanto showcases advanced brewing techniques. This method uses Third Wave Water Formula 2 for optimal mineral balance, a low extraction temperature of 80 degrees Celsius to highlight delicate flavors, and innovative techniques including gentle stirring and the signature 'pour from altitude' method. Expect a cup with exceptional clarity, bright acidity, and complex flavor layers that highlight the coffee's origin characteristics. The inverted method with precise timing creates a clean, structured profile perfect for showcasing high-quality single-origin coffees.",
+      "description_es": "La receta ganadora del Campeonato Mundial AeroPress 2021 de Tuomas Merikanto. Combina un concentrado suave con dilución por bypass para máxima claridad y sabores delicados.",
+      "audio_script_es": "Esta es la receta campeona mundial de 2021. Tuomas Merikanto crea un concentrado suave que luego diluye con agua caliente. El resultado es una taza increíblemente limpia y delicada."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Complex", "Bright", "Floral"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Complex",
+        "Bright",
+        "Floral"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.9,
@@ -101,12 +137,20 @@
       "Paper filter (rinsed)",
       "Macap Labo 70D",
       "Digital scale",
-      "Kettle (capable of 80 \u00b0C)",
+      "Kettle (capable of 80 °C)",
       "Third Wave Water Formula 2 (or prepared mineral profile)",
       "Timer",
       "Pitcher(s) for pouring from altitude"
     ],
-    "notes": "Recipe by Tuomas Merikanto (World Champ 2021). Focus on water chemistry (TWW Formula 2), two pouring stages with a low extraction point (80\u00b0C) and manipulation techniques (very gentle stirs, quick flip and press) followed by 'pour from altitude' for aeration and cooling.",
-    "servings": 1
+    "notes": "Recipe by Tuomas Merikanto (World Champ 2021). Focus on water chemistry (TWW Formula 2), two pouring stages with a low extraction point (80°C) and manipulation techniques (very gentle stirs, quick flip and press) followed by 'pour from altitude' for aeration and cooling.",
+    "servings": 1,
+    "title_es": "Campeón Mundial AeroPress 2021 - Tuomas Merikanto (Finlandia)",
+    "notes_es": "Receta ganadora del Campeonato Mundial de AeroPress 2021. Enfocada en claridad y delicadeza con método invertido y bypass.",
+    "preparation_steps_es": [
+      "Enjuaga el filtro de papel con agua caliente.",
+      "Ensambla el AeroPress en posición invertida.",
+      "Muele 16g de café a molienda medio-gruesa.",
+      "Calienta el agua a 93°C."
+    ]
   }
 ]

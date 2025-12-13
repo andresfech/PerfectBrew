@@ -27,35 +27,50 @@
         "instruction": "Start timer and pour 500g hot water evenly over grounds",
         "short_instruction": "Pour 500g hot water evenly",
         "audio_script": "Start your timer now. Pour 500 grams of hot water evenly over the grounds. You have 30 seconds. Aim to wet all the coffee to ensure an even extraction from the start.",
-        "audio_file_name": "james_hoffmann_french_press_step1.m4a"
+        "audio_file_name": "james_hoffmann_french_press_step1.m4a",
+        "instruction_es": "Inicia el cronómetro y vierte 500g de agua caliente uniformemente sobre el molido.",
+        "short_instruction_es": "Vierte 500g de agua caliente uniformemente",
+        "audio_script_es": "Inicia tu cronómetro ahora. Vierte 500 gramos de agua caliente uniformemente sobre el molido. Tienes 30 segundos. Intenta mojar todo el café para asegurar una extracción uniforme desde el inicio."
       },
       {
         "time_seconds": 60,
         "instruction": "Stir gently with a spoon to ensure all grounds are saturated",
         "short_instruction": "Stir gently to saturate grounds",
         "audio_script": "Take a spoon and stir gently. You have 30 seconds. We want to break up any dry clumps and ensure every particle is saturated for a full-bodied cup.",
-        "audio_file_name": "james_hoffmann_french_press_step2.m4a"
+        "audio_file_name": "james_hoffmann_french_press_step2.m4a",
+        "instruction_es": "Revuelve suavemente con una cuchara para asegurar que todo el molido esté saturado.",
+        "short_instruction_es": "Revuelve suavemente para saturar el molido",
+        "audio_script_es": "Toma una cuchara y revuelve suavemente. Tienes 30 segundos. Queremos romper cualquier grumo seco y asegurar que cada partícula esté saturada para una taza con cuerpo completo."
       },
       {
         "time_seconds": 90,
         "instruction": "Place lid on top (do not press plunger yet)",
         "short_instruction": "Place lid • Do not press yet",
         "audio_script": "Place the lid on top to retain heat, but do not press the plunger yet. We need to keep the temperature stable for the long steep ahead.",
-        "audio_file_name": "james_hoffmann_french_press_step3.m4a"
+        "audio_file_name": "james_hoffmann_french_press_step3.m4a",
+        "instruction_es": "Coloca la tapa encima (no presiones el émbolo todavía).",
+        "short_instruction_es": "Coloca tapa • No presiones todavía",
+        "audio_script_es": "Coloca la tapa encima para retener el calor, pero no presiones el émbolo todavía. Necesitamos mantener la temperatura estable para el largo reposo que viene."
       },
       {
         "time_seconds": 390,
         "instruction": "Wait 5 minutes for extraction (do not disturb)",
         "short_instruction": "Wait 5 minutes • Do not disturb",
         "audio_script": "Now, wait for 5 minutes. Let the coffee steep undisturbed. This extended time allows the water to fully extract the soluble flavors and oils, creating a rich, heavy body.",
-        "audio_file_name": "james_hoffmann_french_press_step4.m4a"
+        "audio_file_name": "james_hoffmann_french_press_step4.m4a",
+        "instruction_es": "Espera 5 minutos para la extracción (no muevas).",
+        "short_instruction_es": "Espera 5 minutos • No muevas",
+        "audio_script_es": "Ahora, espera 5 minutos. Deja que el café repose sin perturbarlo. Este tiempo extendido permite que el agua extraiga completamente los sabores y aceites solubles, creando un cuerpo rico y denso."
       },
       {
         "time_seconds": 420,
         "instruction": "Press plunger down slowly and steadily, then pour immediately",
         "short_instruction": "Press slowly • Pour immediately",
         "audio_script": "It's time to finish. Press the plunger down slowly and steadily. Don't rush. Once pressed, pour immediately to stop the brewing process and enjoy your coffee.",
-        "audio_file_name": "james_hoffmann_french_press_step5.m4a"
+        "audio_file_name": "james_hoffmann_french_press_step5.m4a",
+        "instruction_es": "Presiona el émbolo lenta y constantemente, luego sirve inmediatamente.",
+        "short_instruction_es": "Presiona lentamente • Sirve inmediatamente",
+        "audio_script_es": "Es hora de terminar. Presiona el émbolo lenta y constantemente. No te apresures. Una vez presionado, sirve inmediatamente para detener el proceso de preparación y disfruta tu café."
       }
     ],
     "equipment": [
@@ -68,12 +83,25 @@
     "what_to_expect": {
       "description": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using medium-coarse grind, precise timing, and avoiding over-extraction by pressing slowly and pouring immediately.",
       "audio_file_name": "james_hoffmann_french_press_notes.wav",
-      "audio_script": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using a medium-coarse grind and precise timing. By avoiding over-agitation and pressing slowly, you get a rich cup without the grit."
+      "audio_script": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using a medium-coarse grind and precise timing. By avoiding over-agitation and pressing slowly, you get a rich cup without the grit.",
+      "description_es": "El método refinado de prensa francesa de James Hoffmann produce una taza limpia y con cuerpo completo con sedimento mínimo. La clave es usar una molienda medio-gruesa, tiempos precisos, y evitar la sobre-extracción presionando lentamente y sirviendo inmediatamente.",
+      "audio_script_es": "El método refinado de prensa francesa de James Hoffmann produce una taza limpia y con cuerpo completo con sedimento mínimo. La clave es usar una molienda medio-gruesa y tiempos precisos. Al evitar sobre-agitar y presionar lentamente, obtienes una taza rica sin los grumos."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Medium", "Dark"],
-      "recommended_processes": ["Washed", "Natural", "Other"],
-      "recommended_flavor_tags": ["Chocolate", "Nutty", "Savory"]
+      "recommended_roast_levels": [
+        "Medium",
+        "Dark"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural",
+        "Other"
+      ],
+      "recommended_flavor_tags": [
+        "Chocolate",
+        "Nutty",
+        "Savory"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.7,
@@ -84,6 +112,15 @@
       "thermal": "High"
     },
     "notes": "James Hoffmann's refined French Press method produces a clean, full-bodied cup with minimal sediment. The key is using medium-coarse grind, precise timing, and avoiding over-extraction by pressing slowly and pouring immediately.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "Prensa Francesa de James Hoffmann",
+    "notes_es": "El método refinado de James Hoffmann para prensa francesa produce una taza limpia y con cuerpo completo con sedimento mínimo. La clave es usar una molienda medio-gruesa, tiempos precisos, y evitar la sobre-extracción presionando lentamente y sirviendo inmediatamente.",
+    "preparation_steps_es": [
+      "Calienta el agua a 95°C (justo después de hervir)",
+      "Muele 30 gramos de café a consistencia medio-gruesa",
+      "Precalienta tu prensa francesa con agua caliente",
+      "Vacía y seca la prensa francesa completamente",
+      "Añade 30g de café molido a la prensa francesa"
+    ]
   }
 ]

@@ -26,35 +26,50 @@
         "instruction": "Bloom: Pour 40mL water into center divot, then swirl and stir.",
         "short_instruction": "Bloom 40mL water • Swirl brewer & stir bed",
         "audio_script": "Pour 40 milliliters of hot water directly into that center divot you created. Pour slowly and steadily, watching as the coffee begins to bloom and release carbon dioxide. Give the V60 a gentle swirl, then stir the bed. This crucial step ensures even saturation.",
-        "audio_file_name": "kaldis_single_step_01.m4a"
+        "audio_file_name": "kaldis_single_step_01.m4a",
+        "instruction_es": "Bloom: Vierte 40mL de agua en el centro, luego agita y revuelve.",
+        "short_instruction_es": "Bloom 40mL • Agita y revuelve",
+        "audio_script_es": "Vierte 40 mililitros de agua caliente directamente en el hueco central que creaste. Vierte lenta y constantemente mientras el café comienza a florecer. Dale al V60 una agitación suave, luego revuelve la cama."
       },
       {
         "time_seconds": 75,
         "instruction": "Main Pour: Pour aggressively into center, then swirl to edges. Target 75mL.",
         "short_instruction": "Main pour 75mL aggressively • Swirl to edges",
         "audio_script": "You have 30 seconds for the main pour - this is where V60 technique truly shines. Pour aggressively into the center, then spiral outward to the edges. We're targeting 75 milliliters total. Maintain that aggressive flow rate to create turbulence in the coffee bed.",
-        "audio_file_name": "kaldis_single_step_02.m4a"
+        "audio_file_name": "kaldis_single_step_02.m4a",
+        "instruction_es": "Vertido principal: Vierte agresivamente al centro, luego hacia los bordes. Objetivo 75mL.",
+        "short_instruction_es": "Vertido principal 75mL • Agresivo al centro",
+        "audio_script_es": "Tienes 30 segundos para el vertido principal. Vierte agresivamente en el centro, luego en espiral hacia los bordes. Apuntamos a 75 mililitros totales. Mantén ese flujo agresivo para crear turbulencia."
       },
       {
         "time_seconds": 90,
         "instruction": "Stop pouring and give a gentle swirl to flatten the bed.",
         "short_instruction": "Stop pouring • Gentle swirl to flatten bed",
         "audio_script": "In 15 seconds, stop pouring and set your kettle aside. Take a moment to pause and observe the coffee bed. Notice how it's actively bubbling and extracting. Now give your V60 dripper a gentle swirl to flatten the coffee bed for even distribution.",
-        "audio_file_name": "kaldis_single_step_03.m4a"
+        "audio_file_name": "kaldis_single_step_03.m4a",
+        "instruction_es": "Deja de verter y agita suavemente para nivelar la cama.",
+        "short_instruction_es": "Para • Agita suave para nivelar",
+        "audio_script_es": "Deja de verter y pon la tetera a un lado. Observa la cama de café burbujeando. Ahora dale al V60 una agitación suave para nivelar la cama de café."
       },
       {
         "time_seconds": 150,
         "instruction": "Final Pour: Pour gently in center with small circles until 256mL.",
         "short_instruction": "Final pour to 256mL • Small circles in center",
         "audio_script": "Now for the final pour! Take 60 seconds to pour much more gently than before. Start in the center of the coffee bed and make small, controlled circles with your kettle. Keep the pour steady and controlled as you work your way up to 256 milliliters total. Watch your scale closely.",
-        "audio_file_name": "kaldis_single_step_04.m4a"
+        "audio_file_name": "kaldis_single_step_04.m4a",
+        "instruction_es": "Vertido final: Vierte suavemente al centro con pequeños círculos hasta 256mL.",
+        "short_instruction_es": "Vertido final hasta 256mL • Círculos pequeños",
+        "audio_script_es": "¡Ahora el vertido final! Tómate 60 segundos para verter mucho más suavemente que antes. Comienza en el centro y haz pequeños círculos controlados. Mantén el vertido constante hasta alcanzar 256 mililitros totales."
       },
       {
         "time_seconds": 180,
         "instruction": "Final swirl to flatten bed for drain down.",
         "short_instruction": "Final swirl • Flatten bed for drain",
         "audio_script": "Finally, give your V60 dripper one last gentle swirl to flatten the coffee bed completely. You have 30 seconds. Now watch as the coffee bed settles into a nice, flat surface. Let gravity do its work - the coffee will drain down through the filter at its own natural pace.",
-        "audio_file_name": "kaldis_single_step_05.m4a"
+        "audio_file_name": "kaldis_single_step_05.m4a",
+        "instruction_es": "Agitación final para nivelar la cama y drenar.",
+        "short_instruction_es": "Agitación final • Nivela para drenar",
+        "audio_script_es": "Finalmente, dale a tu V60 una última agitación suave para nivelar la cama de café completamente. Tienes 30 segundos. Ahora observa cómo la cama de café se asienta en una superficie plana y bonita. Deja que la gravedad haga su trabajo."
       }
     ],
     "equipment": [
@@ -67,13 +82,29 @@
     "what_to_expect": {
       "description": "Kaldi's Coffee V60 method is a beginner-friendly approach that emphasizes simplicity and consistency. This technique uses a straightforward 2.5:1 bloom ratio followed by an aggressive main pour and a gentle final pour. The method is designed to be forgiving while still producing excellent results. Expect a clean, balanced cup with good body and clarity. The aggressive main pour creates turbulence for even extraction, while the gentle final pour ensures you don't over-extract. This method works well with medium to dark roasts and is perfect for those new to V60 brewing. The consistent timing and clear steps make it easy to reproduce great coffee every time.",
       "audio_file_name": "kaldis_single_intro.m4a",
-      "audio_script": "Kaldi's Coffee V60 method is a beginner-friendly approach that emphasizes simplicity and consistency. This technique uses a straightforward 2.5:1 bloom ratio followed by an aggressive main pour and a gentle final pour. Expect a clean, balanced cup with good body and clarity. The aggressive main pour creates turbulence for even extraction, while the gentle final pour ensures you don't over-extract. This method works well with medium to dark roasts and is perfect for those new to V60 brewing."
+      "audio_script": "Kaldi's Coffee V60 method is a beginner-friendly approach that emphasizes simplicity and consistency. This technique uses a straightforward 2.5:1 bloom ratio followed by an aggressive main pour and a gentle final pour. Expect a clean, balanced cup with good body and clarity. The aggressive main pour creates turbulence for even extraction, while the gentle final pour ensures you don't over-extract. This method works well with medium to dark roasts and is perfect for those new to V60 brewing.",
+      "description_es": "Una receta accesible y consistente perfecta para el uso diario. Los vertidos en pulso permiten control sobre la extracción sin complicar el proceso.",
+      "audio_script_es": "Esta receta de Kaldi's Coffee es perfecta para principiantes. Los vertidos en pulso son fáciles de ejecutar y producen resultados consistentes cada día."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Medium", "Dark"],
-      "recommended_processes": ["Washed", "Honey"],
-      "recommended_flavor_tags": ["Chocolate", "Nutty", "Balanced"],
-      "recommended_origins": ["Guatemala", "Brazil", "Costa Rica"]
+      "recommended_roast_levels": [
+        "Medium",
+        "Dark"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Honey"
+      ],
+      "recommended_flavor_tags": [
+        "Chocolate",
+        "Nutty",
+        "Balanced"
+      ],
+      "recommended_origins": [
+        "Guatemala",
+        "Brazil",
+        "Costa Rica"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.7,
@@ -84,6 +115,13 @@
       "thermal": "High"
     },
     "notes": "Beginner-friendly V60 with clean, balanced cup. Aggressive main pour creates even extraction; gentle finish preserves clarity. Works well with medium–dark roasts.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 de Kaldi's Coffee - Individual",
+    "notes_es": "Receta accesible de la cafetería Kaldi's. Simple y efectiva para el día a día.",
+    "preparation_steps_es": [
+      "Calienta el agua a 93°C.",
+      "Muele 20g de café a molienda media.",
+      "Enjuaga el filtro y precalienta el V60."
+    ]
   }
 ]

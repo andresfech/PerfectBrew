@@ -27,41 +27,65 @@
         "instruction": "Start timer and pour 464g hot water evenly over grounds",
         "short_instruction": "Pour 464g hot water evenly",
         "audio_script": "Start the timer. Pour 464 grams of hot water evenly over the grounds. You have 20 seconds. Ensure everything is wet quickly.",
-        "audio_file_name": "intelligentsia_french_press_step1.m4a"
+        "audio_file_name": "intelligentsia_french_press_step1.m4a",
+        "instruction_es": "Inicia el cronómetro y vierte 464g de agua caliente uniformemente sobre el café.",
+        "short_instruction_es": "Vierte 464g uniformemente",
+        "audio_script_es": "Inicia el cronómetro. Vierte 464 gramos de agua caliente uniformemente sobre el café. Tienes 20 segundos. Asegura que todo esté mojado rápidamente."
       },
       {
         "time_seconds": 45,
         "instruction": "Stir gently with bamboo spoon to saturate grounds",
         "short_instruction": "Stir with bamboo spoon",
         "audio_script": "Stir gently with a bamboo spoon. You have 25 seconds. Bamboo is preferred as it doesn't sap heat like metal, keeping the slurry temperature stable.",
-        "audio_file_name": "intelligentsia_french_press_step2.m4a"
+        "audio_file_name": "intelligentsia_french_press_step2.m4a",
+        "instruction_es": "Revuelve suavemente con cuchara de bambú para saturar el café.",
+        "short_instruction_es": "Revuelve con cuchara de bambú",
+        "audio_script_es": "Revuelve suavemente con una cuchara de bambú. Tienes 25 segundos. El bambú es preferido porque no absorbe calor como el metal, manteniendo la temperatura estable."
       },
       {
         "time_seconds": 70,
         "instruction": "Place lid on top, do not press plunger",
         "short_instruction": "Place lid • Do not press",
         "audio_script": "Place the lid on top to insulate, but do not press yet. Let the coffee work its magic.",
-        "audio_file_name": "intelligentsia_french_press_step3.m4a"
+        "audio_file_name": "intelligentsia_french_press_step3.m4a",
+        "instruction_es": "Coloca la tapa encima, no presiones el émbolo.",
+        "short_instruction_es": "Pon tapa • No presiones",
+        "audio_script_es": "Coloca la tapa encima para aislar, pero no presiones todavía. Deja que el café haga su magia."
       },
       {
         "time_seconds": 295,
         "instruction": "Wait 3.75 minutes for extraction",
         "short_instruction": "Wait 3.75 minutes • Extraction",
         "audio_script": "Wait for 3 minutes and 45 seconds. Intelligentsia uses a slightly finer grind and shorter steep time for a cleaner, brighter cup.",
-        "audio_file_name": "intelligentsia_french_press_step4.m4a"
+        "audio_file_name": "intelligentsia_french_press_step4.m4a",
+        "instruction_es": "Espera 3.75 minutos para extracción.",
+        "short_instruction_es": "Espera 3.75 minutos • Extracción",
+        "audio_script_es": "Espera 3 minutos 45 segundos. Intelligentsia usa una molienda ligeramente más fina y tiempo de reposo más corto para una taza más limpia y brillante."
       },
       {
         "time_seconds": 330,
         "instruction": "Press plunger down slowly, pour immediately",
         "short_instruction": "Press slowly • Pour immediately",
         "audio_script": "Press the plunger down slowly. Pour immediately into your favorite mug. Enjoy the clarity.",
-        "audio_file_name": "intelligentsia_french_press_step5.m4a"
+        "audio_file_name": "intelligentsia_french_press_step5.m4a",
+        "instruction_es": "Presiona el émbolo lentamente, sirve inmediatamente.",
+        "short_instruction_es": "Presiona lento • Sirve inmediato",
+        "audio_script_es": "Presiona el émbolo hacia abajo lentamente. Sirve inmediatamente en tu taza favorita. Disfruta la claridad."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Bright", "Clean", "Elegant"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Bright",
+        "Clean",
+        "Elegant"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.7,
@@ -81,9 +105,18 @@
     "what_to_expect": {
       "description": "Intelligentsia's French Press method uses medium grind and shorter extraction time to create a bright, clean cup while maintaining the characteristic body. The bamboo spoon prevents scratching and adds a touch of elegance.",
       "audio_file_name": "intelligentsia_french_press_notes.wav",
-      "audio_script": "Intelligentsia uses a medium grind and a shorter steep to achieve a brighter, cleaner French Press. It balances body with clarity perfectly."
+      "audio_script": "Intelligentsia uses a medium grind and a shorter steep to achieve a brighter, cleaner French Press. It balances body with clarity perfectly.",
+      "description_es": "Intelligentsia incluye un bloom inicial que es inusual para prensa francesa. Esto mejora la extracción y produce sabores más complejos.",
+      "audio_script_es": "El método Intelligentsia incluye un bloom inusual para prensa francesa. Este paso extra produce sabores más complejos y desarrollados."
     },
     "notes": "Intelligentsia's French Press method uses medium grind and shorter extraction time to create a bright, clean cup while maintaining the characteristic body. The bamboo spoon prevents scratching and adds a touch of elegance.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "Prensa Francesa de Intelligentsia",
+    "notes_es": "El método Intelligentsia con bloom inicial y tiempo de reposo extendido.",
+    "preparation_steps_es": [
+      "Calienta el agua a 95°C.",
+      "Muele 32g de café a molienda gruesa.",
+      "Precalienta la prensa francesa."
+    ]
   }
 ]

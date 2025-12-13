@@ -27,49 +27,70 @@
         "instruction": "Bloom (0:00): Start timer. Pour 60 grams of water (2x coffee dose) to saturate the grounds.",
         "short_instruction": "Bloom 60g water (2x dose) • Start timer",
         "audio_script": "Start your timer and pour 60 grams of hot water. This is twice your coffee dose to saturate all grounds evenly.",
-        "audio_file_name": "hoffmann_single_step_01.m4a"
+        "audio_file_name": "hoffmann_single_step_01.m4a",
+        "instruction_es": "Bloom (0:00): Inicia el cronómetro. Vierte 60 gramos de agua (2x la dosis de café) para saturar el molido.",
+        "short_instruction_es": "Bloom 60g de agua (2x dosis) • Inicia cronómetro",
+        "audio_script_es": "Inicia tu cronómetro y vierte 60 gramos de agua caliente. Esto es el doble de tu dosis de café para saturar todo el molido uniformemente."
       },
       {
         "time_seconds": 20,
         "instruction": "Swirl (0:10): Gently swirl the brewer until the coffee slurry is even.",
         "short_instruction": "Swirl brewer until slurry is even",
         "audio_script": "You have 10 seconds to gently swirl your V60 until the slurry is even. This ensures uniform extraction.",
-        "audio_file_name": "hoffmann_single_step_02.m4a"
+        "audio_file_name": "hoffmann_single_step_02.m4a",
+        "instruction_es": "Agita (0:10): Agita suavemente el preparador hasta que la mezcla de café esté uniforme.",
+        "short_instruction_es": "Agita el preparador hasta que esté uniforme",
+        "audio_script_es": "Tienes 10 segundos para agitar suavemente tu V60 hasta que la mezcla esté uniforme. Esto asegura una extracción uniforme."
       },
       {
         "time_seconds": 45,
         "instruction": "Bloom continues (0:20): Let the coffee bloom until 0:45. This bloom period allows for de-gassing, which is crucial for fresh coffee.",
         "short_instruction": "Wait until 0:45 • Let bloom continue",
         "audio_script": "Now wait 25 seconds for the bloom to continue until 0:45. This extended bloom allows proper de-gassing for fresh coffee.",
-        "audio_file_name": "hoffmann_single_step_03.m4a"
+        "audio_file_name": "hoffmann_single_step_03.m4a",
+        "instruction_es": "El bloom continúa (0:20): Deja que el café haga bloom hasta 0:45. Este período de bloom permite la desgasificación, crucial para café fresco.",
+        "short_instruction_es": "Espera hasta 0:45 • Deja que el bloom continúe",
+        "audio_script_es": "Ahora espera 25 segundos para que el bloom continúe hasta 0:45. Este bloom extendido permite una desgasificación adecuada para café fresco."
       },
       {
         "time_seconds": 75,
         "instruction": "First Main Pour (0:45 - 1:15): Pour up to 300 grams of water (60% of total brew water) within 30 seconds. This pour keeps the V60 topped up.",
         "short_instruction": "First main pour to 300g • Within 30 seconds",
         "audio_script": "Take 30 seconds to pour up to 300 grams of water - that's 60% of your total water. Keep the V60 topped up with steady flow.",
-        "audio_file_name": "hoffmann_single_step_04.m4a"
+        "audio_file_name": "hoffmann_single_step_04.m4a",
+        "instruction_es": "Primer Vertido Principal (0:45 - 1:15): Vierte hasta 300 gramos de agua (60% del total) en 30 segundos. Este vertido mantiene el V60 lleno.",
+        "short_instruction_es": "Primer vertido hasta 300g • En 30 segundos",
+        "audio_script_es": "Tienes 30 segundos para verter hasta 300 gramos de agua, eso es el 60% de tu agua total. Mantén el V60 lleno con un flujo constante."
       },
       {
         "time_seconds": 105,
         "instruction": "Second Main Pour (1:15 - 1:45): Gently pour up to 500 grams of water (100% of total brew water) within 30 seconds.",
         "short_instruction": "Second main pour to 500g • Within 30 seconds",
         "audio_script": "You have 30 seconds to gently pour up to 500 grams of water - your complete brew water total.",
-        "audio_file_name": "hoffmann_single_step_05.m4a"
+        "audio_file_name": "hoffmann_single_step_05.m4a",
+        "instruction_es": "Segundo Vertido Principal (1:15 - 1:45): Vierte suavemente hasta 500 gramos de agua (100% del total) en 30 segundos.",
+        "short_instruction_es": "Segundo vertido hasta 500g • En 30 segundos",
+        "audio_script_es": "Tienes 30 segundos para verter suavemente hasta 500 gramos de agua, tu total completo de agua para la preparación."
       },
       {
         "time_seconds": 120,
         "instruction": "Stir (1:45): Stir gently clockwise and then anticlockwise (about 1 to 1.5 revolutions each way) to dislodge grounds from the sides. This step helps ensure all coffee particles are engaged in extraction.",
         "short_instruction": "Stir clockwise & anticlockwise",
         "audio_script": "Now stir gently clockwise, then anticlockwise - about 1 to 1.5 revolutions each way. You have 15 seconds. This dislodges grounds from the sides.",
-        "audio_file_name": "hoffmann_single_step_06.m4a"
+        "audio_file_name": "hoffmann_single_step_06.m4a",
+        "instruction_es": "Revuelve (1:45): Revuelve suavemente en sentido horario y luego antihorario (aproximadamente 1 a 1.5 vueltas en cada dirección) para desprender el molido de los lados.",
+        "short_instruction_es": "Revuelve en sentido horario y antihorario",
+        "audio_script_es": "Ahora revuelve suavemente en sentido horario, luego antihorario, aproximadamente 1 a 1.5 vueltas en cada dirección. Tienes 15 segundos. Esto desprende el molido de los lados."
       },
       {
         "time_seconds": 135,
         "instruction": "Swirl (1:55): Gently swirl the brewer to flatten the coffee bed for even extraction. A flat bed is preferred for consistent drawdown.",
         "short_instruction": "Swirl to flatten bed",
         "audio_script": "Finally, gently swirl to flatten the coffee bed. You have 15 seconds. A flat bed ensures consistent drawdown.",
-        "audio_file_name": "hoffmann_single_step_07.m4a"
+        "audio_file_name": "hoffmann_single_step_07.m4a",
+        "instruction_es": "Agita (1:55): Agita suavemente el preparador para nivelar la cama de café y lograr una extracción uniforme.",
+        "short_instruction_es": "Agita para nivelar la cama",
+        "audio_script_es": "Finalmente, agita suavemente para nivelar la cama de café. Tienes 15 segundos. Una cama nivelada asegura un drenaje consistente."
       }
     ],
     "equipment": [
@@ -82,14 +103,33 @@
     "what_to_expect": {
       "description": "James Hoffmann's V60 method is a refined technique that emphasizes precision and control. This method uses a 2:1 bloom ratio (twice the coffee weight) for optimal de-gassing, followed by two main pours that keep the V60 topped up. The technique includes strategic stirring and swirling to ensure even extraction and a flat coffee bed. Expect a clean, bright cup with excellent clarity and balanced acidity. The method works exceptionally well with light to medium roasts, highlighting the coffee's origin characteristics while maintaining consistency. Hoffmann's approach is particularly effective for single-serve brewing, offering a perfect balance between complexity and approachability.",
       "audio_file_name": "hoffmann_intro.m4a",
-      "audio_script": "James Hoffmann's V60 method is a refined technique that emphasizes precision and control. This method uses a 2:1 bloom ratio for optimal de-gassing, followed by two main pours that keep the V60 topped up. Expect a clean, bright cup with excellent clarity and balanced acidity. The technique works exceptionally well with light to medium roasts, highlighting origin characteristics while maintaining consistency."
+      "audio_script": "James Hoffmann's V60 method is a refined technique that emphasizes precision and control. This method uses a 2:1 bloom ratio for optimal de-gassing, followed by two main pours that keep the V60 topped up. Expect a clean, bright cup with excellent clarity and balanced acidity. The technique works exceptionally well with light to medium roasts, highlighting origin characteristics while maintaining consistency.",
+      "description_es": "El método V60 de James Hoffmann es una técnica refinada que enfatiza la precisión y el control. Este método usa una proporción de bloom de 2:1 (el doble del peso del café) para una desgasificación óptima, seguido de dos vertidos principales que mantienen el V60 lleno. La técnica incluye revolver y agitar estratégicamente para asegurar una extracción uniforme y una cama de café nivelada. Espera una taza limpia y brillante con excelente claridad y acidez equilibrada. El método funciona muy bien con tuestes claros a medios, resaltando las características de origen mientras mantiene la consistencia.",
+      "audio_script_es": "El método V60 de James Hoffmann es una técnica refinada que enfatiza la precisión y el control. Este método usa una proporción de bloom de 2:1 para una desgasificación óptima, seguido de dos vertidos principales que mantienen el V60 lleno. Espera una taza limpia y brillante con excelente claridad y acidez equilibrada. La técnica funciona muy bien con tuestes claros a medios."
     },
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Bright", "Clean", "Complex"],
-      "recommended_origins": ["Kenya", "Ethiopia", "Colombia"],
-      "recommended_varieties": ["SL-28", "Bourbon"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Bright",
+        "Clean",
+        "Complex"
+      ],
+      "recommended_origins": [
+        "Kenya",
+        "Ethiopia",
+        "Colombia"
+      ],
+      "recommended_varieties": [
+        "SL-28",
+        "Bourbon"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -100,6 +140,15 @@
       "thermal": "High"
     },
     "notes": "Water Temperature: 95°C general, 100°C for high-quality light roasts, 90–95°C or 80–90°C for darker roasts. Aim to finish drawdown by 3 minutes 30 seconds. Total brew time can vary, but focus on a complete, even drain.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 de James Hoffmann - Individual",
+    "notes_es": "Temperatura del agua: 95°C general, 100°C para tuestes claros de alta calidad, 90–95°C u 80–90°C para tuestes más oscuros. Apunta a terminar el drenaje a los 3 minutos 30 segundos. El tiempo total puede variar, pero enfócate en un drenaje completo y uniforme.",
+    "preparation_steps_es": [
+      "Calienta el agua a 95°C.",
+      "Muele 30 gramos de café a consistencia medio-fina.",
+      "Dobla el filtro de papel por la costura y ajústalo al V60.",
+      "Precalienta con agua caliente y descarta.",
+      "Añade el café al V60 y haz un pequeño hueco en el centro de la cama."
+    ]
   }
 ]

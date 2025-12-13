@@ -23,33 +23,58 @@
     "brewing_steps": [
       {
         "time_seconds": 25,
-        "instruction": "Bloom: Pour 60g water in circular motion, saturating all grounds"
+        "instruction": "Bloom: Pour 60g water in circular motion, saturating all grounds",
+        "instruction_es": "Bloom con 60g de agua durante 45 segundos.",
+        "short_instruction_es": "Bloom 60g • 45 segundos",
+        "audio_script_es": "Vierte 60 gramos de agua para el bloom. El filtro grueso de Chemex necesita un bloom más largo - espera 45 segundos completos."
       },
       {
         "time_seconds": 45,
-        "instruction": "Wait for bloom to complete"
+        "instruction": "Wait for bloom to complete",
+        "instruction_es": "Primer vertido: Vierte lentamente hasta 200g en círculos.",
+        "short_instruction_es": "Primer vertido hasta 200g • Círculos",
+        "audio_script_es": "Vierte lentamente en círculos hasta 200 gramos. Mantén el flujo constante sin acelerar."
       },
       {
         "time_seconds": 45,
-        "instruction": "Pour 150g water in spiral pattern from center outward"
+        "instruction": "Pour 150g water in spiral pattern from center outward",
+        "instruction_es": "Segundo vertido: Vierte hasta 350g, manteniendo el nivel constante.",
+        "short_instruction_es": "Segundo vertido hasta 350g",
+        "audio_script_es": "Continúa vertiendo hasta 350 gramos. Mantén el nivel del agua constante en el Chemex."
       },
       {
         "time_seconds": 30,
-        "instruction": "Wait for water to drain halfway"
+        "instruction": "Wait for water to drain halfway",
+        "instruction_es": "Tercer vertido: Vierte hasta 500g total. Espera drenaje completo (~4-5 mins total).",
+        "short_instruction_es": "Tercer vertido hasta 500g • Drenaje 4-5 mins",
+        "audio_script_es": "Completa el vertido hasta 500 gramos. Espera el drenaje completo, que debería tomar entre 4 y 5 minutos totales. El filtro grueso de Chemex produce una taza excepcionalmente limpia."
       },
       {
         "time_seconds": 120,
-        "instruction": "Pour remaining 290g water in steady spiral"
+        "instruction": "Pour remaining 290g water in steady spiral",
+        "instruction_es": "Vierte agua in steady spiral",
+        "short_instruction_es": "Pour remaining 290g water in steady spiral"
       },
       {
         "time_seconds": 240,
-        "instruction": "Allow final drawdown to complete"
+        "instruction": "Allow final drawdown to complete",
+        "instruction_es": "Allow final drawdown to complete",
+        "short_instruction_es": "Allow final drawdown to complete"
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Clean",
+        "Bright",
+        "Floral"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.9,
@@ -67,216 +92,19 @@
       "Timer"
     ],
     "notes": "Produces clean, bright coffee with excellent clarity. Perfect for single serving.",
-    "servings": 1
-  },
-  {
-    "title": "Chemex Classic",
-    "brewing_method": "Chemex",
-    "skill_level": "Intermediate",
-    "rating": 4.4,
-    "parameters": {
-      "coffee_grams": 60,
-      "water_grams": 1000,
-      "ratio": "1:16.7",
-      "grind_size": "Medium-coarse",
-      "temperature_celsius": 96,
-      "bloom_water_grams": 120,
-      "bloom_time_seconds": 50,
-      "total_brew_time_seconds": 635
-    },
-    "preparation_steps": [
-      "Heat water to 96°C",
-      "Grind 60 grams of coffee to medium-coarse consistency",
-      "Place Chemex filter and rinse with hot water",
-      "Add 60g ground coffee and create a well in the center"
+    "servings": 1,
+    "title_es": "Chemex Clásico - Individual",
+    "notes_es": "El método clásico de Chemex que produce una taza increíblemente limpia y brillante.",
+    "preparation_steps_es": [
+      "Calienta el agua a 95°C.",
+      "Muele 30g de café a molienda medio-gruesa.",
+      "Dobla el filtro Chemex con 3 capas hacia el pico.",
+      "Enjuaga el filtro completamente y descarta el agua."
     ],
-    "brewing_steps": [
-      {
-        "time_seconds": 25,
-        "instruction": "Bloom: Pour 120g water in circular motion, saturating all grounds"
-      },
-      {
-        "time_seconds": 50,
-        "instruction": "Wait for bloom to complete"
-      },
-      {
-        "time_seconds": 50,
-        "instruction": "Pour 300g water in spiral pattern from center outward"
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Wait for water to drain halfway"
-      },
-      {
-        "time_seconds": 180,
-        "instruction": "Pour remaining 580g water in steady spiral"
-      },
-      {
-        "time_seconds": 300,
-        "instruction": "Allow final drawdown to complete"
-      }
-    ],
-    "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
-    },
-    "extraction_characteristics": {
-      "clarity": 0.9,
-      "acidity": 0.8,
-      "sweetness": 0.7,
-      "body": 0.3,
-      "agitation": "Medium",
-      "thermal": "High"
-    },
-    "equipment": [
-      "Chemex 8-cup brewer",
-      "Chemex filters",
-      "Digital scale",
-      "Gooseneck kettle",
-      "Timer"
-    ],
-    "notes": "Produces clean, bright coffee with excellent clarity. Perfect for 2 people.",
-    "servings": 2
-  },
-  {
-    "title": "Chemex Classic",
-    "brewing_method": "Chemex",
-    "skill_level": "Intermediate",
-    "rating": 4.4,
-    "parameters": {
-      "coffee_grams": 90,
-      "water_grams": 1500,
-      "ratio": "1:16.7",
-      "grind_size": "Medium",
-      "temperature_celsius": 96,
-      "bloom_water_grams": 180,
-      "bloom_time_seconds": 55,
-      "total_brew_time_seconds": 765
-    },
-    "preparation_steps": [
-      "Heat water to 96°C",
-      "Grind 90 grams of coffee to medium consistency",
-      "Place Chemex filter and rinse with hot water",
-      "Add 90g ground coffee and create a well in the center"
-    ],
-    "brewing_steps": [
-      {
-        "time_seconds": 25,
-        "instruction": "Bloom: Pour 180g water in circular motion, saturating all grounds"
-      },
-      {
-        "time_seconds": 55,
-        "instruction": "Wait for bloom to complete"
-      },
-      {
-        "time_seconds": 55,
-        "instruction": "Pour 450g water in spiral pattern from center outward"
-      },
-      {
-        "time_seconds": 30,
-        "instruction": "Wait for water to drain halfway"
-      },
-      {
-        "time_seconds": 240,
-        "instruction": "Pour remaining 870g water in steady spiral"
-      },
-      {
-        "time_seconds": 360,
-        "instruction": "Allow final drawdown to complete"
-      }
-    ],
-    "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
-    },
-    "extraction_characteristics": {
-      "clarity": 0.9,
-      "acidity": 0.8,
-      "sweetness": 0.7,
-      "body": 0.3,
-      "agitation": "Medium",
-      "thermal": "High"
-    },
-    "equipment": [
-      "Chemex 10-cup brewer",
-      "Chemex filters",
-      "Digital scale",
-      "Gooseneck kettle",
-      "Timer"
-    ],
-    "notes": "Produces clean, bright coffee with excellent clarity. Perfect for 3 people.",
-    "servings": 3
-  },
-  {
-    "title": "Chemex Classic",
-    "brewing_method": "Chemex",
-    "skill_level": "Intermediate",
-    "rating": 4.4,
-    "parameters": {
-      "coffee_grams": 120,
-      "water_grams": 2000,
-      "ratio": "1:16.7",
-      "grind_size": "Medium",
-      "temperature_celsius": 96,
-      "bloom_water_grams": 240,
-      "bloom_time_seconds": 60,
-      "total_brew_time_seconds": 900
-    },
-    "preparation_steps": [
-      "Heat water to 96°C",
-      "Grind 120 grams of coffee to medium consistency",
-      "Place Chemex filter and rinse with hot water",
-      "Add 120g ground coffee and create a well in the center"
-    ],
-    "brewing_steps": [
-      {
-        "time_seconds": 25,
-        "instruction": "Bloom: Pour 240g water in circular motion, saturating all grounds"
-      },
-      {
-        "time_seconds": 60,
-        "instruction": "Wait for bloom to complete"
-      },
-      {
-        "time_seconds": 60,
-        "instruction": "Pour 600g water in spiral pattern from center outward"
-      },
-      {
-        "time_seconds": 35,
-        "instruction": "Wait for water to drain halfway"
-      },
-      {
-        "time_seconds": 300,
-        "instruction": "Pour remaining 1160g water in steady spiral"
-      },
-      {
-        "time_seconds": 420,
-        "instruction": "Allow final drawdown to complete"
-      }
-    ],
-    "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Clean", "Bright", "Floral"]
-    },
-    "extraction_characteristics": {
-      "clarity": 0.9,
-      "acidity": 0.8,
-      "sweetness": 0.7,
-      "body": 0.3,
-      "agitation": "Medium",
-      "thermal": "High"
-    },
-    "equipment": [
-      "Chemex 10-cup brewer",
-      "Chemex filters",
-      "Digital scale",
-      "Gooseneck kettle",
-      "Timer"
-    ],
-    "notes": "Produces clean, bright coffee with excellent clarity. Perfect for 4 people.",
-    "servings": 4
+    "what_to_expect": {
+      "description": "",
+      "description_es": "El Chemex produce una de las tazas más limpias y brillantes posibles. El filtro grueso remueve casi todos los aceites y sedimentos, dejando solo los sabores más puros y claros. Ideal para cafés de origen único con notas frutales o florales.",
+      "audio_script_es": "El Chemex produce una taza increíblemente limpia y brillante. El filtro grueso remueve aceites y sedimentos, dejando solo los sabores más puros. Es perfecto para cafés de origen único donde quieres saborear cada nota delicada."
+    }
   }
 ]

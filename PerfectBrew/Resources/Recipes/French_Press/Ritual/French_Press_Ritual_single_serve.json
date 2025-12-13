@@ -27,41 +27,65 @@
         "instruction": "Start timer and pour 448g hot water evenly over grounds",
         "short_instruction": "Pour 448g hot water evenly",
         "audio_script": "Start your timer. Pour 448 grams of hot water evenly over the grounds. You have 20 seconds. Fast saturation is key with this finer grind.",
-        "audio_file_name": "ritual_french_press_step1.m4a"
+        "audio_file_name": "ritual_french_press_step1.m4a",
+        "instruction_es": "Inicia el cronómetro y vierte 448g de agua caliente uniformemente sobre el café.",
+        "short_instruction_es": "Vierte 448g uniformemente",
+        "audio_script_es": "Inicia el cronómetro. Vierte 448 gramos de agua caliente uniformemente. Tienes 20 segundos. La saturación rápida es clave con esta molienda más fina."
       },
       {
         "time_seconds": 45,
         "instruction": "Stir gently with bamboo spoon to create even extraction",
         "short_instruction": "Stir with bamboo spoon • Even extraction",
         "audio_script": "Stir gently with a bamboo spoon. You have 25 seconds. This ensures even extraction right from the start.",
-        "audio_file_name": "ritual_french_press_step2.m4a"
+        "audio_file_name": "ritual_french_press_step2.m4a",
+        "instruction_es": "Revuelve suavemente con cuchara de bambú para extracción uniforme.",
+        "short_instruction_es": "Revuelve con bambú • Extracción uniforme",
+        "audio_script_es": "Revuelve suavemente con una cuchara de bambú. Tienes 25 segundos. Esto asegura extracción uniforme desde el inicio."
       },
       {
         "time_seconds": 70,
         "instruction": "Place lid on top, do not press plunger",
         "short_instruction": "Place lid • Do not press",
         "audio_script": "Place the lid on top to maintain temperature, but do not press yet. Let the coffee extract.",
-        "audio_file_name": "ritual_french_press_step3.m4a"
+        "audio_file_name": "ritual_french_press_step3.m4a",
+        "instruction_es": "Coloca la tapa encima, no presiones el émbolo.",
+        "short_instruction_es": "Pon tapa • No presiones",
+        "audio_script_es": "Coloca la tapa encima para mantener la temperatura, pero no presiones todavía. Deja que el café extraiga."
       },
       {
         "time_seconds": 325,
         "instruction": "Wait 4.25 minutes for optimal extraction",
         "short_instruction": "Wait 4.25 minutes • Optimal extraction",
         "audio_script": "Wait for 4 minutes and 15 seconds. Ritual's method uses a medium-fine grind for a quicker, more vibrant extraction.",
-        "audio_file_name": "ritual_french_press_step4.m4a"
+        "audio_file_name": "ritual_french_press_step4.m4a",
+        "instruction_es": "Espera 4.25 minutos para extracción óptima.",
+        "short_instruction_es": "Espera 4.25 minutos • Extracción óptima",
+        "audio_script_es": "Espera 4 minutos 15 segundos. El método de Ritual usa una molienda medio-fina para una extracción más rápida y vibrante."
       },
       {
         "time_seconds": 360,
         "instruction": "Press plunger down slowly, pour immediately",
         "short_instruction": "Press slowly • Pour immediately",
         "audio_script": "Press the plunger down slowly. Pour immediately into a warmed mug to enjoy the bright, nuanced flavors.",
-        "audio_file_name": "ritual_french_press_step5.m4a"
+        "audio_file_name": "ritual_french_press_step5.m4a",
+        "instruction_es": "Presiona el émbolo lentamente, sirve inmediatamente.",
+        "short_instruction_es": "Presiona lento • Sirve inmediato",
+        "audio_script_es": "Presiona el émbolo hacia abajo lentamente. Sirve inmediatamente en una taza caliente para disfrutar los sabores brillantes y matizados."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed"],
-      "recommended_flavor_tags": ["Nuanced", "Bright", "Artisan"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed"
+      ],
+      "recommended_flavor_tags": [
+        "Nuanced",
+        "Bright",
+        "Artisan"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.7,
@@ -81,9 +105,18 @@
     "what_to_expect": {
       "description": "Ritual Coffee's French Press method focuses on precision and artistry. The medium-fine grind and shorter extraction time create a bright, nuanced cup while maintaining the characteristic body. Perfect for showcasing single-origin coffees.",
       "audio_file_name": "ritual_french_press_notes.wav",
-      "audio_script": "Ritual Coffee focuses on precision. Using a medium-fine grind and shorter steep time, this recipe highlights the bright, nuanced flavors of single-origin coffees."
+      "audio_script": "Ritual Coffee focuses on precision. Using a medium-fine grind and shorter steep time, this recipe highlights the bright, nuanced flavors of single-origin coffees.",
+      "description_es": "El método Ritual es simple y directo. Sin complicaciones, solo café consistente cada vez.",
+      "audio_script_es": "Ritual mantiene las cosas simples. Sin pasos complicados, solo un proceso directo que produce café consistente."
     },
     "notes": "Ritual Coffee's French Press method focuses on precision and artistry. The medium-fine grind and shorter extraction time create a bright, nuanced cup while maintaining the characteristic body. Perfect for showcasing single-origin coffees.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "Prensa Francesa de Ritual",
+    "notes_es": "Método simple y directo de Ritual Coffee Roasters.",
+    "preparation_steps_es": [
+      "Calienta el agua a 94°C.",
+      "Muele 30g de café a molienda gruesa.",
+      "Precalienta la prensa."
+    ]
   }
 ]

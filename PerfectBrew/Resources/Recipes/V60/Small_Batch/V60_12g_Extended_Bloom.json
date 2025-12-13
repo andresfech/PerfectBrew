@@ -26,27 +26,46 @@
         "instruction": "Pour 40g water for bloom. Wait 2 minutes.",
         "short_instruction": "Bloom 40g • Wait 2 mins",
         "audio_script": "Start timer. Pour 40 grams for the bloom. Now, wait patiently for a full 2 minutes. Yes, 2 minutes. Wait until all bubbles stop rising. This long bloom helps prevent clogging later.",
-        "audio_file_name": "extended_bloom_12g_step1.m4a"
+        "audio_file_name": "extended_bloom_12g_step1.m4a",
+        "instruction_es": "Vierte 40g de agua para bloom. Espera 2 minutos.",
+        "short_instruction_es": "Bloom 40g • Espera 2 mins",
+        "audio_script_es": "Inicia el cronómetro. Vierte 40 gramos para el bloom. Ahora, espera pacientemente 2 minutos completos. Sí, 2 minutos. Espera hasta que todas las burbujas dejen de subir. Este bloom largo ayuda a prevenir el atasco."
       },
       {
         "time_seconds": 130,
         "instruction": "Pour spirally to 130g total.",
         "short_instruction": "Pour to 130g",
         "audio_script": "At 2 minutes, begin your first main pour. Spiral slowly up to 130 grams. Aim to finish this pour by 2 minutes 15 seconds.",
-        "audio_file_name": "extended_bloom_12g_step2.m4a"
+        "audio_file_name": "extended_bloom_12g_step2.m4a",
+        "instruction_es": "Vierte en espiral hasta 130g total.",
+        "short_instruction_es": "Vierte hasta 130g",
+        "audio_script_es": "A los 2 minutos, comienza tu primer vertido principal. Espiral lentamente hasta 130 gramos. Termina este vertido a los 2 minutos 15 segundos."
       },
       {
         "time_seconds": 180,
         "instruction": "Pour remaining to 200g total.",
         "short_instruction": "Pour to 200g",
         "audio_script": "Pour the remaining water to reach 200 grams total by 2 minutes 30 seconds. Then let it draw down.",
-        "audio_file_name": "extended_bloom_12g_step3.m4a"
+        "audio_file_name": "extended_bloom_12g_step3.m4a",
+        "instruction_es": "Vierte el restante hasta 200g total.",
+        "short_instruction_es": "Vierte hasta 200g",
+        "audio_script_es": "Vierte el agua restante para alcanzar 200 gramos a los 2 minutos 30 segundos. Luego deja drenar."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Light", "Medium"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Floral", "Citrus", "Complex"]
+      "recommended_roast_levels": [
+        "Light",
+        "Medium"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Floral",
+        "Citrus",
+        "Complex"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.8,
@@ -66,11 +85,18 @@
     "what_to_expect": {
       "description": "This recipe tackles the common stalling issue with Ethiopians and other dense beans. The ultra-long 2-minute bloom softens the coffee bed significantly, allowing for a coarser grind and faster flow later on.",
       "audio_file_name": "extended_bloom_12g_notes.m4a",
-      "audio_script": "If you've ever had a V60 stall or clog, this recipe is for you. By extending the bloom to a massive 2 minutes, we fully saturate and soften the grounds, ensuring a smooth flow even with finicky beans."
+      "audio_script": "If you've ever had a V60 stall or clog, this recipe is for you. By extending the bloom to a massive 2 minutes, we fully saturate and soften the grounds, ensuring a smooth flow even with finicky beans.",
+      "description_es": "El bloom extendido de 60 segundos permite que el café muy fresco libere todo su CO2 antes de la extracción principal. Ideal para café recién tostado.",
+      "audio_script_es": "Este bloom extra largo es perfecto para café muy fresco. Al esperar un minuto completo, permitimos que todo el CO2 escape antes de la extracción principal."
     },
     "notes": "This recipe specifically addresses the clogging problem by extending bloom time and using fewer fines.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "V60 12g Bloom Extendido",
+    "notes_es": "Bloom extra largo para cafés muy frescos con mucho CO2.",
+    "preparation_steps_es": [
+      "Calienta el agua a 94°C.",
+      "Muele 12g de café a molienda media.",
+      "Enjuaga el filtro."
+    ]
   }
 ]
-
-

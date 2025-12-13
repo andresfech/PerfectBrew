@@ -27,41 +27,66 @@
         "instruction": "Start timer and pour 512g hot water evenly over grounds",
         "short_instruction": "Pour 512g hot water evenly",
         "audio_script": "Start your timer and pour 512 grams of hot water evenly over the grounds. You have 20 seconds. Make sure to wet all the coffee for a consistent extraction.",
-        "audio_file_name": "stumptown_french_press_step1.m4a"
+        "audio_file_name": "stumptown_french_press_step1.m4a",
+        "instruction_es": "Inicia el cronómetro y vierte 512g de agua caliente uniformemente sobre el café.",
+        "short_instruction_es": "Vierte 512g uniformemente",
+        "audio_script_es": "Inicia el cronómetro y vierte 512 gramos de agua caliente uniformemente. Tienes 20 segundos. Asegura que todo el café esté mojado para una extracción consistente."
       },
       {
         "time_seconds": 50,
         "instruction": "Stir gently with wooden spoon to saturate all grounds",
         "short_instruction": "Stir gently with wooden spoon",
         "audio_script": "Stir gently with a wooden spoon. You have 30 seconds. This ensures all grounds are fully saturated and prevents dry pockets.",
-        "audio_file_name": "stumptown_french_press_step2.m4a"
+        "audio_file_name": "stumptown_french_press_step2.m4a",
+        "instruction_es": "Revuelve suavemente con cuchara de madera para saturar todo el café.",
+        "short_instruction_es": "Revuelve suave con cuchara de madera",
+        "audio_script_es": "Revuelve suavemente con una cuchara de madera. Tienes 30 segundos. Esto asegura que todo el café esté completamente saturado y previene bolsillos secos."
       },
       {
         "time_seconds": 80,
         "instruction": "Place lid on top, do not press plunger",
         "short_instruction": "Place lid • Do not press",
         "audio_script": "Place the lid on top, but do not press the plunger yet. This keeps the heat in for the long steep.",
-        "audio_file_name": "stumptown_french_press_step3.m4a"
+        "audio_file_name": "stumptown_french_press_step3.m4a",
+        "instruction_es": "Coloca la tapa encima, no presiones el émbolo.",
+        "short_instruction_es": "Pon tapa • No presiones",
+        "audio_script_es": "Coloca la tapa encima, pero no presiones el émbolo todavía. Esto mantiene el calor para el reposo largo."
       },
       {
         "time_seconds": 440,
         "instruction": "Wait 6 minutes for full extraction",
         "short_instruction": "Wait 6 minutes • Full extraction",
         "audio_script": "Now, wait for 6 minutes. This extended time allows the coarse grind to fully extract, resulting in a rich, deep flavor profile.",
-        "audio_file_name": "stumptown_french_press_step4.m4a"
+        "audio_file_name": "stumptown_french_press_step4.m4a",
+        "instruction_es": "Espera 6 minutos para extracción completa.",
+        "short_instruction_es": "Espera 6 minutos • Extracción completa",
+        "audio_script_es": "Ahora, espera 6 minutos. Este tiempo extendido permite que la molienda gruesa extraiga completamente, resultando en un perfil de sabor rico y profundo."
       },
       {
         "time_seconds": 480,
         "instruction": "Press plunger down slowly, pour immediately",
         "short_instruction": "Press slowly • Pour immediately",
         "audio_script": "Time to press. Push the plunger down slowly and evenly. Pour immediately into your cup to stop the brewing process.",
-        "audio_file_name": "stumptown_french_press_step5.m4a"
+        "audio_file_name": "stumptown_french_press_step5.m4a",
+        "instruction_es": "Presiona el émbolo lentamente, sirve inmediatamente.",
+        "short_instruction_es": "Presiona lento • Sirve inmediato",
+        "audio_script_es": "Es hora de presionar. Empuja el émbolo hacia abajo lenta y uniformemente. Vierte inmediatamente en tu taza para detener el proceso de preparación."
       }
     ],
     "recipe_profile": {
-      "recommended_roast_levels": ["Medium", "Dark"],
-      "recommended_processes": ["Washed", "Natural"],
-      "recommended_flavor_tags": ["Rich", "Deep", "Bold"]
+      "recommended_roast_levels": [
+        "Medium",
+        "Dark"
+      ],
+      "recommended_processes": [
+        "Washed",
+        "Natural"
+      ],
+      "recommended_flavor_tags": [
+        "Rich",
+        "Deep",
+        "Bold"
+      ]
     },
     "extraction_characteristics": {
       "clarity": 0.5,
@@ -81,9 +106,18 @@
     "what_to_expect": {
       "description": "Stumptown's French Press method uses a longer extraction time and coarse grind to create a rich, full-bodied cup with deep flavors. The wooden spoon prevents scratching and the extended steep time ensures complete extraction.",
       "audio_file_name": "stumptown_french_press_notes.wav",
-      "audio_script": "Stumptown's method uses a coarse grind and a longer 6-minute steep. This patience rewards you with a rich, full-bodied cup and deep flavors."
+      "audio_script": "Stumptown's method uses a coarse grind and a longer 6-minute steep. This patience rewards you with a rich, full-bodied cup and deep flavors.",
+      "description_es": "El método de dos vertidos de Stumptown permite control sobre la extracción. La primera fase extrae acidez, la segunda desarrolla cuerpo.",
+      "audio_script_es": "Stumptown usa dos vertidos para control de extracción. La primera fase extrae acidez y notas brillantes, la segunda desarrolla cuerpo y dulzura."
     },
     "notes": "Stumptown's French Press method uses a longer extraction time and coarse grind to create a rich, full-bodied cup with deep flavors. The wooden spoon prevents scratching and the extended steep time ensures complete extraction.",
-    "servings": 1
+    "servings": 1,
+    "title_es": "Prensa Francesa de Stumptown",
+    "notes_es": "Método Stumptown con dos fases de vertido para control de extracción.",
+    "preparation_steps_es": [
+      "Calienta el agua a 93°C.",
+      "Muele 28g de café a molienda gruesa.",
+      "Precalienta la prensa francesa."
+    ]
   }
 ]

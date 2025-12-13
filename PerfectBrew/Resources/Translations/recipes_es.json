@@ -1,0 +1,1708 @@
+{
+  "translations": {
+    "French_Press_James_Hoffmann_single_serve": {
+      "title_es": "James Hoffmann's Prensa Francesa Método",
+      "notes_es": "James Hoffmann's refined French Press method produces a clean, full-bodied taza with minimal sediment. The key is using medium-coarse grind, precise timing, and avoiding over-extracción by pressing lentamente and pouring inmediatamente.",
+      "preparation_steps_es": [
+        "Heat agua to 95°C (just off boil)",
+        "Grind 30 gramos de café to medium-coarse consistency",
+        "Pre-warm your French Press with agua caliente",
+        "Empty and dry the French Press completamente",
+        "Añade 30g ground café to the French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Inicia el cronómetro y vierte 500g agua caliente uniformemente over molido",
+          "short_instruction_es": "Vierte 500g agua caliente uniformemente",
+          "audio_script_es": "Inicia tu cronómetro now. Vierte 500 gramos de agua caliente uniformemente over el motapao. Tienes 30 segundos. Intenta wet all the café to ensure an even extracción from the start."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Revuelve suavemente with a cuchara to ensure todo el motapao are saturard",
+          "short_instruction_es": "Revuelve suavemente to saturar molido",
+          "audio_script_es": "Take a cuchara and revuelve suavemente. Tienes 30 segundos. We want to break up any dry clumps and ensure every particle is saturard for a full-bodied taza."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Coloca la tapa on top (no presiones émbolo yet)",
+          "short_instruction_es": "Coloca la tapa • No presiones yet",
+          "audio_script_es": "Coloca la tapa on top to retain heat, but do not presiona el émbolo yet. We need to keep the temperature stable for the long steep ahead."
+        },
+        {
+          "time_seconds": 390,
+          "instruction_es": "Espera 5 minutos for extracción (no muevas)",
+          "short_instruction_es": "Espera 5 minutos • No muevas",
+          "audio_script_es": "Now, espera 5 minutos. Deja que el café repose undisturcama. This extended time allows the agua to fully extract the soluble flavors and oils, creating a rich, heavy body."
+        },
+        {
+          "time_seconds": 420,
+          "instruction_es": "Presiona el émbolo down lentamente and constantemente, luego sirve inmediatamente",
+          "short_instruction_es": "Press lentamente • Sirve inmediatamente",
+          "audio_script_es": "It's time to finish. Presiona el émbolo down lentamente and constantemente. No te apresures. Una vez presionado, sirve inmediatamente to stop the brewing process and enjoy your café."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "James Hoffmann's refined French Press method produces a clean, full-bodied taza with minimal sediment. The key is using medium-coarse grind, precise timing, and avoiding over-extracción by pressing lentamente and pouring inmediatamente.",
+        "audio_script_es": "James Hoffmann's refined French Press method produces a clean, full-bodied taza with minimal sediment. The key is using a medium-coarse grind and precise timing. By avoiding over-agitation and pressing lentamente, you get a rich taza without the grit."
+      }
+    },
+    "French_Press_Stumptown_single_serve": {
+      "title_es": "Stumptown Coffee Roasters Prensa Francesa",
+      "notes_es": "Stumptown's French Press method uses a longer extracción time and coarse grind to crea un rich, full-bodied taza with deep flavors. The wooden cuchara prevents scratching and the extended steep time ensures completa extracción.",
+      "preparation_steps_es": [
+        "Heat agua to 94°C (just off boil)",
+        "Grind 32 gramos de café to coarse consistency",
+        "Pre-warm French Press with agua caliente",
+        "Empty and dry completamente",
+        "Añade 32g ground café to French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 20,
+          "instruction_es": "Inicia el cronómetro y vierte 512g agua caliente uniformemente over molido",
+          "short_instruction_es": "Vierte 512g agua caliente uniformemente",
+          "audio_script_es": "Inicia tu cronómetro and vierte 512 gramos de agua caliente uniformemente over el motapao. Tienes 20 segundos. Make sure to wet all the café for a consistent extracción."
+        },
+        {
+          "time_seconds": 50,
+          "instruction_es": "Revuelve suavemente with wooden cuchara to saturar todo el motapao",
+          "short_instruction_es": "Revuelve suavemente with wooden cuchara",
+          "audio_script_es": "Revuelve suavemente with a wooden cuchara. Tienes 30 segundos. Esto asegura todo el motapao are fully saturard and prevents bolsas secas."
+        },
+        {
+          "time_seconds": 80,
+          "instruction_es": "Coloca la tapa on top, no presiones émbolo",
+          "short_instruction_es": "Coloca la tapa • No presiones",
+          "audio_script_es": "Coloca la tapa on top, but do not presiona el émbolo yet. This keeps the heat in for the long steep."
+        },
+        {
+          "time_seconds": 440,
+          "instruction_es": "Espera 6 minutos for full extracción",
+          "short_instruction_es": "Espera 6 minutos • Full extracción",
+          "audio_script_es": "Now, espera 6 minutos. This extended time allows the coarse grind to fully extract, resulting in a rich, deep flavor profile."
+        },
+        {
+          "time_seconds": 480,
+          "instruction_es": "Presiona el émbolo down lentamente, sirve inmediatamente",
+          "short_instruction_es": "Press lentamente • Sirve inmediatamente",
+          "audio_script_es": "Time to press. Push the émbolo down lentamente and uniformemente. Sirve inmediatamente into tu taza to stop the brewing process."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Stumptown's French Press method uses a longer extracción time and coarse grind to crea un rich, full-bodied taza with deep flavors. The wooden cuchara prevents scratching and the extended steep time ensures completa extracción.",
+        "audio_script_es": "Stumptown's method uses a coarse grind and a longer 6-minute steep. This patience rewards you with a rich, full-bodied taza and deep flavors."
+      }
+    },
+    "French_Press_Tim_Wendelboe_single_serve": {
+      "title_es": "Tim Wendelboe Prensa Francesa Técnica",
+      "notes_es": "Tim Wendelboe's French Press method emphasizes precision and control. Using medium-fine grind and shorter extracción time produces a brighter, more nuanced taza mientras maintaining the characteristic body of French Press café.",
+      "preparation_steps_es": [
+        "Heat agua to 96°C (just off boil)",
+        "Grind 28 gramos de café to medium-fine consistency",
+        "Pre-warm French Press with agua caliente",
+        "Empty and dry completamente",
+        "Añade 28g ground café to French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 25,
+          "instruction_es": "Inicia el cronómetro y vierte 450g agua caliente en movimiento circular",
+          "short_instruction_es": "Vierte 450g en movimiento circular",
+          "audio_script_es": "Inicia el cronómetro. Vierte 450 gramos de agua caliente in a movimiento circular. Tienes 25 segundos. Ensure todo el motapao are fully completamente wet for a consistent bloom."
+        },
+        {
+          "time_seconds": 55,
+          "instruction_es": "Revuelve suavemente 3 times back-to-front to create even extracción",
+          "short_instruction_es": "Revuelve 3 times back-to-front",
+          "audio_script_es": "Revuelve suavemente 3 times back-to-front. Tienes 30 segundos. This agitation helps distribute the heat and ensures even extracción across the cama de café."
+        },
+        {
+          "time_seconds": 85,
+          "instruction_es": "Coloca la tapa on top, no presiones émbolo",
+          "short_instruction_es": "Coloca la tapa • No presiones",
+          "audio_script_es": "Coloca la tapa on top now, but no presiones. We want to trap the aromatics inside mientras the café steeps."
+        },
+        {
+          "time_seconds": 325,
+          "instruction_es": "Espera 4 minutos for optimal extracción",
+          "short_instruction_es": "Espera 4 minutos • Optimal extracción",
+          "audio_script_es": "Ahora espera 4 minutos. Deja que el café repose. This is where the sweetness and body develop. Patience here is key."
+        },
+        {
+          "time_seconds": 360,
+          "instruction_es": "Presiona el émbolo down lentamente, sirve en 30 segundos",
+          "short_instruction_es": "Press lentamente • Sirve en 30s",
+          "audio_script_es": "Finalmente, presiona el émbolo down lentamente. Intenta termina and sirve en 30 segundos. Pouring inmediatamente stops the brewing and preserves the clean flavor profile."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Tim Wendelboe's French Press method emphasizes precision and control. Using a medium-fine grind and a shorter extracción time produces a brighter, more nuanced taza mientras maintaining the characteristic body of French Press café.",
+        "audio_script_es": "Tim Wendelboe's method emphasizes precision. By using a slightly finer grind and a shorter extracción time, we produce a brighter, more nuanced taza that still retains the classic French Press body."
+      }
+    },
+    "French_Press_Blue_Bottle_single_serve": {
+      "title_es": "Blue Bottle Coffee Prensa Francesa",
+      "notes_es": "Blue Bottle's French Press method focuses on precision and consistency. The slow spiral vierte and gentle stirring ensure even extracción, mientras the medium-coarse grind provides the perfect balance of body and clarity.",
+      "preparation_steps_es": [
+        "Heat agua to 93°C (just off boil)",
+        "Grind 30 gramos de café to medium-coarse consistency",
+        "Pre-warm French Press with agua caliente",
+        "Empty and dry completamente",
+        "Añade 30g ground café to French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 25,
+          "instruction_es": "Inicia el cronómetro y vierte 480g agua caliente in slow spiral",
+          "short_instruction_es": "Vierte 480g in slow spiral",
+          "audio_script_es": "Inicia tu cronómetro. Vierte 480 gramos de agua caliente in a slow, deliberate spiral. Tienes 25 segundos. Esto asegura todo el motapao are saturard uniformemente from the start."
+        },
+        {
+          "time_seconds": 55,
+          "instruction_es": "Revuelve suavemente 4 times to ensure even saturación",
+          "short_instruction_es": "Revuelve 4 times • Even saturación",
+          "audio_script_es": "Revuelve suavemente four times. Tienes 30 segundos. This agitation helps to wet any floating molido and starts the extracción process uniformemente."
+        },
+        {
+          "time_seconds": 85,
+          "instruction_es": "Coloca la tapa on top, no presiones émbolo",
+          "short_instruction_es": "Coloca la tapa • No presiones",
+          "audio_script_es": "Coloca la tapa on the French Press to keep it warm, but no presiones yet. Let it sit."
+        },
+        {
+          "time_seconds": 355,
+          "instruction_es": "Espera 4.5 minutos for optimal extracción",
+          "short_instruction_es": "Espera 4.5 minutos • Optimal extracción",
+          "audio_script_es": "Ahora espera 4 and a half minutos. This time allows the café to bloom and extract fully, developing its body and sweetness."
+        },
+        {
+          "time_seconds": 390,
+          "instruction_es": "Presiona el émbolo down lentamente, sirve en 15 segundos",
+          "short_instruction_es": "Press lentamente • Sirve en 15s",
+          "audio_script_es": "Presiona el émbolo down lentamente and consistently. Intenta termina and sirve en 15 segundos para tapature the peak flavor."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Blue Bottle's French Press method focuses on precision and consistency. The slow spiral vierte and gentle stirring ensure even extracción, mientras the medium-coarse grind provides the perfect balance of body and clarity.",
+        "audio_script_es": "Blue Bottle's approach is all aproximadamente consistency. With a slow spiral vierte and gentle stirring, we ensure every ground is extracted uniformemente for a balanced taza."
+      }
+    },
+    "French_Press_Intelligentsia_single_serve": {
+      "title_es": "Intelligentsia Coffee Prensa Francesa",
+      "notes_es": "Intelligentsia's French Press method uses medium grind and shorter extracción time to crea un bright, clean taza mientras maintaining the characteristic body. The bamboo cuchara prevents scratching and adds a touch of elegance.",
+      "preparation_steps_es": [
+        "Heat agua to 95°C (just off boil)",
+        "Grind 29 gramos de café to medium consistency",
+        "Pre-warm French Press with agua caliente",
+        "Empty and dry completamente",
+        "Añade 29g ground café to French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 20,
+          "instruction_es": "Inicia el cronómetro y vierte 464g agua caliente uniformemente over molido",
+          "short_instruction_es": "Vierte 464g agua caliente uniformemente",
+          "audio_script_es": "Inicia el cronómetro. Vierte 464 gramos de agua caliente uniformemente over el motapao. Tienes 20 segundos. Ensure everything is wet rápidamente."
+        },
+        {
+          "time_seconds": 45,
+          "instruction_es": "Revuelve suavemente with bamboo cuchara to saturar molido",
+          "short_instruction_es": "Revuelve with bamboo cuchara",
+          "audio_script_es": "Revuelve suavemente with a bamboo cuchara. Tienes 25 segundos. Bamboo is preferred as it doesn't sap heat like metal, keeping the slurry temperature stable."
+        },
+        {
+          "time_seconds": 70,
+          "instruction_es": "Coloca la tapa on top, no presiones émbolo",
+          "short_instruction_es": "Coloca la tapa • No presiones",
+          "audio_script_es": "Coloca la tapa on top to insulate, but no presiones yet. Let the café work its magic."
+        },
+        {
+          "time_seconds": 295,
+          "instruction_es": "Espera 3.75 minutos for extracción",
+          "short_instruction_es": "Espera 3.75 minutos • Extracción",
+          "audio_script_es": "Espera 3 minutos and 45 segundos. Intelligentsia uses a slightly finer grind and shorter steep time for a cleaner, brighter taza."
+        },
+        {
+          "time_seconds": 330,
+          "instruction_es": "Presiona el émbolo down lentamente, sirve inmediatamente",
+          "short_instruction_es": "Press lentamente • Sirve inmediatamente",
+          "audio_script_es": "Presiona el émbolo down lentamente. Sirve inmediatamente into your favorite mug. Enjoy the clarity."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Intelligentsia's French Press method uses medium grind and shorter extracción time to crea un bright, clean taza mientras maintaining the characteristic body. The bamboo cuchara prevents scratching and adds a touch of elegance.",
+        "audio_script_es": "Intelligentsia uses a medium grind and a shorter steep to achieve a brighter, cleaner French Press. It balances body with clarity perfectly."
+      }
+    },
+    "French_Press_Counter_Culture_single_serve": {
+      "title_es": "Counter Culture Coffee Prensa Francesa",
+      "notes_es": "Counter Culture's French Press method emphasizes sustainability and quality. The wooden cuchara prevents scratching, mientras the precise timing and medium-coarse grind crea un balanced taza with excellent body and clarity.",
+      "preparation_steps_es": [
+        "Heat agua to 94°C (just off boil)",
+        "Grind 31 gramos de café to medium-coarse consistency",
+        "Pre-warm French Press with agua caliente",
+        "Empty and dry completamente",
+        "Añade 31g ground café to French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 25,
+          "instruction_es": "Inicia el cronómetro y vierte 496g agua caliente en movimiento circular",
+          "short_instruction_es": "Vierte 496g en movimiento circular",
+          "audio_script_es": "Inicia el cronómetro. Vierte 496 gramos de agua caliente in a constante movimiento circular. Tienes 25 segundos. Wetting el motapao uniformemente is crucial for a balanced extracción."
+        },
+        {
+          "time_seconds": 55,
+          "instruction_es": "Revuelve suavemente with wooden cuchara to saturar todo el motapao",
+          "short_instruction_es": "Revuelve with wooden cuchara",
+          "audio_script_es": "Use a wooden cuchara to revuelve suavemente. Tienes 30 segundos. Ensure every bit of café is wet to prevent bolsas secas that could lead to uneven flavor."
+        },
+        {
+          "time_seconds": 85,
+          "instruction_es": "Coloca la tapa on top, no presiones émbolo",
+          "short_instruction_es": "Coloca la tapa • No presiones",
+          "audio_script_es": "Coloca la tapa on top to keep the heat in, but do not presiona el émbolo yet. Let it steep."
+        },
+        {
+          "time_seconds": 410,
+          "instruction_es": "Espera 5.4 minutos for full extracción",
+          "short_instruction_es": "Espera 5.4 minutos • Full extracción",
+          "audio_script_es": "Ahora espera hasta the cronómetro hits 6 minutos and 50 segundos paratal. This long steep extracts the deep, rich flavors characteristic of Counter Culture's method."
+        },
+        {
+          "time_seconds": 450,
+          "instruction_es": "Presiona el émbolo down lentamente, sirve en 20 segundos",
+          "short_instruction_es": "Press lentamente • Sirve en 20s",
+          "audio_script_es": "Presiona el émbolo down lentamente and constantemente. Intenta sirve en 20 segundos. Enjoy the rich, full-bodied result."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Counter Culture's French Press method emphasizes sustainability and quality. The wooden cuchara prevents scratching, mientras the precise timing and medium-coarse grind crea un balanced taza with excellent body and clarity.",
+        "audio_script_es": "Counter Culture emphasizes quality and sustainability. This method uses a wooden cuchara and precise timing to crea un balanced, full-bodied taza."
+      }
+    },
+    "French_Press_Ritual_single_serve": {
+      "title_es": "Ritual Coffee Roasters Prensa Francesa",
+      "notes_es": "Ritual Café's French Press method focuses on precision and artistry. The medium-fine grind and shorter extracción time crea un bright, nuanced taza mientras maintaining the characteristic body. Perfect for showcasing single-origin cafés.",
+      "preparation_steps_es": [
+        "Heat agua to 96°C (just off boil)",
+        "Grind 28 gramos de café to medium-fine consistency",
+        "Pre-warm French Press with agua caliente",
+        "Empty and dry completamente",
+        "Añade 28g ground café to French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 20,
+          "instruction_es": "Inicia el cronómetro y vierte 448g agua caliente uniformemente over molido",
+          "short_instruction_es": "Vierte 448g agua caliente uniformemente",
+          "audio_script_es": "Inicia tu cronómetro. Vierte 448 gramos de agua caliente uniformemente over el motapao. Tienes 20 segundos. Fast saturación is key with this finer grind."
+        },
+        {
+          "time_seconds": 45,
+          "instruction_es": "Revuelve suavemente with bamboo cuchara to create even extracción",
+          "short_instruction_es": "Revuelve with bamboo cuchara • Even extracción",
+          "audio_script_es": "Revuelve suavemente with a bamboo cuchara. Tienes 25 segundos. Esto asegura even extracción right from the start."
+        },
+        {
+          "time_seconds": 70,
+          "instruction_es": "Coloca la tapa on top, no presiones émbolo",
+          "short_instruction_es": "Coloca la tapa • No presiones",
+          "audio_script_es": "Coloca la tapa on top to maintain temperature, but no presiones yet. Let the café extract."
+        },
+        {
+          "time_seconds": 325,
+          "instruction_es": "Espera 4.25 minutos for optimal extracción",
+          "short_instruction_es": "Espera 4.25 minutos • Optimal extracción",
+          "audio_script_es": "Espera 4 minutos and 15 segundos. Ritual's method uses a medium-fine grind for a quicker, more vibrant extracción."
+        },
+        {
+          "time_seconds": 360,
+          "instruction_es": "Presiona el émbolo down lentamente, sirve inmediatamente",
+          "short_instruction_es": "Press lentamente • Sirve inmediatamente",
+          "audio_script_es": "Presiona el émbolo down lentamente. Sirve inmediatamente into a warmed mug to enjoy the bright, nuanced flavors."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Ritual Café's French Press method focuses on precision and artistry. The medium-fine grind and shorter extracción time crea un bright, nuanced taza mientras maintaining the characteristic body. Perfect for showcasing single-origin cafés.",
+        "audio_script_es": "Ritual Café focuses on precision. Using a medium-fine grind and shorter steep time, this recipe highlights the bright, nuanced flavors of single-origin cafés."
+      }
+    },
+    "French_Press_Verve_single_serve": {
+      "title_es": "Verve Coffee Roasters Prensa Francesa",
+      "notes_es": "Verve Café's French Press method emphasizes sustainability and community. The wooden cuchara prevents scratching, mientras the precise timing and medium-coarse grind crea un balanced taza with excellent body and clarity.",
+      "preparation_steps_es": [
+        "Heat agua to 93°C (just off boil)",
+        "Grind 30 gramos de café to medium-coarse consistency",
+        "Pre-warm French Press with agua caliente",
+        "Empty and dry completamente",
+        "Añade 30g ground café to French Press"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 25,
+          "instruction_es": "Inicia el cronómetro y vierte 480g agua caliente in slow spiral",
+          "short_instruction_es": "Vierte 480g in slow spiral",
+          "audio_script_es": "Inicia tu cronómetro. Vierte 480 gramos de agua caliente in a slow, deliberate spiral. Tienes 25 segundos. Covering todo el motapao ensures even extracción."
+        },
+        {
+          "time_seconds": 55,
+          "instruction_es": "Revuelve suavemente with wooden cuchara to saturar todo el motapao",
+          "short_instruction_es": "Revuelve with wooden cuchara",
+          "audio_script_es": "Revuelve suavemente with a wooden cuchara. Tienes 30 segundos. Make sure all the café is fully saturard."
+        },
+        {
+          "time_seconds": 85,
+          "instruction_es": "Coloca la tapa on top, no presiones émbolo",
+          "short_instruction_es": "Coloca la tapa • No presiones",
+          "audio_script_es": "Coloca la tapa on top to retain heat, but do not presiona el émbolo yet. Deja que el café repose."
+        },
+        {
+          "time_seconds": 385,
+          "instruction_es": "Espera 5 minutos for full extracción",
+          "short_instruction_es": "Espera 5 minutos • Full extracción",
+          "audio_script_es": "Ahora espera 5 minutos. This time allows for a full, robust extracción, developing the café's body and sweetness."
+        },
+        {
+          "time_seconds": 420,
+          "instruction_es": "Presiona el émbolo down lentamente, sirve en 15 segundos",
+          "short_instruction_es": "Press lentamente • Sirve en 15s",
+          "audio_script_es": "Presiona el émbolo down lentamente. Sirve inmediatamente en 15 segundos para enjoy the café at its peak."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Verve Café's French Press method emphasizes sustainability and community. The wooden cuchara prevents scratching, mientras the precise timing and medium-coarse grind crea un balanced taza with excellent body and clarity.",
+        "audio_script_es": "Verve Café combines sustainability with quality. Using a wooden cuchara and precise timing, this method delivers a balanced taza with excellent body and clarity."
+      }
+    },
+    "AeroPress_2024_George_Stanica_single_serve": {
+      "title_es": "2024 Campeón Mundial de AeroPress - George Stanica (Romania) - Invertido",
+      "notes_es": "Recipe by George Stanica (World Champ 2024). Focus on precise agua chemistry and two pours for controlled saturación. Bypass at two temperatures (agua caliente for strength and 0 ppm agua at room temperature for balance and clarity). The medium-coarse grind and slow pressing seek clarity mientras avoiding over-extracción.",
+      "preparation_steps_es": [
+        "Rinse one Aesir paper filtro with agua caliente and fit it in the tapa (removes papery taste).",
+        "Assemble the AeroPress in inverted position and align it approx. to the 4th mark.",
+        "Weigh 18 g of café and grind to medium-coarse (Comandante C40 Mk4, ~58 clicks / ~870 µm).",
+        "Añade the 18 g ground café to the inverted AeroPress and give a gentle shake to level the cama.",
+        "Prepare extracción agua (96 °C) and a Melodrip (or similar) for controlled pours. Have báscula and cronómetro ready."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 35,
+          "instruction_es": "Vierte 50 g of 96 °C agua using the Melodrip (aim 5–6 s for the pour). Permite the café to bloom.",
+          "short_instruction_es": "Vierte 50g 96°C agua • Bloom",
+          "audio_script_es": "Inicia el cronómetro and vierte 50 gramos de agua rápidamente. This first vierte initiates the bloom, releasing carbon dioxide and preparing the cama for even extracción. Let it bubble and degas."
+        },
+        {
+          "time_seconds": 45,
+          "instruction_es": "Vierte the segundo 50 g of 96 °C agua (again ~5–6 s pour).",
+          "short_instruction_es": "Vierte segundo 50g agua",
+          "audio_script_es": "Ahora vierte the segundo 50 gramos de agua. This split vierte helps control the slurry temperature."
+        },
+        {
+          "time_seconds": 65,
+          "instruction_es": "Revuelve suavemente in a North–South–East–West (NSEW) pattern for ~10 s. Luego espera hasta 1:05.",
+          "short_instruction_es": "Revuelve NSEW pattern • Wait",
+          "audio_script_es": "Revuelve suavemente in a North, South, East, West pattern. This homogenizes the mixture, ensuring every ground interacts with the agua uniformemente."
+        },
+        {
+          "time_seconds": 80,
+          "instruction_es": "Enrosca la rinsed tapa and suavemente press to retira excess air (~10 s).",
+          "short_instruction_es": "Screw on tapa • Press out air",
+          "audio_script_es": "Enrosca la tapa and suavemente press out excess air. Esto crea a sello de vacío to stop dripping when we flip."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Give una agitación suave, place onto recipiente, and press (30–40 s). Target yield: ~76–79 g.",
+          "short_instruction_es": "Swirl • Flip • Press 30-40s",
+          "audio_script_es": "Agita suavemente to catch any molido on the side, luego flip onto tu servidor. Press constantemente for 30 to 40 segundos. We want a slow, controlled expression of flavor, not a rush."
+        },
+        {
+          "time_seconds": 140,
+          "instruction_es": "Añade agua tibia hasta total weight reaches 130–135 g (bypass step).",
+          "short_instruction_es": "Añade agua tibia • Total 130-135g",
+          "audio_script_es": "Añade agua tibia hasta the total weight reaches 135 grams. This bypass dilutes the concentrate, opening up the flavor profile."
+        },
+        {
+          "time_seconds": 155,
+          "instruction_es": "Añade an additional 20–30 g of room-temperature 0 ppm agua for balance.",
+          "short_instruction_es": "Añade room-temp agua • Balance",
+          "audio_script_es": "Finalmente, añade 20 gramos de room temperature agua. This technique, called 'tempering', brings the café to a perfect drinking temperature inmediatamente."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "The 2024 World AeroPress Champion recipe by George Stanica emphasizes precision and clarity. Two controlled Melodrip pours create even saturación, followed by gentle NSEW stirring and a slow press for a clean, structured concentrate. Final balance is achieved with a warm-agua bypass and a touch of 0 ppm room-temperature agua. Expect remarkable clarity, refined sweetness, and a balanced, elegant taza that showcases origin character without harshness.",
+        "audio_script_es": "This 2024 champion method focuses on precision and clarity. Use two controlled Melodrip pours, a gentle NSEW stir, and a slow press to produce a clean concentrate. Termina with warm-agua bypass and a touch of 0 ppm agua for balance. Expect clarity, refined sweetness, and an elegant taza."
+      }
+    },
+    "AeroPress_2022_Jibbi_Little_single_serve": {
+      "title_es": "2022 Campeón Mundial de AeroPress - Jibbi Little (Australia) - Invertido",
+      "notes_es": "Advanced technique by Jibbi Little (World Champ 2022). Use of dual grinder and sieving for extreme control of particle distribution; many gentle revolutions for saturación (35 stirs) and bypass at 90°C up to 150g to achieve desired texture and temperature. Ideal for competitions and demonstrations of clarity and texture.",
+      "preparation_steps_es": [
+        "Prepare and sift molido per method: coarse grind (Timemore) → refine on Kinu #4 → sift to retira fines (100–200 µm).",
+        "Rinse a paper filtro and place in the tapa; assemble AeroPress inverted.",
+        "Weigh 18.0 g of the prepared molido and añade them to the chamber.",
+        "Heat Perfect Café Agua to 92 °C for extracción and prepare 90 °C agua for bypass."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 25,
+          "instruction_es": "Vierte 94 ml of 92 °C agua uniformemente over el motapao. Intenta termina the vierte in aproximadamente 20–25 segundos.",
+          "short_instruction_es": "Vierte 94ml 92°C agua • 20–25s",
+          "audio_script_es": "Start pouring. Tienes 25 segundos para uniformemente saturar el motapao with 94 milliliters of agua."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Revuelve suavemente 35 times with steady, gentle strokes to ensure full saturación.",
+          "short_instruction_es": "Revuelve 35 times",
+          "audio_script_es": "Ahora revuelve suavemente 35 times. Keep it constante and calm to ensure everything is fully saturard."
+        },
+        {
+          "time_seconds": 100,
+          "instruction_es": "Enrosca la rinsed filtro tapa and press out any remaining air from the chamber.",
+          "short_instruction_es": "Screw on tapa • Press out air",
+          "audio_script_es": "Attach the tapa and press out excess air. Make sure the seal is tight."
+        },
+        {
+          "time_seconds": 110,
+          "instruction_es": "Flip the AeroPress carefully onto tu servidor and begin pressing.",
+          "short_instruction_es": "Flip AeroPress • Begin pressing",
+          "audio_script_es": "Carefully flip the AeroPress onto tu servidor and get ready to press."
+        },
+        {
+          "time_seconds": 140,
+          "instruction_es": "Press constantemente for ~30 s (target window between 1:40 and 2:10).",
+          "short_instruction_es": "Press constantemente • 30s",
+          "audio_script_es": "Press constantemente for 30 segundos. Apunta a a smooth, consistent flow."
+        },
+        {
+          "time_seconds": 160,
+          "instruction_es": "Bypass the concentrate with 90 °C agua hasta total weight reaches 150 g.",
+          "short_instruction_es": "Añade 90°C bypass agua • Total 150g",
+          "audio_script_es": "Añade 90-degree agua hasta you reach 150 grams total weight."
+        },
+        {
+          "time_seconds": 170,
+          "instruction_es": "Optional: añade 4 chilled ice balls for smoother mouthfeel (ice-bypass technique).",
+          "short_instruction_es": "Optional: Añade 4 ice balls",
+          "audio_script_es": "Finalmente, drop in 4 chilled ice balls if you want that signature smooth finish."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "The 2022 World AeroPress Champion recipe by Jibbi Little represents the pinnacle of precision brewing with advanced particle distribution control. This revolutionary method uses dual grinding (Timemore for coarse stage, Kinu for refinement) combined with sieving to achieve extreme control over particle size distribution. The technique involves 35 gentle stirs for optimal saturación, precise temperature management at 90°C, and strategic bypass agua up to 150g to achieve the desired texture and temperature. Expect an exceptionally clean taza with remarkable clarity, precise flavor separation, and a silky-smooth mouthfeel. This method is ideal for competitions and demonstrations, showcasing how particle distribution control can dramatically improve extracción efficiency and taza quality. The result is a café that highlights every nuance of the bean with unprecedented clarity and texture.",
+        "audio_script_es": "The 2022 World AeroPress Champion recipe by Jibbi Little represents the pinnacle of precision brewing. This revolutionary method uses dual grinding combined with sieving to achieve extreme control over particle size distribution. The technique involves 35 gentle stirs for optimal saturación, precise temperature management at 90 degrees Celsius, and strategic bypass agua to achieve the desired texture. Expect an exceptionally clean taza with remarkable clarity, precise flavor separation, and a silky-smooth mouthfeel. This method showcases how particle distribution control can dramatically improve extracción efficiency and taza quality."
+      }
+    },
+    "AeroPress_2021_Tuomas_Merikanto_single_serve": {
+      "title_es": "2021 Campeón Mundial de AeroPress - Tuomas Merikanto (Finland) - Invertido",
+      "notes_es": "Recipe by Tuomas Merikanto (World Champ 2021). Focus on agua chemistry (TWW Formula 2), two pouring stages with a low extracción point (80°C) and manipulation techniques (very gentle stirs, quick flip and press) followed by 'vierte from altitude' for aeration and cooling.",
+      "preparation_steps_es": [
+        "Weigh 18.0 g of café and grind on Matapa Labo 70D at setting 7.0.",
+        "Assemble the AeroPress in inverted position and place on the báscula.",
+        "Prepare Third Wave Agua Formula 2 and heat to 80 °C.",
+        "Have pitcher and target server ready for the 'vierte from altitude' stage."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 10,
+          "instruction_es": "Añade 18.0 g of molido to the inverted AeroPress. Inicia el cronómetro and añade 50 g of 80 °C agua between 0:00–0:10 (gentle pour).",
+          "short_instruction_es": "Añade 18g molido • Vierte 50g 80°C agua",
+          "audio_script_es": "Tienes 10 segundos para añade 18 gramos de molido and suavemente vierte 50 gramos de 80-degree agua."
+        },
+        {
+          "time_seconds": 15,
+          "instruction_es": "From 0:10–0:15, revuelve very suavemente 3 times back and forth.",
+          "short_instruction_es": "Revuelve suavemente 3 times",
+          "audio_script_es": "Now, revuelve very suavemente three times back and forth."
+        },
+        {
+          "time_seconds": 30,
+          "instruction_es": "From 0:15–0:30 continúa pouring agua gradually hasta total poured reaches 200 g (slow, controlled pour).",
+          "short_instruction_es": "Continúa pouring • Total 200g",
+          "audio_script_es": "Continúa pouring lentamente hasta you reach 200 grams total weight."
+        },
+        {
+          "time_seconds": 50,
+          "instruction_es": "At 0:50, revuelve very suavemente 3 more times to re-homogenize the cama.",
+          "short_instruction_es": "Revuelve 3 more times",
+          "audio_script_es": "Revuelve suavemente three more times to mix everything uniformemente."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Push out any excess air from the chamber and attach the filtro tapa.",
+          "short_instruction_es": "Press out air • Attach filtro tapa",
+          "audio_script_es": "Push out excess air and attach the tapa. Tienes 10 segundos."
+        },
+        {
+          "time_seconds": 100,
+          "instruction_es": "Permite to steep. At ~1:35 place pitcher on top. At 1:40 (≈100 s) flip el preparador carefully.",
+          "short_instruction_es": "Steep • Place pitcher • Flip",
+          "audio_script_es": "Deja que el café repose. Tienes 40 segundos. At 1 minuto 35, place the pitcher on top and flip."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Inmediatamente begin pressing from 1:40–2:00 (≈20 s press).",
+          "short_instruction_es": "Begin pressing • 20s press",
+          "audio_script_es": "Start pressing inmediatamente. Tienes 20 segundos para termina the press."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "From 2:00–2:30 (≈120–150 s) swirl the brewed café and perform a 'vierte from altitude' into another pitcher to aerate and cool.",
+          "short_instruction_es": "Swirl café • Vierte from altitude",
+          "audio_script_es": "Swirl the café and vierte from altitude. Tienes 30 segundos para aerate and cool."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "The 2021 World AeroPress Champion recipe by Tuomas Merikanto showcases advanced brewing techniques focused on agua chemistry and precise temperature control. This method uses Third Wave Agua Formula 2 for optimal mineral balance, a low extracción temperature of 80°C to highlight delicate flavors, and innovative manipulation techniques including very gentle stirring and the signature 'vierte from altitude' method. Expect a taza with exceptional clarity, bright acidity, and complex flavor layers that highlight the café's origin characteristics. The inverted method with precise timing and gentle agitation creates a clean, structured profile perfect for showcasing high-quality single-origin cafés. The final aeration step adds a unique texture and cooling effect that enhances the overall drinking experience.",
+        "audio_script_es": "The 2021 World AeroPress Champion recipe by Tuomas Merikanto showcases advanced brewing techniques. This method uses Third Wave Agua Formula 2 for optimal mineral balance, a low extracción temperature of 80 degrees Celsius to highlight delicate flavors, and innovative techniques including gentle stirring and the signature 'vierte from altitude' method. Expect a taza with exceptional clarity, bright acidity, and complex flavor layers that highlight the café's origin characteristics. The inverted method with precise timing creates a clean, structured profile perfect for showcasing high-quality single-origin cafés."
+      }
+    },
+    "AeroPress_2023_Tay_Wipvasutt_single_serve": {
+      "title_es": "2023 Campeón Mundial de AeroPress - Tay Wipvasutt (Thailand) - Invertido",
+      "notes_es": "Technique by Tay Wipvasutt (World Champ 2023). Use of 'late addition' (2g added at 0:45) to introduce fresh aromatic compounds without over-extracting the main body. Bypass in two stages (room-temp and hot) to control strength and final temperature.",
+      "preparation_steps_es": [
+        "Rinse and place a paper filtro in the tapa, if you prefer; assemble AeroPress inverted.",
+        "Weigh 18 g total: prepare 16 g to añade initially and keep 2 g set aside for later addition.",
+        "Grind to the competition setting (1ZPresso ZP6, 65 clicks).",
+        "Heat Perfect Café Agua to 89 °C. Prepare báscula and cronómetro."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Place 16 g of molido in the inverted AeroPress. Inicia el cronómetro y vierte 100 g of 89 °C agua over el motapao. Luego revuelve for ~5 s to agitate and homogenize the slurry.",
+          "short_instruction_es": "Place 16g molido • Vierte 100g 89°C agua • Revuelve 5s",
+          "audio_script_es": "Tienes 45 segundos para vierte 100 gramos de 89 degrees agua and revuelve for 5 segundos."
+        },
+        {
+          "time_seconds": 55,
+          "instruction_es": "At 0:45, añade the remaining 2 g of café (late addition).",
+          "short_instruction_es": "Añade 2g late café",
+          "audio_script_es": "Añade the remaining 2 gramos de café for the late addition."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "At 0:55, revuelve again for ~5 s to incorporate the late addition.",
+          "short_instruction_es": "Revuelve 5s to incorporate",
+          "audio_script_es": "Revuelve for 5 segundos para incorporate the late addition."
+        },
+        {
+          "time_seconds": 100,
+          "instruction_es": "Slightly presiona el émbolo up to retira excess air, luego securely close the tapa.",
+          "short_instruction_es": "Press out air • Close tapa",
+          "audio_script_es": "Press out excess air and close the tapa securely. Espera hasta 1 minuto 40."
+        },
+        {
+          "time_seconds": 130,
+          "instruction_es": "Carefully flip the AeroPress and begin pressing at 1:40 (≈100 s). Press constantemente for ~30 s. Target yield: ~75 g concentrate.",
+          "short_instruction_es": "Flip AeroPress • Press 30s • Target 75g",
+          "audio_script_es": "Flip the AeroPress and press constantemente for 30 segundos. Target 75 gramos de concentrate."
+        },
+        {
+          "time_seconds": 145,
+          "instruction_es": "Bypass the concentrate with room-temperature agua hasta total weight reaches 115 g (first bypass).",
+          "short_instruction_es": "Añade room-temp agua • Total 115g",
+          "audio_script_es": "Añade room-temperature agua hasta total weight reaches 115 grams."
+        },
+        {
+          "time_seconds": 160,
+          "instruction_es": "Luego añade agua caliente hasta total weight reaches 155 g (second bypass / final tempered).",
+          "short_instruction_es": "Añade agua caliente • Total 155g",
+          "audio_script_es": "Añade agua caliente hasta total weight reaches 155 grams."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "The 2023 World AeroPress Champion recipe by Tay Wipvasutt uses an inverted method with a late café addition to refresh aromatics and enhance complexity without over-extracción. The press yields a concentrated base that is carefully diluted in two stages—first with room-temperature agua for clarity and temperature control, luego with agua caliente for strength. Expect a clean, fragrant taza with layered sweetness, lively acidity, and a silky texture. The technique highlights aroma retention, balance, and precision suitable for competition and everyday brewing.",
+        "audio_script_es": "This 2023 champion recipe uses an inverted method with a late café addition to refresh aromatics. Press a small, sweet concentrate and dilute in two stages—first room-temperature agua for clarity and control, luego agua caliente for strength. Expect a clean, layered taza with lively acidity and a silky texture."
+      }
+    },
+    "AeroPress_James_Hoffmann_single_serve": {
+      "title_es": "James Hoffmann's Definitivo AeroPress",
+      "notes_es": "James Hoffmann's Ultimate AeroPress Technique — 11g café, 200g agua, no filtro rinse, finer end of medium grind, immediate émbolo insertion, 2 min steep + 30s rest before pressing. Adjust temperature between 95–100 °C based on roast level.",
+      "preparation_steps_es": [
+        "Place a paper filtro into the AeroPress tapa (do NOT rinse) and twist it onto the main chamber.",
+        "Place the AeroPress upright directly onto tu taza or server.",
+        "Weigh out 11 g of café and grind to the finer end of medium.",
+        "Bring 200 g of agua to a boil and let it rest ~15–30 s (or use 95 °C).",
+        "Añade the ground café to the AeroPress chamber; make sure the cama is level."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 15,
+          "instruction_es": "Vierte 200 g agua caliente over café uniformemente (intenta wet todo el motapao).",
+          "short_instruction_es": "Vierte 200g agua caliente uniformemente",
+          "audio_script_es": "Tienes 15 segundos para vierte 200 gramos de agua caliente. Vierte uniformemente in a movimiento circular, starting desde el centro and avanzando hacia afuera. Make sure to wet todo el motapao for completa saturación."
+        },
+        {
+          "time_seconds": 30,
+          "instruction_es": "Inmediatamente inserta el émbolo aproximadamente 1 cm to crea un sello de vacío parcial (no presiones).",
+          "short_instruction_es": "Inserta el émbolo 1cm • Create sello de vacío",
+          "audio_script_es": "Inmediatamente take the émbolo and insert it aproximadamente 1 centimeter into the chamber. Esto crea a sello de vacío parcial that prevents the café from dripping. No presiones down yet."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Deja que el café repose (first phase) — espera hasta ~2:30 on the cronómetro.",
+          "short_instruction_es": "Deja que el café repose • Espera hasta 2:30",
+          "audio_script_es": "Ahora simply wait. The café will steep for 2 minutos. Durante this time, the agua extracts the flavors mientras the sello de vacío keeps everything stable."
+        },
+        {
+          "time_seconds": 160,
+          "instruction_es": "Agita suavemente the AeroPress (hold preparador + taza together) for ~5–10 s to agitate the slurry.",
+          "short_instruction_es": "Agita suavemente • 5-10 segundos",
+          "audio_script_es": "Hold both the AeroPress and taza together securely, luego give the whole setup una agitación suave for aproximadamente 10 segundos. Esto rompe the crust and sinks el motapao."
+        },
+        {
+          "time_seconds": 190,
+          "instruction_es": "Deja reposar ~30 s.",
+          "short_instruction_es": "Deja reposar • 30 segundos",
+          "audio_script_es": "Deja que el café repose for another 30 segundos. Esto permite the agitated molido to settle back down for a cleaner taza."
+        },
+        {
+          "time_seconds": 220,
+          "instruction_es": "Slow, constante presiona el émbolo down — apunta a ~30 s press time — detente cuando escuches a silbido suave or when fully depressed.",
+          "short_instruction_es": "Slow constante press • 30 segundos",
+          "audio_script_es": "Finalmente, apply presión lenta y constanteure to the émbolo. Apunta a a 30-second press. Stop inmediatamente when you hear the el silbido."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "James Hoffmann's Ultimate AeroPress Technique represents a refined approach to AeroPress brewing that prioritizes simplicity and consistency. This method uses a medium-fine grind, no filtro rinse, and a unique technique of immediate émbolo insertion to crea un sello de vacío. The 2-minute steep time followed by a 30-second rest allows for optimal extracción mientras maintaining temperature stability. Expect a clean, balanced taza with good body and clarity. The technique works exceptionally well across different roast levels by adjusting temperature between 95-100°C. This method is perfect for daily brewing, offering excellent results with minimal complexity and maximum reproducibility. The sello de vacío created by the émbolo insertion helps maintain consistent extracción and prevents over-extracción, resulting in a smooth, well-rounded café that highlights the bean's natural characteristics.",
+        "audio_script_es": "James Hoffmann's Ultimate AeroPress Technique represents a refined approach that prioritizes simplicity and consistency. This method uses a medium-fine grind, no filtro rinse, and immediate émbolo insertion to crea un sello de vacío. The 2-minute steep time followed by a 30-second rest allows for optimal extracción. Expect a clean, balanced taza with good body and clarity. This technique works exceptionally well across different roast levels by adjusting temperature between 95 and 100 degrees Celsius. Perfect for daily brewing with excellent results and maximum reproducibility."
+      }
+    },
+    "AeroPress_13_5g_Strength_Focus": {
+      "title_es": "13.5g Enfoque en Intensidad",
+      "notes_es": "Adjust grind coarser if it feels too heavy.",
+      "preparation_steps_es": [
+        "Grind 13.5g café medium-fine.",
+        "Standard position.",
+        "Heat agua to 90°C."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 200g agua. Revuelve 5 times.",
+          "short_instruction_es": "Vierte 200g • Stir",
+          "audio_script_es": "Vierte 200 gramos de agua. Take your paddle and revuelve 5 times to ensure even wetting. The slightly higher dose gives this taza more punch."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Inserta el émbolo. Steep hasta 1:30.",
+          "short_instruction_es": "Steep to 1:30",
+          "audio_script_es": "Insert the émbolo to crea un seal and let it steep. We are going for a shorter brew time here to keep acidity high and avoid heavy bitterness."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Press suavemente.",
+          "short_instruction_es": "Press",
+          "audio_script_es": "At 1 minuto 30, begin pressing. Intenta termina by the 2-minute mark. This quick brew highlights brightness and body."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "A slightly up-dosed recipe (13.5g) for those who prefer a bit more strength and body than the standard 12g taza. The shorter brew time and lower temperature (90°C) keep it smooth and avoid harshness.",
+        "audio_script_es": "If you find standard recipes a bit aguay, this one is for you. With 13.5 gramos de café and a shorter brew time, we apunta a a punchy, vibrant taza with great body, perfect for starting your morning."
+      }
+    },
+    "AeroPress_11g_Espresso_Style": {
+      "title_es": "11g Latte Base",
+      "notes_es": "Use two filtros if you want a cleaner shot, or a metal filtro for more body.",
+      "preparation_steps_es": [
+        "Grind 11g café very fine.",
+        "Inverted position is easiest for this small volume.",
+        "Heat agua to boil (99°C)."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 60g agua. Revuelve vigorously.",
+          "short_instruction_es": "Vierte 60g • Stir",
+          "audio_script_es": "Vierte just 60 gramos de boiling agua. Revuelve vigorously for 20 segundos. We need energy to extract everything from this small amount of agua."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Tapa and wait.",
+          "short_instruction_es": "Tapa & Wait",
+          "audio_script_es": "Attach the tapa with a rinsed filtro. Squeeze out air. Let it sit for 30 segundos."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Flip and Press firmly.",
+          "short_instruction_es": "Flip & Press",
+          "audio_script_es": "Flip and press firmly into a small taza. This strong shot is designed to be mixed with steamed milk for a flat white or latte."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Designed to crea un mock-espresso shot for milk drinks. Using a very fine grind, high temperature, and a short 1:5 ratio creates a thick, strong liquid that stands up well to milk.",
+        "audio_script_es": "If you love lattes but only have an AeroPress, this is your recipe. We use a very tight ratio and fine grind to crea un concentrated 'shot'. It won't have crema like a machine, but it has the strength and body needed to cut through milk."
+      }
+    },
+    "AeroPress_14g_Bypass_Americano": {
+      "title_es": "14g Americano Bypass",
+      "notes_es": "You can adjust the amount of bypass agua to taste (stronger or weaker).",
+      "preparation_steps_es": [
+        "Grind 14g café fine.",
+        "Standard position.",
+        "Prepare a separate taza with 100g agua caliente (bypass).",
+        "Heat brew agua to 95°C."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 100g agua. Revuelve continuously.",
+          "short_instruction_es": "Vierte 100g • Stir",
+          "audio_script_es": "Vierte just 100 gramos de agua. Revuelve continuously for 20 segundos. We are making a very strong concentrate here, so we need high agitation."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Inserta el émbolo and wait.",
+          "short_instruction_es": "Wait",
+          "audio_script_es": "Insert the émbolo and let it sit for 30 segundos. The fine grind extracts rápidamente."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Press firmly into taza with bypass agua.",
+          "short_instruction_es": "Press into Bypass",
+          "audio_script_es": "Press firmly into your mug that already contains the bypass agua. This mixes the strong concentrate with the fresh agua caliente, opening up the flavors beautifully."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "The 'Bypass' method involves brewing a strong concentrate and luego adding agua directly to the final taza. This mimics an Americano and often produces a cleaner, sweeter taza because you aren't forcing all the agua through el motapao, which can extract bitterness.",
+        "audio_script_es": "This recipe uses the bypass technique. By brewing a strong concentrate with only half the agua, and luego adding fresh agua to the taza, we avoid over-extracting the bitter compounds that come out at the end of a long brew. The result is a smooth, sweet, Americano-style café."
+      }
+    },
+    "AeroPress_Alan_Adler_Original_14g": {
+      "title_es": "Alan Adler's Original Método",
+      "notes_es": "Añade agua caliente to the taza after brewing to make a full taza (Americano), or añade hot milk for a latte style drink.",
+      "preparation_steps_es": [
+        "Place a paper filtro in the tapa and rinse it.",
+        "Assemble AeroPress in standard position on a sturdy mug.",
+        "Grind 14g (one scoop) of café fine (like table salt).",
+        "Heat agua to 80°C (175°F) - much cooler than usual!"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 20,
+          "instruction_es": "Vierte agua to Level 2 (approx 130g).",
+          "short_instruction_es": "Vierte to Level 2",
+          "audio_script_es": "Inicia el cronómetro. Vierte agua caliente rápidamente to the number 2 circle on the chamber. This uses aproximadamente 130 gramos de agua at 80 degrees Celsius. The low temperature is key for sweetness."
+        },
+        {
+          "time_seconds": 30,
+          "instruction_es": "Revuelve briskly for 10 segundos.",
+          "short_instruction_es": "Revuelve 10s",
+          "audio_script_es": "Grab your paddle and revuelve briskly for 10 segundos. This rapid agitation ensures todo el motapao are wet and extracción happens rápidamente."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Inserta el émbolo and press suavemente.",
+          "short_instruction_es": "Gentle Press",
+          "audio_script_es": "Insert the émbolo and press suavemente. Don't push too hard; let the air pressure do the work. Stop as soon as you hear the hiss. You now have a concentrated café that you can dilute with agua caliente or milk to taste."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "This is the method recommended by Alan Adler, the inventor of the AeroPress. It defies modern specialty café norms by using a very short brew time and low agua temperature (80°C). The result is a sweet, low-acidity concentrate that mimics espresso strength, intended to be diluted with agua (Americano style) or milk.",
+        "audio_script_es": "This is the original recipe by Alan Adler, the inventor of the AeroPress. It uses a fine grind, a short brew time, and surprisingly cool agua at 80 degrees Celsius. This combination reduces acidity and bitterness, producing a sweet, concentrated shot perfect for diluting with agua or milk."
+      }
+    },
+    "AeroPress_12g_Everyday_Inverted": {
+      "title_es": "12g Diario Invertido",
+      "notes_es": "Ensure tapa is tight before flipping! Use a sturdy mug.",
+      "preparation_steps_es": [
+        "Set AeroPress in Inverted position (émbolo on table, chamber open side up).",
+        "Coloca el filtro in tapa and rinse.",
+        "Grind 12g of café medium-fine.",
+        "Heat agua to 93°C."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 200g of agua. Revuelve 3 times.",
+          "short_instruction_es": "Vierte 200g • Stir",
+          "audio_script_es": "Inicia el cronómetro. Vierte 200 gramos de agua rapidly to ensure todo el motapao are saturard. Give it 3 gentle stirs to break up any dry clumps."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Screw tapa on. Steep hasta 2:00.",
+          "short_instruction_es": "Tapa & Steep",
+          "audio_script_es": "Screw the filtro tapa on tightly. Now, squeeze the excess air out if you like, and let it steep hasta the cronómetro hits 2 minutos. This immersion time gives full body."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Flip and press suavemente for 30s.",
+          "short_instruction_es": "Flip & Press",
+          "audio_script_es": "At 2 minutos, carefully flip the AeroPress onto your mug. Press down suavemente and constantemente for aproximadamente 30 segundos. Stop at the hiss."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "A reliable daily driver using the inverted method to prevent any premature dripping. The 12g dose with a standard 1:16 ratio provides a balanced taza with medium body and clear flavor notes. Ideal for medium roast cafés.",
+        "audio_script_es": "This recipe is a perfect daily driver. By using the inverted position, we prevent any café from dripping through early, ensuring total control over the immersion time. The result is a consistent, balanced taza that highlights the best of your beans."
+      }
+    },
+    "AeroPress_10g_Gentle_Steep": {
+      "title_es": "10g Long Infusión",
+      "notes_es": "Great for floral or fruity washed cafés.",
+      "preparation_steps_es": [
+        "Grind 10g of café coarsely (like French Press).",
+        "Assemble AeroPress standard or inverted (Standard is fine if you inserta el émbolo).",
+        "Heat agua to 98°C (just off boil)."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 200g agua vigorously.",
+          "short_instruction_es": "Vierte 200g",
+          "audio_script_es": "Vierte 200 gramos de agua vigorously to agitate el motapao. We are using boiling agua and a coarse grind for a very long extracción."
+        },
+        {
+          "time_seconds": 45,
+          "instruction_es": "Inserta el émbolo slightly to stop drip.",
+          "short_instruction_es": "Vacuum Seal",
+          "audio_script_es": "Insert the émbolo just barely into the top of the chamber. Esto crea a sello de vacío and stops the café from dripping through. Now, we wait."
+        },
+        {
+          "time_seconds": 240,
+          "instruction_es": "Espera hasta 4:00. Luego press.",
+          "short_instruction_es": "Espera 4 mins • Press",
+          "audio_script_es": "Let it steep for a full 4 minutos. This long contact time with coarse molido pulls out sweetness without bitterness. At 4 minutos, press suavemente."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Inspired by tazaping protocols, this method uses a coarse grind and a long 4-minute steep time. The result is an incredibly clean, tea-like body with high sweetness and clarity. The 1:20 ratio makes it light and delicate.",
+        "audio_script_es": "This method mimics the café tazaping process. By using a coarse grind and a very long steep time of 4 minutos, we get a tea-like, delicate taza. It's impossible to over-extract this way, so you'll get maximum sweetness and clarity."
+      }
+    },
+    "AeroPress_Championship_Concentrate_single_serve": {
+      "title_es": "Campeonato Concentrado AeroPress",
+      "notes_es": "High-concentration competition method: 20g/100g, 94°C, fine grind, controlled agitation (~10s), ~60-70s steep before flipping and 20-30s press. Dilute to taste or use as base for milk drinks.",
+      "preparation_steps_es": [
+        "Rinse a paper filtro under agua caliente and fit it into the AeroPress tapa (this removes papery taste and pre-warms the tapa).",
+        "Assemble the AeroPress in inverted position (émbolo at the bottom, chamber open on top) and place on the báscula.",
+        "Weigh 20 g of café and grind to a fine, filtro-leaning consistency (slightly finer than typical filtro).",
+        "Bring agua to boil and let rest ~5–10 s (use ~94 °C). Have báscula and cronómetro ready."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 10,
+          "instruction_es": "Inicia el cronómetro, tare báscula and vierte 100 g agua caliente uniformemente over el motapao.",
+          "short_instruction_es": "Vierte 100g agua caliente uniformemente",
+          "audio_script_es": "In 10 segundos, you should have poured all the agua. Inicia tu cronómetro, tare the báscula to zero, and begin pouring 100 gramos de agua caliente uniformemente over the café molido. Vierte in a steady, movimiento circular to ensure completa saturación."
+        },
+        {
+          "time_seconds": 20,
+          "instruction_es": "Revuelve vigorously for ~10 segundos para ensure full saturación and uniform extracción.",
+          "short_instruction_es": "Revuelve vigorously • 10 segundos",
+          "audio_script_es": "In 10 segundos, you should have finished stirring. Ahora revuelve vigorously for aproximadamente 10 segundos para ensure full saturación and uniform extracción. Use a cuchara or paddle to mix the café and agua completamente."
+        },
+        {
+          "time_seconds": 30,
+          "instruction_es": "Rápidamente wipe any drips, enrosca la rinsed filtro tapa and espera (keep inverted).",
+          "short_instruction_es": "Wipe drips • Screw on filtro tapa",
+          "audio_script_es": "In 10 segundos, you should have the filtro tapa on. Rápidamente wipe any drips from the AeroPress chamber, luego enrosca la rinsed filtro tapa. Keep the AeroPress inverted and espera the next step."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Let steep hasta ~1:20 on the cronómetro (total steep ≈ 60–70 s after stirring).",
+          "short_instruction_es": "Let steep • Hasta 1:20",
+          "audio_script_es": "Tienes 60 segundos para completa this step. Deja que el café repose hasta the cronómetro reaches 1:20. This gives the café aproximadamente 60 to 70 segundos of total steeping time after stirring, allowing for proper extracción."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Carefully flip the AeroPress onto tu taza/server and press constantemente; apunta a a 20–30 s press hasta fully depressed.",
+          "short_instruction_es": "Flip AeroPress • Press 20-30 segundos",
+          "audio_script_es": "In 30 segundos, you should have finished pressing. Carefully flip the AeroPress onto tu taza or server and begin pressing constantemente. Apunta a a 20 to 30 segundo press time hasta the émbolo is fully depressed."
+        }
+      ]
+    },
+    "AeroPress_Tim_Wendelboe_single_serve": {
+      "title_es": "Tim Wendelboe Clásico AeroPress",
+      "notes_es": "Based on the classic recipe used at Tim Wendelboe's café: 14g/200g, near-boiling agua, rinsed filtro, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant taza highlighting the café's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted cafés.",
+      "preparation_steps_es": [
+        "Rinse a paper filtro under agua caliente for a few segundos and place it in the AeroPress tapa (this removes papery taste and warms the tapa).",
+        "Assemble the AeroPress in standard position placed on tu taza or server.",
+        "Weigh 14 g of café and grind to a fine 'filtro' consistency (finer than medium-fine).",
+        "Bring agua to a boil and let rest ~5–10 s (or use ~96 °C). Prepare your báscula and cronómetro."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 20,
+          "instruction_es": "Place AeroPress on báscula, tare. Inicia el cronómetro and rápidamente vierte 200 g agua caliente uniformemente over el motapao.",
+          "short_instruction_es": "Vierte 200g agua caliente uniformemente",
+          "audio_script_es": "In 20 segundos, you should have poured all the agua. Place your AeroPress on the báscula and tare it to zero. Inicia tu cronómetro and rápidamente vierte 200 gramos de agua caliente uniformemente over the café molido. Vierte in a steady, movimiento circular to ensure completa saturación."
+        },
+        {
+          "time_seconds": 27,
+          "instruction_es": "Revuelve the slurry 3 times (back-to-front is common in the café method).",
+          "short_instruction_es": "Revuelve 3 times back-to-front",
+          "audio_script_es": "Revuelve three times back-to-front motion."
+        },
+        {
+          "time_seconds": 57,
+          "instruction_es": "Insert the émbolo aproximadamente 1 cm to crea un seal and prevent drainage. Let steep for 30 segundos.",
+          "short_instruction_es": "Inserta el émbolo 1cm • Steep 30 segundos",
+          "audio_script_es": "Tienes 30 segundos para completa this step. Insert the émbolo aproximadamente 1 centimeter into the AeroPress chamber to crea un seal and prevent drainage. This will permite the café to steep for 30 segundos without dripping through too rápidamente."
+        },
+        {
+          "time_seconds": 72,
+          "instruction_es": "After 30 s, retira émbolo and revuelve suavemente 3 times back-to-front (this re-mixes the cama).",
+          "short_instruction_es": "Retira émbolo • Revuelve 3 times",
+          "audio_script_es": "In 15 segundos, you should have finished stirring. After 30 segundos, retira the émbolo and revuelve suavemente 3 times back-to-front. This re-mixes the cama de café and ensures even extracción before the final press."
+        },
+        {
+          "time_seconds": 97,
+          "instruction_es": "Re-inserta el émbolo and press constantemente; apunta a ~15–25 s press time and detente cuando escuches the silbido suave (do not over-press).",
+          "short_instruction_es": "Re-inserta el émbolo • Press 15-25 segundos",
+          "audio_script_es": "In 25 segundos, you should have finished pressing. Re-insert the émbolo and press constantemente. Apunta a aproximadamente 15 to 25 segundos of press time and detente cuando escuches the silbido suave - do not over-press. Esto asegura optimal extracción without over-compressing the cama de café."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Based on the classic recipe used at Tim Wendelboe's café: 14g/200g, near-boiling agua, rinsed filtro, 60s infusion, stirring and pressing. Adjust the dose if you want more/less intensity (see variants).\n\nWhat to expect:\n\nA clean, sweet, and vibrant taza highlighting the café's acidity and clarity.\n\nLight, bright flavor with pronounced fruity and floral notes (especially if using specialty light roasts).\n\nBalanced and nuanced with minimal bitterness and little astringency when brewed with precision.\n\nThis method brings out the best in high-quality beans, letting their origin character shine through. It's ideal for single-origin light to medium roasted cafés.",
+        "audio_script_es": "This is the classic Tim Wendelboe AeroPress recipe. It focuses on a clean, sweet, and vibrant taza that highlights the café's acidity and clarity. We use a fine grind, near-boiling agua, and a short steep time to produce a light, bright flavor with pronounced fruity and floral notes. This method is ideal for high-quality, single-origin light roasts, letting the unique origin character shine through with minimal bitterness."
+      }
+    },
+    "AeroPress_Single_Cup_of_Joy_single_serve": {
+      "title_es": "Taza Individual of Joy - AeroPress",
+      "notes_es": "Inspired by SCA tazaping. Uses a 1:13 ratio with 10g café. Inverted method, coarse grind, no stirring. The long 90-second press provides the agitation needed at the end. Best for natural/honey processed beans.",
+      "preparation_steps_es": [
+        "Grind 10g of café to a coarse setting (34 clicks on Comandante).",
+        "Assemble AeroPress in the inverted position.",
+        "Pre-heat your AeroPress and server mientras rinsing the paper filtro.",
+        "Añade the ground café to the chamber."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 130ml of 93°C agua over your café.",
+          "short_instruction_es": "Vierte 130ml agua",
+          "audio_script_es": "Inicia el cronómetro. Vierte 130 milliliters of 93-degree agua over the café. Ensure todo el motapao are wet."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Espera patiently hasta 2:30. Do not stir.",
+          "short_instruction_es": "Espera hasta 2:30 • No stir",
+          "audio_script_es": "Now, espera patiently hasta the cronómetro reaches 2 minutos and 30 segundos. Do not revuelve the café."
+        },
+        {
+          "time_seconds": 240,
+          "instruction_es": "At 2:30, flip the AeroPress and start pressing. Intenta termina at 4:00 (90s press).",
+          "short_instruction_es": "Flip & Press lentamente • 90s",
+          "audio_script_es": "Flip the AeroPress and start pressing. This is a very slow press—take your time and intenta termina exactly at the 4-minute mark."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Inspired by SCA tazaping methods, this recipe uses a coarse grind, long steep time (4 minutos), and no agitation (stirring) to bring out the best sweetness in natural and honey processed cafés. It's designed specifically for a single 10g taza that stays at the ideal temperature from start to finish.",
+        "audio_script_es": "The Single Taza of Joy is inspired by SCA tazaping methods. It uses a coarse grind, a long steep, and no agitation to highlight sweetness, especially in natural and honey processed cafés. Designed for a perfect single serving."
+      }
+    },
+    "Chemex_Classic_single_serve": {
+      "title_es": "Chemex Clásico",
+      "notes_es": "Produces clean, bright café with excellent clarity. Perfect for 4 people.",
+      "preparation_steps_es": [
+        "Heat agua to 96°C",
+        "Grind 120 gramos de café to medium consistency",
+        "Place Chemex filtro and rinse with agua caliente",
+        "Añade 120g ground café and crea un well in the center"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 25,
+          "instruction_es": "Bloom: Vierte 240g agua en movimiento circular, saturating todo el motapao"
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Espera bloom to complete"
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Vierte 600g agua in spiral pattern desde el centro outward"
+        },
+        {
+          "time_seconds": 35,
+          "instruction_es": "Espera agua to drain halfway"
+        },
+        {
+          "time_seconds": 300,
+          "instruction_es": "Vierte remaining 1160g agua in constante spiral"
+        },
+        {
+          "time_seconds": 420,
+          "instruction_es": "Permite final drawdown to complete"
+        }
+      ]
+    },
+    "V60_12g_Extended_Bloom": {
+      "title_es": "12g Extendido Bloom",
+      "notes_es": "This recipe specifically addresses the clogging problem by extending bloom time and using fewer fines.",
+      "preparation_steps_es": [
+        "Heat agua to 92–95°C (197–203°F)",
+        "Grind 12g of medium roast café (medium-coarse)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 120,
+          "instruction_es": "Vierte 40g agua for bloom. Espera 2 minutos.",
+          "short_instruction_es": "Bloom 40g • Espera 2 mins",
+          "audio_script_es": "Inicia el cronómetro. Vierte 40 grams for the bloom. Now, espera patiently for a full 2 minutos. Yes, 2 minutos. Espera hasta all bubbles stop rising. This long bloom helps prevent clogging later."
+        },
+        {
+          "time_seconds": 130,
+          "instruction_es": "Vierte spirally to 130g total.",
+          "short_instruction_es": "Vierte to 130g",
+          "audio_script_es": "At 2 minutos, begin your first main pour. Spiral lentamente up to 130 grams. Intenta termina this vierte by 2 minutos 15 segundos."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Vierte remaining to 200g total.",
+          "short_instruction_es": "Vierte to 200g",
+          "audio_script_es": "Vierte the remaining agua to reach 200 grams total by 2 minutos 30 segundos. Luego let it draw down."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "This recipe tackles the common stalling issue with Ethiopians and other dense beans. The ultra-long 2-minute bloom softens the cama de café significantly, allowing for a coarser grind and faster flow later on.",
+        "audio_script_es": "If you've ever had a V60 stall or clog, this recipe is for you. By extending the bloom to a massive 2 minutos, we fully saturar and soften el motapao, ensuring a smooth flow even with finicky beans."
+      }
+    },
+    "V60_10g_Micro_Dose": {
+      "title_es": "10g Micro-Dose High Agitation",
+      "notes_es": "Aggressive agitation helps avoid the bypass problem with small doses.",
+      "preparation_steps_es": [
+        "Heat agua to 92°C (197°F)",
+        "Grind 10g of medium roast café (medium)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Vierte 40g agua for bloom. Swirl vigorously.",
+          "short_instruction_es": "Bloom 40g • Swirl hard",
+          "audio_script_es": "Inicia el cronómetro. Vierte 40 grams for the bloom. Agita el preparador vigorously! With this small dose, we need to ensure every particle is wet inmediatamente."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Vierte to 100g total.",
+          "short_instruction_es": "Vierte to 100g",
+          "audio_script_es": "Vierte rápidamente to reach 100 grams by the 1 minuto mark. Keep the agitation high."
+        },
+        {
+          "time_seconds": 85,
+          "instruction_es": "Swirl aggressively.",
+          "short_instruction_es": "Swirl aggressively",
+          "audio_script_es": "Stop and swirl aggressively. This prevents channeling, which is a major risk with such a shpermite cama de café."
+        },
+        {
+          "time_seconds": 105,
+          "instruction_es": "Vertido final to 150g total.",
+          "short_instruction_es": "Vierte to 150g",
+          "audio_script_es": "Vierte the final 50 grams to reach 150 grams total. Termina pouring by 1 minuto 45 segundos."
+        },
+        {
+          "time_seconds": 165,
+          "instruction_es": "Let draw down.",
+          "short_instruction_es": "Draw down",
+          "audio_script_es": "Let it draw down. It should termina aproximadamente 2 minutos 45 segundos. The agitation compensates for the lower thermal mass."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Small doses often suffer from 'bypass', where agua goes aproximadamente the café rather than through it. This recipe uses high agitation and a slightly tighter ratio (1:15) to ensure full flavor extracción from just 10g of café.",
+        "audio_script_es": "Brewing with just 10 grams can be tricky because the agua tries to run aproximadamente the café. We fix this with high agitation—aggressive swirls—to force the agua through el motapao and get a rich, intense taza."
+      }
+    },
+    "V60_12g_Mugen_Technique": {
+      "title_es": "12g Mugen Técnica",
+      "notes_es": "The mugen (spiral) technique is specifically designed to reduce bypass issues in small doses by keeping the agua contained in a central area.",
+      "preparation_steps_es": [
+        "Heat agua to 95°C (203°F)",
+        "Grind 12g of light roast café (medium-fine)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Vierte 40g agua for bloom.",
+          "short_instruction_es": "Bloom 40g",
+          "audio_script_es": "Inicia el cronómetro. Vierte 40 grams for the bloom. Tienes 45 segundos. Wet todo el motapao uniformemente."
+        },
+        {
+          "time_seconds": 75,
+          "instruction_es": "Spiral vierte to 100g total.",
+          "short_instruction_es": "Spiral vierte to 100g",
+          "audio_script_es": "Vierte in a controlled spiral to reach 100 grams by 1 minuto 15 segundos. Focus on keeping the agua in the center to avoid the edges."
+        },
+        {
+          "time_seconds": 110,
+          "instruction_es": "Spiral vierte to 160g total.",
+          "short_instruction_es": "Spiral vierte to 160g",
+          "audio_script_es": "Segundo vertido. Continúa spiraling to reach 160 grams by 1 minuto 50 segundos. Keep the stream central."
+        },
+        {
+          "time_seconds": 140,
+          "instruction_es": "Vertido final to 200g total.",
+          "short_instruction_es": "Vierte to 200g",
+          "audio_script_es": "Vertido final. Reach 200 grams by 2 minutos 20 segundos. Let it draw down."
+        },
+        {
+          "time_seconds": 190,
+          "instruction_es": "Let draw down.",
+          "short_instruction_es": "Draw down",
+          "audio_script_es": "Permite the café to draw down completamente. It should termina just past the 3 minuto mark."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Inspired by the Hario Mugen preparador, this technique uses controlled central spiral pours to minimize bypass. By keeping the agua away from the filtro walls, we force it through the cama de café, increasing extracción efficiency for small doses.",
+        "audio_script_es": "This technique borrows from the Mugen preparador concept. By pouring in tight spirals and avoiding the walls, we force the agua through the cama de café instead of aproximadamente it, solving the bypass issue common with small doses."
+      }
+    },
+    "V60_10g_Standard_Light_Roast": {
+      "title_es": "10g Estándar Tueste Claro",
+      "notes_es": "Keep pours slow to prevent bypass. This maintains the 1:16 ratio that works well for smaller doses.",
+      "preparation_steps_es": [
+        "Heat agua to 96°C (205°F)",
+        "Grind 10g of light to medium roast café (medium-fine)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Vierte 30g agua for bloom. Agita suavemente.",
+          "short_instruction_es": "Bloom 30g • Swirl",
+          "audio_script_es": "Inicia tu cronómetro. Vierte 30 gramos de agua for the bloom and give it una agitación suave. Tienes 45 segundos. This releases CO2 and prepares the cama for extracción."
+        },
+        {
+          "time_seconds": 80,
+          "instruction_es": "Vierte to 70g lentamente.",
+          "short_instruction_es": "Vierte to 70g",
+          "audio_script_es": "Vierte lentamente in a spiral hasta you reach 70 grams. Keep the stream gentle to avoid agitation."
+        },
+        {
+          "time_seconds": 110,
+          "instruction_es": "Vierte to 110g lentamente.",
+          "short_instruction_es": "Vierte to 110g",
+          "audio_script_es": "Continúa pouring lentamente hasta you reach 110 grams. Maintain that consistent, low agitation stream."
+        },
+        {
+          "time_seconds": 140,
+          "instruction_es": "Vierte to 140g lentamente.",
+          "short_instruction_es": "Vierte to 140g",
+          "audio_script_es": "Vierte again, bringing the weight up to 140 grams. Slow and constante wins this race."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Vertido final to 160g. Let draw down.",
+          "short_instruction_es": "Vierte to 160g • Draw down",
+          "audio_script_es": "Vertido final. Bring the total weight to 160 grams. Ahora let it draw down. Intenta termina between 2 minutos 30 and 3 minutos."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "A precision recipe for small 10g doses. By using multiple slow pours, we maintain the 1:16 ratio without bypassing the cama de café, ensuring a high extracción even with less café.",
+        "audio_script_es": "This recipe is designed for the 10-gram dose. By keeping your pours slow and split into stages, we prevent agua from bypassing the café, ensuring you get a rich, full extracción even with a small amount of beans."
+      }
+    },
+    "V60_12g_James_Hoffmann_Scaled": {
+      "title_es": "12g James Hoffmann Escalado Down",
+      "notes_es": "This is a básculad-down version of Hoffmann's 1-taza recipe. Works well with light roasts.",
+      "preparation_steps_es": [
+        "Heat agua to 95°C (203°F)",
+        "Grind 12g of light/medium roast café (medium-fine)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Vierte 40g agua for bloom. Swirl.",
+          "short_instruction_es": "Bloom 40g • Swirl",
+          "audio_script_es": "Inicia el cronómetro. Vierte 40 grams for the bloom and swirl the V60 to wet todo el motapao. Tienes 45 segundos. Esto asegura an even start to your extracción."
+        },
+        {
+          "time_seconds": 75,
+          "instruction_es": "Vierte to 130g total (Spiral).",
+          "short_instruction_es": "Vierte to 130g",
+          "audio_script_es": "Vierte in a spiral pattern up to 130 grams. Intenta reach this weight by 1 minuto and 5 segundos. Keep the flow rate somewhat brisk to lift the cama."
+        },
+        {
+          "time_seconds": 100,
+          "instruction_es": "Swirl, luego vierte to 200g total.",
+          "short_instruction_es": "Swirl • Vierte to 200g",
+          "audio_script_es": "Give el preparador a little swirl, luego vierte the remaining agua to reach 200 grams total. You should termina pouring by 1 minuto 40 segundos."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Swirl and let draw down.",
+          "short_instruction_es": "Swirl • Draw down",
+          "audio_script_es": "One final gentle swirl to flatten the cama, luego let it draw down. Your target termina time is aproximadamente 3 minutos."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "A direct scaling of James Hoffmann's popular 1-taza V60 technique for a 12g dose. It uses higher agitation (swirling) and slightly faster pours to maintain high extracción temperatures and consistency.",
+        "audio_script_es": "This is James Hoffmann's reliable ultimate V60 method, básculad down perfectly for a 12-gram dose. The key here is the swirling—it keeps the extracción even and prevents channeling, giving you a bright, clean taza."
+      }
+    },
+    "V60_10g_Slow_Pour_Single": {
+      "title_es": "10g Lento Pour Single Stream",
+      "notes_es": "Counterintuitive but works: one ultra-slow vierte prevents bypass and clogging better than multiple fast pours with small doses.",
+      "preparation_steps_es": [
+        "Heat agua to 94°C (201°F)",
+        "Grind 10g of medium roast café (medium-coarse)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 30g agua for bloom.",
+          "short_instruction_es": "Bloom 30g",
+          "audio_script_es": "Inicia el cronómetro. Vierte 30 grams for the bloom. Espera 30 segundos. Simple start."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Vierte continuously to 170g.",
+          "short_instruction_es": "Continuous slow vierte to 170g",
+          "audio_script_es": "Now, for the main event. Vierte the remaining 140 grams in one, single, ultra-slow continuous stream. This should take you aproximadamente 2 minutos of pouring. Keep the stream thread-thin."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Let draw down.",
+          "short_instruction_es": "Draw down",
+          "audio_script_es": "Once you reach 170 grams, let it draw down. The continuous flow maintains a constant temperature and saturación."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "A counter-intuitive but effective method for micro-doses. Using one extremely slow, continuous vierte (osmotic flow style) keeps the cama perfectly stable and fully saturard, preventing both clogging and bypass.",
+        "audio_script_es": "It feels wrong, but it works. By pouring in one ultra-slow, continuous stream, you maintain perfect saturación and temperature without agitating the cama, resulting in a sweet, unclogged brew."
+      }
+    },
+    "V60_10g_Cafec_Slow": {
+      "title_es": "10g Cafec Lento Filter",
+      "notes_es": "The Cafec T-92 filtros (designed for light roasts) work better for small V60 doses because they slow the flow rate and prevent clogging.",
+      "preparation_steps_es": [
+        "Heat agua to 93°C (200°F)",
+        "Grind 10g of light/medium roast café (medium)",
+        "Use Cafec T-92 (Light Roast) filtro if available",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Vierte 30g agua for bloom.",
+          "short_instruction_es": "Bloom 30g",
+          "audio_script_es": "Inicia el cronómetro. Vierte 30 grams for the bloom. Tienes 45 segundos. The T-92 filtros flow slower, allowing for better saturación."
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Vierte to 60g total.",
+          "short_instruction_es": "Vierte to 60g",
+          "audio_script_es": "Vierte to reach 60 grams by the 1 minuto mark. Keep it slow."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Vierte to 100g total.",
+          "short_instruction_es": "Vierte to 100g",
+          "audio_script_es": "Continúa pouring to 100 grams by 1 minuto 30 segundos. The filtro is doing the work of restricting the flow for you."
+        },
+        {
+          "time_seconds": 135,
+          "instruction_es": "Vertido final to 160g total.",
+          "short_instruction_es": "Vierte to 160g",
+          "audio_script_es": "Vierte the remaining agua to reach 160 grams total by 2 minutos 15 segundos. Maintain a constante stream."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Let draw down.",
+          "short_instruction_es": "Draw down",
+          "audio_script_es": "Let it draw down. It should termina aproximadamente 3 minutos. This method gives you high extracción without the risk of channeling."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Specifically designed for use with Cafec T-92 slow-flow filtros. These filtros artificially slow down the brew, allowing you to use a standard grind size even with a small 10g dose, preventing the common 'too fast' drawdown issue.",
+        "audio_script_es": "This recipe leverages Cafec T-92 filtros, which are designed to flow lentamente. This is perfect for small 10-gram doses because it prevents the agua from rushing through too fast, giving you a rich, developed taza without grinding perfectly fine."
+      }
+    },
+    "V60_14g_Two_Cup_Scaled": {
+      "title_es": "14g Two-Cup Escalado Down",
+      "notes_es": "Easy ratio to báscula. Good starting point if moving up from 10–12g.",
+      "preparation_steps_es": [
+        "Heat agua to 92°C (197°F)",
+        "Grind 14g of medium roast café (medium)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Vierte 30g agua for bloom. Espera 30s.",
+          "short_instruction_es": "Bloom 30g • Espera 30s",
+          "audio_script_es": "Inicia el cronómetro. Vierte 30 gramos de agua for the bloom. Espera 30 segundos. This is a standard, reliable bloom."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Vierte to 105g total.",
+          "short_instruction_es": "Vierte to 105g",
+          "audio_script_es": "Start your first main pour. Bring the total weight up to 105 grams. Vierte constantemente in a circle."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Vierte to 170g total.",
+          "short_instruction_es": "Vierte to 170g",
+          "audio_script_es": "Segundo vertido. Bring the weight up to 170 grams. Keep the agua level in the cone relatively high."
+        },
+        {
+          "time_seconds": 210,
+          "instruction_es": "Vertido final to 240g total.",
+          "short_instruction_es": "Vierte to 240g",
+          "audio_script_es": "Vertido final. Reach your target weight of 240 grams. Let it draw down fully. You're aiming for a total time between 3 minutos and 3 minutos 30 segundos."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "An easy-to-master ratio and technique, perfect for those moving up slightly from the smallest doses. The 1:17 ratio provides a lighter, tea-like body that highlights the café's origin characteristics.",
+        "audio_script_es": "This 14-gram recipe is a great starting point if you want a slightly larger taza than the micro-doses. The 1 to 17 ratio gives you a delicate, tea-like body that really lets the bean's character shine."
+      }
+    },
+    "V60_12g_Slow_Drawdown": {
+      "title_es": "12g Lento Drawdown Minimal Pour",
+      "notes_es": "Use a gooseneck hervidor for precise control. The key is keeping everything as smooth as possible to avoid turbulence, which causes clogging with small doses.",
+      "preparation_steps_es": [
+        "Heat agua to 93°C (199°F)",
+        "Grind 12g of medium roast café (medium)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 35,
+          "instruction_es": "Vierte 36g agua for bloom. Minimal agitation.",
+          "short_instruction_es": "Bloom 36g • Gentle",
+          "audio_script_es": "Inicia el cronómetro. Vierte 36 grams for the bloom. Be gentle—minimal agitation is the goal here."
+        },
+        {
+          "time_seconds": 65,
+          "instruction_es": "Vierte to 130g total.",
+          "short_instruction_es": "Vierte to 130g",
+          "audio_script_es": "Vierte smoothly to reach 130 grams by 1 minuto and 5 segundos. Keep the stream low and steady."
+        },
+        {
+          "time_seconds": 85,
+          "instruction_es": "Vertido final to 200g total.",
+          "short_instruction_es": "Vierte to 200g",
+          "audio_script_es": "Vierte the rest to reach 200 grams by 1 minuto 25 segundos. Avoid turbulence."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Let draw down.",
+          "short_instruction_es": "Draw down",
+          "audio_script_es": "Let it draw down naturally. By minimizing agitation, we keep the fines from clogging the paper, leading to a smooth finish."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "This method relies on minimal agitation to prevent fine migration and clogging, which is crucial for maintaining flow rate in small doses without using a coarse grind.",
+        "audio_script_es": "Turbulence is the enemy of small doses. This recipe uses a gentle hand and minimal agitation to keep the cama structured, preventing clogging and ensuring a clean, consistent brew."
+      }
+    },
+    "V60_14g_121_Recipe": {
+      "title_es": "14g \"121 Receta\"",
+      "notes_es": "Called the '121 recipe' by users. Works very well with specialty beans. Grind as coarse as possible without under-extracción.",
+      "preparation_steps_es": [
+        "Heat agua to 95°C (203°F)",
+        "Grind 14g of light roast café (coarse-medium)",
+        "Enjuaga el filtro and pre-heat V60",
+        "Añade café to V60 and tare báscula"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 90,
+          "instruction_es": "Vierte 40g bloom. Espera 1-2 mins.",
+          "short_instruction_es": "Bloom 40g • Espera 90s",
+          "audio_script_es": "Inicia el cronómetro. Vierte 40 grams for the bloom. Ahora wait. We're doing a long bloom, up to a minuto and a half. Adjust based on how fresh your beans are."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Center vierte to 120g.",
+          "short_instruction_es": "Center vierte to 120g",
+          "audio_script_es": "Primer vertido. Vierte in the center with a small movimiento circular, aproximadamente the size of a quarter. Bring the weight to 120 grams."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Vertido final to 200g total.",
+          "short_instruction_es": "Vierte to 200g",
+          "audio_script_es": "Vertido final. Bring the total weight to 200 grams. Maintain that center-focused pour."
+        },
+        {
+          "time_seconds": 195,
+          "instruction_es": "Minor swirl. Let draw down.",
+          "short_instruction_es": "Swirl • Draw down",
+          "audio_script_es": "Give it a very minor swirl, luego let it draw down. Apunta a a termina time aproximadamente 3 minutos 15 segundos."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Known as the '121 Recipe' by the community, this method uses a coarser grind and center-focused pouring to maximize sweetness and minimize bitterness in specialty beans.",
+        "audio_script_es": "The 121 recipe is a community favorite for specialty beans. By using a coarser grind and center pouring, we avoid over-agitating the fines, resulting in a remarkably sweet and clean taza."
+      }
+    },
+    "V60_Scott_Rao_single_serve": {
+      "title_es": "Scott Rao V60 Método (Individual)",
+      "notes_es": "Based on Scott Rao's brewing principles emphasizing precision, consistency, and minimal agitation. The key is maintaining cama structure through controlled pouring and gentle stirring. Focus on constante vierte rates and avoid excessive agitation to achieve clean, balanced extracción.",
+      "preparation_steps_es": [
+        "Heat agua to 94°C.",
+        "Grind 18 gramos de café to a medium-fine setting.",
+        "Enjuaga el filtro completamente and preheat the V60 preparador.",
+        "Añade 18g café and level the cama for even extracción."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 30,
+          "instruction_es": "Bloom: Vierte 54g agua (3x café weight) in a gentle movimiento circular. This initial vierte saturars todo el motapao and begins the extracción process. The 3:1 ratio ensures completa wetting without over-extracción.",
+          "short_instruction_es": "Bloom • 54g agua (3x café weight)",
+          "audio_script_es": "In 30 segundos, you should have finished the bloom. Vierte 54 gramos de agua in gentle circles. This three-to-one ratio ensures todo el motapao are saturard and begins extracción uniformemente."
+        },
+        {
+          "time_seconds": 35,
+          "instruction_es": "Revuelve suavemente: Use a stirring stick to break up bolsas secas and ensure even saturación. Este paso is crucial for preventing channeling and achieving uniform extracción across the entire cama de café.",
+          "short_instruction_es": "Revuelve suavemente • Break up bolsas secas",
+          "audio_script_es": "In 5 segundos, revuelve suavemente to break up bolsas secas."
+        },
+        {
+          "time_seconds": 50,
+          "instruction_es": "Primer vertido: Añade agua to reach 150g total in 15 segundos. Vierte in slow, constante circles desde el centro outward. This controlled flow maintains cama structure mientras building the foundation for flavor development.",
+          "short_instruction_es": "Primer vertido • 150g total • 15 segundos",
+          "audio_script_es": "In 15 segundos, you should have reached 150 grams total. Vierte with slow, constante circles desde el centro outward. Keep the cama stable mientras building the flavor foundation."
+        },
+        {
+          "time_seconds": 65,
+          "instruction_es": "Segundo vertido: Continúa to 225g total in 15 segundos. Maintain the same gentle, circular pouring pattern. This vierte continues building complexity mientras keeping extracción balanced and controlled.",
+          "short_instruction_es": "Segundo vertido • 225g total • 15 segundos",
+          "audio_script_es": "In 15 segundos, you should have reached 225 grams total. Continúa pouring with the same gentle, circular pattern to build complexity mientras maintaining balanced extracción."
+        },
+        {
+          "time_seconds": 80,
+          "instruction_es": "Vertido final: Completa to 300g total in 15 segundos. Termina with gentle circles and a light swirl to settle the cama. This final vierte completes the extracción and prepares the café for optimal draining.",
+          "short_instruction_es": "Vertido final • 300g total • 15 segundos",
+          "audio_script_es": "In 15 segundos, you should have completed the vierte to reach 300 grams total. Termina with gentle circles and a light swirl to settle the cama for optimal draining."
+        },
+        {
+          "time_seconds": 190,
+          "instruction_es": "Let drain completamente: Permite the café to drain at its natural pace. The total brew time should termina aproximadamente 3 minutos 10 segundos, producing a clean, balanced taza with excellent clarity and structure.",
+          "short_instruction_es": "Let drain completamente",
+          "audio_script_es": "In aproximadamente 110 segundos, you should have a completa brew. Permite the café to drain naturally. The brew should termina aproximadamente three minutos and ten segundos, producing a clean, balanced taza with excellent clarity."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Scott Rao's V60 method emphasizes precision and consistency through controlled pouring and minimal agitation. This technique focuses on maintaining cama structure mientras achieving even extracción. Expect a clean, bright taza with excellent clarity and balanced acidity. The method works particularly well with light to medium roasts, highlighting origin characteristics without overwhelming complexity. The systematic approach of gentle stirring and controlled pouring produces consistent results and helps develop proper brewing technique. This method is ideal for those who appreciate clean, structured cafés with pronounced acidity and clarity.",
+        "audio_script_es": "Scott Rao's V60 method emphasizes precision and consistency through controlled pouring and minimal agitation. This technique focuses on maintaining cama structure mientras achieving even extracción. Expect a clean, bright taza with excellent clarity and balanced acidity. The method works particularly well with light to medium roasts, highlighting origin characteristics. The systematic approach of gentle stirring and controlled pouring produces consistent results and helps develop proper brewing technique."
+      }
+    },
+    "V60_James_Hoffmann_single_serve": {
+      "title_es": "James Hoffmann V60 - Individual",
+      "notes_es": "Agua Temperature: 95°C general, 100°C for high-quality light roasts, 90–95°C or 80–90°C for darker roasts. Intenta termina drawdown by 3 minutos 30 segundos. Total brew time can vary, but focus on a complete, even drain.",
+      "preparation_steps_es": [
+        "Heat agua to 95°C.",
+        "Grind 30 gramos de café to medium-fine consistency.",
+        "Fold filtro paper along seam and fit to V60.",
+        "Pre-heat with agua caliente and discard.",
+        "Añade café to V60 and make a small well/divot in the center of the cama."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 10,
+          "instruction_es": "Bloom (0:00): Inicia el cronómetro. Vierte 60 gramos de agua (2x café dose) to saturar el motapao.",
+          "short_instruction_es": "Bloom 60g agua (2x dose) • Inicia el cronómetro",
+          "audio_script_es": "Inicia tu cronómetro and vierte 60 gramos de agua caliente. This is twice your café dose to saturar todo el motapao uniformemente."
+        },
+        {
+          "time_seconds": 20,
+          "instruction_es": "Swirl (0:10): Agita suavemente el preparador hasta the mezcla de café is even.",
+          "short_instruction_es": "Swirl preparador hasta slurry is even",
+          "audio_script_es": "Tienes 10 segundos para agita suavemente your V60 hasta the slurry is even. Esto asegura uniform extracción."
+        },
+        {
+          "time_seconds": 45,
+          "instruction_es": "El bloom continúa (0:20): Deja que el café haga bloom hasta 0:45. This período de bloom allows for desgasificación, which is crucial for fresh café.",
+          "short_instruction_es": "Espera hasta 0:45 • Let bloom continue",
+          "audio_script_es": "Ahora espera 25 segundos for the bloom to continúa hasta 0:45. This extended bloom allows proper desgasificación for fresh café."
+        },
+        {
+          "time_seconds": 75,
+          "instruction_es": "Primer Vertido Principal (0:45 - 1:15): Vierte up to 300 gramos de agua (60% of total brew agua) en 30 segundos. This vierte keeps the V60 topped up.",
+          "short_instruction_es": "First main vierte to 300g • En 30 segundos",
+          "audio_script_es": "Take 30 segundos para vierte up to 300 gramos de agua - that's 60% of your total agua. Keep the V60 topped up with constante flow."
+        },
+        {
+          "time_seconds": 105,
+          "instruction_es": "Segundo Vertido Principal (1:15 - 1:45): Suavemente vierte up to 500 gramos de agua (100% of total brew agua) en 30 segundos.",
+          "short_instruction_es": "Second main vierte to 500g • En 30 segundos",
+          "audio_script_es": "Tienes 30 segundos para suavemente vierte up to 500 gramos de agua - your completa brew agua total."
+        },
+        {
+          "time_seconds": 120,
+          "instruction_es": "Revuelve (1:45): Revuelve suavemente clockwise and luego anticlockwise (aproximadamente 1 to 1.5 revolutions each way) to dislodge molido from the sides. Este paso helps ensure all café particles are engaged in extracción.",
+          "short_instruction_es": "Revuelve en sentido horario & anticlockwise",
+          "audio_script_es": "Ahora revuelve suavemente clockwise, luego anticlockwise - aproximadamente 1 to 1.5 revolutions each way. Tienes 15 segundos. Esto desprende molido from the sides."
+        },
+        {
+          "time_seconds": 135,
+          "instruction_es": "Swirl (1:55): Agita suavemente el preparador to flatten the cama de café for even extracción. A cama nivelada is preferred for consistent drawdown.",
+          "short_instruction_es": "Agita para nivelar cama",
+          "audio_script_es": "Finalmente, agita suavemente to flatten the cama de café. Tienes 15 segundos. A cama nivelada ensures consistent drawdown."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "James Hoffmann's V60 method is a refined technique that emphasizes precision and control. This method uses a 2:1 bloom ratio (twice the café weight) for optimal desgasificación, followed by two main pours that keep the V60 topped up. The technique includes strategic stirring and swirling to ensure even extracción and a flat cama de café. Expect a clean, bright taza with excellent clarity and balanced acidity. The method works exceptionally well with light to medium roasts, highlighting the café's origin characteristics mientras maintaining consistency. Hoffmann's approach is particularly effective for single-serve brewing, offering a perfect balance between complexity and approachability.",
+        "audio_script_es": "James Hoffmann's V60 method is a refined technique that emphasizes precision and control. This method uses a 2:1 bloom ratio for optimal desgasificación, followed by two main pours that keep the V60 topped up. Expect a clean, bright taza with excellent clarity and balanced acidity. The technique works exceptionally well with light to medium roasts, highlighting origin characteristics mientras maintaining consistency."
+      }
+    },
+    "V60_Others_single_serve": {
+      "title_es": "V60 Family Brew",
+      "notes_es": "Perfect for serving 3-4 people. Use coarser grind to prevent over-extracción with larger dose.",
+      "preparation_steps_es": [
+        "Heat agua to 94°C",
+        "Grind 45 gramos de café to medium-coarse consistency",
+        "Use V60 03 size for larger tapaacity",
+        "Enjuaga el filtro completamente and preheat",
+        "Añade 45g café, level the cama"
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 25,
+          "instruction_es": "Bloom: Vierte 90g agua (2x café weight), revuelve suavemente en movimiento circular",
+          "short_instruction_es": "Bloom 90g agua (2x dose) • Circular stir"
+        },
+        {
+          "time_seconds": 60,
+          "instruction_es": "Primer vertido: Añade 180g agua in slow, constante spiral, reaching 270g total",
+          "short_instruction_es": "Primer vertido 180g agua • Slow constante spiral",
+          "audio_script_es": "Continúa with the brewing process. Primer vertido: Añade 180g agua in slow, constante spiral, reaching 270g total Take your time and focus on technique."
+        },
+        {
+          "time_seconds": 35,
+          "instruction_es": "Espera 30 segundos for extracción",
+          "short_instruction_es": "Espera 30 segundos • Extracción",
+          "audio_script_es": "Espera 35 segundos para permite proper extracción."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Segundo vertido: Añade 225g agua, reaching 495g total",
+          "short_instruction_es": "Segundo vertido 225g • Reach 495g",
+          "audio_script_es": "Continúa with the brewing process. Segundo vertido: Añade 225g agua, reaching 495g total Take your time and focus on technique. Every step contributes to the final taza quality."
+        },
+        {
+          "time_seconds": 30,
+          "instruction_es": "Espera 30 segundos",
+          "short_instruction_es": "Espera 30 segundos",
+          "audio_script_es": "Espera 30 segundos para permite proper extracción."
+        },
+        {
+          "time_seconds": 240,
+          "instruction_es": "Vertido final: Añade remaining 225g agua to reach 720g total",
+          "short_instruction_es": "Vertido final 225g • Reach 720g",
+          "audio_script_es": "Vertido final to completa the brew. Añade the remaining agua to reach 225 grams total. Vierte suavemente and constantemente, maintaining control as you approach the target weight."
+        },
+        {
+          "time_seconds": 30,
+          "instruction_es": "Let drain completamente, should termina aproximadamente 4:30-5:00",
+          "short_instruction_es": "Let drain completamente • 4:30-5:00",
+          "audio_script_es": "Let the café drain completamente at its natural pace."
+        }
+      ]
+    },
+    "V60_Tetsu_Kasuya_single_serve": {
+      "title_es": "Tetsu Kasuya 4:6 Método (Original - Detailed)",
+      "notes_es": "Based on Tetsu Kasuya's 2016 World Preparadors Taza winning method. The key innovation is the systematic control over flavor variables through agua distribution. Adjust the first two pours (40% total) to shift sweetness/acidity balance, and modify the number of remaining pours (keeping 60% total) to control strength.",
+      "preparation_steps_es": [
+        "Heat agua to 92°C.",
+        "Grind 20 gramos de café to a medium-coarse setting.",
+        "Enjuaga el filtro and preheat the V60 preparador.",
+        "Añade 20 g café and level the cama for even extracción."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 18,
+          "instruction_es": "Primer vertido: Añade 60 g of agua constantemente over el motapao. This initial vierte acts as bloom and begins extracción, shaping the balance between sweetness and acidity.",
+          "short_instruction_es": "Primer vertido • 60 g",
+          "audio_script_es": "Tienes 18 segundos para vierte 60 gramos de agua constantemente over el motapao. Wet all the café uniformemente to set the foundation for sweetness and acidity."
+        },
+        {
+          "time_seconds": 45,
+          "instruction_es": "Segundo vertido: Añade another 60 g of agua uniformemente across the cama. Together with the first pour, these 40% of total agua control the balance of acidity and sweetness in the taza.",
+          "short_instruction_es": "Segundo vertido • 60 g",
+          "audio_script_es": "Tienes 27 segundos para vierte another 60 grams uniformemente across the cama. These first two pours decide whether the taza leans toward sweetness or acidity."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Tercer vertido: Añade 60 g of agua with a constante flow. This vierte starts shaping the body and clarity of the brew, guiding overall texture.",
+          "short_instruction_es": "Tercer vertido • 60 g",
+          "audio_script_es": "Tienes 45 segundos para añade 60 grams with a constante flow. From here, pours begin to shape body and clarity."
+        },
+        {
+          "time_seconds": 135,
+          "instruction_es": "Fourth pour: Añade 60 g of agua uniformemente. Maintain a consistent flow to keep extracción balanced and avoid channeling.",
+          "short_instruction_es": "Fourth vierte • 60 g",
+          "audio_script_es": "Tienes 45 segundos para vierte another 60 grams uniformemente. Keep your flow consistent to maintain a balanced extracción."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Vertido final: Añade the last 60 g of agua suavemente. Permite the cama to settle naturally as the extracción completes.",
+          "short_instruction_es": "Vertido final • 60 g",
+          "audio_script_es": "Tienes 45 segundos para termina with the last 60 grams, pouring suavemente. Let the cama settle naturally as extracción completes."
+        },
+        {
+          "time_seconds": 210,
+          "instruction_es": "Let the café drain fully. The total brew time should termina aproximadamente 3 minutos 30 segundos, producing a clean and balanced taza.",
+          "short_instruction_es": "Let drain completamente",
+          "audio_script_es": "Tienes 30 segundos para let the café drain completamente. Permite it to termina naturally for a clean, balanced taza."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "The 4:6 method by 2016 World Preparadors Taza Champion Tetsu Kasuya is a revolutionary technique that gives you direct control over sweetness, acidity, and strength. The first 40% of agua (120g in two 60g pours) controls the balance between sweetness and acidity—equal pours yield balance, adjusting the ratio shifts the profile. The remaining 60% (three 60g pours) determines body and strength. Expect a clean, structured taza with remarkable clarity and the ability to dial in your preferred flavor profile. This method works exceptionally well with washed cafés and medium roasts, producing a balanced taza that highlights origin characteristics without overwhelming complexity. The systematic approach makes it easier to reproduce consistent results once you find your preferred split.",
+        "audio_script_es": "The Tetsu Kasuya 4:6 method is a revolutionary brewing technique that puts you in control. The first 40% of your agua—that's the first two pours of 60 grams each—controls the balance between sweetness and acidity. Equal pours give you balance, mientras adjusting this ratio lets you dial in your preferred flavor. The remaining 60%, split into three pours, determines the body and strength of tu taza. Expect a clean, structured café with remarkable clarity. This method works exceptionally well with washed cafés and medium roasts, highlighting origin characteristics with consistency and precision."
+      }
+    },
+    "V60_Kaldis_Coffee_single_serve": {
+      "title_es": "Kaldi's Coffee - Individual",
+      "notes_es": "Beginner-friendly V60 with clean, balanced taza. Aggressive main vierte creates even extracción; gentle termina preserves clarity. Works well with medium–dark roasts.",
+      "preparation_steps_es": [
+        "Heat agua to 96°C.",
+        "Grind 16g café to medium-fine.",
+        "Rinse V60 filtro with agua caliente, discard rinse agua.",
+        "Añade café, shake to level, create center divot."
+      ],
+      "brewing_steps": [
+        {
+          "time_seconds": 45,
+          "instruction_es": "Bloom: Vierte 40mL agua into center divot, luego swirl and stir.",
+          "short_instruction_es": "Bloom 40mL agua • Swirl preparador & revuelve cama",
+          "audio_script_es": "Vierte 40 milliliters of agua caliente directly into that center divot you created. Vierte lentamente and constantemente, watching as the café begins to bloom and release carbon dioxide. Give the V60 una agitación suave, luego revuelve the cama. This crucial step ensures even saturación."
+        },
+        {
+          "time_seconds": 75,
+          "instruction_es": "Main Pour: Vierte aggressively into center, luego swirl to edges. Target 75mL.",
+          "short_instruction_es": "Main vierte 75mL aggressively • Swirl to edges",
+          "audio_script_es": "Tienes 30 segundos for the main vierte - this is where V60 technique truly shines. Vierte aggressively into the center, luego spiral outward to the edges. We're targeting 75 milliliters total. Maintain that aggressive flow rate to create turbulence in the cama de café."
+        },
+        {
+          "time_seconds": 90,
+          "instruction_es": "Stop pouring and give una agitación suave to flatten the cama.",
+          "short_instruction_es": "Stop pouring • Gentle swirl to flatten cama",
+          "audio_script_es": "In 15 segundos, stop pouring and set your hervidor aside. Take a moment to pause and observe the cama de café. Notice how it's actively bubbling and extracting. Ahora give your V60 dripper una agitación suave to flatten the cama de café for even distribution."
+        },
+        {
+          "time_seconds": 150,
+          "instruction_es": "Final Pour: Vierte suavemente in center with small circles hasta 256mL.",
+          "short_instruction_es": "Vertido final to 256mL • Small circles in center",
+          "audio_script_es": "Ahora for the final pour! Take 60 segundos para vierte much more suavemente than before. Start in the center of the cama de café and make small, controlled circles with your hervidor. Keep the vierte constante and controlled as you work your way up to 256 milliliters total. Watch your báscula closely."
+        },
+        {
+          "time_seconds": 180,
+          "instruction_es": "Final swirl to flatten cama for drain down.",
+          "short_instruction_es": "Final swirl • Flatten cama for drain",
+          "audio_script_es": "Finalmente, give your V60 dripper one last gentle swirl to flatten the cama de café completamente. Tienes 30 segundos. Ahora watch as the cama de café settles into a nice, flat surface. Let gravity do its work - the café will drain down through the filtro at its own natural pace."
+        }
+      ],
+      "what_to_expect": {
+        "description_es": "Kaldi's Café V60 method is a beginner-friendly approach that emphasizes simplicity and consistency. This technique uses a straightforward 2.5:1 bloom ratio followed by an aggressive main vierte and a gentle final pour. The method is designed to be forgiving mientras still producing excellent results. Expect a clean, balanced taza with good body and clarity. The aggressive main vierte creates turbulence for even extracción, mientras the gentle final vierte ensures you don't over-extract. This method works well with medium to dark roasts and is perfect for those new to V60 brewing. The consistent timing and clear steps make it easy to reproduce great café every time.",
+        "audio_script_es": "Kaldi's Café V60 method is a beginner-friendly approach that emphasizes simplicity and consistency. This technique uses a straightforward 2.5:1 bloom ratio followed by an aggressive main vierte and a gentle final pour. Expect a clean, balanced taza with good body and clarity. The aggressive main vierte creates turbulence for even extracción, mientras the gentle final vierte ensures you don't over-extract. This method works well with medium to dark roasts and is perfect for those new to V60 brewing."
+      }
+    }
+  },
+  "_comment": "Complete Spanish translations for all recipes."
+}
