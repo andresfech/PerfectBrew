@@ -23,11 +23,16 @@ struct BrewRecommendationsView: View {
                     comparisonCard(expected: expected, actual: result.actualProfile)
                 }
                 
-                // Unified Adjustments List
+                // GENERAL RECOMMENDATIONS (Unified Adjustments List)
                 if !result.unifiedAdjustment.adjustments.isEmpty {
-                    adjustmentsSection
+                    generalRecommendationsSection
                 } else {
                     noAdjustmentsView
+                }
+                
+                // SPECIFIC RECOMMENDATIONS (Dimension-Specific)
+                if !result.dimensionRecommendations.isEmpty {
+                    dimensionSpecificSection
                 }
                 
                 // Done Button
@@ -39,10 +44,23 @@ struct BrewRecommendationsView: View {
         .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack(spacing: 4) {
+                        Image(systemName: "chevron.left")
+                            .font(.body)
+                        Text("Back")
+                    }
+                    .foregroundColor(.orange)
+                }
+            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Done") {
                     dismiss()
                 }
+                .foregroundColor(.orange)
             }
         }
     }
@@ -231,7 +249,182 @@ struct BrewRecommendationsView: View {
         }
     }
     
-    // MARK: - Adjustments Section (AEC-12 v2 - Unified)
+    // MARK: - General Recommendations Section
+    
+    private var generalRecommendationsSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Image(systemName: "list.bullet.rectangle")
+                    .foregroundColor(directionColor)
+                Text("General Recommendations")
+                    .font(.headline)
+                Spacer()
+                Text("Overall Direction")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            
+            // Direction indicator bar
+            HStack(spacing: 4) {
+                ForEach(0..<result.unifiedAdjustment.adjustments.count, id: \.self) { _ in
+                    Image(systemName: result.direction == .increase ? "arrow.up" : (result.direction == .decrease ? "arrow.down" : "arrow.right"))
+                        .font(.caption2)
+                        .foregroundColor(directionColor)
+                }
+                Text("unified direction")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(directionColor.opacity(0.1))
+            .cornerRadius(4)
+            
+            // Adjustment cards
+            ForEach(result.unifiedAdjustment.adjustments) { item in
+                adjustmentCard(item)
+            }
+        }
+    }
+    
+    // MARK: - Dimension-Specific Recommendations Section
+    
+    private var dimensionSpecificSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Image(systemName: "target")
+                    .foregroundColor(.purple)
+                Text("Specific Taste Adjustments")
+                    .font(.headline)
+            }
+            
+            Text("Fine-tune individual taste dimensions")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            
+            ForEach(result.dimensionRecommendations) { rec in
+                dimensionRecommendationCard(rec)
+            }
+        }
+    }
+    
+    private func dimensionRecommendationCard(_ rec: DimensionSpecificRecommendation) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Dimension header
+            HStack {
+                Image(systemName: dimensionIcon(for: rec.dimension))
+                    .foregroundColor(dimensionColor(for: rec.dimension))
+                
+                // For flavor tags, extract just the tag name
+                if isFlavorTagRecommendation(rec) {
+                    Text(rec.dimension.replacingOccurrences(of: "Flavor: ", with: ""))
+                        .font(.headline)
+                } else {
+                    Text(rec.dimension)
+                        .font(.headline)
+                }
+                
+                Spacer()
+                
+                // Show current/target only if not a flavor tag recommendation
+                if !isFlavorTagRecommendation(rec) {
+                    HStack(spacing: 8) {
+                        Text(rec.currentLevel)
+                            .font(.caption)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(Color.orange.opacity(0.2))
+                            .cornerRadius(4)
+                        Image(systemName: "arrow.right")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                        Text(rec.targetLevel)
+                            .font(.caption)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(Color.green.opacity(0.2))
+                            .cornerRadius(4)
+                    }
+                } else {
+                    // For flavor tags, show "Missing" badge
+                    Text("Missing")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color.orange.opacity(0.2))
+                        .foregroundColor(.orange)
+                        .cornerRadius(4)
+                }
+            }
+            
+            // Advice
+            Text(rec.advice)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .padding(.vertical, 4)
+            
+            // Specific adjustments
+            VStack(alignment: .leading, spacing: 8) {
+                Text("How to adjust:")
+                    .font(.caption)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.secondary)
+                
+                ForEach(rec.specificAdjustments, id: \.self) { adjustment in
+                    HStack(alignment: .top, spacing: 8) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.caption)
+                            .foregroundColor(.green)
+                            .padding(.top, 2)
+                        Text(adjustment)
+                            .font(.caption)
+                            .foregroundColor(.primary)
+                        Spacer()
+                    }
+                }
+            }
+            .padding(12)
+            .background(Color(.systemGray6))
+            .cornerRadius(8)
+        }
+        .padding(16)
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 2)
+    }
+    
+    private func dimensionIcon(for dimension: String) -> String {
+        let lowercased = dimension.lowercased()
+        if lowercased.contains("flavor:") {
+            return "tag.fill"
+        }
+        switch lowercased {
+        case "acidity": return "bolt.fill"
+        case "sweetness": return "sparkles"
+        case "bitterness": return "drop.fill"
+        default: return "circle.fill"
+        }
+    }
+    
+    private func dimensionColor(for dimension: String) -> Color {
+        let lowercased = dimension.lowercased()
+        if lowercased.contains("flavor:") {
+            return .purple
+        }
+        switch lowercased {
+        case "acidity": return .yellow
+        case "sweetness": return .orange
+        case "bitterness": return .brown
+        default: return .gray
+        }
+    }
+    
+    private func isFlavorTagRecommendation(_ rec: DimensionSpecificRecommendation) -> Bool {
+        return rec.dimension.lowercased().contains("flavor:")
+    }
+    
+    // MARK: - Adjustments Section (AEC-12 v2 - Unified) - DEPRECATED, using generalRecommendationsSection
     
     private var adjustmentsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -423,6 +616,30 @@ struct BrewRecommendationsView: View {
                         )
                     ]
                 ),
+                dimensionRecommendations: [
+                    DimensionSpecificRecommendation(
+                        dimension: "Acidity",
+                        currentLevel: "Not enough",
+                        targetLevel: "Perfect",
+                        advice: "To increase acidity, you need more extraction. Acidity comes from lighter compounds that extract first.",
+                        specificAdjustments: [
+                            "Grind finer to increase surface area",
+                            "Increase water temperature by 2-3°C",
+                            "Extend brew time slightly"
+                        ]
+                    ),
+                    DimensionSpecificRecommendation(
+                        dimension: "Sweetness",
+                        currentLevel: "Not enough",
+                        targetLevel: "Perfect",
+                        advice: "To increase sweetness, optimize your extraction window. Sweetness peaks in the middle extraction phase.",
+                        specificAdjustments: [
+                            "Ensure even extraction (proper agitation)",
+                            "Use slightly finer grind",
+                            "Maintain optimal water temperature"
+                        ]
+                    )
+                ],
                 recommendations: []
             ),
             recipe: Recipe.sampleRecipe,

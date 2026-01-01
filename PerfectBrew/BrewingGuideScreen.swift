@@ -48,6 +48,7 @@ struct BrewingGuideScreen: View {
         
         print("DEBUG: BrewingGuideScreen init with recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
         print("DEBUG: BrewingGuideScreen coffeeDose: \(coffeeDose)g, waterAmount: \(waterAmount)g")
+        print("DEBUG: BrewingGuideScreen coffee parameter: \(coffee?.name ?? "nil")")
         
         // Initialize view model with recipe and coffee
         let viewModel = BrewingGuideViewModel(recipe: recipe, coffee: coffee)
@@ -518,8 +519,10 @@ struct BrewingGuideScreen: View {
                 grindSize: grindSize,
                 brewTime: brewTime
                                 ),
-                                coffee: viewModel.selectedCoffee  // AEC-12: Pass selected coffee
-                            ), isActive: $showingFeedback) {
+                                coffee: coffee  // Use the coffee passed to BrewingGuideScreen
+                            ).onAppear {
+                                print("DEBUG: FeedbackScreen navigated to with coffee: \(coffee?.name ?? "nil")")
+                            }, isActive: $showingFeedback) {
                                 EmptyView()
                             }
                         )

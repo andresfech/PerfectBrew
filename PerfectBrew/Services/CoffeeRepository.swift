@@ -40,6 +40,11 @@ class CoffeeRepository: ObservableObject {
         saveCoffees()
     }
     
+    /// Find a coffee by ID
+    func findCoffee(id: UUID) -> Coffee? {
+        return coffees.first { $0.id == id }
+    }
+    
     // MARK: - Persistence
     
     private var fileURL: URL {
@@ -81,6 +86,7 @@ class CoffeeRepository: ObservableObject {
             roastLevel: .light,
             process: .washed,
             flavorTags: [.floral, .citrus, .tea],
+            customFlavorTags: [],
             notes: "Great with V60"
         )
         add(sample)

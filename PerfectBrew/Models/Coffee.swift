@@ -94,6 +94,7 @@ struct Coffee: Identifiable, Codable, Equatable {
     var roastLevel: RoastLevel
     var process: Process
     var flavorTags: [FlavorTag]
+    var customFlavorTags: [String] = [] // Custom tags created by user
     var notes: String
     
     // New Fields
@@ -114,6 +115,7 @@ struct Coffee: Identifiable, Codable, Equatable {
         roastLevel: RoastLevel = .medium,
         process: Process = .washed,
         flavorTags: [FlavorTag] = [],
+        customFlavorTags: [String] = [],
         notes: String = "",
         country: String = "",
         region: String = "",
@@ -127,11 +129,17 @@ struct Coffee: Identifiable, Codable, Equatable {
         self.roastLevel = roastLevel
         self.process = process
         self.flavorTags = flavorTags
+        self.customFlavorTags = customFlavorTags
         self.notes = notes
         self.country = country
         self.region = region
         self.variety = variety
         self.altitude = altitude
         self.roastDate = roastDate
+    }
+    
+    // Computed property to get all flavor tags (predefined + custom) as strings
+    var allFlavorTagStrings: [String] {
+        flavorTags.map { $0.rawValue } + customFlavorTags
     }
 }

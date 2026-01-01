@@ -37,6 +37,7 @@ struct BrewDetailScreen: View {
                 }
                 .onAppear {
                     print("DEBUG: BrewDetailScreen received recipe '\(recipe.title)' with \(recipe.parameters.coffeeGrams)g coffee, \(recipe.servings) servings")
+                    print("DEBUG: BrewDetailScreen coffee: \(coffee?.name ?? "nil")")
                 }
                 
                 // Parameters Card

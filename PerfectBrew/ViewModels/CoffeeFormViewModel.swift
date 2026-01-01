@@ -7,6 +7,8 @@ class CoffeeFormViewModel: ObservableObject {
     @Published var roastLevel: RoastLevel = .medium
     @Published var process: Process = .washed
     @Published var selectedFlavorTags: Set<FlavorTag> = []
+    @Published var selectedCustomTags: Set<String> = []
+    @Published var searchText: String = ""
     @Published var notes: String = ""
     
     // New Fields
@@ -31,6 +33,7 @@ class CoffeeFormViewModel: ObservableObject {
             self.roastLevel = coffee.roastLevel
             self.process = coffee.process
             self.selectedFlavorTags = Set(coffee.flavorTags)
+            self.selectedCustomTags = Set(coffee.customFlavorTags)
             self.notes = coffee.notes
             
             self.country = coffee.country
@@ -52,6 +55,7 @@ class CoffeeFormViewModel: ObservableObject {
             roastLevel: roastLevel,
             process: process,
             flavorTags: Array(selectedFlavorTags),
+            customFlavorTags: Array(selectedCustomTags),
             notes: notes,
             country: country,
             region: region,
@@ -73,6 +77,50 @@ class CoffeeFormViewModel: ObservableObject {
         } else {
             selectedFlavorTags.insert(tag)
         }
+    }
+    
+    func toggleCustomTag(_ tag: String) {
+        if selectedCustomTags.contains(tag) {
+            selectedCustomTags.remove(tag)
+        } else {
+            selectedCustomTags.insert(tag)
+        }
+    }
+    
+    func createCustomTag(_ tagName: String) {
+        let trimmed = tagName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return }
+        
+        // Check if it already exists as a predefined tag
+        if let existingTag = FlavorTag.allCases.first(where: { $0.rawValue.lowercased() == trimmed.lowercased() }) {
+            toggleFlavorTag(existingTag)
+        } else {
+            // Add as custom tag
+            selectedCustomTags.insert(trimmed)
+        }
+        
+        // Clear search after creating
+        searchText = ""
+    }
+    
+    var filteredFlavorTags: [FlavorTag] {
+        if searchText.isEmpty {
+            return Array(FlavorTag.allCases)
+        }
+        return FlavorTag.allCases.filter { tag in
+            tag.rawValue.lowercased().contains(searchText.lowercased())
+        }
+    }
+    
+    var canCreateCustomTag: Bool {
+        let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return false }
+        
+        // Check if it already exists (predefined or custom)
+        let existsAsPredefined = FlavorTag.allCases.contains { $0.rawValue.lowercased() == trimmed.lowercased() }
+        let existsAsCustom = selectedCustomTags.contains { $0.lowercased() == trimmed.lowercased() }
+        
+        return !existsAsPredefined && !existsAsCustom
     }
     
     var isValid: Bool {

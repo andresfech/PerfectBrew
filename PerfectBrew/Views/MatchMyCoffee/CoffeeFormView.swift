@@ -48,17 +48,86 @@ struct CoffeeFormView: View {
                 }
                 
                 Section(header: Text("Flavor Tags")) {
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
-                        ForEach(FlavorTag.allCases) { tag in
-                            FlavorTagButton(
-                                tag: tag,
-                                isSelected: viewModel.selectedFlavorTags.contains(tag)
-                            ) {
-                                viewModel.toggleFlavorTag(tag)
+                    // Search bar
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.secondary)
+                        TextField("Search or create tag...", text: $viewModel.searchText)
+                            .textFieldStyle(PlainTextFieldStyle())
+                        
+                        if !viewModel.searchText.isEmpty {
+                            Button(action: {
+                                viewModel.searchText = ""
+                            }) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.secondary)
                             }
                         }
                     }
+                    .padding(8)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
                     .padding(.vertical, 5)
+                    
+                    // Create custom tag button (if search doesn't match existing)
+                    if viewModel.canCreateCustomTag {
+                        Button(action: {
+                            viewModel.createCustomTag(viewModel.searchText)
+                        }) {
+                            HStack {
+                                Image(systemName: "plus.circle.fill")
+                                Text("Create '\(viewModel.searchText.trimmingCharacters(in: .whitespacesAndNewlines))'")
+                            }
+                            .font(.subheadline)
+                            .foregroundColor(.orange)
+                            .padding(.vertical, 8)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.orange.opacity(0.1))
+                            .cornerRadius(8)
+                        }
+                        .padding(.bottom, 5)
+                    }
+                    
+                    // Filtered predefined tags
+                    if !viewModel.filteredFlavorTags.isEmpty {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
+                            ForEach(viewModel.filteredFlavorTags) { tag in
+                                FlavorTagButton(
+                                    tag: tag,
+                                    isSelected: viewModel.selectedFlavorTags.contains(tag)
+                                ) {
+                                    viewModel.toggleFlavorTag(tag)
+                                }
+                            }
+                        }
+                        .padding(.vertical, 5)
+                    } else if !viewModel.searchText.isEmpty {
+                        Text("No tags found matching '\(viewModel.searchText)'")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .padding(.vertical, 10)
+                    }
+                    
+                    // Selected custom tags
+                    if !viewModel.selectedCustomTags.isEmpty {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Custom Tags")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .padding(.top, 10)
+                            
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
+                                ForEach(Array(viewModel.selectedCustomTags), id: \.self) { customTag in
+                                    CustomFlavorTagButton(
+                                        tag: customTag,
+                                        isSelected: true
+                                    ) {
+                                        viewModel.toggleCustomTag(customTag)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 
                 Section(header: Text("Notes")) {
@@ -104,6 +173,33 @@ struct FlavorTagButton: View {
                     RoundedRectangle(cornerRadius: 15)
                         .stroke(isSelected ? Color.blue : Color.clear, lineWidth: 1)
                 )
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
+
+struct CustomFlavorTagButton: View {
+    let tag: String
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 4) {
+                Text(tag)
+                    .font(.caption)
+                Image(systemName: "xmark.circle.fill")
+                    .font(.caption2)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(isSelected ? Color.orange : Color.gray.opacity(0.2))
+            .foregroundColor(isSelected ? .white : .primary)
+            .cornerRadius(15)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(isSelected ? Color.orange : Color.clear, lineWidth: 1)
+            )
         }
         .buttonStyle(PlainButtonStyle())
     }

@@ -97,14 +97,15 @@ struct CoffeeRow: View {
                     .background(Color.orange.opacity(0.2))
                     .cornerRadius(4)
                 
-                // Show first couple of tags
-                ForEach(coffee.flavorTags.prefix(2)) { tag in
-                    Text(tag.rawValue)
+                // Show first couple of tags (predefined + custom)
+                let allTags = coffee.allFlavorTagStrings
+                ForEach(Array(allTags.prefix(2)), id: \.self) { tag in
+                    Text(tag)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
-                if coffee.flavorTags.count > 2 {
-                    Text("+\(coffee.flavorTags.count - 2)")
+                if allTags.count > 2 {
+                    Text("+\(allTags.count - 2)")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
