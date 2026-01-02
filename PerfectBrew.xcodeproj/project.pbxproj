@@ -47,9 +47,50 @@
 		F49730B12E35356F001D8E6D /* PerfectBrewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectBrewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F4BDDEB62F06F7BF00053252 /* Exceptions for "PerfectBrew" folder in "PerfectBrewTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIcon.appiconset/29.png,
+				AppIcon.appiconset/40.png,
+				AppIcon.appiconset/57.png,
+				AppIcon.appiconset/58.png,
+				AppIcon.appiconset/60.png,
+				AppIcon.appiconset/80.png,
+				AppIcon.appiconset/87.png,
+				AppIcon.appiconset/114.png,
+				AppIcon.appiconset/120.png,
+				AppIcon.appiconset/180.png,
+				AppIcon.appiconset/1024.png,
+			);
+			target = F49730A62E35356F001D8E6D /* PerfectBrewTests */;
+		};
+		F4BDDEB72F06F7BF00053252 /* Exceptions for "PerfectBrew" folder in "PerfectBrewUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIcon.appiconset/29.png,
+				AppIcon.appiconset/40.png,
+				AppIcon.appiconset/57.png,
+				AppIcon.appiconset/58.png,
+				AppIcon.appiconset/60.png,
+				AppIcon.appiconset/80.png,
+				AppIcon.appiconset/87.png,
+				AppIcon.appiconset/114.png,
+				AppIcon.appiconset/120.png,
+				AppIcon.appiconset/180.png,
+				AppIcon.appiconset/1024.png,
+			);
+			target = F49730B02E35356F001D8E6D /* PerfectBrewUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F497309C2E35356D001D8E6D /* PerfectBrew */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F4BDDEB62F06F7BF00053252 /* Exceptions for "PerfectBrew" folder in "PerfectBrewTests" target */,
+				F4BDDEB72F06F7BF00053252 /* Exceptions for "PerfectBrew" folder in "PerfectBrewUITests" target */,
+			);
 			path = PerfectBrew;
 			sourceTree = "<group>";
 		};
@@ -428,10 +469,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 76D4MX3XGC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleIconName = AppIcon;
+				INFOPLIST_KEY_NSCameraUsageDescription = "PerfectBrew needs camera access to scan coffee bag labels and extract information automatically.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "PerfectBrew needs photo library access to select coffee bag label photos for text extraction.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,6 +492,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AE.PerfectBrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "ThePerfectBrew App Store";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,10 +505,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 76D4MX3XGC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleIconName = AppIcon;
+				INFOPLIST_KEY_NSCameraUsageDescription = "PerfectBrew needs camera access to scan coffee bag labels and extract information automatically.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "PerfectBrew needs photo library access to select coffee bag label photos for text extraction.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -471,6 +528,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AE.PerfectBrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "ThePerfectBrew App Store";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

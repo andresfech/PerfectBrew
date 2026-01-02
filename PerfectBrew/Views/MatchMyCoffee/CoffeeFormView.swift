@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct CoffeeFormView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -13,6 +14,23 @@ struct CoffeeFormView: View {
         NavigationView {
             Form {
                 Section(header: Text("Details")) {
+                    // Scan Label button
+                    Button(action: {
+                        viewModel.showingCameraPicker = true
+                    }) {
+                        HStack {
+                            Image(systemName: "camera.fill")
+                                .foregroundColor(.orange)
+                            Text("Scan Label")
+                                .foregroundColor(.orange)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.vertical, 4)
+                    }
+                    
                     TextField("Coffee Name", text: $viewModel.name)
                     TextField("Roaster", text: $viewModel.roaster)
                 }
@@ -150,6 +168,40 @@ struct CoffeeFormView: View {
                     }
                     .disabled(!viewModel.isValid)
                 }
+            }
+            .sheet(isPresented: $viewModel.showingCameraPicker) {
+                CoffeeLabelScannerView(isPresented: $viewModel.showingCameraPicker) { image in
+                    viewModel.processImageWithOCR(image)
+                }
+            }
+            .sheet(isPresented: $viewModel.showingOCRReview) {
+                if let extractedData = viewModel.extractedFields {
+                    OCRReviewView(viewModel: viewModel)
+                }
+            }
+            .overlay {
+                if viewModel.isProcessingOCR {
+                    Color.black.opacity(0.3)
+                        .ignoresSafeArea()
+                    
+                    VStack(spacing: 16) {
+                        ProgressView()
+                            .scaleEffect(1.5)
+                        Text("Extracting text...")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
+                    .padding(30)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(16)
+                }
+            }
+            .alert("OCR Error", isPresented: $viewModel.showingOCRError) {
+                Button("OK") {
+                    viewModel.ocrError = nil
+                }
+            } message: {
+                Text(viewModel.ocrError ?? "An error occurred while processing the image.")
             }
         }
     }
