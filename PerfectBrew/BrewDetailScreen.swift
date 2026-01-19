@@ -6,10 +6,37 @@ struct BrewDetailScreen: View {
     @StateObject private var audioService = AudioService()
     @StateObject private var grinderService = GrinderService.shared
     @AppStorage("selectedGrinder") private var selectedGrinder: String = "None"
+    @State private var isStepsExpanded: Bool = false
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
+                // Overview Badge
+                HStack {
+                    Image(systemName: "eye.fill")
+                        .font(.title3)
+                        .foregroundColor(.orange)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("recipe_overview".localized)
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.primary)
+                        Text("review_before_brewing".localized)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                }
+                .padding(16)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.orange.opacity(0.1))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color.orange.opacity(0.3), lineWidth: 1)
+                        )
+                )
+                
                 // Header (AEC-13: localized title)
                 VStack(alignment: .leading, spacing: 8) {
                     Text(recipe.localizedTitle)
@@ -165,63 +192,13 @@ struct BrewDetailScreen: View {
                         .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 2)
                 )
                 
-                // Preparation Steps
-                if !recipe.localizedPreparationSteps.isEmpty {
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("preparation_steps".localized)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        
-                        ForEach(Array(recipe.localizedPreparationSteps.enumerated()), id: \.offset) { index, step in
-                            HStack(alignment: .top, spacing: 12) {
-                                Text("\(index + 1)")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 24, height: 24)
-                                    .background(Color.blue)
-                                    .clipShape(Circle())
-                                
-                                Text(step)
-                                    .font(.body)
-                                    .multilineTextAlignment(.leading)
-                                
-                                Spacer()
-                            }
-                        }
-                    }
-                }
-                
-                // Brewing Steps
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("brewing_steps".localized)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    
-                    ForEach(Array(recipe.brewingSteps.enumerated()), id: \.offset) { index, step in
-                        HStack(alignment: .top, spacing: 12) {
-                            Text("\(index + 1)")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(width: 24, height: 24)
-                                .background(Color.orange)
-                                .clipShape(Circle())
-                            
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(step.localizedInstruction)
-                                    .font(.body)
-                                    .multilineTextAlignment(.leading)
-                                
-                                Text("\(step.timeSeconds)s")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                            
-                            Spacer()
-                        }
-                    }
-                }
+                // Steps Preview Card (Combined Preparation + Brewing Steps)
+                StepsPreviewCardView(
+                    preparationSteps: recipe.localizedPreparationSteps,
+                    brewingSteps: recipe.brewingSteps,
+                    totalTime: recipe.parameters.totalBrewTimeSeconds,
+                    isExpanded: $isStepsExpanded
+                )
                 
                 // Equipment
                 VStack(alignment: .leading, spacing: 12) {
@@ -290,6 +267,10 @@ struct BrewDetailScreen: View {
                     }
                 }
                 
+                // Visual Separator
+                Divider()
+                    .padding(.vertical, 8)
+                
                 // Start Brewing Button
                 NavigationLink(destination: BrewingGuideScreen(
                     coffeeDose: recipe.parameters.coffeeGrams,
@@ -300,25 +281,136 @@ struct BrewDetailScreen: View {
                     recipe: recipe,
                     coffee: coffee
                 )) {
-                    HStack {
-                        Image(systemName: "play.fill")
-                            .font(.title3)
-                        Text("start_brewing".localized)
-                            .font(.title3)
-                            .fontWeight(.semibold)
+                    VStack(spacing: 8) {
+                        HStack {
+                            Image(systemName: "play.fill")
+                                .font(.title3)
+                            Text("start_step_by_step_guide".localized)
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                        }
+                        Text("follow_guided_steps".localized)
+                            .font(.subheadline)
+                            .foregroundColor(.white.opacity(0.9))
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
-                    .padding()
+                    .padding(.vertical, 20)
+                    .padding(.horizontal, 16)
                     .background(Color.orange)
-                    .cornerRadius(12)
+                    .cornerRadius(16)
                 }
-                .padding(.top, 20)
+                .padding(.top, 8)
             }
             .padding()
         }
+        .background(Color(.systemGroupedBackground))
         .navigationTitle("recipe_details".localized)
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+// Steps Preview Card Component
+struct StepsPreviewCardView: View {
+    let preparationSteps: [String]
+    let brewingSteps: [BrewingStep]
+    let totalTime: Int
+    @Binding var isExpanded: Bool
+    
+    private var totalStepsCount: Int {
+        return preparationSteps.count + brewingSteps.count
+    }
+    
+    private var previewSteps: [(index: Int, text: String)] {
+        let combined: [(Int, String)] = preparationSteps.enumerated().map { (index, step) in
+            (index + 1, step)
+        } + brewingSteps.enumerated().map { (index, step) in
+            (preparationSteps.count + index + 1, step.localizedInstruction)
+        }
+        return isExpanded ? combined : Array(combined.prefix(3))
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Text("brewing_steps_preview".localized)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                
+                Spacer()
+                
+                // Preview badge
+                Text("PREVIEW")
+                    .font(.caption2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.secondary.opacity(0.1))
+                    .cornerRadius(6)
+            }
+            
+            // Steps summary
+            HStack {
+                Text("\(totalStepsCount) \(totalStepsCount == 1 ? "step".localized : "steps".localized) • \(totalTime)s \("total".localized)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Spacer()
+            }
+            .padding(.bottom, 4)
+            
+            // Preview steps (muted styling)
+            VStack(alignment: .leading, spacing: 12) {
+                ForEach(Array(previewSteps.enumerated()), id: \.offset) { _, stepItem in
+                    HStack(alignment: .top, spacing: 12) {
+                        Text("\(stepItem.index)")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundColor(.secondary)
+                            .frame(width: 24, height: 24)
+                            .background(Color.gray.opacity(0.3))
+                            .clipShape(Circle())
+                        
+                        Text(stepItem.text)
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.leading)
+                        
+                        Spacer()
+                    }
+                }
+            }
+            
+            // Expand/Collapse Button
+            if totalStepsCount > 3 {
+                Button(action: {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        isExpanded.toggle()
+                    }
+                }) {
+                    HStack {
+                        Text(isExpanded ? "collapse_steps".localized : "view_all_steps".localized)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.orange)
+                        
+                        Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                            .font(.caption)
+                            .foregroundColor(.orange)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 12)
+                    .background(Color.orange.opacity(0.1))
+                    .cornerRadius(10)
+                }
+            }
+        }
+        .padding(20)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.systemBackground))
+                .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
+        )
     }
 }
 
