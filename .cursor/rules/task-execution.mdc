@@ -1,4 +1,5 @@
 ---
+description: "Task execution protocol for systematically executing approved task checklists with production safety. Use when executing implementation plans, working with task checklists, implementing features from PRDs, or following phased development workflows."
 alwaysApply: false
 triggerPhrases:
   - "execute"

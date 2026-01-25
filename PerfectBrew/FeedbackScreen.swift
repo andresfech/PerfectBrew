@@ -8,10 +8,16 @@ struct FeedbackScreen: View {
     @State private var showingRecommendations = false  // AEC-12
     @State private var diagnosticResult: BrewDiagnosticResult?  // AEC-12
     @State private var showingCoffeeSelection = false  // AEC-12
+    @State private var showingTasteModal = false  // Phase 3: exertion-style taste modal
+    @State private var expectedProfile: ExtractionCharacteristics? = nil  // Expected profile from coffee
     let recipe: Recipe
     let brewParameters: BrewParameters
     var coffee: Coffee? = nil  // AEC-12: Optional coffee for smart recommendations
     @State private var selectedCoffee: Coffee? = nil  // AEC-12: Local selection if not passed
+    
+    /// "Good outcome" value; stored in defect when user selects Balanced. Replaces "None (Balanced)".
+    static let balancedValue = "Balanced"
+    static let defectOptions = ["Sour/Tart", "Bitter/Dry", "Weak/Watery", "Strong/Heavy", "Hollow"]
     
     var body: some View {
         ScrollView {
@@ -45,6 +51,11 @@ struct FeedbackScreen: View {
                 
                 // Coffee Selection Prompt (AEC-12)
                 coffeeSelectionCard
+                
+                // Expected Profile Section (if coffee is selected)
+                if let coffee = effectiveCoffee, let expected = expectedProfile {
+                    ExpectedProfileCard(coffee: coffee, expectedProfile: expected)
+                }
                 
                 // Overall Rating Section
                 FeedbackSection(title: "overall_rating".localized) {
@@ -83,84 +94,86 @@ struct FeedbackScreen: View {
                     }
                 }
                 
-                // Diagnostic Section (AEC-11)
-                FeedbackSection(title: "Diagnosis") {
-                    VStack(spacing: 16) {
+                // Result Section (AEC-11): Balanced as primary outcome, defects as "or had an issue?"
+                FeedbackSection(title: "Result") {
+                    VStack(alignment: .leading, spacing: 16) {
                         Text("How did it taste?")
                             .font(.headline)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Button(action: { updateDefect(FeedbackScreen.balancedValue) }) {
+                            HStack {
+                                Image(systemName: isBalancedSelected ? "checkmark.circle.fill" : "circle")
+                                    .foregroundColor(isBalancedSelected ? .white : .secondary)
+                                Text("Balanced")
+                                    .font(.body)
+                                    .fontWeight(isBalancedSelected ? .semibold : .regular)
+                                Spacer()
+                            }
+                            .padding(16)
+                            .frame(maxWidth: .infinity)
+                            .background(isBalancedSelected ? Color.green : Color(.systemGray5))
+                            .foregroundColor(isBalancedSelected ? .white : .primary)
+                            .cornerRadius(10)
+                        }
+                        .buttonStyle(.plain)
+                        
+                        Text("Or had an issue?")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundColor(.secondary)
                         
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
-                            ForEach(["None (Balanced)", "Sour/Tart", "Bitter/Dry", "Weak/Watery", "Strong/Heavy", "Hollow"], id: \.self) { option in
-                                Button(action: {
-                                    updateDefect(option)
-                                }) {
+                            ForEach(FeedbackScreen.defectOptions, id: \.self) { option in
+                                Button(action: { updateDefect(option) }) {
                                     Text(option)
                                         .font(.caption)
                                         .padding(12)
                                         .frame(maxWidth: .infinity)
-                                        .background(feedbackData.defect == option ? Color.blue : Color(.systemGray5))
+                                        .background(feedbackData.defect == option ? Color.orange : Color(.systemGray5))
                                         .foregroundColor(feedbackData.defect == option ? .white : .primary)
                                         .cornerRadius(8)
                                 }
                             }
                         }
-                        
-                        if let advice = feedbackData.diagnosticAdvice {
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("💡 Suggestion for Next Time:")
-                                    .font(.headline)
-                                    .foregroundColor(.orange)
-                                Text(advice)
-                                    .font(.body)
-                                    .padding()
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .background(Color.orange.opacity(0.1))
-                                    .cornerRadius(8)
-                            }
-                            .transition(.opacity)
-                        }
                     }
                 }
                 
-                // Taste Profile Section
+                // Taste Profile Section (Phase 3: modal)
                 FeedbackSection(title: "taste_profile".localized) {
-                    VStack(spacing: 20) {
-                        SliderQuestion(
-                            id: "sweetness_level",
-                            label: "sweetness_level".localized,
-                            value: $feedbackData.sweetnessLevel,
-                            range: 0...5
-                        )
-                        
-                        SliderQuestion(
-                            id: "bitterness_level",
-                            label: "bitterness_level".localized,
-                            value: $feedbackData.bitternessLevel,
-                            range: 0...5
-                        )
-                        
-                        SliderQuestion(
-                            id: "acidity_level",
-                            label: "acidity_level".localized,
-                            value: $feedbackData.acidityLevel,
-                            range: 0...5
-                        )
-                        
-                        MultipleChoiceQuestion(
-                            id: "body",
-                            label: "body_mouthfeel".localized,
-                            options: ["light".localized, "medium".localized, "full".localized],
-                            selection: $feedbackData.body
-                        )
-                        
-                        TagsQuestion(
-                            id: "flavor_notes",
-                            label: "flavor_notes".localized,
-                            options: ["fruity".localized, "chocolaty".localized, "nutty".localized, "earthy".localized, "floral".localized, "spicy".localized, "herbal".localized],
-                            selectedTags: $feedbackData.flavorNotes
-                        )
+                    Button(action: { showingTasteModal = true }) {
+                        HStack {
+                            Image(systemName: "slider.horizontal.3")
+                                .font(.title2)
+                                .foregroundColor(.orange)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("rate_taste".localized)
+                                    .font(.headline)
+                                    .foregroundColor(.primary)
+                                Text("save_taste_subtitle".localized)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(16)
+                        .background(Color.orange.opacity(0.08))
+                        .cornerRadius(12)
                     }
+                    .buttonStyle(.plain)
+                    .frame(minHeight: 44)
+                    .accessibilityLabel("Open Taste Profile")
+                    .accessibilityHint("Opens modal to rate acidity, sweetness, body")
+                }
+                
+                // Flavor Notes Experienced Section (if coffee is selected)
+                if let coffee = effectiveCoffee, !coffee.flavorTags.isEmpty {
+                    FlavorTagFeedbackView(
+                        coffee: coffee,
+                        experiencedTags: $feedbackData.experiencedFlavorTags
+                    )
                 }
                 
                 // Adjustment Suggestions Section
@@ -218,6 +231,9 @@ struct FeedbackScreen: View {
         .sheet(isPresented: $showingCoffeeSelection) {
             CoffeeSelectionSheet(selectedCoffee: $selectedCoffee)
         }
+        .sheet(isPresented: $showingTasteModal) {
+            ExertionStyleTasteModal(feedbackData: $feedbackData, expectedProfile: expectedProfile)
+        }
         .background(
             NavigationLink(
                 destination: Group {
@@ -239,6 +255,14 @@ struct FeedbackScreen: View {
             if selectedCoffee == nil {
                 selectedCoffee = coffee
             }
+            // Calculate expected profile if coffee is available (force recalculation)
+            DispatchQueue.main.async {
+                calculateExpectedProfile()
+            }
+        }
+        .onChange(of: effectiveCoffee) { _ in
+            // Recalculate expected profile when coffee changes
+            calculateExpectedProfile()
         }
     }
     
@@ -248,10 +272,24 @@ struct FeedbackScreen: View {
         selectedCoffee ?? coffee
     }
     
+    // MARK: - Expected Profile Calculation
+    
+    private func calculateExpectedProfile() {
+        guard let coffee = effectiveCoffee else {
+            expectedProfile = nil
+            print("DEBUG: calculateExpectedProfile - No coffee available")
+            return
+        }
+        print("DEBUG: calculateExpectedProfile - Computing profile for \(coffee.name)")
+        expectedProfile = BrewingRuleEngine.shared.computeTargetProfile(for: coffee)
+        print("DEBUG: calculateExpectedProfile - Profile calculated: acidity=\(expectedProfile?.acidity ?? 0), sweetness=\(expectedProfile?.sweetness ?? 0)")
+    }
+    
     // MARK: - Coffee Selection Card (AEC-12)
     
     private var coffeeSelectionCard: some View {
         VStack(spacing: 12) {
+            // Always show coffee info if available, not just prompt
             if let coffee = effectiveCoffee {
                 // Coffee is selected
                 HStack {
@@ -311,16 +349,19 @@ struct FeedbackScreen: View {
         }
     }
     
+    private var isBalancedSelected: Bool {
+        feedbackData.defect == Self.balancedValue
+    }
+    
     private var canSubmit: Bool {
-        // At least overall rating should be provided
+        // At least overall rating or taste (1–5) should be provided
         return feedbackData.overallRating > 0 ||
                feedbackData.followedRecipe != nil ||
                feedbackData.brewTimeMatch != nil ||
                feedbackData.flowRate != nil ||
-               feedbackData.sweetnessLevel > 0 ||
-               feedbackData.bitternessLevel > 0 ||
-               feedbackData.acidityLevel > 0 ||
-               feedbackData.body != nil ||
+               (feedbackData.acidityLevel >= 1 && feedbackData.acidityLevel <= 5) ||
+               (feedbackData.sweetnessLevel >= 1 && feedbackData.sweetnessLevel <= 5) ||
+               (feedbackData.bodyLevel >= 1 && feedbackData.bodyLevel <= 5) ||
                !feedbackData.flavorNotes.isEmpty ||
                feedbackData.adjustNextTime != nil ||
                !feedbackData.adjustmentAreas.isEmpty ||
@@ -348,8 +389,8 @@ struct FeedbackScreen: View {
             brewTime: brewParameters.brewTime,
             feedbackData: feedbackData,
             tasteRating: Int(feedbackData.overallRating),
-            strengthRating: Int(feedbackData.bitternessLevel),
-            acidityRating: Int(feedbackData.acidityLevel),
+            strengthRating: Int(round((feedbackData.bodyLevel - 1))),  // 1–5 → 0–4 (was from bitterness)
+            acidityRating: Int(round(feedbackData.acidityLevel - 1)),  // 1–5 → 0–4
             notes: feedbackData.additionalNotes,
             date: Date(),
             coffeeID: effectiveCoffee?.id,  // AEC-12: Link to coffee
@@ -373,7 +414,7 @@ struct FeedbackScreen: View {
     private func updateDefect(_ option: String) {
         feedbackData.defect = option
         
-        if option == "None (Balanced)" {
+        if option == Self.balancedValue {
             feedbackData.diagnosticAdvice = nil
             return
         }
@@ -552,6 +593,91 @@ struct CheckboxQuestion: View {
     }
 }
 
+// MARK: - Expected Profile Card
+
+struct ExpectedProfileCard: View {
+    let coffee: Coffee
+    let expectedProfile: ExtractionCharacteristics
+    
+    var body: some View {
+        FeedbackSection(title: "expected_profile".localized) {
+            VStack(alignment: .leading, spacing: 16) {
+                // Expected flavor notes from coffee
+                if !coffee.flavorTags.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("expected_flavor_notes".localized)
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                        
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
+                            ForEach(coffee.flavorTags) { tag in
+                                FlavorTagButton(
+                                    tag: tag,
+                                    isSelected: true  // Always show as "expected"
+                                ) {
+                                    // Read-only, no action
+                                }
+                                .opacity(0.8)
+                            }
+                        }
+                    }
+                }
+                
+                // Expected characteristics
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("you_should_taste".localized)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    VStack(spacing: 8) {
+                        characteristicRow(
+                            label: "Acidity",
+                            value: expectedProfile.acidity,
+                            icon: "bolt.fill",
+                            color: .yellow
+                        )
+                        characteristicRow(
+                            label: "Sweetness",
+                            value: expectedProfile.sweetness,
+                            icon: "sparkles",
+                            color: .orange
+                        )
+                        characteristicRow(
+                            label: "Body",
+                            value: expectedProfile.body,
+                            icon: "drop.fill",
+                            color: .brown
+                        )
+                    }
+                }
+            }
+        }
+    }
+    
+    private func characteristicRow(label: String, value: Double, icon: String, color: Color) -> some View {
+        HStack {
+            Image(systemName: icon)
+                .foregroundColor(color)
+                .frame(width: 24)
+            
+            Text(label)
+                .font(.subheadline)
+                .foregroundColor(.primary)
+            
+            Spacer()
+            
+            // Visual indicator
+            HStack(spacing: 4) {
+                ForEach(0..<5) { index in
+                    Circle()
+                        .fill(index < Int(value * 5) ? color : Color.gray.opacity(0.3))
+                        .frame(width: 8, height: 8)
+                }
+            }
+        }
+    }
+}
+
 struct TextAreaQuestion: View {
     let id: String
     let label: String
@@ -608,6 +734,70 @@ struct OverallRatingQuestion: View {
     }
 }
 
+// MARK: - Flavor Tag Feedback View
+
+struct FlavorTagFeedbackView: View {
+    let coffee: Coffee
+    @Binding var experiencedTags: Set<FlavorTag>
+    
+    var body: some View {
+        FeedbackSection(title: "flavor_notes_experienced".localized) {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("did_you_taste_note".localized)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .padding(.bottom, 8)
+                
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))], spacing: 12) {
+                    ForEach(coffee.flavorTags) { tag in
+                        FlavorTagFeedbackButton(
+                            tag: tag,
+                            isExperienced: experiencedTags.contains(tag),
+                            onToggle: {
+                                if experiencedTags.contains(tag) {
+                                    experiencedTags.remove(tag)
+                                } else {
+                                    experiencedTags.insert(tag)
+                                }
+                            }
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct FlavorTagFeedbackButton: View {
+    let tag: FlavorTag
+    let isExperienced: Bool
+    let onToggle: () -> Void
+    
+    var body: some View {
+        Button(action: onToggle) {
+            HStack(spacing: 8) {
+                Image(systemName: isExperienced ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(isExperienced ? .orange : .gray)
+                
+                Text(tag.rawValue)
+                    .font(.caption)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.leading)
+                
+                Spacer()
+            }
+            .padding(12)
+            .background(isExperienced ? Color.orange.opacity(0.1) : Color(.systemGray5))
+            .cornerRadius(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(isExperienced ? Color.orange : Color.clear, lineWidth: 2)
+            )
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
+
 // MARK: - Data Models
 
 struct FeedbackData: Codable {
@@ -623,17 +813,140 @@ struct FeedbackData: Codable {
     var defect: String?
     var diagnosticAdvice: String? // Store the generated advice
     
-    // Taste Profile
-    var sweetnessLevel: Double = 0
-    var bitternessLevel: Double = 0
-    var acidityLevel: Double = 0
+    /// True when no defect selected: "Balanced", "None (Balanced)", "none", or nil. Use for backward compatibility.
+    static func isNoDefect(_ value: String?) -> Bool {
+        guard let v = value, !v.isEmpty else { return true }
+        return v == "Balanced" || v == "None (Balanced)" || v.lowercased() == "none"
+    }
+    
+    // Taste Profile (1–5 scale; Acidity, Sweetness, Body only. Bitterness deprecated.)
+    var acidityLevel: Double = 3
+    var sweetnessLevel: Double = 3
+    var bodyLevel: Double = 3
+    /// Legacy decode only. New UI uses bodyLevel (1–5).
     var body: String?
+    /// Deprecated. Keep for legacy decode; never set by new UI.
+    var bitternessLevel: Double = 0.5
     var flavorNotes: Set<String> = []
+    
+    // Flavor Tags Experienced (based on coffee's expected flavor tags)
+    var experiencedFlavorTags: Set<FlavorTag> = []
     
     // Adjustment Suggestions
     var adjustNextTime: String?
     var adjustmentAreas: Set<String> = []
     var additionalNotes: String = ""
+    
+    enum CodingKeys: String, CodingKey {
+        case overallRating, followedRecipe, brewTimeMatch, flowRate
+        case defect, diagnosticAdvice
+        case acidityLevel, sweetnessLevel, bitternessLevel, body, bodyLevel
+        case flavorNotes, experiencedFlavorTags, adjustNextTime, adjustmentAreas, additionalNotes
+    }
+    
+    init(
+        overallRating: Double = 0,
+        followedRecipe: String? = nil,
+        brewTimeMatch: String? = nil,
+        flowRate: String? = nil,
+        defect: String? = nil,
+        diagnosticAdvice: String? = nil,
+        acidityLevel: Double = 3,
+        sweetnessLevel: Double = 3,
+        bodyLevel: Double = 3,
+        body: String? = nil,
+        bitternessLevel: Double = 0.5,
+        flavorNotes: Set<String> = [],
+        experiencedFlavorTags: Set<FlavorTag> = [],
+        adjustNextTime: String? = nil,
+        adjustmentAreas: Set<String> = [],
+        additionalNotes: String = ""
+    ) {
+        self.overallRating = overallRating
+        self.followedRecipe = followedRecipe
+        self.brewTimeMatch = brewTimeMatch
+        self.flowRate = flowRate
+        self.defect = defect
+        self.diagnosticAdvice = diagnosticAdvice
+        self.acidityLevel = acidityLevel
+        self.sweetnessLevel = sweetnessLevel
+        self.bodyLevel = bodyLevel
+        self.body = body
+        self.bitternessLevel = bitternessLevel
+        self.flavorNotes = flavorNotes
+        self.experiencedFlavorTags = experiencedFlavorTags
+        self.adjustNextTime = adjustNextTime
+        self.adjustmentAreas = adjustmentAreas
+        self.additionalNotes = additionalNotes
+    }
+    
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        overallRating = try c.decodeIfPresent(Double.self, forKey: .overallRating) ?? 0
+        followedRecipe = try c.decodeIfPresent(String.self, forKey: .followedRecipe)
+        brewTimeMatch = try c.decodeIfPresent(String.self, forKey: .brewTimeMatch)
+        flowRate = try c.decodeIfPresent(String.self, forKey: .flowRate)
+        defect = try c.decodeIfPresent(String.self, forKey: .defect)
+        diagnosticAdvice = try c.decodeIfPresent(String.self, forKey: .diagnosticAdvice)
+        bitternessLevel = try c.decodeIfPresent(Double.self, forKey: .bitternessLevel) ?? 0.5
+        body = try c.decodeIfPresent(String.self, forKey: .body)
+        
+        let a = try c.decodeIfPresent(Double.self, forKey: .acidityLevel) ?? 3
+        acidityLevel = a <= 1 ? a * 4 + 1 : a
+        let s = try c.decodeIfPresent(Double.self, forKey: .sweetnessLevel) ?? 3
+        sweetnessLevel = s <= 1 ? s * 4 + 1 : s
+        
+        if let bl = try c.decodeIfPresent(Double.self, forKey: .bodyLevel) {
+            bodyLevel = bl
+        } else {
+            let b0 = Self.bodyToBodyLevel(body)
+            bodyLevel = b0
+        }
+        
+        flavorNotes = try c.decodeIfPresent(Set<String>.self, forKey: .flavorNotes) ?? []
+        experiencedFlavorTags = try c.decodeIfPresent(Set<FlavorTag>.self, forKey: .experiencedFlavorTags) ?? []
+        adjustNextTime = try c.decodeIfPresent(String.self, forKey: .adjustNextTime)
+        adjustmentAreas = try c.decodeIfPresent(Set<String>.self, forKey: .adjustmentAreas) ?? []
+        additionalNotes = try c.decodeIfPresent(String.self, forKey: .additionalNotes) ?? ""
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(overallRating, forKey: .overallRating)
+        try c.encodeIfPresent(followedRecipe, forKey: .followedRecipe)
+        try c.encodeIfPresent(brewTimeMatch, forKey: .brewTimeMatch)
+        try c.encodeIfPresent(flowRate, forKey: .flowRate)
+        try c.encodeIfPresent(defect, forKey: .defect)
+        try c.encodeIfPresent(diagnosticAdvice, forKey: .diagnosticAdvice)
+        try c.encode(acidityLevel, forKey: .acidityLevel)
+        try c.encode(sweetnessLevel, forKey: .sweetnessLevel)
+        try c.encode(bodyLevel, forKey: .bodyLevel)
+        try c.encodeIfPresent(Self.bodyLevelToBody(bodyLevel), forKey: .body)
+        try c.encode(bitternessLevel, forKey: .bitternessLevel)
+        try c.encode(flavorNotes, forKey: .flavorNotes)
+        try c.encode(experiencedFlavorTags, forKey: .experiencedFlavorTags)
+        try c.encodeIfPresent(adjustNextTime, forKey: .adjustNextTime)
+        try c.encode(adjustmentAreas, forKey: .adjustmentAreas)
+        try c.encode(additionalNotes, forKey: .additionalNotes)
+    }
+    
+    /// Legacy body string → 1–5. light→1.5, medium→3, full→4.5.
+    private static func bodyToBodyLevel(_ body: String?) -> Double {
+        guard let b = body?.lowercased() else { return 3 }
+        switch b {
+        case "light", "ligero": return 1.5
+        case "medium", "medio": return 3
+        case "full", "completo": return 4.5
+        default: return 3
+        }
+    }
+    
+    /// 1–5 → legacy body string for encoding.
+    private static func bodyLevelToBody(_ bodyLevel: Double) -> String? {
+        if bodyLevel < 2.25 { return "light" }
+        if bodyLevel < 3.75 { return "medium" }
+        return "full"
+    }
 }
 
 struct DetailedBrewFeedback: Codable {

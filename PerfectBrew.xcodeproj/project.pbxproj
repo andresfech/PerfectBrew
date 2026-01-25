@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F400F9362F1D94BF00CED030 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = F400F9352F1D94BF00CED030 /* File.txt */; };
 		F4BDC1BC2EE7A7EC00053252 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = F4BDC1BB2EE7A7EC00053252 /* Supabase */; };
 		F4EA586B2E39444F00903EAD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F4EA586A2E39444F00903EAD /* Lottie */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F400F9352F1D94BF00CED030 /* File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		F497309A2E35356D001D8E6D /* PerfectBrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectBrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49730A72E35356F001D8E6D /* PerfectBrewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectBrewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49730B12E35356F001D8E6D /* PerfectBrewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectBrewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				F49730B42E35356F001D8E6D /* PerfectBrewUITests */,
 				F4EA58622E393D1F00903EAD /* Frameworks */,
 				F497309B2E35356D001D8E6D /* Products */,
+				F400F9352F1D94BF00CED030 /* File.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F400F9362F1D94BF00CED030 /* File.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

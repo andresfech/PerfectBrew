@@ -32,72 +32,82 @@
         "audio_script_es": "Tienes 10 segundos para agregar 18 gramos de café y verter suavemente 50 gramos de agua a 80 grados."
       },
       {
-        "time_seconds": 15,
-        "instruction": "From 0:10–0:15, stir very gently 3 times back and forth.",
+        "time_seconds": 18,
+        "instruction": "Stir very gently 3 times back and forth (0:10–0:18).",
         "short_instruction": "Stir gently 3 times",
-        "audio_script": "Now, stir very gently three times back and forth.",
+        "audio_script": "Now, stir very gently three times back and forth. You have 8 seconds.",
         "audio_file_name": "2021_world_aeropress_brewing_step2.m4a",
-        "instruction_es": "De 0:10-0:15, revuelve muy suavemente 3 veces de adelante hacia atrás.",
+        "instruction_es": "Revuelve muy suavemente 3 veces de adelante hacia atrás (0:10-0:18).",
         "short_instruction_es": "Revuelve suave 3 veces",
-        "audio_script_es": "Ahora, revuelve muy suavemente tres veces de adelante hacia atrás."
+        "audio_script_es": "Ahora, revuelve muy suavemente tres veces de adelante hacia atrás. Tienes 8 segundos."
       },
       {
-        "time_seconds": 30,
-        "instruction": "From 0:15–0:30 continue pouring water gradually until total poured reaches 200 g (slow, controlled pour).",
+        "time_seconds": 35,
+        "instruction": "Continue pouring water gradually until total poured reaches 200 g (0:18–0:35, slow controlled pour).",
         "short_instruction": "Continue pouring • Total 200g",
-        "audio_script": "Continue pouring slowly until you reach 200 grams total weight.",
+        "audio_script": "Continue pouring slowly until you reach 200 grams total weight. You have 17 seconds.",
         "audio_file_name": "2021_world_aeropress_brewing_step3.m4a",
-        "instruction_es": "De 0:15-0:30 continúa vertiendo agua gradualmente hasta alcanzar 200g en total (vertido lento y controlado).",
+        "instruction_es": "Continúa vertiendo agua gradualmente hasta alcanzar 200g en total (0:18-0:35, vertido lento y controlado).",
         "short_instruction_es": "Continúa vertiendo • Total 200g",
-        "audio_script_es": "Continúa vertiendo lentamente hasta alcanzar 200 gramos de peso total."
+        "audio_script_es": "Continúa vertiendo lentamente hasta alcanzar 200 gramos de peso total. Tienes 17 segundos."
       },
       {
         "time_seconds": 50,
-        "instruction": "At 0:50, stir very gently 3 more times to re-homogenize the bed.",
-        "short_instruction": "Stir 3 more times",
-        "audio_script": "Stir gently three more times to mix everything evenly.",
+        "instruction": "Let the coffee bloom and steep (0:35–0:50). Wait patiently.",
+        "short_instruction": "Wait • Let it steep",
+        "audio_script": "Let the coffee bloom and steep for 15 seconds. Wait patiently.",
         "audio_file_name": "2021_world_aeropress_brewing_step4.m4a",
-        "instruction_es": "A las 0:50, revuelve muy suavemente 3 veces más para re-homogeneizar la cama.",
-        "short_instruction_es": "Revuelve 3 veces más",
-        "audio_script_es": "Revuelve suavemente tres veces más para mezclar todo de manera uniforme."
+        "instruction_es": "Deja que el café florezca y repose (0:35-0:50). Espera pacientemente.",
+        "short_instruction_es": "Espera • Deja reposar",
+        "audio_script_es": "Deja que el café florezca y repose por 15 segundos. Espera pacientemente."
       },
       {
-        "time_seconds": 60,
-        "instruction": "Push out any excess air from the chamber and attach the filter cap.",
-        "short_instruction": "Press out air • Attach filter cap",
-        "audio_script": "Push out excess air and attach the cap. You have 10 seconds.",
+        "time_seconds": 58,
+        "instruction": "Stir very gently 3 more times to re-homogenize the bed (0:50–0:58).",
+        "short_instruction": "Stir 3 more times",
+        "audio_script": "Stir gently three more times to mix everything evenly. 8 seconds.",
         "audio_file_name": "2021_world_aeropress_brewing_step5.m4a",
-        "instruction_es": "Expulsa el aire excedente de la cámara y coloca la tapa del filtro.",
+        "instruction_es": "Revuelve muy suavemente 3 veces más para re-homogeneizar la cama (0:50-0:58).",
+        "short_instruction_es": "Revuelve 3 veces más",
+        "audio_script_es": "Revuelve suavemente tres veces más para mezclar todo de manera uniforme. 8 segundos."
+      },
+      {
+        "time_seconds": 70,
+        "instruction": "Push out any excess air from the chamber and attach the filter cap (0:58–1:10).",
+        "short_instruction": "Press out air • Attach filter cap",
+        "audio_script": "Push out excess air and attach the cap. You have 12 seconds.",
+        "audio_file_name": "2021_world_aeropress_brewing_step6.m4a",
+        "instruction_es": "Expulsa el aire excedente de la cámara y coloca la tapa del filtro (0:58-1:10).",
         "short_instruction_es": "Saca aire • Pon tapa filtro",
-        "audio_script_es": "Expulsa el aire excedente y coloca la tapa. Tienes 10 segundos."
+        "audio_script_es": "Expulsa el aire excedente y coloca la tapa. Tienes 12 segundos."
       },
       {
         "time_seconds": 100,
         "instruction": "Allow to steep. At ~1:35 place pitcher on top. At 1:40 (≈100 s) flip the brewer carefully.",
         "short_instruction": "Steep • Place pitcher • Flip",
-        "audio_script": "Let the coffee steep. You have 40 seconds. At 1 minute 35, place the pitcher on top and flip.",
-        "audio_file_name": "2021_world_aeropress_brewing_step6.m4a",
+        "audio_script": "Let the coffee steep for 30 seconds. At 1 minute 35, place the pitcher on top and flip.",
+        "audio_file_name": "2021_world_aeropress_brewing_step7.m4a",
         "instruction_es": "Deja reposar. A las ~1:35 coloca la jarra encima. A 1:40 (~100s) voltea el preparador con cuidado.",
         "short_instruction_es": "Reposo • Pon jarra • Voltea",
-        "audio_script_es": "Deja que el café repose. Tienes 40 segundos. A 1 minuto 35, coloca la jarra encima y voltea."
+        "audio_script_es": "Deja que el café repose por 30 segundos. A 1 minuto 35, coloca la jarra encima y voltea."
       },
       {
         "time_seconds": 120,
         "instruction": "Immediately begin pressing from 1:40–2:00 (≈20 s press).",
         "short_instruction": "Begin pressing • 20s press",
         "audio_script": "Start pressing immediately. You have 20 seconds to finish the press.",
-        "audio_file_name": "2021_world_aeropress_brewing_step7.m4a",
+        "audio_file_name": "2021_world_aeropress_brewing_step8.m4a",
         "instruction_es": "Inmediatamente comienza a presionar de 1:40-2:00 (~20s de presión).",
         "short_instruction_es": "Comienza a presionar • 20s",
         "audio_script_es": "Comienza a presionar inmediatamente. Tienes 20 segundos para terminar de presionar."
       },
       {
         "time_seconds": 150,
-        "instruction": "From 2:00–2:30 (≈120–150 s) swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool.",
+        "instruction": "From 2:00–2:30 swirl the brewed coffee and perform a 'pour from altitude' into another pitcher to aerate and cool.",
         "short_instruction": "Swirl coffee • Pour from altitude",
         "audio_script": "Swirl the coffee and pour from altitude. You have 30 seconds to aerate and cool.",
-        "audio_file_name": "2021_world_aeropress_brewing_step8.m4a",
-        "instruction_es": "De 2:00-2:30 (~120-150s) agita el café preparado y haz un 'vertido desde altura' a otra jarra para airear y enfriar.",
+        "audio_file_name": "2021_world_aeropress_brewing_step9.m4a",
+        "instruction_es": "De 2:00-2:30 agita el café preparado y haz un 'vertido desde altura' a otra jarra para airear y enfriar.",
         "short_instruction_es": "Agita café • Vierte desde altura",
         "audio_script_es": "Agita el café y viértelo desde altura. Tienes 30 segundos para airear y enfriar."
       }

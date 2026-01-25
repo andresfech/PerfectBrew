@@ -1,13 +1,6 @@
 ---
+description: "PRD review and implementation readiness validation. Use when reviewing product requirements, validating implementation plans, checking development readiness, or converting PRDs into executable phased checklists. Ensures plans are complete, production-safe, and follow PerfectBrew architecture patterns before execution."
 alwaysApply: false
-triggerPhrases:
-  - "review plan"
-  - "check implementation"
-  - "validate plan"
-  - "ready for development"
-  - "handoff"
-  - "PRD review"
-  - "implementation readiness"
 ---
 
 # PRD Review & Implementation Readiness Check

@@ -3,8 +3,8 @@ import SwiftUI
 struct RecommendationsView: View {
     @StateObject var viewModel: RecommendationsViewModel
     
-    init(coffee: Coffee) {
-        _viewModel = StateObject(wrappedValue: RecommendationsViewModel(coffee: coffee))
+    init(coffee: Coffee, preferences: UserTastePreferences? = nil) {
+        _viewModel = StateObject(wrappedValue: RecommendationsViewModel(coffee: coffee, preferences: preferences))
     }
     
     var body: some View {
@@ -14,7 +14,7 @@ struct RecommendationsView: View {
                     Text("No recommendations found.")
                 } else {
                     ForEach(viewModel.recommendations) { recommendation in
-                        NavigationLink(destination: BrewDetailScreen(recipe: recommendation.recipe)) {
+                        NavigationLink(destination: BrewDetailScreen(recipe: recommendation.recipe, coffee: viewModel.coffee)) {
                             RecommendationRow(recommendation: recommendation)
                         }
                     }

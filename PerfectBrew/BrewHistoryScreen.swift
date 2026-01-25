@@ -30,7 +30,7 @@ struct BrewHistoryScreen: View {
                     .padding(.vertical, 4)
                 }
             }
-            .navigationTitle("Brew Log")
+            .navigationTitle("brew_log".localized)
             .onAppear(perform: loadBrews)
         }
     }
@@ -49,6 +49,14 @@ struct BrewHistoryScreen: View {
 
 struct BrewHistoryDetailView: View {
     let brew: Brew
+    
+    @StateObject private var recipeDatabase = RecipeDatabase.shared
+    @StateObject private var coffeeRepository = CoffeeRepository.shared
+    @State private var recipe: Recipe?
+    @State private var coffee: Coffee?
+    @State private var showingRecommendations = false
+    @State private var diagnosticResult: BrewDiagnosticResult?
+    @State private var isLoadingRecommendations = false
     
     var body: some View {
         Form {
@@ -103,31 +111,23 @@ struct BrewHistoryDetailView: View {
             
             Section(header: Text("Taste Profile")) {
                 HStack {
-                    Text("Sweetness")
-                    Spacer()
-                    Text("\(Int(brew.feedbackData.sweetnessLevel))★")
-                        .foregroundColor(.orange)
-                }
-                HStack {
-                    Text("Bitterness")
-                    Spacer()
-                    Text("\(Int(brew.feedbackData.bitternessLevel))★")
-                        .foregroundColor(.orange)
-                }
-                HStack {
                     Text("Acidity")
                     Spacer()
-                    Text("\(Int(brew.feedbackData.acidityLevel))★")
+                    Text(comparativeLabel(for: brew.feedbackData.acidityLevel).localized)
                         .foregroundColor(.orange)
+                        .font(.subheadline)
                 }
-                
-                if let body = brew.feedbackData.body {
-                    HStack {
-                        Text("Body")
-                        Spacer()
-                        Text(body)
-                            .foregroundColor(.secondary)
-                    }
+                HStack {
+                    Text("Sweetness")
+                    Spacer()
+                    Text(comparativeLabel(for: brew.feedbackData.sweetnessLevel).localized)
+                        .foregroundColor(.orange)
+                        .font(.subheadline)
+                }
+                HStack {
+                    Text("Body")
+                    Spacer()
+                    bodyDisplayView(brew.feedbackData)
                 }
                 
                 if !brew.feedbackData.flavorNotes.isEmpty {
@@ -202,8 +202,140 @@ struct BrewHistoryDetailView: View {
                 Text(brew.date, formatter: dateFormatter)
                     .frame(maxWidth: .infinity, alignment: .center)
             }
+            
+            // Recommendations Section (AEC-12 v2)
+            if recipe != nil {
+                Section(header: Text("recommendations".localized)) {
+                    Button(action: {
+                        generateAndShowRecommendations()
+                    }) {
+                        HStack {
+                            if isLoadingRecommendations {
+                                ProgressView()
+                                    .scaleEffect(0.8)
+                            } else {
+                                Image(systemName: "lightbulb.fill")
+                                    .foregroundColor(.orange)
+                            }
+                            Text("view_brew_recommendations".localized)
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                        }
+                    }
+                    .disabled(isLoadingRecommendations)
+                }
+            }
         }
-        .navigationTitle("Brew Details")
+        .navigationTitle("brew_details".localized)
+        .onAppear {
+            loadRecipeAndCoffee()
+        }
+        .background(
+            NavigationLink(
+                destination: Group {
+                    if let result = diagnosticResult, let recipe = recipe {
+                        BrewRecommendationsView(
+                            result: result,
+                            recipe: recipe,
+                            coffee: coffee
+                        )
+                    } else {
+                        // Fallback view if data is not ready
+                        VStack(spacing: 20) {
+                            ProgressView()
+                            Text("Loading recommendations...")
+                                .foregroundColor(.secondary)
+                        }
+                        .navigationTitle("Recommendations")
+                        .navigationBarTitleDisplayMode(.inline)
+                    }
+                },
+                isActive: $showingRecommendations
+            ) {
+                EmptyView()
+            }
+        )
+    }
+    
+    private func loadRecipeAndCoffee() {
+        // Load recipe by title and method
+        recipe = recipeDatabase.findRecipe(title: brew.recipeTitle, method: brew.brewingMethod)
+        
+        if recipe == nil {
+            print("⚠️ BrewHistoryDetailView: Recipe not found - Title: '\(brew.recipeTitle)', Method: '\(brew.brewingMethod)'")
+        } else {
+            print("✅ BrewHistoryDetailView: Recipe found: '\(recipe!.title)'")
+        }
+        
+        // Load coffee by ID if available
+        if let coffeeID = brew.coffeeID {
+            coffee = coffeeRepository.findCoffee(id: coffeeID)
+            if coffee == nil {
+                print("⚠️ BrewHistoryDetailView: Coffee not found for ID: \(coffeeID)")
+            } else {
+                print("✅ BrewHistoryDetailView: Coffee found: '\(coffee!.name)'")
+            }
+        } else {
+            print("ℹ️ BrewHistoryDetailView: No coffeeID in brew - will generate generic recommendations")
+        }
+    }
+    
+    private func generateAndShowRecommendations() {
+        guard let recipe = recipe else {
+            print("❌ BrewHistoryDetailView: Cannot generate recommendations - recipe is nil")
+            return
+        }
+        
+        print("🔄 BrewHistoryDetailView: Generating recommendations...")
+        isLoadingRecommendations = true
+        
+        // Generate recommendations using SmartDiagnosticService
+        let result = SmartDiagnosticService.shared.diagnose(
+            coffee: coffee,
+            recipe: recipe,
+            feedback: brew.feedbackData
+        )
+        
+        print("✅ BrewHistoryDetailView: Recommendations generated successfully")
+        print("   - Direction: \(result.direction.rawValue)")
+        print("   - Confidence: \(result.assessmentConfidence)")
+        print("   - Adjustments: \(result.unifiedAdjustment.adjustments.count)")
+        print("   - Dimension Recommendations: \(result.dimensionRecommendations.count)")
+        
+        diagnosticResult = result
+        isLoadingRecommendations = false
+        showingRecommendations = true
+    }
+    
+    /// 1–5 → not_enough / perfect / too_much. Legacy 0–1, 0–4, 0–5 supported.
+    private func comparativeLabel(for value: Double) -> String {
+        let norm: Double
+        if value >= 1 && value <= 5 { norm = (value - 1) / 4 }
+        else if value <= 1.0 { norm = value }
+        else if value > 4.0 { norm = value / 5.0 }
+        else { norm = value / 4.0 }
+        if norm <= 0.25 { return "not_enough" }
+        if norm >= 0.75 { return "too_much" }
+        return "perfect"
+    }
+    
+    @ViewBuilder private func bodyDisplayView(_ fd: FeedbackData) -> some View {
+        if fd.bodyLevel >= 1 && fd.bodyLevel <= 5 {
+            Text(comparativeLabel(for: fd.bodyLevel).localized)
+                .foregroundColor(.orange)
+                .font(.subheadline)
+        } else if let b = fd.body {
+            Text(b)
+                .foregroundColor(.secondary)
+                .font(.subheadline)
+        } else {
+            Text("perfect".localized)
+                .foregroundColor(.orange)
+                .font(.subheadline)
+        }
     }
     
     private var dateFormatter: DateFormatter {

@@ -1,14 +1,6 @@
 ---
-alwaysApply: false
-triggerPhrases:
-  - "how does this work"
-  - "why is this happening"
-  - "explain this code"
-  - "rubber duck"
-  - "debug this"
-  - "understand this"
-  - "what's going on"
-  - "help me understand"
+description: 
+alwaysApply: true
 ---
 
 # Rubber Duck Debugging Partner

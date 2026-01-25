@@ -50,3 +50,4 @@ We will categorize each recipe based on its physical brewing actions, not just i
 - **Zero 30% Scores**: When a standard coffee is selected, no recipe shows the generic "General recommendation" score (unless it's truly a neutral 30% match by physics, which is rare).
 - **Nuance Visibility**: Users can see different scores between "V60 Standard" and "V60 4:6" for the same bean.
 
+

@@ -77,3 +77,4 @@ Improve recommendation accuracy and user value by expanding the `Coffee` data mo
 - Users can capture full details of their specialty coffee bags.
 - Recommendations feel "smarter" because they acknowledge the specific bean origin/variety.
 
+

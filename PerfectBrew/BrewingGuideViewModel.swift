@@ -77,6 +77,9 @@ class BrewingGuideViewModel: ObservableObject {
         isTimerRunning = true
         isPreparationPhase = false
         
+        // Reset elapsed time to 0 to ensure proper step calculation
+        elapsedTime = 0
+        
         // Start with first brewing step (AEC-13: use localized instruction)
         if !brewingSteps.isEmpty {
             currentStep = brewingSteps[0].localizedInstruction
@@ -88,15 +91,25 @@ class BrewingGuideViewModel: ObservableObject {
             
             print("DEBUG: Started timer - First step: \(currentStep), Duration: \(currentStepDuration)s")
             print("DEBUG: startTimer - isPreparationPhase: \(isPreparationPhase), currentStepDuration: \(currentStepDuration)")
-            print("DEBUG: startTimer - brewingSteps[0].timeSeconds: \(brewingSteps[0].timeSeconds), brewingSteps[1].timeSeconds: \(brewingSteps[1].timeSeconds)")
+            print("DEBUG: startTimer - brewingSteps[0].timeSeconds: \(brewingSteps[0].timeSeconds)")
+            if brewingSteps.count > 1 {
+                print("DEBUG: startTimer - brewingSteps[1].timeSeconds: \(brewingSteps[1].timeSeconds)")
+            }
             
             // Force update step to ensure proper initialization
             updateStep()
             
             // Auto-play audio for the first step if audio is enabled
-            if isAudioEnabled && hasAudioForCurrentStep() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                    self.playCurrentStepAudio()
+            // Use a longer delay to ensure everything is initialized
+            if isAudioEnabled {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    // Check again after delay in case state changed
+                    if self.hasAudioForCurrentStep() {
+                        print("DEBUG: Playing audio for first step")
+                        self.playCurrentStepAudio()
+                    } else {
+                        print("DEBUG: No audio file found for first step, but continuing anyway")
+                    }
                 }
             }
         }
@@ -198,8 +211,12 @@ class BrewingGuideViewModel: ObservableObject {
         for (index, brewingStep) in brewingSteps.enumerated() {
             let stepEndTime = TimeInterval(brewingStep.timeSeconds)
             
-            // If we haven't reached this step's end time yet, this is our current step
-            if elapsedTime < stepEndTime {
+            // Calculate step start time
+            let stepStartTime: TimeInterval = index == 0 ? 0 : TimeInterval(brewingSteps[index - 1].timeSeconds)
+            
+            // Check if elapsedTime is within this step's range [stepStartTime, stepEndTime)
+            // Include the start time, but not the end time (end time belongs to next step)
+            if elapsedTime >= stepStartTime && elapsedTime < stepEndTime {
                 currentStepIndex = index
                 break
             }
@@ -231,7 +248,8 @@ class BrewingGuideViewModel: ObservableObject {
         let currentBrewingStep = recipe.brewingSteps[currentStepIndex]
         print("DEBUG: hasAudioForCurrentStep - currentBrewingStep.audioFileName: \(currentBrewingStep.audioFileName ?? "nil")")
         
-        let result = audioService.hasAudio(for: currentBrewingStep)
+        // Use enhanced hasAudio that checks file existence
+        let result = audioService.hasAudio(for: currentBrewingStep, recipeTitle: recipe.title)
         print("DEBUG: hasAudioForCurrentStep - final result: \(result)")
         return result
     }

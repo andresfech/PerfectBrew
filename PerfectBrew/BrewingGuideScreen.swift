@@ -543,11 +543,9 @@ struct BrewingGuideScreen: View {
                 
                 if let lastBrew = history.first, 
                    let defect = lastBrew.defect, 
-                   let adjustment = lastBrew.adjustment {
-                    // Only show if there was a defect
-                    if defect != "none" && defect != "None (Balanced)" {
-                       lastBrewAdvice = "\(defect) → \(adjustment)" 
-                    }
+                   let adjustment = lastBrew.adjustment,
+                   !FeedbackData.isNoDefect(defect) {
+                    lastBrewAdvice = "\(defect) → \(adjustment)"
                 }
             }
         }

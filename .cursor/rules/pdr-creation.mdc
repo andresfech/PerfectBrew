@@ -1,13 +1,6 @@
 ---
+description: "Guide for creating PRDs, implementation plans, and feature documentation. Use when user requests planning documents, PRDs, implementation plans, feature specs, or comprehensive feature documentation with Gherkin stories, file requirements, and execution checklists."
 alwaysApply: false
-triggerPhrases:
-  - "create a plan"
-  - "implementation plan"
-  - "create a doc"
-  - "start a plan"
-  - "PRD"
-  - "product requirements"
-  - "feature plan"
 ---
 
 # PRD Creation Rules

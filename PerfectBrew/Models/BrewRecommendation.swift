@@ -282,18 +282,35 @@ enum ExtractionAssessment: String, Codable {
 
 /// Actual taste profile derived from user feedback
 struct ActualTasteProfile: Codable {
-    let acidity: Double      // 0.0 - 1.0 (converted from 0-5 slider)
+    let acidity: Double      // 0.0 - 1.0
     let sweetness: Double    // 0.0 - 1.0
-    let bitterness: Double   // 0.0 - 1.0
+    let bitterness: Double   // 0.0 - 1.0 (deprecated; 0.5 when not collected)
     let body: Double         // 0.0 - 1.0
     
-    /// Convert from FeedbackData slider values (0-5) to normalized (0-1)
+    /// Convert from FeedbackData to normalized 0–1.
+    /// New: 1–5 stored (acidity, sweetness, bodyLevel). Legacy: 0–1, body string, bitternessLevel.
     static func from(feedback: FeedbackData) -> ActualTasteProfile {
+        func oneFiveToZeroOne(_ x: Double) -> Double {
+            let v = x <= 1 ? x * 4 + 1 : x  // legacy 0–1 → 1–5
+            return min(max((v - 1) / 4, 0), 1)
+        }
+        let a = oneFiveToZeroOne(feedback.acidityLevel)
+        let s = oneFiveToZeroOne(feedback.sweetnessLevel)
+        let b: Double = {
+            let raw = feedback.bitternessLevel
+            if raw <= 1 { return 0.5 }
+            return min(max((raw - 1) / 4, 0), 1)
+        }()
+        let bodyNorm: Double = {
+            let bl = feedback.bodyLevel
+            if bl >= 1 && bl <= 5 { return (bl - 1) / 4 }
+            return bodyToDouble(feedback.body)
+        }()
         return ActualTasteProfile(
-            acidity: feedback.acidityLevel / 5.0,
-            sweetness: feedback.sweetnessLevel / 5.0,
-            bitterness: feedback.bitternessLevel / 5.0,
-            body: bodyToDouble(feedback.body)
+            acidity: a,
+            sweetness: s,
+            bitterness: b,
+            body: bodyNorm
         )
     }
     
@@ -308,6 +325,32 @@ struct ActualTasteProfile: Codable {
     }
 }
 
+/// Dimension-specific recommendation for individual taste aspects
+struct DimensionSpecificRecommendation: Identifiable, Codable {
+    let id: UUID
+    let dimension: String  // "acidity", "sweetness", "bitterness"
+    let currentLevel: String  // "Not enough", "Perfect", "Too much"
+    let targetLevel: String  // What we want
+    let advice: String  // Main recommendation text
+    let specificAdjustments: [String]  // Specific actionable steps
+    
+    init(
+        id: UUID = UUID(),
+        dimension: String,
+        currentLevel: String,
+        targetLevel: String,
+        advice: String,
+        specificAdjustments: [String]
+    ) {
+        self.id = id
+        self.dimension = dimension
+        self.currentLevel = currentLevel
+        self.targetLevel = targetLevel
+        self.advice = advice
+        self.specificAdjustments = specificAdjustments
+    }
+}
+
 /// Complete diagnostic result with unified recommendations (AEC-12 v2)
 struct BrewDiagnosticResult {
     let overallAssessment: ExtractionAssessment
@@ -316,8 +359,11 @@ struct BrewDiagnosticResult {
     let actualProfile: ActualTasteProfile
     let hasCoffeeContext: Bool
     
-    // AEC-12 v2: Unified direction-based output
+    // AEC-12 v2: Unified direction-based output (GENERAL recommendations)
     let unifiedAdjustment: UnifiedBrewAdjustment
+    
+    // Dimension-specific recommendations (SPECIFIC recommendations)
+    let dimensionRecommendations: [DimensionSpecificRecommendation]
     
     // Legacy: Individual recommendations (kept for backward compat)
     let recommendations: [BrewRecommendation]

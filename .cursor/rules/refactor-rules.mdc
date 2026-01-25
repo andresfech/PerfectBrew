@@ -1,12 +1,6 @@
 ---
+description: "Code and documentation refactoring workflow for PerfectBrew. Use when the user wants to refactor, restructure, reorganize, or clean up code; improve structure; or safely migrate/rename files. Provides pre-refactor analysis, step-by-step plan, PerfectBrew-specific checks (recipes, audio, MVVM), and rollback/QA strategy."
 alwaysApply: false
-triggerPhrases:
-  - "refactor"
-  - "refactoring"
-  - "restructure"
-  - "reorganize"
-  - "clean up code"
-  - "improve structure"
 ---
 
 # Code & Documentation Refactoring Rules

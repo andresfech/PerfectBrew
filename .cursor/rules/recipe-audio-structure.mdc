@@ -40,9 +40,16 @@ Explain **WHY** an action is taken. Use the available time to educate the user o
 - *"...agitation here helps extract the fruity notes."*
 - *"...the vacuum seal prevents dripping, keeping the temperature stable."*
 
-#### ⏳ **Requirement C: Time Constraints**
+#### ⏳ **Requirement C: Time Constraints (UX-Optimized)**
 - **Strict Limit**: The spoken text MUST fit within the `time_seconds` allocated.
 - **Rule of Thumb**: ~2.5 words per second.
+- **UX Sweet Spot**: Fill 50-85% of allocated time for optimal user experience.
+  - **<30%**: Too short - Insufficient guidance, feels rushed ❌
+  - **30-50%**: Acceptable but could use more content ⚠️
+  - **50-85%**: ✅ **OPTIMAL** - Good balance, comfortable density
+  - **85-95%**: Getting tight, consider trimming slightly ⚠️
+  - **>95%**: Too long - Risk of cutoff, overwhelming ❌
+- **Rationale**: Users need breathing room to process instructions. Filling 100% creates cognitive overload.
 - **Priority**: If time is tight, prioritize the instruction and time cue over the educational content. Do NOT risk cutting off the audio.
 
 ### 📝 **JSON Structure Example**

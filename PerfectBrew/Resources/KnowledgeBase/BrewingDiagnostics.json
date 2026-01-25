@@ -1,110 +1,249 @@
 {
   "sour": {
     "problem": "Sour / Tart / Salty",
-    "diagnosis": "Under-extraction",
-    "description": "The water passed through too quickly or didn't dissolve enough flavor compounds.",
+    "diagnosis": "Under-extraction (TDS < 1.15%, Extraction Yield < 18%)",
+    "description": "The water passed through too quickly or didn't dissolve enough flavor compounds. Your extraction is below the optimal range (18-22% yield, 1.15-1.45% TDS). The bright, acidic compounds extracted first, but the sweet and balanced middle notes didn't have time to develop. This creates an imbalanced cup that's sharp and one-dimensional.",
+    "metrics": {
+      "tds_range": "< 1.15%",
+      "extraction_yield_range": "< 18%",
+      "optimal_tds": "1.15-1.45%",
+      "optimal_yield": "18-22%"
+    },
     "fixes": {
       "V60": [
-        "Grind Finer (increase contact time)",
-        "Pour Slower (reduce agitation)",
-        "Use Hotter Water (increase solubility)"
+        "Tighten Ratio - use 1:15 instead of 1:17 (more coffee, less water) - macro adjustment",
+        "Increase Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Increase Water Temperature by 2-4°C",
+        "Extend Total Brew Time by 15-30 seconds",
+        "Swirl During Bloom - catch high-and-dry grounds, ensure complete saturation - execution",
+        "Pour Slower - extend contact time with deliberate, controlled pours - execution",
+        "Grind Finer by 2-4 clicks (only if other adjustments don't help - recipe already has optimal clicks) - micro adjustment"
       ],
       "AeroPress": [
-        "Grind Finer",
-        "Steep Longer (add 30s)",
-        "Stir More (increase agitation)"
+        "Tighten Ratio - use 1:12 instead of 1:16 (more coffee, less water) - macro adjustment",
+        "Increase Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Increase Water Temperature by 3-5°C",
+        "Steep Longer - add 30-60 seconds to contact time",
+        "Control Plunge Speed - slower, more controlled press for better extraction - execution",
+        "Stir More Thoroughly - ensure all grounds are saturated evenly - execution",
+        "Grind Finer by 2-4 clicks (only if temperature and time adjustments insufficient) - micro adjustment"
       ],
       "French Press": [
-        "Steep Longer (add 1-2 mins)",
-        "Grind Finer",
-        "Use Hotter Water"
+        "Tighten Ratio - use 1:12 instead of 1:15 (more coffee, less water) - macro adjustment",
+        "Increase Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Increase Water Temperature by 3-5°C",
+        "Steep Longer - add 1-2 minutes to extraction time",
+        "Break Crust Earlier - at 3:30 instead of 4:00 - execution",
+        "Stir More During Steep - break up dry pockets - execution",
+        "Grind Finer by 1-2 clicks (only as last resort - French Press prefers coarser grinds) - micro adjustment"
       ],
       "Chemex": [
-        "Grind Finer",
-        "Pour Slower",
-        "Use Hotter Water"
+        "Tighten Ratio - use 1:15 instead of 1:17 (more coffee, less water) - macro adjustment",
+        "Increase Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Increase Water Temperature by 2-4°C",
+        "Extend Total Brew Time by 20-40 seconds",
+        "Pour Slower - more deliberate, controlled spiral pours - execution",
+        "Ensure Filter Adherence - proper seal prevents bypass - execution",
+        "Grind Finer by 2-4 clicks (only if other technique adjustments don't resolve it) - micro adjustment"
       ],
       "default": [
-        "Grind Finer",
-        "Increase Ratio (more water)",
-        "Increase Temperature"
+        "Tighten Ratio (more coffee, less water) if also weak - macro adjustment",
+        "Increase Dose by 2-4g if needed - macro adjustment",
+        "Increase Water Temperature by 3-5°C",
+        "Extend Brew Time by 30-60 seconds",
+        "Improve Agitation Technique - ensure even saturation - execution",
+        "Grind Finer by 2-4 clicks (only if temperature and time don't solve it) - micro adjustment"
       ]
     }
   },
   "bitter": {
-    "problem": "Bitter / Dry / Astringent",
-    "diagnosis": "Over-extraction",
-    "description": "Too much flavor was dissolved, pulling out harsh tannins and dry compounds.",
+    "problem": "Bitter / Dry",
+    "diagnosis": "Over-extraction (TDS > 1.45%, Extraction Yield > 22%)",
+    "description": "Too much flavor was dissolved, pulling out harsh tannins and dry compounds. Your extraction exceeded the optimal range (18-22% yield, 1.15-1.45% TDS). The initial sweet and acidic compounds were extracted, but continued extraction pulled out bitter compounds from the coffee's structure. This creates a harsh finish that masks the coffee's nuanced flavors.",
+    "metrics": {
+      "tds_range": "> 1.45%",
+      "extraction_yield_range": "> 22%",
+      "optimal_tds": "1.15-1.45%",
+      "optimal_yield": "18-22%"
+    },
     "fixes": {
       "V60": [
-        "Grind Coarser (reduce contact time)",
-        "Pour Faster (increase agitation)",
-        "Use Cooler Water"
+        "Widen Ratio - use 1:17 instead of 1:15 (less coffee, more water) - macro adjustment",
+        "Decrease Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Lower Water Temperature by 3-5°C",
+        "Reduce Total Brew Time by 20-40 seconds",
+        "Pour Faster - reduce contact time with quicker, more efficient pours - execution",
+        "Grind Coarser by 2-4 clicks (only if temperature and time adjustments don't help) - micro adjustment"
       ],
       "AeroPress": [
-        "Grind Coarser",
-        "Steep Shorter (reduce 30s)",
-        "Press Gentler"
+        "Widen Ratio - use 1:16 instead of 1:12 (less coffee, more water) - macro adjustment",
+        "Decrease Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Lower Water Temperature by 3-5°C",
+        "Steep Shorter - reduce contact time by 30-60 seconds",
+        "Reduce Plunge Speed - slower, more controlled press to reduce extraction - execution",
+        "Grind Coarser by 2-4 clicks (only if other adjustments insufficient) - micro adjustment"
       ],
       "French Press": [
-        "Steep Shorter (reduce 1 min)",
-        "Grind Coarser",
-        "Scoop Crust/Foam earlier"
+        "Widen Ratio - use 1:15 instead of 1:12 (less coffee, more water) - macro adjustment",
+        "Decrease Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Lower Water Temperature by 3-5°C",
+        "Steep Shorter - reduce by 1-2 minutes",
+        "Break Crust Later - at 4:30 instead of 4:00 - execution",
+        "Grind Coarser by 2-4 clicks (only as last resort) - micro adjustment"
       ],
       "Chemex": [
-        "Grind Coarser",
-        "Pour Faster",
-        "Use Cooler Water"
+        "Widen Ratio - use 1:17 instead of 1:15 (less coffee, more water) - macro adjustment",
+        "Decrease Dose by 2-4g if ratio alone doesn't help - macro adjustment",
+        "Lower Water Temperature by 3-5°C",
+        "Reduce Total Brew Time by 20-40 seconds",
+        "Pour Faster - reduce contact time with efficient pours - execution",
+        "Grind Coarser by 2-4 clicks (only if temperature and time don't resolve it) - micro adjustment"
       ],
       "default": [
-        "Grind Coarser",
-        "Decrease Ratio (less water)",
-        "Decrease Temperature"
+        "Widen Ratio (less coffee, more water) - macro adjustment",
+        "Decrease Dose by 2-4g if needed - macro adjustment",
+        "Lower Water Temperature by 3-5°C",
+        "Reduce Brew Time by 30-60 seconds",
+        "Improve Technique - gentler agitation - execution",
+        "Grind Coarser by 2-4 clicks (only if temperature and time don't solve it) - micro adjustment"
+      ]
+    }
+  },
+  "astringent": {
+    "problem": "Astringent / Drying Mouthfeel (like unripe banana)",
+    "diagnosis": "Channeling / Uneven Extraction (TDS may be normal but inconsistent)",
+    "description": "If coffee dries out your tongue (like an unripe banana), it's usually due to channeling, not just over-extraction. Water is finding fast paths through the coffee bed, creating uneven extraction. Some areas are over-extracted (bitter, astringent) while others are under-extracted (sour, weak). This creates a drying, mouth-puckering sensation that's distinct from general bitterness. The TDS might appear normal, but the extraction is highly inconsistent across the coffee bed.",
+    "metrics": {
+      "tds_range": "1.15-1.45% (may appear normal but inconsistent)",
+      "extraction_yield_range": "Variable - some areas > 22%, others < 18%",
+      "optimal_tds": "1.15-1.45% (evenly distributed)",
+      "optimal_yield": "18-22% (consistent extraction)"
+    },
+    "fixes": {
+      "V60": [
+        "Improve Distribution Technique - ensure even coffee bed before brewing - execution",
+        "Swirl During Bloom - catch high-and-dry grounds, ensure complete saturation - execution",
+        "Pour More Steadily - consistent spiral pattern, center to edge, avoid rushing - execution",
+        "Check Bed Flatness - ensure even bed at end (indicates even extraction)",
+        "Use WDT (Weiss Distribution Technique) - stir grounds before bloom to break clumps - execution"
+      ],
+      "Chemex": [
+        "Ensure Filter Adherence - proper seal prevents bypass channeling - execution",
+        "Improve Bloom Distribution - ensure all grounds are saturated, swirl gently - execution",
+        "Pour Spiral More Evenly - consistent circular pattern, avoid rushing - execution",
+        "Check for Bypass - water should flow through coffee, not around filter edges",
+        "Use Consistent Pour Speed - avoid fast/slow variations - execution"
+      ],
+      "AeroPress": [
+        "Stir More Thoroughly - ensure all grounds are saturated, no dry pockets - execution",
+        "Improve Initial Saturation - pour water in circular motion, not straight down - execution",
+        "Control Plunge Speed - steady, controlled pressure (too fast causes channeling) - execution",
+        "Press More Evenly - avoid tilting, maintain even pressure - execution",
+        "Use Proper Agitation - gentle stirring, not aggressive (causes uneven extraction) - execution"
+      ],
+      "French Press": [
+        "Improve Initial Stir - ensure all grounds are wetted evenly - execution",
+        "Break Crust More Thoroughly - stir to redistribute grounds before pressing - execution",
+        "Press Straight Down - avoid tilting, maintain even pressure - execution",
+        "Check for Dry Pockets - all grounds should be saturated during steep",
+        "Use Proper Steep Time - too short creates uneven extraction"
+      ],
+      "default": [
+        "Improve Distribution Technique - ensure even coffee bed before brewing - execution",
+        "Use WDT (Weiss Distribution Technique) - break clumps, distribute evenly - execution",
+        "Ensure Even Saturation - all grounds should be wetted uniformly - execution",
+        "Maintain Consistent Technique - avoid rushing or inconsistent pours - execution",
+        "Check for Channeling Signs - uneven bed, dry spots, or fast/slow flow"
       ]
     }
   },
   "weak": {
     "problem": "Weak / Watery / Thin",
-    "diagnosis": "Low Strength (TDS)",
-    "description": "Not enough coffee material is dissolved in the water.",
+    "diagnosis": "Low Strength (TDS < 1.0%, Extraction Yield may be normal)",
+    "description": "Not enough coffee material is dissolved in the water. Your TDS (Total Dissolved Solids) is below 1.0%, indicating insufficient concentration. This is different from under-extraction - the extraction percentage might be fine (18-22%), but the coffee-to-water ratio is too low. The cup lacks body and presence, feeling thin and diluted even if the flavors are balanced.",
+    "metrics": {
+      "tds_range": "< 1.0%",
+      "extraction_yield_range": "18-22% (may be normal)",
+      "optimal_tds": "1.15-1.45%",
+      "optimal_yield": "18-22%"
+    },
     "fixes": {
       "default": [
-        "Increase Dose (more coffee)",
-        "Decrease Water (tighter ratio)",
-        "Grind Finer (if also sour)"
+        "Tighten Ratio - use 1:15 instead of 1:17 (more coffee, less water) - macro adjustment",
+        "Increase Coffee Dose by 2-4g - macro adjustment",
+        "Reduce Water Amount by 30-50ml (keep same dose, less dilution)",
+        "Use Bypass Method - brew stronger, then dilute to taste - execution",
+        "Grind Finer by 2-4 clicks (only if also experiencing sourness - indicates under-extraction combined with low strength) - micro adjustment"
       ]
     }
   },
   "strong": {
     "problem": "Strong / Heavy / Muddy",
-    "diagnosis": "High Strength (TDS)",
-    "description": "Too much coffee material is dissolved, overpowering the nuance.",
+    "diagnosis": "High Strength (TDS > 1.6%, Extraction Yield may be normal)",
+    "description": "Too much coffee material is dissolved, overpowering the nuance. Your TDS (Total Dissolved Solids) exceeds 1.6%, indicating excessive concentration. This is different from over-extraction - the extraction percentage might be fine (18-22%), but the coffee-to-water ratio is too high. The cup feels heavy, thick, and overwhelming, masking subtle flavors even if extraction is balanced.",
+    "metrics": {
+      "tds_range": "> 1.6%",
+      "extraction_yield_range": "18-22% (may be normal)",
+      "optimal_tds": "1.15-1.45%",
+      "optimal_yield": "18-22%"
+    },
     "fixes": {
       "default": [
-        "Decrease Dose (less coffee)",
-        "Increase Water (bypass or wider ratio)",
-        "Grind Coarser (if also bitter)"
+        "Widen Ratio - use 1:17 instead of 1:15 (less coffee, more water) - macro adjustment",
+        "Decrease Coffee Dose by 2-4g - macro adjustment",
+        "Increase Water Amount by 30-50ml (keep same dose, more dilution)",
+        "Use Bypass Water - add hot water after brewing to dilute - execution",
+        "Grind Coarser by 2-4 clicks (only if also experiencing bitterness - indicates over-extraction combined with high strength) - micro adjustment"
       ]
     }
   },
   "hollow": {
     "problem": "Hollow / Empty Finish",
-    "diagnosis": "Channeling (Uneven Extraction)",
-    "description": "Water flowed through some parts too fast and others too slow.",
+    "diagnosis": "Channeling (Uneven Extraction - TDS normal but inconsistent)",
+    "description": "Water flowed through some parts too fast and others too slow, creating uneven extraction. Your overall TDS might be in range (1.15-1.45%), but the extraction is inconsistent across the coffee bed. Some areas are under-extracted (sour, thin) while others are over-extracted (bitter, astringent). This creates a hollow, empty finish where flavors don't connect or develop properly. The coffee bed likely shows signs of channeling - uneven saturation, dry pockets, or an uneven bed at the end.",
+    "metrics": {
+      "tds_range": "1.15-1.45% (may appear normal)",
+      "extraction_yield_range": "Variable across coffee bed",
+      "optimal_tds": "1.15-1.45% (evenly distributed)",
+      "optimal_yield": "18-22% (consistent extraction)"
+    },
     "fixes": {
       "V60": [
-        "Stir/Swirl Bloom more effectively",
-        "Pour more steadily",
-        "Check for flat bed at end"
+        "Improve Distribution Technique - ensure even coffee bed before brewing - execution",
+        "Swirl During Bloom - catch high-and-dry grounds, ensure complete saturation - execution",
+        "Pour More Steadily - consistent spiral pattern, center to edge, avoid rushing - execution",
+        "Check Bed Flatness - ensure even bed at end (indicates even extraction)",
+        "Use WDT (Weiss Distribution Technique) - stir grounds before bloom to break clumps - execution"
       ],
       "Chemex": [
-        "Ensure filter adherence",
-        "Pour spiral more evenly"
+        "Ensure Filter Adherence - proper seal prevents bypass channeling",
+        "Pour Spiral More Evenly - consistent circular pattern, avoid rushing",
+        "Improve Bloom Distribution - ensure all grounds are saturated",
+        "Check for Bypass - water should flow through coffee, not around filter edges",
+        "Use Consistent Pour Speed - avoid fast/slow variations"
+      ],
+      "AeroPress": [
+        "Improve Initial Saturation - pour water in circular motion, not straight down - execution",
+        "Stir More Thoroughly - ensure all grounds are saturated, no dry pockets - execution",
+        "Control Plunge Speed - steady, controlled pressure (too fast causes channeling) - execution",
+        "Press More Evenly - avoid tilting, maintain even pressure - execution",
+        "Check for Channeling - grounds should extract uniformly, not in channels"
+      ],
+      "French Press": [
+        "Improve Initial Stir - ensure all grounds are wetted evenly",
+        "Break Crust More Thoroughly - stir to redistribute grounds before pressing",
+        "Press Straight Down - avoid tilting, maintain even pressure",
+        "Check for Dry Pockets - all grounds should be saturated during steep",
+        "Use Proper Steep Time - too short creates uneven extraction"
       ],
       "default": [
-        "Improve distribution technique",
-        "WDT (Weiss Distribution Technique)"
+        "Improve Distribution Technique - ensure even coffee bed before brewing",
+        "Use WDT (Weiss Distribution Technique) - break clumps, distribute evenly",
+        "Ensure Even Saturation - all grounds should be wetted uniformly",
+        "Maintain Consistent Technique - avoid rushing or inconsistent pours",
+        "Check for Channeling Signs - uneven bed, dry spots, or fast/slow flow"
       ]
     }
   }
 }
+

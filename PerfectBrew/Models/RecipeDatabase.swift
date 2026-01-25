@@ -249,6 +249,11 @@ class RecipeDatabase: ObservableObject {
         return recipesByMethod[methodString] ?? []
     }
     
+    /// Find a recipe by title and method
+    func findRecipe(title: String, method: String) -> Recipe? {
+        return recipes.first { $0.title == title && $0.brewingMethod == method }
+    }
+    
     func getRecipes(for method: HomeScreen.BrewMethod, servings: Int = 1) -> [Recipe] {
         // NOTE: 'servings' parameter is now ignored for loading, as we only have single-serve recipes.
         // It will be replaced by dynamic scaling in the View layer.

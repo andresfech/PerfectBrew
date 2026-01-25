@@ -8,8 +8,8 @@ struct CoffeeListView: View {
     var body: some View {
         List {
             ForEach(viewModel.coffees) { coffee in
-                // Navigation to Recommendations
-                NavigationLink(destination: RecommendationsView(coffee: coffee)) {
+                // Navigation to Preference Questionnaire
+                NavigationLink(destination: PreferenceQuestionnaireView(coffee: coffee)) {
                     CoffeeRow(coffee: coffee) {
                         coffeeToEdit = coffee
                     }

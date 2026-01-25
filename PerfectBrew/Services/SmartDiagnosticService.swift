@@ -51,18 +51,24 @@ class SmartDiagnosticService {
         let gaps = calculateGaps(expected: expected, actual: actual)
         
         // Step 2: Determine SINGLE direction via weighted voting
-        let (direction, confidence) = determineDirection(gaps: gaps, feedback: feedback)
+        let baseConfidence = determineDirection(gaps: gaps, feedback: feedback).1
+        let adjustedConfidence = adjustConfidenceForExecution(baseConfidence: baseConfidence, feedback: feedback)
+        let direction = determineDirection(gaps: gaps, feedback: feedback).0
+        let confidence = adjustedConfidence
         
         // Step 3: Determine assessment from direction
         let assessment = assessmentFromDirection(direction)
         
         // Step 4: Generate ALIGNED adjustments (all follow the direction)
-        let adjustments = generateAlignedAdjustments(
+        var adjustments = generateAlignedAdjustments(
             direction: direction,
             method: method,
             gaps: gaps,
             coffee: coffee
         )
+        
+        // Step 4.5: Adjust based on brew execution
+        adjustments = adjustAdjustmentsForExecution(adjustments, feedback: feedback, method: method)
         
         // Step 5: Create unified adjustment
         let unified = UnifiedBrewAdjustment(
@@ -72,7 +78,22 @@ class SmartDiagnosticService {
             adjustments: adjustments
         )
         
-        // Step 6: Convert to legacy format for backward compat
+        // Step 6: Generate dimension-specific recommendations
+        var dimensionRecs = generateDimensionSpecificRecommendations(
+            gaps: gaps,
+            method: method,
+            coffee: coffee
+        )
+        
+        // Step 6.5: Add flavor tag recommendations
+        let flavorTagRecs = generateFlavorTagRecommendations(
+            coffee: coffee,
+            experiencedTags: feedback.experiencedFlavorTags,
+            method: method
+        )
+        dimensionRecs.append(contentsOf: flavorTagRecs)
+        
+        // Step 7: Convert to legacy format for backward compat
         let legacyRecs = adjustments.enumerated().map { index, item in
             BrewRecommendation(
                 priority: index + 1,
@@ -91,6 +112,7 @@ class SmartDiagnosticService {
             actualProfile: actual,
             hasCoffeeContext: true,
             unifiedAdjustment: unified,
+            dimensionRecommendations: dimensionRecs,
             recommendations: legacyRecs
         )
     }
@@ -107,13 +129,27 @@ class SmartDiagnosticService {
         let assessment = assessmentFromDirection(direction)
         
         // Generate adjustments based on direction alone
-        let adjustments = generateGenericAdjustments(direction: direction, method: method)
+        var adjustments = generateGenericAdjustments(direction: direction, method: method)
+        
+        // Adjust based on brew execution
+        adjustments = adjustAdjustmentsForExecution(adjustments, feedback: feedback, method: method)
+        
+        // Adjust confidence based on execution
+        let baseConfidence = confidence
+        let adjustedConfidence = adjustConfidenceForExecution(baseConfidence: baseConfidence, feedback: feedback)
+        let finalConfidence = adjustedConfidence
         
         let unified = UnifiedBrewAdjustment(
             direction: direction,
-            confidence: confidence,
+            confidence: finalConfidence,
             summary: "Based on your feedback, try \(direction.actionVerb)",
             adjustments: adjustments
+        )
+        
+        // Generate dimension-specific recommendations from actual profile
+        let dimensionRecs = generateDimensionRecommendationsFromActual(
+            actual: actual,
+            method: method
         )
         
         let legacyRecs = adjustments.enumerated().map { index, item in
@@ -134,6 +170,7 @@ class SmartDiagnosticService {
             actualProfile: actual,
             hasCoffeeContext: false,
             unifiedAdjustment: unified,
+            dimensionRecommendations: dimensionRecs,
             recommendations: legacyRecs
         )
     }
@@ -142,7 +179,7 @@ class SmartDiagnosticService {
     
     private func determineDirection(gaps: [TasteGap], feedback: FeedbackData) -> (ExtractionDirection, Double) {
         // Check explicit defect first (user knows best)
-        if let defect = feedback.defect, defect != "None (Balanced)" {
+        if let defect = feedback.defect, !FeedbackData.isNoDefect(defect) {
             return directionFromDefect(defect)
         }
         
@@ -209,7 +246,7 @@ class SmartDiagnosticService {
     
     private func determineDirectionWithoutContext(actual: ActualTasteProfile, feedback: FeedbackData) -> (ExtractionDirection, Double) {
         // Check explicit defect
-        if let defect = feedback.defect, defect != "None (Balanced)" {
+        if let defect = feedback.defect, !FeedbackData.isNoDefect(defect) {
             return directionFromDefect(defect)
         }
         
@@ -507,6 +544,105 @@ class SmartDiagnosticService {
         return []
     }
     
+    // MARK: - Brew Execution Integration
+    
+    /// Adjust confidence based on how closely the user followed the recipe
+    private func adjustConfidenceForExecution(baseConfidence: Double, feedback: FeedbackData) -> Double {
+        var multiplier: Double = 1.0
+        
+        // Adjust based on whether recipe was followed
+        if let followed = feedback.followedRecipe {
+            switch followed.lowercased() {
+            case "yes": multiplier *= 1.0
+            case "mostly": multiplier *= 0.9
+            case "no": multiplier *= 0.7
+            default: break
+            }
+        }
+        
+        return min(1.0, baseConfidence * multiplier)
+    }
+    
+    /// Adjust adjustments based on brew execution issues
+    private func adjustAdjustmentsForExecution(
+        _ adjustments: [AdjustmentItem],
+        feedback: FeedbackData,
+        method: String
+    ) -> [AdjustmentItem] {
+        var adjusted = adjustments
+        
+        // If brew time was too long, prioritize reducing time adjustments
+        if feedback.brewTimeMatch == "Too long" {
+            // Boost time reduction adjustments
+            adjusted = adjusted.map { item in
+                if item.category == .time && item.suggestedChange.lowercased().contains("reduce") {
+                    return AdjustmentItem(
+                        rank: max(1, item.rank - 1),  // Higher priority
+                        category: item.category,
+                        parameter: item.parameter,
+                        currentValue: item.currentValue,
+                        suggestedChange: item.suggestedChange,
+                        impactPercent: min(100, item.impactPercent + 10),
+                        explanation: item.explanation + " (Your brew time was too long)"
+                    )
+                }
+                return item
+            }
+        }
+        
+        // If brew time was too short, prioritize increasing time adjustments
+        if feedback.brewTimeMatch == "A bit short" {
+            adjusted = adjusted.map { item in
+                if item.category == .time && item.suggestedChange.lowercased().contains("extend") {
+                    return AdjustmentItem(
+                        rank: max(1, item.rank - 1),
+                        category: item.category,
+                        parameter: item.parameter,
+                        currentValue: item.currentValue,
+                        suggestedChange: item.suggestedChange,
+                        impactPercent: min(100, item.impactPercent + 10),
+                        explanation: item.explanation + " (Your brew time was a bit short)"
+                    )
+                }
+                return item
+            }
+        }
+        
+        // If flow rate was too fast (pour-over methods), add technique suggestion
+        if feedback.flowRate == "Too fast" && (method.contains("V60") || method.contains("Chemex")) {
+            let techniqueItem = AdjustmentItem(
+                rank: adjustments.count + 1,
+                category: .technique,
+                parameter: "Pour Technique",
+                suggestedChange: "Pour slower and more deliberately",
+                impactPercent: 60,
+                explanation: "Your flow rate was too fast - slower pours increase extraction"
+            )
+            adjusted.append(techniqueItem)
+        }
+        
+        // If flow rate was too slow, suggest coarser grind
+        if feedback.flowRate == "Too slow" {
+            adjusted = adjusted.map { item in
+                if item.category == .grind && item.suggestedChange.lowercased().contains("coarser") {
+                    return AdjustmentItem(
+                        rank: max(1, item.rank - 1),
+                        category: item.category,
+                        parameter: item.parameter,
+                        currentValue: item.currentValue,
+                        suggestedChange: item.suggestedChange,
+                        impactPercent: min(100, item.impactPercent + 10),
+                        explanation: item.explanation + " (Your flow rate was too slow)"
+                    )
+                }
+                return item
+            }
+        }
+        
+        // Re-sort by rank after adjustments
+        return adjusted.sorted { $0.rank < $1.rank }
+    }
+    
     // MARK: - Helper Methods
     
     private func calculateGaps(expected: ExtractionCharacteristics, actual: ActualTasteProfile) -> [TasteGap] {
@@ -526,6 +662,303 @@ class SmartDiagnosticService {
         case .improveTechnique: return .channeling
         case .balanced: return .balanced
         }
+    }
+    
+    // MARK: - Flavor Tag Analysis
+    
+    /// Analyze which expected flavor tags were missing
+    private func analyzeFlavorTagGaps(coffee: Coffee, experienced: Set<FlavorTag>) -> [FlavorTag] {
+        let expectedSet = Set(coffee.flavorTags)
+        let missingTags = expectedSet.subtracting(experienced)
+        return Array(missingTags)
+    }
+    
+    /// Generate recommendations for missing flavor tags
+    private func generateFlavorTagRecommendations(
+        coffee: Coffee,
+        experiencedTags: Set<FlavorTag>,
+        method: String
+    ) -> [DimensionSpecificRecommendation] {
+        guard !experiencedTags.isEmpty || !coffee.flavorTags.isEmpty else {
+            return []
+        }
+        
+        let missingTags = analyzeFlavorTagGaps(coffee: coffee, experienced: experiencedTags)
+        guard !missingTags.isEmpty else {
+            return []
+        }
+        
+        var recommendations: [DimensionSpecificRecommendation] = []
+        
+        for tag in missingTags {
+            let advice = getFlavorTagAdvice(for: tag, method: method)
+            let adjustments = getFlavorTagAdjustments(for: tag, method: method)
+            
+            recommendations.append(DimensionSpecificRecommendation(
+                dimension: "Flavor: \(tag.rawValue)",
+                currentLevel: "Not experienced",
+                targetLevel: "Expected",
+                advice: advice,
+                specificAdjustments: adjustments
+            ))
+        }
+        
+        return recommendations
+    }
+    
+    private func getFlavorTagAdvice(for tag: FlavorTag, method: String) -> String {
+        switch tag {
+        // Acidic/Fruity tags need higher extraction
+        case .fruity, .berry, .citrus, .stoneFruit, .tropical, .acidity, .bright, .vibrant, .juicy, .crisp:
+            return "To bring out \(tag.rawValue.lowercased()) notes, you need more extraction. These bright, acidic compounds extract first."
+        
+        // Floral/Delicate tags need careful extraction
+        case .floral, .tea, .herbaceous, .delicate, .elegant, .clean, .clarityFocused, .lightBodied:
+            return "\(tag.rawValue) notes require careful extraction with high clarity. Ensure even extraction and proper grind."
+        
+        // Sweet/Rich tags need optimal extraction window
+        case .nutty, .chocolate, .caramel, .vanilla, .sweet, .roasted, .rich, .syrupy, .creamy:
+            return "To enhance \(tag.rawValue.lowercased()) notes, optimize your extraction window. Sweetness peaks in the middle extraction phase."
+        
+        // Fermented/Complex tags need balanced extraction
+        case .fermented, .winey, .complex:
+            return "\(tag.rawValue) notes require balanced extraction across all phases. Aim for medium-high extraction."
+        
+        // Bold/Heavy tags need controlled extraction
+        case .spicy, .savory, .earthy, .bold, .intense, .strong, .fullBodied, .punchy, .espressoLike:
+            return "\(tag.rawValue) notes need controlled extraction to avoid bitterness. Slightly coarser grind may help."
+        
+        // Body-focused tags
+        case .thick, .deep, .layered:
+            return "To achieve \(tag.rawValue.lowercased()) body, focus on longer extraction times and proper technique."
+        
+        default:
+            return "To bring out \(tag.rawValue.lowercased()) notes, adjust your extraction parameters."
+        }
+    }
+    
+    private func getFlavorTagAdjustments(for tag: FlavorTag, method: String) -> [String] {
+        var adjustments: [String] = []
+        
+        switch tag {
+        // Acidic/Fruity tags
+        case .fruity, .berry, .citrus, .stoneFruit, .tropical, .acidity, .bright, .vibrant, .juicy, .crisp:
+            adjustments = [
+                "Grind finer to increase surface area",
+                "Increase water temperature by 2-3°C",
+                "Extend brew time slightly"
+            ]
+            if method.contains("V60") || method.contains("Chemex") {
+                adjustments.append("Pour slower for more contact time")
+            }
+        
+        // Floral/Delicate tags
+        case .floral, .tea, .herbaceous, .delicate, .elegant, .clean, .clarityFocused, .lightBodied:
+            adjustments = [
+                "Use slightly finer grind",
+                "Maintain optimal water temperature (92-94°C)",
+                "Ensure even extraction (proper agitation)"
+            ]
+            if method.contains("V60") || method.contains("Chemex") {
+                adjustments.append("Use gentle, circular pours")
+            }
+        
+        // Sweet/Rich tags
+        case .nutty, .chocolate, .caramel, .vanilla, .sweet, .roasted, .rich, .syrupy, .creamy:
+            adjustments = [
+                "Optimize extraction window (not too fast, not too slow)",
+                "Ensure even extraction throughout",
+                "Maintain consistent water temperature"
+            ]
+        
+        // Fermented/Complex tags
+        case .fermented, .winey, .complex:
+            adjustments = [
+                "Use medium-fine grind",
+                "Maintain steady extraction (consistent pours)",
+                "Allow full brew time for complete extraction"
+            ]
+        
+        // Bold/Heavy tags
+        case .spicy, .savory, .earthy, .bold, .intense, .strong, .fullBodied, .punchy, .espressoLike:
+            adjustments = [
+                "Use slightly coarser grind",
+                "Reduce water temperature by 2-3°C",
+                "Monitor brew time to avoid over-extraction"
+            ]
+        
+        // Body-focused tags
+        case .thick, .deep, .layered:
+            if method.contains("AeroPress") {
+                adjustments = ["Steep 30-60 seconds longer", "Use slightly finer grind"]
+            } else if method.contains("French") {
+                adjustments = ["Extend steep time by 1-2 minutes", "Use medium-coarse grind"]
+            } else {
+                adjustments = ["Extend total brew time", "Use slightly finer grind"]
+            }
+        
+        default:
+            adjustments = [
+                "Adjust grind size based on extraction needs",
+                "Optimize water temperature",
+                "Fine-tune brew time"
+            ]
+        }
+        
+        return adjustments
+    }
+    
+    // MARK: - Dimension-Specific Recommendations
+    
+    private func generateDimensionSpecificRecommendations(
+        gaps: [TasteGap],
+        method: String,
+        coffee: Coffee?
+    ) -> [DimensionSpecificRecommendation] {
+        var recommendations: [DimensionSpecificRecommendation] = []
+        
+        for gap in gaps where gap.significance != .negligible {
+            let currentLabel = valueToComparativeLabel(gap.actual)
+            let targetLabel = valueToComparativeLabel(gap.expected)
+            
+            // Only generate recommendation if there's a meaningful gap
+            if currentLabel != targetLabel {
+                let advice = getDimensionAdvice(for: gap.dimension, gap: gap, method: method)
+                let adjustments = getSpecificAdjustments(for: gap.dimension, gap: gap, method: method)
+                
+                recommendations.append(DimensionSpecificRecommendation(
+                    dimension: gap.dimension.capitalized,
+                    currentLevel: currentLabel,
+                    targetLevel: targetLabel,
+                    advice: advice,
+                    specificAdjustments: adjustments
+                ))
+            }
+        }
+        
+        return recommendations
+    }
+    
+    private func generateDimensionRecommendationsFromActual(
+        actual: ActualTasteProfile,
+        method: String
+    ) -> [DimensionSpecificRecommendation] {
+        var recommendations: [DimensionSpecificRecommendation] = []
+        
+        // Check each dimension - if extreme (very low or very high), suggest improvements
+        let dimensions: [(name: String, value: Double)] = [
+            ("acidity", actual.acidity),
+            ("sweetness", actual.sweetness),
+            ("bitterness", actual.bitterness)
+        ]
+        
+        for dim in dimensions {
+            let currentLabel = valueToComparativeLabel(dim.value)
+            // If not "Perfect", suggest adjustments
+            if currentLabel != "Perfect" {
+                let advice = getDimensionAdviceWithoutContext(for: dim.name, value: dim.value, method: method)
+                let adjustments = getSpecificAdjustmentsWithoutContext(for: dim.name, value: dim.value, method: method)
+                
+                recommendations.append(DimensionSpecificRecommendation(
+                    dimension: dim.name.capitalized,
+                    currentLevel: currentLabel,
+                    targetLevel: "Perfect",
+                    advice: advice,
+                    specificAdjustments: adjustments
+                ))
+            }
+        }
+        
+        return recommendations
+    }
+    
+    private func valueToComparativeLabel(_ value: Double) -> String {
+        // Normalized 0-1 value to comparative label
+        if value <= 0.25 {
+            return "Not enough"
+        } else if value >= 0.75 {
+            return "Too much"
+        } else {
+            return "Perfect"
+        }
+    }
+    
+    private func getDimensionAdvice(for dimension: String, gap: TasteGap, method: String) -> String {
+        let isUnder = gap.isUnder
+        switch dimension {
+        case "acidity":
+            return isUnder ? "To increase acidity, you need more extraction. Acidity comes from lighter compounds that extract first." : "To reduce acidity, decrease extraction. The coffee is extracting too quickly or aggressively."
+        case "sweetness":
+            return isUnder ? "To increase sweetness, optimize your extraction window. Sweetness peaks in the middle extraction phase." : "Sweetness is overpowering - slightly decrease extraction to balance."
+        case "bitterness":
+            return isUnder ? "Bitterness is low, which is generally good. Maintain your current approach." : "To reduce bitterness, decrease extraction. Bitterness comes from over-extraction of harsh compounds."
+        default:
+            return "Adjust your brewing parameters to improve this dimension."
+        }
+    }
+    
+    private func getSpecificAdjustments(for dimension: String, gap: TasteGap, method: String) -> [String] {
+        let isUnder = gap.isUnder
+        var adjustments: [String] = []
+        
+        switch dimension {
+        case "acidity":
+            if isUnder {
+                adjustments = ["Grind finer to increase surface area", "Increase water temperature by 2-3°C", "Extend brew time slightly"]
+            } else {
+                adjustments = ["Grind coarser", "Lower water temperature by 2-3°C", "Reduce brew time"]
+            }
+        case "sweetness":
+            if isUnder {
+                adjustments = ["Ensure even extraction (proper agitation)", "Use slightly finer grind", "Maintain optimal water temperature"]
+            } else {
+                adjustments = ["Slightly coarser grind", "Reduce brew time by 15-30 seconds"]
+            }
+        case "bitterness":
+            if isUnder {
+                adjustments = ["Maintain current parameters - bitterness is well-controlled"]
+            } else {
+                adjustments = ["Grind coarser to reduce extraction", "Lower temperature by 3-5°C", "Reduce brew time significantly"]
+            }
+        default:
+            break
+        }
+        
+        // Method-specific adjustments
+        if method.contains("V60") || method.contains("Chemex") {
+            if isUnder && dimension == "acidity" {
+                adjustments.append("Pour slower for more contact time")
+            }
+        } else if method.contains("AeroPress") {
+            if isUnder {
+                adjustments.append("Steep 30-60 seconds longer")
+            }
+        }
+        
+        return adjustments
+    }
+    
+    private func getDimensionAdviceWithoutContext(for dimension: String, value: Double, method: String) -> String {
+        let isLow = value <= 0.25
+        switch dimension {
+        case "acidity":
+            return isLow ? "Your coffee could use more acidity. Increase extraction to bring out brighter notes." : "The acidity is too strong. Decrease extraction to balance."
+        case "sweetness":
+            return isLow ? "To enhance sweetness, optimize your extraction window for balanced flavor." : "Sweetness is overpowering - slightly reduce extraction."
+        case "bitterness":
+            return isLow ? "Bitterness is well-controlled. Keep doing what you're doing!" : "Bitterness is too high. Decrease extraction to avoid harsh flavors."
+        default:
+            return "Adjust your brewing parameters."
+        }
+    }
+    
+    private func getSpecificAdjustmentsWithoutContext(for dimension: String, value: Double, method: String) -> [String] {
+        let isLow = value <= 0.25
+        // Create a temporary gap for the helper function
+        // Expected is what we want (opposite of current if low, or lower if high)
+        let expected = isLow ? 0.75 : 0.25
+        let gap = TasteGap(dimension: dimension, expected: expected, actual: value)
+        return getSpecificAdjustments(for: dimension, gap: gap, method: method)
     }
     
     private func generateSummary(direction: ExtractionDirection, coffee: Coffee) -> String {
